@@ -1,0 +1,140 @@
+{
+  "judge": 3,
+  "lens": "technical quality",
+  "entries": {
+    "A": {
+      "title": "Gloam Exchange",
+      "scores": {"A1": 5, "A2": 4, "A3": 6, "A4": 4, "A5": 8, "B1": 7, "B2": 8, "B3": 5, "B4": 6, "B5": 7, "C1": 7, "C2": 10, "C3": 10, "C4": 9, "C5": 5},
+      "caps_applied": [],
+      "strengths": [
+        "Flawless under test: three full 30-day games (1280px, sandboxed iframe with storage blocked, 390px) with zero console errors, and every invalid trade or bank input (0, -5, 2.7, 1e9, 'abc', empty, 1e12) was clamped or rejected with cash, debt, bank and cargo staying valid integers.",
+        "Thorough save handling: the whole run autosaves, a reload restores a pending toll encounter or the final ledger, and a strict valid() check discards malformed saves; garbage and wrong-shape score data loaded cleanly.",
+        "Decision data is on screen where you need it: fair value and LOW/HIGH percent per good, 8-day sparkline, average cost and profit per crate, exact toll odds and losses, tomorrow's forecast."
+      ],
+      "weaknesses": [
+        "The economy is solved by one fixed loop: a naive bot repeating Rillworks > Cinder Quay > Threadgarden > Echo Vault cleared the debt by day 3-4, maxed both upgrades by day 7 and hit the top rank in all three runs (205k, 234k, 243k against a 180k threshold); days 8 to 30 were interchangeable.",
+        "Bare minimum on several lists: exactly 2 upgrade kinds, exactly 1 risky encounter, 6 locations and 6 goods; audio is six sine arpeggios, starts muted, the choice is not persisted and win and loss share one cue; there is no travel animation beyond a panel fade.",
+        "Source is delivered as 101 lines: the CSS is one 15 KB line and most functions are single lines of 1 to 4 KB, so it is hard to read or diff despite a sound underlying structure."
+      ],
+      "bugs": [
+        {"severity": "low", "what": "Unparseable JSON in either storage key flips the storageOK flag to false for the session; the source then appends 'Storage is unavailable here. Records cannot survive a reload' to the final ledger even though the score is written normally.", "repro": "eval localStorage.setItem('gloam-records-v1','{{{garbage'), reload: game loads, storageOK reads false (observed); the note text is from finish() in the source."},
+        {"severity": "low", "what": "With storage blocked the end screen's records table says 'No captains in the ledger yet' and omits the run just finished (no in-memory fallback).", "repro": "Load inside <iframe sandbox=\"allow-scripts\">, play to day 30, Close the ledger."},
+        {"severity": "low", "what": "Read in source, not hit in a run: a toll on day 30 offers 'Work the chain winch ... Lose 0 extra days', a free guaranteed pass (days = min(2, 30 - day)).", "repro": "Arrive on day 30 and draw the toll encounter (15% per crossing)."}
+      ],
+      "evidence": {
+        "days_played": 30,
+        "reached_score_screen": true,
+        "file_kb": 61.8,
+        "lines": 101,
+        "counts": {"locations": 6, "goods": 6, "random_events": 11, "risky_encounters": 1, "upgrade_kinds": 2},
+        "requirements": {"working": 15, "partial": 0, "missing": 0, "detail": "none partial or missing; upgrades (2 kinds), risky encounters (1), locations and goods (6 each) sit exactly on the minimum, and sound starts muted"},
+        "constraints": "Pass on all. Grep: one inline <script>, no http/src/href/fetch/XHR/WebSocket/import/<link>/<audio>; url() only references inline SVG ids. Runtime: performance resource list empty. Both localStorage calls sit in try/catch wrappers. Sandboxed iframe: localStorage throws SecurityError, a full 30-day game completed with no errors. High score survived reload; garbage and wrong-shape stored data tolerated. 61.8 KB.",
+        "console_errors": "none across 3 full games (desktop, sandbox, phone) plus abuse and corrupt-storage tests",
+        "code_notes": "GOODS/PORTS tables, one state object, small pure helpers, native <dialog>, a single cleared toast timer, no rAF loops. Top-level mutable lets, Math.random called directly, handlers rebound on each render, and the file is effectively minified (101 lines)."
+      },
+      "verdict": "A polished, rock-solid little trader that you have figured out by day five and can coast to the top rank on one four-port loop."
+    },
+    "B": {
+      "title": "CINDERWAKE (Caldera Barge Exchange)",
+      "scores": {"A1": 7, "A2": 4, "A3": 7, "A4": 5, "A5": 7, "B1": 5, "B2": 7, "B3": 6, "B4": 6, "B5": 5, "C1": 8, "C2": 9, "C3": 6, "C4": 6, "C5": 7},
+      "caps_applied": [],
+      "strengths": [
+        "Most content by count: 7 islands, 8 goods (2 contraband), 12 events of which 4 are multi-choice encounters with odds printed on each button, and 10 upgrades in 7 categories that feed back into those odds (guns, boiler, false keel, hull).",
+        "Arithmetic is exact: debt +6% and vault +3.5% (5% after the charter) matched my hand calculation every day of a 30-day run, and the final sheet summed (10,910 + 1,022,879 + 795,110 + 17,025 = 1,845,924); slider, borrow, repay and vault abuse never produced negative or NaN values.",
+        "Readable, well-sectioned source (3,844 formatted lines, IIFE, data tables, one state object, guarded storage helpers), and the synth has seven shaped cues using oscillators plus filtered noise with mute persisted."
+      ],
+      "weaknesses": [
+        "Tuning is far off its own scale: a naive greedy bot finished on 1.85M, 1.43M and 3.85M while the top rank starts at 90k and the seeded leaderboard tops out at 92k; debt was gone by day 3-5, all 10 upgrades owned by day 13, and the vault alone earned 264k to 881k interest.",
+        "Modals do not own input: focus is not trapped and the background is not inert, so keyboard users can act behind an open encounter; there is no keyboard shortcut for buying or selling, no reduced-motion handling, and trade buttons are 30px tall on a phone.",
+        "No title screen and a generic dark-dashboard look with emoji tab icons and plain polygon islands; at 1280px the Sell button wraps and is clipped by the market panel."
+      ],
+      "bugs": [
+        {"severity": "medium", "what": "An open encounter can be ignored: Tab reaches the map behind the modal and Enter sails on, advancing the day while the encounter stays on screen.", "repro": "Sail until an encounter appears, press Tab five times (focus lands on an island node outside the modal), press Enter: day went 4 to 5 with 'The Lantern-Skiff Informant' still open."},
+        {"severity": "medium", "what": "A stored score array with a bad entry throws TypeError at line 3180 (entry.name on null): the Guide dialog will not open, and sealing the ledger sets gameOver but never shows the score screen, leaving a dead board.", "repro": "eval localStorage.setItem('cinderwake_highscores_v1','[null,5,{\"name\":\"x\",\"score\":\"abc\"}]'), reload, click '? Guide' (nothing opens, error logged); triggering #btn-finish-run likewise logs the error and no end modal appears. Non-JSON garbage is handled."},
+        {"severity": "low", "what": "With storage blocked, 'Record in Ledger' toasts 'Score inscribed in the Hall of Captains!' but the hall still lists only the four seeded captains; NOTES.md claims an in-memory fallback that does not exist.", "repro": "Run in <iframe sandbox=\"allow-scripts\">, finish a game, click Record in Ledger."},
+        {"severity": "low", "what": "At 1280px the trade button group overflows the market panel by about 10px (buttons end at x=1261, panel at 1251); Sell drops to a second line and is cut off.", "repro": "Open at 1280x800 and look at any row whose Max label has a count, for example 'Max (60)'."},
+        {"severity": "low", "what": "The score is only stored if the player clicks 'Record in Ledger'; 'Launch New 30-Day Voyage' discards it silently.", "repro": "Finish a run and click Launch New Voyage without recording (read in source: saveCurrentScore is only bound to the button and Enter in the name field)."}
+      ],
+      "evidence": {
+        "days_played": 30,
+        "reached_score_screen": true,
+        "file_kb": 127.4,
+        "lines": 3844,
+        "counts": {"locations": 7, "goods": 8, "random_events": 12, "risky_encounters": 4, "upgrade_kinds": 7},
+        "requirements": {"working": 14, "partial": 1, "missing": 0, "detail": "partial: responsive desktop layout (Sell button clipped at 1280px). Onboarding is a banner plus a guide dialog with no title screen; high score needs a manual save click."},
+        "constraints": "Pass with one lapse. Grep: one inline <script>, no external references (the only http string is the SVG namespace). Runtime: resource list empty. Both localStorage calls are in try/catch helpers. Sandboxed iframe: storage blocked, full 30-day game completed with no errors, but scores are neither kept in memory nor honestly reported. Score survived reload. 127.4 KB.",
+        "console_errors": "none in 3 full games; uncaught TypeError (index.html:3180) once the score key holds a malformed array",
+        "code_notes": "Cleanest formatting of the four: numbered sections, GOODS/DISTRICTS/UPGRADES tables, single state object in an IIFE. Events are one 400-line switch of closures, renderAll rebuilds map, market and ops on every action, Math.random is used directly, and the Sell handler has two identical branches under a stray comment."
+      },
+      "verdict": "The biggest toy box of the four, but the numbers run away into the millions by mid-game and a few rough edges show once you poke at it."
+    },
+    "C": {
+      "title": "Gloamwater",
+      "scores": {"A1": 9, "A2": 8, "A3": 9, "A4": 8, "A5": 9, "B1": 9, "B2": 9, "B3": 9, "B4": 9, "B5": 9, "C1": 10, "C2": 10, "C3": 8, "C4": 7, "C5": 8},
+      "caps_applied": [],
+      "strengths": [
+        "Every required system is present and well past the minimum: 7 districts, 8 goods, 12 distinct events including three multi-round encounters (run, fight, bribe, yield) whose odds change with engine, weapon, hold load and enemy count, plus hold tiers, engines, weapons, a wireless set, hull repair, rumours and courier contracts.",
+        "The async voyage flow never broke: two full real-time 30-night games (desktop and sandboxed iframe) with no console errors, double Enter and key spam during a voyage cost exactly one night, trade inputs of -5, 0, 2.7, 1e9 and 'abc' were clamped, interest matched by hand (6,000 to 6,360; vault 114,208 to 115,921; a sheltered squall compounded twice correctly) and the final sheet summed (3,277 + 9,905 half-price cargo = 13,182).",
+        "The economy has real tension and spread: net worth stayed negative until night 7, the debt took until night 9 to clear, and the same simple bot finished on 13k (Bilge Rat) and 131k (Lantern Broker) against rank tiers that run to 2M."
+      ],
+      "weaknesses": [
+        "Stored data is only shape-checked shallowly: three different corrupt-but-valid-JSON payloads produced uncaught errors (ledger dialog, Continue voyage, end screen).",
+        "Roughly 90 lines of dev tooling ship in the file behind URL hashes (#sim, #auto, #autoslow, #shot=...), and they write to the real high-score table.",
+        "Each voyage takes about 3 seconds of animation plus a night card, and hint toasts sit on top of the HUD stats and the Net Worth readout for several seconds, most visibly at 390px."
+      ],
+      "bugs": [
+        {"severity": "medium", "what": "If the scores key holds valid JSON that is not an array, endGame throws '(store.get(...) || []).filter is not a function' after marking the run over and deleting the save, so no score screen appears.", "repro": "eval localStorage.setItem('gloamwater.scores.v1','{\"a\":1}') then reach the end of a run (I used the game's own index.html#shot=end hook, which calls the same endGame): rejection logged, modal stays hidden, S.over is true."},
+        {"severity": "low", "what": "A scores array containing null makes the title screen's Captains' Ledger button throw TypeError at line 1799 and never open (the end screen filters such entries and rewrites the key).", "repro": "eval localStorage.setItem('gloamwater.scores.v1','[null,5,{\"name\":\"ok\",\"score\":777}]'), reload, click Captains' Ledger."},
+        {"severity": "low", "what": "A save that passes the shallow check but lacks fields offers 'Continue voyage', which throws at line 659 and leaves an empty board behind the hidden title.", "repro": "eval localStorage.setItem('gloamwater.save.v1','{\"v\":1,\"prices\":{},\"cargo\":{},\"day\":5}'), reload, click Continue voyage. Recovery by reload plus New run was not verified."},
+        {"severity": "low", "what": "Dev hooks are live: loading index.html#auto plays a bot game and records it in the real Captains' Ledger.", "repro": "Open index.html#auto on a fresh load: localStorage then contains {name:'Autobot', score:438522, rank:'Tide Baron'}."}
+      ],
+      "evidence": {
+        "days_played": 30,
+        "reached_score_screen": true,
+        "file_kb": 156.9,
+        "lines": 2004,
+        "counts": {"locations": 7, "goods": 8, "random_events": 12, "risky_encounters": 6, "upgrade_kinds": 5},
+        "requirements": {"working": 15, "partial": 0, "missing": 0, "detail": "none"},
+        "constraints": "Pass on all. Grep: one inline <script>; the only <link> is a data: URI favicon and the only http string is the SVG namespace inside it; href values are internal #ids. Runtime: resource list empty. All three localStorage calls live in a try/catch store wrapper with an in-memory fallback. Sandboxed iframe: storage blocked, title to score screen completed over 30 nights with no errors and the run still appeared in the session ledger. Score survived reload; non-JSON garbage in all three keys tolerated. 156.9 KB.",
+        "console_errors": "none in normal play (2 full games plus phone turns); uncaught errors only with hand-corrupted storage, listed under bugs",
+        "code_notes": "Clear sections (data, market engine, sound, FX, render, map, modals, services, events, travel, flow), data tables, one state object S, event delegation, a particle loop that stops itself, voyage stages saved so a reload cannot dodge an encounter. Lines are dense, randomness goes through one unseeded rnd() wrapper, and documented dev hooks remain."
+      },
+      "verdict": "The one that feels like a finished game: a tense, good-looking smuggling run where the debt bites, the fights matter and you want another go."
+    },
+    "D": {
+      "title": "Tidelace",
+      "scores": {"A1": 6, "A2": 6, "A3": 6, "A4": 6, "A5": 8, "B1": 7, "B2": 7, "B3": 6, "B4": 6, "B5": 7, "C1": 7, "C2": 10, "C3": 10, "C4": 9, "C5": 8},
+      "caps_applied": [],
+      "strengths": [
+        "Nothing I tried broke it: two full 30-day games (desktop and sandboxed iframe), several early-settle games, invalid trade and ledger inputs, key presses and Tab during an event, and every corrupt-storage shape (non-JSON, null entries, wrong types, an object instead of an array) all ran with zero errors and valid state.",
+        "Modals are done properly: the game shell is set inert, Tab is trapped inside the dialog, and T, B, digits and Escape did nothing while an encounter was open.",
+        "Game logic uses an isolated seeded RNG (mulberry32), a single state object, one delegated click listener and bounded timers; interest matched by hand every day (3,200 to 3,296 to 3,395) and the final sheet summed (13,738 + 73,782 + 24,090 = 111,610)."
+      ],
+      "weaknesses": [
+        "At 390px the '7 TIDES' sparkline column is hidden, so the phone layout has no trend visual at all, only the LOW/HIGH percent tag.",
+        "The route is handed to you: the six harbours form one fixed supply-to-demand cycle and after each arrival the game pre-selects the next stop; limited stall stock is the only thing that forces a mixed hold. Debt was cleared around day 7-8 and all upgrades bought by day 8.",
+        "Feedback is thin: travel is a 420 ms text overlay with no movement on the chart, audio is seven sine arpeggios, most events are a single acknowledge button, and the high-score table can only be seen by ending a run."
+      ],
+      "bugs": [
+        {"severity": "low", "what": "Trend sparklines are removed at phone width (the table cell holding them computes to display:none).", "repro": "Open at 390x844, start a game and look at the market table: commodity, price and Trade only."},
+        {"severity": "low", "what": "Any JSON parse failure in either storage key sets storageAvailable to false, so the records table is captioned 'THIS SESSION ONLY' although scores are still written.", "repro": "eval localStorage.setItem('tidelace.v1.muted','%%%'), reload, settle a run and read the table caption."},
+        {"severity": "low", "what": "Because the next destination is auto-selected on arrival, a second T press or Sail click about half a second after the first sails again and burns a day.", "repro": "Press 4, then T three times over roughly 0.5 s: the day counter went from 30 left to 28 left and the skiff ended at Cinder Steps."}
+      ],
+      "evidence": {
+        "days_played": 30,
+        "reached_score_screen": true,
+        "file_kb": 94.7,
+        "lines": 2492,
+        "counts": {"locations": 6, "goods": 6, "random_events": 10, "risky_encounters": 2, "upgrade_kinds": 3},
+        "requirements": {"working": 14, "partial": 1, "missing": 0, "detail": "partial: price trend at a glance is lost at 390px (sparkline column hidden). Locations and goods sit on the minimum of 6."},
+        "constraints": "Pass on all. Grep: one inline <script>, no external references; url() only points at inline SVG ids. Runtime: resource list empty. Both localStorage calls sit in try/catch helpers. Sandboxed iframe: storage blocked, full 30-day game completed with no errors and scores kept in memory, labelled as session only. Score survived reload; every corrupt payload tolerated. 94.7 KB.",
+        "console_errors": "none across 2 full games, early-settle games, abuse and corrupt-storage tests",
+        "code_notes": "IIFE with GOODS/PORTS tables, one state object, seeded RNG, delegated input, inert plus focus trap, escaped user text. About 250 lines of JS, many of them single-line functions of 1 to 2 KB, so structure is good but reading it is slow; in-progress runs are not saved."
+      },
+      "verdict": "A calm, tidy and very sturdy trading loop that plays itself a little too readily and loses its price charts on a phone."
+    }
+  },
+  "ranking": ["C", "D", "A", "B"],
+  "would_keep_playing": "C",
+  "panel_note": "All four met the hard constraints (single file, no network, sandbox with storage blocked, guarded storage), so the split came from what happened under pressure and how far each economy held up. C is the only entry whose systems are both broad and in tension, though it and B fall over on corrupt-but-valid stored data and C ships dev hooks; D and A were unbreakable but their fixed trade cycles are solved within a week of game time, and B has the most content with the least tuning (scores 15 to 40 times past its top rank) and modals that keyboard focus can walk through."
+}

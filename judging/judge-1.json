@@ -1,0 +1,112 @@
+{
+  "judge": 1,
+  "lens": "game design",
+  "entries": {
+    "A": {
+      "title": "Gloam Exchange",
+      "scores": {"A1": 5, "A2": 4, "A3": 5, "A4": 5, "A5": 8, "B1": 7, "B2": 8, "B3": 6, "B4": 7, "B5": 7, "C1": 8, "C2": 9, "C3": 9, "C4": 6, "C5": 5},
+      "caps_applied": [],
+      "strengths": [
+        "Best first-move teaching of the four: the intro names the exact good and destination (Glowglass, Rillworks to Cinder Quay), and every row shows FAIR value, a LOW/HIGH % tag and, once held, 'Selling now earns 67 m per crate against your cost'.",
+        "'Tomorrow's wire' publishes one next-day shortage or surplus, which is the only thing that breaks the fixed loop; my day-3 pear shortage turned 24 crates bought at 99 into 395 each (+7,104 m).",
+        "The toll encounter states all three options with exact cost, odds and loss (pay 8% of cash, 45% slip or lose 28% of cash plus 4 crates, or lose 2 days), and hull plating visibly changes the odds."
+      ],
+      "weaknesses": [
+        "The economy is a fixed make/want cycle with independent daily noise (x0.58 at the producer, x1.48 at the buyer, +/-18%). A script that blindly ran Rillworks, Cinder Quay, Threadgarden, Echo Vault and bought the local product reached the top rank (228,094 vs the 180,000 threshold) while visiting 4 of 6 ports.",
+        "Debt and upgrades stop mattering almost immediately: the loan was cleared on day 3 (147 m total interest all game) and both cargo racks (5,200 m total) were bought the same day, leaving 26 days with nothing to buy.",
+        "The bank is reachable from every port for free, so banking all cash before each crossing made five consecutive tolls cost 0 m and zeroed the pickpocket and hull-repair events."
+      ],
+      "bugs": [
+        {"severity": "medium", "what": "Risk events can be nullified: with 0 cash on hand the toll offers 'Pay their toll -0 m' and the pickpocket and repair events take 0 m.", "repro": "Open The Counting House, press 'Bank all cash', sail. When 'A chain across the channel' appears, the pay option reads -0 m. Seen on days 19, 23, 25, 28 and 29 of my run."},
+        {"severity": "low", "what": "MAX only computes the largest purchase and is disabled when you cannot buy, so with a full hold you cannot one-click sell everything; quantity stays at 1.", "repro": "Arrive with 24/24 crates, select the held good, click MAX then Sell: 1 crate is sold. You have to type the quantity or drag the slider."}
+      ],
+      "evidence": {
+        "days_played": 30,
+        "reached_score_screen": true,
+        "final_result": "228,094 m net worth, rank 'A Legend of the Low Tide' (top rank). Net worth: day 5 about 17,600; day 15 82,445; day 25 182,401. Score persisted after reload.",
+        "economy_notes": "Source: 6 goods, base 60 to 260; price = base x (0.58 producer, 1.48 buyer, else 1) x (0.82 to 1.18), rerolled independently each day, so the sparklines are noise apart from shocks. Forecast shock is x2.35 (62%) or x0.40. Loan 2,400 at 3%/day, no further borrowing; bank 1%/day. Racks 1,600 and 3,600 for +16 each (24 to 56 crates), paying back in under one crossing. Plating 900 and 2,200. Toll chance 15% per day plus a guaranteed one on day 6; at plating 0 paying (8% of cash) beats slipping in expectation (55% x 28% of cash plus crates), and 'work the winch' (lose 2 days) is always worst. Score is plain net worth; ranks at 5k, 30k, 90k, 180k. Days 1 to 6 played by hand, the rest by a script clicking the game's buttons. Slip attempted 4 times (all failed), pay 5 times. Audio judged from source only (6 sine cues, starts muted). No console errors."
+      },
+      "verdict": "A calm, very readable trader that teaches itself in one turn, but once you know the loop there is nothing left to decide or buy after the first week."
+    },
+    "B": {
+      "title": "CINDERWAKE: Caldera Barge Exchange",
+      "scores": {"A1": 6, "A2": 3, "A3": 6, "A4": 5, "A5": 6, "B1": 5, "B2": 7, "B3": 6, "B4": 6, "B5": 6, "C1": 8, "C2": 9, "C3": 8, "C4": 6, "C5": 7},
+      "caps_applied": [],
+      "strengths": [
+        "The opening has a real cash-versus-capacity ladder: 8 goods from 24m to 4,300m, 60 crates and 2,200m mean you choose between a hold of peat and a handful of valves, and you climb tiers as cash grows.",
+        "Most content: 7 districts with several cheap and dear goods each, 2 to 3 surges or gluts per day flagged on both the telegraph and the map, 4 interactive encounters with stated odds, hull damage that can shipwreck you, and 10 upgrades including one that buys cross-port price information.",
+        "Debt has more shape than a countdown: you can borrow in 1,000m steps (5% fee, capped at 15,000m, closed after day 22) and enforcers are threatened above 14,000m."
+      ],
+      "weaknesses": [
+        "The economy runs away. My scripted run ended on 5,192,032m when the top rank needs 90,000m, which I passed around day 10; days 11 to 30 were a two or three port shuttle of 230 Abyssal Cores and Nocturne Silk with nothing left to buy.",
+        "Borrowing to the limit on day 1 is simply correct: a second run that took 10 loans at the start cleared the debt on day 5 with 251,322m net worth and had 2.9M by day 12.",
+        "Encounter options are badly out of proportion. On day 27 the corsair tribute was 1,009,365m while fleeing was 84% with a worst case of -18 hull (about 234m to repair), and a failed customs run with 230 contraband crates cost -19 hull and 450m with nothing seized, so contraband carries no real risk."
+      ],
+      "bugs": [
+        {"severity": "medium", "what": "Rank thresholds are about 50 times too low for the economy, so the rating and the seeded hall of fame (top entry 92,000m) stop meaning anything in the first third of a run.", "repro": "Play any competent run: buy cheap, move up to Abyssal Core at Cindertooth Crag and sell at Kettleworks. Net worth passes 90,000m around day 9 or 10."},
+        {"severity": "low", "what": "Clicking an island or pressing 1 to 7 sails immediately and spends a day, with no destination preview or confirmation.", "repro": "Press any digit 1 to 7 on the main screen."},
+        {"severity": "low", "what": "At 1280px the Sell button on rows with a long 'Max (60)' label wraps to a second line and is cut off at the right edge of the panel.", "repro": "Load at 1280x800 on day 1 and look at the Brine-Salt and Cinder-Peat rows (screenshot B-01-title.png)."}
+      ],
+      "evidence": {
+        "days_played": 30,
+        "reached_score_screen": true,
+        "final_result": "Final Net Worth 5,192,032m, rank 'Caldera Sovereign' (top rank). Net worth: day 5 4,380; day 15 1,760,862; day 25 3,957,132. Score saved by hand and present after reload. A second run was played to day 12 as a borrowing test (2,944,338m).",
+        "economy_notes": "Source: district price modifiers 0.62 to 1.42 on bases 24 to 4,300, mean-reverting (35% of yesterday), anomalies x2.05 to 2.85 or x0.36 to 0.54. Every good takes one crate, so the 4,300m good dominates once affordable: Cindertooth 0.66 to Kettleworks 1.34 is about +2,900m per crate, 670,000m per leg at 230 crates. Debt 4,500m at 6%/day; vault 3.5%/day (5% with the charter upgrade) and reachable everywhere. Hold upgrades 1,200, 3,400 and 8,500m take 60 to 230 crates and were all bought by day 8 (day 3 in the borrowing run). Score = cash + vault + cargo + 50% of upgrade cost minus debt; ranks top out at 90,000m. Encounters seen: corsairs (fought once at 40% and lost 26 hull, fled at 84%), customs (submitted clean, ran with contraband), informant (declined). Days 1 to 3 by hand, one of which I lost to a mis-click of my own that bought the wrong good; the rest by a script clicking the game's buttons. Audio judged from source only (7 cue types including filtered noise; mute persists). No console errors. No prefers-reduced-motion handling found by grep."
+      },
+      "verdict": "The most stuff and a fun scramble up the price ladder for a week, then the numbers explode and the last twenty days play themselves."
+    },
+    "C": {
+      "title": "Gloamwater",
+      "scores": {"A1": 9, "A2": 8, "A3": 9, "A4": 8, "A5": 9, "B1": 9, "B2": 9, "B3": 9, "B4": 9, "B5": 8, "C1": 10, "C2": 9, "C3": 9, "C4": 8, "C5": 8},
+      "caps_applied": [],
+      "strengths": [
+        "Services live in specific districts (lender only at Lanternquay, vault at two, boatyard at Copperhook, wireless at the Drowned Exchange), so every route weighs cargo margin against where you need to be for repairs, repayment or an upgrade.",
+        "The only entry where debt can actually beat you. You start at -3,500 net worth with 6% nightly interest; my deliberate borrow-to-the-limit test left me at -2,511 on night 11 with 42,555 owed, and the builder's own 400-run simulation ends 11% of runs as 'Drowned Debtor'.",
+        "Encounters are multi-round with live odds that move with engine, weapon, enemy boats and how full the hold is ('18% chance to slip away, a heavy hold slows you'), hull damage carries over and can sink you, and stakes scale: on night 29 the choice was a 172,039 bribe, a 48% run, or losing half my cargo."
+      ],
+      "weaknesses": [
+        "High variance: the same simple policy lands anywhere from a debtor to a millionaire (builder sim p25 24,774, p75 454,112), and a single surge sale can decide a run. One Moon Ink sale made me 870,390.",
+        "Growth turns sharply exponential at the end: 45,917 on night 18 became 1.06M by night 25 and 2.89M by night 30, so the first 18 nights barely count toward the final number.",
+        "The first purchase is less obvious than in A or D: nothing at the home port was tagged Cheap on night 1, and the arrows in the market list are day-over-day change rather than good-or-bad price; the answer is inside the trade sheet."
+      ],
+      "bugs": [
+        {"severity": "low", "what": "Leftover dev hooks are reachable by URL hash, and '#auto' plays a bot run that writes an 'Autobot' row into the persistent Captains' Ledger.", "repro": "Open index.html#auto, wait about 5 seconds, then open index.html and click Captains' Ledger: 'Autobot, Lantern Broker, 247,427' is listed next to real runs."}
+      ],
+      "evidence": {
+        "days_played": 30,
+        "reached_score_screen": true,
+        "final_result": "Final fortune 2,893,236, rank 'Sovereign of Gloamwater' (top rank, threshold 2,000,000), placed #1 in the ledger. Net worth: night 5 -2,922; night 15 116,669 marked to market with 53,724 still owed; night 25 1,055,750. Ledger present after reload.",
+        "economy_notes": "Source: 8 goods, base 42 to 19,000; district multipliers only 0.8 cheap and 1.22 dear, on top of a per-good trend and local noise, so specialties are a tendency rather than a guarantee. Shocks x2 to 3.5 or x0.30 to 0.52 last two nights, are generated a night ahead, and are known only if local, 40% by rumour, bought from Ysolde, or via the 6,000 wireless. Goods can have no dealers on a given night. Debt 6,000 at 6%/night, credit to 30,000, repay only at Lanternquay, collectors appear above 12,000. Vault 1.5%/night at two branches. Hold tiers 2,500, 7,500, 18,000, 40,000 and 85,000 for 30 to 200 spaces, which I finished buying on night 22. Encounter chance 7% + 3.5% per danger pip + cargo value, minus engine. Unsold cargo scores at half price. Exploit attempts: maximum borrowing on night 5 (backfired, see strengths); same-port buy and sell has no spread; I could not test the claim that reloading mid-encounter resumes it. Encounters seen: 7 (ran, fought with the boathook at 14% per volley and lost 39% hull, bribed, paid tolls, paid collectors). Builder sim via #sim: median 149,361, 2 of 400 runs reach the top rank; my script used last-seen prices and the wireless and got there by a narrow margin. Nights 1 to 2 by hand, then a script clicking the game's controls. Audio judged from source only (18 named cues). No console errors."
+      },
+      "verdict": "The one that feels like a real game: a hard scrappy start, a map where every district matters, and fights where you actually sweat the odds."
+    },
+    "D": {
+      "title": "Tidelace",
+      "scores": {"A1": 7, "A2": 6, "A3": 5, "A4": 6, "A5": 8, "B1": 8, "B2": 8, "B3": 6, "B4": 7, "B5": 7, "C1": 9, "C2": 9, "C3": 9, "C4": 7, "C5": 6},
+      "caps_applied": [],
+      "strengths": [
+        "Limited stall stock ('30 offered', 9 to 18 for non-specialties) is the best single balance lever in the bake-off: you cannot fill the hold with one good, so most days end with a mixed cargo chosen against tomorrow's Tidewire forecast.",
+        "Rank thresholds fit the economy: my forecast-aware script plus a vault trick finished on 264,271, only just past the top tier at 250,000, with the stated 100,000 goal passed on day 17.",
+        "Decisions are well supported: 'Known buyer: Glasswake' in the trade dialog, value tags against the city price, 'Next dawn adds' on the loan, a sell-side profit preview, and a running 'Voyage worth / aim for 100,000' line."
+      ],
+      "weaknesses": [
+        "Everything worth buying is bought by day 5 (garden 950, racks 1,400 and 3,000, rig 1,600) and the 3,200 loan was gone on day 7; after that cash piles up with no sink (63,000 idle by day 15) and income is a steady 10,000 or so a day.",
+        "Mid and late game settles into a Glasswake and Bellwater shuttle (hushglass one way, bell nacre back) with occasional forecast detours; 12 of my last 15 crossings were between those two harbours.",
+        "Only one real risky encounter, the levy, and it stops being a decision early: the 1,600 rig makes running 90% with an 11% cash loss, and the vault trick below makes paying cost 90."
+      ],
+      "bugs": [
+        {"severity": "medium", "what": "Cash-based risk can be dodged for free: the vault is reachable everywhere with no fee, and the levy is max(90, 12% of cash on hand), so stashing all but 90 before each crossing makes every levy cost 90 and the dockside thief about 7.", "repro": "Before sailing open the ledger and deposit everything except 90. When 'A rope across the water' appears the button reads 'Pay the levy 90'. Seen on days 22, 25 and 28 with over 150,000 in the vault."}
+      ],
+      "evidence": {
+        "days_played": 30,
+        "reached_score_screen": true,
+        "final_result": "Final voyage worth 264,271, rank 'A city of your own' (top rank). Net worth: day 5 4,722; day 15 91,640; day 25 212,983. 23,750 of the total was vault interest. Record present in localStorage after reload.",
+        "economy_notes": "Source: 6 goods, base 70 to 540; each harbour supplies one (x0.72) and demands one (x1.27), others near 1.0; per-good trend 0.7 to 1.3 plus +/-15% noise; forecast shock x1.85 or x0.48 published a day ahead. Stock 24 to 37 of the local specialty, 9 to 18 of the rest, refreshed daily; selling is unlimited. Loan 3,200 at 3%/day, no borrowing; vault 1%/day. Events come from a shuffled deck of 10 every 2 to 3 days, plus extra levies at exposed harbours. Levy: pay 12% of cash, or run at 65% and risk 22% of cash and 15% of cargo (90% and 11% with the rig). Salvage is a 70% gamble that is always worth taking. 'Work the docks' gives 180 for a day. Ranks at 25k, 60k, 125k and 250k. This is a second, clean run: I abandoned the first at day 5 because the page's smooth scrolling made my harness clicks land on the wrong row, which is a tooling artefact and not a game fault. Day 1 by hand, then a script clicking the game's controls; levy paid once at 90 and run three times, all successful. Audio judged from source only (7 sine cues). No console errors."
+      },
+      "verdict": "A handsome, well-explained trader whose limited stock keeps cargo choices interesting, but it runs out of things to buy and worry about by the end of week one."
+    }
+  },
+  "ranking": ["C", "D", "A", "B"],
+  "would_keep_playing": "C",
+  "panel_note": "The separator was whether money stayed scarce. C keeps cash, hull, debt and location in tension to the last night, and it was the only entry where borrowing more made things worse. A, B and D all hand you every upgrade and a cleared loan within about a week, and all three let you bank from anywhere, so risk events can be sidestepped. D's limited stock and calibrated ranks put it clearly ahead of A's fixed loop and B's runaway numbers."
+}

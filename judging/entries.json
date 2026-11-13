@@ -1,0 +1,6 @@
+{
+  "A": {"branch": "gpt-6-astra", "model": "GPT-6 Astra (high)", "title": "Gloam Exchange"},
+  "B": {"branch": "gemini-4-carbon", "model": "Gemini 4 Carbon", "title": "Cinderwake"},
+  "C": {"branch": "opus-5-5", "model": "Claude Opus 5.5 (high)", "title": "Gloamwater"},
+  "D": {"branch": "gpt-6-1-sol", "model": "GPT-6.1 Sol (xhigh)", "title": "Tidelace"}
+}

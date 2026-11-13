@@ -1,0 +1,131 @@
+{
+  "judge": 2,
+  "lens": "visual and interaction design",
+  "entries": {
+    "A": {
+      "title": "Gloam Exchange",
+      "scores": {"A1": 5, "A2": 5, "A3": 6, "A4": 5, "A5": 7, "B1": 7, "B2": 6, "B3": 5, "B4": 6, "B5": 7, "C1": 7, "C2": 8, "C3": 8, "C4": 7, "C5": 6},
+      "caps_applied": [],
+      "strengths": [
+        "Cohesive ink-blue, lime and copper look with hand-built isometric borough illustrations on the chart (each port has its own colour and details such as vines or a smoking stack), line icons per good and a skyline intro; intro, play and final ledger all match.",
+        "Clean market table: an 8-day sparkline with a dashed baseline per good, a FAIR reference price, LOW/HIGH tags with a percentage, and a trade ticket that states profit per crate against your average cost.",
+        "Good accessibility groundwork: native dialog with focus return, descriptive aria-labels on every good row and port, a 2px lime focus ring that is clearly visible, prefers-reduced-motion handled in CSS and in the scroll helpers, and a reload restores the voyage including a pending encounter."
+      ],
+      "weaknesses": [
+        "Feedback is thin: travelling is instant with no boat movement on the map (only a 0.65s brightness flash on the market panel and a toast), there are no number tweens, and events are a static dialog whose 'illustration' is a single Unicode glyph.",
+        "Sound is six sine-wave arpeggios, starts switched off, and the setting is not saved (after reload the button read 'Turn sound on' again), so most players will play in silence.",
+        "At 1280x800 the quantity controls and Buy/Sell buttons sit below the fold (page is 1174px tall), and the key LOW/HIGH cue is the smallest text in the row; net worth is never shown during play."
+      ],
+      "bugs": [
+        {"severity": "low", "what": "MAX is buy-only. With a full hold it is disabled, so there is no one-click way to sell a whole stack; you must drag the slider or type the number.", "repro": "Buy 24 Glowglass, sail to Cinder Quay, click MAX: quantity stays at 1 and the button is disabled."},
+        {"severity": "low", "what": "Sound preference is not persisted.", "repro": "Turn sound on, reload the page: the toggle is back to off (aria-label 'Turn sound on')."},
+        {"severity": "low", "what": "At 390px the 'Memory foil' label under Echo Vault overlaps the map legend text 'Plotted course'.", "repro": "Open at 390x844 and look at the bottom-left of the chart."}
+      ],
+      "evidence": {
+        "days_played": 30,
+        "reached_score_screen": true,
+        "art_direction": "Dark ink-blue water with lime highlights and copper accents; Segoe-style sans headings with small mono caps labels; inline SVG isometric boroughs and thin line icons.",
+        "audio_notes": "Judged from code, not heard. 6 cues (click, buy, sell, travel, end, bad), each a short arpeggio of plain sine oscillators with a 12ms attack and 0.22s decay; no noise, layering or music. Defaults to off; toggle works (M key or button) but is not saved. No console errors after enabling it.",
+        "phone_notes": "Single long scroll (1954px) with a fixed 3-button jump bar (Map, Exchange, Accounts). Buy, sell, travel, bank, repay and upgrade were all reachable; dialogs fit (341x581). Sparklines are kept. Small targets: quantity steppers 36px, slider 24px tall, sound/help 34px. The 10px horizontal overflow I measured comes from the desktop scrollbar gutter in headless Chrome (content is 385px wide), so it should fit a real 390px phone. Toast covers the Buy button for about 3s.",
+        "best_screenshot": "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\7a23d92f0b7d5c34\\1e82f905-2c88-4b77-bda2-b5fab3b062e1\\scratchpad\\judging\\shots\\judge-2\\A-02-main.png",
+        "phone_screenshot": "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\7a23d92f0b7d5c34\\1e82f905-2c88-4b77-bda2-b5fab3b062e1\\scratchpad\\judging\\shots\\judge-2\\A-p04-market.png"
+      },
+      "verdict": "A handsome, calm little trading board that is easy to read but barely moves or makes a sound, and settles into one repeating route."
+    },
+    "B": {
+      "title": "CINDERWAKE (Caldera Barge Exchange)",
+      "scores": {"A1": 7, "A2": 5, "A3": 7, "A4": 6, "A5": 6, "B1": 5, "B2": 7, "B3": 6, "B4": 7, "B5": 5, "C1": 7, "C2": 8, "C3": 7, "C4": 6, "C5": 7},
+      "caps_applied": [],
+      "strengths": [
+        "The densest trading information of the four on one screen: sparkline plus 'Norm' price per good, signal pills that combine an arrow, a word and a percentage (BARGAIN, LOW, FAIR, HIGH, PEAK), and your average cost with a live profit percentage inline on every held row.",
+        "Spikes and gluts are flagged three ways: a Telegraph strip, PEAK/BARGAIN pills in the table, and up/down markers on the islands of the chart, so the map carries price hints.",
+        "The skiff token really glides between islands (0.48s ease, measured mid-flight), HUD pills pulse green or red on changes, and the phone layout is a purpose-built four-tab view with card-style goods."
+      ],
+      "weaknesses": [
+        "Looks like a generic navy-and-amber dashboard: no title screen, emoji and stock glyphs used as tab and header art, and all seven islands drawn as the same hexagon; encounters are text-only dialogs with no illustration.",
+        "A single map click or a stray press of 1 to 7 sails immediately and spends a day with no confirmation, and 'New Run' restarts with no confirmation (read in source).",
+        "No prefers-reduced-motion rule, and many tap targets are 24 to 28px tall (sail chips, header buttons, trade-dialog presets); the dim grey label text is about 4.0:1 on its panel."
+      ],
+      "bugs": [
+        {"severity": "medium", "what": "At 1280x800 the exchange panel clips its right-hand trade buttons: 'Sell' reads 'Sel' and 'Max (60)' is cut off, and on the first rows Sell wraps to a second line.", "repro": "Open at 1280x800 and look at the buttons on the right of any goods row."},
+        {"severity": "medium", "what": "Number keys sail instantly with no confirmation.", "repro": "On the main screen press 4: the day counter goes from 1 to 2 and you are at Kettleworks."},
+        {"severity": "low", "what": "The final score is only stored if you press 'Record in Ledger'. After a 329,105m run and a reload, the Hall showed only the four built-in names.", "repro": "Finish a run, do not press Record, reload, open Guide."},
+        {"severity": "low", "what": "Toasts stack bottom-right on top of the trade buttons of the lower rows and over the score screen's New Voyage button.", "repro": "Make two or three trades in a row at 1280x800."}
+      ],
+      "evidence": {
+        "days_played": 30,
+        "reached_score_screen": true,
+        "art_direction": "Navy panels with amber, teal and crimson accents; heavy sans headings plus Cascadia/Consolas mono numbers; simple SVG goods icons, hexagon islands, emoji tab icons.",
+        "audio_notes": "Judged from code, not heard. 7 cues (buy, sell, sail, alert, boom, upgrade, win) built from 2 to 4 triangle, sine or sawtooth tones with pitch slides, plus band-passed noise bursts on sail and boom. No distinct lose cue and no music. Sound is on by default; mute works (button or M) and is saved to storage.",
+        "phone_notes": "Switches to a bottom tab bar (Market, Chart, Vault/Debt, Shipwright) with goods as cards and full-width buttons; no horizontal scroll (375 vs 375). Buy, sell, travel, bank, repay and upgrade all reachable. The header, primer and telegraph take about 400px before the market starts; the upgrade list is a scroll area inside the page; islands are 75x41 but sail chips are 28px tall and map labels are about 8px text.",
+        "best_screenshot": "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\7a23d92f0b7d5c34\\1e82f905-2c88-4b77-bda2-b5fab3b062e1\\scratchpad\\judging\\shots\\judge-2\\B-14-midgame.png",
+        "phone_screenshot": "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\7a23d92f0b7d5c34\\1e82f905-2c88-4b77-bda2-b5fab3b062e1\\scratchpad\\judging\\shots\\judge-2\\B-p02-market.png"
+      },
+      "verdict": "A feature-packed trading terminal with the best at-a-glance price signals outside the winner, let down by a generic look, clipped buttons on desktop and money that balloons too easily."
+    },
+    "C": {
+      "title": "Gloamwater",
+      "scores": {"A1": 9, "A2": 8, "A3": 8, "A4": 8, "A5": 9, "B1": 9, "B2": 9, "B3": 9, "B4": 9, "B5": 9, "C1": 9, "C2": 8, "C3": 8, "C4": 7, "C5": 8},
+      "caps_applied": [],
+      "strengths": [
+        "A fully authored identity: animated title scene with a lit skyline, reflections and drifting lanterns; serif display type; a canal-city map with glowing district islands; custom icons for all goods and services; illustrated encounter headers; a moon in the HUD that changes phase with the night; rank emblems on win and lose screens.",
+        "The map is a working instrument: danger pips under every district, '!' badges where a bulletin applies, green '+56%' style badges where your cargo last sold above cost, a travel card listing sells-cheap, pays-well and services, and the skiff sails a curved wake to its destination. On phones the same districts are re-laid out in portrait.",
+        "Every action answers back: purse numbers tween, a floating delta appears on the stat, coins or crates fly as particles, the row flashes, the screen shakes on hull hits, lanterns rise on a win and rain falls on a loss. Audio code has 20 cues that layer tones with filtered noise through a compressor."
+      ],
+      "weaknesses": [
+        "Toasts are drawn above everything and repeatedly cover content: the trade-sheet title, the NET WORTH and tab header on arrival, encounter art, and the emblem on the final score screen.",
+        "Each voyage takes roughly 3 seconds (two 0.85s legs plus a 1.35s night card) with no skip, which adds up over 30 nights of repeat play.",
+        "Row sparklines and the small arrow percentage show change since yesterday, coloured red for falling, which reads as 'bad' even when a falling price is the buy signal; you have to rely on the Cheap/Pricey tags instead."
+      ],
+      "bugs": [
+        {"severity": "low", "what": "Toast notifications overlap modal and panel headers, including the end-of-run emblem ('Final night! Sell your cargo...' sat over the score screen).", "repro": "Settle up on night 30 straight after arriving, or open a trade sheet while a tip toast is showing."},
+        {"severity": "low", "what": "When your purse is empty the Gull Gang's 'Pay the toll' option costs 0 and ends the encounter for free.", "repro": "Meet the Gull Gang with 0 cash and press 3: 'You turn out your empty pockets... and let you go.'"},
+        {"severity": "low", "what": "Developer URL hashes (#auto, #sim, #shot=...) ship in the file; the #shot=end path calls the normal end-of-game code, which writes to the saved ledger. Read in source, not executed.", "repro": "See the DEV HOOKS block and boot() at the end of the script."},
+        {"severity": "low", "what": "At 1280x800 the final score dialog is taller than the viewport and shows a native inner scrollbar.", "repro": "Finish a run at 1280x800."}
+      ],
+      "evidence": {
+        "days_played": 30,
+        "reached_score_screen": true,
+        "art_direction": "Deep night-blue with lantern amber, teal and rose accents; Palatino/Georgia serif display over system sans with mono numerals; inline SVG illustration plus a canvas particle layer.",
+        "audio_notes": "Judged from code, not heard. 20 named cues (click, tick, buy, sell, profit, error, travel, arrive, event, alarm, hit, shot, escape, win, lose, upgrade, splash, bank and more) built from triangle, sine, square and sawtooth tones with pitch sweeps, layered with band-pass, high-pass and low-pass noise, routed through a master gain and a compressor. Travel is a 1.6s swept-noise wash with a low drone. No music. Mute (button or M) suspends the audio context and is saved in settings.",
+        "phone_notes": "A separate full-height app layout below 860px with a four-tab bar (Market, Map, Harbor, Log), no page scroll and no horizontal overflow (390 vs 390). Map is rebuilt in portrait; trading uses a bottom sheet with a 14-night chart. Rows and tabs are 44px or larger; only the three header icon buttons are 36px. Buy, sell, travel, lender, vault and upgrades all reachable. Three runs in total: sunk on night 19 (desktop), sunk on night 4 (phone, my bot kept fleeing), and a full 30-night win on desktop.",
+        "best_screenshot": "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\7a23d92f0b7d5c34\\1e82f905-2c88-4b77-bda2-b5fab3b062e1\\scratchpad\\judging\\shots\\judge-2\\C-27-midgame.png",
+        "phone_screenshot": "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\7a23d92f0b7d5c34\\1e82f905-2c88-4b77-bda2-b5fab3b062e1\\scratchpad\\judging\\shots\\judge-2\\C-p12-market-clean.png"
+      },
+      "verdict": "The one that feels like a finished game: a lantern-lit drowned city you want to look at, with a map, market and encounters that all react when you touch them."
+    },
+    "D": {
+      "title": "Tidelace",
+      "scores": {"A1": 6, "A2": 5, "A3": 6, "A4": 6, "A5": 8, "B1": 7, "B2": 6, "B3": 6, "B4": 6, "B5": 7, "C1": 8, "C2": 8, "C3": 8, "C4": 7, "C5": 7},
+      "caps_applied": [],
+      "strengths": [
+        "Refined, consistent presentation: mint-and-gold on dark teal, serif headings, multi-colour engraved-style icons for each good, an illustrated sailboat on the intro, line-art icons on every event and a rank medal on the score screen.",
+        "Good guidance at each step: the intro names the first purchase, the trade dialog names a known buyer and shows cash and cargo after the trade, the chart pre-selects a sensible next harbour, and a footer tracks 'Voyage worth' against a 100,000 target.",
+        "Solid keyboard and dialog handling: 1 to 6 pick a harbour, T sails, B and U open ledger and boatworks, dialogs trap focus and make the background inert, the focus ring is clearly visible, and reduced motion and the mute preference are both respected."
+      ],
+      "weaknesses": [
+        "At phone width the sparkline and hold columns are removed from the market table, so there is no price-trend visual at all on a phone.",
+        "Travel is a 0.4s full-screen 'Crossing to...' overlay; nothing moves on the chart, and the chart islands are near-identical blobs. Audio is seven plain sine arpeggios.",
+        "Every trade needs a modal (open, MAX, confirm), the LOW/HIGH tag is very small text, and toasts appear bottom-centre on top of Trade buttons and the Sail button for about 3 seconds."
+      ],
+      "bugs": [
+        {"severity": "medium", "what": "Price sparklines disappear at 520px and below (columns 3 and 4 of the market table are display:none), leaving phone players with no trend information.", "repro": "Open at 390x844 and look at the market table."},
+        {"severity": "low", "what": "On secondary event buttons the label and its detail run together with no space: 'Wish the theater luckkeep your cargo', 'Run the shallows65% escape'.", "repro": "Trigger the theater order or levy event and read the second button."},
+        {"severity": "low", "what": "Toasts cover controls: three stacked toasts sat over the Trade buttons of rows 3 and 4 and the left edge of the Sail button.", "repro": "Buy two goods and arrive at a harbour at 1280x800."}
+      ],
+      "evidence": {
+        "days_played": 30,
+        "reached_score_screen": true,
+        "art_direction": "Dark teal with mint, gold and coral accents; Georgia serif headings, Segoe sans body and small Consolas caps; inline SVG engraved goods icons and a flat illustrated boat.",
+        "audio_notes": "Judged from code, not heard. 7 cues (tap, buy, sell, sail, bad, good, end), each a 1 to 5 note arpeggio of plain sine oscillators with a 12ms attack and 0.24s decay; no noise, layering or music. On by default; mute (button or M) works and is saved to storage.",
+        "phone_notes": "Stacked single-column scroll (2047px) with a fixed four-button bar (Market, Chart, Ledger, Boatworks); no horizontal overflow (375 vs 375). Buy, sell, sail, ledger, repay and boatworks all reachable and dialogs fit (366x631). Trade buttons are 57x43 and map pins 60x50; header icons are 31x35. Sparkline and hold columns are hidden. The start toast covers the lower market rows for about 3s.",
+        "best_screenshot": "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\7a23d92f0b7d5c34\\1e82f905-2c88-4b77-bda2-b5fab3b062e1\\scratchpad\\judging\\shots\\judge-2\\D-07-arrived.png",
+        "phone_screenshot": "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\7a23d92f0b7d5c34\\1e82f905-2c88-4b77-bda2-b5fab3b062e1\\scratchpad\\judging\\shots\\judge-2\\D-p03-market.png"
+      },
+      "verdict": "A polished, gentle trading game that explains itself well, but it is quiet, the map never moves, and the phone version drops the price charts."
+    }
+  },
+  "ranking": ["C", "D", "B", "A"],
+  "would_keep_playing": "C",
+  "panel_note": "C was the only entry where the map, the market and the feedback were designed as a game rather than a dashboard: it alone has a title scene, a moving skiff, number tweens, particles, layered sound and a phone-specific map, and it scored 9 on all five of my criteria. A and D are close cousins that look good in a still screenshot but are static and nearly silent in play (sine beeps, no on-map travel), with D ahead on guidance and A ahead on map illustration; B shows the most trading data and has a real ship glide but reads as a generic dashboard with clipped buttons at 1280px. On my lens alone the order is C, D, A, B; B edges A overall only on game depth. All audio was judged from source code because headless Chrome is silent."
+}
