@@ -1,0 +1,416 @@
+> taptext Rust Pearls
+tapped div.row.sel "Rust Pearls ¤330 −21% ×4 · avg ¤246 · S…" at (195,416) 356x60; touch landed on b "Rust Pearls"
+> wait 1200
+waited 1200ms
+> tap #qin
+tapped input#qin "Quantity" at (158,226) 171x48; touch landed on input#qin "Quantity"
+> type -99
+typed "-99"
+> ui
+viewport 390x844 · page scrollWidth 390
+targets (9), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [351,96 44x44] button.btn.icon.ghost "Close"
+  [106,165 170x46] button.b "Buy"
+  [284,165 170x46] button.s "Sell"
+  [41,226 48x48] button.btn "−"
+  [158,226 171x48] input#qin "Quantity"
+  [276,226 48x48] button.btn "+"
+  [340,226 65x48] button.btn.amber "Max"
+  [195,284 352x44] input#qr "Quantity slider"
+  [105,799 172x52] button.btn.lg "Cancel"
+covered (21): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov "COPPERHOOK DOCKS · NIGHT 2 …" | button#st-cash.stat "PURSE ¤1,412" under svg.ico | button#st-bank.stat "VAULT ¤0" under h3 "Rust Pearls" | button#st-debt.stat.debt "DEBT 6% ¤6,360" under h3 "Rust Pearls" | button#st-hold.stat "HOLD 4/30" under h3 "Rust Pearls" | button#st-hull.stat "HULL 100%" under svg.ico | button.btn.icon.market-info "Fleet calendar and market b…" under button.s "Sell" | button.best-run "Fleet: Glowkelp → Copperhoo…" under input#qin "Quantity" | div.row "Glowkelp ¤92 +119% Above us…" under input#qr "Quantity slider" | div.row.out "Bottled Rain — No dealers t…" under span "You paid (avg)" | div.row.sel "Rust Pearls ¤330 −21% ×4 · …" under span "Profit" | div.row.out "Synth Saffron — No dealers …" under svg "Price history" | div.row "Clockwork Eels ¤1,422 −41% …" under polygon | div.row "Ghost Chips ¤8,193 +58% Abo…" under div.ends "¤110 ¤1,300" | div.row "Dreamsilk ¤8,266 −16% Below…" under div.else "Lanternquay 1n ago ¤246 Sai…" | div.row "Moon Ink ¤11,925 −37% Lante…" under div.else "Lanternquay 1n ago ¤246 Sai…" | button "MARKET" under button.btn.lg "Cancel" | button "MAP" under button.btn.lg "Cancel" | button "HARBOR" under div.sh-foot "Cancel Sell" | button "LOG" under button#qgo.btn.lg.amber "Sell" | button "MORE" under button#qgo.btn.lg.amber "Sell"
+--- visible text ---
+NIGHT
+2/30
+NET WORTH
+−¤3,628
+Bilge Rat at ¤0
+PURSE
+¤1,412
+VAULT
+¤0
+DEBT 6%
+¤6,360
+HOLD
+4/30
+HULL
+100%
+NIGHT 2 MARKET
+Copperhook Docks
+Fleet: Glowkelp → Copperhook
+Through night 4 · sale price unconfirmed
+Glowkelp
+¤92
++119%
+Above usual · check your sale quote
+Bottled Rain
+—
+No dealers tonight
+Rust Pearls
+¤330
+−21%
+×4 · avg ¤246 · Surge easing · +34% here
+Synth Saffron
+—
+No dealers tonight
+Clockwork Eels
+¤1,422
+−41%
+Below usual · compare sale prices
+Ghost Chips
+¤8,193
++58%
+Above usual · check your sale quote
+Dreamsilk
+¤8,266
+−16%
+Below usual · compare sale prices
+Moon Ink
+¤11,925
+−37%
+Lanternquay +45% seen 1n ago
+Cargo worth here: ¤1,320
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+COPPERHOOK DOCKS · NIGHT 2
+Rust Pearls
+N2461196your avg ¤246
+Price today is below usual for Rust Pearls
+¤110
+¤1,300
+Lanternquay 1n ago
+¤246
+Saint Mire
+?
+Orchid Terraces
+?
+Drowned Exchange
+?
+The Sluices
+?
+Fogmouth
+?
+Buy
+Sell
+−
++
+Max
+Price each
+¤330
+You paid (avg)
+¤246
+You receive
+¤0
+Profit
++¤0
+Dealers here buy about 36 more at this price.
+Cancel
+Sell
+> tap #qin
+tapped input#qin "Quantity" at (158,226) 171x48; touch landed on input#qin "Quantity"
+> type 999999999
+typed "999999999"
+> ui
+viewport 390x844 · page scrollWidth 390
+targets (9), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [351,96 44x44] button.btn.icon.ghost "Close"
+  [106,165 170x46] button.b "Buy"
+  [284,165 170x46] button.s "Sell"
+  [41,226 48x48] button.btn "−"
+  [158,226 171x48] input#qin "Quantity"
+  [276,226 48x48] button.btn "+"
+  [340,226 65x48] button.btn.amber "Max"
+  [195,284 352x44] input#qr "Quantity slider"
+  [105,799 172x52] button.btn.lg "Cancel"
+covered (21): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov "COPPERHOOK DOCKS · NIGHT 2 …" | button#st-cash.stat "PURSE ¤1,412" under svg.ico | button#st-bank.stat "VAULT ¤0" under h3 "Rust Pearls" | button#st-debt.stat.debt "DEBT 6% ¤6,360" under h3 "Rust Pearls" | button#st-hold.stat "HOLD 4/30" under h3 "Rust Pearls" | button#st-hull.stat "HULL 100%" under svg.ico | button.btn.icon.market-info "Fleet calendar and market b…" under button.s "Sell" | button.best-run "Fleet: Glowkelp → Copperhoo…" under input#qin "Quantity" | div.row "Glowkelp ¤92 +119% Above us…" under input#qr "Quantity slider" | div.row.out "Bottled Rain — No dealers t…" under span "You paid (avg)" | div.row.sel "Rust Pearls ¤330 −21% ×4 · …" under span "Profit" | div.row.out "Synth Saffron — No dealers …" under svg "Price history" | div.row "Clockwork Eels ¤1,422 −41% …" under polygon | div.row "Ghost Chips ¤8,193 +58% Abo…" under div.ends "¤110 ¤1,300" | div.row "Dreamsilk ¤8,266 −16% Below…" under div.else "Lanternquay 1n ago ¤246 Sai…" | div.row "Moon Ink ¤11,925 −37% Lante…" under div.else "Lanternquay 1n ago ¤246 Sai…" | button "MARKET" under button.btn.lg "Cancel" | button "MAP" under button.btn.lg "Cancel" | button "HARBOR" under div.sh-foot "Cancel Sell" | button "LOG" under button#qgo.btn.lg.amber "Sell" | button "MORE" under button#qgo.btn.lg.amber "Sell"
+--- visible text ---
+NIGHT
+2/30
+NET WORTH
+−¤3,628
+Bilge Rat at ¤0
+PURSE
+¤1,412
+VAULT
+¤0
+DEBT 6%
+¤6,360
+HOLD
+4/30
+HULL
+100%
+NIGHT 2 MARKET
+Copperhook Docks
+Fleet: Glowkelp → Copperhook
+Through night 4 · sale price unconfirmed
+Glowkelp
+¤92
++119%
+Above usual · check your sale quote
+Bottled Rain
+—
+No dealers tonight
+Rust Pearls
+¤330
+−21%
+×4 · avg ¤246 · Surge easing · +34% here
+Synth Saffron
+—
+No dealers tonight
+Clockwork Eels
+¤1,422
+−41%
+Below usual · compare sale prices
+Ghost Chips
+¤8,193
++58%
+Above usual · check your sale quote
+Dreamsilk
+¤8,266
+−16%
+Below usual · compare sale prices
+Moon Ink
+¤11,925
+−37%
+Lanternquay +45% seen 1n ago
+Cargo worth here: ¤1,320
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+COPPERHOOK DOCKS · NIGHT 2
+Rust Pearls
+N2461196your avg ¤246
+Price today is below usual for Rust Pearls
+¤110
+¤1,300
+Lanternquay 1n ago
+¤246
+Saint Mire
+?
+Orchid Terraces
+?
+Drowned Exchange
+?
+The Sluices
+?
+Fogmouth
+?
+Buy
+Sell
+−
++
+Max
+Price each
+¤330
+You paid (avg)
+¤246
+You receive
+¤0
+Profit
++¤0
+Dealers here buy about 36 more at this price.
+Cancel
+Sell
+> key Escape
+pressed Escape
+> tap #b-mute2
+tapped button#b-mute2.btn.icon.hud-mute "Toggle sound" at (358,37) 44x44; touch landed on svg.ico
+> audio
+{
+ "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+ "sounds": {
+  "whileRunning": 57,
+  "whileSuspended": 0
+ },
+ "contexts": [
+  {
+   "t": 8746,
+   "createdIn": "touchend",
+   "activation": "active",
+   "stateAtCreate": "suspended",
+   "resumes": [
+    {
+     "t": 8747,
+     "during": "touchend",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    }
+   ],
+   "stateNow": "running",
+   "currentTime": 198.14
+  }
+ ],
+ "events": [
+  {
+   "t": 206671,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 206671,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 206673,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 206673,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 206675,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 206678,
+   "event": "click",
+   "pointerType": "mouse",
+   "activation": "active"
+  },
+  {
+   "t": 206873,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 206873,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 206874,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 206874,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 206876,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 206879,
+   "event": "click",
+   "pointerType": "mouse",
+   "activation": "active"
+  }
+ ]
+}
+> tap #b-mute2
+tapped button#b-mute2.btn.icon.hud-mute "Toggle sound" at (358,37) 44x44; touch landed on svg.ico
+> audio
+{
+ "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+ "sounds": {
+  "whileRunning": 57,
+  "whileSuspended": 0
+ },
+ "contexts": [
+  {
+   "t": 8746,
+   "createdIn": "touchend",
+   "activation": "active",
+   "stateAtCreate": "suspended",
+   "resumes": [
+    {
+     "t": 8747,
+     "during": "touchend",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    }
+   ],
+   "stateNow": "running",
+   "currentTime": 198.2
+  }
+ ],
+ "events": [
+  {
+   "t": 206873,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 206873,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 206874,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 206874,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 206876,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 206879,
+   "event": "click",
+   "pointerType": "mouse",
+   "activation": "active"
+  },
+  {
+   "t": 206937,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 206937,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 206939,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 206939,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 206941,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 206943,
+   "event": "click",
+   "pointerType": "mouse",
+   "activation": "active"
+  }
+ ]
+}
+> errors
+no errors

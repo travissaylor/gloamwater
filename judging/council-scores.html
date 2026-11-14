@@ -1,0 +1,33 @@
+<section id="gloamwater-council-scores" data-viz-composition>
+  <div data-viz-container></div>
+  <script type="application/json" data-viz-chart>
+    {
+      "id": "gloamwater-council-scores",
+      "title": "Four new panel rounds",
+      "description": "Mean of three weighted judge totals. Repository rounds 3–6; target 90.",
+      "summary": "None of the four panels reached 90 out of 100. The third new panel scored highest at 87.67.",
+      "height": 280,
+      "spec": {
+        "type": "bar",
+        "x": "round",
+        "y": "score",
+        "xLabel": "New round (repository round)",
+        "yLabel": "Panel score / 100",
+        "yDomain": [0, 100],
+        "showValues": true,
+        "showLegend": false,
+        "sortOrder": "original",
+        "valueFormat": {"style": "decimal", "minimumFractionDigits": 2, "maximumFractionDigits": 2},
+        "referenceLines": [{"axis": "y", "value": 90, "label": "Target 90"}]
+      },
+      "columns": ["round", "score"],
+      "rows": [["1 (3)", 83.90], ["2 (4)", 82.97], ["3 (5)", 87.67], ["4 (6)", 83.53]]
+    }
+  </script>
+</section>
+<script type="module">
+  import { mountChart } from "https://persistent.oaistatic.com/plugins/visualize/charts/1.2.3/element.js";
+  const root = document.getElementById("gloamwater-council-scores");
+  const config = JSON.parse(root.querySelector("[data-viz-chart]").textContent);
+  mountChart(root.querySelector("[data-viz-container]"), config);
+</script>

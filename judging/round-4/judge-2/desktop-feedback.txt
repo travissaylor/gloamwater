@@ -1,0 +1,77 @@
+> key s
+pressed s
+> wait 500
+waited 500ms
+> key Enter
+pressed Enter
+> wait 600
+waited 600ms
+> key m
+pressed m
+> wait 500
+waited 500ms
+> audio
+{
+ "shim": "none: real Web Audio",
+ "contexts": [
+  {
+   "t": 19256,
+   "createdIn": "keydown",
+   "activation": "active",
+   "stateAtCreate": "running",
+   "resumes": [],
+   "stateNow": "suspended",
+   "currentTime": 90.26
+  }
+ ],
+ "events": [
+  {
+   "t": 19263,
+   "event": "click",
+   "pointerType": "",
+   "activation": "active"
+  },
+  {
+   "t": 19372,
+   "ctx": 0,
+   "state": "running",
+   "during": "statechange"
+  },
+  {
+   "t": 58783,
+   "event": "click",
+   "pointerType": "",
+   "activation": "active"
+  },
+  {
+   "t": 109581,
+   "ctx": 0,
+   "state": "suspended",
+   "during": "statechange"
+  }
+ ]
+}
+> key m
+pressed m
+> wait 500
+waited 500ms
+> key 1
+pressed 1
+> wait 500
+waited 500ms
+> key Enter
+pressed Enter
+> wait 450
+waited 450ms
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/desktop-voyage-animation.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/desktop-voyage-animation.png
+> wait 3600
+waited 3600ms
+> key ?
+pressed ?
+> wait 600
+waited 600ms
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/desktop-help.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/desktop-help.png
+> errors
+no errors

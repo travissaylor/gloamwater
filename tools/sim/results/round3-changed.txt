@@ -1,0 +1,88 @@
+Game: C:\Users\travi\.t3\worktrees\gloamwater\t3-201b6bf7-54dc20bc5d519c6e\game\index.html (sha256 5838fe80881e)
+Runs per policy: 80, seeds 100000..100079, workers 6, 4.4 runs/s, mode full (real sailTo voyages, rendering on)
+Adapter features: {"depth":true,"conf":true,"canals":true,"charters":true,"stay":true,"encTable":true,"gameRng":true,"crnVoyage":true,"crnArrival":true}
+Reproducibility: 80 seeds; game RNG seeds differ across policies on 0; night-30 market stream differs on 0 (of 80 seeds where 2+ runs reached night 30)
+
+Final fortune (tally net, crowns)
+policy                 p10     p25  median     p75     p90     max    mean  sunk  vs informed: higher  median diff
+------------------  ------  ------  ------  ------  ------  ------  ------  ----  -------------------  -----------
+informed            420.9k  515.3k  615.1k  797.4k  932.5k   1.33M  655.4k  0.0%                                  
+greedy              -31.7k   16.8k   50.8k  127.2k  202.8k  400.1k   76.1k  1.3%                 1.3%      -562.8k
+whisper-spam         33.0k  120.9k  300.3k  399.2k  535.6k  956.1k  292.5k  0.0%                 2.5%      -379.0k
+roundtrip           420.8k  515.3k  614.7k  797.3k  932.4k   1.32M  655.2k  0.0%                 0.0%         -126
+informed-nocharter  409.2k  475.8k  593.8k  720.7k  811.2k   1.16M  596.9k  0.0%                22.5%       -44.9k
+
+Rank distribution
+policy              Drowned Debtor  Bilge Rat  Canal Runner  Lantern Broker  Tide Baron  Harbor Magnate  Sovereign of Gloamwater
+------------------  --------------  ---------  ------------  --------------  ----------  --------------  -----------------------
+informed                      0.0%       0.0%          3.8%            3.8%       48.8%           26.3%                    17.5%
+greedy                       12.5%      26.3%         57.5%            2.5%        1.3%            0.0%                     0.0%
+whisper-spam                  6.3%       6.3%         28.7%           33.8%       20.0%            2.5%                     2.5%
+roundtrip                     0.0%       0.0%          3.8%            3.8%       48.8%           26.3%                    17.5%
+informed-nocharter            0.0%       0.0%          3.8%            5.0%       53.8%           31.3%                     6.3%
+
+Mean net worth by night (median in brackets)
+policy                         n5            n10              n15              n18              n20              n25              n30
+------------------  -------------  -------------  ---------------  ---------------  ---------------  ---------------  ---------------
+informed            6,860 (3,869)  39.1k (31.2k)  123.1k (117.1k)  212.7k (208.4k)  276.9k (260.7k)  445.3k (434.2k)  659.0k (615.1k)
+greedy              2,820 (1,477)  16.5k (12.4k)    39.9k (29.4k)    56.5k (44.9k)    62.8k (46.3k)    68.8k (44.9k)    77.2k (54.4k)
+whisper-spam          2,643 (267)  23.8k (15.9k)    52.3k (34.1k)    89.3k (70.1k)  114.9k (104.7k)  185.4k (187.3k)  293.8k (300.3k)
+roundtrip           6,860 (3,869)  39.1k (31.2k)  123.1k (117.1k)  212.7k (208.4k)  276.9k (260.7k)  445.2k (434.0k)  658.8k (614.8k)
+informed-nocharter  6,860 (3,869)  39.1k (31.2k)  124.1k (117.1k)  212.6k (214.5k)  272.6k (257.6k)  416.9k (411.6k)  599.6k (593.8k)
+
+Per-run means
+policy              fights   won  interest  vault earned  best sale  max best sale  hold tier  wireless  reloads
+------------------  ------  ----  --------  ------------  ---------  -------------  ---------  --------  -------
+informed              5.06  1.45     4,007         29.3k     135.1k         362.9k       1.26     98.8%     0.00
+greedy                5.66  1.61     8,937             0      43.6k         280.1k       1.51      0.0%     0.00
+whisper-spam          5.21  0.96     10.2k         7,676      80.2k         406.6k       0.10     81.3%     0.00
+roundtrip             5.06  1.45     4,007         29.3k     135.1k         362.9k       1.26     98.8%     0.00
+informed-nocharter    5.05  1.45     3,995         34.0k     109.6k         467.7k       1.20     98.8%     0.00
+
+Economy shape
+policy              n30/n18 (medians)  median run n30/n18  largest sale  median run largest sale  tally cargo mean
+------------------  -----------------  ------------------  ------------  -----------------------  ----------------
+informed                        2.95x               3.30x        632.1k                   268.5k             3,571
+greedy                          1.21x               1.06x        383.4k                    87.1k               581
+whisper-spam                    4.29x               3.31x        920.3k                   169.8k             1,315
+roundtrip                       2.95x               3.29x        632.1k                   308.8k             3,571
+informed-nocharter              2.77x               2.82x        675.5k                   205.4k             2,716
+
+Whispers (whisper-spam)
+  bought 465 (5.8/run, fees 13.2k/run; sure 193, likely 177, guess 95); actionable 424; acted on 424 (5.3/run, 91.2% of bought, 230 with cargo)
+  acted whispers that lost money: 67.0% (fee included), 82.3% (also charging the night)
+  P&L per acted whisper: mean 9,388, median -410 (fee included); with night cost: mean -13.2k, median -8,537
+  whisper P&L per run (unacted whispers count their fee): 47.8k; with night cost -79.4k
+    acted    n   lost  mean P&L  median P&L  lost (night)  median (night)  landed full/weak/turn
+  -------  ---  -----  --------  ----------  ------------  --------------  ---------------------
+  sure     171  64.3%     12.9k        -370         78.9%          -7,165       79.3%/14.5%/6.2%
+  likely   161  68.3%     8,748        -440         82.6%          -8,598      53.7%/31.6%/14.7%
+  guess     92  69.6%     3,980        -610         88.0%          -10.3k      23.2%/41.1%/35.8%
+  spike    225  60.0%     12.1k        -340         81.8%          -7,583                       
+  crash    199  74.9%     6,307        -630         82.9%          -10.9k                       
+  vs informed on the same seeds: higher on 2.5% of 80 seeds, median difference -379.0k, mean -362.9k
+
+Round trips (roundtrip): 24305 trade-and-undo tests, 0 made money, best 0, worst -28, total -12.9k
+  one: 4861 tests, 0 positive, best 0, mean -0.18
+  splitB: 4861 tests, 0 positive, best 0, mean -1.04
+  splitS: 4861 tests, 0 positive, best 0, mean -1.07
+  alt: 4861 tests, 0 positive, best 0, mean 0.00
+  walk: 4861 tests, 0 positive, best 0, mean -0.36
+
+Routes, charters, encounters (per run)
+policy              1-night hops  2-night trips  carried on  stays  charters  any charter  1st charter night  encounters  cost/enc  patrol cost  gulls cost  collectors  collector cost  enc sinkings  debt at end
+------------------  ------------  -------------  ----------  -----  --------  -----------  -----------------  ----------  --------  -----------  ----------  ----------  --------------  ------------  -----------
+informed                    24.3           1.89        1.59   2.80      1.34        87.5%               18.3        5.06     15.1k        14.7k       16.2k        0.11           1,365          0.0%            0
+greedy                         -              -           -   0.00      0.00         0.0%                  -        5.66     6,006        7,161       5,241        0.35             550          0.2%        5,576
+whisper-spam                22.5           4.19        0.74   2.21      0.51        41.3%               20.0        5.21     14.1k        18.3k       12.3k        0.50           1,779          0.0%        3,838
+roundtrip                   24.3           1.89        1.59   2.80      1.34        87.5%               18.3        5.06     15.1k        14.7k       16.2k        0.11           1,365          0.0%            0
+informed-nocharter          24.3           1.85        1.55   2.84      0.00         0.0%                  -        5.05     12.9k        11.7k       14.6k        0.10           1,402          0.0%            0
+
+Choices per run (selected)
+policy              patrol:bribe  patrol:run  patrol:fight  patrol:yield  gulls:pay  gulls:run  gulls:fight  collectors:pay  collectors:run  collectors:fight  squall:push  squall:shelter  eel:big  eellose:ok  racks:buy  sunk:ok
+------------------  ------------  ----------  ------------  ------------  ---------  ---------  -----------  --------------  --------------  ----------------  -----------  --------------  -------  ----------  ---------  -------
+informed                    1.00        0.39          6.13          0.38       1.76       0.40         5.56            0.10            0.05              0.00         1.52            0.00     0.00        0.00       0.29     0.00
+greedy                      0.43        0.70          8.73          1.30       1.62       0.13         6.32            0.35            0.03              0.00         1.51            0.03     0.00        0.00       0.10     0.01
+whisper-spam                1.11        0.26          3.58          0.64       1.94       0.03         3.59            0.42            0.24              0.00         1.44            0.07     0.00        0.00       0.19     0.00
+roundtrip                   1.00        0.39          6.13          0.38       1.76       0.40         5.56            0.10            0.05              0.00         1.52            0.00     0.00        0.00       0.29     0.00
+informed-nocharter          0.99        0.38          5.89          0.36       1.75       0.46         5.48            0.09            0.05              0.00         1.56            0.00     0.00        0.00       0.29     0.00

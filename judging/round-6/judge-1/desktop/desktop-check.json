@@ -1,0 +1,24 @@
+{
+ "url": "file:///C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/packet/index.html",
+ "requests": 1,
+ "nonFileRequests": [],
+ "errors": [],
+ "log": [
+  "focus at load: t-new | Cast off",
+  "after Enter: cap-name | ",
+  "after name+Enter: btn primary | Next\n⏎",
+  "after Esc: BODY | GLOAMWATER\nNIGHT\n1/30\nPURSE\n¤2,500\nVAULT",
+  "Tab 0: st-cash | PURSE\n¤2,500",
+  "Tab 1: st-bank | VAULT\n¤0",
+  "Tab 2: st-debt | DEBT · 6%/NIGHT\n¤6,000",
+  "Tab 3: st-hold | HOLD\n0/30",
+  "Tab 4: st-hull | HULL\n100%",
+  "Tab 5: b-help | How to play (?)",
+  "ArrowDown: row  sel | Glowkelp\nPricey\nCopperhook +16% seen · t",
+  "b: qgo | Buy 30 for ¤1,920",
+  "Esc: row  sel | Glowkelp\nPricey\nCopperhook +16% seen · t",
+  "3: btn primary lg | Sail here · 1 night\n⏎",
+  "mute aria: false/Toggle sound;false/Toggle sound (M);null/Menu, help and sound;null/Toggle sound",
+  "reduced-motion: {\"animateEls\":0,\"mm\":true}"
+ ]
+}

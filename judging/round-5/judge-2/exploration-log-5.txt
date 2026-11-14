@@ -1,0 +1,123 @@
+> tap #mnav [data-v=map]
+tapped button "MAP" at (109,605) 63x59; touch landed on svg.ico
+> wait 1200
+waited 1200ms
+> tap #nodes .node[data-d=sm]
+tapped g.node.far "Saint Mire" at (65,275) 99x77; touch landed on circle.disc
+> wait 1200
+waited 1200ms
+> ui
+viewport 360x640 · page scrollWidth 360
+targets (21), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [328,36 44x44] button#b-mute2.btn.icon.hud-mute "Toggle sound"
+  [39,98 58x51] button#st-cash.stat "PURSE ¤954"
+  [104,98 58x51] button#st-bank.stat "VAULT ¤0"
+  [180,98 78x51] button#st-debt.stat.debt "DEBT 6% ¤6,360"
+  [256,98 58x51] button#st-hold.stat "HOLD 1/30"
+  [321,98 58x51] button#st-hull.stat "HULL 100%"
+  [188,281 107x77] g.node "Lanternquay"
+  [65,275 98x77] g.node.far.sel "Saint Mire"
+  [89,371 66x77] g.node.far "Orchid"
+  [239,371 81x77] g.node.far "Exchange"
+  [308,282 72x77] g.node "Sluices"
+  [252,193 98x77] g.node.here "Copperhook FFleet call: Glowkelp, throu…"
+  [79,190 81x77] g.node "Fogmouth"
+  [310,450 44x44] button.btn.icon.ghost "Clear destination"
+  [80,526 104x44] button.btn.port-details "Port details"
+  [236,526 192x44] button.btn.primary "Sail · 2 nights"
+  [38,605 63x59] button "MARKET"
+  [109,605 63x59] button "MAP"
+  [180,605 63x59] button "HARBOR"
+  [251,605 63x59] button "LOG"
+  [322,605 63x59] button "MORE"
+--- visible text ---
+NIGHT
+2/30
+NET WORTH
+−¤3,580
+Bilge Rat at ¤0
+PURSE
+¤954
+VAULT
+¤0
+DEBT 6%
+¤6,360
+HOLD
+1/30
+HULL
+100%
+Lanternquay
+Saint Mire
+Orchid
+Exchange
+Sluices
+Copperhook
+F
+Fogmouth
+Saint Mire
+2n via Lanternquay · risk 2/5
+Clockwork Eels ¤3,299 seen 1n ago; arrival may change.
+Port details
+Sail · 2 nights
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+> shot judging/round-5/judge-2/explore-two-night-360x640.png
+saved judging/round-5/judge-2/explore-two-night-360x640.png
+> tap #tcard-slot [data-act=sail]
+tapped button.btn.primary "Sail · 2 nights" at (236,526) 192x44; touch landed on button.btn.primary "Sail · 2 nights"
+> wait 7000
+waited 7000ms
+> ui
+viewport 360x640 · page scrollWidth 360
+targets (2), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [180,489 326x83] button.choice.risk "Reach for the bag 70% chance to keep it…"
+  [180,580 326x83] button.choice "Let the bag go · ¤95 Certain cash loss.…"
+covered (20): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#st-cash.stat "PURSE ¤954" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#st-bank.stat "VAULT ¤0" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#st-debt.stat.debt "DEBT 6% ¤6,742" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#st-hold.stat "HOLD 1/30" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#st-hull.stat "HULL 100%" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | g.node.here "Lanternquay" under path | g.node "Saint Mire" under rect | g.node "Orchid" under p "A trained grey gull snags a…" | g.node "Exchange" under p "A trained grey gull snags a…" | g.node "Sluices" under rect | g.node "Copperhook FFleet call: Glo…" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | g.node "Fogmouth" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button.btn "Open market" under button.choice.risk "Reach for the bag 70% chanc…" | button.btn.amber "Stay the night" under button.choice.risk "Reach for the bag 70% chanc…" | button "MARKET" under small "Certain cash loss. Your hul…" | button "MAP" under small "Certain cash loss. Your hul…" | button "HARBOR" under small "Certain cash loss. Your hul…" | button "LOG" under small "Certain cash loss. Your hul…" | button "MORE" under small "Certain cash loss. Your hul…"
+--- visible text ---
+NIGHT
+3/30
+NET WORTH
+−¤3,429
+Bilge Rat at ¤0
+PURSE
+¤954
+VAULT
+¤0
+DEBT 6%
+¤6,742
+HOLD
+1/30
+HULL
+100%
+Lanternquay
+Saint Mire
+Orchid
+Exchange
+Sluices
+Copperhook
+F
+Fogmouth
+Moored at Lanternquay
+Tap any district to compare routes.
+Lit canals take one night. Select an island for prices.
+Open market
+Stay the night
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+THIEF!
+A gull takes your purse
+
+A trained grey gull snags a bag containing ¤95. Its tether catches your wrist. You can grab the bag, but the skiff is drifting toward the stone quay.
+
+Reach for the bag
+70% chance to keep it. On failure, lose ¤95 and 10% hull (you have 100%).
+Let the bag go · ¤95
+Certain cash loss. Your hull and cargo stay safe.
+> shot judging/round-5/judge-2/explore-waypoint.png
+saved judging/round-5/judge-2/explore-waypoint.png

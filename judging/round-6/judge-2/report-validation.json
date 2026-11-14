@@ -1,0 +1,11 @@
+{
+  "pass": true,
+  "report": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-6\\judge-2.json",
+  "criteria": 15,
+  "weightSum": 100,
+  "weighted_total": 84,
+  "allHelperAndBuildHashesMatch": true,
+  "allRunnersPass": true,
+  "manualErrors": [],
+  "manualNetwork": []
+}

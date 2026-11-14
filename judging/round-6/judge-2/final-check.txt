@@ -1,0 +1,47 @@
+CLEANUP {"target":"C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-6\\packet\\tools\\profile-evidence","exists":true,"birthtime":"2026-11-14T19:06:00.751Z","entries":[],"removedOwnEmptyDefaultDirectory":true}
+2533: async function sailTo(did){
+2534:   if(busy||S.over||did===S.loc||!DI[did])return;
+2535:   if(S.day>=NIGHTS){toast('This is the final night. Settle up instead.','info','flag');return;}
+2536:   const hop=nextHop(S.loc,did);
+2537:   S.trip={from:S.loc,to:hop,stage:'out',ev:rollVoyageEvent(hop),next:hop!==did?did:null};
+2538:   save();
+2539:   await runTrip(false);
+2540: }
+2541: // spend a night at the mooring: the market moves, interest runs, and the night can still bring an event
+2542: async function stayNight(){
+2543:   if(busy||S.over)return;
+2544:   if(S.day>=NIGHTS){toast('This is the final night. Settle up instead.','info','flag');return;}
+2545:   S.trip={from:S.loc,to:S.loc,stage:'stay',ev:null,next:null};
+2546:   save();
+2547:   await runTrip(false);
+2548: }
+2549: // the night turns over at the destination (shared by voyages and staying put)
+2550: function nightFalls(T,stayed){
+2551:   advanceDay();
+2552:   S.loc=T.to;
+2553:   T.first=!stayed&&!S.visited[T.to];S.visited[T.to]=true;
+2554:   markSeen();revealNews();
+2555:   for(const c of S.contracts.filter(c=>c.to===T.to)){S.cash+=c.reward;log(`Delivered the sealed parcel. Paid ${fmt(c.reward)}.`,'gold');toast(`Parcel delivered: +${fmt(c.reward)}`,'gold','parcel');sfx.sell();}
+2556:   S.contracts=S.contracts.filter(c=>c.to!==T.to);
+2557:   log(stayed?`Stayed the night at ${DI[T.to].name}.`:`Arrived at ${DI[T.to].name}.`);
+2558:   const fresh=S.effects.filter(e=>e.known&&e.age===0);
+2559:   fresh.forEach(e=>log((e.d===T.to?'Here: ':'Bulletin: ')+e.text,e.type==='crash'?'good':e.type==='spike'?'info':'gold'));
+2560:   T.stage='arrived';T.ev=rollArrivalEvent(stayed);save();
+2561:   return fresh;
+2562: }
+2563: async function runTrip(resumed){
+2564:   const T=S.trip;if(!T)return;
+2565:   busy=true;sel=null;renderTravelCard();
+2566:   const stayed=T.stage==='stay'||T.from===T.to;
+2567:   let fresh=[];
+2568:   if(T.stage==='stay'){
+2569:     armSkip(true);
+2570:     fresh=nightFalls(T,true);
+2571:     renderAll();
+2572:     await nightCard('You stayed the night in port');armSkip(false);
+2573:     sfx.arrive();
+2574:   }else if(T.stage!=='arrived'){
+2575:     if(isNarrow())setView('map');
+2576:     if(!FAST)await new Promise(r=>requestAnimationFrame(r));
+2577:     if(!mapBuilt)buildMap();
+KEY INPUTS {"tabPresses":3962,"pointerEventCount":0,"inputDocuments":[{"keys":{"0":7,"1":31,"2":20,"3":12,"4":15,"5":8,"6":7,"7":14,"8":6," ":216,"Control":82,"A":82,"K":1,"e":1,"y":1,"b":1,"o":1,"a":1,"r":1,"d":1,"Tab":3957,"Shift":1197,"Enter":106},"pointerEvents":{},"nativeKeyboardClicks":215,"pointerClicks":0,"inputEvents":129,"focusOutsideOpenModal":[]},{"keys":{"Shift":5,"Tab":5," ":1},"pointerEvents":{},"nativeKeyboardClicks":1,"pointerClicks":0,"inputEvents":0,"focusOutsideOpenModal":[]}]}

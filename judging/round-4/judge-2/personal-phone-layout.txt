@@ -1,0 +1,170 @@
+> taptext Bottled Rain
+tapped div.row.sel "Bottled Rain ¤152 +17% ×12 · avg ¤123 ·…" at (195,351) 356x60; touch landed on b "Bottled Rain"
+> wait 800
+waited 800ms
+> taptext Sell
+tapped button.s "Sell" at (284,165) 170x46; touch landed on button.s "Sell"
+> wait 500
+waited 500ms
+> ui
+viewport 390x844 · page scrollWidth 390
+targets (10), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [351,96 44x44] button.btn.icon.ghost "Close"
+  [106,165 170x46] button.b "Buy"
+  [284,165 170x46] button.s "Sell"
+  [41,226 48x48] button.btn "−"
+  [158,226 171x48] input#qin "Quantity"
+  [276,226 48x48] button.btn "+"
+  [340,226 65x48] button.btn.amber "Max"
+  [195,284 352x44] input#qr "Quantity slider"
+  [105,799 172x52] button.btn.lg "Cancel"
+  [285,799 172x52] button#qgo.btn.lg.amber "Sell 12 for ¤1,824"
+covered (21): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov "SAINT MIRE · NIGHT 2 Bottle…" | button#st-cash.stat "PURSE ¤1,024" under path | button#st-bank.stat "VAULT ¤0" under h3 "Bottled Rain" | button#st-debt.stat.debt "DEBT 6% ¤6,360" under h3 "Bottled Rain" | button#st-hold.stat "HOLD 12/30" under div.sh-head "SAINT MIRE · NIGHT 2 Bottle…" | button#st-hull.stat "HULL 100%" under svg.ico | button.btn.icon.market-info "Fleet calendar and market b…" under button.s "Sell" | button.best-run "Rust Pearls → Lanternquay ·…" under input#qin "Quantity" | div.row.out "Glowkelp — No dealers tonig…" under input#qr "Quantity slider" | div.row.sel "Bottled Rain ¤152 +17% ×12 …" under span "You paid (avg)" | div.row "Rust Pearls ¤528 +26% Lante…" under span "Profit" | div.row.out "Synth Saffron — No dealers …" under svg "Price history" | div.row "Clockwork Eels ¤2,599 +8% U…" under polygon | div.row "Ghost Chips ¤5,797 +11% Usu…" under div.ends "¤32 ¤420" | div.row "Dreamsilk ¤6,870 −30% Below…" under div.else "Lanternquay 1n ago ¤123 Orc…" | div.row "Moon Ink ¤11,314 −40% Lante…" under div.else "Lanternquay 1n ago ¤123 Orc…" | button "MARKET" under button.btn.lg "Cancel" | button "MAP" under button.btn.lg "Cancel" | button "HARBOR" under div.sh-foot "Cancel Sell 12 for ¤1,824" | button "LOG" under button#qgo.btn.lg.amber "Sell 12 for ¤1,824" | button "MORE" under button#qgo.btn.lg.amber "Sell 12 for ¤1,824"
+--- visible text ---
+NIGHT
+2/30
+NET WORTH
+−¤3,512
+Bilge Rat at ¤0
+PURSE
+¤1,024
+VAULT
+¤0
+DEBT 6%
+¤6,360
+HOLD
+12/30
+HULL
+100%
+NIGHT 2 MARKET
+Saint Mire
+Rust Pearls → Lanternquay · +17%
+Seen 1n ago · 1n trip · prices may change
+Glowkelp
+—
+No dealers tonight
+Bottled Rain
+¤152
++17%
+×12 · avg ¤123 · +24% here
+Rust Pearls
+¤528
++26%
+Lanternquay +17% seen 1n ago
+Synth Saffron
+—
+No dealers tonight
+Clockwork Eels
+¤2,599
++8%
+Usual range · compare other ports
+Ghost Chips
+¤5,797
++11%
+Usual range · compare other ports
+Dreamsilk
+¤6,870
+−30%
+Below usual · compare sale prices
+Moon Ink
+¤11,314
+−40%
+Lanternquay +87% seen 1n ago
+Cargo worth here: ¤1,824
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+SAINT MIRE · NIGHT 2
+Bottled Rain
+N2152107your avg ¤123
+Price today is about usual for Bottled Rain
+¤32
+¤420
+Lanternquay 1n ago
+¤123
+Orchid Terraces
+?
+Drowned Exchange
+?
+The Sluices
+?
+Copperhook Docks
+?
+Fogmouth
+?
+Buy
+Sell
+−
++
+Max
+Price each
+¤152
+You paid (avg)
+¤123
+You receive
+¤1,824
+Profit
++¤348
+Dealers here buy about 60 more at this price.
+Cancel
+Sell 12 for ¤1,824
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/sell-profit.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/sell-profit.png
+> tap #qgo
+tapped button#qgo.btn.lg.amber "Sell 12 for ¤1,824" at (285,799) 172x52; touch landed on button#qgo.btn.lg.amber "Sell 12 for ¤1,824"
+> wait 700
+waited 700ms
+> taptext Map
+tapped button "MAP" at (118,810) 69x56; touch landed on svg.ico
+> tap #nodes [data-d=ot]
+tapped g.node "Orchid" at (96,571) 72x84; touch landed on path
+> wait 800
+waited 800ms
+> size 390 664
+viewport now 390x664
+> wait 800
+waited 800ms
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/map-390x664.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/map-390x664.png
+> size 360 640
+viewport now 360x640
+> wait 800
+waited 800ms
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/map-360x640.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/map-360x640.png
+> audit
+viewport 360x640 · document scrollWidth 360 · body scrollWidth 360 · 21 on-screen targets
+tap targets under 44x44 (0)
+tap targets under 8px from a neighbour (7):
+  #st-cash  GAP 5px to button#st-bank.stat "VAULT ¤0"
+  #st-bank  GAP 5px to button#st-cash.stat "PURSE ¤2,848"
+  #st-debt  GAP 5px to button#st-bank.stat "VAULT ¤0"
+  #st-hold  GAP 5px to button#st-debt.stat.debt "DEBT 6% ¤6,360"
+  #st-hull  GAP 5px to button#st-hold.stat "HOLD 0/30"
+  #nodes > g.node.here  GAP 6px to g.node "Fogmouth"
+  #nodes > g.node  GAP 6px to g.node.here "Saint Mire"
+text under 15px (svg text is rendered size) (13):
+  11px #h-worth > small "Net worth"
+  12px #h-night > div > small "Night"
+  12px #nextrank "Bilge Rat at ¤0"
+  12px #st-cash > small "Purse"
+  12px #st-bank > small "Vault"
+  12px #st-debt > small "Debt 6%"
+  12px #st-hold > small "Hold"
+  12px #st-hull > small "Hull"
+  13px #h-night > div > b > span "/30"
+  13px #mnav > button "Market" ×4
+  13px #mnav > button "Map"
+  14px div.tcard > div.tc-head > div > div.tc-dist "1 night · risk 1/5"
+  14px #tcard-slot > div.tcard > div.dock-note "Madame Ysolde's Salon"
+text contrast under 4.5:1 (approximate: gradients averaged) (0)
+inputs under 16px (iOS zooms on focus) (0)
+elements past the viewport edge (not clipped by a scroller) (0)
+truncated text (overflow with ellipsis/hidden) (0)
+touch-action on targets: {"auto":16,"manipulation":5}
+selectability on targets:
+  user-select:none -webkit-user-select:none callout:n/a: button.btn.icon.hud-mute button.stat button.stat.debt g.node g.node.here g.node.sel g.node.far button.btn.icon.ghost button.btn.port-details button.btn.primary button
+root: html overscroll:n/a overflow:visible/visible touch-action:manipulation; body overscroll:n/a overflow:hidden/hidden touch-action:auto
+scrollable areas (0)

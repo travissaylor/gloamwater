@@ -1,0 +1,1 @@
+const fs=require('fs');const s=fs.readFileSync(__dirname+'/../packet/index.html','utf8').split('\n');console.log(s.filter(l=>/^(const|let|function|async function)/.test(l)).map(l=>l.slice(0,250)).join('\n'));

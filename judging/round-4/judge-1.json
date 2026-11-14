@@ -1,0 +1,242 @@
+{
+  "judge": 1,
+  "lens": "game design",
+  "model": "claude-opus-5-5",
+  "build": "b18bcf691bc179f29bbcaa56153b2f47c14e7be3a177bbc520f50acfedfbaab4",
+  "scores": {
+    "A1": 8,
+    "A2": 7,
+    "A3": 8,
+    "A4": 8,
+    "A5": 8,
+    "B1": 8,
+    "B2": 8,
+    "B3": 7,
+    "B4": 9,
+    "B5": 8,
+    "C1": 9,
+    "C2": 9,
+    "C3": 9,
+    "C4": 9,
+    "C5": 8
+  },
+  "weighted_total": 81.3,
+  "caps_applied": [],
+  "criteria": {
+    "A1": {
+      "score": 8,
+      "evidence": "Personal 30-night WebKit touch game at 390x844 (human judgment, real taps and typed quantities, no state reads beyond visible UI). Real choices most nights: N2 chose 7 Rust Pearls over 30 Bottled Rain because capital, not hold, was binding (both +37%, pearls used all cash); N8 leveraged into 7 Clockwork Eels instead of repaying ¤7.2k debt two nights before the deadline (paid off N10); market depth forced sizing (eels quote 'past 8, each one costs more, last at ¤2,525', so bought 9 not 12; Sluices ink 'past 3', last at ¤40k, so bought 4 not 7); hold became binding late with cheap goods (N25 saffron capped at 22). Public fleet calendar rotated targets (Bottled Rain to Saint Mire paid +100%, saffron to Fogmouth +62%, eels to Exchange +90%, chips to Sluices +51%, silk to Orchid +74%). Remote surges seen via the wireless set faded on arrival (Orchid ink ¤40.5k to ¤28.2k, Lanternquay saffron ¤3,847 to ¤1,701, Exchange saffron ¤1,701 to ¤925), so chasing spikes is a real gamble against reliable calls.",
+      "below_10": [
+        "N8 to N14 a two-port Lanternquay/Saint Mire loop (cheap eels one way, cheap Moon Ink the other) was clearly the best move for six nights running; it only broke when Saint Mire ink returned to usual on N15.",
+        "Hold rarely binds mid-game because capital and per-good depth bind first, so the 30 to 45 hold racks were never worth buying in my run.",
+        "On phone, district habits (what a port usually supplies or imports) are not shown, so route planning before the wireless set is mostly discovery by visiting.",
+        "Remote surge information is a 'tonight' price you can only act on tomorrow; once learned it is usually a trap, so decision depth there is thin."
+      ]
+    },
+    "A2": {
+      "score": 7,
+      "evidence": "Debt pressure was real: ¤2,500 start vs ¤6,000 at 6%/night; my purse was ¤90 on N3 and ¤0 on N9, and I needed a leveraged eel run to clear ¤8,151 on N10. Frozen sim (16 seeds each): informed median ¤627.5k (p10 ¤274k, max ¤1.08M) vs greedy ¤50.8k vs whisper-spam ¤264.7k; whisper-spam beat informed on 0/16 seeds. roundtrip policy: 4,895 trade-and-undo tests, 0 profitable. Integrated dealer depth caps every loop (ink 3 to 4 units at the posted price). Charters (¤20k then ¤40k) paid back in one ink trip. The vault matters because tolls and bribes scale with the purse (bribe ¤11,897 with ¤97.8k aboard vs ¤9,672 later).",
+      "below_10": [
+        "Once debt clears around N10 it never matters again: I paid only ¤3,725 interest all game (sim informed mean ¤3,661).",
+        "Strong compounding snowball: sim informed net worth grows 2.83x from N18 to N30, and my run went ¤132k (N14) to ¤500k (N30), so late nights dominate the score.",
+        "Combat is cheap: hull patches cost ¤16/point at The Sluices and no policy sank in 64 sim runs, so with a ¤2,500 pistol fighting usually beats a ¤15k to ¤22k toll.",
+        "The vault's 1.5% a night is minor next to trade returns (sim informed earned ¤29k vault interest vs a ¤627k fortune); it is mainly theft protection.",
+        "Untested: maximum borrowing after N10 as an exploit (credit up to net worth at 10%/night). The sim policies I ran did not include borrow-max."
+      ]
+    },
+    "A3": {
+      "score": 8,
+      "evidence": "Encounters I played: Gull Gang x3, Tidewarden x2, a leak (8 Glowkelp ruined), two flotsam crates (4-in-5 odds stated; hauled one, +6 Bottled Rain), a retiring smuggler selling racks (¤3,280, disabled when I was broke), Pell's rumour with explicit confidence ('lands in full about 1 time in 3'), a courier job (needs 3 free hold, declined twice), and Grandmother Wick's eel (40% for 2.5x; won ¤17,875). Every combat option shows odds and price: run 18 to 36% per try ('a heavy hold slows you'); fight 22% with the boathook vs 39 to 42% with the flare pistol; toll or bribe scaled to purse and cargo ('Your purse is light, so they take about ¤621 of cargo too'); heave-to seizes half. My N15 fight went five volleys (hull 100% to 74%, won ¤2,541); the N22 and N24 fights won in two or three volleys plus loot.",
+      "below_10": [
+        "Fighting with a weapon is close to always right: hull damage is cheap to repair, sinking never occurred, and a win adds loot. The sim informed policy chose fight 4.69 times per run against patrols and 7 against gulls.",
+        "Encounter frequency is high mid to late game (combat stops on N15, N16, N19, N22, N24) and starts to feel like a recurring tax rather than a plan-reshaping event.",
+        "'Fewer crews will try you for 3 nights' after a win did not prevent ambushes on the next voyages in my run, so the reward is hard to feel.",
+        "Wick's eel is exactly zero-EV variance: flavour, not a real decision."
+      ]
+    },
+    "A4": {
+      "score": 8,
+      "evidence": "My run had a clear shape: a scrappy N1 to N9 (¤90 purse, cargo leak, a toll taking my last ¤1,701 plus an eel); a milestone debt clearance on N10 with the toast 'Debt cleared. Marrow Quill looks almost disappointed.'; growth from N10 to N18 with upgrades as beats (Lanternquay charter N14, pistol N15, wireless N18); then a late push with ¤180k silk sales, the final fleet call and a settle-up confirmation on N30. The HUD rank target ('Lantern Broker at ¤250k') kept pulling me forward. The touch-play helper visited all 7 ports and ended at ¤198,871 (Canal Runner). Ending ¤150,259 short of Harbor Magnate made me want a retry.",
+      "below_10": [
+        "After N10 there is no external pressure. Collectors only hunt debtors, so the final nights are about maximizing, not tension.",
+        "Exponential late growth makes the last five nights matter far more than the middle; early mistakes are mostly erased.",
+        "Fleet calls every four nights give rhythm, but the public calendar is fixed per run (NOTES), and its structure would become routine across replays."
+      ]
+    },
+    "A5": {
+      "score": 8,
+      "evidence": "The 5-step tour (ledger, market, canals, harbor, thirty nights) taught the loop. Each row compares tonight's price with the usual one and names remembered ports with age ('Lanternquay +37% seen 1n ago'). Held goods show avg cost and markup ('x30 · avg ¤51 · +53% here'). The sell sheet shows profit (+¤810) and a 'your avg' line on a 14-night chart. The loan card shows 'Tomorrow, unpaid ¤6,360', and depth/slippage are spelled out before you confirm. Score screen: cash, vault, cargo at half price, debt, final ¤499,741 (sums exactly), voyages, best single profit, interest paid, losses to thieves/tolls/leaks (¤35.0k), and the distance to the next rank.",
+      "below_10": [
+        "Phone port details omit the 'Usually supplies / Usually imports' district habits that the desktop popover shows (openPortDetails never renders d.cheap/d.dear), so phone players must discover identities by visiting.",
+        "The 'This loses money... Buy fewer' warning compares against any price seen elsewhere (even a buy price) and ignores fleet-call demand. It warned on my N4 rain buy, which then sold for +100% at the Saint Mire fleet call, and again on N17 eels.",
+        "Inconsistent price labels: on N1 the Glowkelp row said '+21% Above usual' while its sheet said 'Price today is about usual'.",
+        "With the wireless set, the sheet's other-port grid is 392px wide inside a 360px box at 390 viewport, so right-column prices (Saint Mire, Sluices, Fogmouth) are clipped.",
+        "Tapping an already-selected map node deselects it. Twice after switching tabs my first tap left the card on 'Moored at...' with no Sail button."
+      ]
+    },
+    "B1": {
+      "score": 8,
+      "evidence": "Personally inspected: the title (gold serif GLOAMWATER over a lantern-lit drowned skyline with reflections), the intro card's lantern illustration, illustrated islands on the map, custom good icons (kelp, bottle, pearl, saffron glass, eel, chip, silk, ink flask), encounter vignettes (Tidewarden searchlights, gull skiffs, flotsam), keeper portraits (Marrow Quill, vault keeper), and a score screen in the same palette. Copy stays in-world ('They count your ¤1,701 twice').",
+      "below_10": [
+        "The phone trading surface is a fairly conventional dark card list; outside the map and vignettes it reads as a polished dashboard rather than something identifiable from one crop.",
+        "Encounter art is simple flat shapes."
+      ]
+    },
+    "B2": {
+      "score": 8,
+      "evidence": "Per-good sparklines, a signed % vs usual coloured cheap/dear, Surge/Glut notes, and a 'best run' strip suggesting a route (I used it as a shortcut). Owned avg vs price, a 14-night chart with a your-avg line, and a cheap-to-dear gauge in the sheet. The HUD always shows purse, vault, debt with rate, hold, hull and a net-worth rank target. Desktop adds Buy/Sell on every row and 'Bargain/Pricey/Usually imported here' tags.",
+      "below_10": [
+        "At 390x664 only 5 of 8 goods are visible without scrolling, and the trade sheet footer covers the gauge ends.",
+        "The cross-port grid clips at 390 with the wireless set (32px overflow); its 'today' labels are 11.3px at 3.4:1 contrast.",
+        "On phone the desktop's district tags are hidden."
+      ]
+    },
+    "B3": {
+      "score": 7,
+      "evidence": "Visual: coin particles on a big sale, a voyage card ('NIGHT 2 OF 30 / Copperhook Docks / 28 nights remain'), toasts for debt cleared and wireless installed, a per-volley fight log, and VICTORY/PAID result cards. Audio judged by code and policy only: 18 distinct sfx keys (buy, sell, profit, travel, arrive, event, alarm, shot, hit, splash, escape, win, lose, bank, upgrade, among others). The harness's iOS-policy stand-in recorded the context being created and resumed inside touchend, with 38 sounds started while running and 0 while suspended. The M key and the HUD button toggled mute (aria-pressed changed).",
+      "below_10": [
+        "Not an audible test: Windows WebKit has no Web Audio and Chromium ran headless, so sound quality, mix and layering are unverified.",
+        "WebKit rAF is slow on this machine, so I could not judge animation smoothness on phone."
+      ]
+    },
+    "B4": {
+      "score": 9,
+      "evidence": "I used the map every night: illustrated islands joined by lit canals with Lanternquay as the hub, a gold 'you are here' ring and skiff, a dashed route preview when a node is selected (two-night routes go via a waypoint), danger pips per island, an 'F' badge for the current fleet call and '!' rumour badges. The selection card shows '1 night · risk 2/5' and the last seen price ('Rust Pearls ¤630 seen 1n ago; arrival may change'). With the wireless set, the helper's screenshots show price-hint tags on islands (+59%, +37%, +56%). Keys 1 to 7 select districts and Enter sails (verified on desktop).",
+      "below_10": [
+        "On phone the map is its own tab, so planning means flipping between Market and Map.",
+        "Tapping an already-selected node deselects it with no feedback, which twice ate my first tap.",
+        "Without the wireless set the map carries little price information."
+      ]
+    },
+    "B5": {
+      "score": 8,
+      "evidence": "verify.cjs passed WebKit touch at 390x844, 390x664, 360x640 and 430x932 plus Chromium 1280x800. I inspected 360x640 and 430x932 (document scrollWidth equals the viewport) and 390x664 myself, and played 30 nights by touch at 390x844 (bottom nav targets 69x56, rows 356x60, sheet buttons at least 44px). My keyboard-only desktop script started with Enter, picked a good with Down Down, opened the sheet with B, set quantity with Right Right, bought with Enter, picked Saint Mire with 2, sailed with Enter (reached night 2), and used ?, Esc and M. Focus moved into and out of sheets correctly. No console errors.",
+      "below_10": [
+        "Harness audit at 390: 'today' labels are 11.3px at 3.36 to 3.68:1 contrast, chart axis labels are 12px, and HUD stat buttons are only 5px apart.",
+        "The trade sheet's port grid overflows by 32px at 390 once wireless prices appear.",
+        "Real iPhone behaviour (safe areas, toolbars, double-tap zoom, silent switch) is unverified; this was WebKit emulation only."
+      ]
+    },
+    "C1": {
+      "score": 9,
+      "evidence": "All brief requirements observed working: a 30-night clock where travel costs a night; 7 districts on an illustrated map; 8 goods with daily drift, surges and gluts; a hold of 30 with racks to 45 (offered by Odile and by a random event); compounding debt with a repay UI; a vault with 1.5% nightly interest (I used deposit and withdraw); 10+ distinct events, including risky run/fight/bribe/heave-to encounters; upgrades (pistol, harpoon, engine, hold, wireless, charters, repairs); a score screen with breakdown, rank and a Captains' Ledger that survived my reload; tour onboarding; sparklines and charts; synthesized audio with mute; touch, mouse and keyboard; phone and desktop layouts.",
+      "below_10": [
+        "Audio exists, but its audible quality is unverified on this machine.",
+        "I did not exercise the engine upgrade or the collectors in my own run."
+      ]
+    },
+    "C2": {
+      "score": 9,
+      "evidence": "Verified SHA256 b18bcf69... and 238,881 bytes. verify.cjs 'source constraints' passed (externalResources false, syntax valid, under 1 MB), and 'Corrupt storage and restricted sandbox' passed (sandboxStarted, storage blocked, errors [], network []). My Chromium desktop run recorded zero non-file network requests, and my WebKit game ran from file://.",
+      "below_10": [
+        "I relied on the frozen helper for the sandbox and grep checks rather than building my own iframe wrapper."
+      ]
+    },
+    "C3": {
+      "score": 9,
+      "evidence": "My 30-night touch game finished with the harness reporting 'no errors' at settlement. The touch-play helper completed a full 30-night real-touch game (seed 43, 7 ports, ¤198,871, pass). verify.cjs ran two more full games plus a persistent ledger, and its corrupt-save, sandbox, modal-focus and five viewport checks all passed. The keyboard desktop run logged no errors.",
+      "below_10": [
+        "Cosmetic glitches remain: the cross-port grid clips, and an already-selected map node deselects on the first tap after switching tabs.",
+        "Multi-event voyages chain modals. In slow headless WebKit some sail waits ran past 25s (harness timing, not a hang)."
+      ]
+    },
+    "C4": {
+      "score": 9,
+      "evidence": "My score breakdown summed exactly (¤363,825 + ¤135,916 + ¤0 cargo - ¤0 debt = ¤499,741). The hold never exceeded capacity (buying when full showed 'Your hold is full'). Debt went to exactly ¤0 on repay-all. The ledger entry survived a reload. Sim: 0 of 4,895 round trips profitable, no non-finite scores, and game RNG and market streams identical across policies. verify: corrupt storage recovered with a notice.",
+      "below_10": [
+        "I did not run my own edge-input abuse fixture (negative or huge typed quantities); the helper's 'First confirm bought 2' check is the only coverage."
+      ]
+    },
+    "C5": {
+      "score": 8,
+      "evidence": "Light source read: data tables (DI districts with cheap/dear/svc/danger, GI goods, SVC services), a single S state object, a Sound module with an sfx Proxy that wraps every call in try/catch, and seeded market and event streams per NOTES (the sim confirmed identical RNG across policies). Desktop and phone runs were smooth in Chromium.",
+      "below_10": [
+        "This was not a deep code review (my lens is game design). The game is one 239 KB file with long template-string renderers (openPortDetails builds its HTML inline), and the phone and desktop port views have drifted apart (habit tags missing on phone)."
+      ]
+    }
+  },
+  "strengths": [
+    "The public fleet calendar plus market depth turns routing into a real planning game: calls paid +51% to +100% and rotated my targets every four nights.",
+    "Integrated slippage and depth quotes stop single-good loops and make quantity a decision (0 of 4,895 sim round trips profitable).",
+    "The early debt squeeze is genuine and memorable (¤90 purse on N3; a leveraged eel run to clear ¤8,151 on N10).",
+    "Encounters state odds and prices up front, and those prices scale with purse and cargo, which makes the vault meaningful.",
+    "Rumours with stated confidence, and surges that fade the next night, punish naive spike-chasing: whisper-spam beat the informed bot on 0/16 seeds.",
+    "Strong per-trade legibility: average cost, profit, remembered prices with age, and a full score breakdown.",
+    "Skill spreads scores: informed bot median ¤627k vs greedy ¤51k; my human run ¤500k; the helper's conservative run ¤199k."
+  ],
+  "weaknesses": [
+    "Debt stops mattering after about N10 (¤3.7k total interest), and nothing else adds pressure for the final nights.",
+    "Weapon fights are near-dominant because hull repair is cheap and sinking never happened.",
+    "Compounding snowball: the late game dominates the score (2.8x from N18 to N30).",
+    "A two-port loop dominated N8 to N14 before prices shifted.",
+    "Phone players do not get the district supply/import habits that desktop shows.",
+    "The loss warning ignores fleet-call demand and compares against buy-side observations, so it gives wrong advice on exactly the trades the calendar encourages.",
+    "The hold upgrade is a weak choice for most of the run."
+  ],
+  "bugs": [
+    {
+      "severity": "low",
+      "what": "The trade sheet's other-port grid (.else) is 392px wide inside a 360px box at 390 width once the wireless set adds 'today' labels, so right-column prices are clipped (e.g. '¤22.0k' shows as '¤22.0').",
+      "repro": "At 390x844 WebKit, buy the wireless set at Drowned Exchange, open any good's sheet, and look at the right column (Saint Mire, Sluices, Fogmouth). Measured scrollWidth 392 vs clientWidth 360."
+    },
+    {
+      "severity": "low",
+      "what": "The 'This loses money... Buy fewer' warning fires on purchases that are profitable at an active fleet call, because it compares against any price seen elsewhere, including buy prices.",
+      "repro": "N4 at Lanternquay: buy 30 Bottled Rain at ¤122 during the Saint Mire rain call. The warning cites ¤87 (a Copperhook buy price). The rain sold at Saint Mire on N5 for ¤244 (+¤3,660)."
+    },
+    {
+      "severity": "low",
+      "what": "Phone port details omit the 'Usually supplies / Usually imports' district habits that the desktop map popover shows.",
+      "repro": "Compare 390x844 Map > select an island > Port details with the 1280x800 map popover, which shows 'USUALLY SUPPLIES Moon Ink, Synth Saffron' for Saint Mire. openPortDetails never renders d.cheap/d.dear."
+    },
+    {
+      "severity": "low",
+      "what": "A market row and its trade sheet disagree about the price level.",
+      "repro": "Run start, N1 Lanternquay: the Glowkelp row reads '+21% Above usual · check your sale quote' while its sheet reads 'Price today is about usual for Glowkelp'."
+    },
+    {
+      "severity": "cosmetic",
+      "what": "Tapping an already-selected map node deselects it. The selection persists invisibly across tab switches, so the first tap after returning to the map can leave no Sail button.",
+      "repro": "Select Saint Mire via the best-run strip or the map, switch to Market or Harbor, return to Map, and tap Saint Mire once: the card reads 'Moored at...'. A second tap selects it."
+    }
+  ],
+  "evidence": {
+    "days_played": 30,
+    "reached_score_screen": true,
+    "phone_notes": "Scored play: one full 30-night game by me, with real WebKit touch taps and typed quantities at 390x844 (Playwright iPhone profile, dpr 3). Decisions were human, from the visible UI only, with no state mutation or hidden reads. Settled at Fogmouth on N30: ¤499,741, Tide Baron, ledger #1, no console errors; the ledger survived a reload. Supplementary UI automation: frozen touch-play.cjs, seed 43, a full 30-night real-touch game (FAST/reduced-motion timing, 7 ports, ¤198,871, pass). Regression: frozen verify.cjs, all 8 checks passed, including two function-driven full games (¤177,487 and ¤629,333) and WebKit touch at 390x844, 390x664, 360x640 and 430x932. I inspected screenshots at 390x664, 360x640 and 430x932 myself (no horizontal scroll). Frozen sim (simulation, not play): informed, greedy, whisper-spam and roundtrip, 16 seeds each. Emulation cannot establish real-iPhone safe-area, toolbar, zoom or silent-switch behaviour.",
+    "desktop_notes": "Chromium 1280x800, keyboard-only script: Enter to start; Down, B, Right, Enter to buy; 2 then Enter to sail to night 2; ?, Esc and M. Focus moved into and out of sheets; no errors and no network requests. Desktop shows the map and market side by side, a port popover with district habits, and Buy/Sell buttons on every row. Mouse input was not exercised beyond verify's Chromium check.",
+    "audio_notes": "No audible test. Windows WebKit lacks Web Audio, so the harness stand-in modelled the iOS unlock policy: the context was created and resumed in touchend, with 38 sounds started while running and 0 while suspended. The code has 18 distinct sfx keys; mute toggled via the HUD button and the M key. Sound quality is unverified.",
+    "screenshots": [
+      "judging/round-4/judge-1/shots/01-title.png",
+      "judging/round-4/judge-1/shots/02-start.png",
+      "judging/round-4/judge-1/shots/03-tour1.png",
+      "judging/round-4/judge-1/shots/05-tour3.png",
+      "judging/round-4/judge-1/shots/09-map-n1.png",
+      "judging/round-4/judge-1/shots/12-trade-glowkelp.png",
+      "judging/round-4/judge-1/shots/14c-voyage-mid.png",
+      "judging/round-4/judge-1/shots/15-arrive.png",
+      "judging/round-4/judge-1/shots/16-sell-sheet.png",
+      "judging/round-4/judge-1/shots/27-repay.png",
+      "judging/round-4/judge-1/shots/30-encounter.png",
+      "judging/round-4/judge-1/shots/33-enc2.png",
+      "judging/round-4/judge-1/shots/40-debt-paid.png",
+      "judging/round-4/judge-1/shots/46-big-sale.png",
+      "judging/round-4/judge-1/shots/50-enc5.png",
+      "judging/round-4/judge-1/shots/55-victory.png",
+      "judging/round-4/judge-1/shots/60-market-wireless.png",
+      "judging/round-4/judge-1/shots/63-ink-sheet-wireless.png",
+      "judging/round-4/judge-1/shots/73-score.png",
+      "judging/round-4/judge-1/shots/74-ledger-reload.png",
+      "judging/round-4/judge-1/shots/82-664-sheet.png",
+      "judging/round-4/judge-1/shots/84-664-map-sel.png",
+      "judging/round-4/judge-1/shots/86-360-market.png",
+      "judging/round-4/judge-1/shots/89-430-map.png",
+      "judging/round-4/judge-1/shots/90-phone-portdetails.png",
+      "judging/round-4/judge-1/desktop/d6-select-sm.png",
+      "judging/round-4/judge-1/desktop/d5-buy-sheet.png",
+      "judging/round-4/judge-1/touch/run-1-event-a-gull-takes-your-purse.png",
+      "judging/round-4/judge-1/touch/run-1-market-night-25.png"
+    ]
+  },
+  "verdict": "A genuinely strategic trader. The public fleet calendar, integrated market depth and a real early debt squeeze make most nights a sizing-and-routing decision, and encounters are transparent. It loses ground on late-game balance: debt is gone by N10, weapon fights are near-dominant, and compounding lets the last nights decide the score. Phone players also miss district information that desktop shows. Very solid, but not yet exploit-proof or tense at the end."
+}

@@ -1,0 +1,211 @@
+{
+  "judge": 1,
+  "lens": "game design",
+  "model": "claude-opus-5-5",
+  "build": "5838fe80881e78d86480324693f4da448c3fb55214ae6b89afa59f66d7731654",
+  "scores": {
+    "A1": 8, "A2": 8, "A3": 8, "A4": 8, "A5": 9,
+    "B1": 8, "B2": 8, "B3": 8, "B4": 9, "B5": 9,
+    "C1": 9, "C2": 10, "C3": 9, "C4": 10, "C5": 8
+  },
+  "weighted_total": 85.2,
+  "caps_applied": [],
+  "criteria": {
+    "A1": {
+      "score": 8,
+      "evidence": "Full 30-night touch game (WebKit 390x844). The best move changed with state: nights 1-4 kelp to Copperhook for the public fleet call (+117%); a Ghost Chips glut at Lanternquay bought for 3,013 and sold for 5,247; repaying the ¤9.6k debt on night 9 took most of my capital; a saffron loop between Saint Mire and Fogmouth during the night 13-16 fleet call (+15k, then +16.8k); eels for the Exchange call (+22k); a 2.5k flare pistol and the hold 30→70 upgrade. After the wireless set (night 18) I spotted Moon Ink spikes at Lanternquay (¤62k vs ¤18k) and bought into them twice. Market depth stopped me from putting all my capital into one good: I saw 'past 4, each one costs more' and 'the last goes at ¤25,883'. Every night I weighed hold space, cash, depth, danger and the debt deadline.",
+      "below_10": [
+        "After the wireless set, most nights came down to opening each good's 'elsewhere' grid and chasing the biggest visible spread or spike. My two Moon Ink spike trades made ¤125k of my ¤375k, so late-game decisions are fairly one-dimensional.",
+        "The fleet calendar is public and fixed for every run (kelp→Copperhook N1-4 … silk→Lanternquay N29-30), so the route skeleton repeats from run to run.",
+        "Cheap goods (kelp, rain) stop mattering once capital passes ~20k. The meaningful choices narrow to 3-4 high-value goods."
+      ]
+    },
+    "A2": {
+      "score": 8,
+      "evidence": "Debt was real pressure early: ¤6,000 at 6% grew to ¤9,565 by night 9 and soaked up most of my working cash. Hold upgrades (2.5k + 7.5k) and wireless (6k) paid back within a few nights. My labeled abuse probe (fixture ¥5M cash) of split buy/sell round trips lost ¤10-18 per good. A function-driven sim I ran (seed 7, 40 runs × 10 policies, real sailTo nights) found 0 of 13,275 trade-and-undo tests profitable; corner probes gained nothing; reload scumming returned no cash and sank 62.5% of runs. Skill spread is wide: greedy median ¤60k vs informed ¤605k.",
+      "below_10": [
+        "Outcomes swing a lot by seed: the informed bot ranged p10 ¤284k to p90 ¤1.10M on identical play rules, so luck (where spikes land) weighs heavily on the score.",
+        "Debt is irrelevant after the first ~9 nights for a competent player (I and the sim cleared it; debt at end 0). Borrow-max matched informed (median diff −¤7.8k), so borrowing is neither tempting nor punishing.",
+        "The vault is almost neutral: the vault policy beat informed on 60% of seeds, with median diff +¤5k. Mid-game it works as theft insurance more than a strategic lever.",
+        "Late-game income leans on rare Moon Ink and Dreamsilk spikes, not on balanced goods."
+      ]
+    },
+    "A3": {
+      "score": 8,
+      "evidence": "On night 24→25, three Gull Gang skiffs stopped me carrying 6 Moon Ink (cargo at stake ¤137k). The card showed: run 27% per try, a failed try rakes the hull and seizes 12% of each cargo; fight 36% per volley with 60% return fire; toll ¥17,140, taken partly in cargo because my purse was light. I paid the toll (lost 13 saffron) because a failed run risked an ink worth ~¤30k. That was an informed choice with real stakes. Odds depend on weapon, motor, boat count and load; bribes and tolls scale with purse and cargo. In the sim, fight-farm sank 37.5% of the time, so fighting is not the dominant option. I also met: squalls (push for 6-16% hull or shelter a night; pushed three times), a trapped crate (−8% hull), Wick's eel gamble (lost ¤260), a leak that ruined 2 eels, a strongbox (+¤1,590), two courier jobs (one delivered, +¤5,180) and Pell's confidence-rated rumours.",
+      "below_10": [
+        "I had only one encounter in 29 voyages, so risk rarely reshaped my plans. Most nights were safe.",
+        "The leak event (lost 2 eels, ~¤4k) and the gull theft hit with no warning and nothing to choose. Only hull level affects leaks.",
+        "Wick's eel is exactly EV-neutral (40% × 2.5), so the choice carries no real tension. Pushing through a squall is almost always correct (the sim never sheltered)."
+      ]
+    },
+    "A4": {
+      "score": 8,
+      "evidence": "My net worth by night: N5 ¤1.9k, N10 ¤15k, N15 ¤51k, N20 ¤167k, N25 ~¤270k, N30 ¤375k. The arc was clear: a scrappy kelp start, the night-10 debt deadline as a milestone (toast on night 8; debt cleared on night 9 with a 'Debt cleared' celebration), hold/weapon/wireless upgrades mid-run, and the silk fleet calls on nights 25-30 driving the endgame. There were warnings at three nights left and on the final night, plus a 'Settle up' banner. The sim's median n30/n18 ratio of 3.2x shows the late game still grows. The score screen said I was ¤25,342 short of Tide Baron, which made me want another run.",
+      "below_10": [
+        "Nights 19-29 settled into a repeating pattern of checking the wireless grid, buying the spike and sailing. Numbers grew but the actions stopped changing.",
+        "No late-game threat scales up to make the final days tense. My hull and cash were never at risk after night 25 apart from one toll.",
+        "A run takes about 30 nights × several taps. The voyage animation is skippable but sheets need many taps per trade on phone."
+      ]
+    },
+    "A5": {
+      "score": 9,
+      "evidence": "A 5-step guided tour (ledger, market, canals, …) that I could skip. Each market row shows a sparkline, % vs the usual price, a cheap/dear tag and, for held goods, ×qty with +% vs cost. The trade sheet showed price each, paid avg, profit, purse after, hold after, units left at the posted price, a 14-night chart with my avg line, a gauge, and 'Best known sale ¤X · District'. It warned me plainly, e.g. 'This loses money: you would pay ¤465 each… Buy fewer.' Tapping the DEBT figure explained 6%→10% after night 10, the collectors and the credit limit. Map cards list each district's usual supplies and imports and the nights away. The first-buy toast said 'Now find a district that pays more…'. The score screen broke down cash, vault, cargo at half and debt, then fortune, rank, the gap to the next rank, and stats such as interest paid and losses to thieves.",
+      "below_10": [
+        "'Usual' is the city-wide price, not the district's, so kelp at Lanternquay (a district that normally pays well for it) read 'about usual'. That can mislead a newcomer about local price identities.",
+        "'Max' buys deep into price impact without stopping at the flat-depth quantity. I overpaid on 14 eels at Fogmouth (avg ¤2,008, last unit ¤2,660) and on 8 silk (last unit ¤25,883). The sheet notes it, but the default action encourages it.",
+        "On phone, 'Now +46%' tags don't say which district. I had to open each sheet to find out.",
+        "Minor copy: 'Copperhook Docks · 1 nights away' in the fleet calendar."
+      ]
+    },
+    "B1": {
+      "score": 8,
+      "evidence": "A consistent lantern-lit drowned-city identity: the gold serif GLOAMWATER title over a reflected skyline with floating lanterns, a navy and amber palette, custom line icons for all 8 goods, illustrated islands on the map, and an SVG portrait scene for Grandmother Wick (seen on desktop). The squall card has rain and lightning; the Gull Gang card shows skiffs with lamps. The end screen has a rank emblem in the same style.",
+      "below_10": [
+        "Minor events (leak, strongbox, news) use a single large icon on a gradient instead of an illustrated scene.",
+        "Goods are line icons in rounded tiles, closer to a polished dashboard than bespoke illustration."
+      ]
+    },
+    "B2": {
+      "score": 8,
+      "evidence": "At 390x844, the HUD shows purse, vault, debt (with rate), hold bar and hull bar at a glance, plus net worth and the next-rank target. Every row has a sparkline, a coloured % vs usual, and Surge/Glut/Fading-surge/Bargain/Fleet-call tags. Owned goods show ×qty and +% vs cost. On desktop the rows carry inline Buy/Sell buttons and key hints.",
+      "below_10": [
+        "On phone, finding the best destination means opening each good's sheet to read the elsewhere grid; 'Now +X%' tags omit the district.",
+        "Spotting the best trade took me well over 5 seconds most nights."
+      ]
+    },
+    "B3": {
+      "score": 8,
+      "evidence": "Code review shows distinct synthesized sfx for buy, sell, profit, travel, arrive, event, alarm, hit, shot, escape, win, lose, upgrade, splash and bank, plus an ambient bed with bells. The phone harness stand-in recorded the AudioContext created and resumed inside the first touchend, 1,232 sounds started while running and 0 while suspended. With mute on, several taps started 0 new sounds and muted:true persisted to settings. Visually I saw the voyage wake animation, night card, toasts ('Loaded 30 Glowkelp…'), the debt-cleared celebration, shake on hits and a lantern burst on the end screen.",
+      "below_10": [
+        "Audio is verified only through the code and the iOS-policy stand-in. Real sound and real iPhone playback (silent switch) were not heard or tested.",
+        "Several low-stakes actions (closing sheets, tab switches) have minimal feedback."
+      ]
+    },
+    "B4": {
+      "score": 9,
+      "evidence": "I travelled 29 times by tapping map nodes. The illustrated island districts are joined by canals, with a highlighted 'you are here' node, danger pips, an 'F' fleet badge, an animated skiff and wake during travel, and '!' and green +% badges where cargo sells above cost. The destination card gave nights away, danger, the fleet call, usual supplies and imports, my cargo's last-seen price vs cost, and services. Keys 1-7 plus Enter sailed on desktop. On phone the map is re-laid out for portrait.",
+      "below_10": [
+        "At 360x640 part of the map sits off screen and needs scrolling (Copperhook and Fogmouth were reported off screen).",
+        "Two-night routes go through an auto-picked waypoint, so you can't choose the path."
+      ]
+    },
+    "B5": {
+      "score": 9,
+      "evidence": "No horizontal scroll at 360x640, 390x664, 390x844 or 430x932 (scrollWidth equals the viewport). The audit at 390x844 found 0 targets under 44x44, 0 text below 4.5:1 contrast and 0 inputs under 16px. Pinned sheet buttons stayed reachable at 390x664 and 360x640. Desktop 1280 in Chromium and WebKit: I bought with ArrowDown + B + Enter and sailed with 6 + Enter. Focused buttons show a 2px solid outline. Key hints (↑↓ pick · B buy · S sell, Enter on Sail). A prefers-reduced-motion media query exists and the code shortens the night card under REDUCED.",
+      "below_10": [
+        "HUD stat buttons sit 5px apart. Labels are 11-12px.",
+        "Reduced-motion behaviour was confirmed in code only, not by emulating the media query."
+      ]
+    },
+    "C1": {
+      "score": 9,
+      "evidence": "I verified all of these myself: 30 nights with travel costing a night; 7 districts on a real map; 8 goods with daily price shifts plus spikes and crashes; hold upgrades 30→45→70 (and Fenna's racks); compounding debt that I repaid; the vault, where I deposited ¤70k that grew to ¤81.9k; 9+ events including encounters with run, fight, toll and bribe; weapons, motor, wireless and charters; an end screen with breakdown, rank and a ledger that survived reload; a tour; sparklines and charts; Web Audio with mute; touch, mouse and keyboard; and both phone and 1280 layouts.",
+      "below_10": [
+        "I could not hear the synthesized audio; it was verified through code and the context stand-in only.",
+        "I did not personally exercise the motor upgrade, a patrol bribe or Ysolde's paid whisper in UI play."
+      ]
+    },
+    "C2": {
+      "score": 10,
+      "evidence": "One 230,005-byte file. A grep for http found only the SVG xmlns inside a data-URI favicon; there are no fetch, XHR or external links. At runtime in Chromium and WebKit at 1280, page.on('request') logged 1 request (the file itself) and 0 non-file requests. It ran from file:// and inside <iframe sandbox='allow-scripts'> in both engines: a new game started with no errors. localStorage access is wrapped in try/catch with a memory fallback.",
+      "below_10": []
+    },
+    "C3": {
+      "score": 9,
+      "evidence": "The touch game ran from title to the night-30 score screen with no errors. The 400 function-driven sim runs had 0 errors and 0 non-finite scores. Abuse tests also raised no errors: corrupt JSON in the save, scores and settings; a tampered save (cash −500, 9999 ink); a reload mid-voyage, where 'Continue voyage' resumed the trip and it arrived at Copperhook on night 2; edge quantities; and the sandbox iframe.",
+      "below_10": [
+        "The second full game was function-driven sim, not UI play.",
+        "Cosmetic: on night 30 at 390x844 the 'Final night… Settle up' banner overlaps the last market row. A touch aimed at the Dreamsilk row landed on the banner (the harness flagged COVERED).",
+        "A save that fails validation is dropped silently; the 'damaged save' toast appears only if startGame throws, not when validation fails."
+      ]
+    },
+    "C4": {
+      "score": 10,
+      "evidence": "Typed quantities clamp: −5 gives 0 with the button disabled; 99999 and 1e3+Enter clamp to the affordable 28; 'abc' is ignored. Split and round-trip probes never profit (my fixture probe, plus the sim's 13,275 tests). A tampered save is discarded. A corrupt ledger entry had its HTML-like name shown as escaped text and its 1e99 score clamped to 1e12; null and number entries were dropped. The ledger survived a reload. The final breakdown adds up: 292,724 + 81,934 + 0 − 0 = 374,658. The vault grew at 1.5% a night as stated.",
+      "below_10": []
+    },
+    "C5": {
+      "score": 8,
+      "evidence": "Data tables (GOODS, DISTRICTS, EDGES, HOLD_TIERS, ARMS, ENC, CONF, RANKS) sit apart from logic. One state object S. Two seeded RNG streams live in the save, with visual randomness kept separate. Validation is thorough. Sheets and voyages ran smoothly in Chromium (a voyage took ~2.4s).",
+      "below_10": [
+        "Very dense one-line functions and a 2,640-line single file, with globals (busy, sel, view, skipVoyage) mutated from many places.",
+        "I did not audit for leaked timers or listeners."
+      ]
+    }
+  },
+  "strengths": [
+    "Public fleet calls, market depth, spikes and crashes, and district price identities give real route and cargo choices that change night to night.",
+    "Strong decision support: profit vs paid avg, depth notes, 'This loses money' warnings, best known sale, the elsewhere grid, and HUD figures that explain themselves.",
+    "Encounter cards spell out odds and costs that scale with purse and cargo, so choosing to pay the toll to protect ink was an informed trade-off.",
+    "Exploit-resistant economy: integrated price impact, committed outcomes, seeded dice in the save, and reload-proof voyages.",
+    "Cohesive lantern-lit visual identity, a real illustrated map, and phone-first sheets with pinned buttons."
+  ],
+  "weaknesses": [
+    "Once you own the wireless, the late game reduces to chasing the largest visible spike; Moon Ink and Dreamsilk spikes dominate income.",
+    "Outcomes vary heavily by seed (informed p10 ¤284k vs p90 ¤1.1M); debt and the vault stop mattering after about night 10.",
+    "'Max' buys into steep price impact; 'usual' is city-wide rather than per district; 'Now +X%' tags don't name the district on phone.",
+    "Few encounters in a normal run (1 in 29 voyages for me). Some events (leak, gull theft) are unavoidable hits, and Wick's eel is EV-neutral."
+  ],
+  "bugs": [
+    {
+      "severity": "minor",
+      "what": "The final-night 'Settle up' banner overlaps the bottom market row on phone; a tap on that row lands on the banner.",
+      "repro": "WebKit 390x844, night 30 at Lanternquay with Dreamsilk held: tap the Dreamsilk row; the harness reports the touch landed on div.final-banner."
+    },
+    {
+      "severity": "minor",
+      "what": "Fleet calendar pluralization: '1 nights away'.",
+      "repro": "Market tab → tap 'Fleet:' summary on night 1 at Lanternquay; entries read 'Copperhook Docks · 1 nights away'."
+    },
+    {
+      "severity": "minor",
+      "what": "A saved run that fails validation is discarded silently (no Continue button, no message), although NOTES say damaged saves are discarded with a message.",
+      "repro": "Mid-run, edit gloamwater.save.v1 to set cash −500, then reload: the title shows only 'Cast off', with no toast. The toast exists only on the startGame-throws path."
+    },
+    {
+      "severity": "cosmetic",
+      "what": "After a large purchase that moves the price, a good's tag can read 'You sold it down' or show the impacted price. That is accurate but easy to misread.",
+      "repro": "Sell 15 eels at Lanternquay on night 30; the row shows 'You sold it down ¤1,578'."
+    }
+  ],
+  "evidence": {
+    "days_played": 30,
+    "reached_score_screen": true,
+    "phone_notes": "Scored game: one full 30-night game by real touch taps in Playwright WebKit at 390x844 (iPhone UA, dpr 3, touch), through the tools/phone harness on port 9451. Every action was a tap (market rows, Buy/Sell, Max or typed quantity, confirm, map node, Sail here, event choices, harbor buttons). Helper scripts (st.sh, trade.sh, go.sh, pick.sh in judging/round-3/judge-1/) only sequence taps and read visible text, the visible elsewhere-price grid and busy/modal state. Decisions used only on-screen information. Result: ¤374,658, Lantern Broker, placed #1 on the ledger, which survived reload. A second game was abandoned after abuse tests and did not count. I also checked 390x664, 360x640 and 430x932 (market, trade sheet, map card; no horizontal scroll; Sail and confirm buttons reachable), and ran the audit at 390x844 (0 targets under 44px, 0 contrast failures). Not established: real iPhone Safari (safe areas, double-tap zoom, silent switch, on-screen keyboard).",
+    "desktop_notes": "Chromium and WebKit at 1280x800 via a direct Playwright script (desktop.js): opened from file://, bought by keyboard (ArrowDown, B, Enter), sailed by keyboard (6, Enter) and arrived at Copperhook on night 2. The 2px focus outline was visible. 0 non-file network requests, no console errors, and the sandboxed iframe (allow-scripts) started a game in both engines. Second full game: a function-driven simulation (NOT touch play), tools/sim with seed 7, 40 runs × 10 policies (informed, greedy, vault, borrow-max, fight-farm, whisper-spam, roundtrip, scum, dumpback, corner) against the frozen file: 400 runs, 0 errors, 0 non-finite scores, informed median ¤605k, greedy ¤60k, 0/13,275 profitable round trips. Output in sim-seed7.json/.txt.",
+    "audio_notes": "Windows WebKit has no real Web Audio; the harness's iOS-policy stand-in recorded the AudioContext created in the first touchend and resumed there (suspended→running), 1,232 sounds started while running and 0 while suspended. Muting via #t-mute stopped new sounds (count unchanged over several taps) and persisted muted:true. Audible quality, mix and real iOS behaviour cannot be proven by this method.",
+    "screenshots": [
+      "judging/round-3/judge-1/shots/01-title.png",
+      "judging/round-3/judge-1/shots/03-tour1.png",
+      "judging/round-3/judge-1/shots/05-tour3.png",
+      "judging/round-3/judge-1/shots/08-market-n1.png",
+      "judging/round-3/judge-1/shots/10-trade-kelp.png",
+      "judging/round-3/judge-1/shots/13-map-ch.png",
+      "judging/round-3/judge-1/shots/14-voyage.png",
+      "judging/round-3/judge-1/shots/16-sell-sheet.png",
+      "judging/round-3/judge-1/shots/n06-sm.png",
+      "judging/round-3/judge-1/shots/n18-wireless-market.png",
+      "judging/round-3/judge-1/shots/n25-lq.png",
+      "judging/round-3/judge-1/shots/n30-final-market.png",
+      "judging/round-3/judge-1/shots/30-score-full.png",
+      "judging/round-3/judge-1/shots/31-ledger-reload.png",
+      "judging/round-3/judge-1/shots/41-corrupt-ledger.png",
+      "judging/round-3/judge-1/shots/v-360x640-trade.png",
+      "judging/round-3/judge-1/shots/v-360x640-map.png",
+      "judging/round-3/judge-1/shots/v-390x664-trade.png",
+      "judging/round-3/judge-1/shots/v-430x932-map.png",
+      "judging/round-3/judge-1/shots/d-chromium-kbd-map.png",
+      "judging/round-3/judge-1/shots/d-chromium-after-voyage.png",
+      "judging/round-3/judge-1/shots/d-webkit-sandbox.png"
+    ],
+    "unverified": [
+      "Audible sound quality and real iPhone audio (silent switch)",
+      "Real iPhone Safari behaviour (safe-area insets, toolbar collapse, double-tap zoom, keyboard)",
+      "prefers-reduced-motion at runtime (code only)",
+      "Motor upgrade, patrol bribe/yield, Marrow's collectors and Ysolde's paid whisper in my own UI play (the sim exercised the encounter options)",
+      "Leaked timers/listeners"
+    ]
+  },
+  "verdict": "A deep, well-tuned trading game. Fleet calls, market depth and visible spikes give real night-to-night choices; encounters show their odds and stakes; and the economy held up under my exploit probes and 400 sim runs. It falls short of top marks on design because the post-wireless late game narrows to chasing spikes, outcomes vary heavily by seed, and debt and the vault fade after night 10. Phone presentation and technical quality are strong."
+}

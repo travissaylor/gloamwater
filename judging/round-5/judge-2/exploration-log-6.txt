@@ -1,0 +1,87 @@
+> taptext Let the bag go
+tapped button.choice "Let the bag go · ¤95 Certain cash loss.…" at (180,580) 326x83; touch landed on small "Certain cash loss. Your hull and cargo …"
+> wait 1400
+waited 1400ms
+> ui
+viewport 360x640 · page scrollWidth 360
+targets (18), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [328,36 44x44] button#b-mute2.btn.icon.hud-mute "Toggle sound"
+  [39,98 58x51] button#st-cash.stat "PURSE ¤859"
+  [104,98 58x51] button#st-bank.stat "VAULT ¤0"
+  [180,98 78x51] button#st-debt.stat.debt "DEBT 6% ¤6,742"
+  [256,98 58x51] button#st-hold.stat "HOLD 1/30"
+  [321,98 58x51] button#st-hull.stat "HULL 100%"
+  [315,172 44x44] button.btn.icon.market-info "Fleet calendar and market bulletins"   ⚠ GAP 4px to button.best-run "Carry Clockwork Eel…"
+  [180,221 322x46] button.best-run "Carry Clockwork Eels → Orchid Seen +45%…"   ⚠ GAP 4px to button.btn.icon.market-info "Fleet calendar and …"
+  [180,282 326x61] div.row "Glowkelp ¤45 +7% Copperhook +89% seen 1…"
+  [180,351 326x61] div.row "Bottled Rain ¤122 −6% Saint Mire +49% s…"
+  [180,420 326x61] div.row "Rust Pearls ¤516 +23% Above usual · che…"
+  [180,489 326x60] div.row.out "Synth Saffron — No dealers tonight"
+  [180,558 326x61] div.row.sel "Clockwork Eels ¤2,359 usual ×1 · avg ¤1…"   ⚠ GAP 0px to button "MARKET"
+  [38,605 63x59] button "MARKET"   ⚠ GAP 0px to div.row.sel "Clockwork Eels ¤2,3…"
+  [109,605 63x59] button "MAP"   ⚠ GAP 0px to div.row.sel "Clockwork Eels ¤2,3…"
+  [180,605 63x59] button "HARBOR"   ⚠ GAP 0px to div.row.sel "Clockwork Eels ¤2,3…"
+  [251,605 63x59] button "LOG"   ⚠ GAP 0px to div.row.sel "Clockwork Eels ¤2,3…"
+  [322,605 63x59] button "MORE"   ⚠ GAP 0px to div.row.sel "Clockwork Eels ¤2,3…"
+covered (1): div.row "Ghost Chips ¤4,124 −21% Exc…" under button "HARBOR"
+off screen, scroll to reach (2): div.row "Dreamsilk ¤5,714 −42% Orchi…" | div.row "Moon Ink ¤19,841 usual Usua…"
+--- visible text ---
+NIGHT
+3/30
+NET WORTH
+−¤3,524
+Bilge Rat at ¤0
+PURSE
+¤859
+VAULT
+¤0
+DEBT 6%
+¤6,742
+HOLD
+1/30
+HULL
+100%
+NIGHT 3 MARKET
+Lanternquay
+Carry Clockwork Eels → Orchid
+Seen +45% · 2n ago · 1n · may change
+Glowkelp
+¤45
++7%
+Copperhook +89% seen 1n ago
+Bottled Rain
+¤122
+−6%
+Saint Mire +49% seen 2n ago
+Rust Pearls
+¤516
++23%
+Above usual · check your sale quote
+Synth Saffron
+—
+No dealers tonight
+Clockwork Eels
+¤2,359
+usual
+×1 · avg ¤1,826 · Orchid +45% seen 2n ago
+Ghost Chips
+¤4,124
+−21%
+Exchange +35% seen 2n ago
+Dreamsilk
+¤5,714
+−42%
+Orchid +62% seen 2n ago
+Moon Ink
+¤19,841
+usual
+Usual range · compare other ports
+Cargo worth here: ¤2,359
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+One more night to Saint Mire. Trade here, then tap Sail on the map.
+> shot judging/round-5/judge-2/explore-waypoint-choice.png
+saved judging/round-5/judge-2/explore-waypoint-choice.png

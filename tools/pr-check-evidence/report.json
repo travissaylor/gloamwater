@@ -1,0 +1,2352 @@
+{
+  "game": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\game\\index.html",
+  "gameSha256": "514fe0fba64b5fab2cb80c2909198befb7cb1685010bba98a514f4d01c1a3745",
+  "driverSha256": "de866b9983042141b002df3783ac5f32f273dafc8284d044408ab11cc7855982",
+  "checks": [
+    {
+      "name": "webkit 360x640 notice preserves map focus",
+      "pass": true,
+      "evidence": {
+        "target": "#nodes .node[data-d=\"sm\"]",
+        "after": {
+          "selected": "sm",
+          "busy": false,
+          "trip": null,
+          "modal": false
+        }
+      }
+    },
+    {
+      "name": "webkit 360x640 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 39.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 39.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 99.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 99.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 99.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 39.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 39.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 409.40625,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "webkit 390x664 notice preserves map focus",
+      "pass": true,
+      "evidence": {
+        "target": "#nodes .node[data-d=\"sm\"]",
+        "after": {
+          "selected": "sm",
+          "busy": false,
+          "trip": null,
+          "modal": false
+        }
+      }
+    },
+    {
+      "name": "webkit 390x664 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 40.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 40.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 100.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 100.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 100.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 40.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 40.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 410.84375,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "webkit 390x844 notice preserves map focus",
+      "pass": true,
+      "evidence": {
+        "target": "#nodes .node[data-d=\"sm\"]",
+        "after": {
+          "selected": "sm",
+          "busy": false,
+          "trip": null,
+          "modal": false
+        }
+      }
+    },
+    {
+      "name": "webkit 390x844 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 51.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 51.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 111.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 111.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 111.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 51.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 51.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 421.640625,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "webkit 1280x640 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 200.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 200.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 260.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 260.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 260.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 200.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 200.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 16.78125,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "webkit 1280x800 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 360.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 360.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 420.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 420.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 420.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 360.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 360.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 16.78125,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "webkit notice preserves dock focus",
+      "pass": true,
+      "evidence": {
+        "target": "#tcard-slot [data-act=\"portdetails\"]",
+        "after": {
+          "selected": "fm",
+          "busy": false,
+          "trip": null,
+          "modal": true
+        }
+      }
+    },
+    {
+      "name": "webkit fleet hints allow arrival",
+      "pass": true,
+      "evidence": {
+        "result": [
+          {
+            "day": 3,
+            "from": "lq",
+            "text": "Fleet: Glowkelp → CopperhookThrough night 4 · sale price unconfirmed",
+            "arrives": 4,
+            "closes": 4
+          },
+          {
+            "day": 3,
+            "from": "sm",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 3,
+            "from": "ot",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 3,
+            "from": "de",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 3,
+            "from": "sl",
+            "text": "Fleet: Glowkelp → CopperhookThrough night 4 · sale price unconfirmed",
+            "arrives": 4,
+            "closes": 4
+          },
+          {
+            "day": 3,
+            "from": "ch",
+            "text": "Fleet: Glowkelp → CopperhookThrough night 4 · sale price unconfirmed",
+            "arrives": 3,
+            "closes": 4
+          },
+          {
+            "day": 3,
+            "from": "fm",
+            "text": "Fleet: Glowkelp → CopperhookThrough night 4 · sale price unconfirmed",
+            "arrives": 4,
+            "closes": 4
+          },
+          {
+            "day": 4,
+            "from": "lq",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 4,
+            "from": "sm",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 4,
+            "from": "ot",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 4,
+            "from": "de",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 6,
+            "closes": 8
+          },
+          {
+            "day": 4,
+            "from": "sl",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 6,
+            "closes": 8
+          },
+          {
+            "day": 4,
+            "from": "ch",
+            "text": "Fleet: Glowkelp → CopperhookThrough night 4 · sale price unconfirmed",
+            "arrives": 4,
+            "closes": 4
+          },
+          {
+            "day": 4,
+            "from": "fm",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 7,
+            "from": "lq",
+            "text": "Fleet: Bottled Rain → Saint MireThrough night 8 · sale price unconfirmed",
+            "arrives": 8,
+            "closes": 8
+          },
+          {
+            "day": 7,
+            "from": "sm",
+            "text": "Fleet: Bottled Rain → Saint MireThrough night 8 · sale price unconfirmed",
+            "arrives": 7,
+            "closes": 8
+          },
+          {
+            "day": 7,
+            "from": "ot",
+            "text": "Fleet: Bottled Rain → Saint MireThrough night 8 · sale price unconfirmed",
+            "arrives": 8,
+            "closes": 8
+          },
+          {
+            "day": 7,
+            "from": "de",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 9,
+            "closes": 12
+          },
+          {
+            "day": 7,
+            "from": "sl",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 9,
+            "closes": 12
+          },
+          {
+            "day": 7,
+            "from": "ch",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 9,
+            "closes": 12
+          },
+          {
+            "day": 7,
+            "from": "fm",
+            "text": "Fleet: Bottled Rain → Saint MireThrough night 8 · sale price unconfirmed",
+            "arrives": 8,
+            "closes": 8
+          },
+          {
+            "day": 8,
+            "from": "lq",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 9,
+            "closes": 12
+          },
+          {
+            "day": 8,
+            "from": "sm",
+            "text": "Fleet: Bottled Rain → Saint MireThrough night 8 · sale price unconfirmed",
+            "arrives": 8,
+            "closes": 8
+          },
+          {
+            "day": 8,
+            "from": "ot",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 9,
+            "closes": 12
+          },
+          {
+            "day": 8,
+            "from": "de",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 9,
+            "closes": 12
+          },
+          {
+            "day": 8,
+            "from": "sl",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 10,
+            "closes": 12
+          },
+          {
+            "day": 8,
+            "from": "ch",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 10,
+            "closes": 12
+          },
+          {
+            "day": 8,
+            "from": "fm",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 10,
+            "closes": 12
+          },
+          {
+            "day": 11,
+            "from": "lq",
+            "text": "Fleet: Rust Pearls → OrchidThrough night 12 · sale price unconfirmed",
+            "arrives": 12,
+            "closes": 12
+          },
+          {
+            "day": 11,
+            "from": "sm",
+            "text": "Fleet: Rust Pearls → OrchidThrough night 12 · sale price unconfirmed",
+            "arrives": 12,
+            "closes": 12
+          },
+          {
+            "day": 11,
+            "from": "ot",
+            "text": "Fleet: Rust Pearls → OrchidThrough night 12 · sale price unconfirmed",
+            "arrives": 11,
+            "closes": 12
+          },
+          {
+            "day": 11,
+            "from": "de",
+            "text": "Fleet: Rust Pearls → OrchidThrough night 12 · sale price unconfirmed",
+            "arrives": 12,
+            "closes": 12
+          },
+          {
+            "day": 11,
+            "from": "sl",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 11,
+            "from": "ch",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 11,
+            "from": "fm",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 12,
+            "from": "lq",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 12,
+            "from": "sm",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 12,
+            "from": "ot",
+            "text": "Fleet: Rust Pearls → OrchidThrough night 12 · sale price unconfirmed",
+            "arrives": 12,
+            "closes": 12
+          },
+          {
+            "day": 12,
+            "from": "de",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 14,
+            "closes": 16
+          },
+          {
+            "day": 12,
+            "from": "sl",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 14,
+            "closes": 16
+          },
+          {
+            "day": 12,
+            "from": "ch",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 12,
+            "from": "fm",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 15,
+            "from": "lq",
+            "text": "Fleet: Synth Saffron → FogmouthThrough night 16 · sale price unconfirmed",
+            "arrives": 16,
+            "closes": 16
+          },
+          {
+            "day": 15,
+            "from": "sm",
+            "text": "Fleet: Synth Saffron → FogmouthThrough night 16 · sale price unconfirmed",
+            "arrives": 16,
+            "closes": 16
+          },
+          {
+            "day": 15,
+            "from": "ot",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 15,
+            "from": "de",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 15,
+            "from": "sl",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 15,
+            "from": "ch",
+            "text": "Fleet: Synth Saffron → FogmouthThrough night 16 · sale price unconfirmed",
+            "arrives": 16,
+            "closes": 16
+          },
+          {
+            "day": 15,
+            "from": "fm",
+            "text": "Fleet: Synth Saffron → FogmouthThrough night 16 · sale price unconfirmed",
+            "arrives": 15,
+            "closes": 16
+          },
+          {
+            "day": 16,
+            "from": "lq",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 16,
+            "from": "sm",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 18,
+            "closes": 20
+          },
+          {
+            "day": 16,
+            "from": "ot",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 16,
+            "from": "de",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 16,
+            "from": "sl",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 16,
+            "from": "ch",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 18,
+            "closes": 20
+          },
+          {
+            "day": 16,
+            "from": "fm",
+            "text": "Fleet: Synth Saffron → FogmouthThrough night 16 · sale price unconfirmed",
+            "arrives": 16,
+            "closes": 16
+          },
+          {
+            "day": 19,
+            "from": "lq",
+            "text": "Fleet: Clockwork Eels → ExchangeThrough night 20 · sale price unconfirmed",
+            "arrives": 20,
+            "closes": 20
+          },
+          {
+            "day": 19,
+            "from": "sm",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 21,
+            "closes": 24
+          },
+          {
+            "day": 19,
+            "from": "ot",
+            "text": "Fleet: Clockwork Eels → ExchangeThrough night 20 · sale price unconfirmed",
+            "arrives": 20,
+            "closes": 20
+          },
+          {
+            "day": 19,
+            "from": "de",
+            "text": "Fleet: Clockwork Eels → ExchangeThrough night 20 · sale price unconfirmed",
+            "arrives": 19,
+            "closes": 20
+          },
+          {
+            "day": 19,
+            "from": "sl",
+            "text": "Fleet: Clockwork Eels → ExchangeThrough night 20 · sale price unconfirmed",
+            "arrives": 20,
+            "closes": 20
+          },
+          {
+            "day": 19,
+            "from": "ch",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 21,
+            "closes": 24
+          },
+          {
+            "day": 19,
+            "from": "fm",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 21,
+            "closes": 24
+          },
+          {
+            "day": 20,
+            "from": "lq",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 21,
+            "closes": 24
+          },
+          {
+            "day": 20,
+            "from": "sm",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 22,
+            "closes": 24
+          },
+          {
+            "day": 20,
+            "from": "ot",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 22,
+            "closes": 24
+          },
+          {
+            "day": 20,
+            "from": "de",
+            "text": "Fleet: Clockwork Eels → ExchangeThrough night 20 · sale price unconfirmed",
+            "arrives": 20,
+            "closes": 20
+          },
+          {
+            "day": 20,
+            "from": "sl",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 21,
+            "closes": 24
+          },
+          {
+            "day": 20,
+            "from": "ch",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 21,
+            "closes": 24
+          },
+          {
+            "day": 20,
+            "from": "fm",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 22,
+            "closes": 24
+          },
+          {
+            "day": 23,
+            "from": "lq",
+            "text": "Fleet: Ghost Chips → SluicesThrough night 24 · sale price unconfirmed",
+            "arrives": 24,
+            "closes": 24
+          },
+          {
+            "day": 23,
+            "from": "sm",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 23,
+            "from": "ot",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 23,
+            "from": "de",
+            "text": "Fleet: Ghost Chips → SluicesThrough night 24 · sale price unconfirmed",
+            "arrives": 24,
+            "closes": 24
+          },
+          {
+            "day": 23,
+            "from": "sl",
+            "text": "Fleet: Ghost Chips → SluicesThrough night 24 · sale price unconfirmed",
+            "arrives": 23,
+            "closes": 24
+          },
+          {
+            "day": 23,
+            "from": "ch",
+            "text": "Fleet: Ghost Chips → SluicesThrough night 24 · sale price unconfirmed",
+            "arrives": 24,
+            "closes": 24
+          },
+          {
+            "day": 23,
+            "from": "fm",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 24,
+            "from": "lq",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 24,
+            "from": "sm",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 24,
+            "from": "ot",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 24,
+            "from": "de",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 24,
+            "from": "sl",
+            "text": "Fleet: Ghost Chips → SluicesThrough night 24 · sale price unconfirmed",
+            "arrives": 24,
+            "closes": 24
+          },
+          {
+            "day": 24,
+            "from": "ch",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 26,
+            "closes": 28
+          },
+          {
+            "day": 24,
+            "from": "fm",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 26,
+            "closes": 28
+          },
+          {
+            "day": 27,
+            "from": "lq",
+            "text": "Fleet: Dreamsilk → OrchidThrough night 28 · sale price unconfirmed",
+            "arrives": 28,
+            "closes": 28
+          },
+          {
+            "day": 27,
+            "from": "sm",
+            "text": "Fleet: Dreamsilk → OrchidThrough night 28 · sale price unconfirmed",
+            "arrives": 28,
+            "closes": 28
+          },
+          {
+            "day": 27,
+            "from": "ot",
+            "text": "Fleet: Dreamsilk → OrchidThrough night 28 · sale price unconfirmed",
+            "arrives": 27,
+            "closes": 28
+          },
+          {
+            "day": 27,
+            "from": "de",
+            "text": "Fleet: Dreamsilk → OrchidThrough night 28 · sale price unconfirmed",
+            "arrives": 28,
+            "closes": 28
+          },
+          {
+            "day": 27,
+            "from": "sl",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 27,
+            "from": "ch",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 27,
+            "from": "fm",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 28,
+            "from": "lq",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 28,
+            "from": "sm",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 28,
+            "from": "ot",
+            "text": "Fleet: Dreamsilk → OrchidThrough night 28 · sale price unconfirmed",
+            "arrives": 28,
+            "closes": 28
+          },
+          {
+            "day": 28,
+            "from": "de",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 28,
+            "from": "sl",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 28,
+            "from": "ch",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 28,
+            "from": "fm",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "lq",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "sm",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 30,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "ot",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 30,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "de",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 30,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "sl",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 30,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "ch",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 30,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "fm",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 30,
+            "closes": 30
+          }
+        ],
+        "dockNote": "Fleet ends night 4, before your arrival."
+      }
+    },
+    {
+      "name": "chromium 360x640 notice preserves map focus",
+      "pass": true,
+      "evidence": {
+        "target": "#nodes .node[data-d=\"sm\"]",
+        "after": {
+          "selected": "sm",
+          "busy": false,
+          "trip": null,
+          "modal": false
+        }
+      }
+    },
+    {
+      "name": "chromium 360x640 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 121.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 121.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 181.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 181.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 181.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 121.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 121.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 491.40625,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "chromium 390x664 notice preserves map focus",
+      "pass": true,
+      "evidence": {
+        "target": "#nodes .node[data-d=\"sm\"]",
+        "after": {
+          "selected": "sm",
+          "busy": false,
+          "trip": null,
+          "modal": false
+        }
+      }
+    },
+    {
+      "name": "chromium 390x664 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 122.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 122.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 182.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 182.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 182.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 122.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 122.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 492.84375,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "chromium 390x844 notice preserves map focus",
+      "pass": true,
+      "evidence": {
+        "target": "#nodes .node[data-d=\"sm\"]",
+        "after": {
+          "selected": "sm",
+          "busy": false,
+          "trip": null,
+          "modal": false
+        }
+      }
+    },
+    {
+      "name": "chromium 390x844 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 133.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 133.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 193.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 193.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 193.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 133.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 133.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 503.640625,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "chromium 1280x640 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 199.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 199.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 259.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 259.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 259.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 199.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 199.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 128.78125,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "chromium 1280x800 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 359.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 359.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 419.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 419.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 419.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 359.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 359.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 128.78125,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "chromium notice preserves dock focus",
+      "pass": true,
+      "evidence": {
+        "target": "#tcard-slot [data-act=\"portdetails\"]",
+        "after": {
+          "selected": "fm",
+          "busy": false,
+          "trip": null,
+          "modal": true
+        }
+      }
+    },
+    {
+      "name": "chromium fleet hints allow arrival",
+      "pass": true,
+      "evidence": {
+        "result": [
+          {
+            "day": 3,
+            "from": "lq",
+            "text": "Fleet: Glowkelp → CopperhookThrough night 4 · sale price unconfirmed",
+            "arrives": 4,
+            "closes": 4
+          },
+          {
+            "day": 3,
+            "from": "sm",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 3,
+            "from": "ot",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 3,
+            "from": "de",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 3,
+            "from": "sl",
+            "text": "Fleet: Glowkelp → CopperhookThrough night 4 · sale price unconfirmed",
+            "arrives": 4,
+            "closes": 4
+          },
+          {
+            "day": 3,
+            "from": "ch",
+            "text": "Fleet: Glowkelp → CopperhookThrough night 4 · sale price unconfirmed",
+            "arrives": 3,
+            "closes": 4
+          },
+          {
+            "day": 3,
+            "from": "fm",
+            "text": "Fleet: Glowkelp → CopperhookThrough night 4 · sale price unconfirmed",
+            "arrives": 4,
+            "closes": 4
+          },
+          {
+            "day": 4,
+            "from": "lq",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 4,
+            "from": "sm",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 4,
+            "from": "ot",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 4,
+            "from": "de",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 6,
+            "closes": 8
+          },
+          {
+            "day": 4,
+            "from": "sl",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 6,
+            "closes": 8
+          },
+          {
+            "day": 4,
+            "from": "ch",
+            "text": "Fleet: Glowkelp → CopperhookThrough night 4 · sale price unconfirmed",
+            "arrives": 4,
+            "closes": 4
+          },
+          {
+            "day": 4,
+            "from": "fm",
+            "text": "Fleet: Bottled Rain → Saint MireOpens night 5 · through 8 · sale price unconfirmed",
+            "arrives": 5,
+            "closes": 8
+          },
+          {
+            "day": 7,
+            "from": "lq",
+            "text": "Fleet: Bottled Rain → Saint MireThrough night 8 · sale price unconfirmed",
+            "arrives": 8,
+            "closes": 8
+          },
+          {
+            "day": 7,
+            "from": "sm",
+            "text": "Fleet: Bottled Rain → Saint MireThrough night 8 · sale price unconfirmed",
+            "arrives": 7,
+            "closes": 8
+          },
+          {
+            "day": 7,
+            "from": "ot",
+            "text": "Fleet: Bottled Rain → Saint MireThrough night 8 · sale price unconfirmed",
+            "arrives": 8,
+            "closes": 8
+          },
+          {
+            "day": 7,
+            "from": "de",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 9,
+            "closes": 12
+          },
+          {
+            "day": 7,
+            "from": "sl",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 9,
+            "closes": 12
+          },
+          {
+            "day": 7,
+            "from": "ch",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 9,
+            "closes": 12
+          },
+          {
+            "day": 7,
+            "from": "fm",
+            "text": "Fleet: Bottled Rain → Saint MireThrough night 8 · sale price unconfirmed",
+            "arrives": 8,
+            "closes": 8
+          },
+          {
+            "day": 8,
+            "from": "lq",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 9,
+            "closes": 12
+          },
+          {
+            "day": 8,
+            "from": "sm",
+            "text": "Fleet: Bottled Rain → Saint MireThrough night 8 · sale price unconfirmed",
+            "arrives": 8,
+            "closes": 8
+          },
+          {
+            "day": 8,
+            "from": "ot",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 9,
+            "closes": 12
+          },
+          {
+            "day": 8,
+            "from": "de",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 9,
+            "closes": 12
+          },
+          {
+            "day": 8,
+            "from": "sl",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 10,
+            "closes": 12
+          },
+          {
+            "day": 8,
+            "from": "ch",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 10,
+            "closes": 12
+          },
+          {
+            "day": 8,
+            "from": "fm",
+            "text": "Fleet: Rust Pearls → OrchidOpens night 9 · through 12 · sale price unconfirmed",
+            "arrives": 10,
+            "closes": 12
+          },
+          {
+            "day": 11,
+            "from": "lq",
+            "text": "Fleet: Rust Pearls → OrchidThrough night 12 · sale price unconfirmed",
+            "arrives": 12,
+            "closes": 12
+          },
+          {
+            "day": 11,
+            "from": "sm",
+            "text": "Fleet: Rust Pearls → OrchidThrough night 12 · sale price unconfirmed",
+            "arrives": 12,
+            "closes": 12
+          },
+          {
+            "day": 11,
+            "from": "ot",
+            "text": "Fleet: Rust Pearls → OrchidThrough night 12 · sale price unconfirmed",
+            "arrives": 11,
+            "closes": 12
+          },
+          {
+            "day": 11,
+            "from": "de",
+            "text": "Fleet: Rust Pearls → OrchidThrough night 12 · sale price unconfirmed",
+            "arrives": 12,
+            "closes": 12
+          },
+          {
+            "day": 11,
+            "from": "sl",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 11,
+            "from": "ch",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 11,
+            "from": "fm",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 12,
+            "from": "lq",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 12,
+            "from": "sm",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 12,
+            "from": "ot",
+            "text": "Fleet: Rust Pearls → OrchidThrough night 12 · sale price unconfirmed",
+            "arrives": 12,
+            "closes": 12
+          },
+          {
+            "day": 12,
+            "from": "de",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 14,
+            "closes": 16
+          },
+          {
+            "day": 12,
+            "from": "sl",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 14,
+            "closes": 16
+          },
+          {
+            "day": 12,
+            "from": "ch",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 12,
+            "from": "fm",
+            "text": "Fleet: Synth Saffron → FogmouthOpens night 13 · through 16 · sale price unconfirmed",
+            "arrives": 13,
+            "closes": 16
+          },
+          {
+            "day": 15,
+            "from": "lq",
+            "text": "Fleet: Synth Saffron → FogmouthThrough night 16 · sale price unconfirmed",
+            "arrives": 16,
+            "closes": 16
+          },
+          {
+            "day": 15,
+            "from": "sm",
+            "text": "Fleet: Synth Saffron → FogmouthThrough night 16 · sale price unconfirmed",
+            "arrives": 16,
+            "closes": 16
+          },
+          {
+            "day": 15,
+            "from": "ot",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 15,
+            "from": "de",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 15,
+            "from": "sl",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 15,
+            "from": "ch",
+            "text": "Fleet: Synth Saffron → FogmouthThrough night 16 · sale price unconfirmed",
+            "arrives": 16,
+            "closes": 16
+          },
+          {
+            "day": 15,
+            "from": "fm",
+            "text": "Fleet: Synth Saffron → FogmouthThrough night 16 · sale price unconfirmed",
+            "arrives": 15,
+            "closes": 16
+          },
+          {
+            "day": 16,
+            "from": "lq",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 16,
+            "from": "sm",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 18,
+            "closes": 20
+          },
+          {
+            "day": 16,
+            "from": "ot",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 16,
+            "from": "de",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 16,
+            "from": "sl",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 17,
+            "closes": 20
+          },
+          {
+            "day": 16,
+            "from": "ch",
+            "text": "Fleet: Clockwork Eels → ExchangeOpens night 17 · through 20 · sale price unconfirmed",
+            "arrives": 18,
+            "closes": 20
+          },
+          {
+            "day": 16,
+            "from": "fm",
+            "text": "Fleet: Synth Saffron → FogmouthThrough night 16 · sale price unconfirmed",
+            "arrives": 16,
+            "closes": 16
+          },
+          {
+            "day": 19,
+            "from": "lq",
+            "text": "Fleet: Clockwork Eels → ExchangeThrough night 20 · sale price unconfirmed",
+            "arrives": 20,
+            "closes": 20
+          },
+          {
+            "day": 19,
+            "from": "sm",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 21,
+            "closes": 24
+          },
+          {
+            "day": 19,
+            "from": "ot",
+            "text": "Fleet: Clockwork Eels → ExchangeThrough night 20 · sale price unconfirmed",
+            "arrives": 20,
+            "closes": 20
+          },
+          {
+            "day": 19,
+            "from": "de",
+            "text": "Fleet: Clockwork Eels → ExchangeThrough night 20 · sale price unconfirmed",
+            "arrives": 19,
+            "closes": 20
+          },
+          {
+            "day": 19,
+            "from": "sl",
+            "text": "Fleet: Clockwork Eels → ExchangeThrough night 20 · sale price unconfirmed",
+            "arrives": 20,
+            "closes": 20
+          },
+          {
+            "day": 19,
+            "from": "ch",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 21,
+            "closes": 24
+          },
+          {
+            "day": 19,
+            "from": "fm",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 21,
+            "closes": 24
+          },
+          {
+            "day": 20,
+            "from": "lq",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 21,
+            "closes": 24
+          },
+          {
+            "day": 20,
+            "from": "sm",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 22,
+            "closes": 24
+          },
+          {
+            "day": 20,
+            "from": "ot",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 22,
+            "closes": 24
+          },
+          {
+            "day": 20,
+            "from": "de",
+            "text": "Fleet: Clockwork Eels → ExchangeThrough night 20 · sale price unconfirmed",
+            "arrives": 20,
+            "closes": 20
+          },
+          {
+            "day": 20,
+            "from": "sl",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 21,
+            "closes": 24
+          },
+          {
+            "day": 20,
+            "from": "ch",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 21,
+            "closes": 24
+          },
+          {
+            "day": 20,
+            "from": "fm",
+            "text": "Fleet: Ghost Chips → SluicesOpens night 21 · through 24 · sale price unconfirmed",
+            "arrives": 22,
+            "closes": 24
+          },
+          {
+            "day": 23,
+            "from": "lq",
+            "text": "Fleet: Ghost Chips → SluicesThrough night 24 · sale price unconfirmed",
+            "arrives": 24,
+            "closes": 24
+          },
+          {
+            "day": 23,
+            "from": "sm",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 23,
+            "from": "ot",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 23,
+            "from": "de",
+            "text": "Fleet: Ghost Chips → SluicesThrough night 24 · sale price unconfirmed",
+            "arrives": 24,
+            "closes": 24
+          },
+          {
+            "day": 23,
+            "from": "sl",
+            "text": "Fleet: Ghost Chips → SluicesThrough night 24 · sale price unconfirmed",
+            "arrives": 23,
+            "closes": 24
+          },
+          {
+            "day": 23,
+            "from": "ch",
+            "text": "Fleet: Ghost Chips → SluicesThrough night 24 · sale price unconfirmed",
+            "arrives": 24,
+            "closes": 24
+          },
+          {
+            "day": 23,
+            "from": "fm",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 24,
+            "from": "lq",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 24,
+            "from": "sm",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 24,
+            "from": "ot",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 24,
+            "from": "de",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 25,
+            "closes": 28
+          },
+          {
+            "day": 24,
+            "from": "sl",
+            "text": "Fleet: Ghost Chips → SluicesThrough night 24 · sale price unconfirmed",
+            "arrives": 24,
+            "closes": 24
+          },
+          {
+            "day": 24,
+            "from": "ch",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 26,
+            "closes": 28
+          },
+          {
+            "day": 24,
+            "from": "fm",
+            "text": "Fleet: Dreamsilk → OrchidOpens night 25 · through 28 · sale price unconfirmed",
+            "arrives": 26,
+            "closes": 28
+          },
+          {
+            "day": 27,
+            "from": "lq",
+            "text": "Fleet: Dreamsilk → OrchidThrough night 28 · sale price unconfirmed",
+            "arrives": 28,
+            "closes": 28
+          },
+          {
+            "day": 27,
+            "from": "sm",
+            "text": "Fleet: Dreamsilk → OrchidThrough night 28 · sale price unconfirmed",
+            "arrives": 28,
+            "closes": 28
+          },
+          {
+            "day": 27,
+            "from": "ot",
+            "text": "Fleet: Dreamsilk → OrchidThrough night 28 · sale price unconfirmed",
+            "arrives": 27,
+            "closes": 28
+          },
+          {
+            "day": 27,
+            "from": "de",
+            "text": "Fleet: Dreamsilk → OrchidThrough night 28 · sale price unconfirmed",
+            "arrives": 28,
+            "closes": 28
+          },
+          {
+            "day": 27,
+            "from": "sl",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 27,
+            "from": "ch",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 27,
+            "from": "fm",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 28,
+            "from": "lq",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 28,
+            "from": "sm",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 28,
+            "from": "ot",
+            "text": "Fleet: Dreamsilk → OrchidThrough night 28 · sale price unconfirmed",
+            "arrives": 28,
+            "closes": 28
+          },
+          {
+            "day": 28,
+            "from": "de",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 28,
+            "from": "sl",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 28,
+            "from": "ch",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 28,
+            "from": "fm",
+            "text": "Fleet: Dreamsilk → LanternquayOpens night 29 · through 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "lq",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 29,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "sm",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 30,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "ot",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 30,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "de",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 30,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "sl",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 30,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "ch",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 30,
+            "closes": 30
+          },
+          {
+            "day": 29,
+            "from": "fm",
+            "text": "Fleet: Dreamsilk → LanternquayThrough night 30 · sale price unconfirmed",
+            "arrives": 30,
+            "closes": 30
+          }
+        ],
+        "dockNote": "Fleet ends night 4, before your arrival."
+      }
+    },
+    {
+      "name": "TouchRun ledger none",
+      "pass": true,
+      "evidence": {
+        "expectedLedgerEntry": {
+          "name": "PR fixture",
+          "score": -3500,
+          "night": 30,
+          "sunk": false
+        },
+        "entriesBefore": [
+          {
+            "name": "PR fixture",
+            "score": -3500,
+            "night": 30,
+            "sunk": false
+          }
+        ],
+        "ledgerSurvivedReload": true
+      }
+    },
+    {
+      "name": "TouchRun ledger missing",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "missing",
+        "rejected": "Completed run is missing from the ledger before reload"
+      }
+    },
+    {
+      "name": "TouchRun ledger stale",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "stale",
+        "rejected": "Completed run is missing from the ledger before reload"
+      }
+    },
+    {
+      "name": "TouchRun ledger wrong-score",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "wrong-score",
+        "rejected": "Completed run is missing from the ledger before reload"
+      }
+    },
+    {
+      "name": "TouchRun ledger lost-on-reload",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "lost-on-reload",
+        "rejected": "Completed run is missing from the ledger after reload"
+      }
+    },
+    {
+      "name": "KeyboardRun ledger none",
+      "pass": true,
+      "evidence": {
+        "expectedLedgerEntry": {
+          "name": "PR fixture",
+          "score": -3500,
+          "night": 30,
+          "sunk": false
+        },
+        "entriesBefore": [
+          {
+            "name": "PR fixture",
+            "score": -3500,
+            "night": 30,
+            "sunk": false
+          }
+        ],
+        "ledgerSurvivedReload": true
+      }
+    },
+    {
+      "name": "KeyboardRun ledger missing",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "missing",
+        "rejected": "Completed run is missing from the ledger before reload"
+      }
+    },
+    {
+      "name": "KeyboardRun ledger stale",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "stale",
+        "rejected": "Completed run is missing from the ledger before reload"
+      }
+    },
+    {
+      "name": "KeyboardRun ledger wrong-score",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "wrong-score",
+        "rejected": "Completed run is missing from the ledger before reload"
+      }
+    },
+    {
+      "name": "KeyboardRun ledger lost-on-reload",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "lost-on-reload",
+        "rejected": "Completed run is missing from the ledger after reload"
+      }
+    }
+  ],
+  "method": "Explicit initialization/storage fixtures with native keyboard/touch interactions on the paths under test.",
+  "limitations": [
+    "Not a full-game or balance test.",
+    "Emulated WebKit/Chromium; no physical iPhone or audible assessment.",
+    "Reduced motion; notice tests retain ordinary timeout timing."
+  ],
+  "pass": true
+}

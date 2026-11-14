@@ -1,0 +1,329 @@
+> key m
+pressed m
+> wait 400
+waited 400ms
+> audio
+{
+ "shim": "none: real Web Audio",
+ "contexts": [
+  {
+   "t": 17129,
+   "createdIn": "touchend",
+   "activation": "active",
+   "stateAtCreate": "running",
+   "resumes": [],
+   "stateNow": "suspended",
+   "currentTime": 19.87
+  }
+ ],
+ "events": [
+  {
+   "t": 18115,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 18115,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 18115,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 18119,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 18120,
+   "event": "click",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 19419,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 19419,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 19419,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 19420,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 19421,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 19422,
+   "event": "click",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 37054,
+   "ctx": 0,
+   "state": "suspended",
+   "during": "statechange"
+  }
+ ]
+}
+> key m
+pressed m
+> wait 400
+waited 400ms
+> audio
+{
+ "shim": "none: real Web Audio",
+ "contexts": [
+  {
+   "t": 17129,
+   "createdIn": "touchend",
+   "activation": "active",
+   "stateAtCreate": "running",
+   "resumes": [
+    {
+     "t": 37446,
+     "during": "keydown",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    },
+    {
+     "t": 37446,
+     "during": "keydown",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    },
+    {
+     "t": 37446,
+     "during": "keydown",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    },
+    {
+     "t": 37447,
+     "during": "keydown",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    },
+    {
+     "t": 37447,
+     "during": "keydown",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    }
+   ],
+   "stateNow": "running",
+   "currentTime": 20.28
+  }
+ ],
+ "events": [
+  {
+   "t": 18115,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 18115,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 18119,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 18120,
+   "event": "click",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 19419,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 19419,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 19419,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 19420,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 19421,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 19422,
+   "event": "click",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 37054,
+   "ctx": 0,
+   "state": "suspended",
+   "during": "statechange"
+  },
+  {
+   "t": 37460,
+   "ctx": 0,
+   "state": "running",
+   "during": "statechange"
+  }
+ ]
+}
+> key Enter
+pressed Enter
+> wait 600
+waited 600ms
+> shot judging/round-5/judge-2/explore-chromium-travel.png
+saved judging/round-5/judge-2/explore-chromium-travel.png
+> wait 4000
+waited 4000ms
+> ui
+viewport 1280x800 · page scrollWidth 1280
+targets (2), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [640,492 478x64] button.choice.risk "Reach for the bag 70% chance to keep it…"
+  [640,564 478x64] button.choice "Let the bag go · ¤250 Certain cash loss…"
+covered (32): button#st-cash.stat "PURSE ¤2,500" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#st-bank.stat "VAULT ¤0" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#st-debt.stat.debt "DEBT · 6%/NIGHT ¤6,360" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#st-hold.stat "HOLD 0/30" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#st-hull.stat "HULL 100%" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#b-help.btn.icon "How to play (?)" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#b-mute.btn.icon "Toggle sound (M)" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#b-menu.btn.icon "Menu" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | g.node "Lanternquay" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | g.node.far "Saint Mire" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | g.node.far "Orchid Terraces" under circle | g.node.far "Drowned Exchange" under button.choice.risk "Reach for the bag 70% chanc…" | g.node "The Sluices !" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | g.node.here "Copperhook Docks FFleet cal…" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | g.node "Fogmouth" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#tab-market.tab "MARKET" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button#tab-harbor.tab "HARBOR 1" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button.btn.icon.market-info "Fleet calendar and market b…" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button.best-run "Rust Pearls → Lanternquay S…" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | div.row "Glowkelp Fleet call Pricey …" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button.btn.sm.teal "Buy" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | div.row "Bottled Rain Saint Mire +20…" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button.btn.sm.teal "Buy" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | div.row "Rust Pearls Cheap Lanternqu…" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button.btn.sm.teal "Buy" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | div.row "Synth Saffron Sluices +42% …" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button.btn.sm.teal "Buy" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | div.row "Clockwork Eels Exchange +21…" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | button.btn.sm.teal "Buy" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | div.row "Ghost Chips Usually importe…" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | div.row "Dreamsilk Glut easing Sluic…" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…" | div.row "Moon Ink ¤16,729 −12% vs us…" under div#modal.ov.tone-danger "THIEF! A gull takes your pu…"
+--- visible text ---
+GLOAMWATER
+NIGHT
+2/30
+PURSE
+¤2,500
+VAULT
+¤0
+DEBT · 6%/NIGHT
+¤6,360
+HOLD
+0/30
+HULL
+100%
+NIGHT 2 OF 30 · MOORED AT
+Copperhook Docks
+NET WORTH
+−¤3,860
+Lanternquay
+Saint Mire
+Orchid Terraces
+Drowned Exchange
+The Sluices
+!
+Copperhook Docks
+F
+Fogmouth
+Select a port · lit canal = 1 night
+MARKET
+HARBOR
+1
+NIGHT 2 MARKET
+Copperhook Docks
+Rust Pearls → Lanternquay
+Seen +94% · 1n ago · 1n · may change
+Glowkelp
+Fleet call
+Pricey
+¤104
++148% vs usual
+Buy
+Sell
+Bottled Rain
+Saint Mire +20% seen · 1n ago
+¤159
++22% vs usual
+Buy
+Sell
+Rust Pearls
+Cheap
+Lanternquay +94% seen · 1n ago
+¤309
+−26% vs usual
+Buy
+Sell
+Synth Saffron
+Sluices +42% seen · 1n ago
+¤1,406
++28% vs usual
+Buy
+Sell
+Clockwork Eels
+Exchange +21% seen · 1n ago
+¤2,078
+−13% vs usual
+Buy
+Sell
+Ghost Chips
+Usually imported here
+¤4,942
+usual
+Buy
+Sell
+Dreamsilk
+Glut easing
+Sluices +114% seen · 1n ago
+¤4,275
+−56% vs usual
+Buy
+Sell
+Moon Ink
+¤16,729
+−12% vs usual
+Buy
+Sell
+Cargo worth here: ¤0
+SHIP'S LOG
+N2
+Bulletin: Dealers at The Sluices are panic-selling Glowkelp ahead of a rumoured raid.
+N2
+Arrived at Copperhook Docks.
+N1
+You owe Marrow Quill ¤6,000 for the Little Lantern. Thirty nights to make it right.
+THIEF!
+A gull takes your purse
+
+A trained grey gull snags a bag containing ¤250. Its tether catches your wrist. You can grab the bag, but the skiff is drifting toward the stone quay.
+
+Reach for the bag
+70% chance to keep it. On failure, lose ¤250 and 10% hull (you have 100%).
+Let the bag go · ¤250
+Certain cash loss. Your hull and cargo stay safe.
+> errors
+no errors

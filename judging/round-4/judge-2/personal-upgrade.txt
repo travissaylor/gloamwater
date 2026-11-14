@@ -1,0 +1,64 @@
+> taptext Buy ·
+tapped button.choice.primary "Buy · ¤2,500" at (215,827) 396x52; touch landed on button.choice.primary "Buy · ¤2,500"
+> wait 800
+waited 800ms
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/upgrade-feedback.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/upgrade-feedback.png
+> taptext Map
+tapped button "MAP" at (130,898) 77x56; touch landed on svg.ico
+> wait 700
+waited 700ms
+> tap #nodes [data-d=lq]
+tapped g.node "Lanternquay" at (225,429) 130x93; touch landed on circle.disc
+> wait 700
+waited 700ms
+> taptext Sail
+tapped button.btn.primary "Sail · 1 night" at (271,818) 262x44; touch landed on button.btn.primary "Sail · 1 night"
+> wait 4500
+waited 4500ms
+> ui
+viewport 430x932 · page scrollWidth 430
+targets (1), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [215,887 396x52] button.choice.primary "Continue"
+covered (20): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov.tone-luck "LUCKY FIND A drowned strong…" | button#st-cash.stat "PURSE ¤808 +¤460" under div#modal.ov.tone-luck "LUCKY FIND A drowned strong…" | button#st-bank.stat "VAULT ¤0" under div#modal.ov.tone-luck "LUCKY FIND A drowned strong…" | button#st-debt.stat.debt "DEBT 6% ¤6,742" under div#modal.ov.tone-luck "LUCKY FIND A drowned strong…" | button#st-hold.stat "HOLD 0/30" under div#modal.ov.tone-luck "LUCKY FIND A drowned strong…" | button#st-hull.stat "HULL 100%" under div#modal.ov.tone-luck "LUCKY FIND A drowned strong…" | g.node.here "Lanternquay" under div#modal.ov.tone-luck "LUCKY FIND A drowned strong…" | g.node "Saint Mire" under div#modal.ov.tone-luck "LUCKY FIND A drowned strong…" | g.node "Orchid" under rect | g.node "Exchange" under circle | g.node "Sluices" under div#modal.ov.tone-luck "LUCKY FIND A drowned strong…" | g.node "Copperhook FFleet call: Glo…" under div#modal.ov.tone-luck "LUCKY FIND A drowned strong…" | g.node "Fogmouth" under div#modal.ov.tone-luck "LUCKY FIND A drowned strong…" | button.btn "Open market" under p "Your boathook snags a ruste…" | button.btn.amber "Stay the night" under p "Your boathook snags a ruste…" | button "MARKET" under button.choice.primary "Continue" | button "MAP" under button.choice.primary "Continue" | button "HARBOR" under button.choice.primary "Continue" | button "LOG" under button.choice.primary "Continue" | button "MORE" under button.choice.primary "Continue"
+--- visible text ---
+NIGHT
+3/30
+NET WORTH
+−¤5,934
+Bilge Rat at ¤0
+PURSE
+¤808
++¤460
+VAULT
+¤0
+DEBT 6%
+¤6,742
+HOLD
+0/30
+HULL
+100%
+Lanternquay
+Saint Mire
+Orchid
+Exchange
+Sluices
+Copperhook
+F
+Fogmouth
+Moored at Lanternquay
+Tap any district to compare routes.
+Lit canals take one night. Select an island for prices.
+Open market
+Stay the night
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+LUCKY FIND
+A drowned strongbox
+
+Your boathook snags a rusted strongbox under the mooring. Inside, wrapped in oilcloth: ¤460.
+
+Continue

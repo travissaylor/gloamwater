@@ -1,0 +1,5 @@
+game OK a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03 253094
+rubric OK 7a3f9d2c1d567b4547c115e3a90ef4ad79ae103ead30ece274d04a5d01942d67
+helpers OK 46/46
+helper_sha256 aggregate reproduced
+fail=0 at 2026-11-14T18:58:20.996Z

@@ -1,0 +1,103 @@
+> tap #t-new
+tapped button#t-new.btn.primary.lg "Cast off" at (640,436) 240x52; touch landed on button#t-new.btn.primary.lg "Cast off"
+> wait 700
+waited 700ms
+> tap #go
+tapped button#go.choice.primary "Cast off A quick guided tour starts fir…" at (640,628) 478x64; touch landed on div "Cast off A quick guided tour starts fir…"
+> wait 1200
+waited 1200ms
+> tap #coach [data-skip]
+tapped button.btn.ghost.sm "Skip tour" at (648,249) 78x32; touch landed on button.btn.ghost.sm "Skip tour"
+> wait 700
+waited 700ms
+> shot judging/round-5/judge-2/explore-desktop.png
+saved judging/round-5/judge-2/explore-desktop.png
+> key 6
+pressed 6
+> wait 700
+waited 700ms
+> shot judging/round-5/judge-2/explore-desktop-route.png
+saved judging/round-5/judge-2/explore-desktop-route.png
+> audio
+{
+ "shim": "none: real Web Audio",
+ "contexts": [
+  {
+   "t": 17129,
+   "createdIn": "touchend",
+   "activation": "active",
+   "stateAtCreate": "running",
+   "resumes": [],
+   "stateNow": "running",
+   "currentTime": 4.11
+  }
+ ],
+ "events": [
+  {
+   "t": 18114,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 18115,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 18115,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 18115,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 18119,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 18120,
+   "event": "click",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 19419,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 19419,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 19419,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 19420,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 19421,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 19422,
+   "event": "click",
+   "pointerType": "touch",
+   "activation": "active"
+  }
+ ]
+}

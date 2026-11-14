@@ -1,0 +1,544 @@
+{
+  "generatedAt": "2026-11-14T17:17:17.015Z",
+  "gameSha256": "b18bcf691bc179f29bbcaa56153b2f47c14e7be3a177bbc520f50acfedfbaab4",
+  "bytes": 238881,
+  "selection": "all",
+  "checks": [
+    {
+      "name": "source constraints",
+      "pass": true,
+      "ms": 3,
+      "evidence": {
+        "bytes": 238881,
+        "syntaxValid": true,
+        "externalResources": false
+      }
+    },
+    {
+      "name": "WebKit touch 390x844",
+      "pass": true,
+      "ms": 12767,
+      "evidence": {
+        "input": "First confirm bought 2; no-dealers arrow/Enter clean",
+        "hudTitle": "Debt to Marrow Quill",
+        "outOfStockFixture": false,
+        "map": {
+          "nodes": [
+            {
+              "id": "lq",
+              "x": 145.53561401367188,
+              "y": 342.7437438964844,
+              "width": 116.36624145507812,
+              "height": 83.70001220703125
+            },
+            {
+              "id": "sm",
+              "x": 16.556249618530273,
+              "y": 331.70001220703125,
+              "width": 106.94999694824219,
+              "height": 83.69998168945312
+            },
+            {
+              "id": "ot",
+              "x": 60.150001525878906,
+              "y": 528.7437744140625,
+              "width": 72.07500457763672,
+              "height": 83.699951171875
+            },
+            {
+              "id": "de",
+              "x": 214.87875366210938,
+              "y": 528.7437744140625,
+              "width": 88.11749267578125,
+              "height": 83.699951171875
+            },
+            {
+              "id": "sl",
+              "x": 295.14935302734375,
+              "y": 345.6499938964844,
+              "width": 78.70123291015625,
+              "height": 83.70001220703125
+            },
+            {
+              "id": "ch",
+              "x": 219.99374389648438,
+              "y": 162.55624389648438,
+              "width": 106.95001220703125,
+              "height": 83.70001220703125
+            },
+            {
+              "id": "fm",
+              "x": 40.50374984741211,
+              "y": 156.74374389648438,
+              "width": 88.11749267578125,
+              "height": 83.70001220703125
+            }
+          ],
+          "card": {
+            "x": 17,
+            "y": 623,
+            "width": 356,
+            "height": 138
+          },
+          "svg": {
+            "x": 9,
+            "y": 146.1875,
+            "width": 372,
+            "height": 476.8125
+          },
+          "overflow": false,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "networkRequests": [],
+        "audio": {
+          "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+          "contexts": [
+            {
+              "state": "running",
+              "createdIn": "touchend"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "WebKit touch 390x664",
+      "pass": true,
+      "ms": 12014,
+      "evidence": {
+        "input": "First confirm bought 2; no-dealers arrow/Enter clean",
+        "hudTitle": "Debt to Marrow Quill",
+        "outOfStockFixture": false,
+        "map": {
+          "nodes": [
+            {
+              "id": "lq",
+              "x": 145.56997680664062,
+              "y": 253.063232421875,
+              "width": 116.28543090820312,
+              "height": 83.64187622070312
+            },
+            {
+              "id": "sm",
+              "x": 16.680160522460938,
+              "y": 247.25477600097656,
+              "width": 106.875732421875,
+              "height": 83.64186096191406
+            },
+            {
+              "id": "ot",
+              "x": 60.2436408996582,
+              "y": 348.90289306640625,
+              "width": 72.02494812011719,
+              "height": 83.64187622070312
+            },
+            {
+              "id": "de",
+              "x": 214.86495971679688,
+              "y": 348.90289306640625,
+              "width": 88.05630493164062,
+              "height": 83.64187622070312
+            },
+            {
+              "id": "sl",
+              "x": 295.079833984375,
+              "y": 254.2249298095703,
+              "width": 78.64657592773438,
+              "height": 83.64186096191406
+            },
+            {
+              "id": "ch",
+              "x": 219.9763946533203,
+              "y": 159.54696655273438,
+              "width": 106.87574768066406,
+              "height": 83.64187622070312
+            },
+            {
+              "id": "fm",
+              "x": 40.61103439331055,
+              "y": 156.64273071289062,
+              "width": 88.05630493164062,
+              "height": 83.64187622070312
+            }
+          ],
+          "card": {
+            "x": 17,
+            "y": 443,
+            "width": 356,
+            "height": 138
+          },
+          "svg": {
+            "x": 9,
+            "y": 146.1875,
+            "width": 372,
+            "height": 296.8125
+          },
+          "overflow": false,
+          "viewport": {
+            "width": 390,
+            "height": 664
+          }
+        },
+        "networkRequests": [],
+        "audio": {
+          "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+          "contexts": [
+            {
+              "state": "running",
+              "createdIn": "touchend"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "WebKit touch 360x640",
+      "pass": true,
+      "ms": 11339,
+      "evidence": {
+        "input": "First confirm bought 2; no-dealers arrow/Enter clean",
+        "hudTitle": "Debt to Marrow Quill",
+        "outOfStockFixture": false,
+        "map": {
+          "nodes": [
+            {
+              "id": "lq",
+              "x": 134.56683349609375,
+              "y": 244.42135620117188,
+              "width": 106.88270568847656,
+              "height": 76.878662109375
+            },
+            {
+              "id": "sm",
+              "x": 16.098947525024414,
+              "y": 239.0825653076172,
+              "width": 98.23385620117188,
+              "height": 76.87867736816406
+            },
+            {
+              "id": "ot",
+              "x": 56.139923095703125,
+              "y": 332.5115051269531,
+              "width": 66.2010726928711,
+              "height": 76.878662109375
+            },
+            {
+              "id": "de",
+              "x": 198.25869750976562,
+              "y": 332.5115051269531,
+              "width": 80.9361572265625,
+              "height": 76.878662109375
+            },
+            {
+              "id": "sl",
+              "x": 271.9874572753906,
+              "y": 245.48912048339844,
+              "width": 72.28729248046875,
+              "height": 76.87867736816406
+            },
+            {
+              "id": "ch",
+              "x": 202.95681762695312,
+              "y": 158.46673583984375,
+              "width": 98.23385620117188,
+              "height": 76.878662109375
+            },
+            {
+              "id": "fm",
+              "x": 38.094791412353516,
+              "y": 155.79733276367188,
+              "width": 80.9361572265625,
+              "height": 76.87867736816406
+            }
+          ],
+          "card": {
+            "x": 17,
+            "y": 419,
+            "width": 326,
+            "height": 138
+          },
+          "svg": {
+            "x": 9,
+            "y": 146.1875,
+            "width": 342,
+            "height": 272.8125
+          },
+          "overflow": false,
+          "viewport": {
+            "width": 360,
+            "height": 640
+          }
+        },
+        "networkRequests": [],
+        "audio": {
+          "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+          "contexts": [
+            {
+              "state": "running",
+              "createdIn": "touchend"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "WebKit touch 430x932",
+      "pass": true,
+      "ms": 12867,
+      "evidence": {
+        "input": "First confirm bought 2; no-dealers arrow/Enter clean",
+        "hudTitle": "Debt to Marrow Quill",
+        "outOfStockFixture": false,
+        "map": {
+          "nodes": [
+            {
+              "id": "lq",
+              "x": 160.2168731689453,
+              "y": 382.56561279296875,
+              "width": 128.8787384033203,
+              "height": 92.70001220703125
+            },
+            {
+              "id": "sm",
+              "x": 17.368749618530273,
+              "y": 369.046875,
+              "width": 118.45000457763672,
+              "height": 92.70001220703125
+            },
+            {
+              "id": "ot",
+              "x": 65.6500015258789,
+              "y": 606.5906372070312,
+              "width": 79.82500457763672,
+              "height": 92.70001220703125
+            },
+            {
+              "id": "de",
+              "x": 237.01625061035156,
+              "y": 606.5906372070312,
+              "width": 97.59251403808594,
+              "height": 92.70001220703125
+            },
+            {
+              "id": "sl",
+              "x": 325.9181213378906,
+              "y": 385.78436279296875,
+              "width": 87.16372680664062,
+              "height": 92.70001220703125
+            },
+            {
+              "id": "ch",
+              "x": 242.68124389648438,
+              "y": 164.33438110351562,
+              "width": 118.45001220703125,
+              "height": 92.69998168945312
+            },
+            {
+              "id": "fm",
+              "x": 43.89125061035156,
+              "y": 157.89688110351562,
+              "width": 97.59249877929688,
+              "height": 92.69999694824219
+            }
+          ],
+          "card": {
+            "x": 17,
+            "y": 711,
+            "width": 396,
+            "height": 138
+          },
+          "svg": {
+            "x": 9,
+            "y": 146.1875,
+            "width": 412,
+            "height": 564.8125
+          },
+          "overflow": false,
+          "viewport": {
+            "width": 430,
+            "height": 932
+          }
+        },
+        "networkRequests": [],
+        "audio": {
+          "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+          "contexts": [
+            {
+              "state": "running",
+              "createdIn": "touchend"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Chromium desktop 1280x800",
+      "pass": true,
+      "ms": 7952,
+      "evidence": {
+        "input": "First confirm bought 2; no-dealers arrow/Enter clean",
+        "hudTitle": "Debt to Marrow Quill",
+        "outOfStockFixture": false,
+        "map": {
+          "nodes": [
+            {
+              "id": "lq",
+              "x": 316.4010009765625,
+              "y": 350.3150329589844,
+              "width": 94.322998046875,
+              "height": 93.02206420898438
+            },
+            {
+              "id": "sm",
+              "x": 306.000732421875,
+              "y": 189.44979858398438,
+              "width": 87.14697265625,
+              "height": 93.02206420898438
+            },
+            {
+              "id": "ot",
+              "x": 536.3527221679688,
+              "y": 220.92343139648438,
+              "width": 123.02691650390625,
+              "height": 93.02206420898438
+            },
+            {
+              "id": "de",
+              "x": 532.7647094726562,
+              "y": 416.7593688964844,
+              "width": 130.20294189453125,
+              "height": 93.02206420898438
+            },
+            {
+              "id": "sl",
+              "x": 319.8980712890625,
+              "y": 507.6831970214844,
+              "width": 94.322998046875,
+              "height": 93.02206420898438
+            },
+            {
+              "id": "ch",
+              "x": 71.1514663696289,
+              "y": 434.2447204589844,
+              "width": 130.20294189453125,
+              "height": 93.02206420898438
+            },
+            {
+              "id": "fm",
+              "x": 85.8951187133789,
+              "y": 206.93515014648438,
+              "width": 86.72734832763672,
+              "height": 93.02206420898438
+            }
+          ],
+          "card": {
+            "x": 272.125,
+            "y": 171.375,
+            "width": 430,
+            "height": 423.625
+          },
+          "svg": {
+            "x": 13,
+            "y": 159.375,
+            "width": 701.125,
+            "height": 447.625
+          },
+          "overflow": false,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          }
+        },
+        "networkRequests": [],
+        "audio": {
+          "shim": null,
+          "contexts": [
+            {
+              "state": "running",
+              "createdIn": "click"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Two full games plus persistent ledger",
+      "pass": true,
+      "ms": 2455,
+      "evidence": {
+        "method": "External informed bot, real game functions, Chromium; no manual touch claim",
+        "runs": [
+          {
+            "seed": 100002,
+            "day": 30,
+            "trips": 27,
+            "fights": 6,
+            "fortune": 177487,
+            "integrity": {
+              "cash": 172098,
+              "used": 0,
+              "capacity": 70,
+              "finite": true,
+              "tally": {
+                "cash": 172098,
+                "bank": 5389,
+                "cargo": 0,
+                "debt": 0,
+                "net": 177487,
+                "sunk": false
+              }
+            }
+          },
+          {
+            "seed": 100003,
+            "day": 30,
+            "trips": 26,
+            "fights": 5,
+            "fortune": 629333,
+            "integrity": {
+              "cash": 573777,
+              "used": 0,
+              "capacity": 70,
+              "finite": true,
+              "tally": {
+                "cash": 573777,
+                "bank": 55556,
+                "cargo": 0,
+                "debt": 0,
+                "net": 629333,
+                "sunk": false
+              }
+            }
+          }
+        ],
+        "ledgerSurvivedReload": true,
+        "errors": [],
+        "network": []
+      }
+    },
+    {
+      "name": "Corrupt storage and restricted sandbox",
+      "pass": true,
+      "ms": 8233,
+      "evidence": {
+        "corruptStorageRecovered": true,
+        "corruptSaveNotice": true,
+        "lateRateCopyFixture": true,
+        "sandboxStorageBlocked": true,
+        "sandboxStarted": true,
+        "errors": [],
+        "network": []
+      }
+    }
+  ],
+  "limitations": [
+    "Emulated WebKit on Windows is not a physical iPhone; no real keyboard, browser toolbar, safe-area or silent-switch test.",
+    "WebKit AudioContext stand-in tests gesture policy, not audible sound quality.",
+    "Full-game regressions run the informed policy through external simulator functions, not human touch play.",
+    "UI tests set FAST=true and reduced motion to avoid Windows headless WebKit animation throttling."
+  ],
+  "pass": true
+}

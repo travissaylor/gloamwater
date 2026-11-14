@@ -1,0 +1,17 @@
+PASS webkit gull-pay
+PASS webkit gull-pay-cap
+PASS webkit gull-run-success-reload
+PASS webkit gull-run-failure-reload
+PASS webkit gull-run-sinking
+PASS webkit leak-patch-reload
+PASS webkit leak-jettison-reload
+PASS webkit leak-unaffordable-empty-cost
+PASS chromium gull-pay
+PASS chromium gull-pay-cap
+PASS chromium gull-run-success-reload
+PASS chromium gull-run-failure-reload
+PASS chromium gull-run-sinking
+PASS chromium leak-patch-reload
+PASS chromium leak-jettison-reload
+PASS chromium leak-unaffordable-empty-cost
+{"pass":true,"passed":16,"total":16,"report":"C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-5\\judge-1\\events\\report.json"}

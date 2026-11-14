@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-11-14T18:07:20.089Z",
+  "gameSha256": "48fd8d91e592335eb0bd54eb9408f136b1db9d6dc2f97707979bbc03fbfeb1f5",
+  "bytes": 249618,
+  "selection": "Chromium desktop 1280x800",
+  "checks": [
+    {
+      "name": "Chromium desktop 1280x800",
+      "pass": true,
+      "ms": 8917,
+      "evidence": {
+        "input": "First confirm bought 2; no-dealers arrow/Enter clean",
+        "hudTitle": "Debt to Marrow Quill",
+        "outOfStockFixture": false,
+        "map": {
+          "nodes": [
+            {
+              "id": "lq",
+              "x": 316.4010009765625,
+              "y": 350.3150329589844,
+              "width": 94.322998046875,
+              "height": 93.02206420898438
+            },
+            {
+              "id": "sm",
+              "x": 306.000732421875,
+              "y": 189.44979858398438,
+              "width": 87.14697265625,
+              "height": 93.02206420898438
+            },
+            {
+              "id": "ot",
+              "x": 536.3527221679688,
+              "y": 220.92343139648438,
+              "width": 123.02691650390625,
+              "height": 93.02206420898438
+            },
+            {
+              "id": "de",
+              "x": 532.7647094726562,
+              "y": 416.7593688964844,
+              "width": 130.20294189453125,
+              "height": 93.02206420898438
+            },
+            {
+              "id": "sl",
+              "x": 312.5052795410156,
+              "y": 507.6831970214844,
+              "width": 101.71578979492188,
+              "height": 93.02206420898438
+            },
+            {
+              "id": "ch",
+              "x": 71.1514663696289,
+              "y": 434.2447204589844,
+              "width": 130.20294189453125,
+              "height": 93.02206420898438
+            },
+            {
+              "id": "fm",
+              "x": 85.8951187133789,
+              "y": 206.93515014648438,
+              "width": 86.72734832763672,
+              "height": 93.02206420898438
+            }
+          ],
+          "card": {
+            "x": 272.125,
+            "y": 171.375,
+            "width": 430,
+            "height": 423.625
+          },
+          "svg": {
+            "x": 13,
+            "y": 159.375,
+            "width": 701.125,
+            "height": 447.625
+          },
+          "overflow": false,
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          }
+        },
+        "networkRequests": [],
+        "audio": {
+          "shim": null,
+          "contexts": [
+            {
+              "state": "running",
+              "createdIn": "click"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Emulated WebKit on Windows is not a physical iPhone; no real keyboard, browser toolbar, safe-area or silent-switch test.",
+    "WebKit AudioContext stand-in tests gesture policy, not audible sound quality.",
+    "Full-game regressions run the informed policy through external simulator functions, not human touch play.",
+    "UI tests set FAST=true and reduced motion to avoid Windows headless WebKit animation throttling."
+  ],
+  "pass": true
+}

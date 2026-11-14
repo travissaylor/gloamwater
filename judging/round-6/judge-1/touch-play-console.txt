@@ -1,0 +1,30 @@
+run 1 night 1 lq cash 2500 debt 6000 hull 100
+run 1 night 2 fm cash 376 debt 6360 hull 100
+run 1 night 3 sm cash 502 debt 6742 hull 100
+run 1 night 4 ot cash 1282 debt 7147 hull 100
+run 1 night 5 sm cash 3262 debt 7576 hull 100
+run 1 night 6 ot cash 1274 debt 8031 hull 100
+run 1 night 7 de cash 1732 debt 8513 hull 100
+run 1 night 8 lq cash 5525 debt 9024 hull 100
+run 1 night 9 sm cash 0 debt 0 hull 100
+run 1 night 10 ot cash 2058 debt 0 hull 100
+run 1 night 11 sm cash 3458 debt 0 hull 100
+run 1 night 12 ot cash 5662 debt 0 hull 100
+run 1 night 13 de cash 7754 debt 0 hull 100
+run 1 night 14 lq cash 8752 debt 0 hull 100
+run 1 night 16 de cash 35395 debt 0 hull 100
+run 1 night 17 ot cash 17387 debt 0 hull 100
+run 1 night 18 de cash 76797 debt 0 hull 100
+run 1 night 19 ot cash 25134 debt 0 hull 100
+run 1 night 20 lq cash 75570 debt 0 hull 100
+run 1 night 21 de cash 14024 debt 0 hull 100
+run 1 night 23 ot cash 10784 debt 0 hull 100
+run 1 night 24 lq cash 87440 debt 0 hull 100
+run 1 night 25 sl cash 23874 debt 0 hull 100
+run 1 night 26 ch cash 34485 debt 0 hull 100
+run 1 night 27 lq cash 71237 debt 0 hull 100
+run 1 night 28 ot cash 355 debt 0 hull 100
+run 1 night 29 sm cash 139866 debt 0 hull 100
+run 1 night 30 ot cash 58723 debt 0 hull 100
+{"pass":true,"fullThirtyNightRuns":1,"runs":[{"index":1,"pass":true,"day":30,"sunk":false}],"report":"C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-6\\judge-1\\touch-play\\report.json"}
+exit=0

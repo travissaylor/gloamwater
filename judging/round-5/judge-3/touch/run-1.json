@@ -1,0 +1,488 @@
+{
+  "index": 1,
+  "seed": 109,
+  "pass": true,
+  "loadedSha256": "48fd8d91e592335eb0bd54eb9408f136b1db9d6dc2f97707979bbc03fbfeb1f5",
+  "day": 30,
+  "sunk": false,
+  "reachedSettlementScreen": true,
+  "distinctPorts": [
+    "lq",
+    "sm",
+    "fm",
+    "ch",
+    "ot",
+    "de",
+    "sl"
+  ],
+  "ending": "THIRTY NIGHTS, DONE\nCanal Runner\n\nThe lamplighters know your skiff by its wake.\n\nCash on board\n¤75,688\nLockwater Vault\n¤80,361\nCargo dumped at half price\n¤0\nOwed to Marrow Quill\npaid off\nFinal fortune\n¤156,049\nVoyages\n28\nBest single profit\n¤31.7k\nPeak worth\n¤156k\nEncounters\n3\nwon 0 · fled 0\nInterest accrued\n¤4,747\nLost to thieves, tolls, leaks\n¤9,569\n\n¤93,951 short of Lantern Broker.\n\nCAPTAINS' LEDGER · YOU PLACED #1\n#\tCAPTAIN\tRANK\tFORTUNE\n1\tTouch 1\n2026-11-14\nCanal Runner\t¤156,049\nSail again\nTitle screen",
+  "finalState": {
+    "cash": 75688,
+    "bank": 80361,
+    "debt": 0,
+    "hull": 100,
+    "used": 0,
+    "capacity": 70
+  },
+  "turns": [
+    {
+      "day": 1,
+      "loc": "lq",
+      "cash": 2500,
+      "bank": 0,
+      "debt": 6000,
+      "hull": 100,
+      "used": 0,
+      "capacity": 30
+    },
+    {
+      "day": 2,
+      "loc": "sm",
+      "cash": 400,
+      "bank": 0,
+      "debt": 6360,
+      "hull": 100,
+      "used": 20,
+      "capacity": 30
+    },
+    {
+      "day": 3,
+      "loc": "fm",
+      "cash": 190,
+      "bank": 0,
+      "debt": 6742,
+      "hull": 100,
+      "used": 2,
+      "capacity": 30
+    },
+    {
+      "day": 4,
+      "loc": "ch",
+      "cash": 1395,
+      "bank": 0,
+      "debt": 7147,
+      "hull": 100,
+      "used": 30,
+      "capacity": 30
+    },
+    {
+      "day": 6,
+      "loc": "lq",
+      "cash": 688,
+      "bank": 0,
+      "debt": 8031,
+      "hull": 100,
+      "used": 3,
+      "capacity": 30
+    },
+    {
+      "day": 7,
+      "loc": "sm",
+      "cash": 2671,
+      "bank": 0,
+      "debt": 8513,
+      "hull": 100,
+      "used": 30,
+      "capacity": 30
+    },
+    {
+      "day": 8,
+      "loc": "ot",
+      "cash": 1333,
+      "bank": 0,
+      "debt": 9024,
+      "hull": 100,
+      "used": 8,
+      "capacity": 30
+    },
+    {
+      "day": 9,
+      "loc": "lq",
+      "cash": 3809,
+      "bank": 0,
+      "debt": 9565,
+      "hull": 100,
+      "used": 30,
+      "capacity": 30
+    },
+    {
+      "day": 10,
+      "loc": "de",
+      "cash": 896,
+      "bank": 0,
+      "debt": 10139,
+      "hull": 100,
+      "used": 4,
+      "capacity": 30
+    },
+    {
+      "day": 11,
+      "loc": "lq",
+      "cash": 2217,
+      "bank": 0,
+      "debt": 10747,
+      "hull": 100,
+      "used": 22,
+      "capacity": 30
+    },
+    {
+      "day": 12,
+      "loc": "ot",
+      "cash": 870,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 22,
+      "capacity": 30
+    },
+    {
+      "day": 13,
+      "loc": "lq",
+      "cash": 985,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 10,
+      "capacity": 30
+    },
+    {
+      "day": 14,
+      "loc": "fm",
+      "cash": 306,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 8,
+      "capacity": 30
+    },
+    {
+      "day": 15,
+      "loc": "ch",
+      "cash": 1535,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 17,
+      "capacity": 30
+    },
+    {
+      "day": 16,
+      "loc": "sl",
+      "cash": 8943,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 45,
+      "capacity": 45
+    },
+    {
+      "day": 17,
+      "loc": "ch",
+      "cash": 4456,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 45,
+      "capacity": 45
+    },
+    {
+      "day": 18,
+      "loc": "fm",
+      "cash": 0,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 3,
+      "capacity": 45
+    },
+    {
+      "day": 19,
+      "loc": "ch",
+      "cash": 2835,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 45,
+      "capacity": 45
+    },
+    {
+      "day": 20,
+      "loc": "sl",
+      "cash": 3703,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 6,
+      "capacity": 70
+    },
+    {
+      "day": 21,
+      "loc": "lq",
+      "cash": 3338,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 70,
+      "capacity": 70
+    },
+    {
+      "day": 22,
+      "loc": "ot",
+      "cash": 21647,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 70,
+      "capacity": 70
+    },
+    {
+      "day": 23,
+      "loc": "lq",
+      "cash": 23427,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 70,
+      "capacity": 70
+    },
+    {
+      "day": 24,
+      "loc": "ch",
+      "cash": 3676,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 64,
+      "capacity": 70
+    },
+    {
+      "day": 25,
+      "loc": "sl",
+      "cash": 5564,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 20,
+      "capacity": 70
+    },
+    {
+      "day": 26,
+      "loc": "lq",
+      "cash": 2205,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 9,
+      "capacity": 70
+    },
+    {
+      "day": 27,
+      "loc": "ot",
+      "cash": 13437,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 5,
+      "capacity": 70
+    },
+    {
+      "day": 28,
+      "loc": "de",
+      "cash": 13919,
+      "bank": 0,
+      "debt": 0,
+      "hull": 100,
+      "used": 4,
+      "capacity": 70
+    },
+    {
+      "day": 29,
+      "loc": "ot",
+      "cash": 39188,
+      "bank": 41211,
+      "debt": 0,
+      "hull": 100,
+      "used": 65,
+      "capacity": 70
+    },
+    {
+      "day": 30,
+      "loc": "lq",
+      "cash": 10001,
+      "bank": 41829,
+      "debt": 0,
+      "hull": 100,
+      "used": 61,
+      "capacity": 70
+    }
+  ],
+  "events": [
+    {
+      "day": 2,
+      "title": "A crate bobs past",
+      "choice": "leave",
+      "choiceText": "Leave it\nNot worth the trouble.",
+      "text": "FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Clockwork Eels marks drifts alongside. Nobody seems to be looking for it. Yet.\n\nHaul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull).\nLeave it\nNot worth the trouble."
+    },
+    {
+      "day": 3,
+      "title": "Water in the hold",
+      "choice": "pay",
+      "choiceText": "Patch the leak · ¤660\nKeep the cargo. Purse after: ¤190. This patch does not restore hull.",
+      "text": "LEAK\nWater in the hold\n\nA loose plank lets water into a stack of 1 Synth Saffron. Buy an emergency patch or jettison the stack before the rest gets wet.\n\nPatch the leak · ¤660\nKeep the cargo. Purse after: ¤190. This patch does not restore hull.\nJettison 1 Synth Saffron\nUsual value ¤1,100; the eventual sale price may differ. Keep your cash."
+    },
+    {
+      "day": 3,
+      "title": "The Gull Gang!",
+      "choice": "pay",
+      "choiceText": "Pay the toll · ¤491\nAbout a fifth of your purse plus a cut of your cargo.",
+      "text": "AMBUSH IN THE NARROWS\nThe Gull Gang!\n\nA net drops across the canal ahead. 2 Gull Gang skiffs wait behind it, oars up, grinning.\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤1,260\nRun for it\n24% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nPay the toll · ¤491\nAbout a fifth of your purse plus a cut of your cargo."
+    },
+    {
+      "day": 3,
+      "title": "Toll paid",
+      "choice": "ok",
+      "choiceText": "Continue",
+      "text": "PAID\nToll paid\n\nThey count your ¤491 twice. They melt back into the dark.\n\nContinue"
+    },
+    {
+      "day": 4,
+      "title": "A squall comes off the sea",
+      "choice": "shelter",
+      "choiceText": "Shelter under the viaduct\nSafe, but you lose a whole night.",
+      "text": "WEATHER\nA squall comes off the sea\n\nBlack rain hammers the canal and the water starts to heave. Somewhere ahead, bridges are groaning.\n\nPush through\nArrive on time, but lose 6 to 16% hull (you have 100%).\nShelter under the viaduct\nSafe, but you lose a whole night."
+    },
+    {
+      "day": 8,
+      "title": "Pell the lamplighter",
+      "choice": "ok",
+      "choiceText": "Continue",
+      "text": "A FRIENDLY WORD\nPell the lamplighter\n\nPell lowers his pole and leans down to your skiff. \"Heard something on my rounds. Tomorrow: Warehouses flooded at Saint Mire. Moon Ink dumped at cost before it spoils.\"\n\nPell thinks it likely. Rumours like this land in full about half the time. About 1 in 5 turns the other way.\nIf it holds, tomorrow at Saint Mire: buy Moon Ink there. It is one night away, so you can be there when it lands. Either way, you will hear what really happened.\nContinue"
+    },
+    {
+      "day": 9,
+      "title": "Grandmother Wick and her eel",
+      "choice": "no",
+      "choiceText": "Walk on\nSuperstition is for landlubbers.",
+      "text": "A GAME OF CHANCE\nGrandmother Wick and her eel\n\nAn old woman keeps a glowing eel in a jar. \"Feed him coin, dearie. If he turns gold, he pays you back two and a half times. If he turns black... well.\"\n\nSmall offering · ¤190\n40% chance to win 2.5×\nBig offering · ¤760\nSame odds, more at stake.\nWalk on\nSuperstition is for landlubbers."
+    },
+    {
+      "day": 10,
+      "title": "Grandmother Wick and her eel",
+      "choice": "no",
+      "choiceText": "Walk on\nSuperstition is for landlubbers.",
+      "text": "A GAME OF CHANCE\nGrandmother Wick and her eel\n\nAn old woman keeps a glowing eel in a jar. \"Feed him coin, dearie. If he turns gold, he pays you back two and a half times. If he turns black... well.\"\n\nSmall offering · ¤50\n40% chance to win 2.5×\nBig offering · ¤180\nSame odds, more at stake.\nWalk on\nSuperstition is for landlubbers."
+    },
+    {
+      "day": 11,
+      "title": "A soaked courier flags you down",
+      "choice": "no",
+      "choiceText": "Decline\nSmells like trouble.",
+      "text": "A JOB\nA soaked courier flags you down\n\n\"Sealed parcel for Drowned Exchange. Don't open it, don't drop it, and don't let the Tidewardens see it. Pays ¤3,620 on delivery by night 15.\"\n\nTake the job · 3 hold\nDeliver to Drowned Exchange by night 15 (1 night away).\nDecline\nSmells like trouble."
+    },
+    {
+      "day": 17,
+      "title": "The Gull Gang!",
+      "choice": "pay",
+      "choiceText": "Pay the toll · ¤2,369\nYour purse is light, so they take about ¤1,102 of cargo too.",
+      "text": "AMBUSH IN THE NARROWS\nThe Gull Gang!\n\nGull calls echo off the walls, and 2 gang skiffs nose out of a flooded alley. \"Nice cargo. Shame if it sank.\"\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤17.8k\nRun for it\n53% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nPay the toll · ¤2,369\nYour purse is light, so they take about ¤1,102 of cargo too."
+    },
+    {
+      "day": 17,
+      "title": "Toll paid",
+      "choice": "ok",
+      "choiceText": "Continue",
+      "text": "PAID\nToll paid\n\nThey count your ¤1,267 twice. The rest is taken in kind: 2 Rust Pearls, 1 Clockwork Eels. They melt back into the dark.\n\nContinue"
+    },
+    {
+      "day": 20,
+      "title": "Grandmother Wick and her eel",
+      "choice": "no",
+      "choiceText": "Walk on\nSuperstition is for landlubbers.",
+      "text": "A GAME OF CHANCE\nGrandmother Wick and her eel\n\nAn old woman keeps a glowing eel in a jar. \"Feed him coin, dearie. If he turns gold, he pays you back two and a half times. If he turns black... well.\"\n\nSmall offering · ¤190\n40% chance to win 2.5×\nBig offering · ¤740\nSame odds, more at stake.\nWalk on\nSuperstition is for landlubbers."
+    },
+    {
+      "day": 22,
+      "title": "A crate bobs past",
+      "choice": "leave",
+      "choiceText": "Leave it\nNot worth the trouble.",
+      "text": "FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Rust Pearls marks drifts alongside. Nobody seems to be looking for it. Yet.\n\nHaul it aboard\nNo room: your hold is full.\nLeave it\nNot worth the trouble."
+    },
+    {
+      "day": 23,
+      "title": "A drowned strongbox",
+      "choice": "ok",
+      "choiceText": "Continue",
+      "text": "LUCKY FIND\nA drowned strongbox\n\nYour boathook snags a rusted strongbox under the mooring. Inside, wrapped in oilcloth: ¤1,780.\n\nContinue"
+    },
+    {
+      "day": 24,
+      "title": "A gull takes your purse",
+      "choice": "pay",
+      "choiceText": "Let the bag go · ¤409\nCertain cash loss. Your hull and cargo stay safe.",
+      "text": "THIEF!\nA gull takes your purse\n\nA trained grey gull snags a bag containing ¤409. Its tether catches your wrist. You can grab the bag, but the skiff is drifting toward the stone quay.\n\nReach for the bag\n70% chance to keep it. On failure, lose ¤409 and 10% hull (you have 100%).\nLet the bag go · ¤409\nCertain cash loss. Your hull and cargo stay safe."
+    },
+    {
+      "day": 25,
+      "title": "Tidewarden cutter!",
+      "choice": "bribe",
+      "choiceText": "Bribe the sergeant · ¤4,335\nGuaranteed. The price follows your purse and your cargo.",
+      "text": "SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA whistle shrieks across the water. 4 cutters of the Tidewarden watch close in from both banks.\n\nYour hull\n100%\nEnemy boats\n4\nCargo at stake\n¤38.3k\nRun for it\n41% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n16% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nBribe the sergeant · ¤4,335\nGuaranteed. The price follows your purse and your cargo.\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."
+    },
+    {
+      "day": 25,
+      "title": "Papers in order",
+      "choice": "ok",
+      "choiceText": "Continue",
+      "text": "BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤4,335, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\nContinue"
+    },
+    {
+      "day": 27,
+      "title": "A soaked courier flags you down",
+      "choice": "no",
+      "choiceText": "Decline\nSmells like trouble.",
+      "text": "A JOB\nA soaked courier flags you down\n\n\"Sealed parcel for Saint Mire. Don't open it, don't drop it, and don't let the Tidewardens see it. Pays ¤3,560 on delivery by night 29.\"\n\nTake the job · 3 hold\nDeliver to Saint Mire by night 29 (1 night away).\nDecline\nSmells like trouble."
+    },
+    {
+      "day": 29,
+      "title": "A crate bobs past",
+      "choice": "leave",
+      "choiceText": "Leave it\nNot worth the trouble.",
+      "text": "FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Glowkelp marks drifts alongside. Nobody seems to be looking for it. Yet.\n\nHaul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull).\nLeave it\nNot worth the trouble."
+    }
+  ],
+  "actions": 666,
+  "entriesBefore": [
+    {
+      "name": "Touch 1",
+      "score": 156049,
+      "night": 30,
+      "sunk": false
+    }
+  ],
+  "ledgerSurvivedReload": true,
+  "audio": {
+    "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+    "sounds": {
+      "whileRunning": 948,
+      "whileSuspended": 0
+    },
+    "contexts": [
+      {
+        "createdIn": "touchend",
+        "state": "running",
+        "resumes": [
+          {
+            "t": 359,
+            "during": "touchend",
+            "activation": "active",
+            "before": "suspended",
+            "after": "running"
+          }
+        ]
+      }
+    ]
+  },
+  "errors": [],
+  "network": []
+}

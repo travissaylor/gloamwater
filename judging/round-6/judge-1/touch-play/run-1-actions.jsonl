@@ -1,0 +1,681 @@
+{"at":"2026-11-14T19:32:09.300Z","action":"tap","selector":"#t-new","text":"Cast off"}
+{"at":"2026-11-14T19:32:10.859Z","action":"tap","selector":"#cap-name","text":""}
+{"at":"2026-11-14T19:32:11.693Z","action":"type","selector":"#cap-name","text":"Touch 1"}
+{"at":"2026-11-14T19:32:12.980Z","action":"tap","selector":"#go","text":"Cast off\nA quick guided tour starts first. You can skip it."}
+{"at":"2026-11-14T19:32:14.153Z","action":"tap","selector":"#coach [data-skip]","text":"Skip tour"}
+{"at":"2026-11-14T19:32:16.178Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:32:17.055Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:32:17.950Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:32:18.561Z","action":"plan","day":1,"loc":"lq","id":"fm","buys":[{"id":"pearl","q":6,"cost":2124,"expectedPrice":507}],"score":690.9247999999999,"expectedGain":920}
+{"at":"2026-11-14T19:32:18.967Z","action":"tap","selector":".row[data-g=\"pearl\"]","text":"Rust Pearls\n¤354\n−16%\nExchange +45% seen tonight"}
+{"at":"2026-11-14T19:32:20.029Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:32:20.955Z","action":"type","selector":"#qin","text":"6"}
+{"at":"2026-11-14T19:32:21.148Z","action":"tap","selector":"#qgo","text":"Buy 6 for ¤2,124"}
+{"at":"2026-11-14T19:32:21.992Z","action":"trade-result","id":"pearl","mode":"buy","q":6,"cashBefore":2500,"cashAfter":376,"ownedBefore":0,"ownedAfter":6}
+{"at":"2026-11-14T19:32:22.471Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:32:23.271Z","action":"tap","selector":"#nodes .node[data-d=\"fm\"]","text":""}
+{"at":"2026-11-14T19:32:24.797Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:32:25.930Z","action":"event","day":2,"title":"A crate bobs past","choice":"leave","choiceText":"Leave it\nNot worth the trouble.","text":"FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Glowkelp marks drifts alongside. Nobody seems to be looking for it. Yet.\n\nHaul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull).\nLeave it\nNot worth the trouble."}
+{"at":"2026-11-14T19:32:26.357Z","action":"tap","selector":"#modal [data-choice=\"leave\"]","text":"Leave it\nNot worth the trouble."}
+{"at":"2026-11-14T19:32:27.922Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:32:28.858Z","action":"tap","selector":".row[data-g=\"pearl\"]","text":"Rust Pearls\n¤481\n+15%\n×6 · avg ¤354 · +36% here"}
+{"at":"2026-11-14T19:32:29.652Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:32:30.229Z","action":"type","selector":"#qin","text":"6"}
+{"at":"2026-11-14T19:32:30.446Z","action":"tap","selector":"#qgo","text":"Sell 6 for ¤2,886"}
+{"at":"2026-11-14T19:32:31.043Z","action":"trade-result","id":"pearl","mode":"sell","q":6,"cashBefore":376,"cashAfter":3262,"ownedBefore":6,"ownedAfter":0}
+{"at":"2026-11-14T19:32:31.069Z","action":"plan","day":2,"loc":"fm","id":"sm","buys":[{"id":"rain","q":24,"cost":2760,"expectedPrice":156}],"score":839.1663999999995,"expectedGain":972}
+{"at":"2026-11-14T19:32:31.279Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤115\n−12%\nSaint Mire +33% seen 1n ago"}
+{"at":"2026-11-14T19:32:32.128Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:32:32.778Z","action":"type","selector":"#qin","text":"24"}
+{"at":"2026-11-14T19:32:32.979Z","action":"tap","selector":"#qgo","text":"Buy 24 for ¤2,760"}
+{"at":"2026-11-14T19:32:33.563Z","action":"trade-result","id":"rain","mode":"buy","q":24,"cashBefore":3262,"cashAfter":502,"ownedBefore":0,"ownedAfter":24}
+{"at":"2026-11-14T19:32:33.660Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:32:34.277Z","action":"tap","selector":"#nodes .node[data-d=\"sm\"]","text":""}
+{"at":"2026-11-14T19:32:34.942Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:32:36.816Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:32:37.665Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤127\nusual\n×24 · avg ¤115 · Sluices +15% seen 2n ago"}
+{"at":"2026-11-14T19:32:38.468Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:32:39.302Z","action":"type","selector":"#qin","text":"24"}
+{"at":"2026-11-14T19:32:39.505Z","action":"tap","selector":"#qgo","text":"Sell 24 for ¤3,048"}
+{"at":"2026-11-14T19:32:40.166Z","action":"trade-result","id":"rain","mode":"sell","q":24,"cashBefore":502,"cashAfter":3550,"ownedBefore":24,"ownedAfter":0}
+{"at":"2026-11-14T19:32:40.213Z","action":"plan","day":3,"loc":"sm","id":"ot","buys":[{"id":"saffron","q":3,"cost":2268,"expectedPrice":1322}],"score":1603.6490000000003,"expectedGain":1699}
+{"at":"2026-11-14T19:32:40.395Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤756\n−31%\nCopperhook +101% seen 2n ago"}
+{"at":"2026-11-14T19:32:41.099Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:32:42.017Z","action":"type","selector":"#qin","text":"3"}
+{"at":"2026-11-14T19:32:42.575Z","action":"tap","selector":"#qgo","text":"Buy 3 for ¤2,268"}
+{"at":"2026-11-14T19:32:43.589Z","action":"trade-result","id":"saffron","mode":"buy","q":3,"cashBefore":3550,"cashAfter":1282,"ownedBefore":0,"ownedAfter":3}
+{"at":"2026-11-14T19:32:43.763Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:32:44.456Z","action":"tap","selector":"#nodes .node[data-d=\"ot\"]","text":""}
+{"at":"2026-11-14T19:32:45.097Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:32:46.740Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:32:47.398Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤1,500\n+36%\n×3 · avg ¤756 · +98% here"}
+{"at":"2026-11-14T19:32:48.038Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:32:48.760Z","action":"type","selector":"#qin","text":"3"}
+{"at":"2026-11-14T19:32:49.009Z","action":"tap","selector":"#qgo","text":"Sell 3 for ¤4,500"}
+{"at":"2026-11-14T19:32:49.605Z","action":"trade-result","id":"saffron","mode":"sell","q":3,"cashBefore":1282,"cashAfter":5782,"ownedBefore":3,"ownedAfter":0}
+{"at":"2026-11-14T19:32:49.636Z","action":"plan","day":4,"loc":"ot","id":"sm","buys":[{"id":"rain","q":30,"cost":2520,"expectedPrice":170}],"score":2277.2871999999998,"expectedGain":2573}
+{"at":"2026-11-14T19:32:49.889Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤84\n−35%\nSaint Mire +51% seen 1n ago"}
+{"at":"2026-11-14T19:32:51.400Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:32:52.233Z","action":"type","selector":"#qin","text":"30"}
+{"at":"2026-11-14T19:32:52.585Z","action":"tap","selector":"#qgo","text":"Buy 30 for ¤2,520"}
+{"at":"2026-11-14T19:32:53.301Z","action":"trade-result","id":"rain","mode":"buy","q":30,"cashBefore":5782,"cashAfter":3262,"ownedBefore":0,"ownedAfter":30}
+{"at":"2026-11-14T19:32:53.391Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:32:54.196Z","action":"tap","selector":"#nodes .node[data-d=\"sm\"]","text":""}
+{"at":"2026-11-14T19:32:54.867Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:32:56.710Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:32:57.646Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤170\n+31%\n×30 · avg ¤84 · Fleet demand +40% · +102% here"}
+{"at":"2026-11-14T19:32:58.456Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:32:59.099Z","action":"type","selector":"#qin","text":"30"}
+{"at":"2026-11-14T19:32:59.408Z","action":"tap","selector":"#qgo","text":"Sell 30 for ¤5,100"}
+{"at":"2026-11-14T19:33:00.047Z","action":"trade-result","id":"rain","mode":"sell","q":30,"cashBefore":3262,"cashAfter":8362,"ownedBefore":30,"ownedAfter":0}
+{"at":"2026-11-14T19:33:00.249Z","action":"plan","day":5,"loc":"sm","id":"ot","buys":[{"id":"saffron","q":8,"cost":7088,"expectedPrice":1429}],"score":4107.568000000001,"expectedGain":4343}
+{"at":"2026-11-14T19:33:00.421Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤886\n−19%\nOrchid +69% seen 1n ago"}
+{"at":"2026-11-14T19:33:01.437Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:33:02.054Z","action":"type","selector":"#qin","text":"8"}
+{"at":"2026-11-14T19:33:02.273Z","action":"tap","selector":"#qgo","text":"Buy 8 for ¤7,088"}
+{"at":"2026-11-14T19:33:02.883Z","action":"trade-result","id":"saffron","mode":"buy","q":8,"cashBefore":8362,"cashAfter":1274,"ownedBefore":0,"ownedAfter":8}
+{"at":"2026-11-14T19:33:03.003Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:33:03.632Z","action":"tap","selector":"#nodes .node[data-d=\"ot\"]","text":""}
+{"at":"2026-11-14T19:33:04.303Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:33:06.386Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:33:07.051Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤1,277\n+16%\n×8 · avg ¤886 · +44% here"}
+{"at":"2026-11-14T19:33:07.683Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:33:08.366Z","action":"type","selector":"#qin","text":"8"}
+{"at":"2026-11-14T19:33:08.558Z","action":"tap","selector":"#qgo","text":"Sell 8 for ¤10,216"}
+{"at":"2026-11-14T19:33:09.189Z","action":"trade-result","id":"saffron","mode":"sell","q":8,"cashBefore":1274,"cashAfter":11490,"ownedBefore":8,"ownedAfter":0}
+{"at":"2026-11-14T19:33:09.223Z","action":"plan","day":6,"loc":"ot","id":"de","buys":[{"id":"eels","q":5,"cost":9150,"expectedPrice":2928},{"id":"rain","q":8,"cost":608,"expectedPrice":130}],"score":5277.66,"expectedGain":5922}
+{"at":"2026-11-14T19:33:09.356Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤1,830\n−24%\nSaint Mire +18% seen 1n ago"}
+{"at":"2026-11-14T19:33:10.040Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:33:10.810Z","action":"type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T19:33:11.098Z","action":"tap","selector":"#qgo","text":"Buy 5 for ¤9,150"}
+{"at":"2026-11-14T19:33:11.884Z","action":"trade-result","id":"eels","mode":"buy","q":5,"cashBefore":11490,"cashAfter":2340,"ownedBefore":0,"ownedAfter":5}
+{"at":"2026-11-14T19:33:12.087Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤76\n−42%\nSaint Mire +124% seen 1n ago"}
+{"at":"2026-11-14T19:33:12.899Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:33:13.616Z","action":"type","selector":"#qin","text":"8"}
+{"at":"2026-11-14T19:33:13.981Z","action":"tap","selector":"#qgo","text":"Buy 8 for ¤608"}
+{"at":"2026-11-14T19:33:14.606Z","action":"trade-result","id":"rain","mode":"buy","q":8,"cashBefore":2340,"cashAfter":1732,"ownedBefore":0,"ownedAfter":8}
+{"at":"2026-11-14T19:33:14.696Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:33:15.423Z","action":"tap","selector":"#nodes .node[data-d=\"de\"]","text":""}
+{"at":"2026-11-14T19:33:16.201Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:33:17.866Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:33:18.547Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤143\n+10%\n×8 · avg ¤76 · Saint Mire +19% seen 2n ago"}
+{"at":"2026-11-14T19:33:19.196Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:33:19.817Z","action":"type","selector":"#qin","text":"8"}
+{"at":"2026-11-14T19:33:20.223Z","action":"tap","selector":"#qgo","text":"Sell 8 for ¤1,144"}
+{"at":"2026-11-14T19:33:20.864Z","action":"trade-result","id":"rain","mode":"sell","q":8,"cashBefore":1732,"cashAfter":2876,"ownedBefore":8,"ownedAfter":0}
+{"at":"2026-11-14T19:33:20.975Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤2,305\nusual\n×5 · avg ¤1,830 · +26% here"}
+{"at":"2026-11-14T19:33:21.734Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:33:22.626Z","action":"type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T19:33:22.917Z","action":"tap","selector":"#qgo","text":"Sell 5 for ¤11,525"}
+{"at":"2026-11-14T19:33:23.559Z","action":"trade-result","id":"eels","mode":"sell","q":5,"cashBefore":2876,"cashAfter":14401,"ownedBefore":5,"ownedAfter":0}
+{"at":"2026-11-14T19:33:23.805Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:33:24.852Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:33:25.534Z","action":"plan","day":7,"loc":"de","id":"lq","buys":[{"id":"saffron","q":14,"cost":8876,"expectedPrice":1100}],"score":10408.15,"expectedGain":6524}
+{"at":"2026-11-14T19:33:25.657Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤634\n−42%\nOrchid +101% seen 1n ago"}
+{"at":"2026-11-14T19:33:26.324Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:33:26.945Z","action":"type","selector":"#qin","text":"14"}
+{"at":"2026-11-14T19:33:27.152Z","action":"tap","selector":"#qgo","text":"Buy 14 for ¤8,876"}
+{"at":"2026-11-14T19:33:27.762Z","action":"trade-result","id":"saffron","mode":"buy","q":14,"cashBefore":14401,"cashAfter":5525,"ownedBefore":0,"ownedAfter":14}
+{"at":"2026-11-14T19:33:27.906Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:33:28.554Z","action":"tap","selector":"#nodes .node[data-d=\"lq\"]","text":""}
+{"at":"2026-11-14T19:33:29.253Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:33:30.038Z","action":"event","day":8,"title":"Old Fenna is retiring","choice":"no","choiceText":"No thanks\nMaybe another time.","text":"AN OFFER\nOld Fenna is retiring\n\nA grey-haired smuggler hails you from her houseboat. \"My racking's too good for scrap. Fifteen more spaces in your hold for ¤3,160, fitted tonight.\"\n\nBuy the racks · ¤3,160\n+15 hold, permanently (30 → 45).\nNo thanks\nMaybe another time."}
+{"at":"2026-11-14T19:33:30.376Z","action":"tap","selector":"#modal [data-choice=\"no\"]","text":"No thanks\nMaybe another time."}
+{"at":"2026-11-14T19:33:31.934Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:33:33.530Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤1,069\nusual\n×14 · avg ¤634 · Orchid +19% seen 2n ago"}
+{"at":"2026-11-14T19:33:34.622Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:33:35.295Z","action":"type","selector":"#qin","text":"14"}
+{"at":"2026-11-14T19:33:35.614Z","action":"tap","selector":"#qgo","text":"Sell 14 for ¤14,966"}
+{"at":"2026-11-14T19:33:36.432Z","action":"trade-result","id":"saffron","mode":"sell","q":14,"cashBefore":5525,"cashAfter":20491,"ownedBefore":14,"ownedAfter":0}
+{"at":"2026-11-14T19:33:36.671Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:33:37.567Z","action":"tap","selector":"#side-body [data-act=\"repay\"]","text":"Repay debt"}
+{"at":"2026-11-14T19:33:38.390Z","action":"tap","selector":"#ain","text":""}
+{"at":"2026-11-14T19:33:39.589Z","action":"type","selector":"#ain","text":"9024"}
+{"at":"2026-11-14T19:33:40.009Z","action":"tap","selector":"#ago","text":"Repay ¤9,024"}
+{"at":"2026-11-14T19:33:40.742Z","action":"service","service":"repay","amount":9024}
+{"at":"2026-11-14T19:33:41.100Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:33:41.698Z","action":"plan","day":8,"loc":"lq","id":"sm","buys":[{"id":"eels","q":5,"cost":8365,"expectedPrice":2700},{"id":"rain","q":14,"cost":1330,"expectedPrice":162},{"id":"kelp","q":1,"cost":34,"expectedPrice":42}],"score":5425.971399999999,"expectedGain":6081}
+{"at":"2026-11-14T19:33:41.884Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤1,673\n−30%\nExchange +38% seen 1n ago"}
+{"at":"2026-11-14T19:33:43.386Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:33:44.094Z","action":"type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T19:33:44.607Z","action":"tap","selector":"#qgo","text":"Buy 5 for ¤8,365"}
+{"at":"2026-11-14T19:33:45.295Z","action":"trade-result","id":"eels","mode":"buy","q":5,"cashBefore":11467,"cashAfter":3102,"ownedBefore":0,"ownedAfter":5}
+{"at":"2026-11-14T19:33:45.592Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤95\n−27%\nExchange +51% seen 1n ago"}
+{"at":"2026-11-14T19:33:46.851Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:33:47.560Z","action":"type","selector":"#qin","text":"14"}
+{"at":"2026-11-14T19:33:47.790Z","action":"tap","selector":"#qgo","text":"Buy 14 for ¤1,330"}
+{"at":"2026-11-14T19:33:48.428Z","action":"trade-result","id":"rain","mode":"buy","q":14,"cashBefore":3102,"cashAfter":1772,"ownedBefore":0,"ownedAfter":14}
+{"at":"2026-11-14T19:33:48.599Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:33:49.263Z","action":"tap","selector":"#nodes .node[data-d=\"sm\"]","text":""}
+{"at":"2026-11-14T19:33:49.901Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:33:50.543Z","action":"event","day":8,"title":"The Gull Gang!","choice":"pay","choiceText":"Pay the toll · ¤1,977\nYour purse is light, so they take about ¤205 of cargo too.","text":"AMBUSH IN THE NARROWS\nThe Gull Gang!\n\n4 skiffs with gull-feather pennants slide out from under a bridge. \"Toll's due, friend. Pay up, or swim.\"\n\nYour hull\n100%\nEnemy boats\n4\nCargo at stake\n¤13.8k\nRun for it\n18% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n16% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nPay the toll · ¤1,977\nYour purse is light, so they take about ¤205 of cargo too."}
+{"at":"2026-11-14T19:33:50.879Z","action":"tap","selector":"#modal [data-choice=\"pay\"]","text":"Pay the toll · ¤1,977\nYour purse is light, so they take about ¤205 of cargo too."}
+{"at":"2026-11-14T19:33:51.637Z","action":"event","day":8,"title":"Toll paid","choice":"ok","choiceText":"Continue","text":"PAID\nToll paid\n\nThey count your ¤1,772 twice. The rest is taken in kind: 2 Bottled Rain. They melt back into the dark.\n\nContinue"}
+{"at":"2026-11-14T19:33:51.996Z","action":"tap","selector":"#modal [data-choice=\"ok\"]","text":"Continue"}
+{"at":"2026-11-14T19:33:53.810Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:33:54.572Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤136\nusual\n×12 · avg ¤95 · +43% here"}
+{"at":"2026-11-14T19:33:55.335Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:33:56.026Z","action":"type","selector":"#qin","text":"12"}
+{"at":"2026-11-14T19:33:56.228Z","action":"tap","selector":"#qgo","text":"Sell 12 for ¤1,632"}
+{"at":"2026-11-14T19:33:56.815Z","action":"trade-result","id":"rain","mode":"sell","q":12,"cashBefore":0,"cashAfter":1632,"ownedBefore":12,"ownedAfter":0}
+{"at":"2026-11-14T19:33:56.966Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤2,409\nusual\n×5 · avg ¤1,673 · +44% here"}
+{"at":"2026-11-14T19:33:57.812Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:33:58.393Z","action":"type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T19:33:58.598Z","action":"tap","selector":"#qgo","text":"Sell 5 for ¤12,045"}
+{"at":"2026-11-14T19:33:59.160Z","action":"trade-result","id":"eels","mode":"sell","q":5,"cashBefore":1632,"cashAfter":13677,"ownedBefore":5,"ownedAfter":0}
+{"at":"2026-11-14T19:33:59.182Z","action":"plan","day":9,"loc":"sm","id":"ot","buys":[{"id":"ink","q":1,"cost":10725,"expectedPrice":22772},{"id":"saffron","q":1,"cost":894,"expectedPrice":1323}],"score":11902.376999999999,"expectedGain":12476}
+{"at":"2026-11-14T19:33:59.286Z","action":"tap","selector":".row[data-g=\"ink\"]","text":"Moon Ink\n¤10,725\n−44%\nLanternquay +89% seen 1n ago"}
+{"at":"2026-11-14T19:33:59.944Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:00.506Z","action":"type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T19:34:00.712Z","action":"tap","selector":"#qgo","text":"Buy 1 for ¤10,725"}
+{"at":"2026-11-14T19:34:01.303Z","action":"trade-result","id":"ink","mode":"buy","q":1,"cashBefore":13677,"cashAfter":2952,"ownedBefore":0,"ownedAfter":1}
+{"at":"2026-11-14T19:34:01.411Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤894\n−19%\nLanternquay +20% seen 1n ago"}
+{"at":"2026-11-14T19:34:02.086Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:02.642Z","action":"type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T19:34:02.843Z","action":"tap","selector":"#qgo","text":"Buy 1 for ¤894"}
+{"at":"2026-11-14T19:34:03.517Z","action":"trade-result","id":"saffron","mode":"buy","q":1,"cashBefore":2952,"cashAfter":2058,"ownedBefore":0,"ownedAfter":1}
+{"at":"2026-11-14T19:34:03.605Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:34:04.286Z","action":"tap","selector":"#nodes .node[data-d=\"ot\"]","text":""}
+{"at":"2026-11-14T19:34:04.884Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:34:06.620Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:34:07.259Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤1,228\n+12%\n×1 · avg ¤894 · +37% here"}
+{"at":"2026-11-14T19:34:07.882Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:08.442Z","action":"type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T19:34:08.644Z","action":"tap","selector":"#qgo","text":"Sell 1 for ¤1,228"}
+{"at":"2026-11-14T19:34:09.233Z","action":"trade-result","id":"saffron","mode":"sell","q":1,"cashBefore":2058,"cashAfter":3286,"ownedBefore":1,"ownedAfter":0}
+{"at":"2026-11-14T19:34:09.329Z","action":"tap","selector":".row[data-g=\"ink\"]","text":"Moon Ink\n¤19,222\nusual\n×1 · avg ¤10.7k · +79% here"}
+{"at":"2026-11-14T19:34:10.081Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:10.682Z","action":"type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T19:34:10.912Z","action":"tap","selector":"#qgo","text":"Sell 1 for ¤19,222"}
+{"at":"2026-11-14T19:34:11.585Z","action":"trade-result","id":"ink","mode":"sell","q":1,"cashBefore":3286,"cashAfter":22508,"ownedBefore":1,"ownedAfter":0}
+{"at":"2026-11-14T19:34:11.703Z","action":"plan","day":10,"loc":"ot","id":"sm","buys":[{"id":"eels","q":10,"cost":17580,"expectedPrice":2643},{"id":"rain","q":14,"cost":1470,"expectedPrice":146},{"id":"kelp","q":2,"cost":58,"expectedPrice":40}],"score":8332.2764,"expectedGain":9443}
+{"at":"2026-11-14T19:34:11.817Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤1,758\n−27%\nSaint Mire +37% seen 1n ago"}
+{"at":"2026-11-14T19:34:12.459Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:13.032Z","action":"type","selector":"#qin","text":"10"}
+{"at":"2026-11-14T19:34:13.227Z","action":"tap","selector":"#qgo","text":"Buy 10 for ¤17,580"}
+{"at":"2026-11-14T19:34:13.799Z","action":"trade-result","id":"eels","mode":"buy","q":10,"cashBefore":22508,"cashAfter":4928,"ownedBefore":0,"ownedAfter":10}
+{"at":"2026-11-14T19:34:13.917Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤105\n−19%\nSaint Mire +30% seen 1n ago"}
+{"at":"2026-11-14T19:34:14.553Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:15.136Z","action":"type","selector":"#qin","text":"14"}
+{"at":"2026-11-14T19:34:15.351Z","action":"tap","selector":"#qgo","text":"Buy 14 for ¤1,470"}
+{"at":"2026-11-14T19:34:15.937Z","action":"trade-result","id":"rain","mode":"buy","q":14,"cashBefore":4928,"cashAfter":3458,"ownedBefore":0,"ownedAfter":14}
+{"at":"2026-11-14T19:34:16.023Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:34:16.667Z","action":"tap","selector":"#nodes .node[data-d=\"sm\"]","text":""}
+{"at":"2026-11-14T19:34:17.576Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:34:18.255Z","action":"event","day":11,"title":"Old Fenna is retiring","choice":"no","choiceText":"No thanks\nMaybe another time.","text":"AN OFFER\nOld Fenna is retiring\n\nA grey-haired smuggler hails you from her houseboat. \"My racking's too good for scrap. Fifteen more spaces in your hold for ¤3,520, fitted tonight.\"\n\nBuy the racks · ¤3,520\n+15 hold, permanently (30 → 45).\nNo thanks\nMaybe another time."}
+{"at":"2026-11-14T19:34:18.349Z","action":"tap","selector":"#modal [data-choice=\"no\"]","text":"No thanks\nMaybe another time."}
+{"at":"2026-11-14T19:34:19.993Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:34:20.678Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤185\n+42%\n×14 · avg ¤105 · +76% here"}
+{"at":"2026-11-14T19:34:21.332Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:21.914Z","action":"type","selector":"#qin","text":"14"}
+{"at":"2026-11-14T19:34:22.111Z","action":"tap","selector":"#qgo","text":"Sell 14 for ¤2,590"}
+{"at":"2026-11-14T19:34:22.676Z","action":"trade-result","id":"rain","mode":"sell","q":14,"cashBefore":3458,"cashAfter":6048,"ownedBefore":14,"ownedAfter":0}
+{"at":"2026-11-14T19:34:22.770Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤2,717\n+13%\n×10 · avg ¤1,758 · +55% here"}
+{"at":"2026-11-14T19:34:23.473Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:24.148Z","action":"type","selector":"#qin","text":"10"}
+{"at":"2026-11-14T19:34:24.382Z","action":"tap","selector":"#qgo","text":"Sell 10 for ¤27,170"}
+{"at":"2026-11-14T19:34:24.985Z","action":"trade-result","id":"eels","mode":"sell","q":10,"cashBefore":6048,"cashAfter":33218,"ownedBefore":10,"ownedAfter":0}
+{"at":"2026-11-14T19:34:25.011Z","action":"plan","day":11,"loc":"sm","id":"ot","buys":[{"id":"ink","q":1,"cost":14852,"expectedPrice":21003},{"id":"saffron","q":16,"cost":12704,"expectedPrice":1279}],"score":13096.6635,"expectedGain":13916}
+{"at":"2026-11-14T19:34:25.137Z","action":"tap","selector":".row[data-g=\"ink\"]","text":"Moon Ink\n¤14,852\n−22%\nOrchid +29% seen 1n ago"}
+{"at":"2026-11-14T19:34:25.759Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:26.366Z","action":"type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T19:34:26.554Z","action":"tap","selector":"#qgo","text":"Buy 1 for ¤14,852"}
+{"at":"2026-11-14T19:34:27.118Z","action":"trade-result","id":"ink","mode":"buy","q":1,"cashBefore":33218,"cashAfter":18366,"ownedBefore":0,"ownedAfter":1}
+{"at":"2026-11-14T19:34:27.227Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤794\n−28%\nOrchid +55% seen 1n ago"}
+{"at":"2026-11-14T19:34:27.883Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:28.464Z","action":"type","selector":"#qin","text":"16"}
+{"at":"2026-11-14T19:34:28.719Z","action":"tap","selector":"#qgo","text":"Buy 16 for ¤12,704"}
+{"at":"2026-11-14T19:34:29.295Z","action":"trade-result","id":"saffron","mode":"buy","q":16,"cashBefore":18366,"cashAfter":5662,"ownedBefore":0,"ownedAfter":16}
+{"at":"2026-11-14T19:34:29.375Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:34:29.993Z","action":"tap","selector":"#nodes .node[data-d=\"ot\"]","text":""}
+{"at":"2026-11-14T19:34:30.601Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:34:32.211Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:34:32.804Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤920\n−16%\n×16 · avg ¤794 · Glut easing · +16% here"}
+{"at":"2026-11-14T19:34:33.348Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:33.844Z","action":"type","selector":"#qin","text":"16"}
+{"at":"2026-11-14T19:34:34.008Z","action":"tap","selector":"#qgo","text":"Sell 16 for ¤14,720"}
+{"at":"2026-11-14T19:34:34.507Z","action":"trade-result","id":"saffron","mode":"sell","q":16,"cashBefore":5662,"cashAfter":20382,"ownedBefore":16,"ownedAfter":0}
+{"at":"2026-11-14T19:34:34.569Z","action":"tap","selector":".row[data-g=\"ink\"]","text":"Moon Ink\n¤28,579\n+50%\n×1 · avg ¤14.9k · +92% here"}
+{"at":"2026-11-14T19:34:35.129Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:35.613Z","action":"type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T19:34:35.764Z","action":"tap","selector":"#qgo","text":"Sell 1 for ¤28,579"}
+{"at":"2026-11-14T19:34:36.262Z","action":"trade-result","id":"ink","mode":"sell","q":1,"cashBefore":20382,"cashAfter":48961,"ownedBefore":1,"ownedAfter":0}
+{"at":"2026-11-14T19:34:36.272Z","action":"plan","day":12,"loc":"ot","id":"de","buys":[{"id":"chips","q":7,"cost":25263,"expectedPrice":6344},{"id":"eels","q":8,"cost":15944,"expectedPrice":2928},{"id":"rain","q":4,"cost":380,"expectedPrice":130}],"score":27412.229999999996,"expectedGain":26765}
+{"at":"2026-11-14T19:34:36.341Z","action":"tap","selector":".row[data-g=\"chips\"]","text":"Ghost Chips\n¤3,609\n−31%\nSaint Mire +39% seen 1n ago"}
+{"at":"2026-11-14T19:34:36.883Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:37.373Z","action":"type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T19:34:37.540Z","action":"tap","selector":"#qgo","text":"Buy 7 for ¤25,263"}
+{"at":"2026-11-14T19:34:38.038Z","action":"trade-result","id":"chips","mode":"buy","q":7,"cashBefore":48961,"cashAfter":23698,"ownedBefore":0,"ownedAfter":7}
+{"at":"2026-11-14T19:34:38.102Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤1,993\n−17%\nSaint Mire +36% seen 1n ago"}
+{"at":"2026-11-14T19:34:38.647Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:39.147Z","action":"type","selector":"#qin","text":"8"}
+{"at":"2026-11-14T19:34:39.314Z","action":"tap","selector":"#qgo","text":"Buy 8 for ¤15,944"}
+{"at":"2026-11-14T19:34:39.825Z","action":"trade-result","id":"eels","mode":"buy","q":8,"cashBefore":23698,"cashAfter":7754,"ownedBefore":0,"ownedAfter":8}
+{"at":"2026-11-14T19:34:39.886Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:34:40.430Z","action":"tap","selector":"#nodes .node[data-d=\"de\"]","text":""}
+{"at":"2026-11-14T19:34:40.989Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:34:42.501Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:34:43.062Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤2,672\n+11%\n×8 · avg ¤1,993 · +34% here"}
+{"at":"2026-11-14T19:34:43.620Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:44.121Z","action":"type","selector":"#qin","text":"8"}
+{"at":"2026-11-14T19:34:44.288Z","action":"tap","selector":"#qgo","text":"Sell 8 for ¤21,376"}
+{"at":"2026-11-14T19:34:44.804Z","action":"trade-result","id":"eels","mode":"sell","q":8,"cashBefore":7754,"cashAfter":29130,"ownedBefore":8,"ownedAfter":0}
+{"at":"2026-11-14T19:34:44.867Z","action":"tap","selector":".row[data-g=\"chips\"]","text":"Ghost Chips\n¤4,442\n−15%\n×7 · avg ¤3,609 · Saint Mire +13% seen 2n ago"}
+{"at":"2026-11-14T19:34:45.442Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:45.962Z","action":"type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T19:34:46.126Z","action":"tap","selector":"#qgo","text":"Sell 7 for ¤31,094"}
+{"at":"2026-11-14T19:34:46.619Z","action":"trade-result","id":"chips","mode":"sell","q":7,"cashBefore":29130,"cashAfter":60224,"ownedBefore":7,"ownedAfter":0}
+{"at":"2026-11-14T19:34:46.679Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:34:47.235Z","action":"tap","selector":"#side-body [data-act=\"wireless\"]","text":"¤6,000"}
+{"at":"2026-11-14T19:34:47.793Z","action":"tap","selector":"#modal [data-choice=\"yes\"]","text":"Buy · ¤6,000"}
+{"at":"2026-11-14T19:34:48.297Z","action":"upgrade","upgrade":"wireless"}
+{"at":"2026-11-14T19:34:48.364Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:34:48.866Z","action":"plan","day":13,"loc":"de","id":"lq","buys":[{"id":"ink","q":2,"cost":34622,"expectedPrice":24166},{"id":"saffron","q":14,"cost":10850,"expectedPrice":977}],"score":15415,"expectedGain":16536}
+{"at":"2026-11-14T19:34:48.928Z","action":"tap","selector":".row[data-g=\"ink\"]","text":"Moon Ink\n¤17,311\n−9%\nLanternquay +41% seen tonight"}
+{"at":"2026-11-14T19:34:49.488Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:49.988Z","action":"type","selector":"#qin","text":"2"}
+{"at":"2026-11-14T19:34:50.153Z","action":"tap","selector":"#qgo","text":"Buy 2 for ¤34,622"}
+{"at":"2026-11-14T19:34:50.648Z","action":"trade-result","id":"ink","mode":"buy","q":2,"cashBefore":54224,"cashAfter":19602,"ownedBefore":0,"ownedAfter":2}
+{"at":"2026-11-14T19:34:50.708Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤775\n−30%\nFogmouth +121% seen tonight"}
+{"at":"2026-11-14T19:34:51.232Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:51.721Z","action":"type","selector":"#qin","text":"14"}
+{"at":"2026-11-14T19:34:51.880Z","action":"tap","selector":"#qgo","text":"Buy 14 for ¤10,850"}
+{"at":"2026-11-14T19:34:52.376Z","action":"trade-result","id":"saffron","mode":"buy","q":14,"cashBefore":19602,"cashAfter":8752,"ownedBefore":0,"ownedAfter":14}
+{"at":"2026-11-14T19:34:52.438Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:34:52.991Z","action":"tap","selector":"#nodes .node[data-d=\"lq\"]","text":""}
+{"at":"2026-11-14T19:34:53.530Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:34:55.050Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:34:55.637Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤1,038\n−6%\n×14 · avg ¤775 · Fogmouth +88% seen tonight"}
+{"at":"2026-11-14T19:34:56.180Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:56.685Z","action":"type","selector":"#qin","text":"14"}
+{"at":"2026-11-14T19:34:56.845Z","action":"tap","selector":"#qgo","text":"Sell 14 for ¤14,532"}
+{"at":"2026-11-14T19:34:57.342Z","action":"trade-result","id":"saffron","mode":"sell","q":14,"cashBefore":8752,"cashAfter":23284,"ownedBefore":14,"ownedAfter":0}
+{"at":"2026-11-14T19:34:57.404Z","action":"tap","selector":".row[data-g=\"ink\"]","text":"Moon Ink\n¤26,995\n+42%\n×2 · avg ¤17.3k · +56% here"}
+{"at":"2026-11-14T19:34:57.931Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:34:58.415Z","action":"type","selector":"#qin","text":"2"}
+{"at":"2026-11-14T19:34:58.579Z","action":"tap","selector":"#qgo","text":"Sell 2 for ¤53,990"}
+{"at":"2026-11-14T19:34:59.093Z","action":"trade-result","id":"ink","mode":"sell","q":2,"cashBefore":23284,"cashAfter":77274,"ownedBefore":2,"ownedAfter":0}
+{"at":"2026-11-14T19:34:59.155Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:34:59.736Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:35:00.261Z","action":"plan","day":14,"loc":"lq","id":"de","buys":[{"id":"eels","q":10,"cost":20270,"expectedPrice":3345},{"id":"chips","q":7,"cost":21609,"expectedPrice":4400},{"id":"pearl","q":13,"cost":6357,"expectedPrice":555}],"score":20059.015199999998,"expectedGain":23231}
+{"at":"2026-11-14T19:35:00.337Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤2,027\n−16%\nExchange +70% seen tonight"}
+{"at":"2026-11-14T19:35:00.910Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:01.430Z","action":"type","selector":"#qin","text":"10"}
+{"at":"2026-11-14T19:35:01.590Z","action":"tap","selector":"#qgo","text":"Buy 10 for ¤20,270"}
+{"at":"2026-11-14T19:35:02.095Z","action":"trade-result","id":"eels","mode":"buy","q":10,"cashBefore":77274,"cashAfter":57004,"ownedBefore":0,"ownedAfter":10}
+{"at":"2026-11-14T19:35:02.159Z","action":"tap","selector":".row[data-g=\"chips\"]","text":"Ghost Chips\n¤3,087\n−41%\nCopperhook +31% seen tonight"}
+{"at":"2026-11-14T19:35:02.715Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:03.216Z","action":"type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T19:35:03.377Z","action":"tap","selector":"#qgo","text":"Buy 7 for ¤21,609"}
+{"at":"2026-11-14T19:35:03.876Z","action":"trade-result","id":"chips","mode":"buy","q":7,"cashBefore":57004,"cashAfter":35395,"ownedBefore":0,"ownedAfter":7}
+{"at":"2026-11-14T19:35:03.937Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:35:04.477Z","action":"tap","selector":"#nodes .node[data-d=\"de\"]","text":""}
+{"at":"2026-11-14T19:35:05.033Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:35:05.559Z","action":"event","day":14,"title":"A squall comes off the sea","choice":"shelter","choiceText":"Shelter under the viaduct\nSafe, but you lose a whole night.","text":"WEATHER\nA squall comes off the sea\n\nBlack rain hammers the canal and the water starts to heave. Somewhere ahead, bridges are groaning.\n\nPush through\nArrive on time, but lose 6 to 16% hull (you have 100%).\nShelter under the viaduct\nSafe, but you lose a whole night."}
+{"at":"2026-11-14T19:35:05.712Z","action":"tap","selector":"#modal [data-choice=\"shelter\"]","text":"Shelter under the viaduct\nSafe, but you lose a whole night."}
+{"at":"2026-11-14T19:35:06.275Z","action":"event","day":16,"title":"A crate bobs past","choice":"leave","choiceText":"Leave it\nNot worth the trouble.","text":"FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Bottled Rain marks drifts alongside. Nobody seems to be looking for it. Yet.\n\nHaul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull).\nLeave it\nNot worth the trouble."}
+{"at":"2026-11-14T19:35:06.335Z","action":"tap","selector":"#modal [data-choice=\"leave\"]","text":"Leave it\nNot worth the trouble."}
+{"at":"2026-11-14T19:35:07.848Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:35:08.435Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤2,882\n+20%\n×10 · avg ¤2,027 · +42% here"}
+{"at":"2026-11-14T19:35:08.991Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:09.495Z","action":"type","selector":"#qin","text":"10"}
+{"at":"2026-11-14T19:35:09.672Z","action":"tap","selector":"#qgo","text":"Sell 10 for ¤28,820"}
+{"at":"2026-11-14T19:35:10.197Z","action":"trade-result","id":"eels","mode":"sell","q":10,"cashBefore":35395,"cashAfter":64215,"ownedBefore":10,"ownedAfter":0}
+{"at":"2026-11-14T19:35:10.258Z","action":"tap","selector":".row[data-g=\"chips\"]","text":"Ghost Chips\n¤4,171\n−20%\n×7 · avg ¤3,087 · +35% here"}
+{"at":"2026-11-14T19:35:10.801Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:11.322Z","action":"type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T19:35:11.481Z","action":"tap","selector":"#qgo","text":"Sell 7 for ¤29,197"}
+{"at":"2026-11-14T19:35:11.994Z","action":"trade-result","id":"chips","mode":"sell","q":7,"cashBefore":64215,"cashAfter":93412,"ownedBefore":7,"ownedAfter":0}
+{"at":"2026-11-14T19:35:12.057Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:35:12.641Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:35:13.151Z","action":"plan","day":16,"loc":"de","id":"ot","buys":[{"id":"silk","q":5,"cost":50225,"expectedPrice":12108},{"id":"saffron","q":20,"cost":25800,"expectedPrice":1453}],"score":12303.734999999997,"expectedGain":13579}
+{"at":"2026-11-14T19:35:13.210Z","action":"tap","selector":".row[data-g=\"silk\"]","text":"Dreamsilk\n¤10,045\nusual\nSluices +32% seen tonight"}
+{"at":"2026-11-14T19:35:13.768Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:14.297Z","action":"type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T19:35:14.464Z","action":"tap","selector":"#qgo","text":"Buy 5 for ¤50,225"}
+{"at":"2026-11-14T19:35:14.973Z","action":"trade-result","id":"silk","mode":"buy","q":5,"cashBefore":93412,"cashAfter":43187,"ownedBefore":0,"ownedAfter":5}
+{"at":"2026-11-14T19:35:15.036Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤1,290\n+17%\nFogmouth +52% seen tonight"}
+{"at":"2026-11-14T19:35:15.592Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:16.094Z","action":"type","selector":"#qin","text":"20"}
+{"at":"2026-11-14T19:35:16.258Z","action":"tap","selector":"#qgo","text":"Buy 20 for ¤25,800"}
+{"at":"2026-11-14T19:35:16.754Z","action":"trade-result","id":"saffron","mode":"buy","q":20,"cashBefore":43187,"cashAfter":17387,"ownedBefore":0,"ownedAfter":20}
+{"at":"2026-11-14T19:35:16.799Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:35:17.338Z","action":"tap","selector":"#nodes .node[data-d=\"ot\"]","text":""}
+{"at":"2026-11-14T19:35:17.863Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:35:19.358Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:35:19.931Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤1,401\n+27%\n×20 · avg ¤1,290 · +9% here"}
+{"at":"2026-11-14T19:35:20.488Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:20.977Z","action":"type","selector":"#qin","text":"20"}
+{"at":"2026-11-14T19:35:21.139Z","action":"tap","selector":"#qgo","text":"Sell 20 for ¤28,020"}
+{"at":"2026-11-14T19:35:21.638Z","action":"trade-result","id":"saffron","mode":"sell","q":20,"cashBefore":17387,"cashAfter":45407,"ownedBefore":20,"ownedAfter":0}
+{"at":"2026-11-14T19:35:21.699Z","action":"tap","selector":".row[data-g=\"silk\"]","text":"Dreamsilk\n¤12,212\n+25%\n×5 · avg ¤10.0k · Sluices +20% seen tonight"}
+{"at":"2026-11-14T19:35:22.241Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:22.739Z","action":"type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T19:35:22.905Z","action":"tap","selector":"#qgo","text":"Sell 5 for ¤61,060"}
+{"at":"2026-11-14T19:35:23.402Z","action":"trade-result","id":"silk","mode":"sell","q":5,"cashBefore":45407,"cashAfter":106467,"ownedBefore":5,"ownedAfter":0}
+{"at":"2026-11-14T19:35:23.413Z","action":"plan","day":17,"loc":"ot","id":"de","buys":[{"id":"eels","q":10,"cost":23310,"expectedPrice":4437},{"id":"rain","q":20,"cost":2040,"expectedPrice":147}],"score":18815.732,"expectedGain":21952}
+{"at":"2026-11-14T19:35:23.480Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤2,331\nusual\nExchange +94% seen tonight"}
+{"at":"2026-11-14T19:35:24.023Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:24.533Z","action":"type","selector":"#qin","text":"10"}
+{"at":"2026-11-14T19:35:24.706Z","action":"tap","selector":"#qgo","text":"Buy 10 for ¤23,310"}
+{"at":"2026-11-14T19:35:25.221Z","action":"trade-result","id":"eels","mode":"buy","q":10,"cashBefore":106467,"cashAfter":83157,"ownedBefore":0,"ownedAfter":10}
+{"at":"2026-11-14T19:35:25.300Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤102\n−22%\nCopperhook +99% seen tonight"}
+{"at":"2026-11-14T19:35:25.843Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:26.336Z","action":"type","selector":"#qin","text":"20"}
+{"at":"2026-11-14T19:35:26.497Z","action":"tap","selector":"#qgo","text":"Buy 20 for ¤2,040"}
+{"at":"2026-11-14T19:35:27.008Z","action":"trade-result","id":"rain","mode":"buy","q":20,"cashBefore":83157,"cashAfter":81117,"ownedBefore":0,"ownedAfter":20}
+{"at":"2026-11-14T19:35:27.072Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:35:27.616Z","action":"tap","selector":"#nodes .node[data-d=\"de\"]","text":""}
+{"at":"2026-11-14T19:35:28.159Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:35:28.684Z","action":"event","day":18,"title":"Water in the hold","choice":"pay","choiceText":"Patch the leak · ¤4,320\nKeep the cargo. Purse after: ¤76,797. This patch does not restore hull.","text":"LEAK\nWater in the hold\n\nA loose plank lets water into a stack of 3 Clockwork Eels. Buy an emergency patch or jettison the stack before the rest gets wet.\n\nPatch the leak · ¤4,320\nKeep the cargo. Purse after: ¤76,797. This patch does not restore hull.\nJettison 3 Clockwork Eels\nUsual value ¤7,200; the eventual sale price may differ. Keep your cash."}
+{"at":"2026-11-14T19:35:28.776Z","action":"tap","selector":"#modal [data-choice=\"pay\"]","text":"Patch the leak · ¤4,320\nKeep the cargo. Purse after: ¤76,797. This patch does not restore hull."}
+{"at":"2026-11-14T19:35:30.282Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:35:30.837Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤4,475\n+86%\n×10 · avg ¤2,331 · Fleet demand +40% · +92% here"}
+{"at":"2026-11-14T19:35:31.375Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:31.875Z","action":"type","selector":"#qin","text":"10"}
+{"at":"2026-11-14T19:35:32.039Z","action":"tap","selector":"#qgo","text":"Sell 10 for ¤44,750"}
+{"at":"2026-11-14T19:35:32.531Z","action":"trade-result","id":"eels","mode":"sell","q":10,"cashBefore":76797,"cashAfter":121547,"ownedBefore":10,"ownedAfter":0}
+{"at":"2026-11-14T19:35:32.593Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:35:33.167Z","action":"tap","selector":"#side-body [data-act=\"deposit\"]","text":"Deposit"}
+{"at":"2026-11-14T19:35:33.695Z","action":"tap","selector":"#ain","text":""}
+{"at":"2026-11-14T19:35:34.191Z","action":"type","selector":"#ain","text":"42928"}
+{"at":"2026-11-14T19:35:34.347Z","action":"tap","selector":"#ago","text":"Deposit ¤42,928"}
+{"at":"2026-11-14T19:35:34.836Z","action":"service","service":"deposit","amount":42928}
+{"at":"2026-11-14T19:35:34.885Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:35:35.380Z","action":"plan","day":18,"loc":"de","id":"ot","buys":[{"id":"silk","q":4,"cost":39076,"expectedPrice":12680},{"id":"saffron","q":6,"cost":7296,"expectedPrice":1504}],"score":12120.105999999998,"expectedGain":13374}
+{"at":"2026-11-14T19:35:35.442Z","action":"tap","selector":".row[data-g=\"silk\"]","text":"Dreamsilk\n¤9,769\nusual\nOrchid +32% seen tonight"}
+{"at":"2026-11-14T19:35:35.970Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:36.468Z","action":"type","selector":"#qin","text":"4"}
+{"at":"2026-11-14T19:35:36.634Z","action":"tap","selector":"#qgo","text":"Buy 4 for ¤39,076"}
+{"at":"2026-11-14T19:35:37.126Z","action":"trade-result","id":"silk","mode":"buy","q":4,"cashBefore":78619,"cashAfter":39543,"ownedBefore":0,"ownedAfter":4}
+{"at":"2026-11-14T19:35:37.189Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤1,216\n+11%\nCopperhook +232% seen tonight"}
+{"at":"2026-11-14T19:35:37.733Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:38.236Z","action":"type","selector":"#qin","text":"6"}
+{"at":"2026-11-14T19:35:38.401Z","action":"tap","selector":"#qgo","text":"Buy 6 for ¤7,296"}
+{"at":"2026-11-14T19:35:38.924Z","action":"trade-result","id":"saffron","mode":"buy","q":6,"cashBefore":39543,"cashAfter":32247,"ownedBefore":0,"ownedAfter":6}
+{"at":"2026-11-14T19:35:38.970Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:35:39.510Z","action":"tap","selector":"#nodes .node[data-d=\"ot\"]","text":""}
+{"at":"2026-11-14T19:35:40.037Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:35:40.548Z","action":"event","day":18,"title":"Tidewarden cutter!","choice":"bribe","choiceText":"Bribe the sergeant · ¤7,113\nGuaranteed. The price follows your purse and your cargo.","text":"SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA whistle shrieks across the water. 2 cutters of the Tidewarden watch close in from both banks.\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤48.4k\nRun for it\n24% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nBribe the sergeant · ¤7,113\nGuaranteed. The price follows your purse and your cargo.\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."}
+{"at":"2026-11-14T19:35:40.640Z","action":"tap","selector":"#modal [data-choice=\"bribe\"]","text":"Bribe the sergeant · ¤7,113\nGuaranteed. The price follows your purse and your cargo."}
+{"at":"2026-11-14T19:35:41.150Z","action":"event","day":18,"title":"Papers in order","choice":"ok","choiceText":"Continue","text":"BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤7,113, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\nContinue"}
+{"at":"2026-11-14T19:35:41.242Z","action":"tap","selector":"#modal [data-choice=\"ok\"]","text":"Continue"}
+{"at":"2026-11-14T19:35:41.756Z","action":"event","day":19,"title":"A crate bobs past","choice":"leave","choiceText":"Leave it\nNot worth the trouble.","text":"FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Synth Saffron marks drifts alongside. Nobody seems to be looking for it. Yet.\n\nHaul it aboard\nNo room: your hold is full.\nLeave it\nNot worth the trouble."}
+{"at":"2026-11-14T19:35:41.818Z","action":"tap","selector":"#modal [data-choice=\"leave\"]","text":"Leave it\nNot worth the trouble."}
+{"at":"2026-11-14T19:35:43.334Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:35:43.908Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤1,248\n+13%\n×6 · avg ¤1,216 · Copperhook +81% seen tonight"}
+{"at":"2026-11-14T19:35:44.462Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:44.948Z","action":"type","selector":"#qin","text":"6"}
+{"at":"2026-11-14T19:35:45.114Z","action":"tap","selector":"#qgo","text":"Sell 6 for ¤7,488"}
+{"at":"2026-11-14T19:35:45.623Z","action":"trade-result","id":"saffron","mode":"sell","q":6,"cashBefore":25134,"cashAfter":32622,"ownedBefore":6,"ownedAfter":0}
+{"at":"2026-11-14T19:35:45.684Z","action":"tap","selector":".row[data-g=\"silk\"]","text":"Dreamsilk\n¤10,997\n+12%\n×4 · avg ¤9,769 · +13% here"}
+{"at":"2026-11-14T19:35:46.242Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:46.722Z","action":"type","selector":"#qin","text":"4"}
+{"at":"2026-11-14T19:35:46.875Z","action":"tap","selector":"#qgo","text":"Sell 4 for ¤43,988"}
+{"at":"2026-11-14T19:35:47.370Z","action":"trade-result","id":"silk","mode":"sell","q":4,"cashBefore":32622,"cashAfter":76610,"ownedBefore":4,"ownedAfter":0}
+{"at":"2026-11-14T19:35:47.377Z","action":"plan","day":19,"loc":"ot","id":"lq","buys":[{"id":"rain","q":10,"cost":1040,"expectedPrice":425}],"score":8532.64,"expectedGain":9636}
+{"at":"2026-11-14T19:35:47.450Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤104\n−20%\n×20 · avg ¤102 · Lanternquay +380% seen tonight"}
+{"at":"2026-11-14T19:35:47.993Z","action":"tap","selector":"#modal [data-mode=\"buy\"]","text":"Buy"}
+{"at":"2026-11-14T19:35:48.522Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:49.006Z","action":"type","selector":"#qin","text":"10"}
+{"at":"2026-11-14T19:35:49.170Z","action":"tap","selector":"#qgo","text":"Buy 10 for ¤1,040"}
+{"at":"2026-11-14T19:35:49.680Z","action":"trade-result","id":"rain","mode":"buy","q":10,"cashBefore":76610,"cashAfter":75570,"ownedBefore":20,"ownedAfter":30}
+{"at":"2026-11-14T19:35:49.741Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:35:50.282Z","action":"tap","selector":"#nodes .node[data-d=\"lq\"]","text":""}
+{"at":"2026-11-14T19:35:50.807Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:35:52.294Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:35:52.854Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤240\n+85%\n×30 · avg ¤103 · Surge easing · +134% here"}
+{"at":"2026-11-14T19:35:53.409Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:53.899Z","action":"type","selector":"#qin","text":"30"}
+{"at":"2026-11-14T19:35:54.058Z","action":"tap","selector":"#qgo","text":"Sell 30 for ¤7,200"}
+{"at":"2026-11-14T19:35:54.557Z","action":"trade-result","id":"rain","mode":"sell","q":30,"cashBefore":75570,"cashAfter":82770,"ownedBefore":30,"ownedAfter":0}
+{"at":"2026-11-14T19:35:54.618Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:35:55.205Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:35:55.778Z","action":"plan","day":20,"loc":"lq","id":"de","buys":[{"id":"eels","q":10,"cost":17710,"expectedPrice":3907},{"id":"silk","q":5,"cost":37275,"expectedPrice":9646},{"id":"pearl","q":15,"cost":7500,"expectedPrice":628}],"score":30243.385999999995,"expectedGain":34240}
+{"at":"2026-11-14T19:35:55.858Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤1,771\n−26%\nExchange +134% seen tonight"}
+{"at":"2026-11-14T19:35:56.444Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:56.953Z","action":"type","selector":"#qin","text":"10"}
+{"at":"2026-11-14T19:35:57.112Z","action":"tap","selector":"#qgo","text":"Buy 10 for ¤17,710"}
+{"at":"2026-11-14T19:35:57.609Z","action":"trade-result","id":"eels","mode":"buy","q":10,"cashBefore":82770,"cashAfter":65060,"ownedBefore":0,"ownedAfter":10}
+{"at":"2026-11-14T19:35:57.671Z","action":"tap","selector":".row[data-g=\"silk\"]","text":"Dreamsilk\n¤7,455\n−24%\nOrchid +55% seen tonight"}
+{"at":"2026-11-14T19:35:58.209Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:35:58.695Z","action":"type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T19:35:58.860Z","action":"tap","selector":"#qgo","text":"Buy 5 for ¤37,275"}
+{"at":"2026-11-14T19:35:59.366Z","action":"trade-result","id":"silk","mode":"buy","q":5,"cashBefore":65060,"cashAfter":27785,"ownedBefore":0,"ownedAfter":5}
+{"at":"2026-11-14T19:35:59.416Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:35:59.954Z","action":"tap","selector":"#nodes .node[data-d=\"de\"]","text":""}
+{"at":"2026-11-14T19:36:00.555Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:36:01.066Z","action":"event","day":20,"title":"The Gull Gang!","choice":"pay","choiceText":"Pay the toll · ¤13,761\nAbout a fifth of your purse plus a cut of your cargo.","text":"AMBUSH IN THE NARROWS\nThe Gull Gang!\n\nA net drops across the canal ahead. 3 Gull Gang skiffs wait behind it, oars up, grinning.\n\nYour hull\n100%\nEnemy boats\n3\nCargo at stake\n¤73.0k\nRun for it\n26% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n19% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nPay the toll · ¤13,761\nAbout a fifth of your purse plus a cut of your cargo."}
+{"at":"2026-11-14T19:36:01.126Z","action":"tap","selector":"#modal [data-choice=\"pay\"]","text":"Pay the toll · ¤13,761\nAbout a fifth of your purse plus a cut of your cargo."}
+{"at":"2026-11-14T19:36:01.682Z","action":"event","day":20,"title":"Toll paid","choice":"ok","choiceText":"Continue","text":"PAID\nToll paid\n\nThey count your ¤13,761 twice. They melt back into the dark.\n\nContinue"}
+{"at":"2026-11-14T19:36:01.741Z","action":"tap","selector":"#modal [data-choice=\"ok\"]","text":"Continue"}
+{"at":"2026-11-14T19:36:02.296Z","action":"event","day":21,"title":"A soaked courier flags you down","choice":"no","choiceText":"Decline\nSmells like trouble.","text":"A JOB\nA soaked courier flags you down\n\n\"Sealed parcel for Lanternquay. Don't open it, don't drop it, and don't let the Tidewardens see it. Pays ¤6,730 on delivery by night 25.\"\n\nTake the job · 3 hold\nDeliver to Lanternquay by night 25 (1 night away).\nDecline\nSmells like trouble."}
+{"at":"2026-11-14T19:36:02.405Z","action":"tap","selector":"#modal [data-choice=\"no\"]","text":"Decline\nSmells like trouble."}
+{"at":"2026-11-14T19:36:03.912Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:36:04.488Z","action":"tap","selector":".row[data-g=\"eels\"]","text":"Clockwork Eels\n¤2,552\n+6%\n×10 · avg ¤1,771 · +44% here"}
+{"at":"2026-11-14T19:36:05.047Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:05.569Z","action":"type","selector":"#qin","text":"10"}
+{"at":"2026-11-14T19:36:05.747Z","action":"tap","selector":"#qgo","text":"Sell 10 for ¤25,520"}
+{"at":"2026-11-14T19:36:06.278Z","action":"trade-result","id":"eels","mode":"sell","q":10,"cashBefore":14024,"cashAfter":39544,"ownedBefore":10,"ownedAfter":0}
+{"at":"2026-11-14T19:36:06.342Z","action":"tap","selector":".row[data-g=\"silk\"]","text":"Dreamsilk\n¤8,360\n−15%\n×5 · avg ¤7,455 · +12% here"}
+{"at":"2026-11-14T19:36:06.871Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:07.363Z","action":"type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T19:36:07.540Z","action":"tap","selector":"#qgo","text":"Sell 5 for ¤41,800"}
+{"at":"2026-11-14T19:36:08.055Z","action":"trade-result","id":"silk","mode":"sell","q":5,"cashBefore":39544,"cashAfter":81344,"ownedBefore":5,"ownedAfter":0}
+{"at":"2026-11-14T19:36:08.117Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:36:08.696Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:36:09.205Z","action":"plan","day":21,"loc":"de","id":"ot","buys":[{"id":"ink","q":3,"cost":61947,"expectedPrice":29117},{"id":"saffron","q":9,"cost":8613,"expectedPrice":1370}],"score":27301.18600000001,"expectedGain":29120}
+{"at":"2026-11-14T19:36:09.266Z","action":"tap","selector":".row[data-g=\"ink\"]","text":"Moon Ink\n¤20,649\n+9%\nOrchid +48% seen tonight"}
+{"at":"2026-11-14T19:36:09.794Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:10.277Z","action":"type","selector":"#qin","text":"3"}
+{"at":"2026-11-14T19:36:10.441Z","action":"tap","selector":"#qgo","text":"Buy 3 for ¤61,947"}
+{"at":"2026-11-14T19:36:10.936Z","action":"trade-result","id":"ink","mode":"buy","q":3,"cashBefore":81344,"cashAfter":19397,"ownedBefore":0,"ownedAfter":3}
+{"at":"2026-11-14T19:36:10.998Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤957\n−13%\nFogmouth +49% seen tonight"}
+{"at":"2026-11-14T19:36:11.571Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:12.100Z","action":"type","selector":"#qin","text":"9"}
+{"at":"2026-11-14T19:36:12.263Z","action":"tap","selector":"#qgo","text":"Buy 9 for ¤8,613"}
+{"at":"2026-11-14T19:36:12.757Z","action":"trade-result","id":"saffron","mode":"buy","q":9,"cashBefore":19397,"cashAfter":10784,"ownedBefore":0,"ownedAfter":9}
+{"at":"2026-11-14T19:36:12.818Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:36:13.377Z","action":"tap","selector":"#nodes .node[data-d=\"ot\"]","text":""}
+{"at":"2026-11-14T19:36:13.919Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:36:14.420Z","action":"event","day":21,"title":"A squall comes off the sea","choice":"shelter","choiceText":"Shelter under the viaduct\nSafe, but you lose a whole night.","text":"WEATHER\nA squall comes off the sea\n\nBlack rain hammers the canal and the water starts to heave. Somewhere ahead, bridges are groaning.\n\nPush through\nArrive on time, but lose 6 to 16% hull (you have 100%).\nShelter under the viaduct\nSafe, but you lose a whole night."}
+{"at":"2026-11-14T19:36:14.477Z","action":"tap","selector":"#modal [data-choice=\"shelter\"]","text":"Shelter under the viaduct\nSafe, but you lose a whole night."}
+{"at":"2026-11-14T19:36:15.993Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:36:16.565Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤1,666\n+51%\n×9 · avg ¤957 · +74% here"}
+{"at":"2026-11-14T19:36:17.133Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:17.630Z","action":"type","selector":"#qin","text":"9"}
+{"at":"2026-11-14T19:36:17.796Z","action":"tap","selector":"#qgo","text":"Sell 9 for ¤14,994"}
+{"at":"2026-11-14T19:36:18.290Z","action":"trade-result","id":"saffron","mode":"sell","q":9,"cashBefore":10784,"cashAfter":25778,"ownedBefore":9,"ownedAfter":0}
+{"at":"2026-11-14T19:36:18.348Z","action":"tap","selector":".row[data-g=\"ink\"]","text":"Moon Ink\n¤21,424\n+13%\n×3 · avg ¤20.6k · Saint Mire +14% seen tonight"}
+{"at":"2026-11-14T19:36:18.890Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:19.374Z","action":"type","selector":"#qin","text":"3"}
+{"at":"2026-11-14T19:36:19.537Z","action":"tap","selector":"#qgo","text":"Sell 3 for ¤64,272"}
+{"at":"2026-11-14T19:36:20.048Z","action":"trade-result","id":"ink","mode":"sell","q":3,"cashBefore":25778,"cashAfter":90050,"ownedBefore":3,"ownedAfter":0}
+{"at":"2026-11-14T19:36:20.057Z","action":"plan","day":23,"loc":"ot","id":"lq","buys":[{"id":"rain","q":30,"cost":2610,"expectedPrice":147}],"score":931.21,"expectedGain":1794}
+{"at":"2026-11-14T19:36:20.125Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤87\n−33%\nSaint Mire +80% seen tonight"}
+{"at":"2026-11-14T19:36:20.680Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:21.216Z","action":"type","selector":"#qin","text":"30"}
+{"at":"2026-11-14T19:36:21.379Z","action":"tap","selector":"#qgo","text":"Buy 30 for ¤2,610"}
+{"at":"2026-11-14T19:36:21.875Z","action":"trade-result","id":"rain","mode":"buy","q":30,"cashBefore":90050,"cashAfter":87440,"ownedBefore":0,"ownedAfter":30}
+{"at":"2026-11-14T19:36:21.937Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:36:22.478Z","action":"tap","selector":"#nodes .node[data-d=\"lq\"]","text":""}
+{"at":"2026-11-14T19:36:23.020Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:36:23.548Z","action":"event","day":24,"title":"A crate bobs past","choice":"leave","choiceText":"Leave it\nNot worth the trouble.","text":"FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Synth Saffron marks drifts alongside. Nobody seems to be looking for it. Yet.\n\nHaul it aboard\nNo room: your hold is full.\nLeave it\nNot worth the trouble."}
+{"at":"2026-11-14T19:36:23.607Z","action":"tap","selector":"#modal [data-choice=\"leave\"]","text":"Leave it\nNot worth the trouble."}
+{"at":"2026-11-14T19:36:25.100Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:36:25.679Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤136\nusual\n×30 · avg ¤87 · Saint Mire +198% seen tonight"}
+{"at":"2026-11-14T19:36:26.250Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:26.755Z","action":"type","selector":"#qin","text":"30"}
+{"at":"2026-11-14T19:36:26.919Z","action":"tap","selector":"#qgo","text":"Sell 30 for ¤4,080"}
+{"at":"2026-11-14T19:36:27.445Z","action":"trade-result","id":"rain","mode":"sell","q":30,"cashBefore":87440,"cashAfter":91520,"ownedBefore":30,"ownedAfter":0}
+{"at":"2026-11-14T19:36:27.507Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:36:28.097Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:36:28.606Z","action":"plan","day":24,"loc":"lq","id":"sl","buys":[{"id":"chips","q":7,"cost":34916,"expectedPrice":8671},{"id":"silk","q":5,"cost":26850,"expectedPrice":8620},{"id":"eels","q":9,"cost":17802,"expectedPrice":2835}],"score":42123.74400000001,"expectedGain":49747}
+{"at":"2026-11-14T19:36:28.670Z","action":"tap","selector":".row[data-g=\"chips\"]","text":"Ghost Chips\n¤4,988\nusual\nSluices +91% seen tonight"}
+{"at":"2026-11-14T19:36:29.200Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:29.701Z","action":"type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T19:36:29.881Z","action":"tap","selector":"#qgo","text":"Buy 7 for ¤34,916"}
+{"at":"2026-11-14T19:36:30.393Z","action":"trade-result","id":"chips","mode":"buy","q":7,"cashBefore":91520,"cashAfter":56604,"ownedBefore":0,"ownedAfter":7}
+{"at":"2026-11-14T19:36:30.454Z","action":"tap","selector":".row[data-g=\"silk\"]","text":"Dreamsilk\n¤5,370\n−45%\nOrchid +46% seen tonight"}
+{"at":"2026-11-14T19:36:31.010Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:31.512Z","action":"type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T19:36:31.678Z","action":"tap","selector":"#qgo","text":"Buy 5 for ¤26,850"}
+{"at":"2026-11-14T19:36:32.193Z","action":"trade-result","id":"silk","mode":"buy","q":5,"cashBefore":56604,"cashAfter":29754,"ownedBefore":0,"ownedAfter":5}
+{"at":"2026-11-14T19:36:32.255Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:36:32.797Z","action":"tap","selector":"#nodes .node[data-d=\"sl\"]","text":""}
+{"at":"2026-11-14T19:36:33.322Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:36:33.836Z","action":"event","day":25,"title":"Water in the hold","choice":"pay","choiceText":"Patch the leak · ¤5,880\nKeep the cargo. Purse after: ¤23,874. This patch does not restore hull.","text":"LEAK\nWater in the hold\n\nA loose plank lets water into a stack of 1 Dreamsilk. Buy an emergency patch or jettison the stack before the rest gets wet.\n\nPatch the leak · ¤5,880\nKeep the cargo. Purse after: ¤23,874. This patch does not restore hull.\nJettison 1 Dreamsilk\nUsual value ¤9,800; the eventual sale price may differ. Keep your cash."}
+{"at":"2026-11-14T19:36:33.894Z","action":"tap","selector":"#modal [data-choice=\"pay\"]","text":"Patch the leak · ¤5,880\nKeep the cargo. Purse after: ¤23,874. This patch does not restore hull."}
+{"at":"2026-11-14T19:36:35.417Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:36:35.993Z","action":"tap","selector":".row[data-g=\"chips\"]","text":"Ghost Chips\n¤8,718\n+68%\n×7 · avg ¤4,988 · Copperhook +112% seen tonight"}
+{"at":"2026-11-14T19:36:36.558Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:37.061Z","action":"type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T19:36:37.227Z","action":"tap","selector":"#qgo","text":"Sell 7 for ¤61,026"}
+{"at":"2026-11-14T19:36:37.726Z","action":"trade-result","id":"chips","mode":"sell","q":7,"cashBefore":23874,"cashAfter":84900,"ownedBefore":7,"ownedAfter":0}
+{"at":"2026-11-14T19:36:37.787Z","action":"tap","selector":".row[data-g=\"silk\"]","text":"Dreamsilk\n¤9,996\nusual\n×5 · avg ¤5,370 · Orchid +45% seen tonight"}
+{"at":"2026-11-14T19:36:38.347Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:38.837Z","action":"type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T19:36:39.001Z","action":"tap","selector":"#qgo","text":"Sell 5 for ¤49,980"}
+{"at":"2026-11-14T19:36:39.498Z","action":"trade-result","id":"silk","mode":"sell","q":5,"cashBefore":84900,"cashAfter":134880,"ownedBefore":5,"ownedAfter":0}
+{"at":"2026-11-14T19:36:39.560Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:36:40.140Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:36:40.672Z","action":"plan","day":25,"loc":"sl","id":"ch","buys":[{"id":"chips","q":11,"cost":95898,"expectedPrice":16027},{"id":"kelp","q":19,"cost":665,"expectedPrice":54}],"score":76513.22816,"expectedGain":80767}
+{"at":"2026-11-14T19:36:40.732Z","action":"tap","selector":".row[data-g=\"chips\"]","text":"Ghost Chips\n¤8,718\n+68%\nCopperhook +112% seen tonight"}
+{"at":"2026-11-14T19:36:41.269Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:41.762Z","action":"type","selector":"#qin","text":"11"}
+{"at":"2026-11-14T19:36:41.919Z","action":"tap","selector":"#qgo","text":"Buy 11 for ¤95,898"}
+{"at":"2026-11-14T19:36:42.430Z","action":"trade-result","id":"chips","mode":"buy","q":11,"cashBefore":134880,"cashAfter":38982,"ownedBefore":0,"ownedAfter":11}
+{"at":"2026-11-14T19:36:42.489Z","action":"tap","selector":".row[data-g=\"kelp\"]","text":"Glowkelp\n¤35\n−17%\nLanternquay +71% seen tonight"}
+{"at":"2026-11-14T19:36:43.032Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:43.518Z","action":"type","selector":"#qin","text":"19"}
+{"at":"2026-11-14T19:36:43.695Z","action":"tap","selector":"#qgo","text":"Buy 19 for ¤665"}
+{"at":"2026-11-14T19:36:44.205Z","action":"trade-result","id":"kelp","mode":"buy","q":19,"cashBefore":38982,"cashAfter":38317,"ownedBefore":0,"ownedAfter":19}
+{"at":"2026-11-14T19:36:44.266Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:36:44.841Z","action":"tap","selector":"#nodes .node[data-d=\"ch\"]","text":""}
+{"at":"2026-11-14T19:36:45.390Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:36:45.947Z","action":"event","day":26,"title":"A gull takes your purse","choice":"pay","choiceText":"Let the bag go · ¤3,832\nCertain cash loss. Your hull and cargo stay safe.","text":"THIEF!\nA gull takes your purse\n\nA trained grey gull snags a bag containing ¤3,832. Its tether catches your wrist. You can grab the bag, but the skiff is drifting toward the stone quay.\n\nReach for the bag\n70% chance to keep it. On failure, lose ¤3,832 and 10% hull (you have 100%).\nLet the bag go · ¤3,832\nCertain cash loss. Your hull and cargo stay safe."}
+{"at":"2026-11-14T19:36:46.070Z","action":"tap","selector":"#modal [data-choice=\"pay\"]","text":"Let the bag go · ¤3,832\nCertain cash loss. Your hull and cargo stay safe."}
+{"at":"2026-11-14T19:36:47.611Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:36:48.199Z","action":"tap","selector":".row[data-g=\"kelp\"]","text":"Glowkelp\n¤52\n+24%\n×19 · avg ¤35 · Lanternquay +35% seen tonight"}
+{"at":"2026-11-14T19:36:48.757Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:49.277Z","action":"type","selector":"#qin","text":"19"}
+{"at":"2026-11-14T19:36:49.446Z","action":"tap","selector":"#qgo","text":"Sell 19 for ¤988"}
+{"at":"2026-11-14T19:36:49.980Z","action":"trade-result","id":"kelp","mode":"sell","q":19,"cashBefore":34485,"cashAfter":35473,"ownedBefore":19,"ownedAfter":0}
+{"at":"2026-11-14T19:36:50.057Z","action":"tap","selector":".row[data-g=\"chips\"]","text":"Ghost Chips\n¤11,055\n+113%\n×11 · avg ¤8,718 · Surge easing · +27% here"}
+{"at":"2026-11-14T19:36:50.619Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:51.128Z","action":"type","selector":"#qin","text":"11"}
+{"at":"2026-11-14T19:36:51.294Z","action":"tap","selector":"#qgo","text":"Sell 11 for ¤121,503"}
+{"at":"2026-11-14T19:36:51.790Z","action":"trade-result","id":"chips","mode":"sell","q":11,"cashBefore":35473,"cashAfter":156976,"ownedBefore":11,"ownedAfter":0}
+{"at":"2026-11-14T19:36:51.851Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:36:52.436Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:36:52.933Z","action":"plan","day":26,"loc":"ch","id":"lq","buys":[{"id":"ink","q":3,"cost":64995,"expectedPrice":26616},{"id":"pearl","q":24,"cost":7056,"expectedPrice":445},{"id":"kelp","q":3,"cost":156,"expectedPrice":66}],"score":17066.92096,"expectedGain":18515}
+{"at":"2026-11-14T19:36:52.995Z","action":"tap","selector":".row[data-g=\"ink\"]","text":"Moon Ink\n¤21,665\n+14%\nExchange +38% seen tonight"}
+{"at":"2026-11-14T19:36:53.557Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:54.111Z","action":"type","selector":"#qin","text":"3"}
+{"at":"2026-11-14T19:36:54.288Z","action":"tap","selector":"#qgo","text":"Buy 3 for ¤64,995"}
+{"at":"2026-11-14T19:36:54.831Z","action":"trade-result","id":"ink","mode":"buy","q":3,"cashBefore":156976,"cashAfter":91981,"ownedBefore":0,"ownedAfter":3}
+{"at":"2026-11-14T19:36:54.909Z","action":"tap","selector":".row[data-g=\"pearl\"]","text":"Rust Pearls\n¤294\n−30%\nExchange +110% seen tonight"}
+{"at":"2026-11-14T19:36:55.463Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:36:55.967Z","action":"type","selector":"#qin","text":"24"}
+{"at":"2026-11-14T19:36:56.130Z","action":"tap","selector":"#qgo","text":"Buy 24 for ¤7,056"}
+{"at":"2026-11-14T19:36:56.629Z","action":"trade-result","id":"pearl","mode":"buy","q":24,"cashBefore":91981,"cashAfter":84925,"ownedBefore":0,"ownedAfter":24}
+{"at":"2026-11-14T19:36:56.689Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:36:57.243Z","action":"tap","selector":"#nodes .node[data-d=\"lq\"]","text":""}
+{"at":"2026-11-14T19:36:57.797Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:36:58.293Z","action":"event","day":26,"title":"Tidewarden cutter!","choice":"bribe","choiceText":"Bribe the sergeant · ¤13,688\nGuaranteed. The price follows your purse and your cargo.","text":"SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nSearchlights snap on from under the viaduct: 2 Tidewarden cutters, rifles out. \"Cargo papers, captain.\"\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤67.1k\nRun for it\n26% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nBribe the sergeant · ¤13,688\nGuaranteed. The price follows your purse and your cargo.\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."}
+{"at":"2026-11-14T19:36:58.354Z","action":"tap","selector":"#modal [data-choice=\"bribe\"]","text":"Bribe the sergeant · ¤13,688\nGuaranteed. The price follows your purse and your cargo."}
+{"at":"2026-11-14T19:36:58.864Z","action":"event","day":26,"title":"Papers in order","choice":"ok","choiceText":"Continue","text":"BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤13,688, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\nContinue"}
+{"at":"2026-11-14T19:36:58.925Z","action":"tap","selector":"#modal [data-choice=\"ok\"]","text":"Continue"}
+{"at":"2026-11-14T19:37:00.441Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:37:01.005Z","action":"tap","selector":".row[data-g=\"pearl\"]","text":"Rust Pearls\n¤476\n+13%\n×24 · avg ¤294 · Exchange +14% seen tonight"}
+{"at":"2026-11-14T19:37:01.562Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:37:02.068Z","action":"type","selector":"#qin","text":"24"}
+{"at":"2026-11-14T19:37:02.230Z","action":"tap","selector":"#qgo","text":"Sell 24 for ¤11,424"}
+{"at":"2026-11-14T19:37:02.732Z","action":"trade-result","id":"pearl","mode":"sell","q":24,"cashBefore":71237,"cashAfter":82661,"ownedBefore":24,"ownedAfter":0}
+{"at":"2026-11-14T19:37:02.792Z","action":"tap","selector":".row[data-g=\"ink\"]","text":"Moon Ink\n¤30,645\n+61%\n×3 · avg ¤21.7k · +41% here"}
+{"at":"2026-11-14T19:37:03.320Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:37:03.810Z","action":"type","selector":"#qin","text":"3"}
+{"at":"2026-11-14T19:37:03.989Z","action":"tap","selector":"#qgo","text":"Sell 3 for ¤91,935"}
+{"at":"2026-11-14T19:37:04.507Z","action":"trade-result","id":"ink","mode":"sell","q":3,"cashBefore":82661,"cashAfter":174596,"ownedBefore":3,"ownedAfter":0}
+{"at":"2026-11-14T19:37:04.567Z","action":"tap","selector":"#mnav [data-v=\"harbor\"]","text":"HARBOR"}
+{"at":"2026-11-14T19:37:05.175Z","action":"tap","selector":"#side-body [data-act=\"deposit\"]","text":"Deposit"}
+{"at":"2026-11-14T19:37:05.747Z","action":"tap","selector":"#ain","text":""}
+{"at":"2026-11-14T19:37:06.255Z","action":"type","selector":"#ain","text":"74757"}
+{"at":"2026-11-14T19:37:06.410Z","action":"tap","selector":"#ago","text":"Deposit ¤74,757"}
+{"at":"2026-11-14T19:37:06.902Z","action":"service","service":"deposit","amount":74757}
+{"at":"2026-11-14T19:37:06.954Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:37:07.448Z","action":"plan","day":27,"loc":"lq","id":"ot","buys":[{"id":"silk","q":5,"cost":51650,"expectedPrice":15153},{"id":"chips","q":7,"cost":35259,"expectedPrice":5966}],"score":28750.422999999995,"expectedGain":30622}
+{"at":"2026-11-14T19:37:07.509Z","action":"tap","selector":".row[data-g=\"silk\"]","text":"Dreamsilk\n¤10,330\n+5%\nSurge easing · Orchid +43% seen tonight"}
+{"at":"2026-11-14T19:37:08.041Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:37:08.569Z","action":"type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T19:37:08.734Z","action":"tap","selector":"#qgo","text":"Buy 5 for ¤51,650"}
+{"at":"2026-11-14T19:37:09.246Z","action":"trade-result","id":"silk","mode":"buy","q":5,"cashBefore":99839,"cashAfter":48189,"ownedBefore":0,"ownedAfter":5}
+{"at":"2026-11-14T19:37:09.320Z","action":"tap","selector":".row[data-g=\"chips\"]","text":"Ghost Chips\n¤5,037\nusual\nCopperhook +59% seen tonight"}
+{"at":"2026-11-14T19:37:09.862Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:37:10.358Z","action":"type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T19:37:10.524Z","action":"tap","selector":"#qgo","text":"Buy 7 for ¤35,259"}
+{"at":"2026-11-14T19:37:11.021Z","action":"trade-result","id":"chips","mode":"buy","q":7,"cashBefore":48189,"cashAfter":12930,"ownedBefore":0,"ownedAfter":7}
+{"at":"2026-11-14T19:37:11.082Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:37:11.640Z","action":"tap","selector":"#nodes .node[data-d=\"ot\"]","text":""}
+{"at":"2026-11-14T19:37:12.196Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:37:12.683Z","action":"event","day":27,"title":"The Gull Gang!","choice":"pay","choiceText":"Pay the toll · ¤12,575\nAbout a fifth of your purse plus a cut of your cargo.","text":"AMBUSH IN THE NARROWS\nThe Gull Gang!\n\nA net drops across the canal ahead. 2 Gull Gang skiffs wait behind it, oars up, grinning.\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤85.4k\nRun for it\n34% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nPay the toll · ¤12,575\nAbout a fifth of your purse plus a cut of your cargo."}
+{"at":"2026-11-14T19:37:12.742Z","action":"tap","selector":"#modal [data-choice=\"pay\"]","text":"Pay the toll · ¤12,575\nAbout a fifth of your purse plus a cut of your cargo."}
+{"at":"2026-11-14T19:37:13.254Z","action":"event","day":27,"title":"Toll paid","choice":"ok","choiceText":"Continue","text":"PAID\nToll paid\n\nThey count your ¤12,575 twice. They melt back into the dark.\n\nContinue"}
+{"at":"2026-11-14T19:37:13.315Z","action":"tap","selector":"#modal [data-choice=\"ok\"]","text":"Continue"}
+{"at":"2026-11-14T19:37:14.857Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:37:15.431Z","action":"tap","selector":".row[data-g=\"chips\"]","text":"Ghost Chips\n¤8,213\n+58%\n×7 · avg ¤5,037 · Saint Mire +13% seen tonight"}
+{"at":"2026-11-14T19:37:15.991Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:37:16.494Z","action":"type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T19:37:16.660Z","action":"tap","selector":"#qgo","text":"Sell 7 for ¤57,491"}
+{"at":"2026-11-14T19:37:17.172Z","action":"trade-result","id":"chips","mode":"sell","q":7,"cashBefore":355,"cashAfter":57846,"ownedBefore":7,"ownedAfter":0}
+{"at":"2026-11-14T19:37:17.235Z","action":"tap","selector":".row[data-g=\"silk\"]","text":"Dreamsilk\n¤17,004\n+74%\n×5 · avg ¤10.3k · Fleet demand +40% · +65% here"}
+{"at":"2026-11-14T19:37:17.780Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:37:18.270Z","action":"type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T19:37:18.421Z","action":"tap","selector":"#qgo","text":"Sell 5 for ¤85,020"}
+{"at":"2026-11-14T19:37:18.918Z","action":"trade-result","id":"silk","mode":"sell","q":5,"cashBefore":57846,"cashAfter":142866,"ownedBefore":5,"ownedAfter":0}
+{"at":"2026-11-14T19:37:18.929Z","action":"plan","day":28,"loc":"ot","id":"sm","buys":[{"id":"rain","q":30,"cost":3000,"expectedPrice":154}],"score":-90.05199999999968,"expectedGain":1624}
+{"at":"2026-11-14T19:37:18.996Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤100\n−23%\nFogmouth +70% seen tonight"}
+{"at":"2026-11-14T19:37:19.541Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:37:20.035Z","action":"type","selector":"#qin","text":"30"}
+{"at":"2026-11-14T19:37:20.197Z","action":"tap","selector":"#qgo","text":"Buy 30 for ¤3,000"}
+{"at":"2026-11-14T19:37:20.694Z","action":"trade-result","id":"rain","mode":"buy","q":30,"cashBefore":142866,"cashAfter":139866,"ownedBefore":0,"ownedAfter":30}
+{"at":"2026-11-14T19:37:20.756Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:37:21.299Z","action":"tap","selector":"#nodes .node[data-d=\"sm\"]","text":""}
+{"at":"2026-11-14T19:37:21.841Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:37:22.355Z","action":"event","day":29,"title":"Old Fenna is retiring","choice":"no","choiceText":"No thanks\nMaybe another time.","text":"AN OFFER\nOld Fenna is retiring\n\nA grey-haired smuggler hails you from her houseboat. \"My racking's too good for scrap. Fifteen more spaces in your hold for ¤5,680, fitted tonight.\"\n\nBuy the racks · ¤5,680\n+15 hold, permanently (30 → 45).\nNo thanks\nMaybe another time."}
+{"at":"2026-11-14T19:37:22.418Z","action":"tap","selector":"#modal [data-choice=\"no\"]","text":"No thanks\nMaybe another time."}
+{"at":"2026-11-14T19:37:23.928Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:37:24.490Z","action":"tap","selector":".row[data-g=\"rain\"]","text":"Bottled Rain\n¤154\n+18%\n×30 · avg ¤100 · +54% here"}
+{"at":"2026-11-14T19:37:25.051Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:37:25.578Z","action":"type","selector":"#qin","text":"30"}
+{"at":"2026-11-14T19:37:25.736Z","action":"tap","selector":"#qgo","text":"Sell 30 for ¤4,620"}
+{"at":"2026-11-14T19:37:26.250Z","action":"trade-result","id":"rain","mode":"sell","q":30,"cashBefore":139866,"cashAfter":144486,"ownedBefore":30,"ownedAfter":0}
+{"at":"2026-11-14T19:37:26.263Z","action":"plan","day":29,"loc":"sm","id":"ot","buys":[{"id":"saffron","q":21,"cost":17283,"expectedPrice":3807},{"id":"ink","q":4,"cost":68480,"expectedPrice":30927},{"id":"silk","q":5,"cost":43825,"expectedPrice":10308}],"score":120407.474,"expectedGain":125604}
+{"at":"2026-11-14T19:37:26.329Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤823\n−25%\nOrchid +437% seen tonight"}
+{"at":"2026-11-14T19:37:26.888Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:37:27.425Z","action":"type","selector":"#qin","text":"21"}
+{"at":"2026-11-14T19:37:27.602Z","action":"tap","selector":"#qgo","text":"Buy 21 for ¤17,283"}
+{"at":"2026-11-14T19:37:28.116Z","action":"trade-result","id":"saffron","mode":"buy","q":21,"cashBefore":144486,"cashAfter":127203,"ownedBefore":0,"ownedAfter":21}
+{"at":"2026-11-14T19:37:28.179Z","action":"tap","selector":".row[data-g=\"ink\"]","text":"Moon Ink\n¤17,120\n−10%\nLanternquay +109% seen tonight"}
+{"at":"2026-11-14T19:37:28.722Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:37:29.225Z","action":"type","selector":"#qin","text":"4"}
+{"at":"2026-11-14T19:37:29.389Z","action":"tap","selector":"#qgo","text":"Buy 4 for ¤68,480"}
+{"at":"2026-11-14T19:37:29.886Z","action":"trade-result","id":"ink","mode":"buy","q":4,"cashBefore":127203,"cashAfter":58723,"ownedBefore":0,"ownedAfter":4}
+{"at":"2026-11-14T19:37:29.948Z","action":"tap","selector":"#mnav [data-v=\"map\"]","text":"MAP"}
+{"at":"2026-11-14T19:37:30.490Z","action":"tap","selector":"#nodes .node[data-d=\"ot\"]","text":""}
+{"at":"2026-11-14T19:37:31.063Z","action":"tap","selector":"#tcard-slot [data-act=\"sail\"]","text":"Sail · 1 night"}
+{"at":"2026-11-14T19:37:32.564Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:37:33.127Z","action":"tap","selector":".row[data-g=\"saffron\"]","text":"Synth Saffron\n¤2,244\n+104%\n×21 · avg ¤823 · Surge easing · +173% here"}
+{"at":"2026-11-14T19:37:33.673Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:37:34.177Z","action":"type","selector":"#qin","text":"21"}
+{"at":"2026-11-14T19:37:34.338Z","action":"tap","selector":"#qgo","text":"Sell 21 for ¤47,124"}
+{"at":"2026-11-14T19:37:34.847Z","action":"trade-result","id":"saffron","mode":"sell","q":21,"cashBefore":58723,"cashAfter":105847,"ownedBefore":21,"ownedAfter":0}
+{"at":"2026-11-14T19:37:34.908Z","action":"tap","selector":".row[data-g=\"ink\"]","text":"Moon Ink\n¤35,911\n+89%\n×4 · avg ¤17.1k · +110% here"}
+{"at":"2026-11-14T19:37:35.451Z","action":"tap","selector":"#qin","text":""}
+{"at":"2026-11-14T19:37:35.937Z","action":"type","selector":"#qin","text":"4"}
+{"at":"2026-11-14T19:37:36.101Z","action":"tap","selector":"#qgo","text":"Sell 4 for ¤143,644"}
+{"at":"2026-11-14T19:37:36.615Z","action":"trade-result","id":"ink","mode":"sell","q":4,"cashBefore":105847,"cashAfter":249491,"ownedBefore":4,"ownedAfter":0}
+{"at":"2026-11-14T19:37:36.722Z","action":"tap","selector":"#mnav [data-v=\"market\"]","text":"MARKET"}
+{"at":"2026-11-14T19:37:37.282Z","action":"tap","selector":"#side-body [data-act=\"settle\"]","text":"Settle up"}
+{"at":"2026-11-14T19:37:37.814Z","action":"tap","selector":"#modal [data-choice=\"yes\"]","text":"Settle up"}
+{"at":"2026-11-14T19:37:38.469Z","action":"tap","selector":"#t-ledger","text":"Captains' Ledger"}

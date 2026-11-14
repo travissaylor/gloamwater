@@ -272,7 +272,10 @@ async function main() {
     await ctx.addInitScript(RNG_INIT);
     const page = await ctx.newPage();
     page.on('pageerror', e => pageErrors.push(`[w${i}] ${e.message}`));
-    await page.goto(pathToFileURL(A.game).href, { waitUntil: 'load' });
+    const response = await page.goto(pathToFileURL(A.game).href, { waitUntil: 'load' });
+    if (!response) throw new Error('game navigation returned no response');
+    page.__loadedGameSha = crypto.createHash('sha256').update(await response.body()).digest('hex');
+    if (page.__loadedGameSha !== gameSha) throw new Error('game source changed while simulation workers loaded');
     for (const s of scripts) await page.addScriptTag({ content: s });
     const ok = await page.evaluate(() => !!(window.SIM && SIM.runBatch));
     if (!ok) throw new Error('adapter failed to load: ' + pageErrors.join('; '));
@@ -305,7 +308,7 @@ async function main() {
   for (const p of pols) results[p].sort((a, b) => a.seed - b.seed);
   const summary = {};
   for (const p of pols) summary[p] = summarise(p, results[p], meta0.ranks, meta0.checkpoints, results.informed);
-  const meta = { game: A.game, gameSha, runs: A.runs, seeds, workers: A.workers, elapsedSec: elapsed, runsPerSec: total / elapsed, mode: 'full (real sailTo voyages, rendering on)', opts: A.opts, pageErrors: pageErrors.slice(0, 20), date: new Date().toISOString(), ...meta0 };
+  const meta = { game: A.game, gameSha, workerResponseShas: pages.map(page => page.__loadedGameSha), runs: A.runs, seeds, workers: A.workers, elapsedSec: elapsed, runsPerSec: total / elapsed, mode: 'full (real sailTo voyages, rendering on)', opts: A.opts, pageErrors: pageErrors.slice(0, 20), date: new Date().toISOString(), ...meta0 };
   // the game promises the same market for the same seed whatever the captain does: check it
   const mk = new Map();
   for (const p of pols) for (const r of results[p]) if (!r.error && r.rng0) { const o = mk.get(r.seed) || { rng0: new Set(), mkt: new Set(), n: 0 }; o.rng0.add(r.rng0.m + ':' + r.rng0.e); if (r.mkt != null) { o.mkt.add(r.mkt); o.n++; } mk.set(r.seed, o); }

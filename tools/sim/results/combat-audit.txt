@@ -1,0 +1,53 @@
+Game: C:\Users\travi\.t3\worktrees\gloamwater\t3-201b6bf7-54dc20bc5d519c6e\game\index.html (sha256 48fd8d91e592)
+Runs per policy: 40, seeds 100000..100039, workers 3, 3.3 runs/s, mode full (real sailTo voyages, rendering on)
+Adapter features: {"depth":true,"conf":true,"canals":true,"charters":true,"stay":true,"encTable":true,"gameRng":true,"crnVoyage":true,"crnArrival":true}
+Reproducibility: 40 seeds; game RNG seeds differ across policies on 0; night-30 market stream differs on 0 (of 40 seeds where 2+ runs reached night 30)
+
+Final fortune (tally net, crowns)
+policy               p10     p25  median     p75     p90     max    mean   sunk  vs informed: higher  median diff
+----------------  ------  ------  ------  ------  ------  ------  ------  -----  -------------------  -----------
+informed          163.6k  406.1k  605.9k  806.6k  896.4k   1.29M  613.7k   0.0%
+fight-farm             0       0  187.2k  527.7k  685.6k  846.7k  281.9k  45.0%                17.5%      -311.4k
+informed-nofight  135.0k  412.5k  657.2k  807.3k  874.7k   1.28M  606.1k   0.0%                37.5%       -6,318
+
+Rank distribution
+policy            Drowned Debtor  Bilge Rat  Canal Runner  Lantern Broker  Tide Baron  Harbor Magnate  Sovereign of Gloamwater
+----------------  --------------  ---------  ------------  --------------  ----------  --------------  -----------------------
+informed                    0.0%       2.5%         10.0%            7.5%       37.5%           22.5%                    20.0%
+fight-farm                  5.0%      30.0%         15.0%           12.5%       25.0%           12.5%                     0.0%
+informed-nofight            5.0%       0.0%          5.0%           12.5%       25.0%           35.0%                    17.5%
+
+Mean net worth by night (median in brackets)
+policy                        n5            n10              n15              n18              n20              n25              n30
+----------------  --------------  -------------  ---------------  ---------------  ---------------  ---------------  ---------------
+informed           7,077 (6,180)  46.2k (31.9k)  125.7k (121.0k)  202.1k (195.5k)  245.3k (220.8k)  422.8k (429.8k)  614.9k (605.9k)
+fight-farm        1,518 (-1,227)  21.1k (9,581)    56.9k (29.9k)    84.8k (71.4k)  125.4k (115.3k)  184.7k (144.4k)  282.0k (187.2k)
+informed-nofight   6,239 (4,752)  43.5k (32.5k)  123.4k (116.5k)  198.3k (203.7k)  242.4k (227.1k)  403.7k (409.6k)  608.2k (659.2k)
+
+Per-run means
+policy            fights   won  interest  vault earned  best sale  max best sale  hold tier  wireless  reloads
+----------------  ------  ----  --------  ------------  ---------  -------------  ---------  --------  -------
+informed            5.08  1.50     7,244         24.6k     107.0k         291.8k       1.40     92.5%     0.00
+fight-farm          4.00  3.55     7,426         8,411      80.5k         249.6k       1.27     75.0%     0.00
+informed-nofight    5.50  0.00     8,075         24.6k     114.7k         291.8k       1.38     92.5%     0.00
+
+Economy shape
+policy            n30/n18 (medians)  median run n30/n18  largest sale  median run largest sale  tally cargo mean
+----------------  -----------------  ------------------  ------------  -----------------------  ----------------
+informed                      3.10x               3.06x        555.3k                   251.3k             1,129
+fight-farm                    2.62x               2.66x        401.3k                   193.4k                53
+informed-nofight              3.24x               2.88x        680.0k                   246.2k             2,115
+
+Routes, charters, encounters (per run)
+policy            1-night hops  2-night trips  carried on  stays  charters  any charter  1st charter night  encounters  cost/enc  patrol cost  gulls cost  collectors  collector cost  enc sinkings  debt at end
+----------------  ------------  -------------  ----------  -----  --------  -----------  -----------------  ----------  --------  -----------  ----------  ----------  --------------  ------------  -----------
+informed                  24.3           2.10        1.77   2.63      1.20        80.0%               18.0        5.08     14.1k        14.8k       14.2k        0.17           2,124          0.0%            0
+fight-farm                18.6           2.05        1.65   3.83      0.60        50.0%               20.8        4.00    -1,113       -1,074      -1,677        0.25           2,159         11.3%          485
+informed-nofight          24.0           1.98        1.65   3.00      1.20        80.0%               17.9        5.50     16.3k        16.1k       17.9k        0.25           1,688          0.0%        3,105
+
+Choices per run (selected)
+policy            patrol:bribe  patrol:run  patrol:fight  patrol:yield  gulls:pay  gulls:run  gulls:fight  collectors:pay  collectors:run  collectors:fight  squall:push  squall:shelter  eel:big  eellose:ok  racks:buy  sunk:ok
+----------------  ------------  ----------  ------------  ------------  ---------  ---------  -----------  --------------  --------------  ----------------  -----------  --------------  -------  ----------  ---------  -------
+informed                  0.95        0.80          7.10          0.50       1.63       0.28         5.35            0.13            0.27              0.00         1.50            0.00     0.00        0.00       0.30     0.00
+fight-farm                0.00        0.00          9.68          0.00       0.00       0.00         9.08            0.00            0.00              0.82         1.05            0.03     0.00        0.00       0.13     0.45
+informed-nofight          1.32        2.42          0.00          0.55       2.17       0.75         0.00            0.25            0.17              0.00         1.55            0.00     0.00        0.00       0.27     0.00

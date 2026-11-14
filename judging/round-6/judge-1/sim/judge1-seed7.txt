@@ -1,0 +1,125 @@
+Game: C:\Users\travi\.t3\worktrees\gloamwater\t3-201b6bf7-54dc20bc5d519c6e\judging\round-6\packet\index.html (sha256 a1273a762e42)
+Runs per policy: 60, seeds 700000..700059, workers 6, 3.5 runs/s, mode full (real sailTo voyages, rendering on)
+Adapter features: {"depth":true,"conf":true,"canals":true,"charters":true,"stay":true,"encTable":true,"gameRng":true,"crnVoyage":true,"crnArrival":true}
+Reproducibility: 60 seeds; game RNG seeds differ across policies on 0; night-30 market stream differs on 0 (of 60 seeds where 2+ runs reached night 30)
+
+Final fortune (tally net, crowns)
+policy           p10     p25  median     p75     p90     max    mean   sunk  vs informed: higher  median diff
+------------  ------  ------  ------  ------  ------  ------  ------  -----  -------------------  -----------
+informed      412.4k  504.3k  623.3k  851.8k  957.3k   1.27M  669.4k   0.0%                                  
+greedy             0   17.0k   48.5k   91.2k  132.0k  296.6k   61.8k   5.0%                 0.0%      -596.9k
+borrow-max    443.1k  533.4k  672.2k  797.3k  911.4k   1.31M  677.6k   0.0%                45.0%       -6,254
+borrow-smart  298.7k  456.9k  641.0k  831.8k  949.9k   1.28M  649.9k   0.0%                45.0%            0
+whisper-spam   86.2k  140.3k  284.1k  474.0k  786.7k   1.49M  356.9k   0.0%                11.7%      -305.2k
+roundtrip     412.4k  504.2k  623.3k  851.5k  956.8k   1.27M  669.2k   0.0%                 0.0%         -125
+fight-farm    -8,031   12.0k  301.4k  590.9k  906.8k   1.38M  380.1k  38.3%                16.7%      -326.4k
+vault         288.8k  468.4k  619.8k  782.3k  911.0k   1.17M  624.0k   0.0%                45.0%       -9,073
+charter-rush  277.5k  457.0k  575.9k  808.2k   1.01M   1.31M  630.6k   0.0%                36.7%       -20.1k
+corner        412.4k  504.3k  623.3k  851.8k  957.3k   1.27M  669.4k   0.0%                 0.0%            0
+
+Rank distribution
+policy        Drowned Debtor  Bilge Rat  Canal Runner  Lantern Broker  Tide Baron  Harbor Magnate  Sovereign of Gloamwater
+------------  --------------  ---------  ------------  --------------  ----------  --------------  -----------------------
+informed                0.0%       0.0%          1.7%            6.7%       48.3%           16.7%                    26.7%
+greedy                  6.7%      36.7%         55.0%            1.7%        0.0%            0.0%                     0.0%
+borrow-max              0.0%       0.0%          0.0%            5.0%       41.7%           36.7%                    16.7%
+borrow-smart            0.0%       0.0%          8.3%           11.7%       33.3%           23.3%                    23.3%
+whisper-spam            0.0%       5.0%         35.0%           28.3%       20.0%            3.3%                     8.3%
+roundtrip               0.0%       0.0%          1.7%            6.7%       48.3%           16.7%                    26.7%
+fight-farm             10.0%      21.7%         11.7%           10.0%       26.7%            5.0%                    15.0%
+vault                   0.0%       0.0%          6.7%           10.0%       41.7%           23.3%                    18.3%
+charter-rush            1.7%       0.0%          5.0%           11.7%       41.7%           20.0%                    20.0%
+corner                  0.0%       0.0%          1.7%            6.7%       48.3%           16.7%                    26.7%
+
+Mean net worth by night (median in brackets)
+policy                    n5            n10              n15              n18              n20              n25              n30
+------------  --------------  -------------  ---------------  ---------------  ---------------  ---------------  ---------------
+informed       10.0k (4,810)  56.3k (36.6k)  136.2k (115.0k)  232.5k (220.8k)  299.2k (298.3k)  469.9k (455.3k)  674.6k (627.2k)
+greedy            1,478 (68)  18.6k (8,478)    36.9k (21.4k)    49.8k (34.7k)    58.0k (44.8k)    67.1k (44.7k)    68.2k (55.0k)
+borrow-max     10.6k (4,810)  60.5k (44.8k)  160.2k (150.5k)  251.6k (233.6k)  319.9k (297.2k)  475.1k (454.2k)  679.8k (672.2k)
+borrow-smart   10.4k (4,810)  49.7k (27.9k)  135.6k (107.3k)  219.0k (220.3k)  283.0k (267.4k)  445.6k (441.9k)  652.0k (641.0k)
+whisper-spam     3,750 (435)  34.7k (24.5k)    84.8k (42.1k)   130.7k (78.8k)  166.5k (122.3k)  238.2k (191.3k)  359.8k (290.9k)
+roundtrip      10.0k (4,810)  56.3k (36.6k)  136.2k (115.0k)  232.5k (220.8k)  299.2k (298.2k)  469.8k (455.0k)  674.4k (626.9k)
+fight-farm    1,988 (-2,241)  25.2k (10.4k)    63.6k (45.4k)   104.8k (80.0k)  139.9k (116.4k)  237.6k (203.0k)  380.9k (301.4k)
+vault          10.0k (4,810)  56.1k (36.6k)  131.4k (105.0k)  222.5k (220.3k)  282.2k (295.2k)  441.4k (449.7k)  625.6k (619.8k)
+charter-rush   10.0k (4,810)  54.8k (35.1k)  127.0k (103.3k)  212.1k (190.2k)  278.2k (266.9k)  409.0k (386.0k)  636.8k (594.4k)
+corner         10.0k (4,810)  56.3k (36.6k)  136.2k (115.0k)  232.5k (220.8k)  299.2k (298.3k)  469.9k (455.3k)  674.6k (627.2k)
+
+Per-run means
+policy        fights   won  interest  vault earned  best sale  max best sale  hold tier  wireless  reloads
+------------  ------  ----  --------  ------------  ---------  -------------  ---------  --------  -------
+informed        5.35  1.37     3,616         33.7k     133.1k         414.5k       1.32     98.3%     0.00
+greedy          5.30  1.77     7,677             0      36.9k         102.7k       1.67      0.0%     0.00
+borrow-max      6.03  1.33     44.5k         40.4k     120.0k         285.3k       1.45    100.0%     0.00
+borrow-smart    5.20  1.32     7,721         32.6k     118.2k         359.7k       1.38     98.3%     0.00
+whisper-spam    5.37  0.98     5,550         16.4k     104.3k         874.0k       0.15     85.0%     0.00
+roundtrip       5.35  1.37     3,616         33.7k     133.1k         414.5k       1.32     98.3%     0.00
+fight-farm      3.80  3.42     9,069         15.6k      84.1k         512.6k       1.13     71.7%     0.00
+vault           5.35  1.45     3,616         42.6k     114.4k         359.7k       1.33     98.3%     0.00
+charter-rush    5.40  1.55     4,239         22.3k     144.6k         510.2k       1.38     98.3%     0.00
+corner          5.35  1.37     3,616         33.7k     133.1k         414.5k       1.32     98.3%     0.00
+
+Economy shape
+policy        n30/n18 (medians)  median run n30/n18  largest sale  median run largest sale  tally cargo mean
+------------  -----------------  ------------------  ------------  -----------------------  ----------------
+informed                  2.84x               3.00x        712.1k                   266.7k             5,168
+greedy                    1.59x               1.44x        260.1k                    88.4k             5,151
+borrow-max                2.88x               2.76x        460.4k                   276.4k             2,179
+borrow-smart              2.91x               3.03x        565.5k                   252.5k             2,103
+whisper-spam              3.69x               2.94x         1.26M                   148.2k             2,838
+roundtrip                 2.84x               3.00x        712.1k                   293.9k             5,168
+fight-farm                3.77x               3.24x        610.3k                   170.4k               364
+vault                     2.81x               3.02x        565.5k                   245.9k             1,575
+charter-rush              3.12x               3.17x        909.9k                   315.4k             6,202
+corner                    2.84x               3.00x        712.1k                   289.8k             5,168
+
+Whispers (whisper-spam)
+  bought 323 (5.4/run, fees 15.3k/run; sure 137, likely 132, guess 54); actionable 293; acted on 293 (4.9/run, 90.7% of bought, 161 with cargo)
+  acted whispers that lost money: 64.8% (fee included), 81.2% (also charging the night)
+  P&L per acted whisper: mean 17.2k, median -430 (fee included); with night cost: mean -14.7k, median -13.5k
+  whisper P&L per run (unacted whispers count their fee): 82.0k; with night cost -82.4k
+    acted    n   lost  mean P&L  median P&L  lost (night)  median (night)  landed full/weak/turn
+  -------  ---  -----  --------  ----------  ------------  --------------  ---------------------
+  sure     126  57.9%     28.0k        -360         73.8%          -17.9k       86.8%/10.3%/2.9%
+  likely   120  67.5%     10.4k        -490         85.8%          -13.8k      49.6%/29.8%/20.6%
+  guess     47  76.6%     5,762        -500         89.4%          -9,946      27.8%/31.5%/40.7%
+  spike    145  52.4%     27.7k        -340         75.9%          -7,466                       
+  crash    148  77.0%     6,928        -950         86.5%          -20.4k                       
+  vs informed on the same seeds: higher on 11.7% of 60 seeds, median difference -305.2k, mean -312.5k
+
+Round trips (roundtrip): 17645 trade-and-undo tests, 0 made money, best 0, worst -30, total -9,938
+  one: 3529 tests, 0 positive, best 0, mean -0.19
+  splitB: 3529 tests, 0 positive, best 0, mean -1.11
+  splitS: 3529 tests, 0 positive, best 0, mean -1.12
+  alt: 3529 tests, 0 positive, best 0, mean 0.00
+  walk: 3529 tests, 0 positive, best 0, mean -0.39
+
+Corner (corner): 54 final-night probes; tally change from buying up the main good: mean -18.8k, best 0; cash from cornering then selling vs plain selling: mean -0, best 0
+
+Routes, charters, encounters (per run)
+policy        1-night hops  2-night trips  carried on  stays  charters  any charter  1st charter night  encounters  cost/enc  patrol cost  gulls cost  collectors  collector cost  enc sinkings  debt at end
+------------  ------------  -------------  ----------  -----  --------  -----------  -----------------  ----------  --------  -----------  ----------  ----------  --------------  ------------  -----------
+informed              24.1           1.83        1.60   3.08      1.28        88.3%               17.6        5.35     17.3k        13.3k       21.7k        0.10           5,216          0.0%            0
+greedy                   -              -           -   0.00      0.00         0.0%                  -        5.30     5,661        6,805       5,017        0.28             876          0.9%        3,151
+borrow-max            23.7           2.00        1.68   3.32      1.42        95.0%               15.9        6.03     13.6k        16.4k       19.1k        1.75           3,150          0.0%          992
+borrow-smart          24.1           1.70        1.47   3.20      1.22        81.7%               17.7        5.20     16.9k        14.9k       21.0k        0.37           3,518          0.0%            0
+whisper-spam          23.6           3.75        0.57   1.60      0.53        40.0%               18.1        5.37     16.0k        17.7k       15.8k        0.27           2,950          0.0%            0
+roundtrip             24.1           1.83        1.60   3.08      1.28        88.3%               17.6        5.35     17.3k        13.3k       21.7k        0.10           5,216          0.0%            0
+fight-farm            18.9           1.82        1.43   3.43      0.52        41.7%               20.5        3.80      -927       -1,104      -1,499        0.35           2,757         10.1%        1,056
+vault                 24.0           2.03        1.77   2.95      1.17        86.7%               17.9        5.35     18.8k        20.9k       17.1k        0.10           5,216          0.0%            0
+charter-rush          24.7           2.07        1.80   2.20      3.03        98.3%               14.4        5.40     17.3k        14.8k       20.7k        0.18           3,428          0.0%          248
+corner                24.1           1.83        1.60   3.08      1.28        88.3%               17.6        5.35     17.3k        13.3k       21.7k        0.10           5,216          0.0%            0
+
+Choices per run (selected)
+policy        patrol:bribe  patrol:run  patrol:fight  patrol:yield  gulls:pay  gulls:run  gulls:fight  collectors:pay  collectors:run  collectors:fight  squall:push  squall:shelter  eel:big  eellose:ok  racks:buy  sunk:ok
+------------  ------------  ----------  ------------  ------------  ---------  ---------  -----------  --------------  --------------  ----------------  -----------  --------------  -------  ----------  ---------  -------
+informed              1.20        0.32          6.15          0.37       2.08       0.30         5.00            0.10            0.03              0.00         1.60            0.02     0.00        0.00       0.33     0.00
+greedy                0.37        0.60          8.42          0.87       1.77       0.15         6.48            0.25            0.07              0.00         1.75            0.02     0.00        0.00       0.10     0.05
+borrow-max            0.95        0.28          5.75          0.20       1.58       0.23         5.57            1.38            0.97              0.00         1.60            0.00     0.00        0.00       0.30     0.00
+borrow-smart          0.95        0.33          6.35          0.42       1.87       0.25         5.30            0.32            0.28              0.00         1.22            0.00     0.00        0.00       0.35     0.00
+whisper-spam          0.95        0.17          3.90          0.78       2.30       0.02         3.30            0.20            0.20              0.00         1.20            0.05     0.00        0.00       0.20     0.00
+roundtrip             1.20        0.32          6.15          0.37       2.08       0.30         5.00            0.10            0.03              0.00         1.60            0.02     0.00        0.00       0.33     0.00
+fight-farm            0.00        0.00          7.98          0.00       0.00       0.00         9.38            0.00            0.00              1.50         0.97            0.05     0.00        0.00       0.17     0.38
+vault                 0.88        0.48          7.12          0.58       2.02       0.22         5.17            0.10            0.03              0.00         1.65            0.02     0.00        0.00       0.23     0.00
+charter-rush          0.98        0.42          6.72          0.32       2.05       0.23         5.97            0.18            0.03              0.00         1.60            0.02     0.00        0.00       0.33     0.00
+corner                1.20        0.32          6.15          0.37       2.08       0.30         5.00            0.10            0.03              0.00         1.60            0.02     0.00        0.00       0.33     0.00

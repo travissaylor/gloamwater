@@ -1,0 +1,255 @@
+> audit
+viewport 360x640 · document scrollWidth 360 · body scrollWidth 360 · 18 on-screen targets
+tap targets under 44x44 (0)
+tap targets under 8px from a neighbour (8):
+  #side-body > div.mk-head > button.btn.icon.market-info  GAP 4px to button.best-run "Carry Clockwork Eel…"
+  #side-body > button.best-run  GAP 4px to button.btn.icon.market-info "Fleet calendar and …"
+  #side-body > div.rows > div.row.sel  GAP 0px to button "MARKET"
+  #mnav > button  GAP 0px to div.row.sel "Clockwork Eels ¤2,3…"
+  #mnav > button  GAP 0px to div.row.sel "Clockwork Eels ¤2,3…"
+  #mnav > button  GAP 0px to div.row.sel "Clockwork Eels ¤2,3…"
+  #mnav > button  GAP 0px to div.row.sel "Clockwork Eels ¤2,3…"
+  #mnav > button  GAP 0px to div.row.sel "Clockwork Eels ¤2,3…"
+text under 15px (svg text is rendered size) (0)
+text contrast under 4.5:1 (approximate: gradients averaged) (0)
+inputs under 16px (iOS zooms on focus) (0)
+elements past the viewport edge (not clipped by a scroller) (0)
+truncated text (overflow with ellipsis/hidden) (0)
+touch-action on targets: {"auto":16,"manipulation":5}
+selectability on targets:
+  user-select:none -webkit-user-select:none callout:n/a: button.btn.icon.hud-mute button.stat button.stat.debt button.btn.icon.market-info button.best-run div.row div.row.out div.row.sel button
+root: html overscroll:n/a overflow:visible/visible touch-action:manipulation; body overscroll:n/a overflow:hidden/hidden touch-action:auto
+scrollable areas (1):
+  #side-body 423/713px overscroll:n/a overflow:auto/auto touch-action:auto
+> tap #mnav [data-v=harbor]
+tapped button "HARBOR" at (180,605) 63x59; touch landed on svg.ico
+> wait 1200
+waited 1200ms
+> tap #side-body [data-act=deposit]
+tapped button.btn.teal "Deposit" at (77,353) 83x44; touch landed on button.btn.teal "Deposit"
+> wait 1200
+waited 1200ms
+> ui
+viewport 360x640 · page scrollWidth 360
+targets (9), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [321,281 44x44] button.btn.icon.ghost "Close"
+  [180,341 326x48] input#ain "Amount"
+  [180,453 322x44] input#ar "Amount slider"
+  [55,397 72x44] button.btn.sm "25%"
+  [135,397 72x44] button.btn.sm "50%"
+  [215,397 72x44] button.btn.sm "75%"
+  [300,397 81x44] button.btn.sm.amber "All ¤859"
+  [98,595 157x52] button.btn.lg "Cancel"
+  [263,595 157x52] button#ago.btn.lg.teal "Deposit ¤859"
+covered (13): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov "LOCKWATER VAULT Deposit in …" | button#st-cash.stat "PURSE ¤859" under div#modal.ov "LOCKWATER VAULT Deposit in …" | button#st-bank.stat "VAULT ¤0" under div#modal.ov "LOCKWATER VAULT Deposit in …" | button#st-debt.stat.debt "DEBT 6% ¤6,742" under div#modal.ov "LOCKWATER VAULT Deposit in …" | button#st-hold.stat "HOLD 1/30" under div#modal.ov "LOCKWATER VAULT Deposit in …" | button#st-hull.stat "HULL 100%" under div#modal.ov "LOCKWATER VAULT Deposit in …" | button.btn.primary "Repay debt" under div#modal.ov "LOCKWATER VAULT Deposit in …" | button.btn.teal "Deposit" under input#ain "Amount" | button "MARKET" under button.btn.lg "Cancel" | button "MAP" under button.btn.lg "Cancel" | button "HARBOR" under div.sh-foot "Cancel Deposit ¤859" | button "LOG" under button#ago.btn.lg.teal "Deposit ¤859" | button "MORE" under button#ago.btn.lg.teal "Deposit ¤859"
+--- visible text ---
+NIGHT
+3/30
+NET WORTH
+−¤3,524
+Bilge Rat at ¤0
+PURSE
+¤859
+VAULT
+¤0
+DEBT 6%
+¤6,742
+HOLD
+1/30
+HULL
+100%
+HARBOR SERVICES
+Lanternquay
+Marrow Quill's Loan Office
+"Interest is just time, wearing a nicer coat."
+You owe
+¤6,742
+Tomorrow, unpaid
+¤7,147
+Rate
+6% a night until night 10
+Credit available
+¤0
+Repay debt
+Borrow more
+Lockwater Vault
+"Deposits are dry, safe and quietly growing."
+Balance
+¤0
+Interest
+1.5% / night
+
+Money in the vault can't be stolen or sunk. Branches at Lanternquay and the Drowned Exchange.
+
+Deposit
+Withdraw
+Trading charter
+"Sign in Moon Ink, captain. The dealers will remember."
+
+A charter makes the dealers of Lanternquay trade twice as deep with you for the rest of the run: twice as many units at the posted price before it moves. Each charter costs more than the last.
+
+This hold, tonight: +¤0 in sale proceeds after buying the charter. No extra sale proceeds for this load. Future prices and cargo vary; 27 nights remain.
+
+Your charters
+none
+Buy charter · ¤20,000
+YOUR SKIFF
+The Little Lantern
+Hold
+1 / 30
+Hull
+100%
+Engine
+Putter engine
+Weapon
+Boathook
+Wireless set
+None
+DIRECTORY
+Marrow Quill's Loan Office · Lanternquay
+Lockwater Vault · Lanternquay & Drowned Exchange
+Odile's Boatyard · Copperhook Docks
+The Gutter Yard · The Sluices
+Brother Tallow's Armory · Saint Mire
+The Fog Fence · Fogmouth
+The Listening Room · Drowned Exchange
+Madame Ysolde's Salon · Orchid Terraces
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+LOCKWATER VAULT
+Deposit in the Vault
+25%
+50%
+75%
+All ¤859
+Vault after
+¤859
+Earns tomorrow
+¤13
+Cancel
+Deposit ¤859
+> shot judging/round-5/judge-2/explore-bank-360x640.png
+saved judging/round-5/judge-2/explore-bank-360x640.png
+> tap #ain
+tapped input#ain "Amount" at (180,341) 326x48; touch landed on input#ain "Amount"
+> key Control+a
+pressed Control+a
+> type 500
+typed "500"
+> tap #ago
+tapped button#ago.btn.lg.teal "Deposit ¤500" at (263,595) 157x52; touch landed on button#ago.btn.lg.teal "Deposit ¤500"
+> wait 1200
+waited 1200ms
+> tap #side-body [data-act=withdraw]
+tapped button.btn "Withdraw" at (175,353) 96x44; touch landed on button.btn "Withdraw"
+> wait 1200
+waited 1200ms
+> tap #ain
+tapped input#ain "Amount" at (180,366) 326x48; touch landed on input#ain "Amount"
+> key Control+a
+pressed Control+a
+> type 100
+typed "100"
+> tap #ago
+tapped button#ago.btn.lg.primary "Withdraw ¤100" at (263,595) 157x52; touch landed on button#ago.btn.lg.primary "Withdraw ¤100"
+> wait 1200
+waited 1200ms
+> tap #st-bank
+tapped button#st-bank.stat "VAULT ¤400 −¤100" at (104,98) 58x51; touch landed on b.num "¤400"
+> wait 1200
+waited 1200ms
+> ui
+viewport 360x640 · page scrollWidth 360
+targets (1), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [180,597 326x48] button.choice.primary "Got it"
+covered (14): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov.tone-neutral "YOUR LEDGER Lockwater Vault…" | button#st-cash.stat "PURSE ¤459" under div#modal.ov.tone-neutral "YOUR LEDGER Lockwater Vault…" | button#st-bank.stat "VAULT ¤400" under div#modal.ov.tone-neutral "YOUR LEDGER Lockwater Vault…" | button#st-debt.stat.debt "DEBT 6% ¤6,742" under div#modal.ov.tone-neutral "YOUR LEDGER Lockwater Vault…" | button#st-hold.stat "HOLD 1/30" under div#modal.ov.tone-neutral "YOUR LEDGER Lockwater Vault…" | button#st-hull.stat "HULL 100%" under div#modal.ov.tone-neutral "YOUR LEDGER Lockwater Vault…" | button.btn.primary "Repay debt" under div#modal.ov.tone-neutral "YOUR LEDGER Lockwater Vault…" | button.btn.teal "Deposit" under div#modal.ov.tone-neutral "YOUR LEDGER Lockwater Vault…" | button.btn "Withdraw" under div#modal.ov.tone-neutral "YOUR LEDGER Lockwater Vault…" | button "MARKET" under div "Got it" | button "MAP" under button.choice.primary "Got it" | button "HARBOR" under button.choice.primary "Got it" | button "LOG" under button.choice.primary "Got it" | button "MORE" under button.choice.primary "Got it"
+--- visible text ---
+NIGHT
+3/30
+NET WORTH
+−¤3,524
+Bilge Rat at ¤0
+PURSE
+¤459
+VAULT
+¤400
+DEBT 6%
+¤6,742
+HOLD
+1/30
+HULL
+100%
+HARBOR SERVICES
+Lanternquay
+Marrow Quill's Loan Office
+"Interest is just time, wearing a nicer coat."
+You owe
+¤6,742
+Tomorrow, unpaid
+¤7,147
+Rate
+6% a night until night 10
+Credit available
+¤0
+Repay debt
+Borrow more
+Lockwater Vault
+"Deposits are dry, safe and quietly growing."
+Balance
+¤400
+Interest
+1.5% / night
+
+Money in the vault can't be stolen or sunk. Branches at Lanternquay and the Drowned Exchange.
+
+Deposit
+Withdraw
+Trading charter
+"Sign in Moon Ink, captain. The dealers will remember."
+
+A charter makes the dealers of Lanternquay trade twice as deep with you for the rest of the run: twice as many units at the posted price before it moves. Each charter costs more than the last.
+
+This hold, tonight: +¤0 in sale proceeds after buying the charter. No extra sale proceeds for this load. Future prices and cargo vary; 27 nights remain.
+
+Your charters
+none
+Buy charter · ¤20,000
+YOUR SKIFF
+The Little Lantern
+Hold
+1 / 30
+Hull
+100%
+Engine
+Putter engine
+Weapon
+Boathook
+Wireless set
+None
+DIRECTORY
+Marrow Quill's Loan Office · Lanternquay
+Lockwater Vault · Lanternquay & Drowned Exchange
+Odile's Boatyard · Copperhook Docks
+The Gutter Yard · The Sluices
+Brother Tallow's Armory · Saint Mire
+The Fog Fence · Fogmouth
+The Listening Room · Drowned Exchange
+Madame Ysolde's Salon · Orchid Terraces
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+YOUR LEDGER
+Lockwater Vault
+
+Safe from thieves and the sea, and earns 1.5% a night. Branches at Lanternquay and the Drowned Exchange.
+
+Got it
+> shot judging/round-5/judge-2/explore-bank-explainer.png
+saved judging/round-5/judge-2/explore-bank-explainer.png
+> errors
+no errors

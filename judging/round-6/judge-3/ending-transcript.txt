@@ -1,0 +1,110 @@
+DRIVER ERROR locator.tap: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('#modal button:text-is("Settle up")').first()
+
+NIGHT
+30/30
+NET WORTH
+−¤55.6k
+Bilge Rat at ¤0
+PURSE
+¤0
+VAULT
+¤0
+DEBT 10%
+¤55.6k
+HOLD
+0/45
+HULL
+100%
+Lanternquay
+F
+Saint Mire
+Orchid
+Exchange
+Sluices
+Copperhook
+Fogmouth
+!
+Moored at Lanternquay
+Tap any district to compare routes.
+Lit canals take one night. Select an island for prices.
+Open market
+Settle up
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+THIRTY NIGHTS, DONE
+Drowned Debtor
+
+Marrow Quill sends his regards. And his collectors.
+
+Cash on board
+¤0
+Lockwater Vault
+¤0
+Cargo dumped at half price
+¤0
+Owed to Marrow Quill
+−¤55,568
+Final fortune
+−¤55,568
+Voyages
+11
+Best single profit
+¤756
+Peak worth
+−¤3,500
+Encounters
+2
+won 0 · fled 0
+Interest accrued
+¤51.4k
+Lost to thieves, tolls, leaks
+¤1,390
+
+¤55,568 short of Bilge Rat.
+
+CAPTAINS' LEDGER · YOU PLACED #1
+#       CAPTAIN RANK    FORTUNE
+1       Captain
+2026-11-14
+Drowned Debtor  −¤55,568
+Sail again
+Title screen
+NIGHT
+1/30
+NET WORTH
+¤0
+PURSE
+¤0
+VAULT
+¤0
+DEBT
+¤0
+HOLD
+0/30
+HULL
+100%
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+GLOAMWATER
+Thirty nights. One skiff. A drowned city full of things worth smuggling.        
+Cast off
+How to play
+Captains' Ledger
+Touch, mouse or keyboard · Sound is synthesized live
+HALL OF FORTUNES
+Captains' Ledger
+#       CAPTAIN RANK    FORTUNE
+1       Captain
+2026-11-14
+Drowned Debtor  −¤55,568
+Close
+DONE
+

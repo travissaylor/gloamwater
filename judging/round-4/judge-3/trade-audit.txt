@@ -1,0 +1,139 @@
+> taptext Start trading
+tapped button.btn.primary "Start trading" at (305,795) 116x44; touch landed on button.btn.primary "Start trading"
+> wait 1200
+waited 1200ms
+> taptext Rust Pearls
+tapped div.row "Rust Pearls ¤246 −41% Below usual · com…" at (195,416) 356x60; touch landed on b "Rust Pearls"
+> wait 1200
+waited 1200ms
+> ui
+viewport 390x844 · page scrollWidth 390
+targets (10), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [351,96 44x44] button.btn.icon.ghost "Close"
+  [106,165 170x46] button.b "Buy"
+  [284,165 170x46] button.s "Sell"
+  [41,226 48x48] button.btn "−"
+  [158,226 171x48] input#qin "Quantity"
+  [276,226 48x48] button.btn "+"
+  [340,226 65x48] button.btn.amber "Max"
+  [195,284 352x44] input#qr "Quantity slider"
+  [105,799 172x52] button.btn.lg "Cancel"
+  [285,799 172x52] button#qgo.btn.lg.teal "Buy 10 for ¤2,460"
+covered (21): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov "LANTERNQUAY · NIGHT 1 Rust …" | button#st-cash.stat "PURSE ¤2,500" under svg.ico | button#st-bank.stat "VAULT ¤0" under h3 "Rust Pearls" | button#st-debt.stat.debt "DEBT 6% ¤6,000" under h3 "Rust Pearls" | button#st-hold.stat "HOLD 0/30" under div.sh-head "LANTERNQUAY · NIGHT 1 Rust …" | button#st-hull.stat "HULL 100%" under svg.ico | button.btn.icon.market-info "Fleet calendar and market b…" under button.s "Sell" | button.best-run "Fleet: Glowkelp → Copperhoo…" under input#qin "Quantity" | div.row "Glowkelp ¤68 +62% Above usu…" under input#qr "Quantity slider" | div.row "Bottled Rain ¤119 −8% Usual…" under span "Total cost" | div.row "Rust Pearls ¤246 −41% Below…" under span "Hold after" | div.row.out "Synth Saffron — No dealers …" under svg "Price history" | div.row.out "Clockwork Eels — No dealers…" under polygon | div.row "Ghost Chips ¤6,210 +19% Abo…" under div.ends "¤110 ¤1,300" | div.row "Dreamsilk ¤8,357 −15% Usual…" under div.else "Saint Mire ? Orchid Terrace…" | div.row "Moon Ink ¤17,241 −9% Usual …" under div.else "Saint Mire ? Orchid Terrace…" | button "MARKET" under button.btn.lg "Cancel" | button "MAP" under button.btn.lg "Cancel" | button "HARBOR" under div.sh-foot "Cancel Buy 10 for ¤2,460" | button "LOG" under button#qgo.btn.lg.teal "Buy 10 for ¤2,460" | button "MORE" under button#qgo.btn.lg.teal "Buy 10 for ¤2,460"
+--- visible text ---
+NIGHT
+1/30
+NET WORTH
+−¤3,500
+Bilge Rat at ¤0
+PURSE
+¤2,500
+VAULT
+¤0
+DEBT 6%
+¤6,000
+HOLD
+0/30
+HULL
+100%
+NIGHT 1 MARKET
+Lanternquay
+Fleet: Glowkelp → Copperhook
+Through night 4 · sale price unconfirmed
+Glowkelp
+¤68
++62%
+Above usual · check your sale quote
+Bottled Rain
+¤119
+−8%
+Usual range · compare other ports
+Rust Pearls
+¤246
+−41%
+Below usual · compare sale prices
+Synth Saffron
+—
+No dealers tonight
+Clockwork Eels
+—
+No dealers tonight
+Ghost Chips
+¤6,210
++19%
+Above usual · check your sale quote
+Dreamsilk
+¤8,357
+−15%
+Usual range · compare other ports
+Moon Ink
+¤17,241
+−9%
+Usual range · compare other ports
+Cargo worth here: ¤0
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+LANTERNQUAY · NIGHT 1
+Rust Pearls
+N1375246
+Price today is below usual for Rust Pearls
+¤110
+¤1,300
+Saint Mire
+?
+Orchid Terraces
+?
+Drowned Exchange
+?
+The Sluices
+?
+Copperhook Docks
+?
+Fogmouth
+?
+Buy
+Sell
+−
++
+Max
+Price each
+¤246
+Total cost
+¤2,460
+Purse after
+¤40
+Hold after
+10 / 30
+Dealers here sell about 24 more at this price.
+Cancel
+Buy 10 for ¤2,460
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-3/trade.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-3/trade.png
+> audit
+viewport 390x844 · document scrollWidth 390 · body scrollWidth 390 · 10 on-screen targets
+tap targets under 44x44 (0)
+tap targets under 8px from a neighbour (0)
+text under 15px (svg text is rendered size) (9):
+  12px div.sheet > div.sh-head > div > div.kicker "Lanternquay · Night 1"
+  12px div.modal > div.sheet > div.chart > span.cl.cx "N1"
+  12px div.modal > div.sheet > div.chart > span.cl.cy "375" ×2
+  13.5px div.sheet > div.gauge > div > span "Price today is for Rust Pearls"
+  13.5px div.gauge > div > span > b "below usual"
+  13.5px div.sheet > div.gauge > div.ends > span "¤110" ×2
+  13.5px div.sheet > div.else > div > span "Saint Mire" ×6
+  13.5px div.sheet > div.else > div > b "?" ×6
+  14px #qsum > span.depth-ok "Dealers here sell about 24 more at this "
+text contrast under 4.5:1 (approximate: gradients averaged) (0)
+inputs under 16px (iOS zooms on focus) (0)
+elements past the viewport edge (not clipped by a scroller) (0)
+truncated text (overflow with ellipsis/hidden) (0)
+touch-action on targets: {"auto":26,"manipulation":5}
+selectability on targets:
+  user-select:none -webkit-user-select:none callout:n/a: button.btn.icon.hud-mute button.stat button.stat.debt button.btn.icon.market-info button.best-run div.row div.row.out button button.btn.icon.ghost button.b button.s button.btn
+  user-select:auto -webkit-user-select:text callout:n/a: input
+root: html overscroll:n/a overflow:visible/visible touch-action:manipulation; body overscroll:n/a overflow:hidden/hidden touch-action:auto
+scrollable areas (1):
+  #side-body 623/682px overscroll:n/a overflow:auto/auto touch-action:auto

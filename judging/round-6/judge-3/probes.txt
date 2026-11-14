@@ -1,0 +1,46 @@
+Game: C:\Users\travi\.t3\worktrees\gloamwater\t3-201b6bf7-54dc20bc5d519c6e\judging\round-6\packet\index.html (sha256 a1273a762e42)
+Runs per policy: 10, seeds 8300000..8300009, workers 2, 1.8 runs/s, mode full (real sailTo voyages, rendering on)
+Adapter features: {"depth":true,"conf":true,"canals":true,"charters":true,"stay":true,"encTable":true,"gameRng":true,"crnVoyage":true,"crnArrival":true}
+Reproducibility: 10 seeds; game RNG seeds differ across policies on 0; night-30 market stream differs on 0 (of 0 seeds where 2+ runs reached night 30)
+
+Final fortune (tally net, crowns)
+policy        p10     p25  median     p75     p90    max    mean  sunk  vs informed: higher  median diff
+---------  ------  ------  ------  ------  ------  -----  ------  ----  -------------------  -----------
+roundtrip  313.2k  456.6k  505.8k  634.8k  839.4k  1.12M  618.7k  0.0%                                  
+
+Rank distribution
+policy     Drowned Debtor  Bilge Rat  Canal Runner  Lantern Broker  Tide Baron  Harbor Magnate  Sovereign of Gloamwater
+---------  --------------  ---------  ------------  --------------  ----------  --------------  -----------------------
+roundtrip            0.0%       0.0%          0.0%           10.0%       60.0%           20.0%                    10.0%
+
+Mean net worth by night (median in brackets)
+policy                n5            n10             n15              n18              n20              n25              n30
+---------  -------------  -------------  --------------  ---------------  ---------------  ---------------  ---------------
+roundtrip  7,504 (2,198)  42.1k (27.3k)  132.2k (96.4k)  194.4k (163.8k)  244.7k (188.3k)  434.2k (351.6k)  631.4k (505.8k)
+
+Per-run means
+policy     fights   won  interest  vault earned  best sale  max best sale  hold tier  wireless  reloads
+---------  ------  ----  --------  ------------  ---------  -------------  ---------  --------  -------
+roundtrip    5.10  1.20     3,366         20.6k     141.2k         253.6k       1.20    100.0%     0.00
+
+Economy shape
+policy     n30/n18 (medians)  median run n30/n18  largest sale  median run largest sale  tally cargo mean
+---------  -----------------  ------------------  ------------  -----------------------  ----------------
+roundtrip              3.09x               3.72x        701.5k                   337.8k             12.7k
+
+Round trips (roundtrip): 2845 trade-and-undo tests, 0 made money, best 0, worst -19, total -1,204
+  one: 569 tests, 0 positive, best 0, mean -0.16
+  splitB: 569 tests, 0 positive, best 0, mean -0.84
+  splitS: 569 tests, 0 positive, best 0, mean -0.81
+  alt: 569 tests, 0 positive, best 0, mean 0.00
+  walk: 569 tests, 0 positive, best 0, mean -0.31
+
+Routes, charters, encounters (per run)
+policy     1-night hops  2-night trips  carried on  stays  charters  any charter  1st charter night  encounters  cost/enc  patrol cost  gulls cost  collectors  collector cost  enc sinkings  debt at end
+---------  ------------  -------------  ----------  -----  --------  -----------  -----------------  ----------  --------  -----------  ----------  ----------  --------------  ------------  -----------
+roundtrip          25.1           1.60        1.10   2.30      1.20        80.0%               18.1        5.10     22.3k        21.4k       22.9k           -               -          0.0%            0
+
+Choices per run (selected)
+policy     patrol:bribe  patrol:run  patrol:fight  patrol:yield  gulls:pay  gulls:run  gulls:fight  collectors:pay  collectors:run  collectors:fight  squall:push  squall:shelter  eel:big  eellose:ok  racks:buy  sunk:ok
+---------  ------------  ----------  ------------  ------------  ---------  ---------  -----------  --------------  --------------  ----------------  -----------  --------------  -------  ----------  ---------  -------
+roundtrip          1.00        0.10          5.70          0.30       2.60       0.00         4.20            0.00            0.00              0.00         1.40            0.00     0.00        0.00       0.40     0.00

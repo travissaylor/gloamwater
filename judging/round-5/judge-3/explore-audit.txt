@@ -1,0 +1,35 @@
+> taptext Glowkelp
+tapped div.row.sel "Glowkelp ¤86 +105% ×30 · avg ¤52 · +65%…" at (195,282) 356x61; touch landed on b "Glowkelp"
+> wait 1200
+waited 1200ms
+> taptext Sell
+tapped button.s "Sell" at (284,165) 170x46; touch landed on button.s "Sell"
+> wait 1000
+waited 1000ms
+> tap #qgo
+tapped button#qgo.btn.lg.amber "Sell 30 for ¤2,580" at (285,799) 172x52; touch landed on button#qgo.btn.lg.amber "Sell 30 for ¤2,580"
+> wait 1200
+waited 1200ms
+> size 390 664
+viewport now 390x664
+> audit
+viewport 390x664 · document scrollWidth 390 · body scrollWidth 390 · 18 on-screen targets
+tap targets under 44x44 (0)
+tap targets under 8px from a neighbour (2):
+  #side-body > div.mk-head > button.btn.icon.market-info  GAP 4px to button.best-run "Bottled Rain → Slui…"
+  #side-body > button.best-run  GAP 4px to button.btn.icon.market-info "Fleet calendar and …"
+text under 15px (svg text is rendered size) (0)
+text contrast under 4.5:1 (approximate: gradients averaged) (0)
+inputs under 16px (iOS zooms on focus) (0)
+elements past the viewport edge (not clipped by a scroller) (0)
+truncated text (overflow with ellipsis/hidden) (0)
+touch-action on targets: {"auto":16,"manipulation":5}
+selectability on targets:
+  user-select:none -webkit-user-select:none callout:n/a: button.btn.icon.hud-mute button.stat button.stat.debt button.btn.icon.market-info button.best-run div.row.sel.flash div.row div.row.out button
+root: html overscroll:n/a overflow:visible/visible touch-action:manipulation; body overscroll:n/a overflow:hidden/hidden touch-action:auto
+scrollable areas (1):
+  #side-body 447/711px overscroll:n/a overflow:auto/auto touch-action:auto
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-3/explore-short.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-3/explore-short.png
+> errors
+no errors

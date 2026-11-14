@@ -1,0 +1,153 @@
+> type Judge2
+typed "Judge2"
+> key Enter
+pressed Enter
+> wait 1300
+waited 1300ms
+> key Escape
+pressed Escape
+> wait 600
+waited 600ms
+> key ArrowDown
+pressed ArrowDown
+> key b
+pressed b
+> wait 600
+waited 600ms
+> ui
+viewport 1280x800 · page scrollWidth 1280
+targets (10), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [861,53 40x40] button.btn.icon.ghost "Close"   ⚠ SMALL<44
+  [522,428 237x39] button.b "Buy B"   ⚠ SMALL<44 · GAP 0px to button.s "Sell S"
+  [759,428 237x39] button.s "Sell S"   ⚠ SMALL<44 · GAP 0px to button.b "Buy B"
+  [423,488 48x48] button.btn "−"
+  [603,488 297x48] input#qin "Quantity"
+  [784,488 48x48] button.btn "+"
+  [848,488 65x48] button.btn.amber "Max"
+  [640,538 482x28] input#qr "Quantity slider"   ⚠ SMALL<44
+  [518,739 237x52] button.btn.lg "Cancel"
+  [763,739 237x52] button#qgo.btn.lg.teal "Buy 30 for ¤1,560"
+covered (32): button#st-cash.stat "PURSE ¤2,500" under div.kicker "LANTERNQUAY · NIGHT 1" | button#st-bank.stat "VAULT ¤0" under div.kicker "LANTERNQUAY · NIGHT 1" | button#st-debt.stat.debt "DEBT · 6%/NIGHT ¤6,000" under div.kicker "LANTERNQUAY · NIGHT 1" | button#st-hold.stat "HOLD 0/30" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | button#st-hull.stat "HULL 100%" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | button#b-help.btn.icon "How to play (?)" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | button#b-mute.btn.icon "Toggle sound (M)" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | button#b-menu.btn.icon "Menu" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | g.node.here "Lanternquay" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | g.node "Saint Mire" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | g.node "Orchid Terraces" under div.sheet "LANTERNQUAY · NIGHT 1 Glowk…" | g.node "Drowned Exchange" under input#qin "Quantity" | g.node "The Sluices" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | g.node "Copperhook Docks FFleet cal…" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | g.node "Fogmouth" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | button#tab-market.tab "MARKET" under div.sheet "LANTERNQUAY · NIGHT 1 Glowk…" | button#tab-harbor.tab "HARBOR 2" under div.sheet "LANTERNQUAY · NIGHT 1 Glowk…" | button.btn.icon.market-info "Fleet calendar and market b…" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | button.best-run "Fleet: Glowkelp → Copperhoo…" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | div.row.sel "Glowkelp Usually imported h…" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | button.btn.sm.teal "Buy" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | div.row "Bottled Rain ¤117 −10% vs u…" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | button.btn.sm.teal "Buy" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | div.row "Rust Pearls ¤486 +16% vs us…" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | button.btn.sm.teal "Buy" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | div.row "Synth Saffron ¤1,111 usual …" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | button.btn.sm.teal "Buy" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | div.row "Clockwork Eels Cheap ¤1,997…" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | button.btn.sm.teal "Buy" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | div.row "Ghost Chips ¤6,171 +19% vs …" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | div.row "Dreamsilk ¤11,715 +20% vs u…" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…" | div.row "Moon Ink Usually imported h…" under div#modal.ov "LANTERNQUAY · NIGHT 1 Glowk…"
+--- visible text ---
+GLOAMWATER
+NIGHT
+1/30
+PURSE
+¤2,500
+VAULT
+¤0
+DEBT · 6%/NIGHT
+¤6,000
+HOLD
+0/30
+HULL
+100%
+NIGHT 1 OF 30 · MOORED AT
+Lanternquay
+NET WORTH
+−¤3,500
+Lanternquay
+Saint Mire
+Orchid Terraces
+Drowned Exchange
+The Sluices
+Copperhook Docks
+F
+Fogmouth
+Tap a district · lit canals are one night away · tap your own to stay a night · 1–7
+MARKET
+HARBOR
+2
+NIGHT 1 MARKET
+Lanternquay
+Fleet: Glowkelp → Copperhook
+Through night 4 · sale price unconfirmed
+Glowkelp
+Usually imported here
+¤52
++24% vs usual
+Buy
+Sell
+Bottled Rain
+¤117
+−10% vs usual
+Buy
+Sell
+Rust Pearls
+¤486
++16% vs usual
+Buy
+Sell
+Synth Saffron
+¤1,111
+usual
+Buy
+Sell
+Clockwork Eels
+Cheap
+¤1,997
+−17% vs usual
+Buy
+Sell
+Ghost Chips
+¤6,171
++19% vs usual
+Buy
+Sell
+Dreamsilk
+¤11,715
++20% vs usual
+Buy
+Sell
+Moon Ink
+Usually imported here
+¤22,612
++19% vs usual
+Buy
+Sell
+Cargo worth here: ¤0
+↑↓ pick · B buy · S sell
+SHIP'S LOG
+N1
+You owe Marrow Quill ¤6,000 for the Little Lantern. Thirty nights to make it right.
+LANTERNQUAY · NIGHT 1
+Glowkelp
+
+Bioluminescent seaweed. Lamp-oil, soup and medicine for the poor.
+
+N1
+59
+38
+Price today is above usual for Glowkelp
+¤10
+¤140
+Saint Mire
+?
+Orchid Terraces
+?
+Drowned Exchange
+?
+The Sluices
+?
+Copperhook Docks
+?
+Fogmouth
+?
+Buy B
+Sell S
+−
++
+Max
+Price each
+¤52
+Total cost
+¤1,560
+Purse after
+¤940
+Hold after
+30 / 30
+Dealers here sell about 90 more at this price.
+Cancel
+Buy 30 for ¤1,560
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/desktop-keyboard-trade.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/desktop-keyboard-trade.png

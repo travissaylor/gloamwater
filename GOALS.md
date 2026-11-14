@@ -1,5 +1,25 @@
 # Gloamwater: road to 95
 
+## Current continuation (2026-11-14)
+
+The owner's latest instruction supersedes the original target, model selection, branch,
+and plateau stop below: reach **90.0**, or stop after **four new council rounds**
+(rounds 3–6). Use fresh Opus 5.5 high, GPT-6.1 Sol xhigh, and GPT-6 Astra high
+judges each round. Keep the frozen rubric, independent evidence, and blind judging rules.
+Work on `t3/raise-gloamwater-panel-score`. The owner subsequently authorized pushing and opening PR #2.
+The original brief and historical results follow for context.
+
+**Stopped at the four-round limit. The 90-point target was not reached.**
+Round 3 scored **83.90**, round 4 **82.97**, round 5 **87.67** (best), and round 6 **83.53**.
+All rounds, individual scores, evidence and frozen packets are retained; no re-rolls.
+The last judged build is retained in `judging/round-6/packet/index.html`, SHA-256
+`a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03`.
+The current game includes subsequent PR-review fixes and has no new panel score.
+See [the PR review record](judging/pr-2-review.md) for the fixes and validation.
+The final panel found remaining balance and disclosure defects despite passing its recorded checks.
+See [the continuation summary](judging/continuation-summary.md) for results and remaining work.
+Do not start a fifth continuation panel without a new instruction from the owner.
+
 Gloamwater won the bake-off with a panel score of 87.0 out of 100. This file is the
 standing brief for taking it further. Re-read it whenever context is compacted.
 

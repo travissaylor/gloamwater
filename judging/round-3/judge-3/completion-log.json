@@ -1,0 +1,3538 @@
+[
+  {
+    "run": 1,
+    "state": {
+      "day": 1,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 6000,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "audioMuted": {
+      "muted": true,
+      "audio": {
+        "ctxs": [
+          {
+            "c": {
+              "state": "suspended",
+              "sampleRate": 44100,
+              "_t0": 1216,
+              "destination": {
+                "gain": {
+                  "value": 1
+                },
+                "frequency": {
+                  "value": 440
+                },
+                "Q": {
+                  "value": 1
+                },
+                "detune": {
+                  "value": 0
+                },
+                "threshold": {
+                  "value": -24
+                },
+                "ratio": {
+                  "value": 12
+                },
+                "type": "sine",
+                "buffer": null
+              }
+            },
+            "rec": {
+              "t": 1216,
+              "createdIn": "touchend",
+              "activation": "active",
+              "stateAtCreate": "suspended",
+              "resumes": [
+                {
+                  "t": 1216,
+                  "during": "touchend",
+                  "activation": "active",
+                  "before": "suspended",
+                  "after": "running"
+                }
+              ]
+            }
+          }
+        ],
+        "log": [
+          {
+            "t": 1214,
+            "event": "pointerdown",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 1215,
+            "event": "touchstart",
+            "activation": "active"
+          },
+          {
+            "t": 1216,
+            "event": "pointerup",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 1216,
+            "event": "touchend",
+            "activation": "active"
+          },
+          {
+            "t": 1216,
+            "ctx": 0,
+            "state": "running",
+            "during": "statechange"
+          },
+          {
+            "t": 1220,
+            "event": "mousedown",
+            "activation": "active"
+          },
+          {
+            "t": 1221,
+            "event": "click",
+            "pointerType": "mouse",
+            "activation": "active"
+          },
+          {
+            "t": 1807,
+            "event": "pointerdown",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 1807,
+            "event": "touchstart",
+            "activation": "active"
+          },
+          {
+            "t": 1808,
+            "event": "pointerup",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 1808,
+            "event": "touchend",
+            "activation": "active"
+          },
+          {
+            "t": 1809,
+            "event": "mousedown",
+            "activation": "active"
+          },
+          {
+            "t": 1810,
+            "event": "click",
+            "pointerType": "mouse",
+            "activation": "active"
+          },
+          {
+            "t": 3278,
+            "event": "pointerdown",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 3279,
+            "event": "touchstart",
+            "activation": "active"
+          },
+          {
+            "t": 3279,
+            "event": "pointerup",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 3279,
+            "event": "touchend",
+            "activation": "active"
+          },
+          {
+            "t": 3280,
+            "event": "mousedown",
+            "activation": "active"
+          },
+          {
+            "t": 3281,
+            "event": "click",
+            "pointerType": "mouse",
+            "activation": "active"
+          },
+          {
+            "t": 4374,
+            "event": "pointerdown",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 4374,
+            "event": "touchstart",
+            "activation": "active"
+          },
+          {
+            "t": 4375,
+            "event": "pointerup",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 4375,
+            "event": "touchend",
+            "activation": "active"
+          },
+          {
+            "t": 4376,
+            "event": "mousedown",
+            "activation": "active"
+          },
+          {
+            "t": 4378,
+            "event": "click",
+            "pointerType": "mouse",
+            "activation": "active"
+          },
+          {
+            "t": 4378,
+            "ctx": 0,
+            "state": "suspended",
+            "during": "statechange"
+          }
+        ],
+        "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+        "sounds": {
+          "whileRunning": 8,
+          "whileSuspended": 0
+        }
+      }
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 2,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 6360,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 3,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 6742,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 4,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 7147,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "no",
+        "text": "No thanks\nMaybe another time."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 5,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 7576,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 6,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 8031,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 7,
+      "loc": "lq",
+      "cash": 3370,
+      "debt": 8513,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 8,
+      "loc": "lq",
+      "cash": 3370,
+      "debt": 9024,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 9,
+      "loc": "lq",
+      "cash": 3370,
+      "debt": 9565,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 10,
+      "loc": "lq",
+      "cash": 3370,
+      "debt": 10139,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "take",
+        "text": "Haul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull)."
+      },
+      {
+        "key": "leave",
+        "text": "Leave it\nNot worth the trouble."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 11,
+      "loc": "lq",
+      "cash": 3370,
+      "debt": 10747,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 12,
+      "loc": "lq",
+      "cash": 3370,
+      "debt": 11822,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 13,
+      "loc": "lq",
+      "cash": 3370,
+      "debt": 13004,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 14,
+      "loc": "lq",
+      "cash": 3370,
+      "debt": 14304,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 15,
+      "loc": "lq",
+      "cash": 5330,
+      "debt": 15734,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 16,
+      "loc": "lq",
+      "cash": 6970,
+      "debt": 17307,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 17,
+      "loc": "lq",
+      "cash": 6970,
+      "debt": 19038,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 18,
+      "loc": "lq",
+      "cash": 6970,
+      "debt": 20942,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 19,
+      "loc": "lq",
+      "cash": 6970,
+      "debt": 23036,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 20,
+      "loc": "lq",
+      "cash": 6970,
+      "debt": 25340,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 21,
+      "loc": "lq",
+      "cash": 6970,
+      "debt": 27874,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 22,
+      "loc": "lq",
+      "cash": 6970,
+      "debt": 30661,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "small",
+        "text": "Small offering · ¤350\n40% chance to win 2.5×"
+      },
+      {
+        "key": "big",
+        "text": "Big offering · ¤1,390\nSame odds, more at stake."
+      },
+      {
+        "key": "no",
+        "text": "Walk on\nSuperstition is for landlubbers."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 23,
+      "loc": "lq",
+      "cash": 6970,
+      "debt": 33727,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 24,
+      "loc": "lq",
+      "cash": 6970,
+      "debt": 37100,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 25,
+      "loc": "lq",
+      "cash": 6970,
+      "debt": 40810,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 26,
+      "loc": "lq",
+      "cash": 6970,
+      "debt": 44891,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 27,
+      "loc": "lq",
+      "cash": 6970,
+      "debt": 49380,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 28,
+      "loc": "lq",
+      "cash": 6095,
+      "debt": 54318,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 29,
+      "loc": "lq",
+      "cash": 6095,
+      "debt": 59750,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 30,
+      "loc": "lq",
+      "cash": 6095,
+      "debt": 65725,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "ending": "THIRTY NIGHTS, DONE\nDrowned Debtor\n\nMarrow Quill sends his regards. And his collectors.\n\nCash on board\n¤6,095\nLockwater Vault\n¤0\nCargo dumped at half price\n¤0\nOwed to Marrow Quill\n−¤65,725\nFinal fortune\n−¤59,630\nVoyages\n0\nBest single profit\n—\nPeak worth\n−¤3,500\nEncounters\n0\nwon 0 · fled 0\nInterest paid\n¤59.7k\nLost to thieves, tolls, leaks\n¤875\n\n¤59,630 short of Bilge Rat.\n\nCAPTAINS' LEDGER · YOU PLACED #1\n#\tCAPTAIN\tRANK\tFORTUNE\n1\tCaptain\n2026-11-14\nDrowned Debtor\t−¤59,630\nSail again\nTitle screen",
+    "tally": {
+      "cash": 6095,
+      "bank": 0,
+      "cargo": 0,
+      "debt": 65725,
+      "net": -59630,
+      "sunk": false
+    }
+  },
+  {
+    "run": 1,
+    "final": {
+      "day": 30,
+      "over": true,
+      "stats": {
+        "trips": 0,
+        "bought": 0,
+        "sold": 0,
+        "profit": 0,
+        "bestFlip": 0,
+        "bestFlipGood": "",
+        "fights": 0,
+        "won": 0,
+        "fled": 0,
+        "bribes": 0,
+        "events": 7,
+        "interest": 59725,
+        "vaultEarned": 0,
+        "peak": -3500,
+        "repaid": 0,
+        "whispers": 0,
+        "lost": 875
+      },
+      "tally": {
+        "cash": 6095,
+        "bank": 0,
+        "cargo": 0,
+        "debt": 65725,
+        "net": -59630,
+        "sunk": false
+      }
+    },
+    "errors": [],
+    "requests": [
+      "file:///C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-3/packet/index.html",
+      "file:///C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-3/packet/index.html"
+    ],
+    "audio": {
+      "ctxs": [
+        {
+          "c": {
+            "state": "running",
+            "sampleRate": 44100,
+            "_t0": 1216,
+            "destination": {
+              "gain": {
+                "value": 1
+              },
+              "frequency": {
+                "value": 440
+              },
+              "Q": {
+                "value": 1
+              },
+              "detune": {
+                "value": 0
+              },
+              "threshold": {
+                "value": -24
+              },
+              "ratio": {
+                "value": 12
+              },
+              "type": "sine",
+              "buffer": null
+            }
+          },
+          "rec": {
+            "t": 1216,
+            "createdIn": "touchend",
+            "activation": "active",
+            "stateAtCreate": "suspended",
+            "resumes": [
+              {
+                "t": 1216,
+                "during": "touchend",
+                "activation": "active",
+                "before": "suspended",
+                "after": "running"
+              },
+              {
+                "t": 4934,
+                "during": "click",
+                "activation": "active",
+                "before": "suspended",
+                "after": "running"
+              }
+            ]
+          }
+        }
+      ],
+      "log": [
+        {
+          "t": 1214,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 1215,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 1216,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 1216,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 1216,
+          "ctx": 0,
+          "state": "running",
+          "during": "statechange"
+        },
+        {
+          "t": 1220,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 1221,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 1807,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 1807,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 1808,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 1808,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 1809,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 1810,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 3278,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 3279,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 3279,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 3279,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 3280,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 3281,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 4374,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 4374,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 4375,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 4375,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 4376,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 4378,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 4378,
+          "ctx": 0,
+          "state": "suspended",
+          "during": "statechange"
+        },
+        {
+          "t": 4930,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 4931,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 4932,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 4932,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 4933,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 4934,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 4935,
+          "ctx": 0,
+          "state": "running",
+          "during": "statechange"
+        },
+        {
+          "t": 5491,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 5492,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 5492,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 5493,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 5493,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 5494,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 6039,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 6039,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 6039,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 6039,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 6040,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 6041,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 6544,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 6544,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 6545,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 6545,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 6546,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 6548,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 7061,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 7061,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 7062,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 7062,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 7063,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 7064,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 8661,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 8661,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 8662,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 8662,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 8662,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 8663,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 9182,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 9183,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 9183,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 9183,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 9184,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 9184,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 9706,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 9706,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 9706,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 9706,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 9707,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 9709,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 10233,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 10233,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 10233,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 10233,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 10234,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 10235,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 11838,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 11838,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 11839,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 11839,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 11840,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 11840,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 12364,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 12364,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 12365,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 12365,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 12365,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 12366,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 12902,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 12902,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 12903,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 12903,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 12904,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 12905,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 13424,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 13424,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 13424,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 13424,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 13425,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 13426,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 15023,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 15023,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 15023,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 15023,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 15024,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 15024,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 15550,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 15550,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 15551,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 15551,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 15551,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 15552,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 16081,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 16081,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 16082,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 16082,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 16083,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 16084,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 16605,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 16605,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 16606,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 16606,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 16607,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 16608,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 17489,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 17489,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 17490,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 17490,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 17491,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 17492,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 19070,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 19070,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 19070,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 19070,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 19071,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 19071,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 19591,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 19592,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 19592,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 19592,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 19593,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 19593,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 20115,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 20115,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 20116,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 20116,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 20117,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 20118,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 20638,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 20638,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 20638,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 20638,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 20638,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 20639,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 22229,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 22229,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 22229,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 22229,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 22230,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 22230,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 22776,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 22776,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 22777,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 22777,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 22778,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 22778,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 23278,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 23279,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 23279,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 23279,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 23280,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 23281,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 23800,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 23800,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 23801,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 23801,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 23802,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 23803,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 24695,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 24696,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 24696,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 24696,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 24697,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 24698,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 26294,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 26295,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 26295,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 26295,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 26296,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 26296,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 26812,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 26812,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 26813,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 26813,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 26813,
+          "event": "mousedown",
+          "activation": "active"
+        }
+      ],
+      "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+      "sounds": {
+        "whileRunning": 248,
+        "whileSuspended": 0
+      }
+    }
+  },
+  {
+    "run": 1,
+    "scoresAfterReload": [
+      {
+        "name": "Captain",
+        "score": -59630,
+        "rank": "Drowned Debtor",
+        "night": 30,
+        "sunk": false,
+        "date": "2026-11-14",
+        "id": "skxa9gvmqi9"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 1,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 6000,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 2,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 6360,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "yes",
+        "text": "Take the job · 3 hold\nDeliver to Drowned Exchange by night 6 (1 night away)."
+      },
+      {
+        "key": "no",
+        "text": "Decline\nSmells like trouble."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 3,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 6742,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 4,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 7147,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 5,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 7576,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "yes",
+        "text": "Take the job · 3 hold\nDeliver to Saint Mire by night 11 (1 night away)."
+      },
+      {
+        "key": "no",
+        "text": "Decline\nSmells like trouble."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 6,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 8031,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "yes",
+        "text": "Take the job · 3 hold\nDeliver to Drowned Exchange by night 11 (1 night away)."
+      },
+      {
+        "key": "no",
+        "text": "Decline\nSmells like trouble."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 7,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 8513,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 8,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 9024,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 9,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 9565,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "yes",
+        "text": "Take the job · 3 hold\nDeliver to Copperhook Docks by night 14 (1 night away)."
+      },
+      {
+        "key": "no",
+        "text": "Decline\nSmells like trouble."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 10,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 10139,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 11,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 10747,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 12,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 11822,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "take",
+        "text": "Haul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull)."
+      },
+      {
+        "key": "leave",
+        "text": "Leave it\nNot worth the trouble."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 13,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 13004,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 14,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 14304,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 15,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 15734,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 16,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 17307,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 17,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 19038,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 18,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 20942,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 19,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 23036,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 20,
+      "loc": "lq",
+      "cash": 3990,
+      "debt": 25340,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "small",
+        "text": "Small offering · ¤200\n40% chance to win 2.5×"
+      },
+      {
+        "key": "big",
+        "text": "Big offering · ¤800\nSame odds, more at stake."
+      },
+      {
+        "key": "no",
+        "text": "Walk on\nSuperstition is for landlubbers."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 21,
+      "loc": "lq",
+      "cash": 3990,
+      "debt": 27874,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 22,
+      "loc": "lq",
+      "cash": 3990,
+      "debt": 30661,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "yes",
+        "text": "Take the job · 3 hold\nDeliver to The Sluices by night 27 (1 night away)."
+      },
+      {
+        "key": "no",
+        "text": "Decline\nSmells like trouble."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 23,
+      "loc": "lq",
+      "cash": 3990,
+      "debt": 33727,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 24,
+      "loc": "lq",
+      "cash": 3990,
+      "debt": 37100,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 25,
+      "loc": "lq",
+      "cash": 3990,
+      "debt": 40810,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 26,
+      "loc": "lq",
+      "cash": 3990,
+      "debt": 44891,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 27,
+      "loc": "lq",
+      "cash": 3990,
+      "debt": 49380,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "take",
+        "text": "Haul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull)."
+      },
+      {
+        "key": "leave",
+        "text": "Leave it\nNot worth the trouble."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 28,
+      "loc": "lq",
+      "cash": 3990,
+      "debt": 54318,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 29,
+      "loc": "lq",
+      "cash": 3990,
+      "debt": 59750,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "take",
+        "text": "Haul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull)."
+      },
+      {
+        "key": "leave",
+        "text": "Leave it\nNot worth the trouble."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 30,
+      "loc": "lq",
+      "cash": 3990,
+      "debt": 65725,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "ending": "THIRTY NIGHTS, DONE\nDrowned Debtor\n\nMarrow Quill sends his regards. And his collectors.\n\nCash on board\n¤3,990\nLockwater Vault\n¤0\nCargo dumped at half price\n¤0\nOwed to Marrow Quill\n−¤65,725\nFinal fortune\n−¤61,735\nVoyages\n0\nBest single profit\n—\nPeak worth\n−¤3,500\nEncounters\n0\nwon 0 · fled 0\nInterest paid\n¤59.7k\nLost to thieves, tolls, leaks\n¤0\n\n¤61,735 short of Bilge Rat.\n\nCAPTAINS' LEDGER · YOU PLACED #1\n#\tCAPTAIN\tRANK\tFORTUNE\n1\tCaptain\n2026-11-14\nDrowned Debtor\t−¤61,735\nSail again\nTitle screen",
+    "tally": {
+      "cash": 3990,
+      "bank": 0,
+      "cargo": 0,
+      "debt": 65725,
+      "net": -61735,
+      "sunk": false
+    }
+  },
+  {
+    "run": 2,
+    "final": {
+      "day": 30,
+      "over": true,
+      "stats": {
+        "trips": 0,
+        "bought": 0,
+        "sold": 0,
+        "profit": 0,
+        "bestFlip": 0,
+        "bestFlipGood": "",
+        "fights": 0,
+        "won": 0,
+        "fled": 0,
+        "bribes": 0,
+        "events": 12,
+        "interest": 59725,
+        "vaultEarned": 0,
+        "peak": -3500,
+        "repaid": 0,
+        "whispers": 0,
+        "lost": 0
+      },
+      "tally": {
+        "cash": 3990,
+        "bank": 0,
+        "cargo": 0,
+        "debt": 65725,
+        "net": -61735,
+        "sunk": false
+      }
+    },
+    "errors": [],
+    "requests": [
+      "file:///C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-3/packet/index.html",
+      "file:///C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-3/packet/index.html"
+    ],
+    "audio": {
+      "ctxs": [
+        {
+          "c": {
+            "state": "running",
+            "sampleRate": 44100,
+            "_t0": 1078,
+            "destination": {
+              "gain": {
+                "value": 1
+              },
+              "frequency": {
+                "value": 440
+              },
+              "Q": {
+                "value": 1
+              },
+              "detune": {
+                "value": 0
+              },
+              "threshold": {
+                "value": -24
+              },
+              "ratio": {
+                "value": 12
+              },
+              "type": "sine",
+              "buffer": null
+            }
+          },
+          "rec": {
+            "t": 1078,
+            "createdIn": "touchend",
+            "activation": "active",
+            "stateAtCreate": "suspended",
+            "resumes": [
+              {
+                "t": 1078,
+                "during": "touchend",
+                "activation": "active",
+                "before": "suspended",
+                "after": "running"
+              }
+            ]
+          }
+        }
+      ],
+      "log": [
+        {
+          "t": 1076,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 1076,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 1077,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 1077,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 1078,
+          "ctx": 0,
+          "state": "running",
+          "during": "statechange"
+        },
+        {
+          "t": 1083,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 1085,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 1740,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 1741,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 1741,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 1741,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 1743,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 1744,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 3213,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 3213,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 3213,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 3213,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 3214,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 3215,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 4314,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 4314,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 4315,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 4315,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 4315,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 4316,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 4841,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 4841,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 4841,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 4842,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 4842,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 4842,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 5371,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 5371,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 5372,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 5372,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 5373,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 5374,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 5898,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 5898,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 5899,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 5899,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 5900,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 5901,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 7517,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 7517,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 7518,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 7518,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 7518,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 7519,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 8047,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 8048,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 8048,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 8048,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 8049,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 8049,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 8558,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 8558,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 8559,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 8559,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 8560,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 8561,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 9089,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 9089,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 9090,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 9090,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 9091,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 9092,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 9981,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 9982,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 9982,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 9982,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 9983,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 9984,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 11591,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 11591,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 11591,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 11592,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 11592,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 11593,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 12141,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 12141,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 12141,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 12141,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 12142,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 12142,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 12646,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 12647,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 12647,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 12647,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 12649,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 12650,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 13192,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 13193,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 13193,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 13193,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 13194,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 13196,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 14805,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 14806,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 14806,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 14806,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 14807,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 14807,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 15329,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 15329,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 15330,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 15330,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 15330,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 15331,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 15859,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 15859,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 15860,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 15860,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 15861,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 15862,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 16382,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 16382,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 16383,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 16383,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 16384,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 16385,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 17975,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 17975,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 17976,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 17976,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 17976,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 17977,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 18515,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 18515,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 18515,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 18515,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 18516,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 18517,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 19036,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 19036,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 19037,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 19037,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 19038,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 19039,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 19567,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 19568,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 19568,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 19568,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 19569,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 19571,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 20443,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 20443,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 20443,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 20443,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 20444,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 20444,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 22055,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 22055,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 22055,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 22055,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 22056,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 22056,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 22580,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 22580,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 22580,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 22580,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 22581,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 22581,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 23075,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 23075,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 23075,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 23075,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 23076,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 23077,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 23608,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 23608,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 23609,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 23609,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 23610,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 23611,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 24485,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 24485,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 24485,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 24486,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 24486,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 24487,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 26085,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 26085,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 26086,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 26086,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 26086,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 26087,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 26608,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 26608,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 26609,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 26609,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 26609,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 26610,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 27093,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 27093,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 27093,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 27094,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 27094,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 27095,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 27621,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        }
+      ],
+      "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+      "sounds": {
+        "whileRunning": 262,
+        "whileSuspended": 0
+      }
+    }
+  },
+  {
+    "run": 2,
+    "scoresAfterReload": [
+      {
+        "name": "Captain",
+        "score": -61735,
+        "rank": "Drowned Debtor",
+        "night": 30,
+        "sunk": false,
+        "date": "2026-11-14",
+        "id": "10z50bk6zcdb"
+      }
+    ]
+  }
+]

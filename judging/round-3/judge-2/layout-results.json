@@ -1,0 +1,584 @@
+{
+  "mode": "WEBKIT VIEWPORT / INPUT / ACCESSIBILITY; EVENT AND SERVICE FIXTURES ARE ABUSE TESTS, NOT SCORED PLAY",
+  "tests": [
+    {
+      "name": "Market audit 390x664",
+      "result": {
+        "viewport": "390x664",
+        "docScrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "smallTargets": [],
+        "tightGaps": [
+          "#st-cash  GAP 5px to button#st-bank.stat \"VAULT ¤0\"",
+          "#st-bank  GAP 5px to button#st-cash.stat \"PURSE ¤2,500\"",
+          "#st-debt  GAP 5px to button#st-bank.stat \"VAULT ¤0\"",
+          "#st-hold  GAP 5px to button#st-debt.stat.debt \"DEBT 6% ¤6,000\"",
+          "#st-hull  GAP 5px to button#st-hold.stat \"HOLD 0/30\"",
+          "#side-body > div.rows > div.row  GAP 5px to div.row \"Bottled Rain ¤156 +…\"",
+          "#side-body > div.rows > div.row  GAP 5px to div.row \"Glowkelp Pricey ¤75…\"",
+          "#side-body > div.rows > div.row  GAP 5px to div.row \"Bottled Rain ¤156 +…\"",
+          "#side-body > div.rows > div.row.out  GAP 5px to div.row \"Rust Pearls ¤494 +1…\"",
+          "#side-body > div.rows > div.row  GAP 5px to div.row.out \"Synth Saffron No de…\""
+        ],
+        "targetCount": 17,
+        "smallText": [
+          "11px #h-worth > small \"Net worth\"",
+          "12px #h-night > div > small \"Night\"",
+          "12px #nextrank \"Bilge Rat at ¤0\"",
+          "12px #st-cash > small \"Purse\"",
+          "12px #st-bank > small \"Vault\"",
+          "12px #st-debt > small \"Debt 6%\"",
+          "12px #st-hold > small \"Hold\"",
+          "12px #st-hull > small \"Hull\"",
+          "12px #side-body > div.mk-head > div > div.kicker \"Night 1 market\"",
+          "12px #side-body > div.mk-head > div.holdbox > div.kicker \"Free hold\"",
+          "12px #side-body > div.mk-head > div.holdbox > span \"of 30\"",
+          "13px #h-night > div > b > span \"/30\"",
+          "13px div.row > div.gname > div.tags > span.tag.dear \"Pricey\"",
+          "13px div.row.out > div.gname > div.tags > span.tag \"No dealers today\"",
+          "13px div.row > div.gname > div.tags > span.tag.glut \"Glut\"",
+          "13px div.row > div.gname > div.tags > span.tag.cheap \"Bargain\"",
+          "13px div.row > div.gname > div.tags > span.tag \"Usually imported here\"",
+          "13px #mnav > button \"Market\"",
+          "13px #mnav > button \"Map\" ×4",
+          "13.5px div.rows > div.row > div.gprice > span.chg.dearv \"+79%\" ×4",
+          "13.5px div.rows > div.row > div.gprice > span.chg.cheapv \"−60%\" ×2",
+          "14px #side-body > details.market-news > summary \"Fleet: Glowkelp → Copperhook · 1 bulleti\"",
+          "14px #side-body > div.mk-foot > span \"Cargo worth here:\"",
+          "14px #side-body > div.mk-foot > span > b.num \"¤0\"",
+          "14.5px details.market-news > div.svc > button.bull > div \"The Sluices · 1 nights away\" ×3",
+          "14.5px div.svc > button.bull > div > b \"N21–24: Ghost Chips\" ×3",
+          "14.5px details.market-news > div.bulletins > button.bull.crash > div \"Warehouses flooded at Lanternquay. Clock\""
+        ],
+        "lowContrast": [],
+        "inputsUnder16": [],
+        "overflowX": [],
+        "truncated": [],
+        "touchAction": {
+          "auto": 23,
+          "manipulation": 6
+        },
+        "selectability": {
+          "user-select:none -webkit-user-select:none callout:n/a": "button.btn.icon.hud-mute button.stat button.stat.debt button.bull button.bull.crash div.row div.row.out button",
+          "user-select:auto -webkit-user-select:text callout:n/a": "summary"
+        },
+        "rootBehaviour": {
+          "html": "overscroll:n/a overflow:visible/visible touch-action:manipulation",
+          "body": "overscroll:n/a overflow:hidden/hidden touch-action:auto"
+        },
+        "scrollers": [
+          "#side-body 443/708px overscroll:n/a overflow:auto/auto touch-action:auto"
+        ]
+      }
+    },
+    {
+      "name": "Trade layout 390x664",
+      "result": {
+        "doc": 390,
+        "modal": {
+          "x": 0,
+          "y": 39.84375,
+          "width": 390,
+          "height": 624.15625,
+          "top": 39.84375,
+          "right": 390,
+          "bottom": 664,
+          "left": 0
+        },
+        "go": {
+          "x": 197.625,
+          "y": 593,
+          "width": 173.375,
+          "height": 52,
+          "top": 593,
+          "right": 371,
+          "bottom": 645,
+          "left": 197.625
+        },
+        "qty": {
+          "x": 73,
+          "y": 182.84375,
+          "width": 170.9375,
+          "height": 48,
+          "top": 182.84375,
+          "right": 243.9375,
+          "bottom": 230.84375,
+          "left": 73
+        }
+      }
+    },
+    {
+      "name": "Market audit 360x640",
+      "result": {
+        "viewport": "360x640",
+        "docScrollWidth": 360,
+        "bodyScrollWidth": 360,
+        "smallTargets": [],
+        "tightGaps": [
+          "#st-cash  GAP 5px to button#st-bank.stat \"VAULT ¤0\"",
+          "#st-bank  GAP 5px to button#st-cash.stat \"PURSE ¤2,500\"",
+          "#st-debt  GAP 5px to button#st-bank.stat \"VAULT ¤0\"",
+          "#st-hold  GAP 5px to button#st-debt.stat.debt \"DEBT 6% ¤6,000\"",
+          "#st-hull  GAP 5px to button#st-hold.stat \"HOLD 0/30\"",
+          "#side-body > div.rows > div.row.sel  GAP 5px to div.row \"Bottled Rain ¤156 +…\"",
+          "#side-body > div.rows > div.row  GAP 5px to div.row.sel \"Glowkelp Pricey ¤75…\"",
+          "#side-body > div.rows > div.row  GAP 5px to div.row \"Bottled Rain ¤156 +…\"",
+          "#side-body > div.rows > div.row.out  GAP 5px to div.row \"Rust Pearls ¤494 +1…\"",
+          "#side-body > div.rows > div.row  GAP 0px to button \"MARKET\"",
+          "#mnav > button  GAP 0px to div.row \"Clockwork Eels Glut…\"",
+          "#mnav > button  GAP 0px to div.row \"Clockwork Eels Glut…\"",
+          "#mnav > button  GAP 0px to div.row \"Clockwork Eels Glut…\"",
+          "#mnav > button  GAP 0px to div.row \"Clockwork Eels Glut…\"",
+          "#mnav > button  GAP 0px to div.row \"Clockwork Eels Glut…\""
+        ],
+        "targetCount": 17,
+        "smallText": [
+          "11px #h-worth > small \"Net worth\"",
+          "12px #h-night > div > small \"Night\"",
+          "12px #nextrank \"Bilge Rat at ¤0\"",
+          "12px #st-cash > small \"Purse\"",
+          "12px #st-bank > small \"Vault\"",
+          "12px #st-debt > small \"Debt 6%\"",
+          "12px #st-hold > small \"Hold\"",
+          "12px #st-hull > small \"Hull\"",
+          "12px #side-body > div.mk-head > div > div.kicker \"Night 1 market\"",
+          "12px #side-body > div.mk-head > div.holdbox > div.kicker \"Free hold\"",
+          "12px #side-body > div.mk-head > div.holdbox > span \"of 30\"",
+          "13px #h-night > div > b > span \"/30\"",
+          "13px div.row.sel > div.gname > div.tags > span.tag.dear \"Pricey\"",
+          "13px div.row.out > div.gname > div.tags > span.tag \"No dealers today\"",
+          "13px div.row > div.gname > div.tags > span.tag.cheap \"Bargain\"",
+          "13px div.row > div.gname > div.tags > span.tag \"Usually imported here\"",
+          "13px #mnav > button \"Market\"",
+          "13px #mnav > button \"Map\" ×4",
+          "13.5px div.rows > div.row.sel > div.gprice > span.chg.dearv \"+79%\"",
+          "13.5px div.rows > div.row > div.gprice > span.chg.dearv \"+20%\" ×3",
+          "13.5px div.rows > div.row > div.gprice > span.chg.cheapv \"−60%\" ×2",
+          "14px #side-body > details.market-news > summary \"Fleet: Glowkelp → Copperhook · 1 bulleti\"",
+          "14px #side-body > div.mk-foot > span \"Cargo worth here:\"",
+          "14px #side-body > div.mk-foot > span > b.num \"¤0\"",
+          "14.5px details.market-news > div.svc > button.bull > div \"Drowned Exchange · 1 nights away\" ×4",
+          "14.5px div.svc > button.bull > div > b \"N17–20: Clockwork Eels\" ×4",
+          "14.5px details.market-news > div.bulletins > button.bull.crash > div \"Warehouses flooded at Lanternquay. Clock\""
+        ],
+        "lowContrast": [],
+        "inputsUnder16": [],
+        "overflowX": [],
+        "truncated": [],
+        "touchAction": {
+          "auto": 23,
+          "manipulation": 6
+        },
+        "selectability": {
+          "user-select:none -webkit-user-select:none callout:n/a": "button.btn.icon.hud-mute button.stat button.stat.debt button.bull button.bull.crash div.row.sel div.row div.row.out button",
+          "user-select:auto -webkit-user-select:text callout:n/a": "summary"
+        },
+        "rootBehaviour": {
+          "html": "overscroll:n/a overflow:visible/visible touch-action:manipulation",
+          "body": "overscroll:n/a overflow:hidden/hidden touch-action:auto"
+        },
+        "scrollers": [
+          "#side-body 419/708px overscroll:n/a overflow:auto/auto touch-action:auto"
+        ]
+      }
+    },
+    {
+      "name": "Trade layout 360x640",
+      "result": {
+        "doc": 360,
+        "modal": {
+          "x": 0,
+          "y": 38.40625,
+          "width": 360,
+          "height": 601.59375,
+          "top": 38.40625,
+          "right": 360,
+          "bottom": 640,
+          "left": 0
+        },
+        "go": {
+          "x": 167.625,
+          "y": 569,
+          "width": 173.375,
+          "height": 52,
+          "top": 569,
+          "right": 341,
+          "bottom": 621,
+          "left": 167.625
+        },
+        "qty": {
+          "x": 73,
+          "y": 181.40625,
+          "width": 140.9375,
+          "height": 48,
+          "top": 181.40625,
+          "right": 213.9375,
+          "bottom": 229.40625,
+          "left": 73
+        }
+      }
+    },
+    {
+      "name": "Market audit 430x932",
+      "result": {
+        "viewport": "430x932",
+        "docScrollWidth": 430,
+        "bodyScrollWidth": 430,
+        "smallTargets": [],
+        "tightGaps": [
+          "#st-cash  GAP 5px to button#st-bank.stat \"VAULT ¤0\"",
+          "#st-bank  GAP 5px to button#st-cash.stat \"PURSE ¤2,500\"",
+          "#st-debt  GAP 5px to button#st-bank.stat \"VAULT ¤0\"",
+          "#st-hold  GAP 5px to button#st-debt.stat.debt \"DEBT 6% ¤6,000\"",
+          "#st-hull  GAP 5px to button#st-hold.stat \"HOLD 0/30\"",
+          "#side-body > div.rows > div.row.sel  GAP 5px to div.row \"Bottled Rain ¤156 +…\"",
+          "#side-body > div.rows > div.row  GAP 5px to div.row.sel \"Glowkelp Pricey ¤75…\"",
+          "#side-body > div.rows > div.row  GAP 5px to div.row \"Bottled Rain ¤156 +…\"",
+          "#side-body > div.rows > div.row.out  GAP 5px to div.row \"Rust Pearls ¤494 +1…\"",
+          "#side-body > div.rows > div.row  GAP 5px to div.row.out \"Synth Saffron No de…\"",
+          "#side-body > div.rows > div.row.out  GAP 5px to div.row \"Clockwork Eels Glut…\"",
+          "#side-body > div.rows > div.row  GAP 5px to div.row.out \"Ghost Chips No deal…\"",
+          "#side-body > div.rows > div.row  GAP 5px to div.row \"Dreamsilk Bargain ¤…\""
+        ],
+        "targetCount": 20,
+        "smallText": [
+          "11px #h-worth > small \"Net worth\"",
+          "12px #h-night > div > small \"Night\"",
+          "12px #nextrank \"Bilge Rat at ¤0\"",
+          "12px #st-cash > small \"Purse\"",
+          "12px #st-bank > small \"Vault\"",
+          "12px #st-debt > small \"Debt 6%\"",
+          "12px #st-hold > small \"Hold\"",
+          "12px #st-hull > small \"Hull\"",
+          "12px #side-body > div.mk-head > div > div.kicker \"Night 1 market\"",
+          "12px #side-body > div.mk-head > div.holdbox > div.kicker \"Free hold\"",
+          "12px #side-body > div.mk-head > div.holdbox > span \"of 30\"",
+          "13px #h-night > div > b > span \"/30\"",
+          "13px div.row.sel > div.gname > div.tags > span.tag.dear \"Pricey\"",
+          "13px div.row.out > div.gname > div.tags > span.tag \"No dealers today\" ×2",
+          "13px div.row > div.gname > div.tags > span.tag.glut \"Glut\"",
+          "13px div.row > div.gname > div.tags > span.tag.cheap \"Bargain\"",
+          "13px div.row > div.gname > div.tags > span.tag \"Usually imported here\"",
+          "13px #mnav > button \"Market\"",
+          "13px #mnav > button \"Map\" ×4",
+          "13.5px div.rows > div.row.sel > div.gprice > span.chg.dearv \"+79%\"",
+          "13.5px div.rows > div.row > div.gprice > span.chg.dearv \"+20%\" ×3",
+          "13.5px div.rows > div.row > div.gprice > span.chg.cheapv \"−60%\" ×2",
+          "14px #side-body > details.market-news > summary \"Fleet: Glowkelp → Copperhook · 1 bulleti\"",
+          "14px #side-body > div.mk-foot > span \"Cargo worth here:\"",
+          "14px #side-body > div.mk-foot > span > b.num \"¤0\"",
+          "14.5px details.market-news > div.bulletins > button.bull.crash > div \"Warehouses flooded at Lanternquay. Clock\""
+        ],
+        "lowContrast": [],
+        "inputsUnder16": [],
+        "overflowX": [],
+        "truncated": [],
+        "touchAction": {
+          "auto": 23,
+          "manipulation": 6
+        },
+        "selectability": {
+          "user-select:none -webkit-user-select:none callout:n/a": "button.btn.icon.hud-mute button.stat button.stat.debt button.bull button.bull.crash div.row.sel div.row div.row.out button",
+          "user-select:auto -webkit-user-select:text callout:n/a": "summary"
+        },
+        "rootBehaviour": {
+          "html": "overscroll:n/a overflow:visible/visible touch-action:manipulation",
+          "body": "overscroll:n/a overflow:hidden/hidden touch-action:auto"
+        },
+        "scrollers": []
+      }
+    },
+    {
+      "name": "Trade layout 430x932",
+      "result": {
+        "doc": 430,
+        "modal": {
+          "x": 0,
+          "y": 146.625,
+          "width": 430,
+          "height": 785.375,
+          "top": 146.625,
+          "right": 430,
+          "bottom": 932,
+          "left": 0
+        },
+        "go": {
+          "x": 219,
+          "y": 861,
+          "width": 192,
+          "height": 52,
+          "top": 861,
+          "right": 411,
+          "bottom": 913,
+          "left": 219
+        },
+        "qty": {
+          "x": 73,
+          "y": 289.625,
+          "width": 210.9375,
+          "height": 48,
+          "top": 289.625,
+          "right": 283.9375,
+          "bottom": 337.625,
+          "left": 73
+        }
+      }
+    },
+    {
+      "name": "WebKit muted context",
+      "result": {
+        "muted": true,
+        "sounds": {
+          "whileRunning": 19,
+          "whileSuspended": 0
+        },
+        "contexts": [
+          {
+            "t": 1226,
+            "createdIn": "touchend",
+            "activation": "active",
+            "stateAtCreate": "suspended",
+            "resumes": [
+              {
+                "t": 1227,
+                "during": "touchend",
+                "activation": "active",
+                "before": "suspended",
+                "after": "running"
+              }
+            ],
+            "state": "suspended"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Muted UI produces no new sounds",
+      "result": {
+        "before": 19,
+        "after": 19
+      }
+    },
+    {
+      "name": "WebKit unmuted context",
+      "result": {
+        "muted": false,
+        "sounds": {
+          "whileRunning": 23,
+          "whileSuspended": 0
+        },
+        "contexts": [
+          {
+            "t": 1226,
+            "createdIn": "touchend",
+            "activation": "active",
+            "stateAtCreate": "suspended",
+            "resumes": [
+              {
+                "t": 1227,
+                "during": "touchend",
+                "activation": "active",
+                "before": "suspended",
+                "after": "running"
+              },
+              {
+                "t": 29574,
+                "during": "click",
+                "activation": "active",
+                "before": "suspended",
+                "after": "running"
+              }
+            ],
+            "state": "running"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fixture repayment UI",
+      "result": {
+        "cash": 94000,
+        "debt": 0
+      }
+    },
+    {
+      "name": "Fixture deposit UI",
+      "result": {
+        "cash": 70500,
+        "bank": 23500
+      }
+    },
+    {
+      "name": "Fixture hold motor repair UI",
+      "result": {
+        "cash": 62100,
+        "hold": 45,
+        "motor": 1,
+        "hull": 100
+      }
+    },
+    {
+      "name": "Fixture weapon UI",
+      "result": {
+        "cash": 59600,
+        "arms": 1
+      }
+    },
+    {
+      "name": "Fixture wireless UI",
+      "result": {
+        "cash": 53600,
+        "wireless": true,
+        "seenPorts": 7
+      }
+    },
+    {
+      "name": "Encounter 360x640",
+      "result": {
+        "ui": {
+          "viewport": "360x640",
+          "scrollWidth": 360,
+          "targets": [
+            {
+              "desc": "button.choice.risk \"Run for it 55% each try to slip away. E…\"",
+              "sel": "div.modal > div.card-body > div.choices > button.choice.risk",
+              "x": 180,
+              "y": 346,
+              "w": 326,
+              "h": 81,
+              "top": 305,
+              "flags": [
+                "GAP 6px to button.choice.risk \"Fight · Flare pisto…\""
+              ]
+            },
+            {
+              "desc": "button.choice.risk \"Fight · Flare pistol 39% per volley to …\"",
+              "sel": "div.modal > div.card-body > div.choices > button.choice.risk",
+              "x": 180,
+              "y": 433,
+              "w": 326,
+              "h": 81,
+              "top": 392,
+              "flags": [
+                "GAP 6px to button.choice.risk \"Run for it 55% each…\""
+              ]
+            },
+            {
+              "desc": "button.choice \"Bribe the sergeant · ¤5,860 Guaranteed.…\"",
+              "sel": "div.modal > div.card-body > div.choices > button.choice",
+              "x": 180,
+              "y": 520,
+              "w": 326,
+              "h": 81,
+              "top": 479,
+              "flags": [
+                "GAP 6px to button.choice.risk \"Fight · Flare pisto…\""
+              ]
+            },
+            {
+              "desc": "button.choice \"Heave to and be searched They seize hal…\"",
+              "sel": "div.modal > div.card-body > div.choices > button.choice",
+              "x": 180,
+              "y": 607,
+              "w": 326,
+              "h": 81,
+              "top": 566,
+              "flags": [
+                "GAP 6px to button.choice \"Bribe the sergeant …\"",
+                "PART-OFFSCREEN"
+              ]
+            }
+          ],
+          "covered": [
+            "button#b-mute2.btn.icon.hud-mute \"Toggle sound\" under div#modal.ov.tone-danger \"SEARCHLIGHTS ON THE WATER T…\"",
+            "button#st-cash.stat \"PURSE ¤53.6k\" under rect",
+            "button#st-bank.stat \"VAULT ¤23.5k\" under path",
+            "button#st-debt.stat.debt \"DEBT ¤0\" under rect",
+            "button#st-hold.stat \"HOLD 0/45\" under path",
+            "button#st-hull.stat \"HULL 100%\" under rect",
+            "button.btn.teal \"Deposit\" under div.kicker \"SEARCHLIGHTS ON THE WATER\"",
+            "button.btn \"Withdraw\" under div.kicker \"SEARCHLIGHTS ON THE WATER\"",
+            "button \"MARKET\" under small \"They seize half of every ca…\"",
+            "button \"MAP\" under small \"They seize half of every ca…\"",
+            "button \"HARBOR\" under small \"They seize half of every ca…\"",
+            "button \"LOG\" under small \"They seize half of every ca…\"",
+            "button \"MORE\" under small \"They seize half of every ca…\""
+          ],
+          "offscreen": [
+            "button.btn.amber \"Buy charter · ¤20,000\""
+          ],
+          "text": "NIGHT\n1/30\nNET WORTH\n¤77.1k\nLantern Broker at ¤250k\nPURSE\n¤53.6k\nVAULT\n¤23.5k\nDEBT\n¤0\nHOLD\n0/45\nHULL\n100%\nHARBOR SERVICES\nDrowned Exchange\nLockwater Vault\n\"Deposits are dry, safe and quietly growing.\"\nBalance\n¤23,500\nInterest\n1.5% / night\n\nMoney in the vault can't be stolen or sunk. Branches at Lanternquay and the Drowned Exchange.\n\nDeposit\nWithdraw\nThe Listening Room\n\"Every price on every canal, crackling in your ear by dawn.\"\n\nA crackling wireless set for your skiff. See live prices in every district on the map and in the trade screen, and hear every market bulletin.\n\nInstalled\nFaye says hello.\nTrading charter\n\"Sign in Moon Ink, captain. The dealers will remember.\"\n\nA charter makes the dealers of Drowned Exchange trade twice as deep with you for the rest of the run: twice as many units at the posted price before it moves. Each charter costs more than the last.\n\nThis hold, tonight: +¤0 in sale proceeds after buying the charter. No extra sale proceeds for this load. Future prices and cargo vary; 29 nights remain.\n\nYour charters\nnone\nBuy charter · ¤20,000\nYOUR SKIFF\nThe Little Lantern\nHold\n0 / 45\nHull\n100%\nEngine\nTwin-screw motor\nWeapon\nFlare pistol\nWireless set\nInstalled\nDIRECTORY\nMarrow Quill's Loan Office · Lanternquay\nLockwater Vault · Lanternquay & Drowned Exchange\nOdile's Boatyard · Copperhook Docks\nThe Gutter Yard · The Sluices\nBrother Tallow's Armory · Saint Mire\nThe Fog Fence · Fogmouth\nThe Listening Room · Drowned Exchange\nMadame Ysolde's Salon · Orchid Terraces\nMARKET\nMAP\nHARBOR\nLOG\nMORE\nSEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA squadron of 2 Tidewarden cutters swing out of the dark, lamps blazing. \"Heave to for inspection!\"\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤0\nRun for it\n55% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\nFight · Flare pistol\n39% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nBribe the sergeant · ¤5,860\nGuaranteed. The price follows your purse and your cargo.\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."
+        },
+        "audit": {
+          "viewport": "360x640",
+          "docScrollWidth": 360,
+          "bodyScrollWidth": 360,
+          "smallTargets": [],
+          "tightGaps": [
+            "div.modal > div.card-body > div.choices > button.choice.risk  GAP 6px to button.choice.risk \"Fight · Flare pisto…\"",
+            "div.modal > div.card-body > div.choices > button.choice.risk  GAP 6px to button.choice.risk \"Run for it 55% each…\"",
+            "div.modal > div.card-body > div.choices > button.choice  GAP 6px to button.choice.risk \"Fight · Flare pisto…\"",
+            "div.modal > div.card-body > div.choices > button.choice  GAP 6px to button.choice \"Bribe the sergeant …\""
+          ],
+          "targetCount": 4,
+          "smallText": [
+            "12px #side-body > div.mk-head > div > div.kicker \"Harbor services\"",
+            "12px div.svc > div.svc-h > div > div.kicker \"Your skiff\"",
+            "12px #side-body > div.harbor > div.svc > div.kicker \"Directory\"",
+            "12px #modal > div.modal > div.card-body > div.kicker \"Searchlights on the water\"",
+            "12.5px div.modal > div.card-body > div.enc-stats > div \"Your hull\" ×3",
+            "14px div.svc > div.directory > div > span \"· Lanternquay\" ×8",
+            "14px div.directory > div > span > b \"Marrow Quill's Loan Office\" ×8",
+            "14px div.choices > button.choice.risk > div > small \"55% each try to slip away. Each failed t\" ×2",
+            "14px div.choices > button.choice > div > small \"Guaranteed. The price follows your purse\" ×2"
+          ],
+          "lowContrast": [],
+          "inputsUnder16": [],
+          "overflowX": [],
+          "truncated": [],
+          "touchAction": {
+            "auto": 13,
+            "manipulation": 5
+          },
+          "selectability": {
+            "user-select:none -webkit-user-select:none callout:n/a": "button.btn.icon.hud-mute button.stat button.stat.debt button.btn.teal button.btn button.btn.amber button button.choice.risk button.choice"
+          },
+          "rootBehaviour": {
+            "html": "overscroll:n/a overflow:visible/visible touch-action:manipulation",
+            "body": "overscroll:n/a overflow:hidden/hidden touch-action:auto"
+          },
+          "scrollers": [
+            "#side-body 419/1525px overscroll:n/a overflow:auto/auto touch-action:auto",
+            "#modal > div.modal 600/626px overscroll:n/a overflow:auto/auto touch-action:auto"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Encounter reload commitment",
+      "result": {
+        "before": {
+          "hull": 100,
+          "boats": 2,
+          "rng": 1003497282,
+          "cash": 53600,
+          "ev": "patrol"
+        },
+        "after": {
+          "hull": 100,
+          "boats": 2,
+          "rng": 1003497282,
+          "cash": 53600,
+          "ev": "patrol"
+        },
+        "text": "SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA squadron of 2 Tidewarden cutters swing out of the dark, lamps blazing. \"Heave to for inspection!\"\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤0\nRun for it\n55% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\nFight · Flare pistol\n39% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nBribe the sergeant · ¤5,860\nGuaranteed. The price follows your purse and your cargo.\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."
+      }
+    }
+  ],
+  "errors": [],
+  "requests": [
+    "file:///C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-3/packet/index.html",
+    "file:///C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-3/packet/index.html"
+  ],
+  "executionError": "page.evaluate: TypeError: Argument 1 ('element') to Window.getComputedStyle must be an instance of Element\n    at C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-3\\judge-2\\layout.cjs:20:346"
+}

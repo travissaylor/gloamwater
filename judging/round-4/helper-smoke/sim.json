@@ -1,0 +1,1611 @@
+{
+ "meta": {
+  "game": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-4\\packet\\index.html",
+  "gameSha": "b18bcf691bc179f29bbcaa56153b2f47c14e7be3a177bbc520f50acfedfbaab4",
+  "runs": 1,
+  "seeds": [
+   100000
+  ],
+  "workers": 1,
+  "elapsedSec": 0.791,
+  "runsPerSec": 1.2642225031605563,
+  "mode": "full (real sailTo voyages, rendering on)",
+  "opts": {},
+  "pageErrors": [],
+  "date": "2026-11-14T17:19:37.025Z",
+  "ranks": [
+   "Drowned Debtor",
+   "Bilge Rat",
+   "Canal Runner",
+   "Lantern Broker",
+   "Tide Baron",
+   "Harbor Magnate",
+   "Sovereign of Gloamwater"
+  ],
+  "rankMins": [
+   null,
+   0,
+   40000,
+   250000,
+   400000,
+   650000,
+   850000
+  ],
+  "checkpoints": [
+   5,
+   10,
+   15,
+   18,
+   20,
+   25,
+   30
+  ],
+  "features": {
+   "depth": true,
+   "conf": true,
+   "canals": true,
+   "charters": true,
+   "stay": true,
+   "encTable": true,
+   "gameRng": true,
+   "crnVoyage": true,
+   "crnArrival": true
+  },
+  "set": {},
+  "mutated": {
+   "depth": [
+    [
+     60,
+     60
+    ],
+    [
+     40,
+     40
+    ],
+    [
+     24,
+     24
+    ],
+    [
+     14,
+     16
+    ],
+    [
+     10,
+     12
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "freightLicense": false,
+   "hold": [
+    30,
+    45,
+    70,
+    100,
+    140,
+    200
+   ],
+   "conf": {
+    "sure": [
+     0.8,
+     0.15,
+     0.05
+    ],
+    "likely": [
+     0.55,
+     0.27,
+     0.18
+    ],
+    "guess": [
+     0.3,
+     0.3,
+     0.4
+    ]
+   },
+   "shock": {
+    "spike": [
+     2,
+     3.5
+    ],
+    "crash": [
+     0.3,
+     0.52
+    ],
+    "weak": {
+     "spike": [
+      1.25,
+      1.55
+     ],
+     "crash": [
+      0.7,
+      0.82
+     ]
+    },
+    "turn": {
+     "spike": [
+      0.62,
+      0.76
+     ],
+     "crash": [
+      1.3,
+      1.55
+     ]
+    },
+    "fest": 1.3
+   },
+   "enc": {
+    "flee": {
+     "base": 0.46,
+     "motor": 0.15,
+     "perBoat": 0.06,
+     "load": 0.16,
+     "min": 0.12,
+     "max": 0.9
+    },
+    "fightPerBoat": 0.03,
+    "returnFire": 0.6,
+    "bribe": {
+     "perBoat": 250,
+     "purse": 0.1,
+     "cargo": 0.07
+    },
+    "toll": {
+     "min": 200,
+     "purse": 0.18,
+     "cargo": 0.12
+    },
+    "collect": {
+     "min": 500,
+     "share": 0.35,
+     "credit": 0.75
+    },
+    "runSeize": 0.12,
+    "loot": {
+     "gulls": [
+      250,
+      600
+     ],
+     "patrol": [
+      300,
+      800
+     ]
+    },
+    "gullCargo": 3500,
+    "collectFee": 0.1,
+    "calmNights": 3,
+    "calmFactor": 0.5
+   }
+  },
+  "label": "",
+  "repro": {
+   "seeds": 1,
+   "rng0Mismatch": 0,
+   "mktSeeds": 0,
+   "mktMismatch": 0
+  }
+ },
+ "summary": {
+  "informed": {
+   "policy": "informed",
+   "runs": 1,
+   "failed": 0,
+   "errors": [],
+   "p10": 627451,
+   "p25": 627451,
+   "median": 627451,
+   "p75": 627451,
+   "p90": 627451,
+   "max": 627451,
+   "min": 627451,
+   "mean": 627451,
+   "sinkRate": 0,
+   "rankDist": {
+    "Drowned Debtor": 0,
+    "Bilge Rat": 0,
+    "Canal Runner": 0,
+    "Lantern Broker": 0,
+    "Tide Baron": 1,
+    "Harbor Magnate": 0,
+    "Sovereign of Gloamwater": 0
+   },
+   "worthByNight": {
+    "5": {
+     "mean": 40024,
+     "median": 40024
+    },
+    "10": {
+     "mean": 102211,
+     "median": 102211
+    },
+    "15": {
+     "mean": 170988,
+     "median": 170988
+    },
+    "18": {
+     "mean": 337561,
+     "median": 337561
+    },
+    "20": {
+     "mean": 356347,
+     "median": 356347
+    },
+    "25": {
+     "mean": 466809,
+     "median": 466809
+    },
+    "30": {
+     "mean": 627451,
+     "median": 627451
+    }
+   },
+   "stats": {
+    "fights": 5,
+    "won": 3,
+    "interest": 2031,
+    "vaultEarned": 44389,
+    "bestFlip": 110785,
+    "maxBestFlip": 110785,
+    "holdTier": 0,
+    "wireless": 1,
+    "reloads": 0
+   },
+   "events": {
+    "gulls:fight": 5,
+    "victory:ok": 3,
+    "gulls:pay": 2,
+    "news:ok": 2,
+    "strongbox:ok": 1,
+    "courier:no": 2,
+    "patrol:fight": 7,
+    "eel:no": 1,
+    "squall:push": 2
+   },
+   "shape": {
+    "ratio30over18OfMedians": 1.8587781171403095,
+    "medianRunRatio30over18": 1.8587781171403095,
+    "maxSale": 223070,
+    "meanMaxSale": 223070,
+    "medianMaxSale": 223070,
+    "tallyCargoMean": 0
+   },
+   "reloadLog": {
+    "runsWithReloads": 0,
+    "found": 0,
+    "noSave": 0,
+    "cashBack": 0,
+    "hullBack": 0
+   },
+   "enc": {
+    "perRun": 5,
+    "by": {
+     "gulls|all": {
+      "n": 4,
+      "perRun": 4,
+      "cost": 5634.25,
+      "cash": -1302.25,
+      "hull": -6.25,
+      "cargo": 4113.25,
+      "debt": 0,
+      "loot": 0,
+      "rounds": 1.75,
+      "sunk": 0,
+      "expect": 12634.25
+     },
+     "gulls|first:fight": {
+      "n": 3,
+      "perRun": 3,
+      "cost": 3274.3333333333335,
+      "cash": 611.3333333333334,
+      "hull": -8.333333333333334,
+      "cargo": 3594,
+      "debt": 0,
+      "loot": 0,
+      "rounds": 2,
+      "sunk": 0,
+      "expect": 12808.333333333334
+     },
+     "gulls|end:won": {
+      "n": 2,
+      "perRun": 2,
+      "cost": -1025.5,
+      "cash": 1183,
+      "hull": -4.5,
+      "cargo": 0,
+      "debt": 0,
+      "loot": 0,
+      "rounds": 2,
+      "sunk": 0,
+      "expect": 14064.5
+     },
+     "all|all": {
+      "n": 5,
+      "perRun": 5,
+      "cost": 4461.2,
+      "cash": -841.6,
+      "hull": -9.4,
+      "cargo": 3290.6,
+      "debt": 0,
+      "loot": 0,
+      "rounds": 2.8,
+      "sunk": 0,
+      "expect": 10434.2
+     },
+     "gulls|end:Paid": {
+      "n": 2,
+      "perRun": 2,
+      "cost": 12294,
+      "cash": -3787.5,
+      "hull": -8,
+      "cargo": 8226.5,
+      "debt": 0,
+      "loot": 0,
+      "rounds": 1.5,
+      "sunk": 0,
+      "expect": 11204
+     },
+     "patrol|all": {
+      "n": 1,
+      "perRun": 1,
+      "cost": -231,
+      "cash": 1001,
+      "hull": -22,
+      "cargo": 0,
+      "debt": 0,
+      "loot": 0,
+      "rounds": 7,
+      "sunk": 0,
+      "expect": 1634
+     },
+     "patrol|first:fight": {
+      "n": 1,
+      "perRun": 1,
+      "cost": -231,
+      "cash": 1001,
+      "hull": -22,
+      "cargo": 0,
+      "debt": 0,
+      "loot": 0,
+      "rounds": 7,
+      "sunk": 0,
+      "expect": 1634
+     },
+     "patrol|end:won": {
+      "n": 1,
+      "perRun": 1,
+      "cost": -231,
+      "cash": 1001,
+      "hull": -22,
+      "cargo": 0,
+      "debt": 0,
+      "loot": 0,
+      "rounds": 7,
+      "sunk": 0,
+      "expect": 1634
+     },
+     "gulls|first:pay": {
+      "n": 1,
+      "perRun": 1,
+      "cost": 12714,
+      "cash": -7043,
+      "hull": 0,
+      "cargo": 5671,
+      "debt": 0,
+      "loot": 0,
+      "rounds": 1,
+      "sunk": 0,
+      "expect": 12112
+     }
+    }
+   },
+   "charters": {
+    "perRun": 1,
+    "anyShare": 1,
+    "firstDay": 18,
+    "spent": 20000,
+    "byDistrict": {
+     "ot": 1
+    }
+   },
+   "route": {
+    "one": 22,
+    "twoFirst": 0,
+    "twoOn": 0,
+    "twoOff": 0,
+    "stay": 7
+   },
+   "staysPerRun": 7,
+   "debtEndMean": 0
+  }
+ },
+ "runs": {
+  "informed": [
+   {
+    "seed": 100000,
+    "net": 627451,
+    "rank": "Tide Baron",
+    "sunk": false,
+    "day": 30,
+    "hull": 33,
+    "over": false,
+    "tallyCargo": 0,
+    "debtEnd": 0,
+    "worth": [
+     40024,
+     102211,
+     170988,
+     337561,
+     356347,
+     466809,
+     627451
+    ],
+    "worthAll": [
+     -3500,
+     -2796,
+     482,
+     25389,
+     40024,
+     58593,
+     74546,
+     86144,
+     88141,
+     102211,
+     98671,
+     114995,
+     130722,
+     137990,
+     170988,
+     228418,
+     311422,
+     337561,
+     366498,
+     356347,
+     383961,
+     404951,
+     401156,
+     429551,
+     466809,
+     541718,
+     544741,
+     553159,
+     572348,
+     627451
+    ],
+    "stats": {
+     "trips": 22,
+     "fights": 5,
+     "won": 3,
+     "fled": 0,
+     "bribes": 0,
+     "interest": 2031,
+     "vaultEarned": 44389,
+     "bestFlip": 110785,
+     "maxSale": 223070,
+     "whispersBought": 0,
+     "holdTier": 0,
+     "wireless": true,
+     "arms": 0,
+     "motor": 0,
+     "lost": 20015
+    },
+    "events": {
+     "gulls:fight": 5,
+     "victory:ok": 3,
+     "gulls:pay": 2,
+     "news:ok": 2,
+     "strongbox:ok": 1,
+     "courier:no": 2,
+     "patrol:fight": 7,
+     "eel:no": 1,
+     "squall:push": 2
+    },
+    "out": {
+     "route": {
+      "one": 22,
+      "twoFirst": 0,
+      "twoOn": 0,
+      "twoOff": 0,
+      "stay": 7
+     },
+     "charterBuys": [
+      {
+       "day": 18,
+       "d": "ot",
+       "cost": 20000,
+       "u": 16967,
+       "uMean": 16967,
+       "value": 49543,
+       "idle": 51453
+      }
+     ]
+    },
+    "reloads": 0,
+    "reloadLog": {
+     "found": 0,
+     "noSave": 0,
+     "cashBack": 0,
+     "hullBack": 0
+    },
+    "errors": [],
+    "enc": [
+     {
+      "kind": "gulls",
+      "day": 4,
+      "boats": 2,
+      "first": "fight",
+      "last": "fight",
+      "rounds": 2,
+      "seq": "fight,fight",
+      "end": "won",
+      "cash": 974,
+      "hull": 0,
+      "debt": 0,
+      "cargoLost": 0,
+      "lootGoods": 0,
+      "parcelsLost": 0,
+      "cargoV": 35170,
+      "cashBefore": 6768,
+      "fleeP": 0.24,
+      "fightP": 0.22,
+      "offer": 4955,
+      "expectBest": "fight",
+      "expectCost": 2712,
+      "cost": -974
+     },
+     {
+      "kind": "gulls",
+      "day": 7,
+      "boats": 3,
+      "first": "fight",
+      "last": "pay",
+      "rounds": 2,
+      "seq": "fight,pay",
+      "end": "Paid",
+      "cash": -532,
+      "hull": -16,
+      "debt": 0,
+      "cargoLost": 10782,
+      "lootGoods": 0,
+      "parcelsLost": 0,
+      "cargoV": 89984,
+      "cashBefore": 532,
+      "fleeP": 0.19,
+      "fightP": 0.19,
+      "offer": 11112,
+      "expectBest": "fight",
+      "expectCost": 10296,
+      "cost": 11874
+     },
+     {
+      "kind": "patrol",
+      "day": 18,
+      "boats": 1,
+      "first": "fight",
+      "last": "fight",
+      "rounds": 7,
+      "seq": "fight,fight,fight,fight,fight,fight,fight",
+      "end": "won",
+      "cash": 1001,
+      "hull": -22,
+      "debt": 0,
+      "cargoLost": 0,
+      "lootGoods": 0,
+      "parcelsLost": 0,
+      "cargoV": 166018,
+      "cashBefore": 15103,
+      "fleeP": 0.3,
+      "fightP": 0.25,
+      "offer": 6385,
+      "expectBest": "fight",
+      "expectCost": 1634,
+      "cost": -231
+     },
+     {
+      "kind": "gulls",
+      "day": 20,
+      "boats": 2,
+      "first": "fight",
+      "last": "fight",
+      "rounds": 2,
+      "seq": "fight,fight",
+      "end": "won",
+      "cash": 1392,
+      "hull": -9,
+      "debt": 0,
+      "cargoLost": 0,
+      "lootGoods": 0,
+      "parcelsLost": 0,
+      "cargoV": 98311,
+      "cashBefore": 79480,
+      "fleeP": 0.24,
+      "fightP": 0.22,
+      "offer": 26057,
+      "expectBest": "fight",
+      "expectCost": 25417,
+      "cost": -1077
+     },
+     {
+      "kind": "gulls",
+      "day": 27,
+      "boats": 4,
+      "first": "pay",
+      "last": "pay",
+      "rounds": 1,
+      "seq": "pay",
+      "end": "Paid",
+      "cash": -7043,
+      "hull": 0,
+      "debt": 0,
+      "cargoLost": 5671,
+      "lootGoods": 0,
+      "parcelsLost": 0,
+      "cargoV": 89324,
+      "cashBefore": 7043,
+      "fleeP": 0.17,
+      "fightP": 0.16,
+      "offer": 10340,
+      "expectBest": "pay",
+      "expectCost": 12112,
+      "cost": 12714
+     }
+    ],
+    "charters": [
+     {
+      "day": 18,
+      "d": "ot",
+      "cost": 20000
+     }
+    ],
+    "stays": 7,
+    "trades": [
+     {
+      "day": 1,
+      "d": "lq",
+      "g": "rain",
+      "kind": "buy",
+      "q": 28,
+      "total": 2436
+     },
+     {
+      "day": 2,
+      "d": "sl",
+      "g": "rain",
+      "kind": "sell",
+      "q": 28,
+      "total": 3500
+     },
+     {
+      "day": 2,
+      "d": "sl",
+      "g": "pearl",
+      "kind": "buy",
+      "q": 15,
+      "total": 3540
+     },
+     {
+      "day": 3,
+      "d": "de",
+      "g": "pearl",
+      "kind": "sell",
+      "q": 15,
+      "total": 7200
+     },
+     {
+      "day": 3,
+      "d": "de",
+      "g": "saffron",
+      "kind": "buy",
+      "q": 8,
+      "total": 6656
+     },
+     {
+      "day": 4,
+      "d": "ot",
+      "g": "saffron",
+      "kind": "sell",
+      "q": 8,
+      "total": 31968
+     },
+     {
+      "day": 4,
+      "d": "ot",
+      "g": "rain",
+      "kind": "buy",
+      "q": 18,
+      "total": 1926
+     },
+     {
+      "day": 4,
+      "d": "ot",
+      "g": "eels",
+      "kind": "buy",
+      "q": 12,
+      "total": 23842
+     },
+     {
+      "day": 5,
+      "d": "sm",
+      "g": "rain",
+      "kind": "sell",
+      "q": 18,
+      "total": 5706
+     },
+     {
+      "day": 5,
+      "d": "sm",
+      "g": "eels",
+      "kind": "sell",
+      "q": 12,
+      "total": 34152
+     },
+     {
+      "day": 5,
+      "d": "sm",
+      "g": "pearl",
+      "kind": "buy",
+      "q": 2,
+      "total": 580
+     },
+     {
+      "day": 5,
+      "d": "sm",
+      "g": "saffron",
+      "kind": "buy",
+      "q": 3,
+      "total": 2229
+     },
+     {
+      "day": 5,
+      "d": "sm",
+      "g": "chips",
+      "kind": "buy",
+      "q": 4,
+      "total": 12684
+     },
+     {
+      "day": 5,
+      "d": "sm",
+      "g": "ink",
+      "kind": "buy",
+      "q": 2,
+      "total": 31988
+     },
+     {
+      "day": 6,
+      "d": "lq",
+      "g": "saffron",
+      "kind": "sell",
+      "q": 3,
+      "total": 2931
+     },
+     {
+      "day": 6,
+      "d": "lq",
+      "g": "ink",
+      "kind": "sell",
+      "q": 2,
+      "total": 45138
+     },
+     {
+      "day": 6,
+      "d": "lq",
+      "g": "eels",
+      "kind": "buy",
+      "q": 12,
+      "total": 26679
+     },
+     {
+      "day": 7,
+      "d": "de",
+      "g": "pearl",
+      "kind": "sell",
+      "q": 2,
+      "total": 1172
+     },
+     {
+      "day": 7,
+      "d": "de",
+      "g": "eels",
+      "kind": "sell",
+      "q": 12,
+      "total": 45912
+     },
+     {
+      "day": 7,
+      "d": "de",
+      "g": "saffron",
+      "kind": "buy",
+      "q": 20,
+      "total": 12480
+     },
+     {
+      "day": 7,
+      "d": "de",
+      "g": "silk",
+      "kind": "buy",
+      "q": 5,
+      "total": 41550
+     },
+     {
+      "day": 8,
+      "d": "ot",
+      "g": "saffron",
+      "kind": "sell",
+      "q": 10,
+      "total": 12330
+     },
+     {
+      "day": 8,
+      "d": "ot",
+      "g": "silk",
+      "kind": "sell",
+      "q": 5,
+      "total": 55490
+     },
+     {
+      "day": 8,
+      "d": "ot",
+      "g": "rain",
+      "kind": "buy",
+      "q": 23,
+      "total": 3404
+     },
+     {
+      "day": 8,
+      "d": "ot",
+      "g": "ink",
+      "kind": "buy",
+      "q": 3,
+      "total": 57126
+     },
+     {
+      "day": 9,
+      "d": "lq",
+      "g": "rain",
+      "kind": "sell",
+      "q": 23,
+      "total": 4899
+     },
+     {
+      "day": 9,
+      "d": "lq",
+      "g": "chips",
+      "kind": "sell",
+      "q": 4,
+      "total": 17608
+     },
+     {
+      "day": 9,
+      "d": "lq",
+      "g": "ink",
+      "kind": "sell",
+      "q": 3,
+      "total": 57024
+     },
+     {
+      "day": 9,
+      "d": "lq",
+      "g": "pearl",
+      "kind": "buy",
+      "q": 18,
+      "total": 6192
+     },
+     {
+      "day": 9,
+      "d": "lq",
+      "g": "eels",
+      "kind": "buy",
+      "q": 12,
+      "total": 24419
+     },
+     {
+      "day": 10,
+      "d": "de",
+      "g": "pearl",
+      "kind": "sell",
+      "q": 18,
+      "total": 8676
+     },
+     {
+      "day": 10,
+      "d": "de",
+      "g": "chips",
+      "kind": "buy",
+      "q": 10,
+      "total": 43820
+     },
+     {
+      "day": 12,
+      "d": "de",
+      "g": "eels",
+      "kind": "sell",
+      "q": 1,
+      "total": 2002
+     },
+     {
+      "day": 12,
+      "d": "de",
+      "g": "chips",
+      "kind": "sell",
+      "q": 1,
+      "total": 6828
+     },
+     {
+      "day": 12,
+      "d": "de",
+      "g": "rain",
+      "kind": "buy",
+      "q": 7,
+      "total": 910
+     },
+     {
+      "day": 12,
+      "d": "de",
+      "g": "silk",
+      "kind": "buy",
+      "q": 3,
+      "total": 24870
+     },
+     {
+      "day": 13,
+      "d": "sl",
+      "g": "rain",
+      "kind": "sell",
+      "q": 7,
+      "total": 1470
+     },
+     {
+      "day": 13,
+      "d": "sl",
+      "g": "eels",
+      "kind": "sell",
+      "q": 10,
+      "total": 24710
+     },
+     {
+      "day": 13,
+      "d": "sl",
+      "g": "chips",
+      "kind": "sell",
+      "q": 9,
+      "total": 68720
+     },
+     {
+      "day": 13,
+      "d": "sl",
+      "g": "silk",
+      "kind": "sell",
+      "q": 3,
+      "total": 27711
+     },
+     {
+      "day": 13,
+      "d": "sl",
+      "g": "pearl",
+      "kind": "buy",
+      "q": 29,
+      "total": 7047
+     },
+     {
+      "day": 14,
+      "d": "de",
+      "g": "pearl",
+      "kind": "sell",
+      "q": 29,
+      "total": 13369
+     },
+     {
+      "day": 14,
+      "d": "de",
+      "g": "eels",
+      "kind": "sell",
+      "q": 1,
+      "total": 3316
+     },
+     {
+      "day": 14,
+      "d": "de",
+      "g": "rain",
+      "kind": "buy",
+      "q": 22,
+      "total": 3212
+     },
+     {
+      "day": 14,
+      "d": "de",
+      "g": "silk",
+      "kind": "buy",
+      "q": 8,
+      "total": 59776
+     },
+     {
+      "day": 15,
+      "d": "sl",
+      "g": "rain",
+      "kind": "sell",
+      "q": 22,
+      "total": 5698
+     },
+     {
+      "day": 15,
+      "d": "sl",
+      "g": "silk",
+      "kind": "sell",
+      "q": 8,
+      "total": 89380
+     },
+     {
+      "day": 15,
+      "d": "sl",
+      "g": "eels",
+      "kind": "buy",
+      "q": 20,
+      "total": 22245
+     },
+     {
+      "day": 15,
+      "d": "sl",
+      "g": "chips",
+      "kind": "buy",
+      "q": 9,
+      "total": 38795
+     },
+     {
+      "day": 15,
+      "d": "sl",
+      "g": "ink",
+      "kind": "buy",
+      "q": 1,
+      "total": 14902
+     },
+     {
+      "day": 16,
+      "d": "de",
+      "g": "chips",
+      "kind": "sell",
+      "q": 9,
+      "total": 61722
+     },
+     {
+      "day": 16,
+      "d": "de",
+      "g": "ink",
+      "kind": "sell",
+      "q": 1,
+      "total": 18984
+     },
+     {
+      "day": 16,
+      "d": "de",
+      "g": "eels",
+      "kind": "buy",
+      "q": 10,
+      "total": 26720
+     },
+     {
+      "day": 17,
+      "d": "de",
+      "g": "eels",
+      "kind": "sell",
+      "q": 30,
+      "total": 159750
+     },
+     {
+      "day": 17,
+      "d": "de",
+      "g": "saffron",
+      "kind": "buy",
+      "q": 24,
+      "total": 21704
+     },
+     {
+      "day": 17,
+      "d": "de",
+      "g": "silk",
+      "kind": "buy",
+      "q": 6,
+      "total": 43410
+     },
+     {
+      "day": 18,
+      "d": "ot",
+      "g": "saffron",
+      "kind": "sell",
+      "q": 24,
+      "total": 35424
+     },
+     {
+      "day": 18,
+      "d": "ot",
+      "g": "silk",
+      "kind": "sell",
+      "q": 6,
+      "total": 53544
+     },
+     {
+      "day": 18,
+      "d": "ot",
+      "g": "pearl",
+      "kind": "buy",
+      "q": 3,
+      "total": 981
+     },
+     {
+      "day": 18,
+      "d": "ot",
+      "g": "eels",
+      "kind": "buy",
+      "q": 27,
+      "total": 129135
+     },
+     {
+      "day": 19,
+      "d": "de",
+      "g": "pearl",
+      "kind": "sell",
+      "q": 3,
+      "total": 1221
+     },
+     {
+      "day": 19,
+      "d": "de",
+      "g": "eels",
+      "kind": "sell",
+      "q": 27,
+      "total": 173976
+     },
+     {
+      "day": 19,
+      "d": "de",
+      "g": "pearl",
+      "kind": "buy",
+      "q": 16,
+      "total": 6512
+     },
+     {
+      "day": 19,
+      "d": "de",
+      "g": "chips",
+      "kind": "buy",
+      "q": 10,
+      "total": 49350
+     },
+     {
+      "day": 19,
+      "d": "de",
+      "g": "silk",
+      "kind": "buy",
+      "q": 4,
+      "total": 25429
+     },
+     {
+      "day": 21,
+      "d": "sl",
+      "g": "pearl",
+      "kind": "sell",
+      "q": 16,
+      "total": 6416
+     },
+     {
+      "day": 21,
+      "d": "sl",
+      "g": "chips",
+      "kind": "sell",
+      "q": 10,
+      "total": 57380
+     },
+     {
+      "day": 21,
+      "d": "sl",
+      "g": "kelp",
+      "kind": "buy",
+      "q": 7,
+      "total": 273
+     },
+     {
+      "day": 21,
+      "d": "sl",
+      "g": "saffron",
+      "kind": "buy",
+      "q": 15,
+      "total": 13589
+     },
+     {
+      "day": 21,
+      "d": "sl",
+      "g": "ink",
+      "kind": "buy",
+      "q": 4,
+      "total": 54201
+     },
+     {
+      "day": 22,
+      "d": "lq",
+      "g": "kelp",
+      "kind": "sell",
+      "q": 7,
+      "total": 392
+     },
+     {
+      "day": 22,
+      "d": "lq",
+      "g": "silk",
+      "kind": "sell",
+      "q": 4,
+      "total": 37104
+     },
+     {
+      "day": 22,
+      "d": "lq",
+      "g": "saffron",
+      "kind": "buy",
+      "q": 5,
+      "total": 5790
+     },
+     {
+      "day": 22,
+      "d": "lq",
+      "g": "ink",
+      "kind": "buy",
+      "q": 6,
+      "total": 89932
+     },
+     {
+      "day": 23,
+      "d": "ot",
+      "g": "saffron",
+      "kind": "sell",
+      "q": 20,
+      "total": 28340
+     },
+     {
+      "day": 23,
+      "d": "ot",
+      "g": "silk",
+      "kind": "buy",
+      "q": 12,
+      "total": 111552
+     },
+     {
+      "day": 24,
+      "d": "ot",
+      "g": "ink",
+      "kind": "sell",
+      "q": 1,
+      "total": 14169
+     },
+     {
+      "day": 24,
+      "d": "ot",
+      "g": "rain",
+      "kind": "buy",
+      "q": 8,
+      "total": 688
+     },
+     {
+      "day": 24,
+      "d": "ot",
+      "g": "silk",
+      "kind": "buy",
+      "q": 1,
+      "total": 11143
+     },
+     {
+      "day": 25,
+      "d": "ot",
+      "g": "rain",
+      "kind": "sell",
+      "q": 8,
+      "total": 1544
+     },
+     {
+      "day": 25,
+      "d": "ot",
+      "g": "kelp",
+      "kind": "buy",
+      "q": 8,
+      "total": 224
+     },
+     {
+      "day": 26,
+      "d": "ot",
+      "g": "silk",
+      "kind": "sell",
+      "q": 13,
+      "total": 217802
+     },
+     {
+      "day": 26,
+      "d": "ot",
+      "g": "ink",
+      "kind": "sell",
+      "q": 9,
+      "total": 160956
+     },
+     {
+      "day": 26,
+      "d": "ot",
+      "g": "kelp",
+      "kind": "buy",
+      "q": 22,
+      "total": 682
+     },
+     {
+      "day": 27,
+      "d": "lq",
+      "g": "kelp",
+      "kind": "sell",
+      "q": 30,
+      "total": 1680
+     },
+     {
+      "day": 27,
+      "d": "lq",
+      "g": "eels",
+      "kind": "buy",
+      "q": 12,
+      "total": 37199
+     },
+     {
+      "day": 27,
+      "d": "lq",
+      "g": "chips",
+      "kind": "buy",
+      "q": 9,
+      "total": 27008
+     },
+     {
+      "day": 28,
+      "d": "de",
+      "g": "eels",
+      "kind": "sell",
+      "q": 10,
+      "total": 33650
+     },
+     {
+      "day": 28,
+      "d": "de",
+      "g": "chips",
+      "kind": "sell",
+      "q": 9,
+      "total": 38916
+     },
+     {
+      "day": 28,
+      "d": "de",
+      "g": "saffron",
+      "kind": "buy",
+      "q": 18,
+      "total": 13338
+     },
+     {
+      "day": 28,
+      "d": "de",
+      "g": "silk",
+      "kind": "buy",
+      "q": 8,
+      "total": 79803
+     },
+     {
+      "day": 28,
+      "d": "de",
+      "g": "ink",
+      "kind": "buy",
+      "q": 4,
+      "total": 61162
+     },
+     {
+      "day": 29,
+      "d": "lq",
+      "g": "saffron",
+      "kind": "sell",
+      "q": 14,
+      "total": 13482
+     },
+     {
+      "day": 29,
+      "d": "lq",
+      "g": "silk",
+      "kind": "buy",
+      "q": 8,
+      "total": 91704
+     },
+     {
+      "day": 29,
+      "d": "lq",
+      "g": "ink",
+      "kind": "buy",
+      "q": 6,
+      "total": 91059
+     },
+     {
+      "day": 30,
+      "d": "ot",
+      "g": "saffron",
+      "kind": "sell",
+      "q": 4,
+      "total": 4080
+     },
+     {
+      "day": 30,
+      "d": "ot",
+      "g": "silk",
+      "kind": "sell",
+      "q": 16,
+      "total": 162865
+     },
+     {
+      "day": 30,
+      "d": "ot",
+      "g": "ink",
+      "kind": "sell",
+      "q": 10,
+      "total": 223070
+     }
+    ],
+    "routeLog": [
+     {
+      "day": 1,
+      "from": "lq",
+      "to": "sl"
+     },
+     {
+      "day": 2,
+      "from": "sl",
+      "to": "de"
+     },
+     {
+      "day": 3,
+      "from": "de",
+      "to": "ot"
+     },
+     {
+      "day": 4,
+      "from": "ot",
+      "to": "sm"
+     },
+     {
+      "day": 5,
+      "from": "sm",
+      "to": "lq"
+     },
+     {
+      "day": 6,
+      "from": "lq",
+      "to": "de"
+     },
+     {
+      "day": 7,
+      "from": "de",
+      "to": "ot"
+     },
+     {
+      "day": 8,
+      "from": "ot",
+      "to": "lq"
+     },
+     {
+      "day": 9,
+      "from": "lq",
+      "to": "de"
+     },
+     {
+      "day": 10,
+      "from": "de",
+      "to": "de"
+     },
+     {
+      "day": 11,
+      "from": "de",
+      "to": "de"
+     },
+     {
+      "day": 12,
+      "from": "de",
+      "to": "sl"
+     },
+     {
+      "day": 13,
+      "from": "sl",
+      "to": "de"
+     },
+     {
+      "day": 14,
+      "from": "de",
+      "to": "sl"
+     },
+     {
+      "day": 15,
+      "from": "sl",
+      "to": "de"
+     },
+     {
+      "day": 16,
+      "from": "de",
+      "to": "de"
+     },
+     {
+      "day": 17,
+      "from": "de",
+      "to": "ot"
+     },
+     {
+      "day": 18,
+      "from": "ot",
+      "to": "de"
+     },
+     {
+      "day": 19,
+      "from": "de",
+      "to": "de"
+     },
+     {
+      "day": 20,
+      "from": "de",
+      "to": "sl"
+     },
+     {
+      "day": 21,
+      "from": "sl",
+      "to": "lq"
+     },
+     {
+      "day": 22,
+      "from": "lq",
+      "to": "ot"
+     },
+     {
+      "day": 23,
+      "from": "ot",
+      "to": "ot"
+     },
+     {
+      "day": 24,
+      "from": "ot",
+      "to": "ot"
+     },
+     {
+      "day": 25,
+      "from": "ot",
+      "to": "ot"
+     },
+     {
+      "day": 26,
+      "from": "ot",
+      "to": "lq"
+     },
+     {
+      "day": 27,
+      "from": "lq",
+      "to": "de"
+     },
+     {
+      "day": 28,
+      "from": "de",
+      "to": "lq"
+     },
+     {
+      "day": 29,
+      "from": "lq",
+      "to": "ot"
+     }
+    ],
+    "rng0": {
+     "m": 4032333343,
+     "e": 3267008575
+    },
+    "mkt": 891310363
+   }
+  ]
+ }
+}

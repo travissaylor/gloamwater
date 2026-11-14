@@ -1,0 +1,169 @@
+[
+  {
+    "viewport": [
+      390,
+      664
+    ],
+    "overflow": false,
+    "confirm": {
+      "x": 199,
+      "y": 593,
+      "width": 172,
+      "height": 52
+    }
+  },
+  {
+    "viewport": [
+      360,
+      640
+    ],
+    "overflow": false,
+    "confirm": {
+      "x": 169.6875,
+      "y": 569,
+      "width": 171.3125,
+      "height": 52
+    }
+  },
+  {
+    "viewport": [
+      430,
+      932
+    ],
+    "overflow": false,
+    "confirm": {
+      "x": 219,
+      "y": 861,
+      "width": 192,
+      "height": 52
+    }
+  },
+  {
+    "viewport": [
+      1280,
+      800
+    ],
+    "overflow": false,
+    "confirm": {
+      "x": 644,
+      "y": 712.65625,
+      "width": 237,
+      "height": 52
+    }
+  },
+  {
+    "input": "-10",
+    "result": {
+      "button": "Buy",
+      "disabled": true,
+      "summary": "Price each¤197Total cost¤0Purse after¤2,500Hold after0 / 30Dealers here sell about 40 more at this price."
+    }
+  },
+  {
+    "input": "0",
+    "result": {
+      "button": "Buy",
+      "disabled": true,
+      "summary": "Price each¤197Total cost¤0Purse after¤2,500Hold after0 / 30Dealers here sell about 40 more at this price."
+    }
+  },
+  {
+    "input": "1.5",
+    "result": {
+      "button": "Buy 2 for ¤394",
+      "disabled": false,
+      "summary": "Price each¤197Total cost¤394Purse after¤2,106Hold after2 / 30Dealers here sell about 40 more at this price."
+    }
+  },
+  {
+    "input": "999999999999999999999",
+    "result": {
+      "button": "Buy 12 for ¤2,364",
+      "disabled": false,
+      "summary": "Price each¤197Total cost¤2,364Purse after¤136Hold after12 / 30Dealers here sell about 40 more at this price."
+    }
+  },
+  {
+    "input": "1e309",
+    "result": {
+      "button": "Buy",
+      "disabled": true,
+      "summary": "Price each¤197Total cost¤0Purse after¤2,500Hold after0 / 30Dealers here sell about 40 more at this price."
+    }
+  },
+  {
+    "input": "",
+    "result": {
+      "button": "Buy",
+      "disabled": true,
+      "summary": "Price each¤197Total cost¤0Purse after¤2,500Hold after0 / 30Dealers here sell about 40 more at this price."
+    }
+  },
+  {
+    "typedConfirm": {
+      "cash": 2500,
+      "cargo": {
+        "q": 0,
+        "cost": 0
+      },
+      "valid": true
+    }
+  },
+  {
+    "reloadEqual": true
+  },
+  {
+    "abuse": {
+      "tests": 336,
+      "profitable": 0,
+      "bank": 1015,
+      "debt": 6360,
+      "expectedDebt": 6360,
+      "tally": {
+        "cash": 2500,
+        "bank": 1015,
+        "cargo": 0,
+        "debt": 6360,
+        "net": -2845,
+        "sunk": false
+      }
+    }
+  },
+  {
+    "upgrades": {
+      "capacity": 45,
+      "motor": 1,
+      "cash": 93000
+    }
+  },
+  {
+    "corrupt": "{broken",
+    "title": true,
+    "continue": 0,
+    "scores": []
+  },
+  {
+    "corrupt": "null",
+    "title": true,
+    "continue": 0,
+    "scores": []
+  },
+  {
+    "corrupt": "{\"cash\":-3}",
+    "title": true,
+    "continue": 0,
+    "scores": []
+  },
+  {
+    "corrupt": "[]",
+    "title": true,
+    "continue": 0,
+    "scores": []
+  },
+  {
+    "lateDebtText": "MARROW QUILL'S LOAN OFFICE\nRepay Marrow Quill\n25%\n50%\n75%\nAll ¤2,500\nDebt after\n¤3,500\nPurse after\n¤0\nCancel\nRepay ¤2,500"
+  },
+  {
+    "fatal": "locator.tap: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#go')\u001b[22m\n\n    at C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-3\\judge-3\\checks.cjs:12:346"
+  }
+]

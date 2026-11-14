@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "checks": {
+    "fifteen_scores": true,
+    "valid_scores": true,
+    "criteria_match": true,
+    "specific_evidence": true,
+    "limitations": true,
+    "screenshots_exist": true,
+    "reports_exist": true,
+    "arithmetic": true
+  },
+  "weighted_total": 86.1,
+  "judge": 2,
+  "model": "gpt-6.1-sol"
+}

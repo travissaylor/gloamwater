@@ -1,0 +1,247 @@
+{
+  "judge": 2,
+  "lens": "visual and interaction design",
+  "model": "gpt-6.1-sol",
+  "build": "5838fe80881e78d86480324693f4da448c3fb55214ae6b89afa59f66d7731654",
+  "scores": {
+    "A1": 8,
+    "A2": 8,
+    "A3": 8,
+    "A4": 8,
+    "A5": 8,
+    "B1": 9,
+    "B2": 8,
+    "B3": 8,
+    "B4": 9,
+    "B5": 7,
+    "C1": 9,
+    "C2": 10,
+    "C3": 9,
+    "C4": 9,
+    "C5": 8
+  },
+  "weighted_total": 83.5,
+  "caps_applied": [],
+  "criteria": {
+    "A1": {
+      "score": 8,
+      "evidence": "I bought six Rust Pearls at Lanternquay for 2,406 and sold them at Orchid on night 2 for 4,020 through actual touch taps. Across 29 UI voyages I encountered missing dealers, market shocks, limited cash and hold space. The separate public-information regression traded several goods and earned a 23,800 Dreamsilk flip. Dealer depth, remembered prices, district specialities and the public fleet calendar make the best load and destination change.",
+      "below_10": [
+        "The public calendar repeats the same opportunities each run; district differences mostly change prices, stock, risk and services rather than trade rules.",
+        "Two runs do not establish several equally viable strategies; the fixed-route touch routine was intentionally simple."
+      ]
+    },
+    "A2": {
+      "score": 8,
+      "evidence": "Debt visibly grew from 6,000 to 6,360 after the first voyage and changed to 10% late interest. Collectors took purse and cargo during the touch game. A labeled fixture verified 10,000 bank became 10,150 then 10,302, while debt became 6,360 then 6,996 across the deadline. I exercised purchases and repayment through the UI and ran 200 same-port buy/sell round trips without a profit. The public-information regression ended positive despite 45,697 interest and 41,594 losses.",
+      "below_10": [
+        "The vault and major upgrades were exercised with funded fixtures, not earned and optimized within my full touch run. Their comparative payback was not established.",
+        "The exploit sample used one small-capital fixture; I did not independently reproduce the NOTES multi-seed economic claims or rule out every dominant route."
+      ]
+    },
+    "A3": {
+      "score": 8,
+      "evidence": "My touch game encountered patrols, Gull Gang tolls, collectors, a squall, a crate, leaks, a thief, courier offers and Fenna. I saw explicit run/fight odds, guaranteed payment costs, cargo stakes, hull damage and the option to lose a night sheltering. Paying with insufficient cash actually removed cargo. A separate upgraded fixture changed displayed flee and fight odds, and reloading a committed patrol preserved its boats and RNG.",
+      "below_10": [
+        "Safe yielding or paying was often attractive in my cautious runs; I did not play a successful combat or escape strategy through a full run.",
+        "Several arrivals are automatic numerical losses or windfalls followed by Continue; repeated collectors and result cards become familiar."
+      ]
+    },
+    "A4": {
+      "score": 8,
+      "evidence": "I completed nights 1 through 30 with 29 actual UI-touch voyages and separately completed a fast function-driven 30-night run. Early cash limits, the night-10 debt deadline, four-night fleet windows, late collectors and the explicit final-night settlement create an arc. The regression grew into larger-value goods; the touch game showed how unresolved debt can outweigh trading profits.",
+      "below_10": [
+        "The middle still repeats market, sheet, map, destination card and occasional outcome cards. My touch run took about eleven minutes with scripted pauses, which is not a reliable human completion-time measure.",
+        "An unsuccessful opening can produce a prolonged debt chase; my poor fixed-route routine reached the end without a debt-clearance or expansion milestone."
+      ]
+    },
+    "A5": {
+      "score": 8,
+      "evidence": "I took all five tour steps before trading. The tour explains green/amber prices, 6% debt, carrying space, services and night costs. The first trade sheet exposed exact cost, cash and hold after; my first sale exposed average cost and 1,614 profit. The final screen explained cash, vault, half-price cargo, debt, rank and the gap to the next rank. Both final totals summed correctly.",
+      "below_10": [
+        "Phone market tags suppress the destination name and usually show only one tag; finding the destination or deeper price context takes another sheet or map visit.",
+        "Dealer-depth and stale-price details require more learning than the short tour provides; the chart begins with unlabeled pre-run warmup history."
+      ]
+    },
+    "B1": {
+      "score": 9,
+      "evidence": "I inspected the title, market, trade, map, harbor, event and ending screenshots personally. The gold serif title over a reflected drowned skyline, navy canal map, warm lamps, commodity-specific line drawings and named service portraits form a coherent identity. In touch-night-14.png I saw Marrow and the twin vault clerks; fixture-yard-390x664.png shows Odile. Fenna has her own illustrated houseboat scene. The negative ending keeps the same lantern emblem, typography and palette while shifting to rose. References: 01-title-390.png, 05-map.png, event-buy.png, touch-score.png, desktop-title.png.",
+      "below_10": [
+        "District islands reuse the same small skyline construction, differentiated mainly by glyphs and labels; not every location has a distinctive architectural silhouette.",
+        "Several outcomes use an enlarged bell, parcel or safe icon instead of the richer character scenes. The ending reuses the lantern emblem across ranks."
+      ]
+    },
+    "B2": {
+      "score": 8,
+      "evidence": "At 390x844 I could read night, purse, vault, debt rate, hold and hull without opening another view. Eight goods have distinct icons, price, cheap/dear percentages and sparklines; Surge and Glut are explicit tags. Owned rows show quantity and return versus basis. The trade sheet puts quantity and exact totals before the chart, warns about market depth and pins confirmation. At 360x640 the 52px confirmation remained visible. References: 03-market.png, 04-trade.png, trade-360x640.png and desktop-market.png.",
+      "below_10": [
+        "At 390x664 and 360x640 only part of the goods list fits, so a good opportunity can require scrolling. The phone sparklines are only 38px wide.",
+        "Phone tags hide most secondary information and destination names; best cross-port opportunities are not reliably visible within five seconds from the main market.",
+        "Supporting labels and chart annotations are often 11–14px. At short heights the chart gauge and elsewhere prices sit below the sticky confirmation and require scrolling."
+      ]
+    },
+    "B3": {
+      "score": 8,
+      "evidence": "The touch run showed purchase/sale toasts, profit text, HUD flashes and deltas, repair particles, illustrated encounters and a separate ranked ending. Source inspection confirms distinct synthesized buy, sell, profit, travel, arrival, alarm, damage, upgrade, bank, win and loss cues plus a filtered noise/drone/bell ambience. In WebKit the documented stand-in unlocked in touchend and counted 829 sounds while running, zero while suspended. A muted-navigation test added zero sounds, then unmute resumed. Real Chromium AudioContext reached running, suspended on M and resumed on M without errors.",
+      "below_10": [
+        "I verified code and audio-context behavior, not audible quality, mixing, speaker loudness or emotional fit. Windows WebKit has no real Web Audio; its stand-in cannot establish iPhone behavior.",
+        "Result staging often resolves to a static icon plus Continue. Full-screen sheets and repeated outcome cards add friction to rapid repeat trading.",
+        "Reduced-motion coverage is incomplete for SVG title water animation and some JavaScript tween paths."
+      ]
+    },
+    "B4": {
+      "score": 9,
+      "evidence": "I tapped spatial SVG district nodes and sailed 29 actual UI voyages using the map. Seven illustrated islands have connected canals, a highlighted current port and skiff, dimmed two-night destinations, danger pips, fleet/news badges and a dashed selected route. I inspected a destination card showing one-night cost, usual supply/imports, services and known cargo prices, then used its Sail control. Source and runtime show the skiff advancing along the route and arriving at the selected port. At 360x640 I selected Orchid and confirmed its 296x52 Sail button remained reachable. References: 05-map.png, 06-route.png, map-card-430x932.png, short-route-360.png; touch-auto.log records the voyages.",
+      "below_10": [
+        "On short phones selecting a destination scrolls most of the map away, so comparing alternatives requires scrolling back. The fixed 480px map also needs scrolling before all nodes are accessible.",
+        "Geography is a clear network of islands but the island art repeats; live price-margin badges are sparse before buying wireless."
+      ]
+    },
+    "B5": {
+      "score": 7,
+      "evidence": "I used WebKit mobile touch at 390x844 and checked market/trade/map at 390x664, 360x640 and 430x932. Desktop was Chromium 1280x900. Market audits found no horizontal overflow, no on-screen targets below 44x44 and no approximate text-contrast failures in the sampled states. I used mouse and keyboard for trade selection, quantity arrows, confirmation, destination selection, help and mute. Focus styling is visible and CSS suppresses most animation under reduced motion.",
+      "below_10": [
+        "Reproducible accessibility bug: Tab after the trade confirmation leaves the aria-modal dialog and focuses obscured HUD, help and map controls. The background is not made inert.",
+        "With reduced motion enabled, the SVG title water filter still animates: its baseFrequencyX animVal changed from 0.0040168 to 0.0043761 in 1.6 seconds.",
+        "Phone supporting text remains small and HUD targets have 5px gaps. The short-screen encounter needs scrolling to inspect its bottom option.",
+        "No real iPhone, screen reader, physical keyboard on a phone, browser toolbar collapse, safe-area inset or onscreen-keyboard test was available. Contrast auditing was approximate and sampled, not exhaustive."
+      ]
+    },
+    "C1": {
+      "score": 9,
+      "evidence": "I verified a 30-night clock, seven spatial ports, eight goods, variable prices and shocks, capped cargo, hold/engine/weapon/wireless purchases, meaningful debt and vault interest, numerous distinct events and risky encounters, onboarding, two ranked score screens and a persisted ledger. I personally operated the required core systems through touch play or separately labeled service fixtures. Both input layouts, synthesized AudioContext operation, mute, sparklines and action feedback were exercised. The service fixture changed capacity 30 to 45, motor 0 to 1, repaired hull 60 to 100, bought a weapon and installed wireless. Evidence: touch-auto.log, runtime-results.json, layout-results.json, both score screenshots.",
+      "below_10": [
+        "Not all encounter options or all random event outcomes were exercised. Major upgrades and banking were verified in fixtures rather than an earned progression run.",
+        "Audible sound quality and real iPhone behavior remain unverified. The keyboard accessibility defect prevents calling the presentation requirements uniformly polished."
+      ]
+    },
+    "C2": {
+      "score": 10,
+      "evidence": "I checked the frozen bytes and SHA256 at the start and end: 230,005 bytes, hash 5838fe80881e78d86480324693f4da448c3fb55214ae6b89afa59f66d7731654. Static inspection found inline CSS/vanilla JS/SVG/canvas, no external script, import, fetch, XHR, WebSocket or beacon. The only localStorage access lines are guarded get/set/remove calls. I ran the file URL directly in WebKit and Chromium, resumed it with Chromium offline, and started it inside sandbox=\"allow-scripts\" with localStorage access throwing. Runtime request logs contained only local file navigations and no http(s) requests. Evidence: followup-results.json static, runtime-results.json Network requests / Offline file resume / Sandbox start with storage denied, sandbox.png.",
+      "below_10": []
+    },
+    "C3": {
+      "score": 9,
+      "evidence": "I completed both runs to night 30 and the score screen: 29-voyage actual UI-touch play at -43,948 and a separate 29-voyage function-driven regression at 73,520. The touch harness reported no errors after settlement; Chromium runtime errors and WebKit fixture errors were empty. Negative/huge/fractional/blank quantities, malformed storage, ordinary reload, committed encounter reload and sandbox startup did not soft-lock the game. Evidence: touch-score.png, regression-score.png, touch-auto.log final errors, runtime-results.json, layout-results.json.",
+      "below_10": [
+        "The modal focus escape is a reproducible interaction defect even though the run remains completable.",
+        "I did not test every rapid-tap/modal transition, repeated multi-hour runs or real-device lifecycle interruptions. A review-helper reduced-motion probe failed on a missing hidden-map node; it was replaced with a successful separate Chromium probe, not counted as a game error."
+      ]
+    },
+    "C4": {
+      "score": 9,
+      "evidence": "I verified the touch tally 1 + 0 + 3,203 - 47,152 = -43,948 and the regression tally 99,793 + 0 + 9,475 - 35,748 = 73,520. Quantity inputs -1, 0, 1.5, a huge integer, 1e309 and blank clamped or disabled safely; typed 1 committed once. Two hundred same-port round trips yielded zero profitable cases. Bank/debt interest matched the declared rounded rates. The touch ledger retained -43,948 after reload; a separate ledger retained 73,520. Malformed JSON and invalid save/score/settings shapes loaded safely. A mid-patrol reload preserved hull, boats, cash, event and RNG exactly. Evidence: runtime-results.json, layout-results.json Encounter reload commitment, touch-ledger-reloaded.png.",
+      "below_10": [
+        "I did not test concurrent tabs overwriting saves, high-capital split-order combinations, every cargo-loss rounding case or all historical save migrations.",
+        "The 200 round trips use one small-capital fixture and do not constitute exhaustive exploit proof."
+      ]
+    },
+    "C5": {
+      "score": 8,
+      "evidence": "Source uses separate goods/district/event tables, a central S state, reusable quote integration, guarded storage, staged saved voyages and separate market/event RNG streams. Both complete browser runs were clean. Desktop interactions and transitions were responsive; no visible game-specific stall emerged. The source is a readable 2,640-line, 230KB single file with named sections.",
+      "below_10": [
+        "Many globals, DOM recreation through innerHTML and direct S mutation across services, events and rendering make changes harder to isolate.",
+        "The modal focus defect and unguarded SVG reduced-motion path show incomplete integration between subsystems.",
+        "No profiling or long-run timer/listener leak audit was performed. Slow headless Windows WebKit animation is an engine limitation and was not treated as measured game performance."
+      ]
+    }
+  },
+  "strengths": [
+    "A coherent lantern-lit drowned-city identity extends from title art to map, commodity icons, character portraits and ending.",
+    "The phone trade sheet prioritizes the decision and exact consequences, with a pinned confirmation and safe quantity limits.",
+    "The map communicates connections, travel time, risk, services, fleet calls and remembered cargo prices.",
+    "Two clean complete runs, offline/sandbox operation, guarded persistence and committed encounters support the presentation with reliable mechanics."
+  ],
+  "weaknesses": [
+    "Keyboard focus escapes open modal dialogs into the obscured background.",
+    "Reduced motion leaves the title SVG water filter animating.",
+    "Short phone layouts need scrolling for market goods, map comparison, encounter options and secondary trade context; several labels remain small.",
+    "Repeated result cards and simple icon-only outcome art make the middle of a run less varied than the strongest character scenes.",
+    "The review does not establish audible sound quality, physical iPhone behavior or broad strategy balance."
+  ],
+  "bugs": [
+    {
+      "severity": "medium",
+      "what": "Open dialogs do not contain keyboard focus; obscured game controls remain in the tab order.",
+      "repro": "At desktop 1280x900, start a run, select a stocked good with ArrowDown then B. The trade confirmation receives focus. Press Tab: focus goes to body, then st-cash/st-bank and other obscured controls while the trade sheet remains open. See followup-results.json focus and keyboard-focus-escape.png."
+    },
+    {
+      "severity": "low",
+      "what": "The title water distortion continues under prefers-reduced-motion: reduce.",
+      "repro": "Load the title in a fresh reduced-motion context. CSS lantern animation becomes 0.00001s, but the SVG feTurbulence animate keeps its 9s duration and its baseFrequencyX animVal changes over 1.6 seconds. See followup-results.json."
+    },
+    {
+      "severity": "low",
+      "what": "A malformed saved voyage is silently rejected at initial title load.",
+      "repro": "Set gloamwater.save.v1 to malformed JSON or an invalid object, then reload. The game starts safely and removes Continue voyage, but gives no explanation that the saved voyage could not be used. See runtime-results.json Corrupt storage objects / Malformed JSON storage. This is a recovery-message issue, not a crash."
+    }
+  ],
+  "evidence": {
+    "days_played": 60,
+    "reached_score_screen": true,
+    "phone_notes": "Full run: nights 1–30, 29 voyages, 390x844 WebKit touch/mobile/DPR3. I manually operated onboarding, first purchase, first voyage, first event and first profitable sale. touch-play.cjs continued using the harness touchscreen, current rendered DOM information and a fixed itinerary. It never called game functions, changed game state, enabled FAST or read hidden market prices, pending events or RNG. It sold/bought simplistically, including an ill-advised final-night purchase; its -43,948 outcome is not an optimized strategy benchmark. Separate layout contexts checked 390x664, 360x640 and 430x932. New partial short-screen run after settlement was not counted in days_played. Scroll-to-reach helpers were used; no synthetic click was substituted for a touch tap in the full UI run. Real iPhone behavior is not established.",
+    "desktop_notes": "Chromium 1280x900 mouse/keyboard checks and a separate function-driven full regression, nights 1–30, 29 voyages, final fortune 73,520. The regression used coreBuy/coreSell/sailTo, FAST animations and programmatic event choices. It is explicitly NOT human/UI touch play. Funded service/event/input/interest fixtures are labeled in their scripts and results. No game edits or git writes; final frozen hash matches.",
+    "audio_notes": "Windows WebKit lacks real Web Audio. The documented tools/phone/server.js iOS-policy stand-in unlocked during touchend, generated 829 starts while running and zero while suspended across the full touch run. A separate mute test produced no new starts and unmute resumed the context. Real Chromium AudioContext operation, mute suspension and unmute resume were also verified. Source inspection found layered generated tones/noise/ambience and distinct action cues. No audible listening test, iPhone silent switch, physical speaker or actual iOS unlock verification was performed.",
+    "screenshots": [
+      "judging/round-3/judge-2/01-title-390.png",
+      "judging/round-3/judge-2/02-tour.png",
+      "judging/round-3/judge-2/03-market.png",
+      "judging/round-3/judge-2/04-trade.png",
+      "judging/round-3/judge-2/05-map.png",
+      "judging/round-3/judge-2/06-route.png",
+      "judging/round-3/judge-2/desktop-market.png",
+      "judging/round-3/judge-2/desktop-title.png",
+      "judging/round-3/judge-2/event-buy.png",
+      "judging/round-3/judge-2/event-ok.png",
+      "judging/round-3/judge-2/event-push.png",
+      "judging/round-3/judge-2/event-run.png",
+      "judging/round-3/judge-2/event-small.png",
+      "judging/round-3/judge-2/event-yes.png",
+      "judging/round-3/judge-2/fixture-encounter-360x640.png",
+      "judging/round-3/judge-2/fixture-lender-390x664.png",
+      "judging/round-3/judge-2/fixture-yard-390x664.png",
+      "judging/round-3/judge-2/keyboard-focus-escape.png",
+      "judging/round-3/judge-2/map-card-360x640.png",
+      "judging/round-3/judge-2/map-card-390x664.png",
+      "judging/round-3/judge-2/map-card-430x932.png",
+      "judging/round-3/judge-2/market-360x640.png",
+      "judging/round-3/judge-2/market-390x664.png",
+      "judging/round-3/judge-2/market-430x932.png",
+      "judging/round-3/judge-2/regression-score.png",
+      "judging/round-3/judge-2/sandbox.png",
+      "judging/round-3/judge-2/short-route-360.png",
+      "judging/round-3/judge-2/touch-ledger-reloaded.png",
+      "judging/round-3/judge-2/touch-night-14.png",
+      "judging/round-3/judge-2/touch-night-21.png",
+      "judging/round-3/judge-2/touch-night-30.png",
+      "judging/round-3/judge-2/touch-night-7.png",
+      "judging/round-3/judge-2/touch-score.png",
+      "judging/round-3/judge-2/trade-360x640.png",
+      "judging/round-3/judge-2/trade-390x664.png",
+      "judging/round-3/judge-2/trade-430x932.png"
+    ],
+    "logs": [
+      "judging/round-3/judge-2/touch-session.log",
+      "judging/round-3/judge-2/touch-auto.log",
+      "judging/round-3/judge-2/runtime-results.json",
+      "judging/round-3/judge-2/layout-results.json",
+      "judging/round-3/judge-2/followup-results.json"
+    ],
+    "unverified": [
+      "Audible sound quality and real iPhone/iOS behavior.",
+      "Full keyboard-only game, screen reader use and exhaustive contrast across all states.",
+      "Broad multi-seed strategic balance, all combat/gambling outcomes, all upgrades earned during natural play.",
+      "Multi-tab saves, long-running timer/listener behavior and high-capital split-order exploit space.",
+      "Precise travel timing: an optional timing probe encountered an arrival choice and was stopped."
+    ],
+    "execution_notes": [
+      "Shared preview_status reported available:false; the explicitly authorized Playwright WebKit harness and independent Playwright contexts were used.",
+      "A harness helper initially sent a string instead of a steps array; it was corrected before continuing play. A day-text parser initially failed to select a route and was corrected without manipulating game state.",
+      "The layout helper reached the end of its tests, then failed when asking getComputedStyle for a map node in a hidden phone map. Reduced-motion verification was completed separately in Chromium.",
+      "An optional travel timing probe waited for an event choice; its own process/browser tree was stopped and the non-timing probe rerun. An optional contact-sheet helper lacked Pillow; no installation or game change was made, and original screenshots were inspected individually.",
+      "All screenshots listed were inspected. map-card-360x640.png shows the map after a repeated selection toggled its card closed; short-route-360.png is the verified selected short-screen route.",
+      "Every browser/context was closed; the 9452 phone harness was stopped. No model/provider substitution or delegation occurred."
+    ]
+  },
+  "verdict": "A strong, cohesive trading game with a useful spatial map, readable trade decisions and reliable offline mechanics. Modal keyboard focus, incomplete reduced motion and short-screen information density keep the interaction design below exemplary."
+}

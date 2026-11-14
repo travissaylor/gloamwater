@@ -1,0 +1,252 @@
+[
+  {
+    "engine": "webkit",
+    "size": [
+      390,
+      664
+    ],
+    "errors": [],
+    "network": [],
+    "titleTab": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "titleHelp": [
+      {
+        "focus": "BUTTON",
+        "inModal": true,
+        "title": true,
+        "appInert": true,
+        "titleInert": true,
+        "modal": true
+      },
+      {
+        "focus": "BUTTON",
+        "inModal": true,
+        "title": true,
+        "appInert": true,
+        "titleInert": true,
+        "modal": true
+      },
+      {
+        "focus": "BUTTON",
+        "inModal": true,
+        "title": true,
+        "appInert": true,
+        "titleInert": true,
+        "modal": true
+      },
+      {
+        "focus": "BUTTON",
+        "inModal": true,
+        "title": true,
+        "appInert": true,
+        "titleInert": true,
+        "modal": true
+      },
+      {
+        "focus": "BUTTON",
+        "inModal": true,
+        "title": true,
+        "appInert": true,
+        "titleInert": true,
+        "modal": true
+      }
+    ],
+    "titleClosed": {
+      "focus": "BODY",
+      "inModal": false,
+      "title": true,
+      "appInert": true,
+      "titleInert": false,
+      "modal": false
+    },
+    "disclosure": [
+      {
+        "open": true,
+        "modal": true,
+        "cargo": 0,
+        "focus": "SUMMARY"
+      },
+      {
+        "open": false,
+        "modal": true,
+        "cargo": 0,
+        "focus": "SUMMARY"
+      },
+      {
+        "open": true,
+        "modal": true,
+        "cargo": 0,
+        "focus": "SUMMARY"
+      }
+    ],
+    "readScroll": 498,
+    "afterReadTab": {
+      "tag": "BUTTON",
+      "text": "Buy B",
+      "rect": {
+        "x": 21,
+        "y": -375.15625,
+        "width": 170,
+        "height": 46,
+        "top": -375.15625,
+        "right": 191,
+        "bottom": -329.15625,
+        "left": 21
+      },
+      "scroll": 498,
+      "visible": false
+    },
+    "finalButton": {
+      "x": 263.21875,
+      "y": 521.921875,
+      "width": 90.78125,
+      "height": 44
+    },
+    "finalConfirm": "Settle up and end the run?",
+    "finalCancelled": {
+      "focus": "BODY",
+      "inModal": false,
+      "title": false,
+      "appInert": false,
+      "titleInert": false,
+      "modal": false
+    },
+    "mapFinalConfirm": "Settle up and end the run?",
+    "finalNight": 30
+  },
+  {
+    "engine": "chromium",
+    "size": [
+      390,
+      664
+    ],
+    "errors": [],
+    "network": [],
+    "titleTab": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "titleHelp": [
+      {
+        "focus": "BUTTON",
+        "inModal": true,
+        "title": true,
+        "appInert": true,
+        "titleInert": true,
+        "modal": true
+      },
+      {
+        "focus": "BUTTON",
+        "inModal": true,
+        "title": true,
+        "appInert": true,
+        "titleInert": true,
+        "modal": true
+      },
+      {
+        "focus": "BUTTON",
+        "inModal": true,
+        "title": true,
+        "appInert": true,
+        "titleInert": true,
+        "modal": true
+      },
+      {
+        "focus": "BUTTON",
+        "inModal": true,
+        "title": true,
+        "appInert": true,
+        "titleInert": true,
+        "modal": true
+      },
+      {
+        "focus": "BUTTON",
+        "inModal": true,
+        "title": true,
+        "appInert": true,
+        "titleInert": true,
+        "modal": true
+      }
+    ],
+    "titleClosed": {
+      "focus": "t-help",
+      "inModal": false,
+      "title": true,
+      "appInert": true,
+      "titleInert": false,
+      "modal": false
+    },
+    "disclosure": [
+      {
+        "open": true,
+        "modal": true,
+        "cargo": 0,
+        "focus": "SUMMARY"
+      },
+      {
+        "open": false,
+        "modal": true,
+        "cargo": 0,
+        "focus": "SUMMARY"
+      },
+      {
+        "open": true,
+        "modal": true,
+        "cargo": 0,
+        "focus": "SUMMARY"
+      }
+    ],
+    "readScroll": 510,
+    "afterReadTab": {
+      "tag": "BUTTON",
+      "text": "Buy B",
+      "rect": {
+        "x": 21,
+        "y": -387.15625,
+        "width": 170,
+        "height": 46,
+        "top": -387.15625,
+        "right": 191,
+        "bottom": -341.15625,
+        "left": 21
+      },
+      "scroll": 510,
+      "visible": false
+    },
+    "finalButton": {
+      "x": 263.21875,
+      "y": 522.046875,
+      "width": 90.78125,
+      "height": 44
+    },
+    "finalConfirm": "Settle up and end the run?",
+    "finalCancelled": {
+      "focus": "BUTTON",
+      "inModal": false,
+      "title": false,
+      "appInert": false,
+      "titleInert": false,
+      "modal": false
+    },
+    "mapFinalConfirm": "Settle up and end the run?",
+    "finalNight": 30
+  }
+]
