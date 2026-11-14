@@ -52,7 +52,7 @@ kbd{font:600 11px var(--mono);padding:1px 5px;border-radius:5px;border:1px solid
 .btn kbd{border-color:rgba(0,0,0,.2);background:rgba(0,0,0,.12);color:inherit;opacity:.9}
 
 /* ---------- app frame ---------- */
-#app{display:grid;grid-template-rows:auto minmax(0,1fr);height:100vh;height:100dvh}
+#app{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);height:100vh;height:100dvh}
 #app.shake{animation:shake .45s}
 @keyframes shake{10%,90%{transform:translate(-2px,1px)}20%,80%{transform:translate(4px,-2px)}30%,50%,70%{transform:translate(-6px,2px)}40%,60%{transform:translate(6px,-1px)}}
 .hud{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(9,14,36,.96),rgba(9,14,36,.78));backdrop-filter:blur(8px);position:relative;z-index:5}
@@ -599,6 +599,37 @@ button,.btn,.row,.choice,.bull,.tab,.node,.stat,.mnav button,.seg button{-webkit
 }
 @media (max-width:860px){.wide-only{display:none}}
 @media (max-width:860px) and (max-height:700px){.art{height:62px!important}.card-body{padding-top:10px}.enc-stats{margin:4px 0 0}.enc-stats>div{padding:5px 8px}.choices{gap:6px;margin-top:10px}.choice{padding:9px 12px;min-height:48px}.card-body p{margin-bottom:8px}}
+@media (max-width:860px){
+  /* Secondary information is reading text too. Tight line boxes preserve phone space. */
+  .night small,.stat small,.hud-worth small,.hud-worth em{font-size:15px;line-height:1;letter-spacing:0}
+  .night b span{font-size:15px}
+  .stats{gap:8px;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.35fr) minmax(0,1fr) minmax(0,1fr)}
+  .stat{padding:4px 2px;min-height:46px}
+  .stat b,.hud-worth b{line-height:1.2}
+  .stat .delta{font-size:15px}
+  .mnav button{font-size:15px;letter-spacing:0}
+  .btn.sm,.kicker,.mk-head .kicker,.tag,.gname .tag,.chg,.bull,.final-banner,.mk-foot,
+  .summary .depth-ok,.summary .depth-warn,.upg .info,.upg .info span,.directory,.lg .d,
+  .tcard .tc-dist,.tcard .dock-note,.tl,.tc-known,.tc-known .h,.market-news,.toast,
+  .choice small,.enc-stats>div,.sheet .gauge,.sheet .else div,.statgrid div,.statgrid small,
+  .ledger,.ledger th,.ledger .rk,.nextrank,.nightcard em,.nightcard small,.tt-foot,#coach .tip .steps{font-size:15px}
+  .kicker,.mk-head .kicker{line-height:1.05;letter-spacing:.06em}
+  .best-run,.best-run small{font-size:15px;line-height:1.1}
+  .chart .cl,.chart text{font-size:15px}
+  .chart{height:108px}
+  .sheet .chart{height:108px}
+  .sheet .else{grid-template-columns:1fr;gap:8px}
+  .sheet .else div{min-height:40px}
+  .sheet .else div span{overflow:visible;white-space:normal}
+  .sheet .else small,.port-sheet small{font-size:15px!important}
+  .sheet .summary{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .sheet .summary b{overflow-wrap:anywhere}
+  .choices,.amt-presets,.seg{gap:8px}
+  .rows{gap:8px}
+  .best-run{gap:8px}
+  .ledger th,.ledger td{padding-left:5px;padding-right:5px;letter-spacing:0}
+  .ledger td{overflow-wrap:anywhere}
+}
 body.fx-under #fx{z-index:49}
 @media (hover:none) and (pointer:coarse){
   kbd,.kb-only{display:none!important}
@@ -986,7 +1017,8 @@ function revealNews(){
   S.effects.forEach(e=>{if(e.age===0&&e.known===undefined)e.known=S.wireless||!!e.leaked||e.d===S.loc||rnd()<.4;});
 }
 function markSeen(){
-  const ds=S.wireless?DISTRICTS:[DI[S.loc]];
+  // The opening harbor circular is public. Later remote quotes need a visit or wireless.
+  const ds=S.wireless||S.day===1?DISTRICTS:[DI[S.loc]];
   ds.forEach(d=>GOODS.forEach(g=>{S.seen[d.id][g.id]={p:postedAt(d.id,g.id),day:S.day,st:S.stock[d.id][g.id],sh:effectMult(d.id,g.id)>1.05};}));
 }
 function advanceDay(){
@@ -1270,17 +1302,21 @@ function bestKnownRoute(){
 function bestRunHTML(){
   const best=bestKnownRoute();
   if(best&&best.mode==='carry')return `<button class="best-run" data-route-tip="${best.d.id}" aria-label="Compare carrying your ${best.g.name} to ${best.d.name}">${ico('crate')}<div><b>Carry ${best.g.name} → ${esc(portName(best.d.id))}</b><small>Seen +${Math.round(best.edge*100)}% · ${best.ago?best.ago+'n ago':'tonight'} · ${best.nights}n · may change</small></div></button>`;
-  if(best)return `<button class="best-run" data-trade-tip="${best.g.id}" aria-label="Compare buying ${best.g.name} here for ${best.d.name}">${ico('arrowUp')}<div><b>${best.g.name} → ${esc(portName(best.d.id))}</b> · +${Math.round(best.edge*100)}%<small>${best.ago?'Seen '+best.ago+'n ago':'Seen tonight'} · ${best.nights}n trip · prices may change</small></div></button>`;
+  if(best)return `<button class="best-run" data-trade-tip="${best.g.id}" aria-label="Compare buying ${best.g.name} here for ${best.d.name}">${ico('arrowUp')}<div><b>${best.g.name} → ${esc(portName(best.d.id))}</b><small>Seen +${Math.round(best.edge*100)}% · ${best.ago?best.ago+'n ago':'tonight'} · ${best.nights}n · may change</small></div></button>`;
   if(S.day>=NIGHTS)return '';
   const f=fleetCall();
   return `<button class="best-run" data-act="marketintel">${ico('wireless')}<div><b>Fleet: ${GI[f.g].name} → ${esc(portName(f.d))}</b><small>Through night ${f.to} · sale price unconfirmed</small></div></button>`;
 }
 const FRESH_NIGHTS=2; // a recent sighting is context, never a promised arrival price
-// Default buy size: everything at the posted price, then more only while the next unit still costs
-// clearly less than the best price you have seen elsewhere. Max stays one tap away.
+// Default buys stay within flat depth and leave 15% of the purse for repairs and tolls.
+// One affordable unit stays selectable when it alone uses that reserve. Max is an explicit choice.
 function suggestBuy(gid){
   const mx=maxBuy(gid);if(!mx)return 0;
-  return Math.min(mx,Math.max(1,flatLeft(gid,'buy')));
+  const bound=Math.min(mx,flatLeft(gid,'buy')),budget=Math.floor(S.cash*.85);
+  if(bound<=0)return 0; // exhausted flat depth requires an explicit quantity or Max
+  let lo=0,hi=bound;
+  while(lo<hi){const mid=Math.ceil((lo+hi)/2);if(quoteBuy(gid,mid)<=budget)lo=mid;else hi=mid-1;}
+  return Math.max(1,lo);
 }
 function bestSeen(gid){let best=null;DISTRICTS.forEach(d=>{if(d.id===S.loc)return;const sn=S.seen[d.id][gid];if(sn&&sn.st&&S.day-sn.day<=FRESH_NIGHTS&&!(sn.sh&&S.day-sn.day>=2)&&(!best||sn.p>best.p))best={d,p:sn.p,ago:S.day-sn.day};});return best;}
 const portName=id=>({lq:'Lanternquay',sm:'Saint Mire',ot:'Orchid',de:'Exchange',ch:'Copperhook',sl:'Sluices',fm:'Fogmouth'}[id]||DI[id].name);
@@ -1310,7 +1346,7 @@ function renderSide(){
 }
 function marketHTML(){
   const d=DI[S.loc],used=holdUsed(),cap=capacity();
-  let h=`<div class="mk-head"><div><div class="kicker">Night ${S.day} market</div><h2>${d.name}</h2></div>
+  let h=`<div class="mk-head"><div><div class="kicker">Night ${S.day}${S.day===1?' · harbor circular':' market'}</div><h2>${d.name}</h2></div>
     <button class="btn icon market-info" data-act="marketintel" aria-label="Fleet calendar and market bulletins" title="Fleet calendar and bulletins">${ico('wireless')}</button></div>`;
   h+=bestRunHTML();
   const fin=S.day!==NIGHTS?'':`<div class="final-banner">${ico('flag')}<div><b>Final night.</b> Sell, repay Marrow, then settle up.<span class="wide-only"> Unsold cargo goes for half price.</span></div><button class="btn primary" data-act="settle">Settle up</button></div>`;
@@ -1580,7 +1616,7 @@ function openPortDetails(did){
   if(!DI[did]||busy)return;
   const d=DI[did],fleet=fleetCall(),nights=nightsTo(S.loc,did),rows=GOODS.map(g=>{
     const sn=S.seen[did][g.id],c=S.cargo[g.id],age=sn?S.day-sn.day:null;
-    return `<div class="kv"><span>${g.name}${c.q?' · hold '+c.q:''}</span><b>${sn?(sn.st?fmt(sn.p):'no dealers'):'unknown'}${sn?`<small style="display:block;color:var(--muted);font:400 13px var(--ui)">${age?age+'n ago':'seen tonight'}</small>`:''}</b></div>`;
+    return `<div class="kv"><span>${g.name}${c.q?' · hold '+c.q:''}</span><b>${sn?(sn.st?fmt(sn.p):'no dealers'):'unknown'}${sn?`<small style="display:block;color:var(--muted);font:400 15px var(--ui)">${age?age+'n ago':'seen tonight'}</small>`:''}</b></div>`;
   }).join('');
   const services=d.svc.map(k=>SVC[k].name).join(' · ')||'Market only';
   const html=`<div class="card-body port-sheet"><div class="kicker">${did===S.loc?'Your mooring':nights+'-night route'} · danger ${d.danger}/5</div><h3>${esc(d.name)}</h3><p>${esc(d.blurb)}</p><p><b>Services:</b> ${esc(services)}</p>${fleet.d===did?`<div class="result gold">Fleet call: <b>${GI[fleet.g].name}</b> through night ${fleet.to}. Demand +40%, twice the depth.</div>`:''}<p>These are observed prices. Prices and dealers may change before you arrive; large orders move the quote.</p>${rows}<div class="choices"><button class="choice primary" data-port-back><div>Back to map</div></button></div></div>`;
@@ -1766,10 +1802,14 @@ function openTrade(gid,mode){
   function setMode(m){mode=m;el.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===m)));const mx=m==='buy'?mxBuy():maxSell();qr.max=mx;q=m==='buy'?suggestBuy(gid):Math.min(mx,Math.max(1,flatLeft(gid,'sell')));update();}
   function depthNote(){
     const flat=flatLeft(gid,mode),k=depthOf(S.loc,gid),x=S.press[S.loc][gid];
-    if(mode==='buy'&&q>0){const bs=bestSeen(gid),avg=quoteBuy(gid,q)/q;if(bs&&avg>bs.p)return `<span class="depth-warn" style="grid-column:1/3"><b>This loses money:</b> you would pay ${fmt(avg)} each on average, more than the best price you have seen elsewhere (${fmt(bs.p)}). Buy fewer.</span>`;}
+    if(mode==='buy'&&q>0){const bs=bestSeen(gid),avg=quoteBuy(gid,q)/q;if(bs&&avg>bs.p)return `<span class="depth-warn" style="grid-column:1/3"><b>Above the best observed sale price:</b> ${fmt(avg)} each on average, versus ${fmt(bs.p)} seen elsewhere.${q>flat?' Past '+flat+', this order also moves the price.':''} Buy fewer.</span>`;}
     if(q<=flat)return `<span class="depth-ok" style="grid-column:1/3">Dealers here ${mode==='buy'?'sell':'buy'} about ${flat} more at this price.</span>`;
     const after=Math.max(1,Math.round(S.prices[S.loc][gid]*pressF(mode==='buy'?x+q:x-q,k.n,k.d)));
     return `<span class="depth-warn" style="grid-column:1/3">A big order moves the price: past ${flat}, each one ${mode==='buy'?'costs':'fetches'} ${mode==='buy'?'more':'less'}. The last goes at ${fmt(after)}.</span>`;
+  }
+  function reserveNote(){
+    const uses=quoteBuy(gid,q)>Math.floor(S.cash*.85);
+    return `<span class="${uses?'depth-warn':'depth-ok'} reserve-note" style="grid-column:1/3">${uses?'This order uses your 15% reserve.':'Default keeps 15% aside when possible.'} Max uses the full cash/hold limit, including price impact.</span>`;
   }
   function update(typing){
     const mx=mode==='buy'?mxBuy():maxSell();q=clamp(Math.round(q)||0,0,mx);if(!typing)qin.value=q;qr.value=q;qr.max=mx;
@@ -1778,7 +1818,7 @@ function openTrade(gid,mode){
       const tot=quoteBuy(gid,q);
       const bs=bestSeen(gid);
       sum.innerHTML=`${bs?`<span>Best known sale</span><b class="${bs.p>(q?tot/q:p)?'up':'down'}">${fmt(bs.p)} · ${esc(bs.d.name)}</b>`:''}<span>Price each</span><b>${q>1&&tot!==q*p?fmt(tot/q)+' avg':fmt(p)}</b><span>Total cost</span><b style="color:#bffbf1">${fmt(tot)}</b><span>Purse after</span><b>${fmt(S.cash-tot)}</b><span>Hold after</span><b>${used+q} / ${cap}</b>`+
-        (mx===0?`<span style="grid-column:1/3;color:var(--amber)">${holdUsed()>=capacity()?'Your hold is full.':"You can't afford even one."}</span>`:depthNote());
+        (mx===0?`<span style="grid-column:1/3;color:var(--amber)">${holdUsed()>=capacity()?'Your hold is full.':"You can't afford even one."}</span>`:depthNote()+reserveNote());
       go.textContent=q?`Buy ${q} for ${fmt(tot)}`:'Buy';go.className='btn lg teal';
     }else{
       const tot=quoteSell(gid,q),prof=Math.round(tot-c.cost*q);
@@ -1807,7 +1847,7 @@ function openTrade(gid,mode){
       closeModal();sfx.buy();log(`Bought ${n} ${g.name} for ${fmt(b.total)}${n>1?' ('+fmt(b.total/n)+' each)':''}.`);
       toast(`Loaded ${n} ${g.name} for ${fmt(b.total)}`,'info',gid,2200);
       renderAll();const r2=$(`.row[data-g="${gid}"]`);if(r2){r2.classList.add('flash');fly(r2,$('#st-hold'),Math.min(10,2+Math.ceil(n/5)),'box',g.c);}
-      hint('firstbuy','Now find a district that pays more. Green <b>+%</b> badges on the map show where your cargo last sold above what you paid.');
+      hint('firstbuy','The opening <b>harbor circular</b> shows every port. Compare the price age before sailing: quotes and dealers can change overnight. Later, visit ports or fit wireless for fresh quotes.');
     }else{
       const r=coreSell(gid,q);if(!r){sfx.error();return;}
       closeModal();sfx.sell();if(r.profit>0)sfx.profit();
@@ -2289,8 +2329,18 @@ async function evCrate(){
     await info({art:'crate',tone:'danger',title:'It was a trap',body:`The lid springs and something inside goes <i>bang</i>. The Gull Gang leave these out for fools. <b>−${dmg}% hull.</b>`});}
 }
 async function evGull(){
-  const amt=Math.min(6000,Math.round(S.cash*(.06+rnd()*.08)));S.cash-=amt;S.stats.lost+=amt;log(`A gull stole ${fmt(amt)} from your coin bag.`,'bad');sfx.error();
-  await info({art:'gull',tone:'danger',kicker:'Thief!',title:'A gull takes your purse',body:`A huge grey gull dives, snatches a coin bag off the thwart, and is gone over the rooftops with <b>${fmt(amt)}</b>. Gloamwater's gulls are trained, and not by honest people.`,extra:'<div class="result info">Tip: the Vault keeps your money safe from thieves.</div>'});
+  const amt=Math.min(6000,Math.round(S.cash*.1));if(!amt)return;
+  // The offer is deterministic. No dice or resources change until the captain answers.
+  const c=await choose({art:'gull',tone:'danger',kicker:'Thief!',title:'A gull takes your purse',body:`A trained grey gull snags a bag containing <b>${fmt(amt)}</b>. Its tether catches your wrist. You can grab the bag, but the skiff is drifting toward the stone quay.`,
+    choices:[{key:'run',label:'Reach for the bag',sub:`70% chance to keep it. On failure, lose ${fmt(amt)} and 10% hull (you have ${Math.round(S.hull)}%).`,cls:'risk'},
+      {key:'pay',label:`Let the bag go · ${fmt(amt)}`,sub:'Certain cash loss. Your hull and cargo stay safe.'}]});
+  if(c==='run'&&rnd()<.7){sfx.escape();log(`Caught the gull's coin bag and saved ${fmt(amt)}.`,'good');commitOutcome();toast(`Bag saved · kept ${fmt(amt)}`,'good','coin');}
+  else{
+    S.cash-=amt;S.stats.lost+=amt;
+    if(c==='run'){damage(10);if(S.hull<=0)return sunk('Reaching for the stolen purse drove your skiff into the quay.');}
+    log(`The gull escaped with ${fmt(amt)}${c==='run'?'; the quay cost 10% hull':''}.`,'bad');sfx.error();commitOutcome();toast(`Gull took ${fmt(amt)}${c==='run'?' · hull −10%':''}`,'bad','coin');
+  }
+  renderAll();
 }
 async function evRacks(){
   const cost=2200+S.day*120;
@@ -2311,9 +2361,15 @@ async function evFortune(){
 }
 async function evLeak(){
   const held=GOODS.filter(g=>S.cargo[g.id].q>0);if(!held.length)return;
-  const g=pick(held),cg=S.cargo[g.id];const n=Math.max(1,Math.round(cg.q*(.15+rnd()*.25)));S.stats.lost+=Math.round(n*cg.cost);cg.q-=n;if(!cg.q)cg.cost=0;
-  sfx.splash();log(`Bilge water ruined ${n} ${g.name}.`,'bad');
-  await info({art:'leak',tone:'danger',kicker:'Leak',title:'Water in the hold',body:`${S.hull<60?'Your battered hull':'A loose plank'} lets the canal in overnight. <b>${n} ${g.name}</b> ${n===1?'is':'are'} ruined.`,extra:S.hull<60?'<div class="result info">Damaged hulls leak more often. Odile at Copperhook Docks does proper repairs.</div>':''});
+  const g=held.sort((a,b)=>S.cargo[b.id].q*b.base-S.cargo[a.id].q*a.base)[0],cg=S.cargo[g.id];
+  const n=Math.max(1,Math.round(cg.q*.25)),reference=n*g.base,cost=Math.max(200,Math.round(reference*.6));
+  sfx.splash();
+  const c=await choose({art:'leak',tone:'danger',kicker:'Leak',title:'Water in the hold',body:`${S.hull<60?'Your battered hull':'A loose plank'} lets water into a stack of <b>${n} ${g.name}</b>. Buy an emergency patch or jettison the stack before the rest gets wet.`,
+    choices:[{key:'pay',label:`Patch the leak · ${fmt(cost)}`,sub:S.cash>=cost?`Keep the cargo. Purse after: ${fmt(S.cash-cost)}. This patch does not restore hull.`:'Not enough cash aboard for the patch.',disabled:S.cash<cost,cls:'primary'},
+      {key:'yield',label:`Jettison ${n} ${g.name}`,sub:`Usual value ${fmt(reference)}; the eventual sale price may differ. Keep your cash.`}]});
+  if(c==='pay'){S.cash-=cost;S.stats.lost+=cost;sfx.bank();log(`Patched the leak for ${fmt(cost)}; kept ${n} ${g.name}.`,'info');commitOutcome();toast(`Patch −${fmt(cost)} · cargo safe`,'info','hull');}
+  else{S.stats.lost+=Math.round(n*cg.cost);cg.q-=n;if(!cg.q)cg.cost=0;log(`Jettisoned ${n} ${g.name} to stop the leak.`,'bad');commitOutcome();toast(`Jettisoned ${n} ${g.name}`,'bad',g.id);}
+  renderAll();
 }
 async function evTip(){
   if(S.day>=NIGHTS)return evStrongbox();
@@ -2599,7 +2655,7 @@ function emblemSVG(r){
   <g transform="translate(36 36) scale(2)" fill="none" stroke="${r.color}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="${P.lantern}"/></g></svg>`;
 }
 function ledgerTable(list,hl){
-  if(!list.length)return '<p style="color:var(--muted);font-size:13.5px">No runs recorded yet. The ledger is waiting for your name.</p>';
+  if(!list.length)return '<p style="color:var(--muted);font-size:15px">No runs recorded yet. The ledger is waiting for your name.</p>';
   return `<table class="ledger"><thead><tr><th>#</th><th>Captain</th><th>Rank</th><th style="text-align:right">Fortune</th></tr></thead><tbody>`+
     list.map((x,i)=>`<tr class="${x.id===hl?'me':''}"><td>${i+1}</td><td>${esc(x.name)}${x.sunk?' <span class="rk">(sunk)</span>':''}<div class="rk">${esc(x.date||'')}</div></td><td class="rk">${esc(x.rank)}</td><td class="n">${fmt(x.score)}</td></tr>`).join('')+'</tbody></table>';
 }
@@ -2666,8 +2722,8 @@ function openIntro(){
 function openHelp(){
   const html=`<div class="card-body help"><div style="display:flex;align-items:flex-start"><div><div class="kicker">Captain's handbook</div><h3>How to play</h3></div><button class="btn icon ghost" data-x style="margin-left:auto" aria-label="Close">${ico('close')}</button></div>
   <h4>${ico('flag')}The goal</h4><p>End night 30 with the largest fortune: cash + vault + half-price cargo − debt. Your rank and the Captains' Ledger are waiting.</p>
-  <h4>${ico('coin')}Trading</h4><ul><li>Each district has its own prices, and they shift every night. The small line on each good is its last 10 nights here; tap a good for the full chart.</li><li>The <b>%</b> beside each price compares it with that good's usual price across the city. <b style="color:#4ee39b">Green</b> is cheap (buy), <b style="color:#ffbe55">amber</b> is dear (sell). <b>Surge</b> and <b>Glut</b> tags mark market shocks.</li><li>An <b>↑ +40% Saint Mire</b> tag means the good last sold there for 40% more than it costs here. Without a price seen, the tag names a district that usually pays well.</li><li><b>Big orders move prices.</b> Dealers trade a few units at the posted price, then each extra unit costs more (or fetches less), and the market takes a night or two to recover. Spread big money across several goods and ports.</li><li>Every district is famous for something it makes cheap and something it pays well for. Check the map card.</li></ul>
-  <h4>${ico('map')}Voyages</h4><ul><li>Sailing along a canal costs <b>one night</b>; a district with no direct canal is two nights, via a waypoint. Lanternquay joins every district. You can also <b>stay the night</b> where you are (tap your own district on the map). The danger pips show how often patrols and gangs prowl.</li><li>The trade screen remembers the last price you saw everywhere; green <b>+%</b> badges on the map show where your cargo sells above cost.</li></ul>
+  <h4>${ico('coin')}Trading</h4><ul><li>Each district has its own prices, and they shift every night. The small line on each good shows its recent history here; tap a good for the full chart.</li><li>The <b>%</b> beside each price compares it with that good's usual price across the city. <b style="color:#4ee39b">Green</b> is below usual, <b style="color:#ffbe55">amber</b> is above usual. Compare the actual buy and sale quotes before choosing a route.</li><li>The opening <b>harbor circular</b> records all seven ports on night 1. After that, remote quotes age until you visit or fit the wireless set. <b>Saint Mire +40% seen 1n ago</b> is an observation, not a promised sale: prices and dealers can change before arrival.</li><li>The default buy quantity keeps <b>15% of your purse</b> for repairs and tolls when possible. If one unit alone uses the reserve, the default is one. <b>Max</b> deliberately uses the full cash/hold limit; its quote includes price impact.</li><li><b>Big orders move prices.</b> Dealers trade a few units at the posted price, then each extra unit costs more (or fetches less). The market takes a night or two to recover. Spread big money across several goods and ports.</li><li>District supply and import habits give context. Check the dated prices in Port details before sailing.</li></ul>
+  <h4>${ico('map')}Voyages</h4><ul><li>Sailing along a canal costs <b>one night</b>; a district with no direct canal is two nights, via a waypoint. Lanternquay joins every district. You can also <b>stay the night</b> where you are (tap your own district on the map). The danger pips show how often patrols and gangs prowl.</li><li>The trade screen remembers your observed prices. Green <b>+%</b> map badges compare tonight’s observed price with your cargo cost; a future quote can differ.</li></ul>
   <h4>${ico('quill')}Debt and the vault</h4><ul><li>Marrow charges 6% a night until night 10, then 10%. Repay at Lanternquay before his collectors find you.</li><li>The Lockwater Vault (Lanternquay, Drowned Exchange) pays 1.5% a night and keeps cash safe.</li></ul>
   <h4>${ico('wrench')}Upgrades</h4><ul><li>Copperhook Docks: bigger hold, faster engine, repairs. Saint Mire & Fogmouth: weapons. Drowned Exchange: a wireless set for live prices everywhere. Orchid Terraces: Madame Ysolde sells one rumour a night about tomorrow's shocks. Rumours can land weak or turn the other way; she tells you how sure she is.</li></ul>
   <h4>${ico('skull')}Danger</h4><ul><li>Patrols, the Gull Gang and Marrow's collectors may stop you. Run, fight, bribe or pay. If your hull hits 0%, you sink and lose your cash and cargo.</li></ul>
@@ -2698,8 +2754,8 @@ function openMenu(){
 let coachOpen=false,coachI=0;
 const COACH=[
   {sel:'#hud-stats',view:'market',title:'Your ledger',text:'Cash in your <b>purse</b>, savings in the <b>vault</b>, and your <b>debt</b> to Marrow Quill, which grows 6% every night and must be repaid by night 10. Watch your <b>hold</b> space and <b>hull</b> too.'},
-  {sel:'#side-body .rows',view:'market',title:'The market',text:'Tonight&rsquo;s prices. The coloured % compares each price with its usual level across the city: <b style="color:#4ee39b">green is cheap</b>, a buy; <b style="color:#ffbe55">amber is dear</b>, a sale. Tags say where a good sells for more. Tap a good to trade.'},
-  {sel:'#mapwrap',view:'map',title:'The canals',text:'Tap a district to see what it sells cheap and what it pays well for, then tap Sail. <b>Every voyage takes one night</b>, and the water isn\'t always safe.'},
+  {sel:'#side-body .rows',view:'market',title:'Your first trade',text:'The <b>harbor circular</b> lists all seven ports tonight. Row notes name a higher observed sale price and its age. Tap a good to compare quotes. Prices and dealers can change on arrival; later quotes need a visit or wireless.'},
+  {sel:'#mapwrap',view:'map',title:'The canals',text:'Tap a district, then <b>Port details</b> for dated prices. A lit canal takes <b>one night</b>; other ports need two via a waypoint. Compare the route and risk before tapping Sail.'},
   {sel:'#panel-side',view:'harbor',title:'Harbor services',text:'Repay Marrow and use the vault at Lanternquay. Upgrade your hold and engine at Copperhook Docks. The <b>directory</b> lists every service.'},
   {sel:'#h-night',view:'market',title:'Thirty nights',text:'On night 30, sell everything and settle up. Good luck, captain. Help is under <b>More</b><span class="kb-only"> (or press <kbd>?</kbd>)</span>.'}
 ];

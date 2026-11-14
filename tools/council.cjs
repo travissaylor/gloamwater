@@ -22,7 +22,7 @@ function freezeTools(packet){
       if(entry.isDirectory())walk(name);else if(/\.(js|cjs|md)$/.test(entry.name))copy(name);
     }
   }
-  for(const file of ['verify.cjs','touch-play.cjs','README.md','package.json','package-lock.json'])copy(file);
+  for(const file of ['verify.cjs','touch-play.cjs','event-check.cjs','profile.cjs','README.md','package.json','package-lock.json'])copy(file);
   walk('phone');walk('sim');files.sort((a,b)=>a.file.localeCompare(b.file));
   // Dependencies are installed and locked; only their local directory is shared.
   fs.symlinkSync(path.join(root,'tools/node_modules'),path.join(destination,'node_modules'),process.platform==='win32'?'junction':'dir');

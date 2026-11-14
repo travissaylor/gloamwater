@@ -262,6 +262,14 @@
   function enabled(ci, k) { return ci.opts[k] && ci.opts[k].enabled; }
   SIM.enabled = enabled;
 
+  function leakReference(ci) {
+    // The choice reveals quantity and good. Do not infer the selected cargo from hidden event state.
+    const text = String(ci.opts.yield && ci.opts.yield.label || '').replace(/<[^>]+>/g, '');
+    const q = /Jettison\s+(\d+)/i.exec(text);
+    const g = GOODS.find(g => text.includes(g.name));
+    return q && g ? +q[1] * g.base : null;
+  }
+
   // Default answers. Documented in README.md.
   SIM.defaultChoose = function (ci) {
     const hull = S.hull;
@@ -273,6 +281,20 @@
         return enabled(ci, sol.best) ? sol.best : first;
       }
       case 'squall': return hull > 25 || !enabled(ci, 'shelter') ? 'push' : 'shelter';
+      case 'gull': {
+        if (!enabled(ci, 'run') || !enabled(ci, 'pay')) return first; // older one-button event
+        const pay = ci.opts.pay.cost, p = ci.opts.run.p;
+        const mem = SIM.cur && SIM.cur.mem;
+        const future = Math.max(0, NIGHTS - S.day) * Math.max(1500, mem && mem.nv || 0, 0.06 * Math.max(0, netWorth()));
+        const damage = hull <= 10 ? S.cash + api.cargoValueHere() + future : 10 * SIM.model.hullValue();
+        const runCost = (1 - p) * (pay + damage);
+        return runCost < pay ? 'run' : 'pay';
+      }
+      case 'leak': {
+        if (!enabled(ci, 'yield')) return first; // older one-button event
+        const value = leakReference(ci);
+        return enabled(ci, 'pay') && value != null && ci.opts.pay.cost <= value && ci.opts.pay.cost <= S.cash ? 'pay' : 'yield';
+      }
       case 'crate': return hull > 20 && enabled(ci, 'take') ? 'take' : 'leave';
       case 'racks': return enabled(ci, 'buy') && S.cash >= 3 * ci.opts.buy.cost && S.day <= 25 ? 'buy' : 'no';
       case 'eel': return 'no';
@@ -536,6 +558,16 @@
     t.q += q; t.total += total;
   }
 
+  function assertEconomy() {
+    for (const key of ['cash', 'bank', 'debt']) if (!Number.isFinite(S[key]) || S[key] < 0) throw new Error('economy invariant: invalid ' + key);
+    for (const g of GOODS) {
+      const c = S.cargo[g.id];
+      if (!Number.isInteger(c.q) || c.q < 0 || !Number.isFinite(c.cost) || c.cost < 0) throw new Error('economy invariant: invalid cargo ' + g.id);
+    }
+    if (holdUsed() > capacity()) throw new Error('economy invariant: hold over capacity');
+    if (SIM.cur) SIM.cur.numericChecks++;
+  }
+
   // ---------------------------------------------------------------- data mutation for sweeps
   const ORIG = {};
   SIM.mutate = function (cfg) {
@@ -605,7 +637,7 @@
     busy = false; sel = null; SIM.reload = null; SIM.cards = []; SIM.encOpen = null; SIM.expectConfirm = false;
     try { closeModal(); } catch (e) {}
     const mem = { __events: {}, out: {}, opts: opts || {} };
-    SIM.cur = { pol, mem, name: polName, maxSale: 0, enc: [], charters: [], stays: 0, trades: {}, routeLog: [], reloadLog: { found: 0, noSave: 0, cashBack: 0, hullBack: 0 } };
+    SIM.cur = { pol, mem, name: polName, maxSale: 0, enc: [], charters: [], stays: 0, trades: {}, routeLog: [], numericChecks: 0, reloadLog: { found: 0, noSave: 0, cashBack: 0, hullBack: 0 } };
     startGame(newState('Sim'), true);
     const rng0 = { m: S.rngM, e: S.rngE };
     if (pol.init) await pol.init(api, mem);
@@ -618,6 +650,7 @@
       __rng.reseed('policy', S.day);
       let dest = null;
       try { dest = await pol.night(api, mem); } catch (e) { errors.push('night: ' + (e && e.message)); }
+      assertEconomy();
       if (S.over || S.day >= NIGHTS) break;
       const d0 = S.day, loc0 = S.loc;
       if ((dest === 'stay' || dest === S.loc) && STAY) { SIM.cur.stays++; await stayNight(); } // eslint-disable-line no-undef
@@ -626,6 +659,7 @@
         await sailTo(dest);
       }
       SIM.encCloseAny();
+      assertEconomy();
       SIM.cur.routeLog.push({ day: d0, from: loc0, to: S.loc });
       while (SIM.reload && reloads < 200) {
         reloads++;
@@ -645,7 +679,7 @@
     return {
       seed, net: t.net, rank: rankFor(t.net).name, sunk, day: S.day, hull: S.hull, over: !!S.over, tallyCargo: t.cargo, debtEnd: S.debt,
       worth: CHECK.map(d => w[d]), worthAll: Array.from({ length: NIGHTS }, (_, i) => w[i + 1]),
-      stats: { trips: st.trips, fights: st.fights, won: st.won, fled: st.fled, bribes: st.bribes, interest: st.interest, vaultEarned: st.vaultEarned, bestFlip: st.bestFlip, maxSale: SIM.cur.maxSale, whispersBought: st.whispers || 0, holdTier: S.holdTier, wireless: S.wireless, arms: S.arms, motor: S.motor, lost: st.lost || 0 },
+      stats: { trips: st.trips, fights: st.fights, won: st.won, fled: st.fled, bribes: st.bribes, interest: st.interest, vaultEarned: st.vaultEarned, bestFlip: st.bestFlip, maxSale: SIM.cur.maxSale, whispersBought: st.whispers || 0, holdTier: S.holdTier, wireless: S.wireless, arms: S.arms, motor: S.motor, lost: st.lost || 0, numericChecks: SIM.cur.numericChecks },
       events: mem.__events, out: mem.out, reloads, reloadLog: SIM.cur.reloadLog, errors,
       enc: SIM.cur.enc, charters: SIM.cur.charters, stays: SIM.cur.stays, trades: Object.values(SIM.cur.trades), routeLog: SIM.cur.routeLog, rng0, mkt,
     };

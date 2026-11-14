@@ -201,6 +201,17 @@ class TouchRun {
         const keys = ui.choices.map(x => x.key);
         let key;
         if (keys.includes('ok')) key = 'ok'; // also advances a recorded sinking to its actual ending
+        else if (ui.title === 'Water in the hold' && keys.includes('yield')) {
+          // Both the lost quantity and its usual value are disclosed by the card.
+          // This reads the public choice; it never inspects an event outcome.
+          const loss = ui.choices.find(x => x.key === 'yield').text;
+          const n = /Jettison\s+(\d+)/i.exec(loss);
+          const good = state.goods.find(g => loss.includes(g.name));
+          const pay = ui.choices.find(x => x.key === 'pay');
+          const price = pay && /¤([\d,]+)/.exec(pay.text);
+          const reference = n && good ? +n[1] * good.base : null;
+          key = price && reference != null && +price[1].replace(/,/g, '') <= reference ? 'pay' : 'yield';
+        }
         else if (keys.includes('bribe')) key = 'bribe';
         else if (keys.includes('yield')) key = 'yield';
         else if (keys.includes('pay')) key = 'pay';

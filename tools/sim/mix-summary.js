@@ -6,7 +6,7 @@ const file = process.argv[2] || path.join(__dirname, 'results/round3-changed.jso
 const out = process.argv[3] || file.replace(/\.json$/, '-summary.md');
 const data = JSON.parse(fs.readFileSync(file, 'utf8'));
 const pct = x => (100 * x).toFixed(1) + '%';
-const cash = x => '¤' + Math.round(x).toLocaleString('en-US');
+const cash = x => (x < 0 ? '−' : '') + '¤' + Math.round(Math.abs(x)).toLocaleString('en-US');
 const valid = rows => rows.filter(r => !r.error);
 const mean = xs => xs.reduce((a, b) => a + b, 0) / (xs.length || 1);
 const sum = xs => xs.reduce((a, b) => a + b, 0);
@@ -41,6 +41,10 @@ if (ws) {
   const higher = paired.filter(r => r.net > bySeed.get(r.seed).net).length;
   lines.push('', `Whisper spam beats informed on ${higher}/${paired.length} paired seeds (${pct(higher / paired.length)}). ${pct(ws.whispers.lostShare)} of ${ws.whispers.acted} acted whispers lose money, including the fee.`);
 }
+const smart = data.summary['whisper-smart'];
+if (smart) {
+  lines.push('', `Careful whisper use: ${smart.whispers.bought} bought, ${smart.whispers.acted} acted on; mean attributed whisper profit per run ${cash(smart.whispers.pnlPerRun)} including fees. Whole-run paired mean difference versus informed ${cash(smart.vsInformed.meanDiff)}, median difference ${cash(smart.vsInformed.medianDiff)}; higher on ${pct(smart.vsInformed.higherShare)} of seeds. Attributed whisper profit does not allocate every shared patch or bribe cost. Whole-run comparisons include actual costs and also reflect changed routes and decisions.`);
+}
 const rt = data.summary.roundtrip && data.summary.roundtrip.roundtrip;
 if (rt) lines.push('', `Round trips: ${rt.tests.toLocaleString('en-US')} probes; ${rt.positive} profitable; best cash change ${cash(rt.maxGain)}.`);
 const sales = inf.flatMap(r => r.trades || []).filter(t => t.kind === 'sell' && t.day >= 18);
@@ -62,9 +66,17 @@ if (hops.length) {
   for (const [route, n] of Object.entries(routes).sort((a, b) => b[1] - a[1])) lines.push(`| ${route} | ${pct(n / hops.length)} |`);
 }
 lines.push('', `Informed charters: ${pct(data.summary.informed.charters.anyShare)} buy at least one, ${data.summary.informed.charters.perRun.toFixed(2)} per run.`,
+  `Informed N30/N18: ratio of medians ${data.summary.informed.shape.ratio30over18OfMedians.toFixed(2)}×; median per-run ratio ${data.summary.informed.shape.medianRunRatio30over18.toFixed(2)}×.`,
   `Informed hold tiers 3–5: ${inf.filter(r => r.stats.holdTier >= 3).length}/${inf.length} runs.`,
   `Reported page errors: ${data.meta.pageErrors.length}. Runs with reported errors: ${Object.values(data.runs).flat().filter(r => r.error || (r.errors && r.errors.length)).length}.`,
   `Non-finite final net scores: ${Object.values(data.runs).flat().filter(r => !r.error && !Number.isFinite(r.net)).length}.`,
   `RNG seed mismatches: ${data.meta.repro.rng0Mismatch}; night-30 market mismatches: ${data.meta.repro.mktMismatch}.`, '');
+if (data.meta.workerResponseShas) lines.push(`Worker response-body SHA matches: ${data.meta.workerResponseShas.filter(x => x === data.meta.gameSha).length}/${data.meta.workerResponseShas.length}.`,
+  `Numerical invariant checks across all runs: ${sum(Object.values(data.runs).flat().map(r => r.stats && r.stats.numericChecks || 0))}.`, '');
+if (inf.some(r => Object.keys(r.events || {}).some(k => /^(gull|leak):/.test(k)))) {
+  lines.push('New event decisions, actual counts over all runs per policy.', '', '| Policy | Gull chase | Gull pay | Leak patch | Leak jettison |', '|---|---:|---:|---:|---:|');
+  for (const [name, rows] of Object.entries(data.runs)) lines.push(`| ${name} | ${['gull:run','gull:pay','leak:pay','leak:yield'].map(k => sum(rows.map(r => r.events && r.events[k] || 0))).join(' | ')} |`);
+  lines.push('');
+}
 fs.writeFileSync(out, lines.join('\n'));
 console.log(lines.join('\n'));
