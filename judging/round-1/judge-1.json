@@ -1,0 +1,351 @@
+{
+  "judge": 1,
+  "lens": "game design",
+  "model": "claude-fable-5-2",
+  "scores": {
+    "A1": 8,
+    "A2": 7,
+    "A3": 7,
+    "A4": 7,
+    "A5": 8,
+    "B1": 7,
+    "B2": 8,
+    "B3": 8,
+    "B4": 8,
+    "B5": 8,
+    "C1": 9,
+    "C2": 9,
+    "C3": 9,
+    "C4": 8,
+    "C5": 7
+  },
+  "weighted_total": 78.9,
+  "caps_applied": [],
+  "criteria": {
+    "A1": {
+      "score": 8,
+      "evidence": "Two full 30-night games by touch (WebKit iPhone 13, then Chromium 390x664). The best move changed almost every night. Examples: N10 of run 1 with the wireless, Fogmouth paid most for all three cargoes (ink 29.4k, pearls 545, saffron 1,164, about +19.8k) but is danger 4, versus Lanternquay at about +12.6k and safe. N12 a pearl surge at Orchid Terraces (+388%) competed with eels to Drowned Exchange (+54%). 'No dealers today' forced holds (pearls at DE on N10; ink unsellable at LQ on N13 and DE on N14 in run 2). Order size is a decision: selling 35 eels at Saint Mire averaged 1,902 against a posted 2,459, with the last unit at 809; 10 silk at LQ quoted 5 for 75,110, 8 for 111,762, 10 for 128,786. Prices drift enough to hurt: ink with 'best known sale 28.4k' sold for 21.6k a night later (loss 2,211).",
+      "below_10": [
+        "Every district is exactly one night from every other, so the map's geography never enters a route decision; only danger and price identity do.",
+        "There is no way to stay in port for a night, so a rumour about the district you are standing in (Pell, run 2 N18) cannot be used.",
+        "Glowkelp and Bottled Rain stop mattering after about night 5: 60 units at the posted price is worth 2-5k against 30-60k lots of silk, ink and chips.",
+        "From about night 18 the turn narrows to 'buy the two or three best margins up to their posted depth' as wealth outgrows depth."
+      ]
+    },
+    "A2": {
+      "score": 7,
+      "evidence": "Exploit hunts. Round trip: 70 pearls bought for 23,548 quoted back at 23,547. Split orders price identically (integrated curve, confirmed in code and by quotes). Reload during and after the eel gamble resumed the same event with the outcome committed (cash 41,327 before and after). The final tally used depth-aware half value (5 chips = 16,960, equal to quoteSell/2). Borrowing to the 30k limit on night 1 (run 2) was not dominant: net worth on N9 was 29.5k with 17.8k interest paid over the run, against 35.2k on N9 in the no-borrow run (run 2 also lost about 15k to a mis-tap of mine). Results: 635,373 and 584,703, both Tide Baron. The vault earned 48.5k and 64.4k and shielded cash from 30% tolls. Late game: on N23 of run 2, 365k of 413k sat in the vault at 1.5%.",
+      "below_10": [
+        "Purse-floor trick: bribes and tolls scale with the purse, not the cargo. Keeping about 1-4k in the purse made patrols trivial (bribes of 831, 714, 1,282 and 1,244 protecting 21k-47k of cargo). Only a purse under 200 is punished.",
+        "The starting 6,000 debt is weak pressure for a careful player: I ignored it until night 16 and paid 8,383 interest in total on a 635k run.",
+        "Hold tiers 3-5 (18k, 40k, 85k) are traps: market depth binds long before hold does. Peak hold used was 71 of 85 in run 1 and 63 of 70 in run 2.",
+        "No late-game sink for capital: past about 200k most wealth idles in the vault, and nightly growth fell from 25-40% early to 4-6%.",
+        "The wireless set at 6,000 is an automatic buy; nothing competes with it.",
+        "Score spread with skill is evidenced only by my two similar results; the builder's simulation figures are unverified."
+      ]
+    },
+    "A3": {
+      "score": 7,
+      "evidence": "15 encounters across two runs, plus strongbox, courier x4, crate x5, Fenna's racks, leak x3, gull thief x2, eel gamble, Pell x3, squall x2 and festivals. Every encounter option shows its odds or price. Upgrades change the maths: the boathook (14-20% per volley) was never worth using; the harpoon (52%) beat one cutter for 1,096; the Arc lance (59-68%) beat four cutters on the last leg for 5,436 at a cost of 39% hull while the bribe stood at 16,724 on a 131k purse. Systems interlock: hull under 60% caused three leaks (4 eels, 3 chips worth about 14k, 1 Moon Ink). Sinking verified: hull set to 4% by console, then 'Push through' a squall by touch gave 'The Little Lantern goes down' and a score of -6,742. Whispers behaved as stated: Ysolde's 'sure' whisper (8,250) landed weak; Pell's 'sure' landed in full.",
+      "below_10": [
+        "With a small purse the bribe or toll is always correct (about half my encounters); the stakes should follow cargo value.",
+        "Paying Marrow's collectors is free when you have cash, since all of it counts toward the debt.",
+        "Squall and crate hide their odds ('the hull will take a beating', 'if it is what it says') while encounters show theirs; the crate card does not warn when the hold is full.",
+        "Encounters were frequent and repetitive: 7 and 8 fights in 29 voyages with the same two intros.",
+        "Running succeeded 1 time in 11 at stated odds of 30-54% (roughly a 2-3% outcome). The code is a plain rnd()<fleeP, so I treat it as luck, but it was not verified statistically."
+      ]
+    },
+    "A4": {
+      "score": 7,
+      "evidence": "Run 1 net worth: N1 -3.5k, N5 1.2k, N9 35k, N13 58k, N16 172k (silk surge), N20 294k, N23 462k (eel surge; one 12-unit sale made 103k), N26 530k, N30 635k. Milestones landed: first hold upgrade N9, wireless N10, debt cleared with fanfare N16, festival and surge windfalls. The last nights carried some tension: 'no dealers' risk on the final leg, and a four-cutter patrol with 131k aboard on night 29 of run 2. A full game took about 35-45 minutes of tapping.",
+      "below_10": [
+        "Growth flattens after about night 20 (4-6% a night) because depth caps deployable money; the endgame push is mostly topping up a number.",
+        "No late goals or unlocks: every useful upgrade is bought by about night 14, and the next rank threshold is never shown during play.",
+        "The two biggest jumps in each run were unannounced surges on goods I happened to hold, so the peaks feel lucky more than planned.",
+        "Nights 18-27 play alike: sell, buy the top margins, deposit, sail."
+      ]
+    },
+    "A5": {
+      "score": 8,
+      "evidence": "A five-card tour highlights the HUD, market, map and harbor; a first-buy toast says 'Now find a district that pays more'; each district gives a first-visit hint. While deciding I could see: price versus usual in colour, 'Wanted: X' and '+N% X' tags, a 'Best known' banner with its age, depth notes ('past 21, each one costs more. The last goes at 842'), profit and average cost on the sell sheet, 'Tomorrow, unpaid 6,360' on the loan, a per-cargo 'last seen / vs cost' table on the map card, and Ysolde's confidence before paying. The score screen breaks down cash, vault, cargo and debt (checked: 252,872 + 382,501 = 635,373) with six stat tiles.",
+      "below_10": [
+        "Free cargo shows '+Infinity%' gain (crate pearls and saffron, both runs).",
+        "Remote festival bulletins say 'Lasts into tomorrow, weaker' but festivals last one night.",
+        "Tags such as '+80% Drowned Exchange' use today's surge price without saying the surge ends before you can arrive.",
+        "Tour card 5 on touch reads 'Help is under More (or press ).' with the key missing.",
+        "The score screen does not say how far the next rank was or what cost the most (about 28k to leaks and 60k to tolls in run 1, worked out by hand).",
+        "Squall and crate odds are not stated."
+      ]
+    },
+    "B1": {
+      "score": 7,
+      "evidence": "Consistent lantern-lit navy and amber palette, serif display type, custom line icons for all 8 goods and 7 districts, illustrated islands on the map, an animated title skyline and themed copy throughout ('Interest is just time, wearing a nicer coat'). Title, play, event and end screens match (01-title.png, 10-map.png, 36-run-result.png, 71-score.png).",
+      "below_10": [
+        "Characters (Marrow Quill, Ysolde, Odile, Pell) have no portraits, only small icons; Pell's card reuses the lamp art from the intro.",
+        "Event art is simple geometric scenes (a boat silhouette and two light cones) and repeats.",
+        "In play the screen still reads as a tidy dark dashboard of cards; the identity sits mostly in the map and title."
+      ]
+    },
+    "B2": {
+      "score": 8,
+      "evidence": "On the phone the HUD always shows night, net worth, purse, vault, debt, hold and hull. Each market row gives price, coloured % versus usual, state tags (Cheap, Bargain, Pricey, Surge, Glut, Fading surge, Festival, No dealers), owned quantity and gain. A banner names the best known margin; with the wireless the trade sheet lists tonight's price in the six other districts. The sheet has a 14-night chart with my average-cost line and a cheap-to-dear gauge. Desktop adds a sparkline per row (desk-03-main.png).",
+      "below_10": [
+        "No sparkline or trend mark in the phone market list; trend needs a tap into the sheet.",
+        "Only five rows fit above the nav at 390x664, and a docked toast covers the fourth and fifth rows for a few seconds after arriving.",
+        "The gauge at the bottom of the trade sheet is partly hidden behind the pinned buttons until scrolled.",
+        "'Cargo worth here' and net worth include goods that have no dealer tonight.",
+        "Finding the best trade often needs several sheets opened in turn; the banner shows only one margin."
+      ]
+    },
+    "B3": {
+      "score": 8,
+      "evidence": "Buying flies crates to the hold and flashes the row; selling flies coins to the purse with floating profit text and a burst above 2,000; travel draws a wake along the route and shows a night card; hits shake the screen; clearing the debt and winning release lanterns; sinking brings rain. The code holds 19 synthesized effects (tones plus filtered noise through a compressor), distinct per action. Audio was not heard: it was judged from the code, from the harness stand-in in WebKit (context resumed inside touchend; 1 sound started while running, 0 while suspended) and from a real AudioContext in Chromium with no errors. Mute works by key M and persists.",
+      "below_10": [
+        "No ambient bed or music; sound is effects only.",
+        "The HUD does not update under an event card (strongbox, toll and thief all showed the old purse until dismissed).",
+        "On the phone the mute toggle sits two taps deep under More.",
+        "Encounter rounds reuse the same hit and shot sounds with little staging."
+      ]
+    },
+    "B4": {
+      "score": 8,
+      "evidence": "Illustrated islands with a skiff marking the current district, danger pips, green best-margin badges per district for the cargo aboard, '!' markers for news, a dashed route preview and an animated voyage. The district card lists what it sells cheap, what it pays for, its services, and a 'your cargo / last seen / vs cost' table (33-map-wireless.png, 34-fm-card.png). The map is redrawn for portrait.",
+      "below_10": [
+        "Distance means nothing: every hop is one night and the drawn canals do not constrain travel.",
+        "On the phone the district card covers most other nodes, so comparing two destinations means closing and reopening it.",
+        "Badges show only the single best margin per district."
+      ]
+    },
+    "B5": {
+      "score": 8,
+      "evidence": "Played by touch at 390x664, 360x640 and 430x740, plus landscape, and by mouse and keyboard at 1280. Audit at 360x640: 0 targets under 44px, 0 contrast failures, 0 elements past the viewport edge, 0 inputs under 16px. A keyboard-only turn worked on desktop (arrows, B, Enter, 3, Enter, ?, M) with visible focus rings and on-screen key hints. Reduced motion is handled in CSS and code (read, not run).",
+      "below_10": [
+        "22 text items under 15px at phone width, including 11px HUD labels and 12px tags and nav labels.",
+        "Nav buttons sit 4px apart and the last visible market row touches the nav.",
+        "Reduced-motion and safe-area behaviour were read in code only.",
+        "Safari-specific behaviour (toolbar collapse, double-tap zoom, silent switch) is unverified on a real device."
+      ]
+    },
+    "C1": {
+      "score": 9,
+      "evidence": "All ten gameplay and five presentation requirements were seen working: 30 nights; 7 districts on a visual map; 8 goods with spikes, crashes and festivals; hold 30 to 200 plus racks; compounding debt with borrow and repay; a vault with interest at two branches; 13 distinct events including three multi-round risky encounters; upgrades (hold, engine, 3 weapons, wireless, two repair yards, whispers); a score screen with breakdown, 7 ranks and a ledger that survived reload in both browsers; a guided tour; charts; synthesized sound with mute; mouse, touch and keyboard; phone and desktop layouts.",
+      "below_10": [
+        "Audio could not be heard in this harness, so that requirement rests on code reading and context state.",
+        "Price trend at a glance is weaker on the phone list than the brief implies; the chart is one tap away."
+      ]
+    },
+    "C2": {
+      "score": 9,
+      "evidence": "One file of 180,971 bytes. A grep for http, fetch, XMLHttpRequest, import, link and src found only a data: favicon and SVG namespaces. Three localStorage calls, all inside try/catch with a memory fallback. Ran from file:// in WebKit and Chromium. Ran inside an iframe with sandbox=\"allow-scripts\", where localStorage threw SecurityError, and a purchase completed with no errors (iframe-01.png).",
+      "below_10": [
+        "I did not capture a runtime network log, so 'no requests' rests on grep plus offline play."
+      ]
+    },
+    "C3": {
+      "score": 9,
+      "evidence": "Two complete games to the score screen, one sunk game, a sandboxed game, reloads mid-event, a double-tapped confirm, sailing attempts on the final night and corrupt storage: the error log was empty at every check and nothing stuck.",
+      "below_10": [
+        "Cosmetic glitches in normal play: '+Infinity%' on free cargo and the truncated tour sentence.",
+        "A sunk run reports 'Peak worth 0'."
+      ]
+    },
+    "C4": {
+      "score": 8,
+      "evidence": "Typed -3, 1e5 and 2.7 into the quantity box: all clamped to valid whole amounts. Confirm tapped twice sold once. Both score breakdowns sum exactly. Interest matched (6,000 to 6,360 to 6,742). Round trips and reloads gained nothing. A corrupt save, scores and settings were discarded or sanitised, with markup escaped (corrupt-01-ledger.png).",
+      "below_10": [
+        "Selling back part of an order keeps the blended average cost, so the stats book a phantom profit (34 pearls sold back at Copperhook showed about +3.2k) and the remaining units show the wrong cost.",
+        "Net worth and 'cargo worth here' value cargo that cannot be sold at this port tonight.",
+        "A hand-edited score of 1e99 is accepted and prints a 100-digit fortune in the ledger.",
+        "Free cargo with zero cost produces Infinity in the gain display."
+      ]
+    },
+    "C5": {
+      "score": 7,
+      "evidence": "A single state object S; data tables for goods, districts, upgrades, ranks and events kept apart from logic; one guarded storage wrapper; save validation; animation that ran smoothly in Chromium (a voyage settles in about 1.2-2 s).",
+      "below_10": [
+        "rnd is Math.random; a seeded generator is defined but unused, so the RNG is not isolated or reproducible.",
+        "Very dense one-line functions and long template strings make the 2,200-line file hard to maintain.",
+        "State is mutated directly from event, service and trade handlers.",
+        "Tuning numbers (0.44, 0.15, 0.06, 0.12, 0.3) are scattered through the encounter code."
+      ]
+    }
+  },
+  "strengths": [
+    "Market depth with lingering price pressure turns quantity into a decision and closes round-trip, split-order and hoarding exploits (a 70-unit round trip returned cost minus 1).",
+    "District identities, stock-outs, two-night shocks and drifting prices made the best move change nearly every night across two runs.",
+    "Rumours with stated confidence are a real bet: one 'sure' whisper landed weak, another landed in full.",
+    "Decision information is unusually complete on a phone: depth notes, profit, tomorrow's debt, per-cargo margins on the map.",
+    "Robust: two full games, a sinking, a sandboxed iframe, reload and corrupt-storage tests with no errors."
+  ],
+  "weaknesses": [
+    "Encounter costs scale with the purse, not the cargo, so a small purse makes most patrols and gangs trivial.",
+    "The late game flattens: capital outgrows depth by about night 18, most wealth idles in the vault, and hold tiers 3-5 are never worth buying.",
+    "All districts are one night apart and there is no lay-over, so geography and timing are thinner than the map suggests.",
+    "Starting debt is weak pressure unless the player chooses to borrow more.",
+    "A few information errors: '+Infinity%', the festival duration text, surge-inflated destination tags."
+  ],
+  "bugs": [
+    {
+      "severity": "medium",
+      "what": "Free cargo shows '+Infinity%' gain in the market row.",
+      "repro": "Haul a crate aboard while holding none of that good, then open the market: 'Rust Pearls x6 +Infinity%'. Seen on N29 of run 1 and on N19 and N28 of run 2 (67-infinity-bug.png). Cause: gain is (price - cost) / cost with cost 0."
+    },
+    {
+      "severity": "medium",
+      "what": "Bulletins for a festival in another district say 'Lasts into tomorrow, weaker', but festivals last one night.",
+      "repro": "Wait for a 'parade fills <district>' bulletin about a district you are not in (run 2 N11, Orchid Terraces). In the code festivals have days:1 and every remote effect gets the same subtitle. I did not sail there to watch it expire."
+    },
+    {
+      "severity": "low",
+      "what": "Bribes and tolls ignore cargo value, so a near-empty purse buys safe passage for a full hold.",
+      "repro": "Carry 40k or more of cargo with 3-4k in the purse and meet a patrol: the bribe was 714 to 1,282 in four cases."
+    },
+    {
+      "severity": "low",
+      "what": "Selling back part of a just-bought order books phantom profit and leaves a wrong average cost.",
+      "repro": "At Copperhook buy 70 pearls (past the posted depth, average 336), then sell 34 back: the sale shows a profit of about 3.2k and the remaining 36 keep cost 336 though they cost 246 each."
+    },
+    {
+      "severity": "low",
+      "what": "Net worth and 'Cargo worth here' count cargo that has no dealer at this port tonight.",
+      "repro": "Arrive holding pearls where pearls show 'No dealers today' (run 1 N10 at Drowned Exchange): cargo worth read 55,110 including 30 unsellable pearls."
+    },
+    {
+      "severity": "low",
+      "what": "Tour card 5 reads 'Help is under More (or press ).' on touch devices.",
+      "repro": "Start a new game on a phone and step to card 5 of the tour (07-tour5.png)."
+    },
+    {
+      "severity": "low",
+      "what": "HUD figures do not update while an event card is open.",
+      "repro": "Arrive to a strongbox, a paid toll or the gull thief: the purse in the HUD shows the old amount until Continue."
+    },
+    {
+      "severity": "low",
+      "what": "Hand-edited ledger scores are not bounded.",
+      "repro": "Set gloamwater.scores.v1 to include {\"score\":1e99} and open the Captains' Ledger: a 100-digit fortune is listed first."
+    },
+    {
+      "severity": "low",
+      "what": "A sunk run reports 'Peak worth 0'.",
+      "repro": "Sink the skiff; the Peak worth tile on the score screen reads 0."
+    }
+  ],
+  "evidence": {
+    "days_played": 63,
+    "reached_score_screen": true,
+    "final_result": "Run 1 (WebKit iPhone 13, touch): 635,373, Tide Baron, 29 voyages, debt repaid on N16. Run 2 (Chromium 390x664, touch, borrowed to the 30k limit on N1): 584,703, Tide Baron. Run 3 (WebKit 360x640): sunk on night 3 after the hull was set to 4% by console; -6,742, Drowned Debtor.",
+    "phone_notes": "Run 1 night by night: N1 2 saffron to OT; N2 pearls to DE; N3-6 pearl loop Sluices to DE plus two courier jobs; N7 22 saffron, paid a 200 gull toll; N8 chips to Copperhook; N9 hold 45, eels and pearls; N10 wireless, ink and saffron to Fogmouth, bribed 831; N11 16 chips; N12 hold 70, motor, pearls for the OT surge; N13 glut eels, ran twice and failed, paid 3,989 and 3,777; N14 weapons and racks; N15 silk for the LQ surge; N16 sold silk, repaid 14,383, first deposit; N17-19 ink and saffron, a squall, two leaks; N20 repair and turbine; N21 festival sale; N22-23 eel surge (+103k); N24-29 ink, silk and chips, a 'sure' whisper that landed weak, a 22,220 toll; N30 sold and settled. Also checked 360x640 (audit clean on targets, contrast and clipping) and iPhone 14 Pro Max in portrait and landscape. The console was used to read state and quotes, to switch to the market view in my helper script, to set hull to 4% for the sinking test, and to write corrupt storage. All trades, travel and choices were taps.",
+    "desktop_notes": "Chrome at 1280x800: two-pane layout with map, log and a market list with sparklines and key hints. Completed a keyboard-only turn (ArrowDown x4, B, ArrowLeft, Enter, 3, Enter), opened help with ?, toggled mute with M. No errors.",
+    "audio_notes": "Not heard. Judged from the Web Audio code (19 effects: oscillators plus filtered noise through a compressor; mute stored in settings), the harness stand-in in WebKit (context created and resumed inside touchend; 1 sound started while running, 0 while suspended), and a real AudioContext in Chromium with no errors.",
+    "screenshots": [
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\01-title.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\02-intro.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\03-tour1.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\04-tour2.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\05-tour3.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\06-tour4.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\07-tour5.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\08-market-n1.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\09-sheet.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\10-map.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\11-tcard.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\12-bought.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\13-voyage.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\14-arrive.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\14-event.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\15-ot-market.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\16-sellsheet.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\17-sold.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\18-pearls.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\19-ysolde.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\20-de-market.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\21-courier.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\22-sl.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\23-de7.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\24-saffron-max.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\25-gulls.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\26-yard.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\27-upgraded.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\28-de-harbor.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\29-wireless.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\30-market-wireless.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\31-pearl-nodealer.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\32-ink.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\33-map-wireless.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\34-fm-card.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\35-patrol.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\36-run-result.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\37-qty-typed.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\38-gull-run.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\39-ot-n13.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\40-ysolde.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\41-bulletin-tap.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\42-card-here.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\43-run2.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\44-fenna.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\45-armory.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\46-fight.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\47-fight2.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\48-fm-n15.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\49-silk-sell.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\50-bigsale.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\51-lq-harbor.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\52-repay.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\53-debt-cleared.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\54-deposit.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\55-gulls3.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\56-escaped.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\57-squall.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\58-festival.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\59-eel-surge.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\60-eel-sheet.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\61-ysolde-sure.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\62-whisper.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\63-gulls4.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\64-gull-thief.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\65-sl-n27.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\66-crate.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\67-infinity-bug.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\68-final-night.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\69-final-sold.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\70-settle-confirm.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\71-score.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\72-score-scrolled.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\73-ledger-reload.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\corrupt-01-ledger.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\desk-01-title.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\desk-02-tour.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\desk-03-main.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\desk-04-sheet.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\desk-05-plan.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\desk-06-arrived.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\desk-07-help.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\iframe-01.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\max-01-market.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\max-02-map.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\max-03-landscape.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\r2-01-borrow.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\r2-02-eel.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\r2-03-reload-title.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\r2-04-debt-cleared.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\r2-05-pell.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\r2-06-ink-surge.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\r2-07-gutter.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\r2-08-patrol4.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\r2-09-fight-mid.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\r2-10-victory.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\r2-11-final-map.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\r2-12-score.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\s360-01-market.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\s360-02-sheet.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\s360-03-map.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\s360-04-card.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\s360-05-squall.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\s360-06-after-push.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\s360-07-sunk.png",
+      "C:\\Users\\travi\\AppData\\Local\\Temp\\claude\\d0e0c70f78c975e5\\a8427b7e-786c-4297-9553-12d0d177c12a\\scratchpad\\council\\round-1\\judge-1\\s360-08-sunk-score.png"
+    ]
+  },
+  "verdict": "A deep, honest trading economy with excellent decision information on a phone, held back by purse-scaled encounter costs, a flat late game and a map where distance does not matter."
+}

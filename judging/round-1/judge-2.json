@@ -1,0 +1,206 @@
+{
+  "judge": 2,
+  "lens": "visual and interaction design",
+  "model": "claude-fable-5-2",
+  "scores": {"A1": 8, "A2": 7, "A3": 8, "A4": 8, "A5": 8, "B1": 8, "B2": 8, "B3": 8, "B4": 8, "B5": 9, "C1": 9, "C2": 9, "C3": 8, "C4": 8, "C5": 8},
+  "weighted_total": 81.1,
+  "caps_applied": [],
+  "criteria": {
+    "A1": {
+      "score": 8,
+      "evidence": "Full 30-night run on the iPhone 13 WebKit harness with touch taps. Districts have readable identities (Saint Mire sells Moon Ink and Saffron cheap, Orchid Terraces pays for them, Copperhook pays for Ghost Chips and Glowkelp). Surges and gluts changed my route on nights 4, 12-13, 15-16, 19-20, 26-27 and 29-30. Market depth (about 3 Moon Ink, 7-10 Chips, 15 Eels, 40-60 Rain at the posted price) forced me to split money across goods from night 13 on. 'No dealers today' twice left me holding cargo (Moon Ink at Lanternquay night 10, Eels at Saint Mire night 26).",
+      "below_10": [
+        "Nights 2-7 were one loop repeated (Saffron out of Saint Mire, Rain and Eels back from Orchid Terraces).",
+        "Every district is one night from every other, so route choice is only about prices and danger, never distance.",
+        "Past night 16 the wireless set shows the best destination on every row, so the choice becomes following the highest tag within depth limits.",
+        "Hold above about 45 was rarely useful because depth caps what can be bought; I bought 85 and filled it only with low-value Rain and Kelp."
+      ]
+    },
+    "A2": {
+      "score": 7,
+      "evidence": "Debt mattered early (6,000 grew to 9,024 by night 8). Borrowing the extra 20,976 credit to trade was a live option and paid. The vault mattered once tolls scaled: the Gull Gang asked 30% of purse (29,086 on night 20, 46,118 on night 21), so I banked 75% of cash from night 22. Finished at 505,077 (Tide Baron, below the top rank) with several mistakes.",
+      "below_10": [
+        "Hull repair is a flat 35 per point (64 points cost 2,240 on night 24) while tolls and bribes scale with purse, so late in the run 'Run for it' until you escape and repair later beats paying every time.",
+        "Fighting with the starting Boathook (11-20% per volley against 2-4 boats) was never worth choosing; I never had a reason to buy a weapon.",
+        "Courier jobs (2,910 to 6,620) and the 1.5% vault rate stop mattering once a single trade earns 40,000 or more.",
+        "I did not test exploits in depth; selling 21 Saffron dropped the posted price from 1,101 to 711 in the same visit, which other judges should probe for a buy-back loop."
+      ]
+    },
+    "A3": {
+      "score": 8,
+      "evidence": "Nine encounters and about ten other events in one run: Tidewardens (run, fight, bribe, be searched), Gull Gang (run, fight, toll), Marrow's collectors (hand over 500 counted against debt), courier jobs, Fenna's racks, gull thief, strongbox, flotsam, Grandmother Wick's 40% for 2.5x gamble, squall, Pell's tips. Each option shows odds or price. An empty purse changes the toll into a third of the cargo. A failed run cost 8 to 16 hull and let me try again (hull went 92 to 52 on night 21 before I paid 46,118).",
+      "below_10": [
+        "The squall's 'Push through' says only 'the hull will take a beating'; it cost 16 points and I could not weigh that against losing a night.",
+        "Fight is not a real option without a weapon, so the calculation is run or pay.",
+        "Encounters came on 4 of my first 5 voyages while I had almost no cash, which made the early ones mostly a coin flip on cargo.",
+        "The escape text mentions searchlights even when the pursuer is the Gull Gang."
+      ]
+    },
+    "A4": {
+      "score": 8,
+      "evidence": "Net worth went from -3,500 to 14k by night 8, 107k by night 16, 291k by night 21 and 505k at the end. Milestones landed: Fenna's racks (night 8), boatyard racks (night 11), debt cleared with floating lanterns (night 15), wireless set (night 16). A 'Three nights left' bulletin on night 27 and a docked 'Final night' bar with Settle up on night 30 gave the ending a shape. A voyage takes 2.6 s in Chromium and can be skipped by tapping.",
+      "below_10": [
+        "Nights 17 to 26 felt similar: sell, slide the quantity down to the depth limit, sail.",
+        "The last three nights were not tense; the vault held 70% of my fortune and nothing threatened it.",
+        "There is no 'wait a night' action, so a rumour about the district you are in cannot be acted on."
+      ]
+    },
+    "A5": {
+      "score": 8,
+      "evidence": "First-run flow on the phone: intro card (debt, rate, cash, goal), a 5-step spotlight tour that can be skipped, then contextual toasts ('look for Cheap tags', 'Now find a district that pays more', 'Brother Tallow sells weapons here'). The trade sheet shows price each, total, purse after, hold after, your average cost, profit, a 14-night chart, a cheap-to-dear gauge and last-seen prices elsewhere. The loan office shows 'Tomorrow, unpaid'. The end screen itemises cash, vault, cargo, debt and six run stats.",
+      "below_10": [
+        "The buy sheet opens at the maximum you can afford even when slippage makes that a loss: on night 21 it offered 'Buy 24 for 176,493' at an average of 7,354 with best known sale 4,720 (judge-2/69-max-default-loss.png). The warning is 12.5px amber text.",
+        "Tour step 5 reads 'Help is under More (or press ).' on a phone: the key hint is missing and the brackets remain (judge-2/07-tour5.png).",
+        "End screen says 'Encounters won 0/9' after seven escapes, and 'Best sale' is not explained.",
+        "Free cargo shows '+Infinity%' as its gain (judge-2/67-infinity-bug.png)."
+      ]
+    },
+    "B1": {
+      "score": 8,
+      "evidence": "Looked at about 60 screenshots. One identity runs through title (judge-2/01-title.png: lantern-lit skyline, reflection, serif gold wordmark), play (navy panels, amber and teal accents, serif headings, mono numerals), encounters (judge-2/28-fight1.png: three gang skiffs with gulls; judge-2/20-encounter.png: cutters with searchlights) and the end screen (judge-2/83-end-c.png). All eight goods and seven districts have custom inline line icons; the map draws each district as a lit island. The HUD moon changes phase through the run. Copy is in voice ('Interest is just time, wearing a nicer coat').",
+      "below_10": [
+        "No character art: Marrow Quill, Ysolde, Pell, Fenna and Grandmother Wick are a glyph or the generic lantern-post illustration (judge-2/43-whisper.png reuses the intro art).",
+        "The play screen is still a stack of rounded dark cards; cropped to the market list it would be hard to tell from other dark trading dashboards.",
+        "The seven district islands share one silhouette and differ only by the centre glyph.",
+        "Harbor, Log and menu screens are plain lists with no illustration."
+      ]
+    },
+    "B2": {
+      "score": 8,
+      "evidence": "At 390x664 the HUD keeps night, net worth, purse, vault, debt with rate, hold and hull on screen at all times. Each market row shows price, a colour-coded percent against the usual price, Cheap/Bargain/Pricey/Surge/Glut tags, the quantity I hold with gain against my cost, and a destination tag such as '+60% Saint Mire'. A 'Best known' banner names the top margin seen. After a trade the list scrolls to the affected row. With the wireless set I found the best trade on night 16 (Moon Ink 22,919 here, 40,024 at Orchid Terraces) in one tap. Sheets open in 29 ms in Chromium.",
+      "below_10": [
+        "No sparklines on the phone market list; they exist only on desktop (judge-2/d04-main.png). The help text still says 'The sparkline on each good shows the last 10 nights'. On the phone the trend is one tap away in the trade sheet.",
+        "Only 4.5 of 8 goods fit on screen at 390x664 (the HUD takes the top 135px), so scanning the market always needs a scroll; a toast covers the fifth row for 3 seconds after every action.",
+        "Destination tags are clipped with no ellipsis: '+16% D', '+54% Drowned Exchan' (judge-2/67-infinity-bug.png).",
+        "Measured text sizes: HUD labels 11px, tags 12px, percent change 13.5px, chart axis labels 7.5px.",
+        "Buy quantity defaults to the maximum affordable, past the depth limit; getting from 24 down to 8 needs a slider drag or 16 taps on minus, and the quantity field does not select its contents when tapped.",
+        "HUD figures abbreviate early ('14.3k' at five digits), and '+Infinity%' appears on free cargo.",
+        "Last-seen prices elsewhere sit below the fold of the trade sheet."
+      ]
+    },
+    "B3": {
+      "score": 8,
+      "evidence": "Every action I took had a visual response: buy (row flash, toast, HUD delta), sell (coin flying to the purse, floating '+1,435' profit, purse pulse; judge-2/18-sell-feedback.png), big sale (particle burst), voyage (boat moves along the route, then a 'Night 2 of 30 / Saint Mire' card with 'tap to skip'; judge-2/16-voyage-a.png and 16-voyage-b.png), encounters (illustrated card, result banner, hull bar), debt cleared (floating lanterns), end (rank reveal). Audio judged from the code plus the harness stand-in, not heard: 19 synthesized effects built from layered oscillators and filtered noise (buy, sell, profit, travel, arrive, alarm, hit, shot, escape, win, lose, upgrade, bank and others). The stand-in counted 16 sounds started while running and 0 while suspended; real Chromium reported the AudioContext running after the first tap. Mute verified: the counter stayed at 9 through a purchase while muted and rose to 14 after unmuting.",
+      "below_10": [
+        "I could not listen to the audio, so its quality is inferred from the synthesis code.",
+        "No ambient bed or music; sound is effects only.",
+        "The HUD does not update while an encounter result card is showing (purse still read 1,093 on the 'Toll paid 328' card).",
+        "Mute is two taps deep on the phone (More, then Turn sound off), and toggling it closes the menu.",
+        "Upgrade purchases are a single tap with no confirmation; I bought a 7,500 hold tier by mistake."
+      ]
+    },
+    "B4": {
+      "score": 8,
+      "evidence": "The map is an inline SVG redrawn in portrait on the phone, with seven island districts joined by canals (judge-2/12-map.png). The current district is highlighted with the skiff beside it. Tapping a district opens a card with danger pips, sells cheap, pays well, services, any news, a 'your cargo / last seen / vs cost' table and a pinned 'Sail here - 1 night' button, and draws a dashed route. The map carries information: green '+59%' badges where my cargo sells above cost and '!' marks where there is news (judge-2/24-map-badges.png, judge-2/56-map-wireless.png). Travel animates and can be skipped. Node targets measure 78x81 or larger at 390 and 72x74 at 360. Keyboard: 1-7 select, Enter sails.",
+      "below_10": [
+        "On the phone the district card covers the lower half of the map including the district just selected and usually the current one, so the route is hidden (judge-2/13-district-saintmire.png); on a 430 wide phone map labels show through the card (judge-2/96-promax-card.png).",
+        "The card body is a 144px scroller: with a news banner present, sells cheap and pays well are pushed out of view (judge-2/51-state.png).",
+        "Toasts sit over the two bottom districts for about 3 seconds (judge-2/56-map-wireless.png).",
+        "Distance means nothing: every voyage is one night.",
+        "Danger pips under each label are small and unlabelled on the map itself."
+      ]
+    },
+    "B5": {
+      "score": 9,
+      "evidence": "Harness audit at 390x664, 360x640 and 430x740 on WebKit with touch: 0 tap targets under 44x44 on every screen checked (market, trade sheet, map, district card, harbor, loan sheet, end screen), 0 elements past the viewport edge, page scrollWidth equal to the viewport, 0 inputs under 16px, and 0 text contrast failures apart from one disabled button at 4.14:1. Primary actions are pinned at the bottom of sheets (Buy, Sail here, Repay, Settle up). The phone has its own layout (bottom nav, sheets); desktop at 1280 has a separate two-column layout with sparklines and inline Buy/Sell (judge-2/d04-main.png). Keyboard-only on desktop: arrow keys chose a good, B opened the sheet, left arrow changed quantity, Enter bought 14 Rain, 2 selected Saint Mire, Enter sailed, Esc closed sheets, with a visible amber focus ring and on-screen key hints (judge-2/d07-kbd-district.png). The source has a prefers-reduced-motion media query and a REDUCED flag that turns off the voyage animation, particles, shake and number tweens. Safe-area insets are in the CSS. Ran in a sandboxed iframe with touch.",
+      "below_10": [
+        "A lot of phone text is under 15px: 11px HUD labels, 12px tags and nav labels, 12.5px depth warnings, 13.5px percent changes, 7.5px chart axis labels.",
+        "Bottom nav buttons are 4px apart and the Buy/Sell toggle halves touch with no gap.",
+        "On a Tidewarden encounter the fourth option ('Heave to and be searched') is cut off at the bottom of a 390x664 screen and needs a scroll (judge-2/20-encounter.png).",
+        "The How to play sheet is 1,385px tall with its only button at the bottom and no close icon; tapping the backdrop does close it.",
+        "Tapping to skip a voyage has no guard against an encounter card appearing under the thumb. In slow WebKit two of my skip taps landed on a card that had just opened; I could not reproduce a wrong choice at 60 fps in Chromium.",
+        "Not tested on a real iPhone; safe areas, the on-screen keyboard and double-tap zoom were judged from CSS only."
+      ]
+    },
+    "C1": {
+      "score": 9,
+      "evidence": "All ten gameplay and five presentation requirements seen working in play: 30-night clock with a night per voyage; 7-district SVG map; 8 goods with nightly shifts, surges and gluts; hold 30 upgraded to 85; debt at 6% compounding, repaid and re-borrowed; vault at 1.5% with deposits; more than 10 event types including risky encounters; upgrades (racks, engine, weapons, wireless, repairs); score screen with breakdown, rank and a ledger that survived reload; tour and contextual tips. Presentation: animation and feedback throughout, per-good chart and gauge, Web Audio with mute, touch, mouse and keyboard, phone and 1280 layouts.",
+      "below_10": [
+        "Price trend at a glance on the phone is a percent and a tag; the chart is one tap in.",
+        "I did not use weapons or reach Fogmouth, so those are unverified by me.",
+        "Audio verified by code and counters, not by ear."
+      ]
+    },
+    "C2": {
+      "score": 9,
+      "evidence": "One file, 180,971 bytes. Grep for http, fetch, XMLHttpRequest, import, link and src found only a data: URI favicon. Ran from file:// in WebKit and Chromium. Ran inside an iframe with sandbox=allow-scripts where localStorage threw SecurityError: a new game started, a trade and a voyage completed, no errors.",
+      "below_10": [
+        "I did not record a runtime network log, so 'no requests' rests on grep plus the absence of load errors."
+      ]
+    },
+    "C3": {
+      "score": 8,
+      "evidence": "One complete 30-night game on WebKit plus partial games at 360x640, on a 430 wide phone, in Chromium phone mode, on desktop and in a sandboxed iframe. The errors step reported no page errors or console errors each time. No dead ends: every sheet and card could be closed, and a mid-game reload offered 'Continue voyage'.",
+      "below_10": [
+        "Only one full game, not two.",
+        "Cosmetic defects show up in normal play: '+Infinity%', clipped tags, the empty key hint in the tour, the wrong hold figures on the boatyard button."
+      ]
+    },
+    "C4": {
+      "score": 8,
+      "evidence": "Numbers reconciled wherever I checked: purse after each trade matched the quoted total; 146,370 cash plus 358,707 vault equals the 505,077 final fortune; repaying 29,744 cleared the debt exactly; quantity and amount fields clamp to what is affordable and to hold space ('Your hold is full' disables Buy). The ledger entry survived a reload.",
+      "below_10": [
+        "Average cost of 0 for free cargo divides to Infinity in the row badge.",
+        "Boatyard labels state the wrong hold sizes after Fenna's racks ('30 to 45' when the hold went 45 to 60, then '45 to 70' for 60 to 85).",
+        "I did not test corrupt saves or hunt for money loops; that is left to the technical judge."
+      ]
+    },
+    "C5": {
+      "score": 8,
+      "evidence": "Read parts of the 2,232-line source: a single state object S, data tables for goods and districts, a self-contained Sound module, an FX layer with FAST and REDUCED switches, guarded storage, aria labels and roles on dialogs and map nodes. Animations were smooth in Chromium; sheets opened in under 30 ms.",
+      "below_10": [
+        "Randomness is a thin wrapper over Math.random, not a seedable generator.",
+        "Rendering rebuilds innerHTML for whole panels.",
+        "I read only the audio, toast, modal and voyage sections."
+      ]
+    }
+  },
+  "strengths": [
+    "A committed lantern-lit drowned-city identity with custom icons, district art and encounter scenes across title, play and end screens.",
+    "The phone layout is built for the thumb: bottom nav, bottom sheets, pinned primary buttons, and no tap target under 44px at 360, 390 or 430 wide.",
+    "Market rows carry the decision: percent against usual, cheap and dear tags, what I hold and its gain, and a named destination with its margin.",
+    "The map carries information (cargo margin badges, news marks, danger) and the district card compares my cargo with prices there.",
+    "Every action has visual feedback and a matching synthesized sound; voyages take 2.6 s and can be skipped.",
+    "Market depth, 'no dealers' nights and rumours that can fail keep the trading from collapsing into one loop.",
+    "Full keyboard play with visible focus and key hints, reduced-motion support, and clean runs in a sandboxed iframe with storage blocked."
+  ],
+  "weaknesses": [
+    "On the phone the market list has no sparklines and shows only 4.5 of 8 goods; the trend chart is a tap away and the help text describes sparklines that are not there.",
+    "The buy sheet defaults to the maximum affordable quantity, which past the depth limit is often a losing order; correcting it takes a slider drag or many taps.",
+    "Much of the phone text is 11 to 13.5px, and chart axis labels are 7.5px.",
+    "The district card hides the selected district and the route, and its content area is a 144px scroller.",
+    "No character portraits for the named cast.",
+    "Late-game risk is lopsided: tolls scale with purse while repairs cost 35 a point, so running is always right.",
+    "Small visible defects: '+Infinity%', clipped tags, wrong hold figures at the boatyard, an empty key hint in the tour."
+  ],
+  "bugs": [
+    {"severity": "medium", "what": "Free cargo shows '+Infinity%' gain on its market row.", "repro": "Take the 'A crate bobs past' flotsam event and haul it aboard, then open the Market. The row reads 'Rust Pearls x11 +Infinity%'. Screenshot judge-2/67-infinity-bug.png."},
+    {"severity": "low", "what": "Boatyard hold upgrade label ignores Fenna's +15 racks.", "repro": "Accept 'Old Fenna is retiring' (hold 45), go to Copperhook Docks, open Harbor. The button reads 'Hold racks: 30 to 45' for 2,500; buying it gives 60. The next reads '45 to 70' and gives 85."},
+    {"severity": "low", "what": "Tour step 5 on a phone reads 'Help is under More (or press ).' with the key missing.", "repro": "First run on a touch device, step through the tour to 5 of 5. Screenshot judge-2/07-tour5.png."},
+    {"severity": "low", "what": "Destination tags are clipped mid-word with no ellipsis at 390px (and on desktop).", "repro": "Hold a good whose row has two or three tags, for example 'x11 +Infinity% | Pricey | +16% Drowned Exchange'. The last tag is cut at the row edge. Screenshot judge-2/67-infinity-bug.png."},
+    {"severity": "low", "what": "Help text says each good has a sparkline showing the last 10 nights; the phone market list has none.", "repro": "On a phone open More, How to play, Trading, then look at the Market list."},
+    {"severity": "low", "what": "End screen reports 'Encounters won 0/9' after seven successful escapes and two paid tolls.", "repro": "Finish a run in which you only run or pay. Screenshot judge-2/83-end-c.png."},
+    {"severity": "low", "what": "HUD purse does not change while an encounter result card is open.", "repro": "Pay a Gull Gang toll; the card says 'They count your 328 twice' while the HUD behind still shows the old purse until Continue."},
+    {"severity": "low", "what": "Possible mis-tap: no input guard when an encounter card opens during a voyage that the player is tapping to skip. Not reproduced at 60 fps.", "repro": "In WebKit (slow frames) tap Sail, then tap the screen about 900 ms later; the tap lands on the encounter card that has just opened. A tap lower on the screen would land on a choice."}
+  ],
+  "evidence": {
+    "days_played": 30,
+    "reached_score_screen": true,
+    "final_result": "505,077, rank Tide Baron, #1 on an empty ledger; debt cleared night 15; 29 voyages, 9 encounters",
+    "phone_notes": "Played the full game on Playwright WebKit as an iPhone 13 (390x664) with touch taps only; the console was used to read visible text and a few state values, never to change state. Nights: 1 bought 1 Eel and 4 Rain at Lanternquay; 2 sold at Saint Mire, bought Saffron; 3 Orchid Terraces, sold, bought Eels and Rain; 4 Saint Mire Rain surge, sold, Saffron; 5 Orchid Terraces; 6 Saint Mire, sold Eels at a loss, took a courier job; 7 Orchid Terraces, Silk and Rain; 8 Lanternquay, parcel paid, Fenna's racks, borrowed 20,976, bought 6 Chips by mistake; 9 Saint Mire, 1 Moon Ink and Saffron; 10 Lanternquay, no Ink dealers, repaid half; 11 Copperhook, two hold tiers; 12 Orchid Terraces, sold Ink, bought a whisper, 85 Rain; 13 Copperhook Rain surge, Eels; 14 Saint Mire, Ink and Chips; 15 Lanternquay, cleared debt; 16 Drowned Exchange Chips surge, wireless, first deposit; 17 Orchid Terraces; 18 Copperhook; 19 Sluices; 20 Copperhook Chips surge, won Wick's gamble; 21 Orchid Terraces; 22 Drowned Exchange after three failed runs and a 46,118 toll; 23 Lanternquay through a squall; 24 Copperhook, repair and motor; 25 Orchid Terraces; 26 Saint Mire; 27 Sluices Chips surge; 28 Drowned Exchange; 29 Orchid Terraces Silk glut; 30 Sluices, sold all, settled. Also checked 360x640 (title, market, trade sheet, map) and an iPhone 14 Pro Max at 430x740 (market, map, district card). Chromium at 390x664 for timings: sheet open 29 ms, unskipped voyage 2.6 s.",
+    "desktop_notes": "Chromium at 1280x800 with mouse and keyboard: two-column layout with map left and market right, sparklines on every row, inline Buy and Sell buttons, key hints. Completed a buy and a voyage using the keyboard alone. No console errors.",
+    "audio_notes": "Playwright WebKit has no Web Audio, so audio was judged from the synthesis code and the harness stand-in that applies the iOS unlock rule: the context was created and resumed inside the first touchend, 16 sounds started while running and none while suspended. Real Chromium reported the context running. Mute and unmute verified by the sound counter. Nothing was heard.",
+    "screenshots": [
+      "judge-2/01-title.png", "judge-2/02-after-new.png", "judge-2/03-tour1.png", "judge-2/07-tour5.png", "judge-2/08-market.png",
+      "judge-2/09-sheet-eels.png", "judge-2/10-sheet-eels-scrolled.png", "judge-2/12-map.png", "judge-2/13-district-saintmire.png",
+      "judge-2/14-buy-feedback-b.png", "judge-2/16-voyage-a.png", "judge-2/16-voyage-b.png", "judge-2/17-sell-sheet.png", "judge-2/18-sell-feedback.png",
+      "judge-2/20-encounter.png", "judge-2/23-harbor-sm.png", "judge-2/24-map-badges.png", "judge-2/28-fight1.png", "judge-2/31-harbor-lq.png",
+      "judge-2/33-borrow.png", "judge-2/39-boatyard.png", "judge-2/43-whisper.png", "judge-2/50-debt-cleared.png", "judge-2/51-state.png",
+      "judge-2/53-de-market-surge.png", "judge-2/56-map-wireless.png", "judge-2/57-ot-card-wireless.png", "judge-2/67-infinity-bug.png",
+      "judge-2/69-max-default-loss.png", "judge-2/78-n30-after.png", "judge-2/81-n30-bottom.png", "judge-2/83-end-c.png", "judge-2/85-ledger.png",
+      "judge-2/86-help.png", "judge-2/88-more.png", "judge-2/93-360-map.png", "judge-2/96-promax-card.png", "judge-2/100-iframe.png",
+      "judge-2/d04-main.png", "judge-2/d07-kbd-district.png"
+    ]
+  },
+  "verdict": "A polished, phone-ready trading game with a real identity and a strong map, held below the top band by a phone market list without sparklines, a risky max-quantity default, small text and a handful of visible display defects."
+}
