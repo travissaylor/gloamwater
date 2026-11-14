@@ -119,6 +119,8 @@ async function uiCase(browser, name, opts, touch) {
     if (touch) await act(page, '#mnav [data-v="map"]', true);
     const mapBefore=await page.locator('#map').boundingBox();
     await act(page, '#nodes .node[data-d="ch"]', touch);
+    await act(page, '#nodes .node[data-d="ch"]', touch);
+    assert(await page.evaluate(()=>sel==='ch'),'Repeated port selection unexpectedly cleared the destination');
     const map = await page.evaluate(() => {
       const b = el => { const r = el.getBoundingClientRect(); return { x: r.x, y: r.y, width: r.width, height: r.height }; };
       return {

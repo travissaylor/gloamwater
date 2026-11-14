@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-11-14T18:07:20.123Z",
+  "gameSha256": "48fd8d91e592335eb0bd54eb9408f136b1db9d6dc2f97707979bbc03fbfeb1f5",
+  "bytes": 249618,
+  "selection": "WebKit touch 360x640",
+  "checks": [
+    {
+      "name": "WebKit touch 360x640",
+      "pass": true,
+      "ms": 11210,
+      "evidence": {
+        "input": "First confirm bought 2; no-dealers arrow/Enter clean",
+        "hudTitle": "Debt to Marrow Quill",
+        "outOfStockFixture": false,
+        "map": {
+          "nodes": [
+            {
+              "id": "lq",
+              "x": 134.54722595214844,
+              "y": 242.20956420898438,
+              "width": 106.9288330078125,
+              "height": 76.911865234375
+            },
+            {
+              "id": "sm",
+              "x": 16.028209686279297,
+              "y": 236.3343505859375,
+              "width": 98.2762451171875,
+              "height": 76.911865234375
+            },
+            {
+              "id": "ot",
+              "x": 56.086463928222656,
+              "y": 332.47418212890625,
+              "width": 66.22965240478516,
+              "height": 76.91183471679688
+            },
+            {
+              "id": "de",
+              "x": 198.26657104492188,
+              "y": 332.47418212890625,
+              "width": 80.97109985351562,
+              "height": 76.91183471679688
+            },
+            {
+              "id": "sl",
+              "x": 272.02716064453125,
+              "y": 243.2777862548828,
+              "width": 72.3184814453125,
+              "height": 76.91184997558594
+            },
+            {
+              "id": "ch",
+              "x": 191.21630859375,
+              "y": 154.08140563964844,
+              "width": 110.02667236328125,
+              "height": 76.91184997558594
+            },
+            {
+              "id": "fm",
+              "x": 38.03354263305664,
+              "y": 151.41085815429688,
+              "width": 80.97108459472656,
+              "height": 76.91184997558594
+            }
+          ],
+          "card": {
+            "x": 17,
+            "y": 419,
+            "width": 326,
+            "height": 138
+          },
+          "svg": {
+            "x": 9,
+            "y": 141.796875,
+            "width": 342,
+            "height": 277.203125
+          },
+          "overflow": false,
+          "viewport": {
+            "width": 360,
+            "height": 640
+          }
+        },
+        "networkRequests": [],
+        "audio": {
+          "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+          "contexts": [
+            {
+              "state": "running",
+              "createdIn": "touchend"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Emulated WebKit on Windows is not a physical iPhone; no real keyboard, browser toolbar, safe-area or silent-switch test.",
+    "WebKit AudioContext stand-in tests gesture policy, not audible sound quality.",
+    "Full-game regressions run the informed policy through external simulator functions, not human touch play.",
+    "UI tests set FAST=true and reduced motion to avoid Windows headless WebKit animation throttling."
+  ],
+  "pass": true
+}

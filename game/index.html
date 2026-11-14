@@ -1669,7 +1669,7 @@ function renderTravelCard(){
 }
 function selectDistrict(id){
   if(busy)return;
-  sel=(sel===id)?null:id;if(sel)$('#toasts').innerHTML='';sfx.click();renderMapState();
+  sel=id;$('#toasts').innerHTML='';sfx.click();renderMapState();
   if(sel&&!isNarrow()){const b=$('#tcard-slot .btn.primary,#tcard-slot .btn');if(b)setTimeout(()=>softFocus(b,{preventScroll:true}),30);}
 }
 function openPortDetails(did){
@@ -1953,7 +1953,7 @@ function chartSVG(hist,cost){
 }
 function gaugeHTML(g,p){
   const lo=Math.log(g.min),hi=Math.log(g.max);const t=clamp((Math.log(p)-lo)/(hi-lo),0,1);
-  const word=t<.3?'a bargain':t<.48?'below usual':t<.62?'about usual':t<.8?'above usual':'very high';
+  const v=vsUsual(g.id,p),word=Math.abs(v)<.05?'about usual':Math.abs(Math.round(v*100))+'% '+(v<0?'below':'above')+' usual';
   return `<div class="gauge"><div style="display:flex;justify-content:space-between"><span>Price today is <b style="color:var(--text)">${word}</b> for ${g.name}</span></div><div class="track"><div class="mk" style="left:${(t*100).toFixed(1)}%"></div></div><div class="ends"><span>${fmt(g.min)}</span><span>${fmt(g.max)}</span></div></div>`;
 }
 function elsewhereHTML(gid){
