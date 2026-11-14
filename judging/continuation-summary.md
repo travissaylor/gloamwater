@@ -83,4 +83,4 @@ Passing the recorded regression suite did not detect every defect found in perso
 
 These findings remain in the scored build. The four-round limit ended the iteration;
 no fifth panel or post-score game changes were made. Work is committed on
-`t3/raise-gloamwater-panel-score`; nothing was pushed.
+`t3/raise-gloamwater-panel-score`.
