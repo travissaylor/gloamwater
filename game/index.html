@@ -11,7 +11,7 @@
   --ink:#060916; --night:#0b1230; --deep:#101a40;
   --panel:rgba(15,22,52,.84); --panel2:rgba(26,36,80,.92); --panel3:rgba(255,255,255,.035);
   --line:rgba(140,170,255,.14); --line2:rgba(150,180,255,.28);
-  --text:#eef1ff; --muted:#97a3d4; --dim:#626d9e;
+  --text:#eef1ff; --muted:#97a3d4; --dim:#8a95c4;
   --amber:#ffbe55; --amber2:#ff8f3c; --teal:#3ce6cf; --rose:#ff5c8f; --violet:#a58bff; --sky:#6cc8ff;
   --up:#4ee39b; --down:#ff6274;
   --r:16px; --shadow:0 12px 40px rgba(0,0,0,.45);
@@ -38,7 +38,7 @@ svg{display:block}
 .btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line2);background:rgba(255,255,255,.045);color:var(--text);font:600 14px/1 var(--ui);padding:10px 14px;min-height:40px;border-radius:11px;cursor:pointer;transition:transform .08s,background .15s,border-color .15s,box-shadow .2s;user-select:none;white-space:nowrap}
 .btn:hover{background:rgba(255,255,255,.09);border-color:rgba(170,195,255,.5)}
 .btn:active{transform:translateY(1px) scale(.97)}
-.btn[disabled]{opacity:.38;cursor:not-allowed;transform:none}
+.btn[disabled]{opacity:.55;cursor:not-allowed;transform:none}
 .btn.primary{background:linear-gradient(180deg,#ffd07a,#ff9a3c);color:#2b1400;border-color:transparent;box-shadow:0 6px 22px rgba(255,150,50,.32)}
 .btn.primary:hover{background:linear-gradient(180deg,#ffdb94,#ffa850)}
 .btn.teal{background:linear-gradient(180deg,rgba(60,230,207,.28),rgba(60,230,207,.12));border-color:rgba(60,230,207,.55);color:#cafff6}
@@ -49,7 +49,7 @@ svg{display:block}
 .btn.lg{min-height:52px;padding:14px 22px;font-size:16px;border-radius:14px}
 .btn.icon{width:40px;padding:0}
 kbd{font:600 11px var(--mono);padding:1px 5px;border-radius:5px;border:1px solid var(--line2);background:rgba(255,255,255,.06);color:var(--muted)}
-.btn kbd{border-color:rgba(0,0,0,.2);background:rgba(0,0,0,.12);color:inherit;opacity:.7}
+.btn kbd{border-color:rgba(0,0,0,.2);background:rgba(0,0,0,.12);color:inherit;opacity:.9}
 
 /* ---------- app frame ---------- */
 #app{display:grid;grid-template-rows:auto minmax(0,1fr);height:100vh;height:100dvh}
@@ -144,7 +144,7 @@ h3{margin:0;font:600 17px/1.2 var(--display)}
 .tag.svcs{color:#cdd6ff}
 .tl{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;align-self:center;min-width:74px}
 .tcard.right{left:auto;right:12px}
-.tag.hot{color:#fff;background:var(--rose);border-color:transparent}
+.tag.hot{color:#2b1400;background:var(--amber);border-color:transparent}
 .tag.glut{color:#06291a;background:var(--up);border-color:transparent}
 .tag .ico{width:13px;height:13px}
 .danger{display:flex;gap:3px;align-items:center;font-size:12px;color:var(--muted)}
@@ -169,20 +169,23 @@ h3{margin:0;font:600 17px/1.2 var(--display)}
 .bull{display:flex;gap:10px;align-items:flex-start;padding:9px 11px;border-radius:11px;font-size:13px;background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer;text-align:left;color:var(--text);width:100%;font-family:inherit}
 .bull:hover{background:rgba(255,255,255,.07)}
 .bull .ico{margin-top:1px}
-.bull.spike{border-color:rgba(255,92,143,.45);background:rgba(255,92,143,.08)}
-.bull.spike .ico{color:var(--rose)}
+.bull.spike{border-color:rgba(255,190,85,.5);background:rgba(255,190,85,.08)}
+.bull.spike .ico{color:var(--amber)}
 .bull.crash{border-color:rgba(78,227,155,.45);background:rgba(78,227,155,.07)}
 .bull.crash .ico{color:var(--up)}
-.bull.fest{border-color:rgba(255,190,85,.45);background:rgba(255,190,85,.07)}
-.bull.fest .ico{color:var(--amber)}
+.bull.fest{border-color:rgba(165,139,255,.5);background:rgba(165,139,255,.08)}
+.bull.fest .ico{color:var(--violet)}
 .bull small{color:var(--muted);display:block;margin-top:2px}
 .final-banner{margin:4px 12px 10px;padding:12px 14px;border-radius:12px;background:linear-gradient(90deg,rgba(255,92,143,.22),rgba(255,190,85,.18));border:1px solid rgba(255,190,85,.45);display:flex;align-items:center;gap:12px;font-size:13.5px}
 .final-banner .btn{margin-left:auto}
+.final-banner{position:sticky;bottom:8px;z-index:2;background:linear-gradient(90deg,#3a1d3e,#3a2a1c);box-shadow:0 -8px 24px rgba(0,0,0,.45)}
 .rows{display:flex;flex-direction:column;gap:6px;padding:4px 10px 12px}
 .row{display:grid;grid-template-columns:40px minmax(0,1fr) 76px 90px auto;grid-template-areas:"ico name spark price act";align-items:center;gap:10px;padding:8px 10px;border-radius:13px;background:rgba(255,255,255,.03);border:1px solid transparent;cursor:pointer;transition:background .15s,border-color .15s,transform .15s}
 .row:hover{background:rgba(255,255,255,.065)}
 .row.sel{border-color:rgba(255,190,85,.55);background:rgba(255,190,85,.06)}
-.row.out{opacity:.5}
+.row.out{background:transparent;border:1px dashed var(--line)}
+.row.out .gico{opacity:.45}
+.row.out .gname b{color:var(--muted)}
 .row.flash{animation:rowflash .7s}
 @keyframes rowflash{from{background:rgba(255,190,85,.3)}}
 .gico{grid-area:ico;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);border:1px solid color-mix(in srgb,var(--c) 35%,transparent)}
@@ -307,8 +310,8 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
 .amt-presets .btn{flex:1}
 
 /* toasts */
-#toasts{position:fixed;top:76px;left:50%;transform:translateX(-50%);z-index:70;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none;width:min(460px,calc(100% - 24px))}
-.toast{pointer-events:auto;display:flex;gap:10px;align-items:center;padding:11px 15px;border-radius:13px;background:rgba(20,28,66,.96);border:1px solid var(--line2);box-shadow:0 12px 30px rgba(0,0,0,.5);font-size:14px;animation:tin .3s cubic-bezier(.2,1.3,.4,1);max-width:100%}
+#toasts{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:70;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none;width:min(460px,calc(100% - 24px))}
+.toast{pointer-events:none;display:flex;gap:10px;align-items:center;padding:11px 15px;border-radius:13px;background:rgba(20,28,66,.96);border:1px solid var(--line2);box-shadow:0 12px 30px rgba(0,0,0,.5);font-size:14px;animation:tin .3s cubic-bezier(.2,1.3,.4,1);max-width:100%}
 .toast.out{animation:tout .3s forwards}
 .toast.good{border-color:rgba(78,227,155,.6)} .toast.good .ico{color:var(--up)}
 .toast.bad{border-color:rgba(255,98,116,.6)} .toast.bad .ico{color:var(--down)}
@@ -343,7 +346,7 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
 .tt-row{flex-wrap:nowrap}
 .tt-row .btn{min-width:0}
 @media (min-width:520px){.tt-row .btn{min-width:115px}}
-.tt-foot{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-size:12px;color:rgba(200,210,255,.5)}
+.tt-foot{position:absolute;bottom:calc(14px + env(safe-area-inset-bottom));left:0;right:0;text-align:center;font-size:12px;color:var(--muted)}
 .lantern-p{position:absolute;bottom:-30px;width:10px;height:14px;border-radius:40% 40% 45% 45%;background:radial-gradient(circle at 50% 60%,#fff2c0,#ffae42 50%,#d4561a);box-shadow:0 0 16px 4px rgba(255,160,60,.5);animation:lrise linear infinite;opacity:.9}
 @keyframes lrise{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(-55vh) translateX(18px)}100%{transform:translateY(-115vh) translateX(-10px);opacity:0}}
 
@@ -383,6 +386,23 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
 #coach .tip .row2{display:flex;gap:8px;align-items:center}
 #coach .tip .row2 .btn.primary{margin-left:auto}
 
+/* ---------- touch behaviour ---------- */
+html{touch-action:manipulation;overscroll-behavior:none;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overscroll-behavior:none}
+.scroll,.modal,.tcard,.tc-body{overscroll-behavior:contain}
+button,.btn,.row,.choice,.bull,.tab,.node,.stat,.mnav button,.seg button{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.hud-worth{display:none}
+.tc-body{overflow:auto;min-height:0;flex:1 1 auto}
+.tcard{display:flex;flex-direction:column}
+.tc-act{flex:none;padding-top:10px}
+.sh-foot{position:sticky;bottom:0;z-index:3;background:linear-gradient(180deg,rgba(14,21,56,0),#0f1638 22%);margin-top:6px}
+.end-act{position:sticky;bottom:0;z-index:3;padding:10px 0 4px;background:linear-gradient(180deg,rgba(14,21,56,0),#0e1538 30%)}
+.result.gold{background:rgba(255,190,85,.12);border:1px solid rgba(255,190,85,.45);color:#ffe7bf}
+.best-run{margin:0 12px 8px;padding:9px 12px;border-radius:11px;font-size:13px;background:rgba(78,227,155,.07);border:1px solid rgba(78,227,155,.35);color:#c6f7de;display:flex;gap:8px;align-items:center}
+.best-run .ico{color:var(--up);flex:none}
+.best-run small{display:block;color:var(--muted);font-size:.9em}
+.stat-help{cursor:help}
+
 /* ---------- responsive ---------- */
 @media (max-width:1100px){
   .layout{grid-template-columns:minmax(0,1fr) 390px}
@@ -393,47 +413,127 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
   .chev{display:block;grid-area:chev}
 }
 @media (max-width:860px){
-  body{font-size:14px}
-  .hud{flex-wrap:wrap;gap:8px;padding:8px 10px;padding-top:max(8px,env(safe-area-inset-top))}
-  .brand{display:none}
-  .night{padding:4px 10px;order:1}
-  .night .moon{width:24px;height:24px}
-  .night b{font-size:15px}
-  .nbar{width:54px}
-  .hud-btns{order:2;margin-left:auto}
-  .hud-btns .btn{width:36px;min-height:36px}
-  .stats{order:3;flex-basis:100%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
-  .stat{padding:5px 7px;border-radius:10px}
-  .stat small{font-size:9px;letter-spacing:.06em}
-  .stat b{font-size:13px}
-  .layout{display:block;padding:8px;padding-bottom:calc(70px + env(safe-area-inset-bottom));height:100%}
+  /* ---- phone: thumb-first layout. Body 16px, controls 44px, everything actionable in the lower half ---- */
+  body{font-size:16px}
+  .hud{display:grid;grid-template-columns:auto 1fr;gap:8px;padding:8px 10px;padding-top:max(8px,env(safe-area-inset-top));padding-left:max(10px,env(safe-area-inset-left));padding-right:max(10px,env(safe-area-inset-right))}
+  .brand,.hud-btns{display:none}
+  .night{padding:4px 10px}
+  .night .moon{width:26px;height:26px}
+  .night small,.stat small{font-size:11px;letter-spacing:.06em}
+  .night b{font-size:16px}
+  .nbar{width:56px}
+  .hud-worth{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;padding:2px 4px;min-width:0}
+  .hud-worth small{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .hud-worth b{font:700 19px var(--mono);font-variant-numeric:tabular-nums;color:var(--amber);white-space:nowrap}
+  .stats{grid-column:1/3;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+  .stat{padding:5px 6px;border-radius:10px;min-height:46px;cursor:pointer;-webkit-user-select:none;user-select:none}
+  .stat b{font-size:15px;letter-spacing:-.04em}
+  .stat .delta{top:auto;bottom:-2px;right:4px;font-size:12px}
+  .layout{display:block;padding:8px;padding-bottom:calc(74px + env(safe-area-inset-bottom));height:100%}
   .panel{display:none;height:100%}
   body[data-view=map] #panel-map,body[data-view=log] #panel-log,body[data-view=market] #panel-side,body[data-view=harbor] #panel-side{display:flex}
+  #panel-map>.phead{display:none}
   #panel-side .tabs{display:none}
-  .mnav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(8,12,32,.97);border-top:1px solid var(--line2);padding:6px 6px calc(6px + env(safe-area-inset-bottom));gap:4px;backdrop-filter:blur(8px)}
-  .mnav button{flex:1;appearance:none;background:none;border:0;color:var(--muted);font:700 11px var(--ui);letter-spacing:.06em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0;border-radius:10px;cursor:pointer;position:relative}
-  .mnav button .ico{width:22px;height:22px}
+  .mnav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(8,12,32,.97);border-top:1px solid var(--line2);padding:6px max(6px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(6px,env(safe-area-inset-left));gap:4px;backdrop-filter:blur(8px)}
+  .mnav button{flex:1;min-width:0;min-height:54px;appearance:none;background:none;border:0;color:var(--muted);font:700 12px var(--ui);letter-spacing:.04em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:6px 0;border-radius:10px;cursor:pointer;position:relative}
+  .mnav button .ico{width:24px;height:24px}
   .mnav button[aria-selected=true]{color:var(--amber);background:rgba(255,190,85,.1)}
   .mnav .dot{position:absolute;top:4px;right:calc(50% - 18px);width:8px;height:8px;border-radius:50%;background:var(--rose)}
-  .spark{width:54px}
-  .row{grid-template-columns:36px minmax(0,1fr) 54px 76px;grid-template-areas:"ico name spark price";gap:8px;padding:8px}
-  .chev{display:none}
-  .vsu{display:none}
-  .gname b{font-size:14px}
-  .gico{width:36px;height:36px}
-  .tcard{max-width:none}
-  .map-hint{font-size:11.5px;left:10px;top:10px}
+  .btn{min-height:44px;font-size:15px}
+  .btn.sm{min-height:44px;font-size:14px;padding:8px 12px}
+  .btn.icon{width:44px;min-width:44px}
+  .kicker{font-size:12px}
+  .tag{font-size:12.5px;padding:2px 8px}
+  .gname .tag{font-size:12px;padding:2px 7px}
+  .spark{display:none}
+  .row{grid-template-columns:40px minmax(0,1fr) auto;grid-template-areas:"ico name price";gap:10px;padding:10px;min-height:64px}
+  .rows{gap:8px;padding-bottom:16px}
+  .gname b{font-size:16px}
+  .gprice b{font-size:17px}
+  .chg{font-size:13.5px}
+  .chev,.vsu{display:none}
+  .gico{width:40px;height:40px}
+  .bull{font-size:14.5px;min-height:48px}
+  .bull small{font-size:13px}
+  .final-banner{font-size:14.5px}
   .mk-head{padding:12px 14px 6px}
-  h2{font-size:20px}
-  #toasts{top:100px}
+  .mk-foot{font-size:14px}
+  .best-run{font-size:14px}
+  h2{font-size:21px}
+  .svc p{font-size:15px}
+  .kv{font-size:15px}
+  .upg .info{font-size:14px}.upg .info b{font-size:15px}.upg .info span{font-size:13.5px}
+  .directory{font-size:14px}
+  .logs{font-size:15px}
+  .lg .d{font-size:12.5px}
+  /* map: the destination card is a bottom sheet that leaves the map visible, with Sail pinned */
+  .tcard{left:8px;right:8px;bottom:8px;max-width:none;max-height:62%;padding:12px 14px 12px}
+  .tcard p{font-size:14.5px}
+  .tl{font-size:12px}
+  .tc-known{font-size:14px}
+  .map-hint{font-size:13px;left:10px;top:10px;right:10px;text-align:center}
+  /* toasts dock above the bottom nav and never take taps */
+  #toasts{top:auto;bottom:calc(80px + env(safe-area-inset-bottom));width:calc(100% - 20px)}
+  .toast{font-size:14.5px;padding:10px 13px}
+  /* sheets */
   .ov{padding:0;place-items:end center}
-  .modal{border-radius:22px 22px 0 0;max-height:94dvh;width:100%;animation:sheetup .3s cubic-bezier(.2,1,.4,1)}
-  .art{border-radius:21px 21px 0 0;height:120px}
+  .modal{border-radius:22px 22px 0 0;max-height:94dvh;width:100%;animation:sheetup .3s cubic-bezier(.2,1,.4,1);padding-bottom:env(safe-area-inset-bottom)}
+  .art{border-radius:21px 21px 0 0;height:110px}
   @keyframes sheetup{from{transform:translateY(60px);opacity:0}}
-  .card-body h3{font-size:21px}
-  .chart{height:110px}
-  .nightcard b{font-size:40px}
+  .card-body{padding:16px 16px 18px}
+  .card-body h3{font-size:22px}
+  .card-body p{font-size:16px}
+  .choice{min-height:52px;font-size:16px}
+  .choice small{font-size:14px}
+  .result{font-size:15px}
+  .enc-stats>div{font-size:12.5px}
+  .help p,.help li{font-size:15px}
+  .keys{display:none}
+  /* trade sheet: decision first, price story below, Confirm pinned */
+  .sheet{display:flex;flex-direction:column}
+  .sheet .sh-head{order:0;padding:14px 16px 4px}
+  .sheet .sh-head p{display:none}
+  .sheet .seg{order:1;margin:10px 16px 0}
+  .sheet .qty{order:2;margin:10px 16px 0}
+  .sheet input[type=range]{order:3}
+  .sheet .summary{order:4;margin:8px 16px 0;font-size:15px}
+  .sheet .chart{order:5;height:96px;margin-top:12px}
+  .sheet .gauge{order:6;font-size:13.5px}
+  .sheet .else{order:7;grid-template-columns:1fr 1fr}
+  .sheet .else div{font-size:13.5px;min-height:36px;align-items:center}
+  .sheet>.result{order:2}
+  .sheet .sh-foot{order:9}
+  .sheet .amt-presets{order:2}
+  .sheet #anote{order:4}
+  .seg button{min-height:46px;font-size:16px}
+  .amt-presets .btn{min-height:44px}
+  input[type=range]{height:44px}
   .statgrid{grid-template-columns:repeat(3,1fr)}
+  .statgrid div{font-size:12.5px}
+  .breakdown{font-size:15px}
+  .ledger{font-size:14.5px}
+  .nightcard b{font-size:40px}
+  .emblem{width:84px;height:84px}
+  .end-hero{padding:16px 16px 4px}
+  .end-hero h3{font-size:26px}
+  /* guided tour: the tip docks at the bottom, at thumb height */
+  #coach .tip{left:10px!important;right:10px;width:auto!important;top:auto!important;bottom:calc(10px + env(safe-area-inset-bottom))}
+  #coach .tip p{font-size:15px}
+  #coach .tip .btn{min-height:44px}
+  .tt-row .btn,.tt-btns .btn{min-height:48px}
+}
+@media (max-width:860px) and (orientation:landscape) and (max-height:500px){
+  .hud{grid-template-columns:auto 1fr auto;padding-top:6px;padding-bottom:6px}
+  .night{grid-column:1;grid-row:1}
+  .stats{grid-column:2;grid-row:1}
+  .stat{min-height:40px}
+  .hud-worth{grid-column:3;grid-row:1}
+  .layout{padding-bottom:calc(62px + env(safe-area-inset-bottom))}
+  .mnav button{min-height:44px;flex-direction:row;gap:6px}
+  .tcard{max-height:80%}
+}
+@media (hover:none) and (pointer:coarse){
+  kbd,.kb-only{display:none!important}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -450,6 +550,7 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
       <svg class="moon" viewBox="0 0 30 30" id="moon"></svg>
       <div><small>Night</small><b><em id="nightN" style="font-style:normal">1</em><span>/30</span></b><div class="nbar"><i id="nbar"></i></div></div>
     </div>
+    <div class="hud-worth" id="h-worth"><small>Net worth</small><b class="num" id="worth2">¤0</b></div>
     <div class="stats" id="hud-stats">
       <div class="stat" id="st-cash" title="Cash on board. Can be stolen or lost if you sink."><small>Purse</small><b class="num">¤0</b></div>
       <div class="stat" id="st-bank" title="Lockwater Vault balance. Safe, and earns interest."><small>Vault</small><b class="num">¤0</b></div>
@@ -470,7 +571,7 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
         <div class="worth"><div class="kicker">Net worth</div><b id="worth" class="num">¤0</b></div>
       </div>
       <div id="mapwrap"><svg id="map" role="group" aria-label="Map of Gloamwater districts" preserveAspectRatio="xMidYMid meet"></svg>
-        <div class="map-hint" id="map-hint">Tap a district to plan a voyage · <kbd>1</kbd>–<kbd>7</kbd></div>
+        <div class="map-hint" id="map-hint">Tap a district to plan a voyage<span class="kb-only"> · <kbd>1</kbd>–<kbd>7</kbd></span></div>
         <div id="tcard-slot"></div>
       </div>
     </section>
@@ -491,6 +592,7 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
     <button data-v="map" aria-selected="false"><svg class="ico" viewBox="0 0 24 24"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2zM9 4v14M15 6v14"/></svg>Map</button>
     <button data-v="harbor" aria-selected="false"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3v14M8 6h8M5 13a7 7 0 0 0 14 0M5 13l-2 2M19 13l2 2"/></svg>Harbor</button>
     <button data-v="log" aria-selected="false"><svg class="ico" viewBox="0 0 24 24"><path d="M6 3h11l2 2v16H6zM9 8h7M9 12h7M9 16h4"/></svg>Log</button>
+    <button data-v="more" aria-label="Menu, help and sound"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>More</button>
   </nav>
 </div>
 
@@ -818,7 +920,7 @@ const Sound=(()=>{
     try{
       if(!ctx){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;ctx=new AC();master=ctx.createGain();master.gain.value=.55;
         const comp=ctx.createDynamicsCompressor();master.connect(comp);comp.connect(ctx.destination);}
-      if(ctx.state==='suspended')ctx.resume();
+      if(ctx.state!=='running'&&ctx.state!=='closed')ctx.resume();
     }catch(e){return null;}
     return ctx;
   }
@@ -868,7 +970,11 @@ function toggleMute(){Sound.setMuted(!Sound.muted);settings.muted=Sound.muted;sa
 // =========================================================
 //   FX: toasts, flyers, particles, number tweens
 // =========================================================
+const toastQ=[];
+function flushToasts(){while(toastQ.length&&$('#modal').hidden&&!coachOpen){const a=toastQ.shift();toast(...a);}}
+function clearToasts(){toastQ.length=0;$('#toasts').innerHTML='';}
 function toast(text,kind='info',icon='bell',ms=3200){
+  if(!$('#modal').hidden||coachOpen){toastQ.push([text,kind,icon,ms]);if(toastQ.length>3)toastQ.shift();return;}
   const t=document.createElement('div');t.className='toast '+kind;t.innerHTML=ico(icon)+'<div>'+text+'</div>';
   const box=$('#toasts');box.appendChild(t);while(box.children.length>3)box.firstElementChild.remove();
   setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),320);},FAST?10:ms);
@@ -912,7 +1018,8 @@ const FX=(()=>{
     burst(x,y,color='#ffbe55',n=26){x*=dpr;y*=dpr;const l=[];for(let i=0;i<n;i++){const a=rnd()*Math.PI*2,s=(2+rnd()*5)*dpr;l.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-2*dpr,g:.18*dpr,drag:.97,r:(1.5+rnd()*2.5)*dpr,c:color,life:50+rnd()*30,fade:25});}add(l);},
     lanterns(n=40){const l=[];for(let i=0;i<n;i++){l.push({kind:'lantern',x:rnd()*cv.width,y:cv.height+rnd()*200*dpr,vx:(rnd()-.5)*.4*dpr,vy:-(1+rnd()*1.6)*dpr,g:0,drag:1,r:(3+rnd()*4)*dpr,life:300+rnd()*200,fade:80});}add(l);},
     rain(n=120){const l=[];for(let i=0;i<n;i++){l.push({x:rnd()*cv.width,y:-rnd()*cv.height,vx:-1*dpr,vy:(9+rnd()*5)*dpr,g:0,drag:1,r:1.2*dpr,c:'rgba(150,180,255,.6)',life:90+rnd()*60,fade:30});}add(l);},
-    splash(x,y){this.burst(x,y,'#6cc8ff',30);}
+    splash(x,y){this.burst(x,y,'#6cc8ff',30);},
+    clear(){parts=[];ctx.clearRect(0,0,cv.width,cv.height);}
   };
 })();
 const shown={};
@@ -940,7 +1047,7 @@ function renderHUD(){
   tweenNum($('#st-cash b'),'cash',S.cash,F);
   tweenNum($('#st-bank b'),'bank',S.bank,F);
   tweenNum($('#st-debt b'),'debt',S.debt,F);
-  $('#st-debt small').textContent=narrow?'Debt':'Debt · 6%/night';
+  $('#st-debt small').textContent=narrow?'Debt 6%':'Debt · 6%/night';
   const used=holdUsed(),cap=capacity();
   $('#st-hold b').textContent=used+'/'+cap;
   const hm=$('#st-hold .meter i');hm.style.width=(100*used/cap)+'%';hm.style.background=used>=cap?'var(--amber)':'var(--teal)';
@@ -949,6 +1056,7 @@ function renderHUD(){
   $('#nightN').textContent=S.day;$('#nbar').style.width=(100*S.day/NIGHTS)+'%';
   $('#moon').innerHTML=moonSVG(S.day);
   const nw=netWorth();tweenNum($('#worth'),'worth',nw,fmt);$('#worth').style.color=nw<0?'#ffb3bc':'var(--amber)';
+  tweenNum($('#worth2'),'worth2',nw,fmtK);$('#worth2').style.color=nw<0?'#ffb3bc':'var(--amber)';
   S.stats.peak=Math.max(S.stats.peak,nw);
   const svcN=DI[S.loc].svc.length;$('#svc-cnt').textContent=svcN||'';
 }
@@ -989,17 +1097,26 @@ function goodTags(gid){
   return tags.join('');
 }
 // where this good last sold for clearly more than it costs here (only prices you have seen), else its reputation
+// the single best margin you know of from here, using only prices you have seen
+function bestRunHTML(){
+  let best=null;if(S.day>=NIGHTS)return '';
+  GOODS.forEach(g=>{if(!S.stock[S.loc][g.id])return;const p=price(g.id);DISTRICTS.forEach(d=>{if(d.id===S.loc)return;const sn=S.seen[d.id][g.id];if(sn&&sn.st&&S.day-sn.day<=FRESH_NIGHTS&&sn.p>p*1.15){const r=sn.p/p-1;if(!best||r>best.r)best={g,d,r,ago:S.day-sn.day};}});});
+  if(!best)return '';
+  return `<div class="best-run">${ico('arrowUp')}<div><b>Best known:</b> ${best.g.name} → ${esc(best.d.name)} <b>+${Math.round(best.r*100)}%</b><small>Seen ${best.ago?best.ago+'n ago':'tonight'}. Prices drift; big orders move them.</small></div></div>`;
+}
+const FRESH_NIGHTS=6; // older sightings are too stale to suggest
+function bestSeen(gid){let best=null;DISTRICTS.forEach(d=>{if(d.id===S.loc)return;const sn=S.seen[d.id][gid];if(sn&&sn.st&&S.day-sn.day<=FRESH_NIGHTS&&(!best||sn.p>best.p))best={d,p:sn.p};});return best;}
 function bestSale(gid){
-  const p=price(gid);let best=null;
-  DISTRICTS.forEach(d=>{if(d.id===S.loc)return;const sn=S.seen[d.id][gid];if(sn&&sn.st&&(!best||sn.p>best.p))best={d,p:sn.p};});
+  const p=price(gid),best=bestSeen(gid);
   if(best&&best.p>p*1.12)return `<span class="tag sale">${ico('arrowUp')}+${Math.round((best.p/p-1)*100)}% ${esc(best.d.name)}</span>`;
   if(!best){const w=DISTRICTS.find(d=>d.id!==S.loc&&d.dear.includes(gid));if(w)return `<span class="tag">Wanted: ${esc(w.name)}</span>`;}
   return '';
 }
+let sideLoc=null,sideTabWas=null;
 function renderSide(){
   $('#tab-market').setAttribute('aria-selected',String(sideTab==='market'));
   $('#tab-harbor').setAttribute('aria-selected',String(sideTab==='harbor'));
-  const body=$('#side-body');const st=body.scrollTop;
+  const body=$('#side-body');const keep=sideLoc===S.loc+S.day&&sideTabWas===sideTab,st=keep?body.scrollTop:0;sideLoc=S.loc+S.day;sideTabWas=sideTab;
   body.innerHTML=sideTab==='market'?marketHTML():harborHTML();
   body.scrollTop=st;
 }
@@ -1008,7 +1125,8 @@ function marketHTML(){
   let h=`<div class="mk-head"><div><div class="kicker">Night ${S.day} market</div><h2>${d.name}</h2></div>
     <div class="holdbox"><div class="kicker">Free hold</div><b>${cap-used}</b> <span style="color:var(--muted);font-size:12px">of ${cap}</span></div></div>`;
   h+=bulletinsHTML();
-  if(S.day===NIGHTS)h+=`<div class="final-banner">${ico('flag')}<div><b>Final night.</b> Sell what you can, repay Marrow, then settle up. Unsold cargo goes for half price.</div><button class="btn primary sm" data-act="settle">Settle up</button></div>`;
+  h+=bestRunHTML();
+  const fin=S.day!==NIGHTS?'':`<div class="final-banner">${ico('flag')}<div><b>Final night.</b> Sell what you can, repay Marrow, then settle up. Unsold cargo goes for half price.</div><button class="btn primary" data-act="settle">Settle up</button></div>`;
   h+='<div class="rows" role="list">';
   GOODS.forEach((g,i)=>{
     const p=price(g.id),stk=S.stock[S.loc][g.id],hist=S.hist[S.loc][g.id],prev=hist[hist.length-2]||p,ch=(p-prev)/prev,c=S.cargo[g.id];
@@ -1030,7 +1148,7 @@ function marketHTML(){
   });
   h+='</div>';
   const cv=cargoValueHere();
-  h+=`<div class="mk-foot"><span>Cargo worth here: <b class="num" style="color:var(--text)">${fmt(cv)}</b></span><span><kbd>↑</kbd><kbd>↓</kbd> pick · <kbd>B</kbd> buy · <kbd>S</kbd> sell</span></div>`;
+  h+=`<div class="mk-foot"><span>Cargo worth here: <b class="num" style="color:var(--text)">${fmt(cv)}</b></span><span class="kb-only"><kbd>↑</kbd><kbd>↓</kbd> pick · <kbd>B</kbd> buy · <kbd>S</kbd> sell</span></div>`+fin;
   return h;
 }
 function bulletinsHTML(){
@@ -1111,7 +1229,9 @@ function renderLog(){
 //   MAP
 // =========================================================
 let portrait=false, mapBuilt=false;
-const pos=id=>{const d=DI[id];return portrait?{x:d.y,y:d.x}:{x:d.x,y:d.y};};
+let mapH=1000,mapRatio=0;
+// portrait spreads the districts down the panel's real height so nothing is letterboxed
+const pos=id=>{const d=DI[id];return portrait?{x:d.y,y:Math.round(120+(d.x-165)/670*(mapH-300))}:{x:d.x,y:d.y};};
 function islandSVG(d,i){
   const R=seeded(i*977+13),c=pos(d.id);let pts=[];const n=11,base=58+R()*10;
   for(let k=0;k<n;k++){const a=k/n*Math.PI*2,r=base*(.78+R()*.32);pts.push([c.x+Math.cos(a)*r*1.18,c.y+Math.sin(a)*r*.82]);}
@@ -1129,10 +1249,11 @@ function islandSVG(d,i){
 function buildMap(){
   const wrap=$('#mapwrap');const r=wrap.getBoundingClientRect();
   if(r.width<10){return;}
-  const nowPortrait=r.height>r.width*1.08;
-  if(mapBuilt&&nowPortrait===portrait)return;
-  portrait=nowPortrait;mapBuilt=true;
-  const W=portrait?640:1000,H=portrait?1000:640,svg=$('#map');
+  const nowPortrait=isNarrow()||r.height>r.width*1.08,ratio=r.height/r.width;
+  if(mapBuilt&&nowPortrait===portrait&&(!portrait||Math.abs(ratio-mapRatio)<.04))return;
+  portrait=nowPortrait;mapBuilt=true;mapRatio=ratio;
+  mapH=portrait?Math.round(clamp(640*ratio,760,1400)):640;
+  const W=portrait?640:1000,H=portrait?mapH:640,svg=$('#map');
   svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
   const R=seeded(42);let ruins='';
   for(let i=0;i<26;i++){const x=R()*W,y=R()*H,w=20+R()*70,h=10+R()*30;ruins+=`<rect x="${x.toFixed(0)}" y="${y.toFixed(0)}" width="${w.toFixed(0)}" height="${h.toFixed(0)}" rx="3" fill="rgba(90,130,230,.045)" transform="rotate(${(R()*40-20).toFixed(0)} ${x.toFixed(0)} ${y.toFixed(0)})"/>`;}
@@ -1144,7 +1265,7 @@ function buildMap(){
     isl+=islandSVG(d,i);
     const c=pos(d.id);
     const pips=Array.from({length:5},(_,k)=>`<rect class="pip ${k<d.danger?'on':''}" x="${c.x-22+k*9.5}" y="${c.y+(portrait?73:66)}" width="7" height="4" rx="2"/>`).join('');
-    const fs=portrait?25:19,tw=d.name.length*fs*.54+22,lh=fs+10;
+    const fs=portrait?26:19,tw=d.name.length*fs*.54+22,lh=fs+10;
     nodes+=`<g class="node" data-d="${d.id}" tabindex="0" role="button" aria-label="${d.name}, danger ${d.danger} of 5. Press ${d.key}.">
       <circle cx="${c.x}" cy="${c.y}" r="62" fill="transparent"/>
       <circle class="halo" cx="${c.x}" cy="${c.y}" r="44"/>
@@ -1183,7 +1304,7 @@ function renderMapState(){
     const news=S.effects.find(e=>e.known&&e.age===0&&e.d===d.id);
     let best=0;
     if(d.id!==S.loc)GOODS.forEach(gd=>{const cg=S.cargo[gd.id];const sn=S.seen[d.id][gd.id];if(cg.q&&sn&&sn.st){const r=(sn.p-cg.cost)/cg.cost;if(r>best)best=r;}});
-    if(news){const col=news.type==='spike'?'#ff5c8f':news.type==='crash'?'#4ee39b':'#ffbe55';h+=`<g class="badge-pulse"><circle cx="${c.x+26}" cy="${c.y-24}" r="12" fill="${col}"/><text x="${c.x+26}" y="${c.y-19}" text-anchor="middle" fill="#0b0f24">!</text></g>`;}
+    if(news){const col=news.type==='spike'?'#ffbe55':news.type==='crash'?'#4ee39b':'#ffbe55';h+=`<g class="badge-pulse"><circle cx="${c.x+26}" cy="${c.y-24}" r="12" fill="${col}"/><text x="${c.x+26}" y="${c.y-19}" text-anchor="middle" fill="#0b0f24">!</text></g>`;}
     if(best>.12){const tx='+'+Math.round(best*100)+'%';const w=tx.length*9+12;h+=`<g><rect x="${c.x-30-w}" y="${c.y-36}" width="${w}" height="22" rx="11" fill="rgba(78,227,155,.9)"/><text x="${c.x-30-w/2}" y="${c.y-20}" text-anchor="middle" fill="#06291a" style="font-size:13px">${tx}</text></g>`;}
     g.innerHTML=h;
   });
@@ -1193,7 +1314,7 @@ function renderMapState(){
 function renderTravelCard(){
   const slot=$('#tcard-slot');
   if(!sel||!S){slot.innerHTML='';$('#map-hint').hidden=false;const r=$('#route');if(r)r.classList.remove('show');return;}
-  $('#map-hint').hidden=true;
+  $('#map-hint').hidden=true;$('#toasts').innerHTML='';
   const d=DI[sel],here=sel===S.loc;
   const route=$('#route');
   if(!here&&!busy){route.setAttribute('d',voyagePath(S.loc,sel));route.style.strokeDasharray='';route.style.strokeDashoffset='';route.classList.add('show');}else if(!busy)route.classList.remove('show');
@@ -1206,15 +1327,15 @@ function renderTravelCard(){
     known=`<div class="tc-known"><span class="h">Your cargo</span><span class="h">Last seen</span><span class="h">vs cost</span>`+held.map(g=>{const sn=S.seen[sel][g.id],c=S.cargo[g.id];if(!sn)return `<span>${g.name}</span><span style="color:var(--dim)">unknown</span><span></span>`;
       const r=(sn.p-c.cost)/c.cost;const ago=S.day-sn.day;return `<span>${g.name}</span><b class="num">${sn.st?fmt(sn.p):'not traded'}</b><span class="${r>=0?'up':'down'} num">${sn.st?(r>=0?'+':'')+Math.round(r*100)+'%':''}</span>`+(ago?``:'');}).join('')+`</div>`;
   }
-  const news=S.effects.filter(e=>e.known&&e.age===0&&e.d===sel).map(e=>`<div class="result ${e.type==='crash'?'good':e.type==='spike'?'bad':'info'}" style="font-size:13px;margin:6px 0">${esc(e.text)}</div>`).join('');
+  const news=S.effects.filter(e=>e.known&&e.age===0&&e.d===sel).map(e=>`<div class="result ${e.type==='crash'?'good':e.type==='spike'?'gold':'info'}" style="margin:6px 0">${e.type==='spike'?'<b>Sell here:</b> ':e.type==='crash'?'<b>Buy here:</b> ':''}${esc(e.text)}</div>`).join('');
   const last=S.day>=NIGHTS;
   const side=(!isNarrow()&&pos(sel).x<(portrait?320:500))?" right":"";
   slot.innerHTML=`<div class="tcard${side}" role="dialog" aria-label="${d.name}">
     <div class="tc-head"><div class="tc-glyph">${ico(d.glyph)}</div><div><h3>${d.name}</h3><div class="danger">Danger ${Array.from({length:5},(_,k)=>`<i class="${k<d.danger?'on':''}"></i>`).join('')}</div></div>
     <button class="btn icon ghost x" data-act="closecard" aria-label="Close">${ico('close')}</button></div>
-    <p>${d.blurb}</p>
+    <div class="tc-body">${news}${known}
     ${tags}${svcs?`<div class="tags"><span class="tl">Services</span>${svcs}</div>`:''}
-    ${news}${known}
+    <p>${d.blurb}</p></div>
     <div class="tc-act">${here?`<button class="btn" data-act="gomarket" style="flex:1">You are moored here · open market</button>`:
       last?`<button class="btn primary" data-act="settle">Final night · settle up</button>`:
       `<button class="btn primary lg" data-act="sail" data-d="${sel}">Sail here · 1 night <kbd>⏎</kbd></button>`}</div>
@@ -1257,7 +1378,8 @@ document.addEventListener('click',e=>{
   if(!S)return;
   const t=e.target;
   const tab=t.closest('.tab');if(tab){setView(tab.id==='tab-market'?'market':'harbor');sfx.click();return;}
-  const nb=t.closest('#mnav button');if(nb){setView(nb.dataset.v);sfx.click();return;}
+  const nb=t.closest('#mnav button');if(nb){sfx.click();if(nb.dataset.v==='more')openMenu();else setView(nb.dataset.v);return;}
+  const stt=t.closest('.stat');if(stt&&!busy){explainStat(stt.id);return;}
   const node=t.closest('#nodes .node');if(node){selectDistrict(node.dataset.d);return;}
   const bull=t.closest('.bull');if(bull){if(isNarrow())setView('map');sel=bull.dataset.dist;renderMapState();sfx.click();return;}
   const act=t.closest('[data-act]');
@@ -1306,22 +1428,24 @@ document.addEventListener('keydown',e=>{
 $('#b-mute').addEventListener('click',toggleMute);
 $('#b-help').addEventListener('click',()=>openHelp());
 $('#b-menu').addEventListener('click',()=>openMenu());
-document.addEventListener('pointerdown',()=>Sound.unlock(),{once:true});
-let rsT;addEventListener('resize',()=>{clearTimeout(rsT);rsT=setTimeout(()=>{if(!S)return;mapBuilt=mapBuilt&&true;const was=portrait;const r=$('#mapwrap').getBoundingClientRect();if(r.width>10&&(r.height>r.width*1.08)!==was)mapBuilt=false;buildMap();renderHUD();},150);});
+// iOS only lets audio start inside touchend/click/keydown; keep trying until it runs
+['touchend','click','keydown'].forEach(t=>document.addEventListener(t,()=>Sound.unlock(),{passive:true}));
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)Sound.unlock();});
+let rsT;addEventListener('resize',()=>{clearTimeout(rsT);rsT=setTimeout(()=>{if(!S)return;mapBuilt=mapBuilt&&true;const was=portrait;const r=$('#mapwrap').getBoundingClientRect();if(r.width>10&&((r.height>r.width*1.08||isNarrow())!==was||Math.abs(r.height/r.width-mapRatio)>.04))mapBuilt=false;buildMap();renderHUD();},150);});
 
 // =========================================================
 //   MODALS
 // =========================================================
 let modalKeys=null,modalDismiss=null,lastFocus=null;
-function showModal(html,{cls='',onKey=null,dismiss=null,wide=false}={}){
-  const ov=$('#modal');if(ov.hidden)lastFocus=document.activeElement;
+function showModal(html,{cls='',onKey=null,dismiss=null,wide=false,keepFx=false}={}){
+  const ov=$('#modal');$('#toasts').innerHTML='';if(!keepFx)FX.clear();if(ov.hidden)lastFocus=document.activeElement;
   ov.className='ov '+cls;ov.innerHTML=`<div class="modal ${wide?'wide':''}" role="dialog" aria-modal="true">${html}</div>`;
   ov.hidden=false;modalKeys=onKey;modalDismiss=dismiss;
   ov.onclick=e=>{if(e.target===ov&&modalDismiss)modalDismiss();};
   requestAnimationFrame(()=>{const f=ov.querySelector('[autofocus]')||ov.querySelector('.choice:not([disabled]),button:not([disabled]),input');if(f)f.focus({preventScroll:true});});
   return ov.firstElementChild;
 }
-function closeModal(){const ov=$('#modal');ov.hidden=true;ov.innerHTML='';modalKeys=null;modalDismiss=null;if(lastFocus&&document.body.contains(lastFocus)){try{lastFocus.focus({preventScroll:true});}catch(e){}}}
+function closeModal(){const ov=$('#modal');ov.hidden=true;ov.innerHTML='';modalKeys=null;modalDismiss=null;setTimeout(flushToasts,250);if(lastFocus&&document.body.contains(lastFocus)){try{lastFocus.focus({preventScroll:true});}catch(e){}}}
 function cardHTML(c){
   return `${c.art?`<div class="art">${ART[c.art]?ART[c.art]():''}</div>`:''}<div class="card-body">
     ${c.kicker?`<div class="kicker">${c.kicker}</div>`:''}<h3>${c.title}</h3>
@@ -1333,7 +1457,7 @@ function choose(c){
   return new Promise(res=>{
     let done=false;
     const finish=k=>{if(done)return;done=true;sfx.click();closeModal();res(k);};
-    const el=showModal(cardHTML(c),{cls:'tone-'+(c.tone||'neutral'),onKey:e=>{const n=parseInt(e.key,10);if(n>=1&&n<=c.choices.length){const x=c.choices[n-1];if(!x.disabled){e.preventDefault();finish(x.key);}}},dismiss:c.dismissKey?()=>finish(c.dismissKey):null});
+    const el=showModal(cardHTML(c),{cls:'tone-'+(c.tone||'neutral'),onKey:e=>{const n=parseInt(e.key,10);if(n>=1&&n<=c.choices.length){const x=c.choices[n-1];if(!x.disabled){e.preventDefault();finish(x.key);}}},dismiss:c.dismissKey?()=>finish(c.dismissKey):null,keepFx:!!c.keepFx});
     el.addEventListener('click',e=>{const b=e.target.closest('[data-choice]');if(b&&!b.disabled)finish(b.dataset.choice);});
   });
 }
@@ -1381,7 +1505,8 @@ function openTrade(gid,mode){
     const used=holdUsed(),cap=capacity();
     if(mode==='buy'){
       const tot=quoteBuy(gid,q);
-      sum.innerHTML=`<span>Price each</span><b>${q>1&&tot!==q*p?fmt(tot/q)+' avg':fmt(p)}</b><span>Total cost</span><b style="color:#bffbf1">${fmt(tot)}</b><span>Purse after</span><b>${fmt(S.cash-tot)}</b><span>Hold after</span><b>${used+q} / ${cap}</b>`+
+      const bs=bestSeen(gid);
+      sum.innerHTML=`${bs?`<span>Best known sale</span><b class="${bs.p>p?'up':'down'}">${fmt(bs.p)} · ${esc(bs.d.name)}</b>`:''}<span>Price each</span><b>${q>1&&tot!==q*p?fmt(tot/q)+' avg':fmt(p)}</b><span>Total cost</span><b style="color:#bffbf1">${fmt(tot)}</b><span>Purse after</span><b>${fmt(S.cash-tot)}</b><span>Hold after</span><b>${used+q} / ${cap}</b>`+
         (mx===0?`<span style="grid-column:1/3;color:var(--amber)">${S.cash<p?"You can't afford even one.":'Your hold is full.'}</span>`:depthNote());
       go.textContent=q?`Buy ${q} for ${fmt(tot)}`:'Buy';go.className='btn lg teal';
     }else{
@@ -1580,7 +1705,7 @@ function loadFrac(){return holdUsed()/capacity();}
 async function sunk(cause){
   store.del(KEY_SAVE);S.over=true;
   sfx.lose();FX.rain(140);
-  await info({art:'sunk',tone:'danger',kicker:'Night '+S.day,title:'The Little Lantern goes down',body:`${cause} The canal closes over your skiff, your cargo and every crown in your purse. You drag yourself onto a pontoon at dawn, alive and very poor.`,ok:'See the reckoning'});
+  await info({keepFx:true,art:'sunk',tone:'danger',kicker:'Night '+S.day,title:'The Little Lantern goes down',body:`${cause} The canal closes over your skiff, your cargo and every crown in your purse. You drag yourself onto a pontoon at dawn, alive and very poor.`,ok:'See the reckoning'});
   await endGame('sunk');
 }
 
@@ -1636,7 +1761,7 @@ async function fightIt(kind){
         else loot=rint(500,1400)*start;
         S.cash+=loot;
         log(`Fought off ${kind==='patrol'?'the Tidewardens':kind==='gulls'?'the Gull Gang':"Marrow's collectors"} and took ${fmt(loot)}${goods}.`,'gold');
-        await info({art:'victory',tone:'luck',kicker:'Victory',title:'The canal is yours',body:`${msg}The last of them turns tail. You fish their strongbox out of the water: <b>${fmt(loot)}</b>${goods}.`});
+        await info({keepFx:true,art:'victory',tone:'luck',kicker:'Victory',title:'The canal is yours',body:`${msg}The last of them turns tail. You fish their strongbox out of the water: <b>${fmt(loot)}</b>${goods}.`});
         renderAll();return;
       }
       if(rnd()<.7){const dmg=damage(rint(4,8)+boats*rint(2,4));if(S.hull<=0)return sunk('Their return fire tore your skiff apart.');msg+=`They return fire. <b>−${dmg}% hull.</b>`;}
@@ -1707,7 +1832,7 @@ async function evFortune(){
   if(c==='no')return;
   const stake=c==='small'?small:big;S.cash-=stake;
   if(rnd()<.4){const win=Math.round(stake*2.5);S.cash+=win;sfx.win();FX.burst(innerWidth/2,innerHeight*.35,'#ffd14d',40);log(`The eel turned gold: won ${fmt(win)}.`,'gold');
-    await info({art:'eelwin',tone:'luck',title:'The eel turns gold!',body:`The jar blazes like a lantern. Grandmother Wick cackles and counts out <b>${fmt(win)}</b>.`});}
+    await info({keepFx:true,art:'eelwin',tone:'luck',title:'The eel turns gold!',body:`The jar blazes like a lantern. Grandmother Wick cackles and counts out <b>${fmt(win)}</b>.`});}
   else{sfx.lose();log(`The eel turned black. Lost ${fmt(stake)}.`,'bad');
     await info({art:'eellose',tone:'danger',title:'The eel turns black',body:`The jar goes dark as ink. "Not your night, dearie." Your ${fmt(stake)} is gone.`});}
 }
@@ -1833,7 +1958,7 @@ function nightCard(){
     document.body.appendChild(d);const t0=performance.now(),dur=REDUCED?400:1000;
     const tick=()=>{if(skipVoyage||performance.now()-t0>=dur){d.remove();res();}else requestAnimationFrame(tick);};requestAnimationFrame(tick);});
 }
-function hint(id,html){if(!S||S.hinted[id])return;S.hinted[id]=true;setTimeout(()=>toast(html,'gold','bell',6000),400);}
+function hint(id,html){if(!S||S.hinted[id])return;S.hinted[id]=true;setTimeout(()=>toast(html,'gold','bell',4500),400);}
 function firstVisitHint(id){
   const m={ch:"Odile's Boatyard is here: bigger hold, faster engine, hull repairs. Open the <b>Harbor</b> tab.",sm:'Brother Tallow sells weapons here. Check the <b>Harbor</b> tab.',de:'The Listening Room sells a wireless set: live prices from every district.',ot:'Madame Ysolde sells whispers about tomorrow\'s market shocks.',sl:'The Gutter Yard patches hulls cheaply, up to 75%.',fm:'Fogmouth is dangerous, but Ghost Chips and Dreamsilk come cheap here.'};
   if(m[id])hint('visit_'+id,m[id]);
@@ -1936,8 +2061,8 @@ async function endGame(reason){
       <div>Encounters won<b>${S.stats.won}/${S.stats.fights}</b></div><div>Interest paid<b>${fmtK(S.stats.interest)}</b></div><div>Vault earned<b>${fmtK(S.stats.vaultEarned)}</b></div>
     </div>
     <div class="card-body"><div class="kicker" style="margin-bottom:6px">Captains' Ledger${placed>=0?` · you placed #${placed+1}`:''}</div>${ledgerTable(top,entry.id)}
-    <div class="choices" style="grid-template-columns:1fr 1fr"><button class="choice primary" data-choice="again"><kbd>1</kbd><div>Sail again</div></button><button class="choice" data-choice="title"><kbd>2</kbd><div>Title screen</div></button></div></div>`;
-  const el=showModal(html,{cls:'tone-'+(t.net>0&&!t.sunk?'gold':'danger'),wide:true,onKey:e=>{if(e.key==='1')again();if(e.key==='2')toTitle();}});
+    <div class="choices end-act" style="grid-template-columns:1fr 1fr"><button class="choice primary" data-choice="again"><kbd>1</kbd><div>Sail again</div></button><button class="choice" data-choice="title"><kbd>2</kbd><div>Title screen</div></button></div></div>`;
+  const el=showModal(html,{keepFx:true,cls:'tone-'+(t.net>0&&!t.sunk?'gold':'danger'),wide:true,onKey:e=>{if(e.key==='1')again();if(e.key==='2')toTitle();}});
   const again=()=>{closeModal();openIntro();};const toTitle=()=>{closeModal();showTitle();};
   el.querySelector('[data-choice=again]').onclick=again;el.querySelector('[data-choice=title]').onclick=toTitle;
   const fn=$('#final-n');const t0=performance.now();
@@ -1969,7 +2094,7 @@ function showTitle(){
       <button class="btn ${has?'':'primary'} lg" id="t-new">${has?'New run':'Cast off'}</button>
       <div class="tt-row"><button class="btn" id="t-help">How to play</button><button class="btn" id="t-ledger">Captains' Ledger</button><button class="btn icon" id="t-mute" aria-label="Toggle sound">${ico(Sound.muted?'mute':'sound')}</button></div>
     </div></div>
-    <div class="tt-foot">Mouse, touch or keyboard · Sound is synthesized live</div>`;
+    <div class="tt-foot">Touch, mouse or keyboard · Sound is synthesized live</div>`;
   for(let i=0;i<16;i++){const l=document.createElement('div');l.className='lantern-p';l.style.left=(rnd()*100)+'%';l.style.animationDuration=(14+rnd()*16)+'s';l.style.animationDelay=(-rnd()*25)+'s';l.style.transform=`scale(${.6+rnd()*.8})`;t.appendChild(l);}
   const c=$('#t-cont');if(c)c.onclick=()=>{sfx.click();const s=loadSave();if(!s){showTitle();return;}
     try{startGame(s,false);}catch(err){console.warn(err);store.del(KEY_SAVE);showTitle();toast('That saved voyage was damaged and could not be loaded. Start a new run.','bad','bell',5000);}};
@@ -2026,10 +2151,18 @@ function openHelp(){
   const el=showModal(html,{dismiss:closeModal,onKey:e=>{if(e.key==='1')closeModal();if(e.key==='2'&&S){closeModal();startCoach();}}});
   el.querySelector('[data-x]').onclick=closeModal;const tb=el.querySelector('[data-tour]');if(tb)tb.onclick=()=>{closeModal();startCoach();};
 }
+const STAT_HELP={
+  'st-cash':['Purse','Cash on board. Thieves, tolls and gulls take from it, and it sinks with the skiff. Keep big money in the vault.'],
+  'st-bank':['Lockwater Vault','Safe from thieves and the sea, and earns 1.5% a night. Branches at Lanternquay and the Drowned Exchange.'],
+  'st-debt':['Debt to Marrow Quill','Grows 6% every night. Repay at Lanternquay. Owe more than ¤12,000 and his collectors start hunting you on the canals.'],
+  'st-hold':['Hold','Cargo space used and total. Odile at Copperhook Docks sells bigger racks.'],
+  'st-hull':['Hull','At 0% the skiff sinks and you lose your purse and cargo. Below 60% it leaks. Repairs at Copperhook Docks; cheap patches at the Sluices.']
+};
+function explainStat(id){const h=STAT_HELP[id];if(!h||!S||!$('#modal').hidden)return;info({kicker:'Your ledger',title:h[0],body:h[1],ok:'Got it'});}
 function openMenu(){
   if(!S)return;if(busy){toast('Hold on, you are under way.','info','bell',1800);return;}
   choose({kicker:'Paused',title:'Ship\'s menu',body:`Night ${S.day} of ${NIGHTS} · ${S.name}`,dismissKey:'resume',
-    choices:[{key:'resume',label:'Resume',cls:'primary'},{key:'help',label:'How to play'},{key:'sound',label:Sound.muted?'Turn sound on':'Turn sound off'},{key:'quit',label:'Save and return to title',sub:'Your voyage is saved automatically.'},{key:'abandon',label:'Abandon this run',sub:'Ends the game now and records your score.',cls:'risk'}]}).then(c=>{
+    choices:[{key:'resume',label:'Resume',cls:'primary'},{key:'help',label:'How to play',sub:'Rules, price colours, and a replay of the guided tour.'},{key:'sound',label:Sound.muted?'Turn sound on':'Turn sound off'},{key:'quit',label:'Save and return to title',sub:'Your voyage is saved automatically.'},{key:'abandon',label:'Abandon this run',sub:'Ends the game now and records your score.',cls:'risk'}]}).then(c=>{
     if(c==='help')openHelp();else if(c==='sound')toggleMute();else if(c==='quit'){save();showTitle();}
     else if(c==='abandon')choose({tone:'danger',title:'Abandon the run?',body:'This settles up right now, as if it were the final night.',choices:[{key:'yes',label:'Yes, settle now',cls:'risk'},{key:'no',label:'Keep sailing',cls:'primary'}],dismissKey:'no'}).then(k=>{if(k==='yes')endGame('complete');});
   });
@@ -2040,9 +2173,9 @@ let coachOpen=false,coachI=0;
 const COACH=[
   {sel:'#hud-stats',view:'market',title:'Your ledger',text:'Cash in your <b>purse</b>, savings in the <b>vault</b>, and your <b>debt</b> to Marrow Quill, which grows 6% every night. Watch your <b>hold</b> space and <b>hull</b> too.'},
   {sel:'#side-body .rows',view:'market',title:'The market',text:'Tonight&rsquo;s prices. The coloured % compares each price with its usual level across the city: <b style="color:#4ee39b">green is cheap</b>, a buy; <b style="color:#ffbe55">amber is dear</b>, a sale. Tags say where a good sells for more. Tap a good to trade.'},
-  {sel:'#mapwrap',view:'map',title:'The canals',text:'Tap a district to see what it makes cheaply and what it pays well for, then sail there. <b>Every voyage takes one night</b>, and the water isn\'t always safe.'},
+  {sel:'#mapwrap',view:'map',title:'The canals',text:'Tap a district to see what it sells cheap and what it pays well for, then tap Sail. <b>Every voyage takes one night</b>, and the water isn\'t always safe.'},
   {sel:'#panel-side',view:'harbor',title:'Harbor services',text:'Repay Marrow and use the vault at Lanternquay. Upgrade your hold and engine at Copperhook Docks. The <b>directory</b> lists every service.'},
-  {sel:'#h-night',view:'market',title:'Thirty nights',text:'On night 30, sell everything and settle up. Good luck, captain. Press <kbd>?</kbd> any time for help.'}
+  {sel:'#h-night',view:'market',title:'Thirty nights',text:'On night 30, sell everything and settle up. Good luck, captain. Help is under <b>More</b> (or press <kbd>?</kbd>).'}
 ];
 function startCoach(){coachOpen=true;coachI=0;let c=$('#coach');if(!c){c=document.createElement('div');c.id='coach';document.body.appendChild(c);}c.innerHTML='<div class="spot"></div><div class="tip"></div>';c.hidden=false;showCoach();}
 function showCoach(){
