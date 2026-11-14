@@ -633,6 +633,10 @@ let FAST=false;
 const REDUCED=(()=>{try{return matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){return false;}})();
 const wait=ms=>new Promise(r=>setTimeout(r,FAST?0:ms));
 const isNarrow=()=>window.innerWidth<=860;
+const COARSE=(()=>{try{return matchMedia('(pointer:coarse)').matches;}catch(e){return false;}})();
+// Moves keyboard focus only when it helps: never into a text field on touch screens (it would pop the keyboard),
+// and never inside a frame that has no user activation (browsers block and log it).
+function softFocus(el,o){if(!el||!el.focus)return;if(COARSE&&el.tagName==='INPUT')return;try{if(window.top!==window&&navigator.userActivation&&!navigator.userActivation.isActive)return;}catch(e){return;}try{el.focus(o||{preventScroll:true});}catch(e){}}
 
 // ---------- storage (always guarded) ----------
 const memStore={};
@@ -1357,7 +1361,7 @@ function renderTravelCard(){
 function selectDistrict(id){
   if(busy)return;
   sel=(sel===id)?null:id;if(sel)$('#toasts').innerHTML='';sfx.click();renderMapState();
-  if(sel){const b=$('#tcard-slot .btn.primary,#tcard-slot .btn');if(b&&!isNarrow())setTimeout(()=>b.focus({preventScroll:true}),30);}
+  if(sel){const b=$('#tcard-slot .btn.primary,#tcard-slot .btn');if(b&&!isNarrow())setTimeout(()=>softFocus(b,{preventScroll:true}),30);}
 }
 function voyagePath(a,b){const A=pos(a),B=pos(b);const mx=(A.x+B.x)/2,my=(A.y+B.y)/2,dx=B.x-A.x,dy=B.y-A.y,len=Math.hypot(dx,dy)||1,bend=len*.16;
   return `M${A.x} ${A.y} Q${(mx-dy/len*bend).toFixed(1)} ${(my+dx/len*bend).toFixed(1)} ${B.x} ${B.y}`;}
@@ -1422,12 +1426,12 @@ document.addEventListener('keydown',e=>{
   if(k==='?'||k==='h'||k==='H'){openHelp();return;}
   if(k==='Escape'){if(sel){sel=null;renderMapState();}else openMenu();return;}
   const d=DISTRICTS.find(x=>x.key===k);
-  if(d){if(isNarrow())setView('map');sel=d.id;sfx.click();renderMapState();const b=$('#tcard-slot .btn.primary');if(b)b.focus({preventScroll:true});return;}
+  if(d){if(isNarrow())setView('map');sel=d.id;sfx.click();renderMapState();const b=$('#tcard-slot .btn.primary');if(b)softFocus(b,{preventScroll:true});return;}
   if(k==='ArrowDown'||k==='ArrowUp'){
     if(e.target.closest&&e.target.closest('.node'))return;
     e.preventDefault();if(view!=='market'&&isNarrow())setView('market');if(sideTab!=='market')setView('market');
     let i=GOODS.findIndex(g=>g.id===selectedGood);i=k==='ArrowDown'?Math.min(GOODS.length-1,i+1):Math.max(0,i<0?0:i-1);selectedGood=GOODS[i].id;renderSide();
-    const r=$(`.row[data-g="${selectedGood}"]`);if(r){r.focus({preventScroll:true});r.scrollIntoView({block:'nearest'});}sfx.tick();return;
+    const r=$(`.row[data-g="${selectedGood}"]`);if(r){softFocus(r,{preventScroll:true});r.scrollIntoView({block:'nearest'});}sfx.tick();return;
   }
   if((k==='b'||k==='B'||k==='s'||k==='S')){const g=selectedGood||(document.activeElement&&document.activeElement.dataset&&document.activeElement.dataset.g);if(g){openTrade(g,k.toLowerCase()==='b'?'buy':'sell');}else toast('Pick a good first with ↑ ↓','info','bell');return;}
   if(k==='Enter'){
@@ -1455,10 +1459,10 @@ function showModal(html,{cls='',onKey=null,dismiss=null,wide=false,keepFx=false}
   ov.className='ov '+cls;ov.innerHTML=`<div class="modal ${wide?'wide':''}" role="dialog" aria-modal="true">${html}</div>`;
   ov.hidden=false;modalKeys=onKey;modalDismiss=dismiss;
   ov.onclick=e=>{if(e.target===ov&&modalDismiss)modalDismiss();};
-  requestAnimationFrame(()=>{const f=ov.querySelector('[autofocus]')||ov.querySelector('.choice:not([disabled]),button:not([disabled]),input');if(f)f.focus({preventScroll:true});});
+  requestAnimationFrame(()=>{const f=ov.querySelector('[autofocus]')||ov.querySelector('.choice:not([disabled]),button:not([disabled]),input');if(f)softFocus(f,{preventScroll:true});});
   return ov.firstElementChild;
 }
-function closeModal(){const ov=$('#modal');ov.hidden=true;document.body.classList.remove('fx-under');ov.innerHTML='';modalKeys=null;modalDismiss=null;setTimeout(flushToasts,250);if(lastFocus&&document.body.contains(lastFocus)){try{lastFocus.focus({preventScroll:true});}catch(e){}}}
+function closeModal(){const ov=$('#modal');ov.hidden=true;document.body.classList.remove('fx-under');ov.innerHTML='';modalKeys=null;modalDismiss=null;setTimeout(flushToasts,250);if(lastFocus&&document.body.contains(lastFocus)){try{softFocus(lastFocus,{preventScroll:true});}catch(e){}}}
 function cardHTML(c){
   return `${c.art?`<div class="art">${ART[c.art]?ART[c.art]():''}</div>`:''}<div class="card-body">
     ${c.kicker?`<div class="kicker">${c.kicker}</div>`:''}<h3>${c.title}</h3>
@@ -1566,7 +1570,7 @@ function openTrade(gid,mode){
   qr.oninput=()=>{q=+qr.value;update();sfx.tick();};
   go.onclick=confirm;
   setMode(mode);
-  setTimeout(()=>go.focus({preventScroll:true}),40);
+  setTimeout(()=>softFocus(go,{preventScroll:true}),40);
 }
 function chartSVG(hist,cost){
   const W=520,H=140,pad=30;const a=hist.slice(-14);const n=a.length;
@@ -1619,7 +1623,7 @@ function askAmount({title,kicker,text,max,def,verb,cls='primary',note}){
     el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{v=Math.floor(max*+b.dataset.f);up();sfx.tick();});
     el.querySelectorAll('[data-x]').forEach(b=>b.onclick=()=>fin(null));
     go.onclick=()=>{if(v>0)fin(v);};
-    up();setTimeout(()=>go.focus(),40);
+    up();setTimeout(()=>softFocus(go),40);
   });
 }
 
@@ -2124,7 +2128,7 @@ function showTitle(){
   $('#t-help').onclick=()=>{sfx.click();openHelp();};
   $('#t-ledger').onclick=()=>{sfx.click();showModal(`<div class="card-body"><div class="kicker">Hall of fortunes</div><h3>Captains' Ledger</h3>${ledgerTable(loadScores(),null)}<div class="choices"><button class="choice primary" data-x><kbd>1</kbd><div>Close</div></button></div></div>`,{dismiss:closeModal,onKey:e=>{if(e.key==='1')closeModal();}}).querySelector('[data-x]').onclick=closeModal;};
   $('#t-mute').onclick=()=>{toggleMute();$('#t-mute').innerHTML=ico(Sound.muted?'mute':'sound');};
-  setTimeout(()=>{const b=$('#t-cont')||$('#t-new');if(b)b.focus({preventScroll:true});},50);
+  setTimeout(()=>{const b=$('#t-cont')||$('#t-new');if(b)softFocus(b,{preventScroll:true});},50);
 }
 function titleScene(){
   const R=seeded(7);let city='',wins='';
@@ -2158,7 +2162,7 @@ function openIntro(){
   const go=()=>{const n=($('#cap-name').value||'').trim().slice(0,18)||'Captain';settings.name=n;saveSettings();closeModal();Sound.unlock();sfx.arrive();
     startGame(newState(n),true);if(!settings.tutorial)setTimeout(startCoach,500);};
   el.querySelector('#go').onclick=go;
-  setTimeout(()=>{const i=$('#cap-name');if(i&&!isNarrow())i.focus();},60);
+  setTimeout(()=>{const i=$('#cap-name');if(i&&!isNarrow())softFocus(i);},60);
 }
 function openHelp(){
   const html=`<div class="card-body help"><div class="kicker">Captain's handbook</div><h3>How to play</h3>
@@ -2215,7 +2219,7 @@ function showCoach(){
     if(top<12){top=clamp(r.top+24,12,innerHeight-th-12);left=clamp(r.left+24,12,innerWidth-tw-12);}
     tip.style.left=left+'px';tip.style.top=top+'px';
     tip.querySelector('[data-next]').onclick=()=>coachNext(false);tip.querySelector('[data-skip]').onclick=()=>coachNext(true);
-    tip.querySelector('[data-next]').focus({preventScroll:true});
+    softFocus(tip.querySelector('[data-next]'),{preventScroll:true});
   }));
 }
 function coachNext(skip){sfx.click();coachI++;if(skip||coachI>=COACH.length){coachOpen=false;const c=$('#coach');if(c)c.remove();settings.tutorial=true;saveSettings();setView('market');toast('Tip: look for <b>Cheap</b> tags, then check the map for where that good sells dear.','gold','bell',6000);return;}showCoach();}

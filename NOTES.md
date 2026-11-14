@@ -43,7 +43,7 @@ to get rich. Open `game/index.html` in a browser. It has no dependencies and mak
   a damaged save is discarded with a message instead of crashing.
 - **Tuned by simulation.** `tools/sim` (dev tooling, not shipped) drives the real game file headlessly (400 seeded runs per policy). Bots see only what a
   player sees. Results on the current build:
-  - **Competent bot:** median ¤566k (p10 ¤354k, p90 ¤794k). Net worth grows 2.5× from night 18 to night 30, against 14× before market depth.
+  - **Competent bot:** median ¤566k (p10 ¤354k, p90 ¤794k). Net worth grows 2.5× from night 18 to night 30.
     A naive greedy bot gets a median of ¤90k.
   - **Whisper acceptance test:** a bot that buys every whisper and acts on each one ends ahead of the same bot without
     whispers on 22.5% of seeds (median −¤144k), and 43% of the whispers it acts on lose money.
