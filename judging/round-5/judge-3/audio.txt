@@ -1,0 +1,308 @@
+> tap #t-new
+tapped button#t-new.btn.primary.lg "Cast off" at (195,429) 240x48; touch landed on button#t-new.btn.primary.lg "Cast off"
+> wait 600
+waited 600ms
+> tap #go
+tapped button#go.choice.primary "Cast off A quick guided tour starts fir…" at (195,791) 356x69; touch landed on div "Cast off A quick guided tour starts fir…"
+> wait 1000
+waited 1000ms
+> taptext Skip tour
+tapped button.btn.ghost.sm "Skip tour" at (71,795) 88x44; touch landed on button.btn.ghost.sm "Skip tour"
+> wait 600
+waited 600ms
+> audio
+{
+ "shim": "none: real Web Audio",
+ "contexts": [
+  {
+   "t": 12793,
+   "createdIn": "touchend",
+   "activation": "active",
+   "stateAtCreate": "running",
+   "resumes": [],
+   "stateNow": "running",
+   "currentTime": 2.36
+  }
+ ],
+ "events": [
+  {
+   "t": 13517,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 13517,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 13517,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 13517,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 13520,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 13520,
+   "event": "click",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 14583,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 14583,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 14583,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 14583,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 14583,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 14583,
+   "event": "click",
+   "pointerType": "touch",
+   "activation": "active"
+  }
+ ]
+}
+> tap #b-mute2
+tapped button#b-mute2.btn.icon.hud-mute "Toggle sound" at (358,36) 44x44; touch landed on svg.ico
+> wait 600
+waited 600ms
+> audio
+{
+ "shim": "none: real Web Audio",
+ "contexts": [
+  {
+   "t": 12793,
+   "createdIn": "touchend",
+   "activation": "active",
+   "stateAtCreate": "running",
+   "resumes": [],
+   "stateNow": "suspended",
+   "currentTime": 2.38
+  }
+ ],
+ "events": [
+  {
+   "t": 14583,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 14583,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 14583,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 14583,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 14583,
+   "event": "click",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 15218,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 15218,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 15218,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 15218,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 15219,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 15220,
+   "event": "click",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 15222,
+   "ctx": 0,
+   "state": "suspended",
+   "during": "statechange"
+  }
+ ]
+}
+> tap #b-mute2
+tapped button#b-mute2.btn.icon.hud-mute "Toggle sound" at (358,36) 44x44; touch landed on svg.ico
+> wait 600
+waited 600ms
+> audio
+{
+ "shim": "none: real Web Audio",
+ "contexts": [
+  {
+   "t": 12793,
+   "createdIn": "touchend",
+   "activation": "active",
+   "stateAtCreate": "running",
+   "resumes": [
+    {
+     "t": 15849,
+     "during": "click",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    },
+    {
+     "t": 15849,
+     "during": "click",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    },
+    {
+     "t": 15849,
+     "during": "click",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    },
+    {
+     "t": 15850,
+     "during": "click",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    },
+    {
+     "t": 15850,
+     "during": "click",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    }
+   ],
+   "stateNow": "running",
+   "currentTime": 3
+  }
+ ],
+ "events": [
+  {
+   "t": 15218,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 15218,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 15219,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 15220,
+   "event": "click",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 15222,
+   "ctx": 0,
+   "state": "suspended",
+   "during": "statechange"
+  },
+  {
+   "t": 15847,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 15847,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 15848,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 15848,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 15848,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 15848,
+   "event": "click",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 15863,
+   "ctx": 0,
+   "state": "running",
+   "during": "statechange"
+  }
+ ]
+}
+> errors
+no errors

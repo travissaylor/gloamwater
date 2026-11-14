@@ -1,0 +1,86 @@
+> taptext Map
+tapped button "MAP" at (118,629) 69x59; touch landed on svg.ico
+> wait 1200
+waited 1200ms
+> tap #nodes [data-d=fm]
+tapped g.node "Fogmouth" at (85,194) 89x84; touch landed on circle.disc
+> wait 1200
+waited 1200ms
+> taptext Port details
+tapped button.btn.port-details "Port details" at (80,550) 104x44; touch landed on button.btn.port-details "Port details"
+> wait 1200
+waited 1200ms
+> text
+NIGHT
+2/30
+NET WORTH
+−¤2,840
+Bilge Rat at ¤0
+PURSE
+¤3,520
+VAULT
+¤0
+DEBT 6%
+¤6,360
+HOLD
+0/30
+HULL
+100%
+Lanternquay
+Saint Mire
+Orchid
+Exchange
+Sluices
+Copperhook
+!
+Fogmouth
+Fogmouth
+1 night · risk 4/5
+The Fog Fence
+Port details
+Sail · 1 night
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+1-NIGHT ROUTE · DANGER 4/5
+Fogmouth
+
+The broken seawall, where ocean ships unload in fog and the Tidewardens patrol hardest.
+
+Services: The Fog Fence
+
+Usually supplies: Ghost Chips, Dreamsilk
+Usually imports: Synth Saffron, Rust Pearls
+District habits, not a promised sale price.
+
+These are observed prices. Prices and dealers may change before you arrive; large orders move the quote.
+
+Glowkelp
+¤59
+1n ago
+Bottled Rain
+¤148
+1n ago
+Rust Pearls
+¤484
+1n ago
+Synth Saffron
+¤1,822
+1n ago
+Clockwork Eels
+¤1,739
+1n ago
+Ghost Chips
+¤3,917
+1n ago
+Dreamsilk
+¤4,864
+1n ago
+Moon Ink
+¤14,814
+1n ago
+Back to map
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-3/explore-port.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-3/explore-port.png

@@ -1,0 +1,249 @@
+> tap .port-details
+tapped button.btn.port-details "Port details" at (80,730) 104x44; touch landed on button.btn.port-details "Port details"
+> wait 1200
+waited 1200ms
+> shot judging/round-5/judge-2/explore-port-details.png
+saved judging/round-5/judge-2/explore-port-details.png
+> ui
+viewport 390x844 · page scrollWidth 390
+targets (1), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [195,817 356x52] button.choice.primary "Back to map"
+covered (21): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov "1-NIGHT ROUTE · DANGER 2/5 …" | button#st-cash.stat "PURSE ¤1,930" under h3 "Copperhook Docks" | button#st-bank.stat "VAULT ¤0" under h3 "Copperhook Docks" | button#st-debt.stat.debt "DEBT 6% ¤6,000" under h3 "Copperhook Docks" | button#st-hold.stat "HOLD 10/30" under h3 "Copperhook Docks" | button#st-hull.stat "HULL 100%" under h3 "Copperhook Docks" | g.node.here "Lanternquay" under p "These are observed prices. …" | g.node "Saint Mire" under p "These are observed prices. …" | g.node "Orchid" under span "Rust Pearls" | g.node "Exchange" under span "Rust Pearls" | g.node "Sluices" under p "These are observed prices. …" | g.node.sel "Copperhook FFleet call: Glo…" under div.card-body.port-sheet "1-NIGHT ROUTE · DANGER 2/5 …" | g.node "Fogmouth" under p "Services: Odile's Boatyard" | button.btn.icon.ghost "Clear destination" under b "¤2,268 seen tonight" | button.btn.port-details "Port details" under span "Ghost Chips" | button.btn.primary "Sail · 1 night" under span "Ghost Chips" | button "MARKET" under div "Back to map" | button "MAP" under div "Back to map" | button "HARBOR" under button.choice.primary "Back to map" | button "LOG" under button.choice.primary "Back to map" | button "MORE" under button.choice.primary "Back to map"
+--- visible text ---
+NIGHT
+1/30
+NET WORTH
+−¤3,500
+Bilge Rat at ¤0
+PURSE
+¤1,930
+VAULT
+¤0
+DEBT 6%
+¤6,000
+HOLD
+10/30
+HULL
+100%
+Lanternquay
+Saint Mire
+Orchid
+Exchange
+Sluices
+Copperhook
+F
++49%
+Fogmouth
+Copperhook Docks
+1 night · risk 2/5
+Glowkelp ¤85 seen tonight; arrival may change.
+Port details
+Sail · 1 night
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+1-NIGHT ROUTE · DANGER 2/5
+Copperhook Docks
+
+Cranes, sparks and shipwrights. Clockwork Eels are wound here by the thousand.
+
+Services: Odile's Boatyard
+
+Usually supplies: Clockwork Eels, Rust Pearls
+Usually imports: Glowkelp, Ghost Chips
+District habits, not a promised sale price.
+
+Fleet call: Glowkelp through night 4. Demand +40%, twice the depth.
+
+These are observed prices. Prices and dealers may change before you arrive; large orders move the quote.
+
+Glowkelp · hold 10
+¤85
+seen tonight
+Bottled Rain
+no dealers
+seen tonight
+Rust Pearls
+¤327
+seen tonight
+Synth Saffron
+¤1,560
+seen tonight
+Clockwork Eels
+¤2,268
+seen tonight
+Ghost Chips
+¤4,418
+seen tonight
+Dreamsilk
+¤7,946
+seen tonight
+Moon Ink
+¤15,567
+seen tonight
+Back to map
+> key Escape
+pressed Escape
+> wait 600
+waited 600ms
+> tap #tcard-slot [data-act=sail]
+tapped button.btn.primary "Sail · 1 night" at (251,730) 222x44; touch landed on button.btn.primary "Sail · 1 night"
+> wait 1200
+waited 1200ms
+> shot judging/round-5/judge-2/explore-voyage.png
+saved judging/round-5/judge-2/explore-voyage.png
+> wait 5000
+waited 5000ms
+> ui
+viewport 390x844 · page scrollWidth 390
+targets (3), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [195,637 356x69] button.choice "Small offering · ¤100 40% chance to win…"
+  [195,714 356x69] button.choice.risk "Big offering · ¤390 Same odds, more at …"
+  [195,791 356x69] button.choice "Walk on Superstition is for landlubbers."
+covered (20): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov.tone-gold "A GAME OF CHANCE Grandmothe…" | button#st-cash.stat "PURSE ¤1,930" under div#modal.ov.tone-gold "A GAME OF CHANCE Grandmothe…" | button#st-bank.stat "VAULT ¤0" under div#modal.ov.tone-gold "A GAME OF CHANCE Grandmothe…" | button#st-debt.stat.debt "DEBT 6% ¤6,360" under div#modal.ov.tone-gold "A GAME OF CHANCE Grandmothe…" | button#st-hold.stat "HOLD 10/30" under div#modal.ov.tone-gold "A GAME OF CHANCE Grandmothe…" | button#st-hull.stat "HULL 100%" under div#modal.ov.tone-gold "A GAME OF CHANCE Grandmothe…" | g.node "Lanternquay" under path | g.node.far "Saint Mire" under path | g.node.far "Orchid" under p "An old woman keeps a glowin…" | g.node.far "Exchange" under p "An old woman keeps a glowin…" | g.node "Sluices" under circle | g.node.here "Copperhook FFleet call: Glo…" under div#modal.ov.tone-gold "A GAME OF CHANCE Grandmothe…" | g.node "Fogmouth" under div#modal.ov.tone-gold "A GAME OF CHANCE Grandmothe…" | button.btn "Open market" under small "Same odds, more at stake." | button.btn.amber "Stay the night" under button.choice.risk "Big offering · ¤390 Same od…" | button "MARKET" under small "Superstition is for landlub…" | button "MAP" under small "Superstition is for landlub…" | button "HARBOR" under small "Superstition is for landlub…" | button "LOG" under button.choice "Walk on Superstition is for…" | button "MORE" under button.choice "Walk on Superstition is for…"
+--- visible text ---
+NIGHT
+2/30
+NET WORTH
+−¤3,580
+Bilge Rat at ¤0
+PURSE
+¤1,930
+VAULT
+¤0
+DEBT 6%
+¤6,360
+HOLD
+10/30
+HULL
+100%
+Lanternquay
+Saint Mire
+Orchid
+Exchange
+Sluices
+Copperhook
+F
+Fogmouth
+Moored at Copperhook
+Tap any district to compare routes.
+Lit canals take one night. Select an island for prices.
+Open market
+Stay the night
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+A GAME OF CHANCE
+Grandmother Wick and her eel
+
+An old woman keeps a glowing eel in a jar. "Feed him coin, dearie. If he turns gold, he pays you back two and a half times. If he turns black... well."
+
+Small offering · ¤100
+40% chance to win 2.5×
+Big offering · ¤390
+Same odds, more at stake.
+Walk on
+Superstition is for landlubbers.
+> shot judging/round-5/judge-2/explore-arrival.png
+saved judging/round-5/judge-2/explore-arrival.png
+> audio
+{
+ "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+ "sounds": {
+  "whileRunning": 46,
+  "whileSuspended": 0
+ },
+ "contexts": [
+  {
+   "t": 15136,
+   "createdIn": "touchend",
+   "activation": "active",
+   "stateAtCreate": "suspended",
+   "resumes": [
+    {
+     "t": 15136,
+     "during": "touchend",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    }
+   ],
+   "stateNow": "running",
+   "currentTime": 123.4
+  }
+ ],
+ "events": [
+  {
+   "t": 130161,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 130161,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 130162,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 130162,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 130163,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 130164,
+   "event": "click",
+   "pointerType": "mouse",
+   "activation": "active"
+  },
+  {
+   "t": 132161,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 132161,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 132162,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 132162,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 132163,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 132163,
+   "event": "click",
+   "pointerType": "mouse",
+   "activation": "active"
+  }
+ ]
+}
+> errors
+no errors

@@ -1,0 +1,144 @@
+> taptext Reach for the bag
+tapped button.choice.risk "Reach for the bag 70% chance to keep it…" at (640,492) 478x64; touch landed on div "Reach for the bag 70% chance to keep it…"
+> wait 800
+waited 800ms
+> ui
+viewport 1280x800 · page scrollWidth 1280
+targets (31), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [475,40 136x56] button#st-cash.stat "PURSE ¤2,250 −¤250"
+  [619,40 136x56] button#st-bank.stat "VAULT ¤0"
+  [763,40 136x56] button#st-debt.stat.debt "DEBT · 6%/NIGHT ¤6,360"
+  [906,40 136x56] button#st-hold.stat "HOLD 0/30"
+  [1050,40 136x56] button#st-hull.stat "HULL 90%"
+  [1152,40 40x40] button#b-help.btn.icon "How to play (?)"   ⚠ SMALL<44 · GAP 6px to button#b-mute.btn.icon "Toggle sound (M)"
+  [1198,40 40x40] button#b-mute.btn.icon "Toggle sound (M)"   ⚠ SMALL<44 · GAP 6px to button#b-help.btn.icon "How to play (?)"
+  [1244,40 40x40] button#b-menu.btn.icon "Menu"   ⚠ SMALL<44 · GAP 6px to button#b-mute.btn.icon "Toggle sound (M)"
+  [364,397 94x93] g.node "Lanternquay"
+  [350,236 87x93] g.node.far "Saint Mire"
+  [598,267 123x93] g.node.far "Orchid Terraces"
+  [598,463 130x93] g.node.far "Drowned Exchange"
+  [367,554 94x93] g.node "The Sluices !"
+  [136,481 130x93] g.node.here "Copperhook Docks FFleet call: Glowkelp,…"
+  [129,253 87x93] g.node "Fogmouth"
+  [779,120 86x37] button#tab-market.tab "MARKET"   ⚠ SMALL<44 · GAP 4px to button#tab-harbor.tab "HARBOR 1"
+  [883,120 113x37] button#tab-harbor.tab "HARBOR 1"   ⚠ SMALL<44 · GAP 4px to button#tab-market.tab "MARKET"
+  [1231,174 40x40] button.btn.icon.market-info "Fleet calendar and market bulletins"   ⚠ SMALL<44
+  [998,229 515x53] button.best-run "Rust Pearls → Lanternquay Seen +94% · 1…"
+  [998,297 519x60] div.row "Glowkelp Fleet call Pricey ¤104 +148% v…"   ⚠ GAP 6px to div.row "Bottled Rain Saint …"
+  [1173,297 46x32] button.btn.sm.teal "Buy"   ⚠ SMALL<44
+  [998,363 519x60] div.row "Bottled Rain Saint Mire +20% seen · 1n …"   ⚠ GAP 6px to div.row "Glowkelp Fleet call…"
+  [1173,363 46x32] button.btn.sm.teal "Buy"   ⚠ SMALL<44
+  [998,441 519x83] div.row "Rust Pearls Cheap Lanternquay +94% seen…"   ⚠ GAP 6px to div.row "Bottled Rain Saint …"
+  [1173,441 46x32] button.btn.sm.teal "Buy"   ⚠ SMALL<44
+  [998,518 519x60] div.row "Synth Saffron Sluices +42% seen · 1n ag…"   ⚠ GAP 6px to div.row "Rust Pearls Cheap L…"
+  [1173,518 46x32] button.btn.sm.teal "Buy"   ⚠ SMALL<44
+  [998,584 519x60] div.row "Clockwork Eels Exchange +21% seen · 1n …"   ⚠ GAP 6px to div.row "Synth Saffron Sluic…"
+  [1173,584 46x32] button.btn.sm.teal "Buy"   ⚠ SMALL<44
+  [998,650 519x60] div.row "Ghost Chips Usually imported here ¤4,94…"   ⚠ GAP 6px to div.row "Clockwork Eels Exch…"
+  [998,727 519x83] div.row "Dreamsilk Glut easing Sluices +114% see…"   ⚠ GAP 6px to div.row "Ghost Chips Usually…"
+covered (1): div.row "Moon Ink ¤16,729 −12% vs us…" under main.layout "NIGHT 2 OF 30 · MOORED AT C…"
+--- visible text ---
+GLOAMWATER
+NIGHT
+2/30
+PURSE
+¤2,250
+−¤250
+VAULT
+¤0
+DEBT · 6%/NIGHT
+¤6,360
+HOLD
+0/30
+HULL
+90%
+NIGHT 2 OF 30 · MOORED AT
+Copperhook Docks
+NET WORTH
+−¤4,110
+Lanternquay
+Saint Mire
+Orchid Terraces
+Drowned Exchange
+The Sluices
+!
+Copperhook Docks
+F
+Fogmouth
+Select a port · lit canal = 1 night
+MARKET
+HARBOR
+1
+NIGHT 2 MARKET
+Copperhook Docks
+Rust Pearls → Lanternquay
+Seen +94% · 1n ago · 1n · may change
+Glowkelp
+Fleet call
+Pricey
+¤104
++148% vs usual
+Buy
+Sell
+Bottled Rain
+Saint Mire +20% seen · 1n ago
+¤159
++22% vs usual
+Buy
+Sell
+Rust Pearls
+Cheap
+Lanternquay +94% seen · 1n ago
+¤309
+−26% vs usual
+Buy
+Sell
+Synth Saffron
+Sluices +42% seen · 1n ago
+¤1,406
++28% vs usual
+Buy
+Sell
+Clockwork Eels
+Exchange +21% seen · 1n ago
+¤2,078
+−13% vs usual
+Buy
+Sell
+Ghost Chips
+Usually imported here
+¤4,942
+usual
+Buy
+Sell
+Dreamsilk
+Glut easing
+Sluices +114% seen · 1n ago
+¤4,275
+−56% vs usual
+Buy
+Sell
+Moon Ink
+¤16,729
+−12% vs usual
+Buy
+Sell
+Cargo worth here: ¤0
+SHIP'S LOG
+N2
+The gull escaped with ¤250; the quay cost 10% hull.
+N2
+Bulletin: Dealers at The Sluices are panic-selling Glowkelp ahead of a rumoured raid.
+N2
+Arrived at Copperhook Docks.
+N1
+You owe Marrow Quill ¤6,000 for the Little Lantern. Thirty nights to make it right.
+Gull took ¤250 · hull −10%
+Dealers at The Sluices are panic-selling Glowkelp ahead of a rumoured raid.
+Odile's Boatyard is here: bigger hold, faster engine, hull repairs. Open the Harbor tab.
+> shot judging/round-5/judge-2/explore-gull-result.png
+saved judging/round-5/judge-2/explore-gull-result.png
+> key Escape
+pressed Escape
+> errors
+no errors

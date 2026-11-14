@@ -1,0 +1,347 @@
+> size 360 640
+viewport now 360x640
+> wait 1200
+waited 1200ms
+> shot judging/round-5/judge-2/explore-trade-360x640.png
+saved judging/round-5/judge-2/explore-trade-360x640.png
+> tap #qin
+tapped input#qin "Quantity" at (143,213) 141x48; touch landed on input#qin "Quantity"
+> key Control+a
+pressed Control+a
+> type -5
+typed "-5"
+> wait 500
+waited 500ms
+> ui
+viewport 360x640 · page scrollWidth 360
+targets (9), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [321,75 44x44] button.btn.icon.ghost "Close"
+  [99,152 155x46] button.b "Buy"
+  [262,152 155x46] button.s "Sell"
+  [41,213 48x48] button.btn "−"
+  [143,213 141x48] input#qin "Quantity"
+  [246,213 48x48] button.btn "+"
+  [310,213 65x48] button.btn.amber "Max"
+  [180,271 322x44] input#qr "Quantity slider"
+  [98,595 157x52] button.btn.lg "Cancel"
+covered (19): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov "COPPERHOOK DOCKS · NIGHT 2 …" | button#st-cash.stat "PURSE ¤2,780" under div.gico | button#st-bank.stat "VAULT ¤0" under h3 "Clockwork Eels" | button#st-debt.stat.debt "DEBT 6% ¤6,360" under h3 "Clockwork Eels" | button#st-hold.stat "HOLD 0/30" under h3 "Clockwork Eels" | button#st-hull.stat "HULL 100%" under div.sh-head "COPPERHOOK DOCKS · NIGHT 2 …" | button.btn.icon.market-info "Fleet calendar and market b…" under button.s "Sell" | button.best-run "Clockwork Eels → Fogmouth S…" under input#qin "Quantity" | div.row.sel.flash "Glowkelp ¤85 +102% Above us…" under input#qr "Quantity slider" | div.row.out "Bottled Rain — No dealers t…" under div#qsum.summary "Best known sale ¤3,410 · Or…" | div.row "Rust Pearls ¤399 −5% Exchan…" under div#qsum.summary "Best known sale ¤3,410 · Or…" | div.row "Synth Saffron ¤1,318 +20% O…" under span.depth-ok.reserve-note "Default keeps 15% aside whe…" | div.row "Clockwork Eels ¤1,826 −24% …" under div.sh-foot "Cancel Buy" | div.row "Ghost Chips ¤4,257 −18% Exc…" under div.sh-foot "Cancel Buy" | button "MARKET" under button.btn.lg "Cancel" | button "MAP" under button.btn.lg "Cancel" | button "HARBOR" under div.sh-foot "Cancel Buy" | button "LOG" under button#qgo.btn.lg.teal "Buy" | button "MORE" under button#qgo.btn.lg.teal "Buy"
+off screen, scroll to reach (2): div.row "Dreamsilk ¤7,471 −24% Orchi…" | div.row "Moon Ink ¤15,389 −19% Lante…"
+--- visible text ---
+NIGHT
+2/30
+NET WORTH
+−¤3,580
+Bilge Rat at ¤0
+PURSE
+¤2,780
+VAULT
+¤0
+DEBT 6%
+¤6,360
+HOLD
+0/30
+HULL
+100%
+NIGHT 2 MARKET
+Copperhook Docks
+Clockwork Eels → Fogmouth
+Seen +56% · 1n ago · 1n · may change
+Glowkelp
+¤85
++102%
+Above usual · check your sale quote
+Bottled Rain
+—
+No dealers tonight
+Rust Pearls
+¤399
+−5%
+Exchange +31% seen 1n ago
+Synth Saffron
+¤1,318
++20%
+Orchid +38% seen 1n ago
+Clockwork Eels
+¤1,826
+−24%
+Orchid +87% seen 1n ago
+Ghost Chips
+¤4,257
+−18%
+Exchange +31% seen 1n ago
+Dreamsilk
+¤7,471
+−24%
+Orchid +24% seen 1n ago
+Moon Ink
+¤15,389
+−19%
+Lanternquay +82% seen 1n ago
+Cargo worth here: ¤0
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+COPPERHOOK DOCKS · NIGHT 2
+Clockwork Eels
+N22,2891,748
+Price today is 24% below usual for Clockwork Eels
+¤700
+¤7,200
+Lanternquay 1n ago
+¤2,323
+Saint Mire 1n ago
+¤3,299
+Orchid Terraces 1n ago
+¤3,410
+Drowned Exchange 1n ago
+¤3,191
+The Sluices 1n ago
+—
+Fogmouth 1n ago
+¤2,854
+Buy
+Sell
+−
++
+Max
+Best known sale
+¤3,410 · Orchid Terraces
+Price each
+¤1,826
+Total cost
+¤0
+Purse after
+¤2,780
+Hold after
+0 / 30
+Dealers here sell about 15 more at this price.
+Default keeps 15% aside when possible. Max uses the full cash/hold limit, including price impact.
+Cancel
+Buy
+> key Control+a
+pressed Control+a
+> type 2.5
+typed "2.5"
+> wait 500
+waited 500ms
+> ui
+viewport 360x640 · page scrollWidth 360
+targets (10), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [321,75 44x44] button.btn.icon.ghost "Close"
+  [99,152 155x46] button.b "Buy"
+  [262,152 155x46] button.s "Sell"
+  [41,213 48x48] button.btn "−"
+  [143,213 141x48] input#qin "Quantity"
+  [246,213 48x48] button.btn "+"
+  [310,213 65x48] button.btn.amber "Max"
+  [180,271 322x44] input#qr "Quantity slider"
+  [96,595 154x52] button.btn.lg "Cancel"
+  [261,595 160x52] button#qgo.btn.lg.teal "Buy 1 for ¤1,826"
+covered (19): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov "COPPERHOOK DOCKS · NIGHT 2 …" | button#st-cash.stat "PURSE ¤2,780" under div.gico | button#st-bank.stat "VAULT ¤0" under h3 "Clockwork Eels" | button#st-debt.stat.debt "DEBT 6% ¤6,360" under h3 "Clockwork Eels" | button#st-hold.stat "HOLD 0/30" under h3 "Clockwork Eels" | button#st-hull.stat "HULL 100%" under div.sh-head "COPPERHOOK DOCKS · NIGHT 2 …" | button.btn.icon.market-info "Fleet calendar and market b…" under button.s "Sell" | button.best-run "Clockwork Eels → Fogmouth S…" under input#qin "Quantity" | div.row.sel.flash "Glowkelp ¤85 +102% Above us…" under input#qr "Quantity slider" | div.row.out "Bottled Rain — No dealers t…" under div#qsum.summary "Best known sale ¤3,410 · Or…" | div.row "Rust Pearls ¤399 −5% Exchan…" under div#qsum.summary "Best known sale ¤3,410 · Or…" | div.row "Synth Saffron ¤1,318 +20% O…" under span.depth-ok.reserve-note "Default keeps 15% aside whe…" | div.row "Clockwork Eels ¤1,826 −24% …" under div.sh-foot "Cancel Buy 1 for ¤1,826" | div.row "Ghost Chips ¤4,257 −18% Exc…" under div.sh-foot "Cancel Buy 1 for ¤1,826" | button "MARKET" under button.btn.lg "Cancel" | button "MAP" under button.btn.lg "Cancel" | button "HARBOR" under div.sh-foot "Cancel Buy 1 for ¤1,826" | button "LOG" under button#qgo.btn.lg.teal "Buy 1 for ¤1,826" | button "MORE" under button#qgo.btn.lg.teal "Buy 1 for ¤1,826"
+off screen, scroll to reach (2): div.row "Dreamsilk ¤7,471 −24% Orchi…" | div.row "Moon Ink ¤15,389 −19% Lante…"
+--- visible text ---
+NIGHT
+2/30
+NET WORTH
+−¤3,580
+Bilge Rat at ¤0
+PURSE
+¤2,780
+VAULT
+¤0
+DEBT 6%
+¤6,360
+HOLD
+0/30
+HULL
+100%
+NIGHT 2 MARKET
+Copperhook Docks
+Clockwork Eels → Fogmouth
+Seen +56% · 1n ago · 1n · may change
+Glowkelp
+¤85
++102%
+Above usual · check your sale quote
+Bottled Rain
+—
+No dealers tonight
+Rust Pearls
+¤399
+−5%
+Exchange +31% seen 1n ago
+Synth Saffron
+¤1,318
++20%
+Orchid +38% seen 1n ago
+Clockwork Eels
+¤1,826
+−24%
+Orchid +87% seen 1n ago
+Ghost Chips
+¤4,257
+−18%
+Exchange +31% seen 1n ago
+Dreamsilk
+¤7,471
+−24%
+Orchid +24% seen 1n ago
+Moon Ink
+¤15,389
+−19%
+Lanternquay +82% seen 1n ago
+Cargo worth here: ¤0
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+COPPERHOOK DOCKS · NIGHT 2
+Clockwork Eels
+N22,2891,748
+Price today is 24% below usual for Clockwork Eels
+¤700
+¤7,200
+Lanternquay 1n ago
+¤2,323
+Saint Mire 1n ago
+¤3,299
+Orchid Terraces 1n ago
+¤3,410
+Drowned Exchange 1n ago
+¤3,191
+The Sluices 1n ago
+—
+Fogmouth 1n ago
+¤2,854
+Buy
+Sell
+−
++
+Max
+Best known sale
+¤3,410 · Orchid Terraces
+Price each
+¤1,826
+Total cost
+¤1,826
+Purse after
+¤954
+Hold after
+1 / 30
+Dealers here sell about 15 more at this price.
+Default keeps 15% aside when possible. Max uses the full cash/hold limit, including price impact.
+Cancel
+Buy 1 for ¤1,826
+> key Control+a
+pressed Control+a
+> type 1
+typed "1"
+> tap #qgo
+tapped button#qgo.btn.lg.teal "Buy 1 for ¤1,826" at (261,595) 160x52; touch landed on button#qgo.btn.lg.teal "Buy 1 for ¤1,826"
+> wait 1200
+waited 1200ms
+> tap #mnav [data-v=harbor]
+tapped button "HARBOR" at (180,605) 63x59; touch landed on svg.ico
+> wait 1200
+waited 1200ms
+> shot judging/round-5/judge-2/explore-harbor-360x640.png
+saved judging/round-5/judge-2/explore-harbor-360x640.png
+> ui
+viewport 360x640 · page scrollWidth 360
+targets (11), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [328,36 44x44] button#b-mute2.btn.icon.hud-mute "Toggle sound"
+  [39,98 58x51] button#st-cash.stat "PURSE ¤954"
+  [104,98 58x51] button#st-bank.stat "VAULT ¤0"
+  [180,98 78x51] button#st-debt.stat.debt "DEBT 6% ¤6,360"
+  [256,98 58x51] button#st-hold.stat "HOLD 1/30"
+  [321,98 58x51] button#st-hull.stat "HULL 100%"
+  [38,605 63x59] button "MARKET"
+  [109,605 63x59] button "MAP"
+  [180,605 63x59] button "HARBOR"
+  [251,605 63x59] button "LOG"
+  [322,605 63x59] button "MORE"
+--- visible text ---
+NIGHT
+2/30
+NET WORTH
+−¤3,580
+Bilge Rat at ¤0
+PURSE
+¤954
+VAULT
+¤0
+DEBT 6%
+¤6,360
+HOLD
+1/30
+HULL
+100%
+HARBOR SERVICES
+Copperhook Docks
+Odile's Boatyard
+"She's a good skiff. She'd be a better one with my racks in her."
+Hold racks: 30 → 45
+Carry more cargo every trip.
+¤2,500
+Twin-screw motor
+Outrun patrols more often and draw fewer encounters.
+¤4,500
+Hull repair
+Hull is sound.
+Trading charter
+"Sign in Moon Ink, captain. The dealers will remember."
+
+A charter makes the dealers of Copperhook Docks trade twice as deep with you for the rest of the run: twice as many units at the posted price before it moves. Each charter costs more than the last.
+
+This hold, tonight: +¤0 in sale proceeds after buying the charter. No extra sale proceeds for this load. Future prices and cargo vary; 28 nights remain.
+
+Your charters
+none
+Buy charter · ¤20,000
+YOUR SKIFF
+The Little Lantern
+Hold
+1 / 30
+Hull
+100%
+Engine
+Putter engine
+Weapon
+Boathook
+Wireless set
+None
+DIRECTORY
+Marrow Quill's Loan Office · Lanternquay
+Lockwater Vault · Lanternquay & Drowned Exchange
+Odile's Boatyard · Copperhook Docks
+The Gutter Yard · The Sluices
+Brother Tallow's Armory · Saint Mire
+The Fog Fence · Fogmouth
+The Listening Room · Drowned Exchange
+Madame Ysolde's Salon · Orchid Terraces
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+Loaded 1 Clockwork Eels for ¤1,826
+> audit
+viewport 360x640 · document scrollWidth 360 · body scrollWidth 360 · 11 on-screen targets
+tap targets under 44x44 (0)
+tap targets under 8px from a neighbour (0)
+text under 15px (svg text is rendered size) (0)
+text contrast under 4.5:1 (approximate: gradients averaged) (2):
+  3.97:1 15px div.harbor > div.svc > div.svc-row > button.btn.amber "Buy charter · ¤20,000"
+  4.14:1 15px div.harbor > div.svc > div.upg > button.btn.amber.sm "¤2,500" ×2
+inputs under 16px (iOS zooms on focus) (0)
+elements past the viewport edge (not clipped by a scroller) (0)
+truncated text (overflow with ellipsis/hidden) (0)
+touch-action on targets: {"auto":6,"manipulation":5}
+selectability on targets:
+  user-select:none -webkit-user-select:none callout:n/a: button.btn.icon.hud-mute button.stat button.stat.debt button
+root: html overscroll:n/a overflow:visible/visible touch-action:manipulation; body overscroll:n/a overflow:hidden/hidden touch-action:auto
+scrollable areas (1):
+  #side-body 423/1443px overscroll:n/a overflow:auto/auto touch-action:auto

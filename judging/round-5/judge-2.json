@@ -1,0 +1,254 @@
+{
+  "judge": 2,
+  "lens": "visual and interaction design",
+  "model": "gpt-6.1-sol",
+  "build": "48fd8d91e592335eb0bd54eb9408f136b1db9d6dc2f97707979bbc03fbfeb1f5",
+  "scores": {
+    "A1": 8,
+    "A2": 8,
+    "A3": 8,
+    "A4": 8,
+    "A5": 8,
+    "B1": 9,
+    "B2": 9,
+    "B3": 8,
+    "B4": 9,
+    "B5": 8,
+    "C1": 9,
+    "C2": 10,
+    "C3": 10,
+    "C4": 9,
+    "C5": 9
+  },
+  "weighted_total": 86.1,
+  "caps_applied": [],
+  "criteria": {
+    "A1": {
+      "score": 8,
+      "evidence": "I independently bought 10 Glowkelp at ¤57 in Lanternquay, followed the public Copperhook quote, and sold at ¤85 for the displayed ¤280 profit. I then bought one Clockwork Eel at ¤1,826 and compared a two-night Saint Mire route with selling at the Lanternquay waypoint. The seed-97 touch run traded through all seven ports, used remembered quotes before wireless, and bought only small high-value loads despite its eventual 70-space hold. Depth, stock availability, time, purse reserve and destination all affect the choice.",
+      "below_10": [
+        "Later gains concentrate in a few expensive goods; filling the hold with inexpensive goods becomes much less attractive.",
+        "The recommendation presents one dated opportunity, without comparing several complete baskets and their travel risk."
+      ]
+    },
+    "A2": {
+      "score": 8,
+      "evidence": "I verified debt growth ¤6,000→¤6,360→¤6,742 and the later ¤6,742→¤7,147 step in my exploration. Depositing ¤500 and withdrawing ¤100 left ¤400, which became ¤406 after one night. The touch run repaid ¤10,747 on night 11, bought two motor and hold upgrades plus wireless, and finished with ¤405,350 banked. My frozen 16-seed comparison produced informed median about ¤606k versus greedy about ¤52k; the roundtrip policy made money in 0 of 4,750 immediate-undo probes. These are automated function comparisons, not human skill results.",
+      "below_10": [
+        "The fixed fleet calendar makes part of the route opportunity repeatable across runs.",
+        "Dealer depth can bind well before the larger hold tiers fill, weakening the value of additional capacity.",
+        "Only 16 paired seeds and four supplied policies were compared; this does not establish exhaustive balance."
+      ]
+    },
+    "A3": {
+      "score": 8,
+      "evidence": "I personally chose the 70% gull recovery in normal Chromium exploration and saw the stated failure cost: ¤250 and 10% hull. In my WebKit exploration I instead paid ¤95 to preserve hull. I inspected the touch-run encounter records: night-9 gang toll ¤5,855 against ¤36.6k cargo, night-23 patrol bribe ¤20,363, and night-25 leak patch ¤11,400 versus jettisoning Moon Ink of stated usual value ¤19,000. All 16 separately labelled event fixtures passed, including both gull outcomes, sinking, leak alternatives and committed reload offers.",
+      "below_10": [
+        "Several offers are isolated accept/decline windfalls or gambles rather than changes to the wider trading situation.",
+        "The complete touch policy consistently paid or bribed armed encounters, so full combat progression was covered by function regressions rather than my independent touch decisions."
+      ]
+    },
+    "A4": {
+      "score": 8,
+      "evidence": "The completed touch run had a visible arc: starting purse ¤2,500 against ¤6,000 debt; early motor/hold purchases; debt cleared on night 11; wireless and banking; then a night-30 liquidation and ¤486,796 Tide Baron ending. I inspected night-20, night-25, night-30 and ending screenshots. The end screen stated the next-rank gap and the financial breakdown. Normal Chromium profiling measured a 2,671ms voyage; my independent normal-speed sail showed the moving skiff and arrival event.",
+      "below_10": [
+        "The middle and late game still repeat the sell, buy, route, encounter sequence; the fixed calendar provides much of the phase variation.",
+        "The full touch completion used FAST and reduced motion. I did not establish the duration or feel of an entire normal-speed human run."
+      ]
+    },
+    "A5": {
+      "score": 8,
+      "evidence": "I advanced and read all five tour steps rather than skipping them in my independent WebKit exploration. They identified the ledger, first trade, canals, services and ending. I used the row destination/age hints, saw exact post-order purse/hold values and ¤280 sale profit, opened port details, and tapped the vault HUD explainer. I inspected the completed score breakdown: ¤81,446 cash + ¤405,350 vault + ¤0 cargo − ¤0 debt = ¤486,796.",
+      "below_10": [
+        "The tour describes actions but does not have the player perform a first buy, sail and sale.",
+        "The default reserve/depth rule, Max price impact, stale quotes and changing dealer availability introduce several concepts at once.",
+        "The first-buy explanatory toast temporarily obscures the route suggestion it is helping explain."
+      ]
+    },
+    "B1": {
+      "score": 9,
+      "evidence": "I personally inspected title, intro, market, trade, harbor, map, Grandmother Wick, gull, leak, courier and settlement screenshots. Gold lanterns against ink-blue water, serif place headings, monospaced prices, colored custom good glyphs, tiny district architecture and character portraits share a clear drowned-city identity. The crane at Copperhook, lighthouse at Fogmouth and waterwheel at the Sluices remain recognizable at 360px. The ending retains the lantern emblem, palette and dry nautical writing.",
+      "below_10": [
+        "Some event headers use a simple line glyph while other scenes receive character illustrations, so illustration richness varies.",
+        "Ranks reuse the same lantern emblem with color changes; the ending is less visually differentiated than the districts."
+      ]
+    },
+    "B2": {
+      "score": 9,
+      "evidence": "In my first market inspection I could identify Glowkelp's ¤57 price, +36% versus usual and Copperhook +49% seen tonight without opening a row. Every good has a sparkline. After buying, the row showed ×10 and average ¤57; the sell sheet showed ¤85, ¤850 proceeds and +¤280 profit with an average-cost line on the chart. I inspected the late touch screenshots: Moon Ink's −58% Glut and Clockwork Eels' +160% Surge easing were explicitly labelled on night 30. The persistent phone HUD keeps day, purse, vault, debt, hold and hull together.",
+      "below_10": [
+        "At 360×640 the full chart and remote quotes sit below the tall order summary and require scrolling.",
+        "Not every good fits above the fold, including at 390×844; scrolling is required to inspect the last rows.",
+        "The first-buy hint visually covers the market heading, wireless button and route strip for its display period."
+      ]
+    },
+    "B3": {
+      "score": 8,
+      "evidence": "I inspected the normal-speed first-buy row flash/toast, profit sheet, Chromium voyage skiff, gull failure cash delta/hull loss and both successful and sinking settlement art. The frozen profile recorded a normal voyage, not accelerated timing. I read the synthesized buy/sell/profit, water-noise travel, combat, upgrade and win/lose sound definitions. In real Chromium I observed a running AudioContext, pressed M to suspend it, and pressed M again to resume inside keydown. The WebKit gesture stand-in reported sound starts while running and none suspended during my early exploration.",
+      "below_10": [
+        "I could not audition audible sound quality, balance or timbre; code and context checks establish functionality only.",
+        "The normal-speed first-buy hint overlaps the route banner and calendar button for 4.5 seconds, although pointer-events:none allows taps through.",
+        "Full settlement timing and repeated-event cadence were inspected in accelerated completion, not an entire normal-speed game."
+      ]
+    },
+    "B4": {
+      "score": 9,
+      "evidence": "I selected Copperhook on the actual touch map and saw the highlighted current Lanternquay, dashed route, 1-night cost, risk 2/5, held-Glowkelp quote and Port details/Sail controls. At 360×640 I selected Saint Mire from Copperhook and read '2n via Lanternquay'; after the first leg I could trade at the waypoint and the map retained Saint Mire. I inspected 390×844, 360×640, 430×932 and desktop maps, including the night-20 cargo-profit badges. Normal Chromium showed the skiff moving along the canal. The repeated-selection regression passed.",
+      "below_10": [
+        "The phone route quote is a single-line ellipsis at smaller widths, so the dated quote warning needs Port details for complete reading.",
+        "The compact travel card shows only one held-good quote; comparing a mixed load needs the separate details sheet."
+      ]
+    },
+    "B5": {
+      "score": 8,
+      "evidence": "All four WebKit size checks (390×844, 390×664, 360×640, 430×932) and the 1280×800 desktop mouse check passed. I independently touched controls at all four phone sizes, used keyboard 6/Enter to sail and M to mute in Chromium, typed order and bank amounts, and inspected screenshots. My 390×664 trade-sheet audit found zero targets below 44px, zero close-target gaps, zero approximate text-contrast failures and no overflow. The market audit at 360×640 also found no targets below 44px. Regression exercised Tab/Shift+Tab modal containment, inert backgrounds, Escape, unavailable goods and reduced-motion title behavior; source includes reduced-motion guards and shortcut handlers.",
+      "below_10": [
+        "Some desktop Buy/Sell controls are only 32px high, and top utility buttons are 40px.",
+        "The phone calendar button and route suggestion have only a 4px gap; the map quote truncates at 360px.",
+        "No physical iPhone, software keyboard, safe-area, screen-reader or complete keyboard-only full run was tested. Approximate gradient contrast checks are not a comprehensive accessibility certification."
+      ]
+    },
+    "C1": {
+      "score": 9,
+      "evidence": "I verified the 30-night clock, seven visual ports, eight goods with changing quotes and stock, upgradable 30→70 hold, compounding debt and repayment, bank interest, multiple event types, motor/hold/wireless progression, settlement/rank/persistent ledger, and the five-step tour. Presentation includes custom art, animated voyage/trade feedback, per-good sparklines, synthesized audio with a functional Chromium mute toggle, touch, keyboard shortcuts and responsive layouts. Source contains nine arrival event entries in addition to voyage encounters/weather. The complete touch run exercised the core systems through UI controls.",
+      "below_10": [
+        "I did not personally exercise every narrative event outcome or every upgrade tier through the UI.",
+        "Working Chromium audio was verified by source and live context state, but audible quality and physical-iPhone behavior remain untested."
+      ]
+    },
+    "C2": {
+      "score": 10,
+      "evidence": "I independently matched the game SHA256 to 48fd8d91e592335eb0bd54eb9408f136b1db9d6dc2f97707979bbc03fbfeb1f5 and its 249,618-byte size, and matched all 43 frozen helper hashes plus the rubric hash. I inspected the three localStorage operations: get, set and delete are wrapped in try/catch. The source-constraint check passed syntax, size, external-resource-tag and network-API scans. The complete actual-touch file:// run was offline with zero HTTP(S) requests. The restricted allow-scripts sandbox loaded and started with localStorage blocked and no console errors or network requests. All assets and vanilla code are inline.",
+      "below_10": []
+    },
+    "C3": {
+      "score": 10,
+      "evidence": "I ran and inspected the passing 30-night actual-touch seed-97 report: 29 voyages, 791 recorded UI actions, all seven ports, actual settlement, no page/console errors, no network requests and persistent ledger. I also inspected both complete function-driven regression games, seeds 100002 and 100003, which reached night 30 and score screens cleanly. All eight verification checks and 16 separate event fixtures passed, including sinking, reload commitment, no-dealer keyboard input, repeated port selection, final-row access, corrupt storage and blocked-storage sandbox. My independent normal-speed explorations reported no page errors.",
+      "below_10": []
+    },
+    "C4": {
+      "score": 9,
+      "evidence": "I verified my own ¤570 purchase and ¤850 sale, the displayed ¤280 profit, a ¤500 deposit/¤100 withdrawal leaving ¤400, next-night vault ¤406, and debt ¤6,742→¤7,147. Negative quantity disabled confirmation and 2.5 was safely limited to the one affordable whole unit. Both full regression runs had finite nonnegative cash and hold usage within capacity. The touch ending summed exactly to ¤486,796 and survived ledger reload. The corrupt-storage test passed; gull/leak fixtures checked resource conservation and committed offers. In the separate 16-seed function comparison, none of 4,750 trade-and-undo probes made money.",
+      "below_10": [
+        "The deliberate economic probes cover five immediate round-trip patterns, not all multiday pressure, credit and bank sequences.",
+        "Malformed-storage recovery was exercised; exhaustive valid-shaped save tampering and every rounding boundary were not independently tested."
+      ]
+    },
+    "C5": {
+      "score": 9,
+      "evidence": "I inspected the source's separate GOODS/DISTRICTS/service/progression tables, single S run state, integrated quote functions, storage wrapper, audio closure, modal focus handling and distinct market/event RNG streams. The normal-speed Chromium sample recorded 158 frames with median 16.7ms, p95 16.8ms and maximum 50ms. Across 40 labelled fixture restarts, event listeners stayed at 32, node count fell by 31, post-GC heap increased by 88,748 bytes, and no errors occurred. Game and helper source hashes remained unchanged.",
+      "below_10": [
+        "The single file relies on globals and large HTML template strings across UI, economy and events.",
+        "Phone styles repeatedly override the same selectors across several media blocks, making layout maintenance harder.",
+        "The performance sample covers one voyage and 40 restarts, not long sessions or physical-phone performance."
+      ]
+    }
+  },
+  "strengths": [
+    "A distinctive lantern-lit canal city, with authored district landmarks, portraits, goods and writing.",
+    "A readable persistent HUD, per-good sparklines, average cargo cost, explicit sale profit and dated remote quotes.",
+    "A genuinely spatial map with animated journeys, current location, waypoints, danger, fleet calls and held-cargo opportunities.",
+    "Complete touch settlement and clean regressions, including offline file access, restricted storage and committed event reloads."
+  ],
+  "weaknesses": [
+    "Dense phone sheets put price history and complete remote comparisons below the fold.",
+    "Small route cards truncate quote warnings; comparing several held goods needs another sheet.",
+    "The five-step tour explains the loop rather than teaching through a first transaction.",
+    "Some desktop controls are compact; no physical-device or audible-quality validation was possible."
+  ],
+  "bugs": [
+    {
+      "severity": "low",
+      "what": "The normal-speed first-buy help toast visually covers the market heading, wireless calendar button and route recommendation. It does not intercept taps.",
+      "repro": "Fresh run at 390×844, finish the tour, open Glowkelp, type 10, confirm Buy, and inspect about 1.2 seconds later. The firstbuy hint appears 400ms after purchase and lasts 4500ms. See explore-bought.png; source hint() and #toasts place it immediately below the HUD."
+    }
+  ],
+  "evidence": {
+    "days_played": 30,
+    "reached_score_screen": true,
+    "phone_notes": "One complete actual-UI automated touch/typing game in WebKit at 390×844, seed 97: day 30, all seven ports, 29 voyages, 791 recorded actions, ¤486,796 Tide Baron, ¤0 debt, 70 capacity, 100% hull, persistent ledger. This is UI automation, not a claimed human full run. I independently directed a separate normal-speed WebKit exploration through nights 1–4: all tour steps, buy/sell, quantity edges, port details, two-night waypoint, event decisions, bank deposit/withdrawal, HUD explanation and staying overnight. I checked 390×664, 360×640 and 430×932 as well as 390×844, and personally inspected representative screenshots. The full automated touch run and verification UI use FAST=true and reduced motion; my independent harness exploration did not enable FAST.",
+    "desktop_notes": "Frozen verification used actual Chromium desktop mouse/keyboard at 1280×800. My separate normal-speed Chromium 1280×800 harness used touch/mobile emulation plus real key presses, so I do not mislabel that exploration as a physical desktop mouse session. I inspected both desktop layouts, selected a port with 6, sailed with Enter, exercised M mute/resume and took the gull risk. Two complete Chromium game-function regressions ended at ¤81,678 and ¤619,375. Those are function-driven runs, not touch play.",
+    "audio_notes": "Windows WebKit lacks Web Audio. Its labelled gesture-policy stand-in can check unlock/scheduling only. My real Chromium context was running, became suspended after M, and resumed during keydown after M again. I inspected the synthesized sound and ambience definitions. I did not hear or assess audible quality, physical-iPhone output, silent-switch behavior or audio latency.",
+    "screenshots": [
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-title.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-intro.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-market.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-bought.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-trade.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-sell.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-map.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-trade-390x664.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-trade-360x640.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-two-night-360x640.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-harbor-360x640.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-bank-360x640.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-map-430x932.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-arrival.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-interest-night-4.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/explore-chromium-travel.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/regression/chromium-desktop-market.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/regression/webkit-390x664-market.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/regression/webkit-360x640-selected-map.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/regression/webkit-430x932-selected-map.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/touch/run-1-market-night-20.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/touch/run-1-map-night-20.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/touch/run-1-market-night-25.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/touch/run-1-market-night-30.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/touch/run-1-settled.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/regression/full-run-ending.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/events/webkit-gull-run-failure-reload-offer.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/events/webkit-gull-run-sinking-outcome.png",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/events/webkit-leak-jettison-reload-offer.png"
+    ],
+    "reports": {
+      "touch": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/touch/report.json",
+      "regression": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/regression/report.json",
+      "events": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/events/report.json",
+      "profile": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/profile/report.json",
+      "strategy": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/strategy",
+      "integrity": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-5/judge-2/build-integrity.json"
+    },
+    "method_boundaries": [
+      "The scored full touch game used only local/public observations and real taps/typed inputs. Only initial deterministic seeding and documented animation acceleration were applied; no hidden outcomes were read or resources mutated.",
+      "Event and late-night UI/storage/sandbox tests are explicit fixtures, separate from ordinary scored gameplay.",
+      "The optional four-policy comparison is function-driven and uses the frozen adapter's per-night event reseeding for paired comparisons. Its 64 games and round-trip probes are controlled supplementary evidence, not ordinary UI play or an unbiased human sample.",
+      "The profile uses one normal-speed function-driven Chromium voyage and 40 fixture restarts. Its frame/heap numbers do not establish physical-iPhone or full-run performance.",
+      "No physical phone, browser toolbar/safe-area changes, software keyboard, screen reader, audible quality or complete normal-speed human game was covered."
+    ],
+    "execution_model_issues": [
+      "Model matched the requested gpt-6.1-sol. No delegation, git writes, game edits or helper edits.",
+      "The documented Node PATH prefix was used; all supplied suites completed successfully.",
+      "One exploratory selector incorrectly assumed the eel's Walk on key was leave. No matching element was found; I used the visible Walk on text and continued. This was a driver selection error, not a game error.",
+      "One image lookup omitted the fixture's -offer suffix; I corrected the path and inspected the actual offer/outcome screenshots."
+    ],
+    "weights": {
+      "A1": 10,
+      "A2": 9,
+      "A3": 6,
+      "A4": 6,
+      "A5": 5,
+      "B1": 7,
+      "B2": 9,
+      "B3": 8,
+      "B4": 5,
+      "B5": 7,
+      "C1": 8,
+      "C2": 5,
+      "C3": 7,
+      "C4": 5,
+      "C5": 3
+    },
+    "weighted_calculation": "sum(score * frozen criterion weight / 10); weights total 100",
+    "coverage_counts": {
+      "touch_full_games": 1,
+      "function_regression_full_games": 2,
+      "verification_checks_passed": 8,
+      "event_fixtures_passed": 16,
+      "strategy_runs": 64,
+      "roundtrip_probes": 4750,
+      "profile_fixture_restarts": 40
+    },
+    "browser_cleanup": "Both independent harnesses (9472 and 9482) were stopped successfully before final handback; all supplied suites completed and closed their browsers."
+  },
+  "verdict": "A cohesive, expressive and highly playable trading game. The illustrated canal map and financial feedback are its strongest surfaces. Phone information density, temporary toast overlap and limited shortcut discoverability keep the interaction design below the top anchor. No score cap was triggered."
+}

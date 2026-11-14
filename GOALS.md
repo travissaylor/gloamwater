@@ -9,11 +9,11 @@ judges each round. Keep the frozen rubric, independent evidence, and blind judgi
 Work on the current `t3/raise-gloamwater-panel-score` branch; commit each round and do not push.
 The original brief and historical results follow for context.
 
-Current progress: round 3 scored **83.9**, round 4 **82.97**. Do not re-roll either round. The next candidate has
-opening quotes, event choices, readable phone text and distinct district landmarks.
-Its general regressions, event replay fixtures and normal-speed diagnostic pass.
-Round 5 is frozen and being judged. Run round 6 only if round 5 stays below 90;
-that is the final allowed round. Helpers are frozen with each new packet.
+Current progress: round 3 scored **83.9**, round 4 **82.97**, round 5 **87.67**.
+Do not re-roll any round. Round 6 is the final allowed round and is being prepared.
+The candidate folds optional phone trade details, wraps map quotes and reserves
+space for notices. The last review's title focus, sinking copy and fleet-demand
+feedback findings are being corrected before freezing. Helpers freeze with each packet.
 
 Gloamwater won the bake-off with a panel score of 87.0 out of 100. This file is the
 standing brief for taking it further. Re-read it whenever context is compacted.

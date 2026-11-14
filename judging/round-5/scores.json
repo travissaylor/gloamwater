@@ -1,0 +1,27 @@
+{
+  "build": "48fd8d91e592335eb0bd54eb9408f136b1db9d6dc2f97707979bbc03fbfeb1f5",
+  "judges": [
+    {
+      "judge": 1,
+      "model": "claude-opus-5-5",
+      "total": 86.6,
+      "reported_total": 86.6,
+      "arithmetic_match": true
+    },
+    {
+      "judge": 2,
+      "model": "gpt-6.1-sol",
+      "total": 86.1,
+      "reported_total": 86.1,
+      "arithmetic_match": true
+    },
+    {
+      "judge": 3,
+      "model": "gpt-6-astra",
+      "total": 90.3,
+      "reported_total": 90.3,
+      "arithmetic_match": true
+    }
+  ],
+  "panel": 87.67
+}

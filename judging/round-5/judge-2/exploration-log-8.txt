@@ -1,0 +1,69 @@
+> taptext Got it
+tapped button.choice.primary "Got it" at (180,597) 326x48; touch landed on button.choice.primary "Got it"
+> wait 600
+waited 600ms
+> size 430 932
+viewport now 430x932
+> wait 1200
+waited 1200ms
+> tap #mnav [data-v=map]
+tapped button "MAP" at (130,897) 77x59; touch landed on svg.ico
+> wait 1200
+waited 1200ms
+> shot judging/round-5/judge-2/explore-map-430x932.png
+saved judging/round-5/judge-2/explore-map-430x932.png
+> tap #nodes .node[data-d=lq]
+tapped g.node.here "Lanternquay" at (225,426) 130x93; touch landed on circle.disc
+> wait 600
+waited 600ms
+> taptext Stay the night
+tapped button.btn.amber "Stay the night" at (271,818) 262x44; touch landed on button.btn.amber "Stay the night"
+> wait 6500
+waited 6500ms
+> text
+NIGHT
+4/30
+NET WORTH
+−¤3,456
+Bilge Rat at ¤0
+PURSE
+¤459
+VAULT
+¤406
+DEBT 6%
+¤7,147
+HOLD
+1/30
+HULL
+100%
+Lanternquay
+Saint Mire
+Orchid
+Exchange
+Sluices
+Copperhook
+F
+Fogmouth
+Moored at Lanternquay
+Tap any district to compare routes.
+Lit canals take one night. Select an island for prices.
+Open market
+Stay the night
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+A JOB
+A soaked courier flags you down
+
+"Sealed parcel for Saint Mire. Don't open it, don't drop it, and don't let the Tidewardens see it. Pays ¤1,040 on delivery by night 6."
+
+Take the job · 3 hold
+Deliver to Saint Mire by night 6 (1 night away).
+Decline
+Smells like trouble.
+> shot judging/round-5/judge-2/explore-interest-night-4.png
+saved judging/round-5/judge-2/explore-interest-night-4.png
+> errors
+no errors

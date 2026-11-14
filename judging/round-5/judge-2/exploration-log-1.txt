@@ -1,0 +1,83 @@
+> shot judging/round-5/judge-2/explore-trade.png
+saved judging/round-5/judge-2/explore-trade.png
+> tap #qin
+tapped input#qin "Quantity" at (158,218) 171x48; touch landed on input#qin "Quantity"
+> key Control+a
+pressed Control+a
+> type 10
+typed "10"
+> tap #qgo
+tapped button#qgo.btn.lg.teal "Buy 10 for ¤570" at (285,799) 172x52; touch landed on button#qgo.btn.lg.teal "Buy 10 for ¤570"
+> wait 1200
+waited 1200ms
+> shot judging/round-5/judge-2/explore-bought.png
+saved judging/round-5/judge-2/explore-bought.png
+> tap #mnav [data-v=map]
+tapped button "MAP" at (118,809) 69x59; touch landed on svg.ico
+> wait 1200
+waited 1200ms
+> tap #nodes .node[data-d=ch]
+tapped g.node "Copperhook FFleet call: Glowkelp, throu…" at (267,200) 120x84; touch landed on circle.disc
+> wait 1200
+waited 1200ms
+> shot judging/round-5/judge-2/explore-map.png
+saved judging/round-5/judge-2/explore-map.png
+> ui
+viewport 390x844 · page scrollWidth 390
+targets (21), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [358,36 44x44] button#b-mute2.btn.icon.hud-mute "Toggle sound"
+  [42,98 63x51] button#st-cash.stat "PURSE ¤1,930"
+  [113,98 63x51] button#st-bank.stat "VAULT ¤0"
+  [195,98 85x51] button#st-debt.stat.debt "DEBT 6% ¤6,000"
+  [277,98 63x51] button#st-hold.stat "HOLD 10/30"
+  [348,98 63x51] button#st-hull.stat "HULL 100%"
+  [204,382 116x84] g.node.here "Lanternquay"
+  [70,371 107x84] g.node "Saint Mire"
+  [96,571 72x84] g.node "Orchid"
+  [259,571 88x84] g.node "Exchange"
+  [334,385 79x84] g.node "Sluices"
+  [267,200 120x84] g.node.sel "Copperhook FFleet call: Glowkelp, throu…"
+  [85,194 88x84] g.node "Fogmouth"
+  [340,654 44x44] button.btn.icon.ghost "Clear destination"
+  [80,730 104x44] button.btn.port-details "Port details"
+  [251,730 222x44] button.btn.primary "Sail · 1 night"
+  [41,809 69x59] button "MARKET"
+  [118,809 69x59] button "MAP"
+  [195,809 69x59] button "HARBOR"
+  [272,809 69x59] button "LOG"
+  [349,809 69x59] button "MORE"
+--- visible text ---
+NIGHT
+1/30
+NET WORTH
+−¤3,500
+Bilge Rat at ¤0
+PURSE
+¤1,930
+VAULT
+¤0
+DEBT 6%
+¤6,000
+HOLD
+10/30
+HULL
+100%
+Lanternquay
+Saint Mire
+Orchid
+Exchange
+Sluices
+Copperhook
+F
++49%
+Fogmouth
+Copperhook Docks
+1 night · risk 2/5
+Glowkelp ¤85 seen tonight; arrival may change.
+Port details
+Sail · 1 night
+MARKET
+MAP
+HARBOR
+LOG
+MORE

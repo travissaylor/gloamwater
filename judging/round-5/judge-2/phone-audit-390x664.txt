@@ -1,0 +1,33 @@
+> tap #qgo
+tapped button#qgo.btn.lg.amber "Sell 10 for ¤850" at (285,799) 172x52; touch landed on button#qgo.btn.lg.amber "Sell 10 for ¤850"
+> wait 1200
+waited 1200ms
+> size 390 664
+viewport now 390x664
+> wait 1200
+waited 1200ms
+> shot judging/round-5/judge-2/explore-390x664.png
+saved judging/round-5/judge-2/explore-390x664.png
+> tap .row[data-g=eels]
+tapped div.row "Clockwork Eels ¤1,826 −24% Orchid +87% …" at (195,558) 356x61; touch landed on b "Clockwork Eels"
+> wait 1200
+waited 1200ms
+> shot judging/round-5/judge-2/explore-trade-390x664.png
+saved judging/round-5/judge-2/explore-trade-390x664.png
+> audit
+viewport 390x664 · document scrollWidth 390 · body scrollWidth 390 · 10 on-screen targets
+tap targets under 44x44 (0)
+tap targets under 8px from a neighbour (0)
+text under 15px (svg text is rendered size) (0)
+text contrast under 4.5:1 (approximate: gradients averaged) (0)
+inputs under 16px (iOS zooms on focus) (0)
+elements past the viewport edge (not clipped by a scroller) (0)
+truncated text (overflow with ellipsis/hidden) (0)
+touch-action on targets: {"auto":26,"manipulation":5}
+selectability on targets:
+  user-select:none -webkit-user-select:none callout:n/a: button.btn.icon.hud-mute button.stat button.stat.debt button.btn.icon.market-info button.best-run div.row.sel.flash div.row.out div.row button button.btn.icon.ghost button.b button.s
+  user-select:auto -webkit-user-select:text callout:n/a: input
+root: html overscroll:n/a overflow:visible/visible touch-action:manipulation; body overscroll:n/a overflow:hidden/hidden touch-action:auto
+scrollable areas (2):
+  #side-body 447/713px overscroll:n/a overflow:auto/auto touch-action:auto
+  #modal > div.modal 622/1063px overscroll:n/a overflow:auto/auto touch-action:auto

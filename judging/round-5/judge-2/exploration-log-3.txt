@@ -1,0 +1,123 @@
+> taptext Walk on
+tapped button.choice "Walk on Superstition is for landlubbers." at (195,791) 356x69; touch landed on div "Walk on Superstition is for landlubbers."
+> wait 1200
+waited 1200ms
+> tap #mnav [data-v=market]
+tapped button "MARKET" at (41,809) 69x59; touch landed on svg.ico
+> wait 1200
+waited 1200ms
+> tap .row[data-g=kelp]
+tapped div.row.sel "Glowkelp ¤85 +102% ×10 · avg ¤57 · +49%…" at (195,282) 356x61; touch landed on b "Glowkelp"
+> wait 1200
+waited 1200ms
+> tap #modal [data-mode=sell]
+tapped button.s "Sell" at (284,165) 170x46; touch landed on button.s "Sell"
+> wait 1200
+waited 1200ms
+> shot judging/round-5/judge-2/explore-sell.png
+saved judging/round-5/judge-2/explore-sell.png
+> ui
+viewport 390x844 · page scrollWidth 390
+targets (10), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [351,88 44x44] button.btn.icon.ghost "Close"
+  [106,165 170x46] button.b "Buy"
+  [284,165 170x46] button.s "Sell"
+  [41,226 48x48] button.btn "−"
+  [158,226 171x48] input#qin "Quantity"
+  [276,226 48x48] button.btn "+"
+  [340,226 65x48] button.btn.amber "Max"
+  [195,284 352x44] input#qr "Quantity slider"
+  [105,799 172x52] button.btn.lg "Cancel"
+  [285,799 172x52] button#qgo.btn.lg.amber "Sell 10 for ¤850"
+covered (21): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov "COPPERHOOK DOCKS · NIGHT 2 …" | button#st-cash.stat "PURSE ¤1,930" under path | button#st-bank.stat "VAULT ¤0" under h3 "Glowkelp" | button#st-debt.stat.debt "DEBT 6% ¤6,360" under h3 "Glowkelp" | button#st-hold.stat "HOLD 10/30" under h3 "Glowkelp" | button#st-hull.stat "HULL 100%" under button.btn.icon.ghost "Close" | button.btn.icon.market-info "Fleet calendar and market b…" under button.s "Sell" | button.best-run "Clockwork Eels → Fogmouth S…" under input#qin "Quantity" | div.row.sel "Glowkelp ¤85 +102% ×10 · av…" under input#qr "Quantity slider" | div.row.out "Bottled Rain — No dealers t…" under div#qsum.summary "Price each ¤85 You paid (av…" | div.row "Rust Pearls ¤399 −5% Exchan…" under div#qsum.summary "Price each ¤85 You paid (av…" | div.row "Synth Saffron ¤1,318 +20% O…" under svg "Price history" | div.row "Clockwork Eels ¤1,826 −24% …" under polygon | div.row "Ghost Chips ¤4,257 −18% Exc…" under div.ends "¤10 ¤140" | div.row "Dreamsilk ¤7,471 −24% Orchi…" under div.else "Lanternquay 1n ago ¤57 Sain…" | div.row "Moon Ink ¤15,389 −19% Lante…" under div.sh-foot "Cancel Sell 10 for ¤850" | button "MARKET" under button.btn.lg "Cancel" | button "MAP" under button.btn.lg "Cancel" | button "HARBOR" under div.sh-foot "Cancel Sell 10 for ¤850" | button "LOG" under button#qgo.btn.lg.amber "Sell 10 for ¤850" | button "MORE" under button#qgo.btn.lg.amber "Sell 10 for ¤850"
+--- visible text ---
+NIGHT
+2/30
+NET WORTH
+−¤3,580
+Bilge Rat at ¤0
+PURSE
+¤1,930
+VAULT
+¤0
+DEBT 6%
+¤6,360
+HOLD
+10/30
+HULL
+100%
+NIGHT 2 MARKET
+Copperhook Docks
+Clockwork Eels → Fogmouth
+Seen +56% · 1n ago · 1n · may change
+Glowkelp
+¤85
++102%
+×10 · avg ¤57 · +49% here
+Bottled Rain
+—
+No dealers tonight
+Rust Pearls
+¤399
+−5%
+Exchange +31% seen 1n ago
+Synth Saffron
+¤1,318
++20%
+Orchid +38% seen 1n ago
+Clockwork Eels
+¤1,826
+−24%
+Orchid +87% seen 1n ago
+Ghost Chips
+¤4,257
+−18%
+Exchange +31% seen 1n ago
+Dreamsilk
+¤7,471
+−24%
+Orchid +24% seen 1n ago
+Moon Ink
+¤15,389
+−19%
+Lanternquay +82% seen 1n ago
+Cargo worth here: ¤850
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+COPPERHOOK DOCKS · NIGHT 2
+Glowkelp
+N28557your avg ¤57
+Price today is 102% above usual for Glowkelp
+¤10
+¤140
+Lanternquay 1n ago
+¤57
+Saint Mire 1n ago
+¤35
+Orchid Terraces 1n ago
+¤42
+Drowned Exchange 1n ago
+¤38
+The Sluices 1n ago
+¤26
+Fogmouth 1n ago
+¤34
+Buy
+Sell
+−
++
+Max
+Price each
+¤85
+You paid (avg)
+¤57
+You receive
+¤850
+Profit
++¤280
+Dealers here buy about 180 more at this price.
+Cancel
+Sell 10 for ¤850
