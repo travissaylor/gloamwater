@@ -1337,7 +1337,10 @@ function choose(c){
     el.addEventListener('click',e=>{const b=e.target.closest('[data-choice]');if(b&&!b.disabled)finish(b.dataset.choice);});
   });
 }
-const info=(c)=>choose(Object.assign({choices:[{key:'ok',label:c.ok||'Continue',cls:'primary'}],dismissKey:'ok'},c));
+// An info card shows an outcome that has already happened. Commit it before showing it, so reloading
+// the page can never re-roll a fight, a gamble or a whisper.
+function commitOutcome(){if(!S||S.over)return;if(S.trip&&S.trip.ev)S.trip.ev=null;save();}
+const info=(c)=>{commitOutcome();return choose(Object.assign({choices:[{key:'ok',label:c.ok||'Continue',cls:'primary'}],dismissKey:'ok'},c));};
 
 // ---- trade sheet ----
 function openTrade(gid,mode){
@@ -1575,6 +1578,7 @@ ART.victory=()=>artBase(bigIcon('flag','#4ee39b',260,66,3),['#06201a','#0c3a2c']
 function damage(n){const before=S.hull;S.hull=Math.max(0,S.hull-n);sfx.hit();shake();renderHUD();return Math.round(before-S.hull);}
 function loadFrac(){return holdUsed()/capacity();}
 async function sunk(cause){
+  store.del(KEY_SAVE);S.over=true;
   sfx.lose();FX.rain(140);
   await info({art:'sunk',tone:'danger',kicker:'Night '+S.day,title:'The Little Lantern goes down',body:`${cause} The canal closes over your skiff, your cargo and every crown in your purse. You drag yourself onto a pontoon at dawn, alive and very poor.`,ok:'See the reckoning'});
   await endGame('sunk');
@@ -1584,7 +1588,6 @@ async function encounter(kind){
   try{return await fightIt(kind);}finally{if(S&&S.trip){delete S.trip.boats;delete S.trip.boats0;}}
 }
 async function fightIt(kind){
-  S.stats.fights++;
   const cfg={
     patrol:{title:'Tidewarden cutter!',kicker:'Searchlights on the water',intro:n=>`${n===1?'A Tidewarden cutter swings':'A squadron of '+n+' Tidewarden cutters swing'} out of the dark, lamps blazing. "Heave to for inspection!" Contraband is contraband, and you're carrying it.`},
     gulls:{title:'The Gull Gang!',kicker:'Ambush in the narrows',intro:n=>`${n} skiffs with gull-feather pennants slide out from under a bridge. "Toll's due, friend. Pay up, or swim."`},
@@ -1594,6 +1597,7 @@ async function fightIt(kind){
   const T=S.trip&&typeof S.trip==='object'?S.trip:null;
   let boats=T&&isNum(T.boats)&&T.boats>0?Math.min(5,Math.round(T.boats)):kind==='patrol'?clamp(rint(1,3)+(S.day>18?1:0),1,4):kind==='gulls'?rint(2,4):2;
   const start=T&&isNum(T.boats0)&&T.boats0>=boats?Math.min(5,Math.round(T.boats0)):boats;
+  if(!(T&&isNum(T.boats)&&T.boats>0))S.stats.fights++;
   if(T){T.boats=boats;T.boats0=start;save();}
   let result=null;sfx.alarm();
   const art='enc_'+kind;
@@ -1613,6 +1617,7 @@ async function fightIt(kind){
     else if(kind==='gulls')choices.push({key:'pay',label:S.cash>=toll?`Pay the toll · ${fmt(toll)}`:'Pay the toll · empty purse',sub:S.cash>=toll?'30% of your purse. They keep their word, mostly.':shortSub()});
     else choices.push({key:'pay',label:S.cash>=collect?`Hand over ${fmt(collect)}`:`Hand over ${fmt(S.cash)} and cargo`,sub:S.cash>=collect?'Counts toward your debt. Marrow is nothing if not fair.':'Your purse is short, so they take cargo too. All of it counts toward your debt.'});
     const extra=`<div class="enc-stats"><div>Your hull<b>${Math.round(S.hull)}%</b><div class="bar"><i style="width:${S.hull}%;background:${S.hull>60?'var(--up)':S.hull>30?'var(--amber)':'var(--down)'}"></i></div></div><div>Enemy boats<b>${boats}</b></div><div>Cargo aboard<b>${cargoCount()}</b></div></div>`;
+    if(T)T.boats=boats;save(); // each round's damage is committed before the next choice
     const c=await choose({art,tone:'danger',kicker:cfg.kicker,title:cfg.title,body:result?'':cfg.intro(boats),result,extra,choices});
     if(c==='run'){
       if(rnd()<fleeP){sfx.escape();S.stats.fled++;await info({art:'news',tone:'luck',kicker:'Escaped',title:'Lost them in the fog',body:'You kill the lantern, cut under a footbridge and drift through a drowned arcade. The searchlights sweep past and fade.'});log(`Outran ${kind==='patrol'?'a Tidewarden patrol':kind==='gulls'?'the Gull Gang':"Marrow's collectors"}.`,'good');return;}
