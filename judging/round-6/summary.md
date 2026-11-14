@@ -13,8 +13,9 @@ All totals were independently recalculated; no caps applied. Each fresh judge
 scored all 15 frozen criteria, blind to the target, previous scores and changes.
 The game is 253,094 bytes, SHA-256
 `a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03`.
-Game, rubric and all 46 helper hashes remained intact. This is also the current
-game; no post-review game edits were made.
+Game, rubric and all 46 helper hashes remained intact. Subsequent PR-review fixes
+are documented in [the PR review record](../pr-2-review.md); that newer game has
+not received another panel score. The frozen game and helpers remain unchanged.
 
 All judges completed personal 30-night touch games and passed the eight general
 regression groups and 16 event fixtures. Supporting evidence included native

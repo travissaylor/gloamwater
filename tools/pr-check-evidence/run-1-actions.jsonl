@@ -1,0 +1,2 @@
+{"at":"2026-11-14T20:47:22.437Z","action":"keyboard-focus","selector":"#t-ledger","presses":2,"target":{"tag":"BUTTON","id":"t-ledger","cls":"btn","text":"Captains' Ledger"}}
+{"at":"2026-11-14T20:47:22.439Z","action":"keyboard-activate","selector":"#t-ledger","key":"Space"}

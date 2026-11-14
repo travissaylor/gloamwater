@@ -324,6 +324,20 @@ class TouchRun {
     await this.tap('#modal [data-choice="yes"]');
     await this.page.locator('.end-hero').waitFor({ state: 'visible', timeout: 10000 });
   }
+  async verifyLedger() {
+    const { expected, entriesBefore } = await this.page.evaluate(() => ({
+      expected: { name: S.name || 'Captain', score: Math.round(tally(S.hull <= 0 ? 'sunk' : 'complete').net), night: S.day, sunk: S.hull <= 0 },
+      entriesBefore: loadScores().map(e => ({ name: e.name, score: e.score, night: e.night, sunk: e.sunk }))
+    }));
+    const isCompletedRun = e => Object.keys(expected).every(key => e[key] === expected[key]);
+    insist(entriesBefore.some(isCompletedRun), 'Completed run is missing from the ledger before reload');
+    await this.page.reload();
+    await this.tap('#t-ledger');
+    const entriesAfter = await this.page.evaluate(() => loadScores().map(e => ({ name: e.name, score: e.score, night: e.night, sunk: e.sunk })));
+    insist(entriesAfter.some(isCompletedRun), 'Completed run is missing from the ledger after reload');
+    insist(JSON.stringify(entriesBefore) === JSON.stringify(entriesAfter), 'Ledger entries did not survive reload');
+    return { expectedLedgerEntry: expected, entriesBefore, ledgerSurvivedReload: true };
+  }
   async play() {
     await this.start();
     for (let turn = 0; turn < 40; turn++) {
@@ -352,19 +366,15 @@ class TouchRun {
     await this.shot('settled');
     const state = await observe(this.page);
     const body = await this.page.locator('#modal').innerText();
-    const entriesBefore = await this.page.evaluate(() => loadScores().map(e => ({ name: e.name, score: e.score, night: e.night, sunk: e.sunk })));
     const audio = await this.page.evaluate(() => ({ shim: window.__pwAudio?.shim || null, sounds: window.__pwAudio?.sounds, contexts: (window.__pwAudio?.ctxs || []).map(x => ({ createdIn: x.rec.createdIn, state: x.c.state, resumes: x.rec.resumes })) }));
-    await this.page.reload();
-    await this.tap('#t-ledger');
-    const entriesAfter = await this.page.evaluate(() => loadScores().map(e => ({ name: e.name, score: e.score, night: e.night, sunk: e.sunk })));
-    insist(JSON.stringify(entriesBefore) === JSON.stringify(entriesAfter), 'Ledger entries did not survive reload');
+    const ledger = await this.verifyLedger();
     return {
       loadedSha256: this.loadedSha256,
       day: state.day, sunk: state.hull <= 0, reachedSettlementScreen: true,
       distinctPorts: [...new Set(this.turns.map(t => t.loc))], ending: body,
       finalState: { cash: state.cash, bank: state.bank, debt: state.debt, hull: state.hull, used: state.used, capacity: state.capacity },
       turns: this.turns, events: this.events, actions: this.actions.length,
-      entriesBefore, ledgerSurvivedReload: true, audio
+      ...ledger, audio
     };
   }
 }

@@ -1,0 +1,756 @@
+{
+  "game": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\game\\index.html",
+  "gameSha256": "7b34d6d72b03e6c22f3a5062dfd4813c053b5db22e3ffe05963020e22756e69b",
+  "driverSha256": "caaa3e18300a9825b8657a19d9f408c13abdb91082a6e6975b554d9b8198c7fc",
+  "checks": [
+    {
+      "name": "webkit 360x640 notice preserves map focus",
+      "pass": true,
+      "evidence": {
+        "target": "#nodes .node[data-d=\"sm\"]",
+        "after": {
+          "selected": "sm",
+          "busy": false,
+          "trip": null,
+          "modal": false
+        }
+      }
+    },
+    {
+      "name": "webkit 360x640 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 121.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 121.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 181.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 181.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 181.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 121.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 121.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 491.40625,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "webkit 390x664 notice preserves map focus",
+      "pass": true,
+      "evidence": {
+        "target": "#nodes .node[data-d=\"sm\"]",
+        "after": {
+          "selected": "sm",
+          "busy": false,
+          "trip": null,
+          "modal": false
+        }
+      }
+    },
+    {
+      "name": "webkit 390x664 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 122.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 122.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 182.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 182.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 182.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 122.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 122.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 535.84375,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "webkit 390x844 notice preserves map focus",
+      "pass": true,
+      "evidence": {
+        "target": "#nodes .node[data-d=\"sm\"]",
+        "after": {
+          "selected": "sm",
+          "busy": false,
+          "trip": null,
+          "modal": false
+        }
+      }
+    },
+    {
+      "name": "webkit 390x844 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 133.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 133.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 193.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 193.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 193.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 133.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 133.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 503.640625,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "webkit 1280x640 modal focus stays visible",
+      "pass": false,
+      "error": "Error: Tab focused a covered or offscreen control: {\"tag\":\"SUMMARY\",\"id\":\"\",\"y\":-218.21875,\"inModal\":true,\"visible\":false}\n    at insist (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:20:50)\n    at modalFocus (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:84:5)\n    at async fixture (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:42:20)\n    at async check (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:22:58)\n    at async main (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:136:9)"
+    },
+    {
+      "name": "webkit 1280x800 modal focus stays visible",
+      "pass": false,
+      "error": "Error: Tab focused a covered or offscreen control: {\"tag\":\"SUMMARY\",\"id\":\"\",\"y\":-58.21875,\"inModal\":true,\"visible\":false}\n    at insist (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:20:50)\n    at modalFocus (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:84:5)\n    at async fixture (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:42:20)\n    at async check (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:22:58)\n    at async main (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:136:9)"
+    },
+    {
+      "name": "webkit notice preserves dock focus",
+      "pass": true,
+      "evidence": {
+        "target": "#tcard-slot [data-act=\"portdetails\"]",
+        "after": {
+          "selected": "fm",
+          "busy": false,
+          "trip": null,
+          "modal": true
+        }
+      }
+    },
+    {
+      "name": "webkit fleet hints allow arrival",
+      "pass": false,
+      "error": "Error: Selected port hides the known fleet closing time\n    at insist (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:20:50)\n    at fleetHints (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:103:3)\n    at async fixture (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:42:20)\n    at async check (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:22:58)\n    at async main (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:139:7)"
+    },
+    {
+      "name": "chromium 360x640 notice preserves map focus",
+      "pass": true,
+      "evidence": {
+        "target": "#nodes .node[data-d=\"sm\"]",
+        "after": {
+          "selected": "sm",
+          "busy": false,
+          "trip": null,
+          "modal": false
+        }
+      }
+    },
+    {
+      "name": "chromium 360x640 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 121.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 121.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 181.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 181.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 181.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 121.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 121.40625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 491.40625,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "chromium 390x664 notice preserves map focus",
+      "pass": true,
+      "evidence": {
+        "target": "#nodes .node[data-d=\"sm\"]",
+        "after": {
+          "selected": "sm",
+          "busy": false,
+          "trip": null,
+          "modal": false
+        }
+      }
+    },
+    {
+      "name": "chromium 390x664 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 122.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 122.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 182.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 182.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 182.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 122.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 122.84375,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 492.84375,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "chromium 390x844 notice preserves map focus",
+      "pass": true,
+      "evidence": {
+        "target": "#nodes .node[data-d=\"sm\"]",
+        "after": {
+          "selected": "sm",
+          "busy": false,
+          "trip": null,
+          "modal": false
+        }
+      }
+    },
+    {
+      "name": "chromium 390x844 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 133.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 133.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 193.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 193.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 193.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 133.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 133.640625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 503.640625,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "chromium 1280x640 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 199.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 199.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 259.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 259.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 259.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 199.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 199.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 128.78125,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "chromium 1280x800 modal focus stays visible",
+      "pass": true,
+      "evidence": {
+        "positions": [
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 359.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 359.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 419.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "INPUT",
+            "id": "qin",
+            "y": 419.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 419.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 359.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "BUTTON",
+            "id": "",
+            "y": 359.5625,
+            "inModal": true,
+            "visible": true
+          },
+          {
+            "tag": "SUMMARY",
+            "id": "",
+            "y": 128.78125,
+            "inModal": true,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "chromium notice preserves dock focus",
+      "pass": true,
+      "evidence": {
+        "target": "#tcard-slot [data-act=\"portdetails\"]",
+        "after": {
+          "selected": "fm",
+          "busy": false,
+          "trip": null,
+          "modal": true
+        }
+      }
+    },
+    {
+      "name": "chromium fleet hints allow arrival",
+      "pass": false,
+      "error": "Error: Selected port hides the known fleet closing time\n    at insist (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:20:50)\n    at fleetHints (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:103:3)\n    at async fixture (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:42:20)\n    at async check (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:22:58)\n    at async main (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\pr-check.cjs:139:7)"
+    },
+    {
+      "name": "TouchRun ledger none",
+      "pass": true,
+      "evidence": {
+        "expectedLedgerEntry": {
+          "name": "PR fixture",
+          "score": -3500,
+          "night": 30,
+          "sunk": false
+        },
+        "entriesBefore": [
+          {
+            "name": "PR fixture",
+            "score": -3500,
+            "night": 30,
+            "sunk": false
+          }
+        ],
+        "ledgerSurvivedReload": true
+      }
+    },
+    {
+      "name": "TouchRun ledger missing",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "missing",
+        "rejected": "Completed run is missing from the ledger before reload"
+      }
+    },
+    {
+      "name": "TouchRun ledger stale",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "stale",
+        "rejected": "Completed run is missing from the ledger before reload"
+      }
+    },
+    {
+      "name": "TouchRun ledger wrong-score",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "wrong-score",
+        "rejected": "Completed run is missing from the ledger before reload"
+      }
+    },
+    {
+      "name": "TouchRun ledger lost-on-reload",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "lost-on-reload",
+        "rejected": "Completed run is missing from the ledger after reload"
+      }
+    },
+    {
+      "name": "KeyboardRun ledger none",
+      "pass": true,
+      "evidence": {
+        "expectedLedgerEntry": {
+          "name": "PR fixture",
+          "score": -3500,
+          "night": 30,
+          "sunk": false
+        },
+        "entriesBefore": [
+          {
+            "name": "PR fixture",
+            "score": -3500,
+            "night": 30,
+            "sunk": false
+          }
+        ],
+        "ledgerSurvivedReload": true
+      }
+    },
+    {
+      "name": "KeyboardRun ledger missing",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "missing",
+        "rejected": "Completed run is missing from the ledger before reload"
+      }
+    },
+    {
+      "name": "KeyboardRun ledger stale",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "stale",
+        "rejected": "Completed run is missing from the ledger before reload"
+      }
+    },
+    {
+      "name": "KeyboardRun ledger wrong-score",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "wrong-score",
+        "rejected": "Completed run is missing from the ledger before reload"
+      }
+    },
+    {
+      "name": "KeyboardRun ledger lost-on-reload",
+      "pass": true,
+      "evidence": {
+        "deliberateStorageFault": "lost-on-reload",
+        "rejected": "Completed run is missing from the ledger after reload"
+      }
+    }
+  ],
+  "method": "Explicit initialization/storage fixtures with native keyboard/touch interactions on the paths under test.",
+  "limitations": [
+    "Not a full-game or balance test.",
+    "Emulated WebKit/Chromium; no physical iPhone or audible assessment.",
+    "Reduced motion; notice tests retain ordinary timeout timing."
+  ],
+  "pass": false
+}

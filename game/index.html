@@ -1332,8 +1332,11 @@ function bestRunHTML(){
   if(best&&best.mode==='carry')return `<button class="best-run" data-route-tip="${best.d.id}" aria-label="Compare carrying your ${best.g.name} to ${best.d.name}">${ico('crate')}<div><b>Carry ${best.g.name} → ${esc(portName(best.d.id))}</b><small>Seen +${Math.round(best.edge*100)}% · ${best.ago?best.ago+'n ago':'tonight'} · ${best.nights}n · may change</small></div></button>`;
   if(best)return `<button class="best-run" data-trade-tip="${best.g.id}" aria-label="Compare buying ${best.g.name} here for ${best.d.name}">${ico('arrowUp')}<div><b>${best.g.name} → ${esc(portName(best.d.id))}</b><small>Seen +${Math.round(best.edge*100)}% · ${best.ago?best.ago+'n ago':'tonight'} · ${best.nights}n · may change</small></div></button>`;
   if(S.day>=NIGHTS)return '';
-  const f=fleetCall();
-  return `<button class="best-run" data-act="marketintel">${ico('wireless')}<div><b>Fleet: ${GI[f.g].name} → ${esc(portName(f.d))}</b><small>Through night ${f.to} · sale price unconfirmed</small></div></button>`;
+  let f=fleetCall();
+  if(S.day+nightsTo(S.loc,f.d)>f.to)f=fleetCall(f.to+1);
+  if(!f||S.day+nightsTo(S.loc,f.d)>f.to)return '';
+  const when=f.from>S.day?`Opens night ${f.from} · through ${f.to}`:`Through night ${f.to}`;
+  return `<button class="best-run" data-act="marketintel">${ico('wireless')}<div><b>Fleet: ${GI[f.g].name} → ${esc(portName(f.d))}</b><small>${when} · sale price unconfirmed</small></div></button>`;
 }
 const FRESH_NIGHTS=2; // a recent sighting is context, never a promised arrival price
 // Default buys stay within flat depth and leave 15% of the purse for repairs and tolls.
@@ -1583,6 +1586,8 @@ function buildMap(){
   if(r.width<10){return;}
   const ratio=r.height/r.width,nowPortrait=isNarrow()||ratio>1;
   if(mapBuilt&&nowPortrait===portrait&&(!portrait||Math.abs(ratio-mapRatio)<.04))return;
+  const active=document.activeElement,focusPort=active.closest?.('#nodes .node')?.dataset.d,
+    focusAction=active.closest?.('#tcard-slot [data-act]')?.dataset.act;
   portrait=nowPortrait;mapBuilt=true;mapRatio=ratio;
   mapH=portrait?Math.round(clamp(640*ratio,450,1400)):640;
   const W=portrait?640:1000,H=portrait?mapH:640,svg=$('#map');
@@ -1625,6 +1630,9 @@ function buildMap(){
   <g id="skiff"><g class="bob"><path d="M-17 0 L15 0 L20 -6 L-13 -6 Z" fill="#c98a4a" stroke="#ffe0b0" stroke-width="1.2"/><path d="M-7 -6 V-17 M-7 -17 L4 -9 L-7 -9" fill="#ffefd2" stroke="#ffe0b0" stroke-width="1.2"/><circle cx="12" cy="-10" r="3.2" fill="#ffd27a"/><circle cx="12" cy="-10" r="9" fill="#ffbe55" opacity=".25"/></g></g>`;
   placeSkiffAt(S.loc);
   renderMapState();
+  // Responsive rebuilding replaces nodes and dock buttons. Keep the user's keyboard target.
+  const restore=focusPort?$('#nodes .node[data-d="'+focusPort+'"]'):focusAction?$('#tcard-slot [data-act="'+focusAction+'"]'):null;
+  if(restore&&!$('#app').inert)try{restore.focus({preventScroll:true});}catch(e){}
 }
 function placeSkiffAt(id){const c=pos(id);const sk=$('#skiff');if(sk)sk.setAttribute('transform',`translate(${c.x+40} ${c.y-30})`);}
 function renderMapState(){
@@ -1675,7 +1683,8 @@ function renderTravelCard(){
   const side=(!isNarrow()&&pos(sel).x<(portrait?320:500))?" right":"";
   if(isNarrow()){
     const fleet=fleetCall(),sale=held.map(g=>({g,sn:S.seen[sel][g.id]})).filter(x=>x.sn&&x.sn.st&&S.day-x.sn.day<=FRESH_NIGHTS).sort((a,b)=>b.sn.p/S.cargo[b.g.id].cost-a.sn.p/S.cargo[a.g.id].cost)[0];
-    const note=sale?`${sale.g.name} ${fmt(sale.sn.p)} · ${S.day===sale.sn.day?'seen tonight':(S.day-sale.sn.day)+'n ago'}. Arrival price may change.`:fleet.d===sel?`Fleet seeks ${GI[fleet.g].name} through night ${fleet.to}.`:d.svc.length?d.svc.map(k=>SVC[k].name).join(' · '):'Trade port · open details for known prices and services.';
+    const closedOnArrival=fleet.d===sel&&!here&&S.day+nights>fleet.to;
+    const note=closedOnArrival?`Fleet ends night ${fleet.to}, before your arrival.`:sale?`${sale.g.name} ${fmt(sale.sn.p)} · ${S.day===sale.sn.day?'seen tonight':(S.day-sale.sn.day)+'n ago'}. Arrival price may change.`:fleet.d===sel?`Fleet seeks ${GI[fleet.g].name} through night ${fleet.to}.`:d.svc.length?d.svc.map(k=>SVC[k].name).join(' · '):'Trade port · open details for known prices and services.';
     const meta=here?'You are here':`${nights>1?'2n via '+portName(hop):'1 night'} · risk ${d.danger}/5`;
     const sail=last?`<button class="btn primary" data-act="settle">Settle up</button>`:here?`<button class="btn amber" data-act="stay">Stay the night</button>`:S.day>=NIGHTS-1&&nights>1?`<button class="btn primary" data-act="sail" data-d="${hop}">Sail to ${esc(portName(hop))}</button>`:`<button class="btn primary" data-act="sail" data-d="${sel}">Sail · ${nights} ${nights===1?'night':'nights'}</button>`;
     slot.innerHTML=`<div class="tcard" role="region" aria-label="${d.name}"><div class="tc-head"><div><h3>${esc(d.name)}</h3><div class="tc-dist">${meta}</div></div><button class="btn icon ghost x" data-act="closecard" aria-label="Clear destination">${ico('close')}</button></div><div class="dock-note">${esc(note)}</div><div class="tc-act"><button class="btn port-details" data-act="portdetails" data-port="${sel}">Port details</button>${sail}</div></div>`;
@@ -1829,7 +1838,7 @@ function stepModalFocus(direction){
   const i=items.indexOf(document.activeElement),n=items.length;
   const next=n?items[(i<0?(direction<0?n-1:0):(i+direction+n)%n)]:ov.firstElementChild;
   // Keyboard focus may enter numeric fields even on a touch-capable laptop.
-  if(next)try{next.focus({preventScroll:true});}catch(e){}
+  if(next)try{next.focus();next.scrollIntoView({block:'nearest',inline:'nearest'});}catch(e){}
 }
 function showModal(html,{cls='',onKey=null,dismiss=null,wide=false,keepFx=false}={}){
   const ov=$('#modal');modalAt=performance.now();tapGuardUntil=modalAt+350;if(ov.hidden){parkToasts();}else $('#toasts').innerHTML='';if(!keepFx)FX.clear();if(ov.hidden)lastFocus=document.activeElement;

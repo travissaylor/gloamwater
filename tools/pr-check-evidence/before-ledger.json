@@ -1,0 +1,28 @@
+[
+  {
+    "revision": "base",
+    "valid": true,
+    "migrated": true,
+    "rngReplay": true,
+    "errors": []
+  },
+  {
+    "revision": "head",
+    "valid": true,
+    "migrated": true,
+    "rngReplay": true,
+    "errors": []
+  },
+  {
+    "test": "actual TouchRun.play persistence-check tail",
+    "dropWrite": false,
+    "entries": 1,
+    "ledgerSurvivedReload": true
+  },
+  {
+    "test": "actual TouchRun.play persistence-check tail",
+    "dropWrite": true,
+    "entries": 0,
+    "ledgerSurvivedReload": true
+  }
+]

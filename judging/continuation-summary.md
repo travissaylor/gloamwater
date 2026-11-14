@@ -25,10 +25,12 @@ Games were frozen for review. From round 4 onward, helper sources were frozen to
 round 3's shared simulator changed during one review, so its simulation figures
 remain indicative, as recorded in that round. Later game/rubric/helper hashes passed.
 
-The current [game](../game/index.html) is the final judged candidate, 253,094 bytes,
+The [final judged packet](round-6/packet/index.html) is 253,094 bytes,
 SHA-256 `a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03`.
 The [best-scoring packet](round-5/packet/index.html) is preserved separately. The
-latest game's score is 83.53; the earlier 87.67 is not attributed to it.
+final judged game's score is 83.53; the earlier 87.67 is not attributed to it.
+The current [game](../game/index.html) also includes subsequent [PR-review fixes](pr-2-review.md).
+That newer source has no panel score; all four scored packets remain unchanged.
 
 ## Changes delivered
 
@@ -62,6 +64,10 @@ WebKit on Windows emulates a phone; it does not establish physical iPhone behavi
 Audio contexts and mute were checked, but audible quality was not judged. Coverage
 of screen readers, landscape, every branch and every exploit remains incomplete.
 Passing the recorded regression suite did not detect every defect found in personal play.
+PR review later found that the touch/keyboard helper's ledger comparison could pass
+on two empty snapshots. The current helper requires the completed entry before and
+after reload, with negative fixtures. Older frozen helpers retain that test gap;
+the judges' separate observed-entry evidence is recorded in their own reports.
 
 ## What still blocks a higher score
 
@@ -81,6 +87,7 @@ Passing the recorded regression suite did not detect every defect found in perso
    and the transaction button safely use the legal amount. No unbounded-money
    exploit was observed, but the conflicting numbers are confusing.
 
-These findings remain in the scored build. The four-round limit ended the iteration;
-no fifth panel or post-score game changes were made. Work is committed on
+These findings remain in the scored build. The four-round limit ended the scored
+iteration; no fifth panel was run. Subsequent focused PR-review fixes are recorded
+separately and do not change any retained score. Work is committed on
 `t3/raise-gloamwater-panel-score`.
