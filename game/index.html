@@ -291,6 +291,7 @@ h3{margin:0;font:600 17px/1.2 var(--display)}
 .else{margin:8px 14px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:5px}
 .else div{font-size:12px;padding:6px 9px;border-radius:9px;background:rgba(255,255,255,.04);display:flex;justify-content:space-between;gap:6px}
 .else div span{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.quote-age{color:var(--muted);opacity:1}
 .else div b{font-family:var(--mono)}
 .else div.best{background:rgba(255,190,85,.12);outline:1px solid rgba(255,190,85,.4)}
 .else div.low{background:rgba(78,227,155,.1);outline:1px solid rgba(78,227,155,.35)}
@@ -671,7 +672,7 @@ body.fx-under #fx{z-index:49}
         <div class="worth"><div class="kicker">Net worth</div><b id="worth" class="num">¤0</b></div>
       </div>
       <div id="mapwrap"><svg id="map" role="group" aria-label="Map of Gloamwater districts" preserveAspectRatio="xMidYMid meet"></svg>
-        <div class="map-hint" id="map-hint">Tap a district · lit canals are one night away · tap your own to stay a night<span class="kb-only"> · <kbd>1</kbd>–<kbd>7</kbd></span></div>
+        <div class="map-hint" id="map-hint">Select a port · lit canal = 1 night<span class="kb-only"> · <kbd>1</kbd>–<kbd>7</kbd></span></div>
         <div id="tcard-slot"></div>
       </div>
     </section>
@@ -1475,19 +1476,78 @@ let portrait=false, mapBuilt=false;
 let mapH=1000,mapRatio=0;
 // Phone geography uses the map's available height; the destination dock never changes that height.
 const pos=id=>{const d=DI[id];return portrait?{x:d.y,y:Math.round(80+(d.x-165)/670*(mapH-180))}:{x:d.x,y:d.y};};
+// District architecture stays inside the island footprint. These are visual coordinates only.
+function districtLandmarkSVG(id){
+  const landmarks={
+    sm:`<path d="M-62 12V-20L-43-39-24-20V12M25 12V-22L42-38 60-22V12" fill="#263451" stroke="#8d9bb5" stroke-width="2"/>
+      <path d="M-16 10V-34H15V10ZM-12-34V-44H11V-34ZM-12-44L0-60 11-44Z" fill="#334360" stroke="#bac5d4" stroke-width="2"/>
+      <path d="M0-60V-66M-4-63H4M-59-17V9M-28-17V9M29-19V10M56-18V10" fill="none" stroke="#a8b7ca" stroke-width="2"/>
+      <path d="M-50-9Q-43-25-36-9V2H-50ZM35-10Q42-25 49-10V2H35Z" fill="#ffcd84" stroke="#172039" stroke-width="3"/>
+      <path d="M-5-25Q0-35 5-25V-12H-5Z" fill="#b7dcff"/>
+      <path d="M-64 12H64M-58 17H59M-43-18V2M42-18V2" fill="none" stroke="#7e92b2" stroke-width="2"/>
+      <circle cx="0" cy="-41" r="3" fill="#ffda9b"/>`,
+    ot:`<path d="M-62 14V-4H-51V-25H-28V-43H30V-31H51V-11H63V14Z" fill="#32334f" stroke="#b79dad" stroke-width="2"/>
+      <path d="M-65-4H65M-54-25H54M-32-43H34" fill="none" stroke="#e0b2bd" stroke-width="4"/>
+      <path d="M15-44Q15-62 31-62Q47-62 47-44Z" fill="#3e6370" stroke="#c4c8c8" stroke-width="2"/>
+      <path d="M31-61V-44M16-45H48M-50-24V-16M-37-24V-16M-24-24V-16M38-24V-16M50-24V-16M-59-3V5M-46-3V5M47-3V5M59-3V5" fill="none" stroke="#d4b4c1" stroke-width="1.7"/>
+      <path d="M-44-26Q-56-14-44-3Q-37 4-45 11M-27-44Q-38-37-30-28M47-28Q61-19 53-8Q48-1 58 7" fill="none" stroke="#66b99a" stroke-width="4"/>
+      <g fill="#8dce9c"><ellipse cx="-48" cy="-17" rx="7" ry="3" transform="rotate(-30 -48 -17)"/><ellipse cx="-29" cy="-39" rx="7" ry="3"/><ellipse cx="52" cy="-20" rx="7" ry="3" transform="rotate(30 52 -20)"/><ellipse cx="54" cy="-4" rx="6" ry="3"/></g>
+      <path d="M-46 3Q-40-12-34 3V12H-46M34 3Q40-12 46 3V12H34" fill="#efc596" stroke="#20253e" stroke-width="2"/>
+      <path d="M-62 17H63" stroke="#8c829f" stroke-width="3"/>`,
+    de:`<path d="M-64-31L0-59 64-31Z" fill="#344967" stroke="#a6c3d4" stroke-width="2.5"/>
+      <path d="M-53-31L0-51 53-31Z" fill="#192b48" stroke="#6c95ac" stroke-width="1.5"/>
+      <rect x="-59" y="-28" width="118" height="40" fill="#172a45"/>
+      <path d="M-56-29V11M-36-29V11M-16-29V11M16-29V11M36-29V11M56-29V11" stroke="#b2c9d3" stroke-width="7"/>
+      <path d="M-61-29H61M-61 10H61M-65 16H65M-68 21H68" stroke="#799eb5" stroke-width="4"/>
+      <path d="M-49-22H-43V3H-49M43-22H49V3H43" fill="#ffd49a"/>
+      <circle cx="0" cy="-40" r="5" fill="#e9c88e" stroke="#a9c3d5" stroke-width="1.5"/>
+      <path d="M0-44V-40L3-38" fill="none" stroke="#25344b" stroke-width="1.5"/>`,
+    ch:`<path d="M-51 13L-43-57H-31L-23 13Z" fill="#344055" stroke="#d39b68" stroke-width="2.5"/>
+      <path d="M-48-5L-27-20-44-34-31-48M-29 1L-46-20-33-34-41-48" fill="none" stroke="#a17657" stroke-width="2"/>
+      <path d="M-57-55H62V-43H-57Z" fill="#384052" stroke="#d5a66d" stroke-width="2.5"/>
+      <path d="M-50-54L-37-44-24-54-11-44 2-54 15-44 28-54 41-44 54-54" fill="none" stroke="#ca9561" stroke-width="2"/>
+      <path d="M49-43V-18Q57-13 49-8Q44-7 43-12" fill="none" stroke="#d6c8ac" stroke-width="2.5"/>
+      <path d="M37-6H60V13H37Z" fill="#75503a" stroke="#d9ad73" stroke-width="2"/><path d="M39-4L58 11M58-4L39 11" stroke="#d2a577" stroke-width="1.5"/>
+      <path d="M-61 10H-20L-15 17H-57ZM17 14H64L58 21H24Z" fill="#3e4b5b" stroke="#849da8" stroke-width="2"/>
+      <rect x="-42" y="-61" width="9" height="6" rx="1" fill="#ffd38b"/>`,
+    sl:`<path d="M-20 13V-21Q-20-35-7-35H51V13Z" fill="#293e50" stroke="#83b3b5" stroke-width="2"/>
+      <path d="M27-34V-53H43V-34M31-52H39M25-41H45" fill="#314e5e" stroke="#a9c5bd" stroke-width="2.5"/>
+      <circle cx="-43" cy="-9" r="24" fill="#152b3e" stroke="#a68e62" stroke-width="5"/>
+      <circle cx="-43" cy="-9" r="17" fill="none" stroke="#d3ad6f" stroke-width="2"/>
+      <path d="M-43-32V14M-66-9H-20M-59-25L-27 7M-59 7L-27-25" stroke="#b99c69" stroke-width="3"/>
+      <circle cx="-43" cy="-9" r="5" fill="#e9c68a"/>
+      <path d="M11-23H61V-11H52V14M12-12H42V15" fill="none" stroke="#96c5be" stroke-width="6"/>
+      <path d="M11-23H61V-11H52V14M12-12H42V15" fill="none" stroke="#375969" stroke-width="2"/>
+      <path d="M36 13V23M43 13L45 25M51 12L55 22M-63 21Q-52 15-41 21T-19 21M30 26Q43 19 61 25" fill="none" stroke="#6fd7ce" stroke-width="2.5"/>
+      <rect x="-9" y="-29" width="9" height="7" rx="1" fill="#ffcf8b"/>`,
+    fm:`<path d="M-57 12L-49-43H-29L-21 12Z" fill="#9aa9b8" stroke="#c4d7dc" stroke-width="2"/>
+      <path d="M-54-7H-25L-27-18H-52Z" fill="#3f5c77"/>
+      <path d="M-53-44V-54H-25V-44ZM-55-55L-39-65-23-55Z" fill="#28465f" stroke="#a8c6d2" stroke-width="2"/>
+      <rect x="-48" y="-52" width="18" height="7" fill="#ffe3a2"/>
+      <path d="M-39-52V-45M-43-32H-35V-24H-43M-43 3V-4Q-39-10-35-4V3" fill="#253e57" stroke="#6d8da4" stroke-width="1.5"/>
+      <path d="M-67 10Q-7 6 65 12V23Q3 16-67 22Z" fill="#35495d" stroke="#91abb9" stroke-width="2"/>
+      <path d="M-53 13V20M-31 12V19M-9 11V18M13 12V20M35 13V21M55 14V22M-66 26Q-51 19-36 25T-6 25T24 26T60 26" fill="none" stroke="#7eafb9" stroke-width="1.7"/>
+      <path d="M27 8V-11H35V8M20-12H42M31-17V-24" fill="#3e5367" stroke="#a4bec5" stroke-width="2"/>
+      <circle cx="31" cy="-25" r="3" fill="#9eebdc"/>`,
+    lq:`<path d="M-65 9H65V19H-65Z" fill="#554637" stroke="#b4a080" stroke-width="2"/>
+      <path d="M-61 10V-11L-43-23-25-11V10M25 10V-11L43-23 61-11V10" fill="#35405c" stroke="#b79e80" stroke-width="2"/>
+      <path d="M-64-9H-23L-28 0H-58ZM23-9H64L58 0H28Z" fill="#956550" stroke="#e0b184" stroke-width="1.5"/>
+      <path d="M-52-9L-49 0M-40-9L-40 0M40-9V0M52-9L49 0" stroke="#edcc98" stroke-width="3"/>
+      <path d="M-53 10V1H-34V10M34 10V1H53V10" fill="#f0bd76" stroke="#27394f" stroke-width="2"/>
+      <path d="M-63-42Q0-20 63-42" fill="none" stroke="#b0a08c" stroke-width="2"/>
+      <path d="M-62 10V-49M62 10V-49" stroke="#ac9673" stroke-width="3"/>
+      <g fill="#ffd58a" stroke="#dba05d" stroke-width="1.5"><rect x="-55" y="-39" width="10" height="13" rx="3"/><rect x="-29" y="-32" width="9" height="12" rx="3"/><rect x="20" y="-32" width="9" height="12" rx="3"/><rect x="45" y="-39" width="10" height="13" rx="3"/></g>
+      <path d="M-56 20V25M-32 20V25M32 20V25M56 20V25" stroke="#a39478" stroke-width="3"/>`
+  };
+  return landmarks[id]||'';
+}
 function islandSVG(d,i){
   const R=seeded(i*977+13),c=pos(d.id);let pts=[];const n=11,base=58+R()*10;
   for(let k=0;k<n;k++){const a=k/n*Math.PI*2,r=base*(.78+R()*.32);pts.push([c.x+Math.cos(a)*r*1.18,c.y+Math.sin(a)*r*.82]);}
   let path='';for(let k=0;k<n;k++){const p=pts[k],q=pts[(k+1)%n];const mx=(p[0]+q[0])/2,my=(p[1]+q[1])/2;path+=(k?'':`M${((pts[n-1][0]+p[0])/2).toFixed(1)} ${((pts[n-1][1]+p[1])/2).toFixed(1)}`)+` Q${p[0].toFixed(1)} ${p[1].toFixed(1)} ${mx.toFixed(1)} ${my.toFixed(1)}`;}
-  let b='',w='',rf='';
-  const cnt=9;
-  for(let k=0;k<cnt;k++){
-    const bx=c.x-58+k*13+R()*4,bw=9+R()*9,bh=16+R()*38,by=c.y+6-bh;
-    b+=`<rect x="${bx.toFixed(1)}" y="${by.toFixed(1)}" width="${bw.toFixed(1)}" height="${bh.toFixed(1)}" rx="1.5" fill="${R()<.5?'#16204c':'#1b2758'}"/>`;
-    for(let yy=by+4;yy<c.y;yy+=7)for(let xx=bx+2;xx<bx+bw-3;xx+=5)if(R()<.35)w+=`<rect class="${R()<.25?'win':''}" style="animation-delay:${(R()*5).toFixed(2)}s" x="${xx.toFixed(1)}" y="${yy.toFixed(1)}" width="2.2" height="3" fill="${R()<.8?'#ffc56b':'#7ef0ff'}"/>`;
-    if(R()<.5)rf+=`<rect class="refl" style="animation-delay:${(R()*2).toFixed(2)}s;transform-origin:${(bx+bw/2).toFixed(0)}px ${(c.y+30).toFixed(0)}px" x="${(bx+bw/2-1.5).toFixed(1)}" y="${(c.y+20+R()*10).toFixed(1)}" width="3" height="${(8+R()*14).toFixed(1)}" rx="1.5" fill="#ffbe55" opacity=".4"/>`;
-  }
-  return `<g><path d="${path}" fill="#0e1636" stroke="rgba(120,160,255,.28)" stroke-width="1.5"/><path d="${path}" fill="none" stroke="rgba(60,230,207,.12)" stroke-width="8" transform="translate(0 3)"/>${b}${w}${rf}</g>`;
+  let reflections='';
+  for(let k=0;k<3;k++){const x=c.x-49+k*47,y=c.y+20+R()*6;reflections+=`<path class="refl" style="animation-delay:${(R()*2).toFixed(2)}s;transform-origin:${x}px ${y}px" d="M${x-4} ${y}h8m-6 5h5" fill="none" stroke="${d.id==='sl'?'#6fd7ce':'#ffca83'}" stroke-width="2" opacity=".35"/>`;}
+  return `<g aria-hidden="true" pointer-events="none"><path d="${path}" fill="#0e1636" stroke="rgba(120,160,255,.28)" stroke-width="1.5"/><path d="${path}" fill="none" stroke="rgba(60,230,207,.12)" stroke-width="8" transform="translate(0 3)"/><g transform="translate(${c.x} ${c.y})" stroke-linejoin="round" stroke-linecap="round">${districtLandmarkSVG(d.id)}</g>${reflections}</g>`;
 }
 let mapFs=19;
 function buildMap(){
@@ -1619,7 +1679,8 @@ function openPortDetails(did){
     return `<div class="kv"><span>${g.name}${c.q?' · hold '+c.q:''}</span><b>${sn?(sn.st?fmt(sn.p):'no dealers'):'unknown'}${sn?`<small style="display:block;color:var(--muted);font:400 15px var(--ui)">${age?age+'n ago':'seen tonight'}</small>`:''}</b></div>`;
   }).join('');
   const services=d.svc.map(k=>SVC[k].name).join(' · ')||'Market only';
-  const html=`<div class="card-body port-sheet"><div class="kicker">${did===S.loc?'Your mooring':nights+'-night route'} · danger ${d.danger}/5</div><h3>${esc(d.name)}</h3><p>${esc(d.blurb)}</p><p><b>Services:</b> ${esc(services)}</p>${fleet.d===did?`<div class="result gold">Fleet call: <b>${GI[fleet.g].name}</b> through night ${fleet.to}. Demand +40%, twice the depth.</div>`:''}<p>These are observed prices. Prices and dealers may change before you arrive; large orders move the quote.</p>${rows}<div class="choices"><button class="choice primary" data-port-back><div>Back to map</div></button></div></div>`;
+  const identity=`<p><b>Usually supplies:</b> ${d.cheap.length?d.cheap.map(g=>GI[g].name).join(', '):'no listed specialty'}<br><b>Usually imports:</b> ${d.dear.map(g=>GI[g].name).join(', ')}<br><small>District habits, not a promised sale price.</small></p>`;
+  const html=`<div class="card-body port-sheet"><div class="kicker">${did===S.loc?'Your mooring':nights+'-night route'} · danger ${d.danger}/5</div><h3>${esc(d.name)}</h3><p>${esc(d.blurb)}</p><p><b>Services:</b> ${esc(services)}</p>${identity}${fleet.d===did?`<div class="result gold">Fleet call: <b>${GI[fleet.g].name}</b> through night ${fleet.to}. Demand +40%, twice the depth.</div>`:''}<p>These are observed prices. Prices and dealers may change before you arrive; large orders move the quote.</p>${rows}<div class="choices"><button class="choice primary" data-port-back><div>Back to map</div></button></div></div>`;
   sfx.click();const el=showModal(html,{dismiss:closeModal});el.querySelector('[data-port-back]').onclick=closeModal;
 }
 function openMarketIntel(){
@@ -1901,7 +1962,7 @@ function elsewhereHTML(gid){
   return items.map(({d,sn})=>{
     if(!sn)return `<div title="Not visited yet"><span>${d.name}</span><b style="color:var(--dim)">?</b></div>`;
     const ago=S.day-sn.day;const agoT=ago===0?'today':ago+'n ago';
-    return `<div class="${sn.st&&sn.p===hi&&vals.length>1?'best':sn.st&&sn.p===lo&&vals.length>1?'low':''}" title="Seen ${agoT}"><span>${d.name} <small style="opacity:.7">${agoT}</small></span><b>${sn.st?fmtK(sn.p):'—'}</b></div>`;
+    return `<div class="${sn.st&&sn.p===hi&&vals.length>1?'best':sn.st&&sn.p===lo&&vals.length>1?'low':''}" title="Seen ${agoT}"><span>${d.name} <small class="quote-age">${agoT}</small></span><b>${sn.st?fmtK(sn.p):'—'}</b></div>`;
   }).join('');
 }
 // ---- amount dialog ----
@@ -2632,7 +2693,7 @@ async function endGame(reason,rec){
     </div>
     <div class="statgrid">
       <div>Voyages<b>${S.stats.trips}</b></div><div>Best single profit<b>${S.stats.bestFlip?fmtK(S.stats.bestFlip):'—'}</b></div><div>Peak worth<b>${fmtK(S.stats.peak)}</b></div>
-      <div>Encounters<b>${S.stats.fights}</b><small>won ${S.stats.won} · fled ${S.stats.fled}</small></div><div>Interest paid<b>${fmtK(S.stats.interest)}</b></div><div>Lost to thieves, tolls, leaks<b>${fmtK(S.stats.lost)}</b></div>
+      <div>Encounters<b>${S.stats.fights}</b><small>won ${S.stats.won} · fled ${S.stats.fled}</small></div><div>Interest accrued<b>${fmtK(S.stats.interest)}</b></div><div>Lost to thieves, tolls, leaks<b>${fmtK(S.stats.lost)}</b></div>
     </div>
     ${nextRankHTML(t.net)}
     <div class="card-body"><div class="kicker" style="margin-bottom:6px">Captains' Ledger${placed>=0?` · you placed #${placed+1}`:''}</div>${ledgerTable(top,entry.id)}

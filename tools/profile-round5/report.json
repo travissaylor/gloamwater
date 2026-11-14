@@ -1,0 +1,54 @@
+{
+  "game": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\game\\index.html",
+  "sha256": "456cb4ccfbcf04d86e806fdf4b6d6fa150af18861791e6d1bec1f91dda9ded83",
+  "method": "Normal-speed Chromium game-function voyage; 40 fixture restarts, garbage collection and CDP metrics",
+  "limitations": [
+    "Not physical iPhone performance or an audible quality test.",
+    "One normal voyage is a timing sample, not a full normal-speed game.",
+    "Lifecycle fixtures call startGame directly and are separate from UI play."
+  ],
+  "voyage": {
+    "elapsedMs": 2624,
+    "day": 2,
+    "frames": 157,
+    "medianFrameMs": 16.699999999999818,
+    "p95FrameMs": 16.800000000000182,
+    "maxFrameMs": 16.800000000000182,
+    "fast": false,
+    "reducedMotion": false
+  },
+  "lifecycle": [
+    {
+      "label": "baseline",
+      "Documents": 1,
+      "JSEventListeners": 32,
+      "Nodes": 1917,
+      "ScriptDuration": 0.002325,
+      "TaskDuration": 0.102008,
+      "JSHeapUsedSize": 2261636
+    },
+    {
+      "label": "20 restarts",
+      "Documents": 1,
+      "JSEventListeners": 32,
+      "Nodes": 1931,
+      "ScriptDuration": 0.022389,
+      "TaskDuration": 0.30676,
+      "JSHeapUsedSize": 2348388
+    },
+    {
+      "label": "40 restarts",
+      "Documents": 1,
+      "JSEventListeners": 32,
+      "Nodes": 1937,
+      "ScriptDuration": 0.043799,
+      "TaskDuration": 0.50851,
+      "JSHeapUsedSize": 2365588
+    }
+  ],
+  "listenerDelta": 0,
+  "nodeDelta": 20,
+  "heapDeltaBytes": 103952,
+  "errors": [],
+  "pass": true
+}
