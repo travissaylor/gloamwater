@@ -1,0 +1,246 @@
+{
+  "bytes": 253094,
+  "allMatch": true,
+  "files": [
+    {
+      "file": "index.html",
+      "expected": "a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03",
+      "actual": "a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03"
+    },
+    {
+      "file": "RUBRIC.md",
+      "expected": "7a3f9d2c1d567b4547c115e3a90ef4ad79ae103ead30ece274d04a5d01942d67",
+      "actual": "7a3f9d2c1d567b4547c115e3a90ef4ad79ae103ead30ece274d04a5d01942d67"
+    },
+    {
+      "file": "tools/event-check.cjs",
+      "expected": "5864393495198c16ee7deddd273ec40caeb2b29928fd7303082c00f60aefb4ed",
+      "actual": "5864393495198c16ee7deddd273ec40caeb2b29928fd7303082c00f60aefb4ed"
+    },
+    {
+      "file": "tools/keyboard-play.cjs",
+      "expected": "48aa83b2a0aa4b7bfc92ee000ef2dddf885a9d4edffa2e2306399c7ca71af48f",
+      "actual": "48aa83b2a0aa4b7bfc92ee000ef2dddf885a9d4edffa2e2306399c7ca71af48f"
+    },
+    {
+      "file": "tools/package-lock.json",
+      "expected": "da2024b7cf400ad42e365ebcc1fe13d339f4212f6618ac4689ebf9371a9c0d40",
+      "actual": "da2024b7cf400ad42e365ebcc1fe13d339f4212f6618ac4689ebf9371a9c0d40"
+    },
+    {
+      "file": "tools/package.json",
+      "expected": "31ccbbe46d9235cc353560c6d84b9cea2e43e9f3fc148200e64a6484dcc2948c",
+      "actual": "31ccbbe46d9235cc353560c6d84b9cea2e43e9f3fc148200e64a6484dcc2948c"
+    },
+    {
+      "file": "tools/phone/common.js",
+      "expected": "dfa1d45415dfa9a7f9d3930d7aacdd68cf890402a58e53c83e5fbb95149035d2",
+      "actual": "dfa1d45415dfa9a7f9d3930d7aacdd68cf890402a58e53c83e5fbb95149035d2"
+    },
+    {
+      "file": "tools/phone/probe.js",
+      "expected": "a9fa8b260b603b831d07f14c9ead5156ea44c2ed8566a5079710872a5fe8a797",
+      "actual": "a9fa8b260b603b831d07f14c9ead5156ea44c2ed8566a5079710872a5fe8a797"
+    },
+    {
+      "file": "tools/phone/server.js",
+      "expected": "06a08462fdac245e557689b7059e72a77d753aaae4253a997b8926ff34ca32e4",
+      "actual": "06a08462fdac245e557689b7059e72a77d753aaae4253a997b8926ff34ca32e4"
+    },
+    {
+      "file": "tools/phone/start.js",
+      "expected": "413ff0d02b592b8489d8b3aab451e2aec1e98dace7d63cc39cb81e5c2851f884",
+      "actual": "413ff0d02b592b8489d8b3aab451e2aec1e98dace7d63cc39cb81e5c2851f884"
+    },
+    {
+      "file": "tools/phone/step.js",
+      "expected": "e7cb9c30dc6bc0d0327eef62cbf35c40c6f1a645f605c26ef403d6270a52f490",
+      "actual": "e7cb9c30dc6bc0d0327eef62cbf35c40c6f1a645f605c26ef403d6270a52f490"
+    },
+    {
+      "file": "tools/phone/stop.js",
+      "expected": "77c9588a217eab12198aea4665af2dd00e99bee5ba61e7695b0ade802c20484b",
+      "actual": "77c9588a217eab12198aea4665af2dd00e99bee5ba61e7695b0ade802c20484b"
+    },
+    {
+      "file": "tools/profile.cjs",
+      "expected": "dbed4c9a768291fce1d8ff3a510492bdd1514bcc64107d112a3e700cbc45733d",
+      "actual": "dbed4c9a768291fce1d8ff3a510492bdd1514bcc64107d112a3e700cbc45733d"
+    },
+    {
+      "file": "tools/README.md",
+      "expected": "69be53ef4d679da7fe0f7fcf2e0aaa8b68a401b9aafbcfa86f05b8e142079fc0",
+      "actual": "69be53ef4d679da7fe0f7fcf2e0aaa8b68a401b9aafbcfa86f05b8e142079fc0"
+    },
+    {
+      "file": "tools/sim/adapter.js",
+      "expected": "ff561f27a0552e8a6f90af3e01ba4f8458e39347edacd2413c33b1ace6eb1083",
+      "actual": "ff561f27a0552e8a6f90af3e01ba4f8458e39347edacd2413c33b1ace6eb1083"
+    },
+    {
+      "file": "tools/sim/analyze.js",
+      "expected": "bf9d30b4169df4f07bd9fe4c419d73d0fd8da6f7479ccabfb3439e77d6b1f364",
+      "actual": "bf9d30b4169df4f07bd9fe4c419d73d0fd8da6f7479ccabfb3439e77d6b1f364"
+    },
+    {
+      "file": "tools/sim/combat-summary.js",
+      "expected": "456f3f174a27669725636ec827b0db94375ab92b18edf078ff957bda6e81c0da",
+      "actual": "456f3f174a27669725636ec827b0db94375ab92b18edf078ff957bda6e81c0da"
+    },
+    {
+      "file": "tools/sim/mix-summary.js",
+      "expected": "12be8ae9fc95dfe75f01fee6d89769e4fb80f77c9d3ab0a8737cb9476bc4e3e3",
+      "actual": "12be8ae9fc95dfe75f01fee6d89769e4fb80f77c9d3ab0a8737cb9476bc4e3e3"
+    },
+    {
+      "file": "tools/sim/policies/_common.js",
+      "expected": "0dd6d89f4cff21b40c8e2f366d9b0aeaf1376cd963dcc9b826f0c7f8d9b1e311",
+      "actual": "0dd6d89f4cff21b40c8e2f366d9b0aeaf1376cd963dcc9b826f0c7f8d9b1e311"
+    },
+    {
+      "file": "tools/sim/policies/_whisper.js",
+      "expected": "ea9510bf810f17128dbaddd72faeb114a542115cbc0810944085a7e6af763335",
+      "actual": "ea9510bf810f17128dbaddd72faeb114a542115cbc0810944085a7e6af763335"
+    },
+    {
+      "file": "tools/sim/policies/borrow-max.js",
+      "expected": "5fcf38ae1d51741306f14d60ad9a6f0cbb9c6df8bcdf57e048d668513c82e742",
+      "actual": "5fcf38ae1d51741306f14d60ad9a6f0cbb9c6df8bcdf57e048d668513c82e742"
+    },
+    {
+      "file": "tools/sim/policies/borrow-smart.js",
+      "expected": "b44bb93df56fda2257d22ccb76a0be91016a566691bd2995f97480b5102913b4",
+      "actual": "b44bb93df56fda2257d22ccb76a0be91016a566691bd2995f97480b5102913b4"
+    },
+    {
+      "file": "tools/sim/policies/charter-rush.js",
+      "expected": "efc5d1db7091c0b6eafc65f698f305fd0116aeb19c195f34192ce059d7a5dcfa",
+      "actual": "efc5d1db7091c0b6eafc65f698f305fd0116aeb19c195f34192ce059d7a5dcfa"
+    },
+    {
+      "file": "tools/sim/policies/corner.js",
+      "expected": "45cde56a6f48d2efb9e9dbc991b375ec3a49c067b04e30e070d9a6b2a5dd3c2f",
+      "actual": "45cde56a6f48d2efb9e9dbc991b375ec3a49c067b04e30e070d9a6b2a5dd3c2f"
+    },
+    {
+      "file": "tools/sim/policies/dumpback.js",
+      "expected": "106b4badf1b262060cc7ae5317f73e9ea6d3f1a3f4e6adf81b262c2b7ad0ff2d",
+      "actual": "106b4badf1b262060cc7ae5317f73e9ea6d3f1a3f4e6adf81b262c2b7ad0ff2d"
+    },
+    {
+      "file": "tools/sim/policies/eel.js",
+      "expected": "b00b5dbbf61d9481e44957a9485fce5031028760ab046813d794be2e30a6de61",
+      "actual": "b00b5dbbf61d9481e44957a9485fce5031028760ab046813d794be2e30a6de61"
+    },
+    {
+      "file": "tools/sim/policies/fight-farm.js",
+      "expected": "e9e9f0a641a9b4203481e27f78fff05101c284a9e64672b54168a85e3cc6a420",
+      "actual": "e9e9f0a641a9b4203481e27f78fff05101c284a9e64672b54168a85e3cc6a420"
+    },
+    {
+      "file": "tools/sim/policies/fight.js",
+      "expected": "60d5a1b69c39811446b7331af920dcdb89da25c891af61bafaa2b78ba56bb200",
+      "actual": "60d5a1b69c39811446b7331af920dcdb89da25c891af61bafaa2b78ba56bb200"
+    },
+    {
+      "file": "tools/sim/policies/greedy.js",
+      "expected": "ec512d37918f44db6e57575ba194988e9415403a3580c6ec3d4010137bf7034c",
+      "actual": "ec512d37918f44db6e57575ba194988e9415403a3580c6ec3d4010137bf7034c"
+    },
+    {
+      "file": "tools/sim/policies/informed-adj.js",
+      "expected": "55dc0329cd12136d6cf04d3256b08a178067401b7ad9c12651f24819deb5b6a8",
+      "actual": "55dc0329cd12136d6cf04d3256b08a178067401b7ad9c12651f24819deb5b6a8"
+    },
+    {
+      "file": "tools/sim/policies/informed-nocharter.js",
+      "expected": "7344fa810912ae11e136206120e4af306cab6c3056588ada58f5e6bd2269f32b",
+      "actual": "7344fa810912ae11e136206120e4af306cab6c3056588ada58f5e6bd2269f32b"
+    },
+    {
+      "file": "tools/sim/policies/informed-nofight.js",
+      "expected": "ca61782434ad9cd20ad2ad2dc60069a8336f1328e50d7d9747b2ef8ad089d320",
+      "actual": "ca61782434ad9cd20ad2ad2dc60069a8336f1328e50d7d9747b2ef8ad089d320"
+    },
+    {
+      "file": "tools/sim/policies/informed-nohigh.js",
+      "expected": "a31b1a63a8f5bb835402f5e999af3530011004f56b5a91a605f511b34f779d0e",
+      "actual": "a31b1a63a8f5bb835402f5e999af3530011004f56b5a91a605f511b34f779d0e"
+    },
+    {
+      "file": "tools/sim/policies/informed-nostay.js",
+      "expected": "697dcca0777b541b65b45c23286abb33eb78d5346b02327595180430c31a0bf8",
+      "actual": "697dcca0777b541b65b45c23286abb33eb78d5346b02327595180430c31a0bf8"
+    },
+    {
+      "file": "tools/sim/policies/informed-novault.js",
+      "expected": "696dc52609e4a60a80b0744102b7d36d42236ee2f755534f06050d23dea8b9be",
+      "actual": "696dc52609e4a60a80b0744102b7d36d42236ee2f755534f06050d23dea8b9be"
+    },
+    {
+      "file": "tools/sim/policies/informed.js",
+      "expected": "b369c2ed91f8d1ea4c0c20b6c968b4c224bfd5968067556c3df395d5602ad3f3",
+      "actual": "b369c2ed91f8d1ea4c0c20b6c968b4c224bfd5968067556c3df395d5602ad3f3"
+    },
+    {
+      "file": "tools/sim/policies/purse-floor.js",
+      "expected": "078fee5e7bed3721a80d75a942c4d215903f76c044ebce7841752d0494535603",
+      "actual": "078fee5e7bed3721a80d75a942c4d215903f76c044ebce7841752d0494535603"
+    },
+    {
+      "file": "tools/sim/policies/roundtrip.js",
+      "expected": "34fc28bcdc804986f3e162ffc2772b5239a6550c6fad8d28d12bc0b1d0268dc1",
+      "actual": "34fc28bcdc804986f3e162ffc2772b5239a6550c6fad8d28d12bc0b1d0268dc1"
+    },
+    {
+      "file": "tools/sim/policies/scum-control.js",
+      "expected": "e8754ea26747e732f655fca465ef0ee0a3a1dfd4fdde4a792e8b8dc7fa260827",
+      "actual": "e8754ea26747e732f655fca465ef0ee0a3a1dfd4fdde4a792e8b8dc7fa260827"
+    },
+    {
+      "file": "tools/sim/policies/scum.js",
+      "expected": "cb599eaa442169e538fb2f9045135a558f5a353a6f796d0fa203aceafa64406e",
+      "actual": "cb599eaa442169e538fb2f9045135a558f5a353a6f796d0fa203aceafa64406e"
+    },
+    {
+      "file": "tools/sim/policies/stay-whisper.js",
+      "expected": "f9ba54295b3869517cd60364a5e96d7bc6059b32c77a199bed533d498201de55",
+      "actual": "f9ba54295b3869517cd60364a5e96d7bc6059b32c77a199bed533d498201de55"
+    },
+    {
+      "file": "tools/sim/policies/vault.js",
+      "expected": "1f5a94477f5a53c187323b7564cba10ac0654c7db0306ae33e03e34e8cc5c629",
+      "actual": "1f5a94477f5a53c187323b7564cba10ac0654c7db0306ae33e03e34e8cc5c629"
+    },
+    {
+      "file": "tools/sim/policies/whisper-smart.js",
+      "expected": "d86c3f02a90d157e76c9315ceccf16b27974b768426fb675120d4fd36d0e5f11",
+      "actual": "d86c3f02a90d157e76c9315ceccf16b27974b768426fb675120d4fd36d0e5f11"
+    },
+    {
+      "file": "tools/sim/policies/whisper-spam.js",
+      "expected": "20183382b1fcb9a2bfecbfc60e49650f0394bcfcd19ac668e0a0ef6dd4be2a78",
+      "actual": "20183382b1fcb9a2bfecbfc60e49650f0394bcfcd19ac668e0a0ef6dd4be2a78"
+    },
+    {
+      "file": "tools/sim/README.md",
+      "expected": "883a3d6d60e565fdacb595fb13e8be2a93e4d4fb0c966f22e79982acf1373da3",
+      "actual": "883a3d6d60e565fdacb595fb13e8be2a93e4d4fb0c966f22e79982acf1373da3"
+    },
+    {
+      "file": "tools/sim/sim.js",
+      "expected": "41ef1f7a4dd5d5496fd281fcbfbec4c63a02939dd8c1022737cc2706fcff6936",
+      "actual": "41ef1f7a4dd5d5496fd281fcbfbec4c63a02939dd8c1022737cc2706fcff6936"
+    },
+    {
+      "file": "tools/touch-play.cjs",
+      "expected": "76d66df1d1ea8dfa095f01c5230b29d0fb6caeadd4aeef75cb87d337fcc7300b",
+      "actual": "76d66df1d1ea8dfa095f01c5230b29d0fb6caeadd4aeef75cb87d337fcc7300b"
+    },
+    {
+      "file": "tools/verify.cjs",
+      "expected": "1fae6023be1e6afd24e43a43be398e651fc418c64ebd89cb64353bfa376032f1",
+      "actual": "1fae6023be1e6afd24e43a43be398e651fc418c64ebd89cb64353bfa376032f1"
+    }
+  ]
+}

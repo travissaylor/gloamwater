@@ -1,0 +1,31 @@
+run 1 night 1 lq cash 2500 debt 6000 hull 100
+run 1 night 2 ch cash 1030 debt 6360 hull 100
+run 1 night 3 lq cash 502 debt 6742 hull 100
+run 1 night 4 ot cash 1829 debt 7147 hull 100
+run 1 night 5 de cash 1881 debt 7576 hull 100
+run 1 night 6 lq cash 1566 debt 8031 hull 100
+run 1 night 7 de cash 500 debt 0 hull 100
+run 1 night 8 ot cash 1406 debt 0 hull 100
+run 1 night 9 sm cash 5457 debt 0 hull 100
+run 1 night 10 ot cash 384 debt 0 hull 100
+run 1 night 11 de cash 384 debt 0 hull 100
+run 1 night 12 ot cash 971 debt 0 hull 100
+run 1 night 13 sm cash 1589 debt 0 hull 100
+run 1 night 14 fm cash 2984 debt 0 hull 100
+run 1 night 15 lq cash 2799 debt 0 hull 100
+run 1 night 16 sl cash 0 debt 0 hull 100
+run 1 night 17 ch cash 1983 debt 0 hull 100
+run 1 night 18 fm cash 1341 debt 0 hull 100
+run 1 night 19 lq cash 2462 debt 0 hull 100
+run 1 night 20 de cash 3734 debt 0 hull 100
+run 1 night 22 ot cash 5966 debt 0 hull 100
+run 1 night 23 de cash 44737 debt 0 hull 100
+run 1 night 24 ot cash 7032 debt 0 hull 100
+run 1 night 25 de cash 4877 debt 0 hull 100
+run 1 night 26 ot cash 11523 debt 0 hull 100
+run 1 night 27 de cash 67104 debt 0 hull 100
+run 1 night 28 ot cash 53056 debt 0 hull 100
+run 1 night 29 de cash 12753 debt 0 hull 100
+run 1 night 30 lq cash 45311 debt 0 hull 100
+{"pass":true,"day":30,"sunk":false,"pointerEvents":0,"report":"C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-6\\judge-1\\keyboard\\report.json"}
+exit=0

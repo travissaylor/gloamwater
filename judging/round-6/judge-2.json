@@ -1,0 +1,272 @@
+{
+  "judge": 2,
+  "lens": "visual and interaction design",
+  "model": "gpt-6.1-sol",
+  "build": "a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03",
+  "scores": {
+    "A1": 8,
+    "A2": 8,
+    "A3": 8,
+    "A4": 7,
+    "A5": 8,
+    "B1": 9,
+    "B2": 9,
+    "B3": 8,
+    "B4": 9,
+    "B5": 8,
+    "C1": 9,
+    "C2": 10,
+    "C3": 9,
+    "C4": 8,
+    "C5": 8
+  },
+  "weighted_total": 84.0,
+  "caps_applied": [],
+  "criteria": {
+    "A1": {
+      "score": 8,
+      "evidence": [
+        "Personal visible-information run: bought 20 Bottled Rain at 110 on N1 for the Sluices quote; no dealers on N2 forced a wait. Sold N3 for 5,000 and 2,800 profit. Later traded pearls, saffron, eels, chips and ink, responding to different ports and shocks.",
+        "N23 bought saffron at 1,142 for Copperhook's surge; N24 sold at 2,388. N29 bought at 763 for a final-night Sluices sale at 1,652. Dealer depth and cash reserves constrained quantities.",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/manual-transcript.jsonl; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/05-trade.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/07-voyage-or-event.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/18-late-market.png"
+      ],
+      "below_10": [
+        "The recommendation strip often supplies a straightforward next route; I did not demonstrate equally effective alternative strategies across comparable seeds."
+      ]
+    },
+    "A2": {
+      "score": 8,
+      "evidence": [
+        "Debt visibly compounded from 6,000 to 6,360, 6,742, 7,147 and 7,576 before I repaid on N5. Wireless cost 6,000; racks 2,500; engine 4,500; repair 350, taking working cash down to 4,256 on N11.",
+        "A 1,000 vault deposit became 1,015 after one night; later deposits protected a material reserve while tolls and bribes consumed purse money. I finished with 126,399 in the vault.",
+        "Regression's two function-driven seeds finished at 81,678 and 619,375, not evidence of equal-policy balance or a skill-controlled comparison. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/report.json"
+      ],
+      "below_10": [
+        "One personal run and the supplied regressions do not independently establish exploit resistance or the balance of weapon, charter, borrowing and whisper strategies. Late small lots left much of my upgraded hold unused."
+      ]
+    },
+    "A3": {
+      "score": 8,
+      "evidence": [
+        "Personally accepted flotsam (10 free pearls), completed two courier deliveries, lost the 210 eel wager, failed the 70% gull recovery for exactly 1,183 and 10% hull, paid a gull loss, bribed Tidewardens, paid gang tolls, and escaped a cutter at the displayed 55% chance after the engine upgrade.",
+        "The three-cutter offer displayed 90% hull, cargo 17.6k, 25% escape, 19% combat per volley and a 2,334 guaranteed bribe; these were materially different choices. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/14-voyage.png",
+        "All 16 explicit gull/leak fixture cases passed, covering committed reload outcomes, both recovery outcomes, sinking, payment cap, patching, jettison and unaffordable patch. Inspected all event screenshots via events-contact-0.png through events-contact-7.png. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/events/report.json"
+      ],
+      "below_10": [
+        "Five flotsam offers repeated in this run. In-kind toll previews give approximate money value rather than exact cargo units. I did not personally fight or test every state-dependent combat choice."
+      ]
+    },
+    "A4": {
+      "score": 7,
+      "evidence": [
+        "My run had a debt-payoff milestone on N5, wireless on N4, racks/engine/repair on N11, a slow recovery through N18, then larger chips/ink trades and vault reserves in the last third.",
+        "Finished all 30 nights, 28 voyages plus a port wait, at 176,865. The last one-night saffron route and final-night sale made the ending a deliberate decision. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/21-ending-390x844.png"
+      ],
+      "below_10": [
+        "The middle repeated the same buy/sheet/map/encounter/result sequence, and flotsam appeared five times. The arc was clear but the run did not make me want to restart immediately."
+      ]
+    },
+    "A5": {
+      "score": 8,
+      "evidence": [
+        "Personally followed all five tour steps: ledger, first trade, canals, harbor services and settlement. Debt rate, day cost, dated quotes and sale profit were explained at the decision points.",
+        "N2's no-dealer sheet still exposed observed port quotes; N11's losing saffron sale showed -798 profit. N30 settlement explained cargo liquidation and debt subtraction.",
+        "Ending explicitly showed 50,466 + 126,399 + 0 - 0 = 176,865, rank Canal Runner, and 73,135 to the next rank. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/03-tour.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/15-loss-warning.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/21-ending-390x844.png"
+      ],
+      "below_10": [
+        "Five instructional overlays are more explanation than learning by doing. Multi-night travel stops at a waypoint and required me to choose the next leg; the total-route button wording could foreground this better."
+      ]
+    },
+    "B1": {
+      "score": 9,
+      "evidence": [
+        "Personally inspected title, tour, trade, services, events and ending: consistent indigo water, amber lanterns, teal gains, pink danger, serif headings and aligned numeric typography.",
+        "Seven custom district silhouettes include lighthouse, cathedral, crane docks and sluice machinery; eight colored goods glyphs match sheet headers. Service portraits and gull, crate, eel and cutter vignettes continue the same visual language.",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/01-title.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/06-map.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/09-services.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/13-gull-offer.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/21-ending-390x844.png"
+      ],
+      "below_10": [
+        "Harbor views become repeated text-heavy card stacks; much illustration is compact emblem-like scenery rather than a richer lived-in environment."
+      ]
+    },
+    "B2": {
+      "score": 9,
+      "evidence": [
+        "On the N1 phone market I could immediately identify rain at -15% and its Sluices +125% quote; all rows combine a custom icon, price, city-relative context and sparkline. Owned cargo adds quantity, average cost and local gain.",
+        "Trade sheets exposed exact proceeds/profit, purse and hold after purchase, dealer depth, reserve policy and price-impact warnings. The negative N11 profit and N23 legal 'Sell 3' total were unmistakable.",
+        "Inspected desktop 1280x800 market with direct Buy/Sell controls, persistent stats, simultaneous map and log; inspected scrolling phone markets at all four requested sizes. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/04-market.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/05-trade.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/chromium-desktop-market.png"
+      ],
+      "below_10": [
+        "Phone port comparisons and larger history require opening a sheet and disclosure. The oversized quantity field can disagree with the legal quantity displayed by the confirmation button."
+      ]
+    },
+    "B3": {
+      "score": 8,
+      "evidence": [
+        "Normal-settings personal play showed purse changes, gain/loss flyers, coin particles, highlighted owned rows, docked notices and distinct staged gull/cutter/crate/eel/result panels. The escape screenshot also shows the skiff on its route. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/16-escape.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/18-late-market.png",
+        "Audio stand-in resumed from touchend; at N12 it recorded 381 sound starts while running and zero while suspended. Mute suspended the context and held the count at 432 through opening a trade; native M unmuted, resumed in keydown and increased it to 436. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/manual-transcript.jsonl",
+        "Post-play source inspection found distinct layered oscillator/noise definitions for buy, sell, travel, arrival, alarm, combat, escape, win, loss, upgrade and bank; filtered ambient noise/drone/bells and a real mute path. Chromium regression used a real running AudioContext. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/source-audit.txt; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/report.json"
+      ],
+      "below_10": [
+        "I did not hear the audio, so timbre, loudness balance, musical quality and physical iOS audio behavior remain unverified. Repeated modal result confirmations interrupt quick repeat trading."
+      ]
+    },
+    "B4": {
+      "score": 9,
+      "evidence": [
+        "Personally tapped the illustrated spatial map: visible canals, current-location lantern/skiff, selected-port ring, dashed route, seven distinct districts, cargo-related price badges, event and fleet markers.",
+        "N1 Sluices card displayed one night, risk 3/5 and the dated 248 rain quote. N9 Copperhook card displayed two nights via Lanternquay and a cargo quote; I used both waypoint and direct travel.",
+        "Inspected all requested map sizes; regression verifies all seven targets at least 44px, stable map height and an unobscured sail button. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/06-map.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/webkit-360x640-selected-map.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/report.json"
+      ],
+      "below_10": [
+        "District positions reorder between desktop and portrait, requiring spatial reorientation. The two-night preview could say more directly that one activation sails only the next leg; detailed port intelligence is another action on phone."
+      ]
+    },
+    "B5": {
+      "score": 8,
+      "evidence": [
+        "Personally completed 390x844 WebKit with native touch taps and typed quantities; inspected 390x664, 360x640 and 430x932 market/map regression screenshots and my ending at those sizes. No horizontal overflow or unreachable core action at 390px was found.",
+        "At N12 the phone audit reported no sub-44px targets, sub-15px text, under-16px inputs, unscrolled horizontal overflow or approximate contrast failures. Its tight-gap flags were at the market/nav scroller boundary, not proof of an unreachable target. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/manual-transcript.jsonl",
+        "The separate keyboard policy completed 30 nights using native Tab/Shift+Tab/Enter/Space and typing, with zero pointer events, 3,962 Tab presses, no focus outside open modals, and ledger reload. This is automated keyboard evidence, not my touch play. Reduced motion was exercised by verify and keyboard runners; source honors the media query. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/keyboard/report.json"
+      ],
+      "below_10": [
+        "Short phone screens require more scrolling and show less comparison context. Accessibility testing did not include a screen reader, magnification, physical keyboard on iPhone, or a complete measured contrast inventory."
+      ]
+    },
+    "C1": {
+      "score": 9,
+      "evidence": [
+        "Verified 30-night clock, seven-port visual map, eight changing goods with shocks/trends, limited and upgraded hold, effectful compounding debt and repayment, vault interest, choice events, multiple upgrade kinds, ending/rank/persistent ledger, and in-game onboarding.",
+        "Presentation evidence includes coordinated inline art, trade/route/event feedback, synthesized Web Audio with mute, native mouse regression, native touch full personal run, native keyboard policy full run, and phone/desktop layouts.",
+        "Eight regression groups and 16 event fixture cases passed. Keyboard run additionally encountered weather, strongbox, Pell, courier, flotsam, gull, leak, Tidewarden and gang events. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/report.json; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/events/report.json; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/keyboard/report.json"
+      ],
+      "below_10": [
+        "Audible quality and physical iOS behavior are not established, and I did not personally exercise every purchase or event branch."
+      ]
+    },
+    "C2": {
+      "score": 10,
+      "evidence": [
+        "Before and after review: exact 253,094-byte game SHA a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03, matching rubric and all 46 listed helper hashes (48 file checks total). C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/hashes-before.json; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/hashes-after.json",
+        "Source regression verified inline JavaScript syntax, under-1MB size, no external resource tags or network APIs. Runtime file:// full play and regressions reported zero HTTP(S) requests.",
+        "Restricted allow-scripts iframe started successfully while localStorage access was demonstrably blocked. Post-play source inspection found every localStorage access inside the three guarded store methods, with memory fallback. No framework or runtime dependency is loaded. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/report.json; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/source-audit.txt"
+      ],
+      "below_10": []
+    },
+    "C3": {
+      "score": 9,
+      "evidence": [
+        "Personal normal-settings WebKit game completed all 30 nights and settlement without page/console errors, with ledger surviving reload. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/manual-diagnostics.json; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/21-ending-390x844.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/26-ledger-reload.png",
+        "verify passed two function-driven full games (seeds 100002/100003), four phone UI groups, desktop, corrupt storage and restricted iframe. Event helper passed all 16 fixtures. Native-keyboard policy also completed cleanly. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/report.json; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/events/report.json; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/keyboard/report.json"
+      ],
+      "below_10": [
+        "This is strong sampled coverage, not exhaustive combat, interrupted-navigation or every rare event combination; the restricted iframe was start-tested rather than played for 30 nights."
+      ]
+    },
+    "C4": {
+      "score": 8,
+      "evidence": [
+        "Personal oversized sale input retained 999999999999 visually but capped execution at the three held units and 57,252 proceeds. Negative bank typing was sanitized to a nonnegative 5 quote; I replaced it before depositing 1,000. Cash/debt/vault behavior and final score arithmetic were coherent.",
+        "Event fixtures verified pending offers do not consume resources/RNG, committed outcomes survive reload and selected outcomes conserve the specified resources. Corrupt save/scores/settings recovery passed.",
+        "Both function-driven endings were finite, nonnegative cash and within capacity; personal high score survived reload exactly. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/17-edge-sale.png; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/events/report.json; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/report.json; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/26-ledger-reload.png"
+      ],
+      "below_10": [
+        "No independent broad round-trip/split-order exploit sweep was performed. Cargo-at-half-value settlement and late-debt interest were not personally exercised; the personal ending had no remaining cargo or debt."
+      ]
+    },
+    "C5": {
+      "score": 8,
+      "evidence": [
+        "Post-play source audit found separate goods/district tables, a guarded storage abstraction, named audio/FX/economy/travel sections and explicit trip stages rather than one anonymous handler. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/source-audit.txt; C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/final-check.txt",
+        "Normal-speed Chromium function-driven voyage: 2,622ms, 157 frames, median 16.7ms, p95 16.8ms. Across 40 deliberate restart fixtures, listeners stayed at 32, nodes changed -7, post-GC heap +83,908 bytes, no errors. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/profile/report.json"
+      ],
+      "below_10": [
+        "A large inline file still uses shared mutable globals and dense template strings. Lifecycle sampling covers restart/listener behavior, not a proof of no timer leaks or long-session performance on physical phones."
+      ]
+    }
+  },
+  "strengths": [
+    "An authored lantern-and-canals visual identity carries consistently from title through ports, goods, characters, encounters and settlement.",
+    "Trading state is unusually readable: persistent ledger, per-good sparklines, dated remote quotes, owned costs, exact sheet profits and dealer depth.",
+    "Illustrated spatial map supplies meaningful route, risk, cargo and fleet information and remains usable on short phone viewports.",
+    "Strong completion and regression evidence: personal touch game, native-keyboard policy game, two function-driven games, replay/resource fixtures and storage/sandbox checks."
+  ],
+  "weaknesses": [
+    "The middle third felt repetitive; five flotsam offers and repeated modal confirmations weakened pacing.",
+    "Phone comparison depth is behind disclosures; the shorter heights trade simultaneous context for scrolling.",
+    "Oversized quantity text remains inconsistent with the safely capped legal transaction.",
+    "Two-night route wording and reordered phone/desktop geography could make travel behavior easier to anticipate."
+  ],
+  "bugs": [
+    {
+      "severity": "low",
+      "what": "Quantity input can display a huge raw number while totals and the transaction button silently use the legal inventory maximum.",
+      "repro": "At Lanternquay N23 holding 3 Moon Ink, open its sell sheet, tap quantity, native Ctrl+A, type 999999999999. Input retains that text, while button says Sell 3 for 57,252. Confirm safely sells 3, so this is presentation clarity rather than an economy exploit. Evidence: C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/17-edge-sale.png and matching command in manual-transcript.jsonl."
+    }
+  ],
+  "evidence": {
+    "base_directory": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/",
+    "phone": {
+      "personal_method": "Independent decisions from rendered current UI only, WebKit iPhone 13 profile at 390x844, real touchscreen taps and native typing. Driver imported frozen probe/audio instrumentation and Playwright; it did not seed RNG, inspect S/game globals, inject resources, call game actions, or apply FAST/reduced motion. Public DOM reads only. Full run N1-30, 28 voyages plus one port wait, ending 176,865, then reload ledger.",
+      "driver": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/manual.cjs",
+      "transcript": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/manual-transcript.jsonl",
+      "ending": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/21-ending-390x844.png",
+      "ledger_reload": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/26-ledger-reload.png",
+      "diagnostics": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/manual-diagnostics.json",
+      "other_sizes": "Personally inspected helper market and selected-map screenshots at 390x664, 360x640 and 430x932; also resized the completed personal ending to all three and inspected 22/23/24-ending screenshots. Short ending screens require scrolling; I did not test the off-fold restart buttons at those shorter sizes.",
+      "inspected": "All manual screenshots 01-26 were opened and inspected. All 32 event snapshots were inspected in eight data-URL contact sheets. Regression and keyboard screenshots were inspected as contact sheets, with desktop market/map additionally opened at original size. Some immediate captures caught transitions; see execution_issues."
+    },
+    "desktop": {
+      "market": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/chromium-desktop-market.png",
+      "map": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/chromium-desktop-selected-map.png",
+      "keyboard_policy": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/keyboard/report.json",
+      "note": "1280x800 Chromium mouse UI regression passed. Native-keyboard helper is a conservative current-information policy, FAST=true/reduced-motion, not personal play; 30 nights, 155,466 score, zero pointer events and no page/network errors. My immediate WebKit resize screenshot 25-ending-desktop1280.png caught the overlay transition and is not used to judge desktop ending completeness; the stable regression ending is separate."
+    },
+    "audio": {
+      "note": "No sound was heard. Windows WebKit stand-in verifies strict touch/key gesture policy only. Personally tested mute and native M unmute by context state and sound-start counters; real Chromium context was running in regression. Source confirms layered synthesized effects/ambience. No physical iOS silent-switch or audible mix assessment.",
+      "paths": [
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/manual-transcript.jsonl",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/source-audit.txt",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/report.json"
+      ]
+    },
+    "automated": [
+      "verify.cjs: all eight groups passed, four WebKit sizes + Chromium desktop + source + two function-driven games/persistent ledger + corrupt storage/restricted sandbox. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/regression/report.json",
+      "event-check.cjs: 16/16 explicit resource/replay fixtures across WebKit and Chromium. These deliberately set states. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/events/report.json",
+      "keyboard-play.cjs: native-input policy-driven full game; accelerated/reduced motion, not a hand-played game. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/keyboard/report.json",
+      "profile.cjs: one normal-speed Chromium voyage through game functions and 40 restart fixtures, not ordinary play. C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/profile/report.json"
+    ],
+    "integrity": [
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/hashes-before.json",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/hashes-after.json"
+    ],
+    "cap_review": [
+      "No score-screen, start/load or soft-lock caps: personal full run and additional completions succeeded.",
+      "No trivial unbounded-money exploit was found; this is not exhaustive proof. Debt, vault, upgrades and risky encounters demonstrably changed outcomes.",
+      "No 390px core-action cap: trade, travel, services, encounters and settlement all reached with touch. The final settle control was reached by normal scroller movement.",
+      "No audio/mute cap: real Chromium context plus synthesized source and successful gesture/mute behavior; audible quality remains a limitation.",
+      "No map/trend cap: interactive spatial geography and per-good sparklines personally inspected.",
+      "No network cap: source checks and recorded runtime requests were clean."
+    ],
+    "calculation": "Fixed weights A1-A5 10/9/6/6/5; B1-B5 7/9/8/5/7; C1-C5 8/5/7/5/3. sum(score*weight/10): A 28.2 + B 30.9 + C 24.9 = 84.0/100.",
+    "cleanup": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-2/cleanup.json"
+  },
+  "execution_issues": [
+    "PowerShell exec launches began returning CreateProcess Access is denied (os error 5). Switched shell to cmd.exe without changing provider, model, dependencies or game.",
+    "Initial multiline cmd PATH setup only executed its first line; corrected to a single command chain. Several guessed selectors (pearls/ex) and a premature Deposit tap behind upgrade confirmation timed out; corrected using visible labels/confirmation. These were private driver failures, not game defects.",
+    "One mistaken profile.cjs --help invocation omitted the required --game/--out; the helper does not support help and failed trying to read its nonexistent default packet/game/index.html. It created an empty packet/tools/profile-evidence directory. The failed process was terminated; the correct explicit-path run then passed. Removed only that empty directory after verifying its creation timestamp matched this invocation; cleanup.json records this lapse and correction. No packet file was changed, and all before/after hashes match.",
+    "A node -e summary and a findstr query failed from Windows command quoting; used private script files instead. No game behavior was affected.",
+    "The first contact-sheet attempt used file URLs from about:blank, so its images were blocked. Rebuilt the sheets with embedded data URLs and inspected the corrected results.",
+    "Some screenshots were taken too soon after normal WebKit transitions/resizes: 02-intro.png still shows the title, 12-travel.png shows the origin, and 25-ending-desktop1280.png has a transiently absent score panel. These are not treated as product bugs or stable-layout evidence."
+  ],
+  "model_issues": [],
+  "coverage_limits": [
+    "WebKit emulates an iPhone on Windows; no physical iOS, virtual keyboard, toolbar collapse, safe-area, rubber-banding, zoom, silent switch or screen-reader verification.",
+    "No audible listening test. Real Chromium AudioContext/source and WebKit gesture stand-in do not establish sound quality.",
+    "Personal scored play did not fight, purchase weapons or charters, borrow more, buy whispers, or encounter weather/leak/strongbox/Pell. Several of those appear in the separate keyboard policy or deliberate fixtures; this is distinguished above.",
+    "No exhaustive economy policy/seed sweep, split-order/round-trip exploit search or combat stress campaign. The NOTES simulation claims were not independently rerun and are not treated as my verification.",
+    "Personal game used default normal timing/motion. WebKit headless animation throttling affects wall-clock feel; the separate Chromium profile is the ordinary-frame-rate sample. verify and keyboard runners explicitly used FAST/reduced motion.",
+    "Short-size market/map functionality comes from regression touch checks and screenshot inspection, supplemented by my own ending resizes; no second entire personal game was played at each size.",
+    "Small-size ending screenshots put ledger/restart controls below the fold; I did not personally scroll those ending variants before reloading. The 390x844 ending showed both controls."
+  ],
+  "verdict": "84.0/100. A visually cohesive, information-rich and demonstrably completable phone trading game. The spatial map and exact trade feedback are the strongest work. Repetitive middle pacing and a small quantity-field clarity defect keep it below exceptional; audio quality and several strategy/combat branches remain unverified. No rubric cap applies."
+}

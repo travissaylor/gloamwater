@@ -1,0 +1,253 @@
+// Judge-1: assembles judge-1.json from the evidence gathered in this directory.
+const fs = require('fs');
+const R = 'C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6';
+const W = { A1: 10, A2: 9, A3: 6, A4: 6, A5: 5, B1: 7, B2: 9, B3: 8, B4: 5, B5: 7, C1: 8, C2: 5, C3: 7, C4: 5, C5: 3 };
+
+const criteria = {
+  A1: {
+    score: 8,
+    evidence: [
+      "Personal 390x844 WebKit touch game (judge-1/play/steps.log): nearly every night posed a real choice among goods, routes, cash reserve and debt. Examples: N3 Rust Pearls (−29%) vs saving for Copperhook racks; N4 sell pearls at Fogmouth for +¤1,014 vs carry them to Orchid, then 1 Dreamsilk + 12 rain; N5 repay ¤7.6k debt vs buy one Moon Ink at −36%; N8 Copperhook saffron glut (−54%) vs Fogmouth +156%, which had to land before the night-10 debt deadline; N25 vault the cash vs stay liquid; N28 Dreamsilk (+7%) vs Moon Ink (−19%, Lanternquay +48%).",
+      "Location identities shown in Port details ('Usually supplies: Synth Saffron / Usually imports: Ghost Chips, Rust Pearls, Clockwork Eels', play/68-port-details.png). Two-night surges and gluts are flagged in rows ('Glut', 'Surge · +273% here'). A public fleet calendar rotates demand (play/61-calendar.png).",
+      "Dealer depth makes order size a decision ('past 10, each one costs more. The last goes at ¤2,158'). The 15% reserve default vs Max showed its stakes: I spent the reserve on N3 and could not afford the ¤930 bribe on N3→4.",
+      "Several viable strategies (sim, judge-1/sim/judge1-seed7.txt, 60 seeds): informed median ¤623k, borrow-max ¤672k, borrow-smart ¤641k, vault ¤620k, charter-rush ¤576k. Greedy gets ¤48.5k, so the best move depends on state rather than one loop."
+    ],
+    below_10: [
+      "'No dealers tonight' at the destination killed six of my planned sales: Moon Ink at Copperhook N6, Dreamsilk at Lanternquay N12 and Copperhook N13, saffron at Fogmouth N18, pearls at Lanternquay N19 and the Exchange N20. Without the wireless, route planning is often guesswork on stale quotes (18–24 nights old).",
+      "The best-run banner frequently names the obvious move, which flattens early choices.",
+      "My hand-played run (¤54.7k) and the bots (¤155k–¤623k median) show the strategic space is deep, but the lever that unlocks it (wireless plus fresh quotes) is not signposted as the key decision."
+    ]
+  },
+  A2: {
+    score: 8,
+    evidence: [
+      "Debt pressure was real in my run: ¤6,000 at 6% compounding became ¤10,139 by N10. I cleared it exactly on N10 at Lanternquay ('Debt cleared. Marrow Quill looks almost disappointed', play/43-repaid.png). The late rate of 10% (HUD 'DEBT 10%' from N11) plus collectors punished my re-borrowing: interest accrued ¤9,285.",
+      "Vault interest checked by hand: ¤1,000 deposited N20 read ¤1,045 on N23 (1.015^3). The vault/liquidity trade-off mattered: on N26 at Orchid my cash was locked in the vault and I could not buy Moon Ink at −13%.",
+      "Exploit probes in my sim sample: roundtrip 17,645 trade-and-undo tests, 0 profitable; corner 54 final-night probes, best 0. Function-driven verify games: ¤81,678 and ¤619,375 with integrity checks passing (judge-1/verify/report.json).",
+      "Scores spread with skill: greedy p50 ¤48.5k vs informed ¤623k, my careful but under-informed hand run ¤54.7k, keyboard policy ¤155k, touch policy ¤379k. fight-farm sinks 38.3% and whisper-spam's median is ¤284k, so neither loop dominates."
+    ],
+    below_10: [
+      "The credit limit is circular. creditLimit = netWorth + debt (index.html:828), so borrowed cash counts as collateral. With net worth ¤3,385 on N10 I borrowed 'All ¤3,385' seven times, debt rising ¤3,000 → ¤30,000 cap (play/47-borrow-loop.png). This contradicts NOTES ('lends only up to what you are worth'). Interest and collectors keep it from being free money: borrow-max beats informed on 45% of seeds with a median diff of −¤6,254.",
+      "Random losses are a large tax: 'Lost to thieves, tolls, leaks' was ¤26.0k of my ¤54.7k, ¤45.2k for the keyboard run and ¤63.1k for the touch run. The informed bot averages ¤17.3k per encounter × 5.35 encounters.",
+      "Wide seed variance for the same competent policy: verify's two informed games ended at ¤81.7k and ¤619.4k."
+    ]
+  },
+  A3: {
+    score: 7,
+    evidence: [
+      "I faced and resolved: Tidewardens ×3 (run 31% and escaped; bribe ¤772 to protect a ¤3,910 parcel; heave-to with an empty hold, 'They find nothing worth taking'), Gull Gang ×3 (toll; toll; three failed 39% runs costing −11/−18/−12% hull, then toll), gull purse thief (reached 70% and kept ¤1,196), two leaks, a squall (push through −13% hull vs lose a night before the debt deadline), two courier jobs (¤2,890 and ¤3,910), Old Fenna's racks offer, Pell and Ysolde rumours with stated confidence, strongboxes ×4 and market bulletins.",
+      "State changes the calculation, as shown on screen: run odds fall with cargo ('18% each try … a heavy hold slows you' vs 39% light). Bribe and toll scale with purse and cargo. With the flare pistol bought in my exploration game, fight odds went from boathook 22% to 42% per volley; I won and got ¤653 loot plus three quieter nights (judge-1/explore/04-fight-result.png).",
+      "event-check fixtures 16/16 PASS in WebKit and Chromium: pay, pay-cap, run success/failure reload, sinking, leak patch/jettison reload, unaffordable patch (judge-1/event-check/report.json)."
+    ],
+    below_10: [
+      "Misleading toll quote. On N13 the Gull Gang option said 'Your purse is light, so they take about ¤2,352 of cargo too'. payInKind (index.html:2397–2402) takes whole units cheapest-first until the shortfall is covered, so they took 1 Dreamsilk (base ¤9,800). Net worth fell ¤5,722 → −¤1,793 (play/56-gang.png, play/57-toll.png). The informed choice was broken.",
+      "Leak events are harsh and unpreventable. The patch costs 60% of the stack's usual value (cost = max(200, 0.6·n·base)). On N6, with ¤436 aboard, my only option was to jettison my one Moon Ink (¤12,145 paid, 'usual value ¤19,000'), which erased every gain from N1–N5 (play/26-n6.png). It happened again on N19 (saffron).",
+      "Marrow's collectors stopped me on the voyage right after a won fight that promised 'Fewer crews will try you for the next 3 nights' (exploration game, explore/05-collectors.png). Collectors may be exempt by design, but the copy suggests otherwise."
+    ]
+  },
+  A4: {
+    score: 7,
+    evidence: [
+      "My run had a shape: a scrappy start (¤2.5k vs ¤6k debt), a tense debt deadline on N10 with a milestone toast, mid-game rebuilds, and a calendar-driven endgame (Ysolde N26, vault, Fogmouth Moon Ink N28 → Lanternquay N29 for +¤16,940 → final rain sale N30 +¤3,630). The ending says '¤195,331 short of Lantern Broker', which invites a replay.",
+      "Rank ladder advances visibly in the HUD ('Canal Runner at ¤40.0k' → 'Lantern Broker at ¤250k').",
+      "Sim median net worth for informed: N10 ¤36.6k → N18 ¤221k → N30 ¤627k (n30/n18 = 2.84×), so late-game acceleration is real. The final-night screen gives clear instructions: 'Final night. Sell, repay Marrow, then settle up.' A confirm step follows."
+    ],
+    below_10: [
+      "Two random hits (N6 leak, N13 in-kind toll) reset me to negative net worth. My mid-game was a repeated rebuild from ~¤0, which felt arbitrary rather than earned.",
+      "Mid-game shuttling around the Lanternquay–Fogmouth–Copperhook triangle with frequent 'no dealers' surprises drags. Upgrades rarely landed as milestones in my run: racks were unaffordable when offered, and the ¤6,000 wireless came only on N20.",
+      "Every voyage plays a night card plus travel animation. It can be skipped by tapping, but repeat play has some friction."
+    ]
+  },
+  A5: {
+    score: 8,
+    evidence: [
+      "First three turns teach the loop: a 5-step tour (ledger, market, canals, harbor services, thirty nights; play/02-tour*.png), then a Night-1 harbor circular with all ports quoted and a best-run card ('Bottled Rain → Sluices · Seen +71% · tonight · 1n · may change'). Following it gave +¤1,044 on N2.",
+      "When deciding I could see: % vs usual (green cheap/amber dear), a 14-night chart with the usual-range bar, per-port quotes with age, avg cost and '+50% here' on held goods, profit before selling ('Profit +¤1,044'), purse-after and hold-after, dealer depth, 'Tomorrow, unpaid ¤10,747' on the loan and 'Earns tomorrow ¤106' on the vault. HUD figures are tappable for explanations, and the Log keeps tips and bulletins.",
+      "Score breakdown explains the result: cash, vault, cargo at half price, debt, then voyages, best single profit, peak worth, encounters won/fled, interest accrued, and 'Lost to thieves, tolls, leaks ¤26.0k' (play/97-end-b.png). The breakdown sums exactly (¤8,994 + ¤45,675 = ¤54,669)."
+    ],
+    below_10: [
+      "The buy warning on N9 Fogmouth eels said 'Above the best observed sale price … versus ¤1,641 seen elsewhere. Buy fewer.' The same sheet listed ¤2,476–¤3,263 quotes. FRESH_NIGHTS=2 (index.html:1338) silently ignores older quotes (play/38-n9-eel-warning.png).",
+      "The borrow sheet after the debt deadline shows only 'Interest tomorrow' and gives no warning that any post-night-10 debt brings collectors and the 10% late rate (play/45-borrow.png). The 'lends up to what you are worth' rule is not what the code does.",
+      "The toll copy misstates in-kind losses (see A3).",
+      "Transient top notices ('Marrow wants his money by night 10 · Read', 'Market surge bulletin · Read') disappeared before I could tap Read. They are kept in the Log; slow WebKit may exaggerate this."
+    ]
+  },
+  B1: {
+    score: 8,
+    evidence: [
+      "One identity across title, play and end screens: a drowned lantern-lit city with a skyline and water reflection on the title (play/00-title.png), a serif display face, a monospace numeral HUD, and a navy/amber/teal palette. Custom inline art for all seven districts (lighthouse, crane, chapel, exchange, waterwheel, hanging gardens; play/07-n1-map-sluices.png), goods icons in tiles, a Marrow Quill portrait (play/02-tour4.png), encounter vignettes (searchlight cutters, gang skiffs with gull pennants, top-hatted collector; play/19-n4.png, explore/05-collectors.png), and a lantern emblem on the result screen (play/97-end-b.png).",
+      "Copy fits the theme throughout ('Interest is just time, wearing a nicer coat.', 'They count your ¤1,452 twice.')."
+    ],
+    below_10: [
+      "Goods icons are simple line glyphs in rounded tiles and several event headers are minimal icon banners (bell, box, boat), so not every surface feels authored.",
+      "Phone market rows are a fairly standard dark-dashboard list."
+    ]
+  },
+  B2: {
+    score: 9,
+    evidence: [
+      "Personally used at 390x844: each row has an icon, name, sparkline, price, coloured % vs usual and a context line ('×18 · avg ¤115 · +50% here', 'Glut · Fogmouth +156% seen 1n ago'). HUD shows purse, vault, debt with rate, hold bar and hull bar (play/03-n1-market.png).",
+      "The best-run banner let me spot the trade within seconds on most nights (N8 saffron glut, N24 Dreamsilk +255%). Spikes and crashes are flagged as Surge/Glut; 'No dealers tonight' rows are dashed. Desktop adds inline Buy/Sell, Cheap/Pricey tags and the map beside the market (judge-1/verify/chromium-desktop-market.png)."
+    ],
+    below_10: [
+      "Remote quote age (e.g. '18n ago') is shown but easy to miss when the % looks attractive.",
+      "The HUD abbreviates to ¤12.0k/¤23.2k, losing precision at key moments such as comparing purse with debt on N15.",
+      "On phone the 8-row list scrolls behind the bottom nav (GAP 0–7px), so the last good needs scrolling."
+    ]
+  },
+  B3: {
+    score: 8,
+    evidence: [
+      "Seen personally: purse delta float (−2,070 on buy, play/06-n1-buy-feedback.png), green profit float '+¤1,044' on sale (play/12-n2-sell-feedback.png), a coin burst on the ¤17,539 sale (play/82-big-sale.png), toasts ('Loaded 18 Bottled Rain…'), a night card ('NIGHT 3 OF 30 · Copperhook Docks · 27 nights remain · TAP TO SKIP', play/14-voy-b.png), the boat moving along the canal (play/57-toll.png background), encounter vignettes with outcome cards, a debt-cleared toast, and a final-fortune count-up (play/96-end-a.png ¤53,172 → play/97-end-b.png ¤54,669).",
+      "Audio was checked by policy only: the WebKit stand-in recorded the context created and resumed inside the first touchend, 1,105 sound starts while running and 0 while suspended across my full game. With mute on, sound starts stayed at 9; after unmute they rose to 16."
+    ],
+    below_10: [
+      "I did not hear any sound: Windows WebKit has no Web Audio, so quality, layering and theme fit are unverified.",
+      "At normal settings the night card and travel animation took several seconds per voyage in throttled WebKit (I waited ~8s). Not measured at 60fps."
+    ]
+  },
+  B4: {
+    score: 9,
+    evidence: [
+      "Illustrated canal geography with lit canals; 'you are here' highlighting; the selected route is drawn dashed, including two-night routes via Lanternquay (play/22-n4-map-2night.png). Danger pips per port; 'F' fleet-call and '!' rumour markers.",
+      "Green badges show my held cargo's last-seen gain at each port (+71% Sluices, +43% Saint Mire; play/07-n1-map-sluices.png). The selection card shows nights, risk and the cargo quote; Port details shows dated prices, supplies and imports. The desktop popover adds 'Sell here' hints and 'Your cargo / last seen / vs cost' (verify/chromium-desktop-selected-map.png). An animated skiff travels the canal."
+    ],
+    below_10: [
+      "At 360x640 the map shrinks and node hit areas touch (GAP 0px in ui), though each stays at least 44px (viewports/360x640-map.png).",
+      "The map hints only cargo you hold; it does not preview buy opportunities."
+    ]
+  },
+  B5: {
+    score: 9,
+    evidence: [
+      "Personally audited with the frozen harness at 390x664, 360x640 and 430x932, plus play at 390x844: no horizontal scroll, 0 targets under 44x44, 0 text under 15px, 0 contrast under 4.5:1 (approx.), 0 inputs under 16px (judge-1/viewports/*-audit.txt). Purpose-built desktop two-pane layout.",
+      "My native-key Chromium check (judge-1/desktop/desktop-check.json): Enter starts, Esc skips the tour, Tab walks the HUD with visible focus, ArrowDown and B open the trade sheet with focus on the confirm button, 3 opens Orchid with 'Sail here ⏎' focused, ? opens help, M mutes; shortcut hints are visible (B/S, ⏎, 1–7). keyboard-play completed 30 nights with 3,959 Tab presses and 0 pointer events. With reducedMotion the title <animate> count is 0 and the media query matched."
+    ],
+    below_10: [
+      "0–7px gaps between the last market row and the bottom nav at 390x664 and 360x640.",
+      "Full keyboard play relies heavily on Tab traversal.",
+      "No physical iPhone, safe-area, software-keyboard or screen-reader verification."
+    ]
+  },
+  C1: {
+    score: 9,
+    evidence: [
+      "All 10 gameplay requirements were present and working in my play: 30-night clock with one night per hop; 7 districts on an illustrated map; 8 goods with daily drift, surges and gluts; 30-hold upgradeable (racks at ¤2,500, Fenna's offer; keyboard run ended with capacity 45); compounding debt with repayment; vault at 1.5%; at least 12 distinct events including run/fight/bribe/toll encounters; upgrades (hold, engine, weapons with the flare pistol bought, wireless, charters, hull repair); score screen with breakdown, rank and ledger that survived reload (play/98-ledger-reload.png); a tour for onboarding.",
+      "Presentation: animation and feedback, sparklines and charts, Web Audio with mute (policy-verified), touch, keyboard and mouse, 390px and 1280px layouts. Several minimums are clearly exceeded: 7 ports, 8 goods, fleet calendar, rumours, charters."
+    ],
+    below_10: ["Audio is verified only through the stand-in's gesture policy and sound-start counts, not audibly."]
+  },
+  C2: {
+    score: 10,
+    evidence: [
+      "My grep: the only http string is the SVG namespace; the favicon is a data: URI; no fetch, XHR, dynamic import or external script/link; all three localStorage calls sit in try/catch (index.html:773–775). Single 253,094-byte file, hash matching BUILD.json. Vanilla JS with no framework.",
+      "Runtime: my desktop driver logged 1 request (the file itself) and 0 non-file requests. verify 'source constraints' PASS (externalResources false); 'Corrupt storage and restricted sandbox' PASS (sandboxStarted true, sandboxStorageBlocked true, network []); keyboard and touch runs network []. Opened directly from file:// throughout."
+    ],
+    below_10: []
+  },
+  C3: {
+    score: 9,
+    evidence: [
+      "My 30-night WebKit touch game finished with the harness errors log reading 'no errors' (no navigation occurred before the check). The reload check and a second exploration game to N11 were also error-free.",
+      "verify 8/8 PASS including two function-driven full games. keyboard-play full game (errors [], reached settlement) and touch-play full game (pass, ¤378,988, errors []). Edge inputs (9999, −5, abc, 0, 2.7, empty; repay 99999/−50/1e9/0) and a seven-borrow loop caused no stuck UI."
+    ],
+    below_10: [
+      "Abuse testing was moderate: no rapid multi-tap spam during voyage animation or mid-voyage reload by me (event-check covers reload during events).",
+      "Transient notices vanish quickly. This is cosmetic, but the player can miss the 'Read' affordance."
+    ]
+  },
+  C4: {
+    score: 8,
+    evidence: [
+      "Invariants held: quantity clamps to purse/hold (9999 → 'Buy 21'), negative and zero disable the button, repay clamps to the debt. Vault compounding was exact (¤1,000 → ¤1,045 over 3 nights). The score breakdown sums. The ledger survived reload. Corrupt storage recovered with a notice (verify). Roundtrip and corner exploit probes found no profit. verify integrity checks showed finite tallies."
+    ],
+    below_10: [
+      "Circular credit limit (netWorth + debt) lets debt reach the ¤30,000 cap regardless of stated worth (play/47-borrow-loop.png).",
+      "payInKind overshoot means the quoted toll value and the actual loss diverge by up to ~4× (A3).",
+      "Number parsing strips characters: '1e9' becomes 9 and '−50' becomes 50. Typed '9999' stays in the field while the button says 21."
+    ]
+  },
+  C5: {
+    score: 8,
+    evidence: [
+      "Constants and data tables sit near the top (NIGHTS, GOODS, DISTRICTS, FLEET_CALLS, EDGES, HOLD_TIERS, MOTORS, ARMS, RANKS, CONF, ENC, ARRIVAL_EVENTS). A single state object S holds two seeded RNG streams (rngM/rngE) saved for commitment, and the sim reports 0 RNG mismatches across policies. No setInterval in source. Chromium desktop and keyboard runs were smooth."
+    ],
+    below_10: [
+      "A 2,881-line single file with 18 lines over 400 characters and dense one-line functions (e.g. the toll handler at index.html:2384) is hard to maintain.",
+      "I did not profile memory or leaked listeners."
+    ]
+  }
+};
+
+const scores = {};
+let total = 0;
+for (const k of Object.keys(W)) { scores[k] = criteria[k].score; total += criteria[k].score * W[k] / 10; }
+
+const report = {
+  judge: 1,
+  lens: "game design",
+  model: "claude-opus-5-5",
+  build: "a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03",
+  scores,
+  weighted_total: Math.round(total * 10) / 10,
+  caps_applied: [],
+  caps_considered: "None apply. A full run reached the score screen. No unbounded-money exploit: borrowing is capped at ¤30,000, interest and collectors apply, and the money-loop probes were negative. Debt, bank, upgrades and risky encounters are all present and have effect. No core action is clipped at 390px. Audio exists with a working mute (policy-verified). The map is spatial and sparklines exist. No load error. No network requests.",
+  criteria,
+  strengths: [
+    "The economy rewards information and planning: port identities, a public fleet calendar, two-night shocks, rumours with stated confidence, dealer depth and stale-quote ages.",
+    "The debt deadline creates a real early crunch and a satisfying milestone. The vault is a real liquidity trade-off rather than free money.",
+    "Encounter options state their odds and prices, and those change with cargo weight, purse, weapon and hull. Outcomes are committed against reload.",
+    "An excellent phone-first trade sheet: profit before you sell, purse and hold after, a depth warning and a 14-night chart with the usual range.",
+    "Clean technical execution: four full games (one by hand, three automated), no console errors, no network requests, ledger persistence, corrupt-storage handling and native keyboard play."
+  ],
+  weaknesses: [
+    "Loss events can be large and disproportionate: an unaffordable leak patch forces jettisoning a whole high-value stack, and the in-kind toll takes far more than quoted. Two such hits reset my run to negative net worth.",
+    "Frequent 'No dealers tonight' at the destination, plus stale remote quotes, make mid-game planning feel random unless the ¤6k wireless is bought. The game does not make that pivotal upgrade obvious.",
+    "Some decision-critical copy is inaccurate: the toll quote, the credit rule, the freshness-filtered 'best observed sale price' warning, and the missing collector warning on borrowing after night 10.",
+    "Hand-played results (¤54.7k) sit far below competent-bot results (median ¤623k). That shows depth, but the path from novice to the higher ranks is opaque."
+  ],
+  bugs: [
+    { severity: "medium", what: "Gull Gang toll with a light purse says 'they take about ¤X of cargo', but payInKind removes whole units cheapest-first until the shortfall is covered. When the only cargo is one expensive unit, the loss is several times the quote.", repro: "Hold 1–2 Dreamsilk (base ¤9,800) with ~¤0 purse; sail a risk-3 canal until the Gull Gang appears. The 'Pay the toll · ¤2,352' option says 'take about ¤2,352 of cargo' and the result takes 1 Dreamsilk. Seen on my N13 Copperhook→Sluices voyage: net worth ¤5,722 → −¤1,793. Evidence: judge-1/play/56-gang.png, 57-toll.png; index.html:2397–2402." },
+    { severity: "low", what: "The credit limit counts borrowed cash as collateral (creditLimit = netWorth + debt; room = netWorth), so repeated 'Borrow All' raises debt to the MAX_DEBT ¤30,000 cap even with low net worth. This contradicts 'He lends only up to what you are worth'.", repro: "N10 at Lanternquay with net worth ¤3,385 and debt ¤0: Harbor → Borrow more → All, repeated 7×. Debt goes ¤3,000 → ¤30,000 and 'Credit available' stays ¤3,385 until the cap. Evidence: judge-1/play/47-borrow-loop.png, play/steps.log; index.html:828." },
+    { severity: "low", what: "The buy-sheet warning 'Above the best observed sale price … versus ¤1,641 seen elsewhere. Buy fewer.' ignores quotes older than FRESH_NIGHTS=2 without saying so, while the same sheet lists higher older quotes.", repro: "Night 9 at Fogmouth, Clockwork Eels ¤1,979; port quotes list Lanternquay ¤2,476 and Saint Mire ¤3,263 (older), yet the warning cites ¤1,641. Evidence: judge-1/play/38-n9-eel-warning.png; index.html:1338/1349." },
+    { severity: "low", what: "The borrow sheet after the debt deadline shows only 'Interest tomorrow' and does not warn that outstanding debt after night 10 triggers the 10% late rate and Marrow's collectors.", repro: "Repay fully on N10, then Borrow more: the sheet shows 'Debt after ¤2,000 · Interest tomorrow ¤120'. The next nights show DEBT 10% and collectors can appear (exploration game N11). Evidence: judge-1/play/45-borrow.png, explore/05-collectors.png." },
+    { severity: "low", what: "Leak events price the patch at 60% of the threatened stack's usual value, with no cheaper or partial option. With a light purse the only choice is a total loss of the stack, even when the copy says 'before the rest gets wet' for a 1-unit stack.", repro: "Carry 1 Moon Ink with a ¤436 purse. On my N5→N6 voyage: 'Patch the leak · ¤11,400 — Not enough cash aboard'; the only choice was 'Jettison 1 Moon Ink'. Evidence: judge-1/play/26-n6.png." },
+    { severity: "cosmetic", what: "Top-of-screen notices with a 'Read' button auto-dismissed before I could tap them in WebKit emulation; the content remains in the Log. The quantity field keeps showing typed out-of-range values (9999) while the button shows the clamped amount (21). '1e9' parses as 9.", repro: "N6 Copperhook 'Market surge bulletin · Read' and N8 'Marrow wants his money by night 10 · Read' were gone a few seconds after arrival. Type 9999 in a buy quantity on N1. Evidence: judge-1/play/steps.log." }
+  ],
+  evidence: {
+    hashes: {
+      before: "judge-1/hashcheck-before.txt: game a1273a76… 253,094 bytes OK, rubric OK, helpers 46/46 OK, helper_sha256 aggregate reproduced",
+      after: "judge-1/hashcheck-after.txt: unchanged, fail=0"
+    },
+    personal_phone_play: "Full 30-night game by hand: Playwright WebKit 390x844 via the frozen tools/phone harness (iPhone UA, touch, dpr 3), real taps and typed quantities, decisions from visible text and screenshots only, at the game's normal animation settings (no FAST and no reduced motion; WebKit rAF is throttled). Final: Canal Runner ¤54,669 (cash ¤8,994 + vault ¤45,675), 29 voyages, 6 encounters, interest ¤9,285, losses ¤26.0k. Ledger survived reload; harness errors 'no errors'. Step log: judge-1/play/steps.log. Screenshots: judge-1/play/00-title.png … 98-ledger-reload.png (inspected: 00, 01, 02-tour1/3/4, 03, 04, 05, 06, 07, 08, 09, 12, 14-voy-b, 19, 22, 25, 26, 27, 34, 43, 45, 54, 56, 57, 68, 82, 96, 97, 98).",
+    exploration_game: "A second hand-driven WebKit game (not scored play) from N1 to N11 at 390x844: bought the Fog Fence flare pistol (¤3,000), won a Tidewarden fight at 42%/volley, saw Marrow's collectors and paid them. Screenshots in judge-1/explore/.",
+    viewports: "judge-1/viewports/390x664-, 360x640-, 430x932-market.png and *-audit.txt; 360x640-sheet.png and 360x640-map.png inspected.",
+    desktop: "judge-1/desktop/desktop-check.cjs (private driver importing the frozen Playwright), Chromium 1280x800 with native keys; desktop-check.json and screenshots 01–09 (05-key-b.png and 07-key-3.png inspected). verify desktop screenshots inspected.",
+    audio: "WebKit stand-in only (no Web Audio on Windows WebKit): context created and resumed in touchend; 1,105 sound starts while running, 0 while suspended across the full game; mute stopped new sound starts (9 → 9 while muted, 16 after unmute). Not heard.",
+    regression: "judge-1/verify/report.json: 8/8 PASS (source constraints; WebKit touch 390x844/390x664/360x640/430x932; Chromium desktop 1280x800; two function-driven full games ¤81,678 and ¤619,375 plus persistent ledger; corrupt storage and restricted sandbox).",
+    fixtures: "judge-1/event-check/report.json: 16/16 PASS. These are explicit state fixtures, not ordinary play.",
+    policy_runs: "judge-1/keyboard/report.json: native-key Chromium full game (FAST plus reduced motion disclosed), ¤155,466, 3,959 Tab presses, 0 pointer events, errors [] and network []. judge-1/touch-play/report.json and run-1.json: WebKit touch policy run (FAST plus reduced motion disclosed), seed 57, ¤378,988 Lantern Broker, ledgerSurvivedReload true, errors [] and network [].",
+    sim: "judge-1/sim/judge1-seed7.json and .txt: 10 policies × 60 seeds via the function-driven simulator."
+  },
+  execution_issues: [
+    "My first hash script reported false mismatches because jq output carried CRLF. I rewrote it in Node (judge-1/hashcheck.cjs); all hashes matched before and after.",
+    "My own scripted error on N23: I opened Ghost Chips intending to buy, but the sheet defaulted to Sell because I held one, and my step tapped confirm without checking. It sold at −¤2,414. The amber 'Sell 1 for ¤3,560' was visible, so this is my mistake, not a product defect.",
+    "Several taptext steps failed harmlessly because a transient element had gone or animation was still running in throttled WebKit. The harness stopped those step batches and nothing was mis-tapped. In the exploration game one MAP tap landed on an encounter card mid-animation and selected nothing.",
+    "Headless Windows WebKit runs requestAnimationFrame slowly, so normal-speed timing was not measured at 60fps.",
+    "A bash heredoc for this report builder failed to parse; I wrote the builder with a file tool instead. No product impact."
+  ],
+  model_issues: ["None. Ran as claude-opus-5-5, as assigned in BUILD.json; no model substitution and no subagents."],
+  coverage_limits: [
+    "No physical iPhone: safe areas, the software keyboard, rubber-banding and the silent switch were not tested.",
+    "Sound was not heard; audio judged by gesture-policy stand-in and sound-start counts.",
+    "Not purchased personally: engine, wireless set and trading charter. Hold racks were unaffordable when offered in both games. Charters and wireless are covered only by sim aggregates; racks by the keyboard run's final capacity of 45.",
+    "Not personally seen: the eel-gamble/crate choice branches (seen only in helper screenshots), a collectors fight or run, sinking (covered by an event-check fixture), the Saint Mire armory and a Copperhook engine purchase.",
+    "Only one full hand-played game; balance conclusions rely partly on a 60-seed function-driven sim sample, which does not prove balance.",
+    "No screen-reader, landscape or high-zoom testing. Abuse testing did not include rapid tap spam during voyages."
+  ],
+  verdict: "Gloamwater is a polished, deep trading game. It runs cleanly, holds up on phone and keyboard, and has the strongest information design in the genre I have tested: port identities, a fleet calendar, dated quotes, depth, and rumour confidence. Debt pressure and the vault trade-off work, and exploit probes come up empty. What holds the design lens back is risk proportionality and honesty in a few places. In-kind tolls can take about four times their quote, an unaffordable leak can wipe a whole high-value stack, and the credit and freshness rules do not match their copy. Frequent no-dealer arrivals also make mid-game outcomes feel less earned than planned. Weighted total 83.4/100."
+};
+
+fs.writeFileSync(R + '/judge-1.json', JSON.stringify(report, null, 1));
+JSON.parse(fs.readFileSync(R + '/judge-1.json', 'utf8'));
+console.log('weighted_total', report.weighted_total, JSON.stringify(scores), 'valid json');

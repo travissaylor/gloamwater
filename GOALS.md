@@ -9,13 +9,15 @@ judges each round. Keep the frozen rubric, independent evidence, and blind judgi
 Work on the current `t3/raise-gloamwater-panel-score` branch; commit each round and do not push.
 The original brief and historical results follow for context.
 
-Current progress: round 3 scored **83.9**, round 4 **82.97**, round 5 **87.67**.
-Do not re-roll any round. Round 6 is the final allowed round and is frozen for judging:
-SHA-256 `a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03`.
-The candidate folds optional phone trade details, wraps map quotes, reserves space
-for notices and fixes title focus, sinking copy and fleet-demand feedback.
-All eight integrated regression groups and 16 event fixtures passed. Game, rubric
-and 46 helper sources are frozen in its packet. Stop after this panel regardless of score.
+**Stopped at the four-round limit. The 90-point target was not reached.**
+Round 3 scored **83.90**, round 4 **82.97**, round 5 **87.67** (best), and round 6 **83.53**.
+All rounds, individual scores, evidence and frozen packets are retained; no re-rolls.
+The current game is the last judged build, SHA-256
+`a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03`.
+No game changes followed its review. All eight general checks and 16 event fixtures
+passed, but the final panel found remaining balance and disclosure defects.
+See [the continuation summary](judging/continuation-summary.md) for results and remaining work.
+Do not start a fifth continuation panel without a new instruction from the owner.
 
 Gloamwater won the bake-off with a panel score of 87.0 out of 100. This file is the
 standing brief for taking it further. Re-read it whenever context is compacted.

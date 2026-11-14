@@ -1,0 +1,205 @@
+{
+  "judge": 3,
+  "lens": "technical quality",
+  "model": "gpt-6-astra",
+  "build": "a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03",
+  "scores": {
+    "A1": 8,
+    "A2": 7,
+    "A3": 9,
+    "A4": 7,
+    "A5": 8,
+    "B1": 9,
+    "B2": 8,
+    "B3": 7,
+    "B4": 9,
+    "B5": 8,
+    "C1": 9,
+    "C2": 10,
+    "C3": 10,
+    "C4": 9,
+    "C5": 8
+  },
+  "weighted_total": 83.2,
+  "caps_applied": [],
+  "criteria": {
+    "A1": {
+      "score": 8,
+      "evidence": "Personal nights 1–14: Rain route quotes changed on arrival; switched to kelp, pearls, fleet demand and a kelp glut. On night 12, four pearls bought at 334 sold at 523. manual-actions.jsonl and ending-transcript.txt.",
+      "below_10": [
+        "Only one personal strategy; depth scarcely constrained my small purse. Several viable strategic paths were not personally established."
+      ]
+    },
+    "A2": {
+      "score": 7,
+      "evidence": "Personal 500 repayment and 500 deposit worked; bank grew to 590 before withdrawal. Early losses and 6% then 10% interest outran small profitable trades. probes.json: 2,845 round-trip probes, zero profitable reversals.",
+      "below_10": [
+        "The early recovery margin felt narrow. My later all-cash repayment deliberately exhausted trading capital, so the losing result is not proof of imbalance. Ten bot seeds do not establish broad balance."
+      ]
+    },
+    "A3": {
+      "score": 9,
+      "evidence": "Personally saw Tidewardens, gang toll, squall, racks offer, strongbox, eel gamble, Pell rumour and leak. Surrender removed five Rain; toll removed 298; unaffordable leak patch forced one pearl's jettison. events/report.json passes all 16 replay/resource fixtures.",
+      "below_10": [
+        "Did not personally fight, flee, or face collectors. Outcome proportionality across those branches relies on supplementary tests."
+      ]
+    },
+    "A4": {
+      "score": 7,
+      "evidence": "Personal 30-night run included full-hold trade, repair, capacity purchase and final settlement; ending reports 11 voyages. verify/report.json's two profitable full games show growth; personal final days were waiting with no capital.",
+      "below_10": [
+        "The losing middle can become a long wait. My choice to spend remaining funds on upgrade and repayment aggravated this; recovery pacing is not well taught."
+      ]
+    },
+    "A5": {
+      "score": 8,
+      "evidence": "Completed five-step tour. Saw debt tomorrow, quote age, arrival-price caveat, trade profit and reserve warning. Ending breaks out cash, bank, cargo, debt and losses; final score -55,568 reconciles exactly.",
+      "below_10": [
+        "Tour is five screens before play; cheap-versus-usual and actual destination profit remain distinct concepts to learn. No strong warning against exhausting working capital on debt."
+      ]
+    },
+    "B1": {
+      "score": 9,
+      "evidence": "Personally inspected onboarding.png, map.png, upgrade.png, manual-ending.png and desktop selected-map screenshot. Canal landmarks, boatyard portrait, lantern currency and coloured rank emblem maintain a coherent drowned-city identity.",
+      "below_10": [
+        "Market and service surfaces remain largely dark cards; tiny illustrated portraits carry less distinction at phone scale."
+      ]
+    },
+    "B2": {
+      "score": 8,
+      "evidence": "Phone market has sparklines, cheap/dear values, owned average cost, quote age and destination hints. The sale sheet explicitly showed 1,480 proceeds and 452 profit on four pearls. Inspected 390x664 market screenshot.",
+      "below_10": [
+        "At short phone heights only part of eight goods fits; full comparisons require scrolling and sheets. Large HUD values abbreviate."
+      ]
+    },
+    "B3": {
+      "score": 7,
+      "evidence": "Normal-speed personal voyages, staged encounter cards, transaction deltas and end emblem observed. Tapped mute twice. verify/report.json records running real Chromium AudioContext and running WebKit policy stand-in. profile/report.json records normal timing.",
+      "below_10": [
+        "No sound was heard. Layering, timbre, loudness and sound/action distinction are unverified. Slow headless WebKit makes animation timing less representative."
+      ]
+    },
+    "B4": {
+      "score": 9,
+      "evidence": "Personally navigated Lanternquay, Saint Mire, Fogmouth, Copperhook and Orchid. map.png shows illustrated geography, current port, highlighted route, cargo comparison, risk and travel time. Inspected selected maps at 360x640, 430x932 and desktop.",
+      "below_10": [
+        "Short phone layout moves deeper information into Port details; desktop destination card covers a substantial portion of the map."
+      ]
+    },
+    "B5": {
+      "score": 8,
+      "evidence": "verify/report.json passes four requested WebKit sizes and desktop1280, checks >=44px map targets, Sail visibility, no horizontal overflow and focus trapping. keyboard/report.json completes via native keyboard with zero pointer events. Relevant screenshots personally inspected.",
+      "below_10": [
+        "No physical iOS, screen reader, exhaustive contrast audit, safe-area or real onscreen-keyboard test. Keyboard traversal sometimes requires many Tab presses."
+      ]
+    },
+    "C1": {
+      "score": 9,
+      "evidence": "Frozen source and tested UI have 30 nights, seven map districts, eight goods, capacity, debt, bank, multiple purchases, more than eight event types, persistent ending and tour. Personal touch completion plus eight verify groups and keyboard completion establish broad functionality.",
+      "below_10": [
+        "Every upgrade and event branch was not personally exercised. Audible sound quality remains unknown despite API/policy evidence."
+      ]
+    },
+    "C2": {
+      "score": 10,
+      "evidence": "48 game/rubric/helper entries match BUILD before and after; game is 253094 bytes. verify source scan finds valid vanilla script and no external resources/network APIs. All localStorage accesses are guarded at index.html lines 773–775. Runtime file://, restricted sandbox with blocked storage and zero network checks pass. manual-runtime.json has only two file navigations.",
+      "below_10": []
+    },
+    "C3": {
+      "score": 10,
+      "evidence": "Personal 30-night WebKit game and reload have no recorded errors. verify/report.json completes two Chromium function-driven games at night30 with clean errors/network. keyboard/report.json completes another native-keyboard run. All 16 deliberate event fixtures, corrupt storage, no-dealer input and lifecycle tests pass.",
+      "below_10": []
+    },
+    "C4": {
+      "score": 9,
+      "evidence": "Personal negative quantity produced zero quote; 999999999 clamped to legal 12-unit purchase. Deposit/withdraw/repay and sale arithmetic matched visible amounts. verify validates finite final state, capacity, score sums and corrupt storage. events checks resource conservation and replay. probes.json tests 2845 trade reversals without profit.",
+      "below_10": [
+        "Sampled exploit tests are not exhaustive; decimal/exponent input, concurrent tabs and every save-schema corruption were not independently probed."
+      ]
+    },
+    "C5": {
+      "score": 8,
+      "evidence": "Source separates GOODS/DISTRICTS/upgrade tables, central S, quote functions, validation and seeded market/event streams. profile/report.json: 2.621s normal-speed voyage, median16.7ms and p95 16.8ms; 40 restarts keep 32 listeners, heap +100564 bytes.",
+      "below_10": [
+        "Single-file requirement is met, but many dense one-line functions and shared mutable globals make maintenance harder. One performance sample and listener counts do not prove all timer paths leak-free."
+      ]
+    }
+  },
+  "strengths": [
+    "All eight frozen regression groups and 16 event fixtures passed.",
+    "Distinct spatial map and clear quote/profit information.",
+    "Clean personal completion, persistent ledger and guarded offline storage.",
+    "Sampled trade reversals could not generate money."
+  ],
+  "weaknesses": [
+    "Early setbacks plus compound debt leave a difficult recovery path; exhausted capital makes later turns thin.",
+    "Phone market requires scrolling and detail sheets; keyboard Tab paths can be long.",
+    "Dense single-file functions and shared mutable state reduce maintainability."
+  ],
+  "bugs": [],
+  "evidence": {
+    "root": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/",
+    "phone": {
+      "method": "Judge-directed native WebKit locator.tap and keyboard.type, 390x844, normal speed, no FAST or reduced-motion alteration. No direct game actions, fixtures or hidden-state reads in the personal driver. Later source inspection informed technical review only. Decisions used displayed quotes and controls.",
+      "run": "All 30 nights personally completed; 11 voyages, final Drowned Debtor -55568. Night15 withdrew savings and repaid all remaining cash, then waited in port through night30. This is not optimal-play evidence.",
+      "paths": [
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/manual.cjs",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/manual-actions.jsonl",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/ending-transcript.txt",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/manual-runtime.json",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/onboarding.png",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/map.png",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/upgrade.png",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/night30.png",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/manual-ending.png"
+      ],
+      "other_sizes": "All four requested phone sizes tested by frozen verify; personally inspected 390x664-market, 360x640-selected-map and 430x932-selected-map screenshots.",
+      "ledger": "Visible DOM text after reload contains Captain / Drowned Debtor / -55568. manual-ledger-reload.png was inspected but caught title rather than modal; use ending-transcript.txt. Automated ledger reload also passes."
+    },
+    "desktop": {
+      "notes": "Frozen verify desktop mouse checks and policy-driven native-keyboard full game. Inspected desktop selected map and function-driven ending screenshots.",
+      "paths": [
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/verify/chromium-desktop-selected-map.png",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/verify/full-run-ending.png",
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/keyboard/report.json"
+      ]
+    },
+    "audio": {
+      "notes": "Not heard. WebKit audio-context stand-in tests gesture policy only; Chromium regression records a running real AudioContext. Mute tapped in personal session; audible mute effectiveness not assessed.",
+      "paths": [
+        "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/verify/report.json"
+      ]
+    },
+    "automated": {
+      "regression": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/verify/report.json",
+      "event_fixtures": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/events/report.json",
+      "keyboard_policy": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/keyboard/report.json",
+      "performance_fixtures": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/profile/report.json",
+      "function_driven_exploit_probe": "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/probes.json",
+      "notes": "verify UI checks use FAST/reduced motion and some explicit fixtures; its two full games call game functions. Keyboard completion is policy-driven native input with FAST/reduced motion, not my play. Event-check explicitly installs states. Profile uses one normal-speed function voyage and 40 restart fixtures. Simulator's ten seeded games and probes use function actions and event reseeding. No touch-play policy runner used."
+    },
+    "hashes": [
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/hashes-before.json",
+      "C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-3/hashes-after.json"
+    ],
+    "cleanup": "All launched browser owners exited normally: personal driver, verify, event-check, keyboard-play, profile and sim. No shared helper modified. Preview open failed before creating a tab."
+  },
+  "execution_issues": [
+    "preview_open rejected file:// as unsupported protocol; used user-requested Playwright WebKit fallback.",
+    "PowerShell launches temporarily returned Access is denied; cmd.exe fallback ran required tools.",
+    "Two initial cmd invocations only set PATH because multiline command handling did not run node; rerun with explicit command chaining succeeded.",
+    "Personal selector timeouts: nonexistent tour Next, hidden desktop Sell, and exact settlement text excluding shortcut. Resolved by correct visible/modal selectors. One empty input parse error. These were driver failures, not product defects.",
+    "Two source-search quoting failures; private source-listing driver succeeded.",
+    "Reload screenshot captured title despite successful visible ledger text; persistence evidence uses transcript and independent regression."
+  ],
+  "model_issues": [],
+  "coverage_limits": [
+    "Windows WebKit emulation is not physical iOS; safe areas, silent switch, mobile keyboard and browser chrome remain unverified.",
+    "No audible sound judgment or screen-reader/complete contrast audit.",
+    "One personal run with conservative small trades and deliberately exhausted late capital; no statistical claim from that result.",
+    "Personally purchased hold and repair only; motor, weapon, wireless and charter effects rely on source and supplementary function-driven coverage.",
+    "Personal combat choices were surrender and pay; no personal fight/flee or collector resolution.",
+    "No exhaustive exploit, corruption, timer or concurrency audit."
+  ],
+  "verdict": "Technically robust and visually coherent. The frozen build completed every required regression group and personal play without a product error. Economic recovery and late losing-run pacing are weaker than the implementation quality. No rubric cap is triggered by the observed evidence."
+}

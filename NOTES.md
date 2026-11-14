@@ -17,8 +17,8 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
   wireless set, or a night early from Madame Ysolde or Pell the lamplighter.
 - **Fleet calls.** The market's wireless button opens the public calendar and bulletins. Every four nights a new port buys a named good:
   40% extra demand and twice the depth. Arrival prices still drift; missing the closing night loses the boost.
-- **Money.** Repay Marrow at Lanternquay: 6% a night, 10% after night 10, and his collectors hunt you while you still owe after
-  night 10 (or owe over ¤12,000). He lends only up to what you are worth. The Lockwater Vault pays 1.5% a night and can't be robbed.
+- **Money.** Repay Marrow at Lanternquay: 6% nightly, 10% after night 10. Collectors pursue overdue debt or debt over ¤12,000.
+  Repeated borrowing can reach the ¤30k cap; its collateral copy is inaccurate. The vault pays 1.5% nightly and can't be robbed.
 - **Upgrades.** Copperhook Docks: hold, engines, repairs. Saint Mire (or Fogmouth, dearer): weapons. Drowned Exchange: a wireless
   set. The Sluices: cheap patches. Any district: a **trading charter** that makes its dealers trade twice as deep with you.
 - **Survive.** Tidewardens, the Gull Gang and Marrow's collectors stop you mid-voyage: run, fight, bribe, pay, or be searched.
@@ -56,4 +56,4 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
 ## Known issues
 - No real iPhone was available. Double-tap zoom, rubber-banding, safe-area insets and the silent switch are handled in CSS
   and code but were only verified in emulation.
-- Large hold tiers can still outgrow dealer depth. The public calendar is fixed each run; market prices and encounters vary.
+- Remaining balance, toll/credit/quote disclosure and quantity-display issues: see `judging/continuation-summary.md`.

@@ -1,0 +1,27 @@
+> size 390 664
+viewport now 390x664
+> wait 1000
+waited 1000ms
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-1/viewports/390x664-market.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-6/judge-1/viewports/390x664-market.png
+> audit
+viewport 390x664 · document scrollWidth 390 · body scrollWidth 390 · 18 on-screen targets
+tap targets under 44x44 (0)
+tap targets under 8px from a neighbour (6):
+  #side-body > div.rows > div.row  GAP 7px to button "MARKET"
+  #mnav > button  GAP 7px to div.row "Clockwork Eels ¤2,4…"
+  #mnav > button  GAP 7px to div.row "Clockwork Eels ¤2,4…"
+  #mnav > button  GAP 7px to div.row "Clockwork Eels ¤2,4…"
+  #mnav > button  GAP 7px to div.row "Clockwork Eels ¤2,4…"
+  #mnav > button  GAP 7px to div.row "Clockwork Eels ¤2,4…"
+text under 15px (svg text is rendered size) (0)
+text contrast under 4.5:1 (approximate: gradients averaged) (0)
+inputs under 16px (iOS zooms on focus) (0)
+elements past the viewport edge (not clipped by a scroller) (0)
+truncated text (overflow with ellipsis/hidden) (0)
+touch-action on targets: {"auto":16,"manipulation":5}
+selectability on targets:
+  user-select:none -webkit-user-select:none callout:n/a: button.btn.icon.hud-mute button.stat button.stat.debt button.btn.icon.market-info button.best-run div.row div.row.out button
+root: html overscroll:n/a overflow:visible/visible touch-action:manipulation; body overscroll:n/a overflow:hidden/hidden touch-action:auto
+scrollable areas (1):
+  #side-body 447/715px overscroll:n/a overflow:auto/auto touch-action:auto

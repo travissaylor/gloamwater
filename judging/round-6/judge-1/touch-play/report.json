@@ -1,0 +1,533 @@
+{
+  "game": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-6\\packet\\index.html",
+  "sha256": "a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03",
+  "driverSha256": "76d66df1d1ea8dfa095f01c5230b29d0fb6caeadd4aeef75cb87d337fcc7300b",
+  "createdAt": "2026-11-14T19:32:04.528Z",
+  "config": {
+    "game": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-6\\packet\\index.html",
+    "out": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-6\\judge-1\\touch-play",
+    "seed": 57,
+    "runs": 1,
+    "size": "390x844",
+    "fast": true,
+    "headed": false
+  },
+  "method": "WebKit real touch gameplay; quantities and amounts use native keyboard typing. Reads only local quotes/inventory, remembered seen prices and public map/calendar. No direct game action calls or resource/state fixtures.",
+  "timing": "FAST=true and prefers-reduced-motion:reduce; animation-only acceleration, 440ms between taps",
+  "limitations": [
+    "Windows WebKit emulates iPhone profile; no physical iPhone/Safari chrome, safe areas or software keyboard.",
+    "WebKit lacks Web Audio here; existing harness stand-in records unlock policy and cannot assess audible quality.",
+    "The policy is one conservative traveller, not an exhaustive balance or strategy comparison.",
+    "This driver is supplementary verification; independent judges should explore and assess the game themselves."
+  ],
+  "runs": [
+    {
+      "index": 1,
+      "seed": 57,
+      "pass": true,
+      "loadedSha256": "a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03",
+      "day": 30,
+      "sunk": false,
+      "reachedSettlementScreen": true,
+      "distinctPorts": [
+        "lq",
+        "fm",
+        "sm",
+        "ot",
+        "de",
+        "sl",
+        "ch"
+      ],
+      "ending": "THIRTY NIGHTS, DONE\nLantern Broker\n\nYour word moves cargo on three canals.\n\nCash on board\n¤249,491\nLockwater Vault\n¤129,497\nCargo dumped at half price\n¤0\nOwed to Marrow Quill\npaid off\nFinal fortune\n¤378,988\nVoyages\n27\nBest single profit\n¤75.2k\nPeak worth\n¤379k\nEncounters\n5\nwon 0 · fled 0\nInterest accrued\n¤3,024\nLost to thieves, tolls, leaks\n¤63.1k\n\n¤21,012 short of Tide Baron.\n\nCAPTAINS' LEDGER · YOU PLACED #1\n#\tCAPTAIN\tRANK\tFORTUNE\n1\tTouch 1\n2026-11-14\nLantern Broker\t¤378,988\nSail again\nTitle screen",
+      "finalState": {
+        "cash": 249491,
+        "bank": 129497,
+        "debt": 0,
+        "hull": 100,
+        "used": 0,
+        "capacity": 30
+      },
+      "turns": [
+        {
+          "day": 1,
+          "loc": "lq",
+          "cash": 2500,
+          "bank": 0,
+          "debt": 6000,
+          "hull": 100,
+          "used": 0,
+          "capacity": 30
+        },
+        {
+          "day": 2,
+          "loc": "fm",
+          "cash": 376,
+          "bank": 0,
+          "debt": 6360,
+          "hull": 100,
+          "used": 6,
+          "capacity": 30
+        },
+        {
+          "day": 3,
+          "loc": "sm",
+          "cash": 502,
+          "bank": 0,
+          "debt": 6742,
+          "hull": 100,
+          "used": 24,
+          "capacity": 30
+        },
+        {
+          "day": 4,
+          "loc": "ot",
+          "cash": 1282,
+          "bank": 0,
+          "debt": 7147,
+          "hull": 100,
+          "used": 3,
+          "capacity": 30
+        },
+        {
+          "day": 5,
+          "loc": "sm",
+          "cash": 3262,
+          "bank": 0,
+          "debt": 7576,
+          "hull": 100,
+          "used": 30,
+          "capacity": 30
+        },
+        {
+          "day": 6,
+          "loc": "ot",
+          "cash": 1274,
+          "bank": 0,
+          "debt": 8031,
+          "hull": 100,
+          "used": 8,
+          "capacity": 30
+        },
+        {
+          "day": 7,
+          "loc": "de",
+          "cash": 1732,
+          "bank": 0,
+          "debt": 8513,
+          "hull": 100,
+          "used": 13,
+          "capacity": 30
+        },
+        {
+          "day": 8,
+          "loc": "lq",
+          "cash": 5525,
+          "bank": 0,
+          "debt": 9024,
+          "hull": 100,
+          "used": 14,
+          "capacity": 30
+        },
+        {
+          "day": 9,
+          "loc": "sm",
+          "cash": 0,
+          "bank": 0,
+          "debt": 0,
+          "hull": 100,
+          "used": 17,
+          "capacity": 30
+        },
+        {
+          "day": 10,
+          "loc": "ot",
+          "cash": 2058,
+          "bank": 0,
+          "debt": 0,
+          "hull": 100,
+          "used": 2,
+          "capacity": 30
+        },
+        {
+          "day": 11,
+          "loc": "sm",
+          "cash": 3458,
+          "bank": 0,
+          "debt": 0,
+          "hull": 100,
+          "used": 24,
+          "capacity": 30
+        },
+        {
+          "day": 12,
+          "loc": "ot",
+          "cash": 5662,
+          "bank": 0,
+          "debt": 0,
+          "hull": 100,
+          "used": 17,
+          "capacity": 30
+        },
+        {
+          "day": 13,
+          "loc": "de",
+          "cash": 7754,
+          "bank": 0,
+          "debt": 0,
+          "hull": 100,
+          "used": 15,
+          "capacity": 30
+        },
+        {
+          "day": 14,
+          "loc": "lq",
+          "cash": 8752,
+          "bank": 0,
+          "debt": 0,
+          "hull": 100,
+          "used": 16,
+          "capacity": 30
+        },
+        {
+          "day": 16,
+          "loc": "de",
+          "cash": 35395,
+          "bank": 0,
+          "debt": 0,
+          "hull": 100,
+          "used": 17,
+          "capacity": 30
+        },
+        {
+          "day": 17,
+          "loc": "ot",
+          "cash": 17387,
+          "bank": 0,
+          "debt": 0,
+          "hull": 100,
+          "used": 25,
+          "capacity": 30
+        },
+        {
+          "day": 18,
+          "loc": "de",
+          "cash": 76797,
+          "bank": 0,
+          "debt": 0,
+          "hull": 100,
+          "used": 30,
+          "capacity": 30
+        },
+        {
+          "day": 19,
+          "loc": "ot",
+          "cash": 25134,
+          "bank": 43572,
+          "debt": 0,
+          "hull": 100,
+          "used": 30,
+          "capacity": 30
+        },
+        {
+          "day": 20,
+          "loc": "lq",
+          "cash": 75570,
+          "bank": 44226,
+          "debt": 0,
+          "hull": 100,
+          "used": 30,
+          "capacity": 30
+        },
+        {
+          "day": 21,
+          "loc": "de",
+          "cash": 14024,
+          "bank": 44889,
+          "debt": 0,
+          "hull": 100,
+          "used": 15,
+          "capacity": 30
+        },
+        {
+          "day": 23,
+          "loc": "ot",
+          "cash": 10784,
+          "bank": 46245,
+          "debt": 0,
+          "hull": 100,
+          "used": 12,
+          "capacity": 30
+        },
+        {
+          "day": 24,
+          "loc": "lq",
+          "cash": 87440,
+          "bank": 46939,
+          "debt": 0,
+          "hull": 100,
+          "used": 30,
+          "capacity": 30
+        },
+        {
+          "day": 25,
+          "loc": "sl",
+          "cash": 23874,
+          "bank": 47643,
+          "debt": 0,
+          "hull": 100,
+          "used": 12,
+          "capacity": 30
+        },
+        {
+          "day": 26,
+          "loc": "ch",
+          "cash": 34485,
+          "bank": 48358,
+          "debt": 0,
+          "hull": 100,
+          "used": 30,
+          "capacity": 30
+        },
+        {
+          "day": 27,
+          "loc": "lq",
+          "cash": 71237,
+          "bank": 49083,
+          "debt": 0,
+          "hull": 100,
+          "used": 27,
+          "capacity": 30
+        },
+        {
+          "day": 28,
+          "loc": "ot",
+          "cash": 355,
+          "bank": 125698,
+          "debt": 0,
+          "hull": 100,
+          "used": 12,
+          "capacity": 30
+        },
+        {
+          "day": 29,
+          "loc": "sm",
+          "cash": 139866,
+          "bank": 127583,
+          "debt": 0,
+          "hull": 100,
+          "used": 30,
+          "capacity": 30
+        },
+        {
+          "day": 30,
+          "loc": "ot",
+          "cash": 58723,
+          "bank": 129497,
+          "debt": 0,
+          "hull": 100,
+          "used": 25,
+          "capacity": 30
+        }
+      ],
+      "events": [
+        {
+          "day": 2,
+          "title": "A crate bobs past",
+          "choice": "leave",
+          "choiceText": "Leave it\nNot worth the trouble.",
+          "text": "FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Glowkelp marks drifts alongside. Nobody seems to be looking for it. Yet.\n\nHaul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull).\nLeave it\nNot worth the trouble."
+        },
+        {
+          "day": 8,
+          "title": "Old Fenna is retiring",
+          "choice": "no",
+          "choiceText": "No thanks\nMaybe another time.",
+          "text": "AN OFFER\nOld Fenna is retiring\n\nA grey-haired smuggler hails you from her houseboat. \"My racking's too good for scrap. Fifteen more spaces in your hold for ¤3,160, fitted tonight.\"\n\nBuy the racks · ¤3,160\n+15 hold, permanently (30 → 45).\nNo thanks\nMaybe another time."
+        },
+        {
+          "day": 8,
+          "title": "The Gull Gang!",
+          "choice": "pay",
+          "choiceText": "Pay the toll · ¤1,977\nYour purse is light, so they take about ¤205 of cargo too.",
+          "text": "AMBUSH IN THE NARROWS\nThe Gull Gang!\n\n4 skiffs with gull-feather pennants slide out from under a bridge. \"Toll's due, friend. Pay up, or swim.\"\n\nYour hull\n100%\nEnemy boats\n4\nCargo at stake\n¤13.8k\nRun for it\n18% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n16% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nPay the toll · ¤1,977\nYour purse is light, so they take about ¤205 of cargo too."
+        },
+        {
+          "day": 8,
+          "title": "Toll paid",
+          "choice": "ok",
+          "choiceText": "Continue",
+          "text": "PAID\nToll paid\n\nThey count your ¤1,772 twice. The rest is taken in kind: 2 Bottled Rain. They melt back into the dark.\n\nContinue"
+        },
+        {
+          "day": 11,
+          "title": "Old Fenna is retiring",
+          "choice": "no",
+          "choiceText": "No thanks\nMaybe another time.",
+          "text": "AN OFFER\nOld Fenna is retiring\n\nA grey-haired smuggler hails you from her houseboat. \"My racking's too good for scrap. Fifteen more spaces in your hold for ¤3,520, fitted tonight.\"\n\nBuy the racks · ¤3,520\n+15 hold, permanently (30 → 45).\nNo thanks\nMaybe another time."
+        },
+        {
+          "day": 14,
+          "title": "A squall comes off the sea",
+          "choice": "shelter",
+          "choiceText": "Shelter under the viaduct\nSafe, but you lose a whole night.",
+          "text": "WEATHER\nA squall comes off the sea\n\nBlack rain hammers the canal and the water starts to heave. Somewhere ahead, bridges are groaning.\n\nPush through\nArrive on time, but lose 6 to 16% hull (you have 100%).\nShelter under the viaduct\nSafe, but you lose a whole night."
+        },
+        {
+          "day": 16,
+          "title": "A crate bobs past",
+          "choice": "leave",
+          "choiceText": "Leave it\nNot worth the trouble.",
+          "text": "FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Bottled Rain marks drifts alongside. Nobody seems to be looking for it. Yet.\n\nHaul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull).\nLeave it\nNot worth the trouble."
+        },
+        {
+          "day": 18,
+          "title": "Water in the hold",
+          "choice": "pay",
+          "choiceText": "Patch the leak · ¤4,320\nKeep the cargo. Purse after: ¤76,797. This patch does not restore hull.",
+          "text": "LEAK\nWater in the hold\n\nA loose plank lets water into a stack of 3 Clockwork Eels. Buy an emergency patch or jettison the stack before the rest gets wet.\n\nPatch the leak · ¤4,320\nKeep the cargo. Purse after: ¤76,797. This patch does not restore hull.\nJettison 3 Clockwork Eels\nUsual value ¤7,200; the eventual sale price may differ. Keep your cash."
+        },
+        {
+          "day": 18,
+          "title": "Tidewarden cutter!",
+          "choice": "bribe",
+          "choiceText": "Bribe the sergeant · ¤7,113\nGuaranteed. The price follows your purse and your cargo.",
+          "text": "SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA whistle shrieks across the water. 2 cutters of the Tidewarden watch close in from both banks.\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤48.4k\nRun for it\n24% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nBribe the sergeant · ¤7,113\nGuaranteed. The price follows your purse and your cargo.\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."
+        },
+        {
+          "day": 18,
+          "title": "Papers in order",
+          "choice": "ok",
+          "choiceText": "Continue",
+          "text": "BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤7,113, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\nContinue"
+        },
+        {
+          "day": 19,
+          "title": "A crate bobs past",
+          "choice": "leave",
+          "choiceText": "Leave it\nNot worth the trouble.",
+          "text": "FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Synth Saffron marks drifts alongside. Nobody seems to be looking for it. Yet.\n\nHaul it aboard\nNo room: your hold is full.\nLeave it\nNot worth the trouble."
+        },
+        {
+          "day": 20,
+          "title": "The Gull Gang!",
+          "choice": "pay",
+          "choiceText": "Pay the toll · ¤13,761\nAbout a fifth of your purse plus a cut of your cargo.",
+          "text": "AMBUSH IN THE NARROWS\nThe Gull Gang!\n\nA net drops across the canal ahead. 3 Gull Gang skiffs wait behind it, oars up, grinning.\n\nYour hull\n100%\nEnemy boats\n3\nCargo at stake\n¤73.0k\nRun for it\n26% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n19% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nPay the toll · ¤13,761\nAbout a fifth of your purse plus a cut of your cargo."
+        },
+        {
+          "day": 20,
+          "title": "Toll paid",
+          "choice": "ok",
+          "choiceText": "Continue",
+          "text": "PAID\nToll paid\n\nThey count your ¤13,761 twice. They melt back into the dark.\n\nContinue"
+        },
+        {
+          "day": 21,
+          "title": "A soaked courier flags you down",
+          "choice": "no",
+          "choiceText": "Decline\nSmells like trouble.",
+          "text": "A JOB\nA soaked courier flags you down\n\n\"Sealed parcel for Lanternquay. Don't open it, don't drop it, and don't let the Tidewardens see it. Pays ¤6,730 on delivery by night 25.\"\n\nTake the job · 3 hold\nDeliver to Lanternquay by night 25 (1 night away).\nDecline\nSmells like trouble."
+        },
+        {
+          "day": 21,
+          "title": "A squall comes off the sea",
+          "choice": "shelter",
+          "choiceText": "Shelter under the viaduct\nSafe, but you lose a whole night.",
+          "text": "WEATHER\nA squall comes off the sea\n\nBlack rain hammers the canal and the water starts to heave. Somewhere ahead, bridges are groaning.\n\nPush through\nArrive on time, but lose 6 to 16% hull (you have 100%).\nShelter under the viaduct\nSafe, but you lose a whole night."
+        },
+        {
+          "day": 24,
+          "title": "A crate bobs past",
+          "choice": "leave",
+          "choiceText": "Leave it\nNot worth the trouble.",
+          "text": "FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Synth Saffron marks drifts alongside. Nobody seems to be looking for it. Yet.\n\nHaul it aboard\nNo room: your hold is full.\nLeave it\nNot worth the trouble."
+        },
+        {
+          "day": 25,
+          "title": "Water in the hold",
+          "choice": "pay",
+          "choiceText": "Patch the leak · ¤5,880\nKeep the cargo. Purse after: ¤23,874. This patch does not restore hull.",
+          "text": "LEAK\nWater in the hold\n\nA loose plank lets water into a stack of 1 Dreamsilk. Buy an emergency patch or jettison the stack before the rest gets wet.\n\nPatch the leak · ¤5,880\nKeep the cargo. Purse after: ¤23,874. This patch does not restore hull.\nJettison 1 Dreamsilk\nUsual value ¤9,800; the eventual sale price may differ. Keep your cash."
+        },
+        {
+          "day": 26,
+          "title": "A gull takes your purse",
+          "choice": "pay",
+          "choiceText": "Let the bag go · ¤3,832\nCertain cash loss. Your hull and cargo stay safe.",
+          "text": "THIEF!\nA gull takes your purse\n\nA trained grey gull snags a bag containing ¤3,832. Its tether catches your wrist. You can grab the bag, but the skiff is drifting toward the stone quay.\n\nReach for the bag\n70% chance to keep it. On failure, lose ¤3,832 and 10% hull (you have 100%).\nLet the bag go · ¤3,832\nCertain cash loss. Your hull and cargo stay safe."
+        },
+        {
+          "day": 26,
+          "title": "Tidewarden cutter!",
+          "choice": "bribe",
+          "choiceText": "Bribe the sergeant · ¤13,688\nGuaranteed. The price follows your purse and your cargo.",
+          "text": "SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nSearchlights snap on from under the viaduct: 2 Tidewarden cutters, rifles out. \"Cargo papers, captain.\"\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤67.1k\nRun for it\n26% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nBribe the sergeant · ¤13,688\nGuaranteed. The price follows your purse and your cargo.\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."
+        },
+        {
+          "day": 26,
+          "title": "Papers in order",
+          "choice": "ok",
+          "choiceText": "Continue",
+          "text": "BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤13,688, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\nContinue"
+        },
+        {
+          "day": 27,
+          "title": "The Gull Gang!",
+          "choice": "pay",
+          "choiceText": "Pay the toll · ¤12,575\nAbout a fifth of your purse plus a cut of your cargo.",
+          "text": "AMBUSH IN THE NARROWS\nThe Gull Gang!\n\nA net drops across the canal ahead. 2 Gull Gang skiffs wait behind it, oars up, grinning.\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤85.4k\nRun for it\n34% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\nPay the toll · ¤12,575\nAbout a fifth of your purse plus a cut of your cargo."
+        },
+        {
+          "day": 27,
+          "title": "Toll paid",
+          "choice": "ok",
+          "choiceText": "Continue",
+          "text": "PAID\nToll paid\n\nThey count your ¤12,575 twice. They melt back into the dark.\n\nContinue"
+        },
+        {
+          "day": 29,
+          "title": "Old Fenna is retiring",
+          "choice": "no",
+          "choiceText": "No thanks\nMaybe another time.",
+          "text": "AN OFFER\nOld Fenna is retiring\n\nA grey-haired smuggler hails you from her houseboat. \"My racking's too good for scrap. Fifteen more spaces in your hold for ¤5,680, fitted tonight.\"\n\nBuy the racks · ¤5,680\n+15 hold, permanently (30 → 45).\nNo thanks\nMaybe another time."
+        }
+      ],
+      "actions": 681,
+      "entriesBefore": [
+        {
+          "name": "Touch 1",
+          "score": 378988,
+          "night": 30,
+          "sunk": false
+        }
+      ],
+      "ledgerSurvivedReload": true,
+      "audio": {
+        "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+        "sounds": {
+          "whileRunning": 958,
+          "whileSuspended": 0
+        },
+        "contexts": [
+          {
+            "createdIn": "touchend",
+            "state": "running",
+            "resumes": [
+              {
+                "t": 2583,
+                "during": "touchend",
+                "activation": "active",
+                "before": "suspended",
+                "after": "running"
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "network": []
+    }
+  ],
+  "pass": true,
+  "fullThirtyNightRuns": 1
+}
