@@ -279,6 +279,8 @@
 
     svcHere: k => dd(S.loc).svc.includes(k),
     whisperCost: () => rumorCost(),
+    // How sure Ysolde sounds before you pay (shown on the Salon card in builds that have CONF_HINT).
+    whisperHint: () => (has('CONF_HINT') && has('whisperable') && whisperable().length) ? whisperable()[0].conf : null, // eslint-disable-line no-undef
     // The Salon's button: enabled when she has heard something, you have not had tonight's
     // whisper, it is not the last night and you can pay.
     whisperAvailable() {

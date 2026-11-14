@@ -34,7 +34,7 @@ SIM.register('whisper-smart', {
     }
     // buy first: the fee is 3% of the purse, which is smallest before the cargo is sold
     let w = null;
-    if (api.svcHere('rumor') && api.whisperAvailable() && api.whisperCost() <= opt.feeCap * Math.max(1, api.netWorth())) {
+    if (api.svcHere('rumor') && api.whisperAvailable() && api.whisperHint() !== 'guess' && api.whisperCost() <= opt.feeCap * Math.max(1, api.netWorth())) {
       const r = await api.whisper();
       if (r && r.type) { w = WL.record(r, day); ws.list.push(w); }
     }
