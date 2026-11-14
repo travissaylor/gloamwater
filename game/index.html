@@ -1049,7 +1049,7 @@ const Sound=(()=>{
     }catch(e){amb=null;}
   }
   function ambientOff(){if(bellT){clearTimeout(bellT);bellT=null;}if(!amb)return;try{amb.out.gain.cancelScheduledValues(0);amb.nodes.forEach(x=>x.stop());amb.out.disconnect();}catch(e){}amb=null;}
-  return{sfx,get muted(){return muted;},setMuted(m){muted=m;if(m){ambientOff();if(ctx){try{ctx.suspend();}catch(e){}}}else{ensure();ambientOn();}},unlock(){if(ensure())ambientOn();},ambientOn,ambientOff};
+  return{sfx,get muted(){return muted;},setMuted(m){muted=m;if(m){ambientOff();if(ctx){try{ctx.suspend();}catch(e){}}}else{ensure();ambientOn();}},unlock(){if(ensure())ambientOn();},pause(){ambientOff();if(ctx){try{ctx.suspend();}catch(e){}}},ambientOn,ambientOff};
 })();
 const sfx=new Proxy({}, {get:(t,k)=>()=>{try{Sound.sfx[k]&&Sound.sfx[k]();}catch(e){}}});
 function updateMuteBtn(){['#b-mute','#b-mute2'].forEach(q=>{const b=$(q);if(!b)return;b.innerHTML=ico(Sound.muted?'mute':'sound');b.setAttribute('aria-pressed',String(!Sound.muted));});}
@@ -1073,7 +1073,7 @@ function toast(text,kind='info',icon='bell',ms=3200){
   if(!$('#modal').hidden||coachOpen){toastQ.push([text,kind,icon,ms]);if(toastQ.length>3)toastQ.shift();return;}
   placeToasts();
   const t=document.createElement('div');t.className='toast '+kind;t.innerHTML=ico(icon)+'<div>'+text+'</div>';t._args=[text,kind,icon,ms];
-  const box=$('#toasts');box.appendChild(t);while(box.children.length>(isNarrow()?(view==='map'?1:2):3))box.firstElementChild.remove();
+  const box=$('#toasts');box.appendChild(t);while(box.children.length>(isNarrow()?1:3))box.firstElementChild.remove();
   setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),320);},FAST?10:ms);
 }
 function center(el){const r=el.getBoundingClientRect();return{x:r.left+r.width/2,y:r.top+r.height/2,ok:r.width>0};}
@@ -1462,6 +1462,7 @@ function renderTravelCard(){
     <div class="tc-act">${here?(last?`<button class="btn primary lg" data-act="settle" style="flex:1">Final night · settle up</button>`:`<button class="btn" data-act="gomarket" style="flex:1">Open market</button><button class="btn amber lg" data-act="stay" style="flex:1">Stay the night</button>`):
       last?`<button class="btn primary lg" data-act="settle" style="flex:1">Final night · settle up</button>`:
       nights===1?`<button class="btn primary lg" data-act="sail" data-d="${sel}">Sail here · 1 night <kbd>⏎</kbd></button>`:
+      S.day>=NIGHTS-1?`<button class="btn primary lg" data-act="sail" data-d="${hop}">Too far for the last night: sail to ${DI[hop].name}</button>`:
       `<button class="btn primary lg" data-act="sail" data-d="${sel}">Sail via ${DI[hop].name} · 2 nights <kbd>⏎</kbd></button>`}</div>
   </div>`;
   // on a phone the map shrinks into the space above the card, so every district and the route stay in view
@@ -1501,8 +1502,15 @@ function setView(v){
   if(v==='map')requestAnimationFrame(()=>{buildMap();});
 }
 // swallow taps in the 350ms after a sheet opens or closes, so a double tap cannot fall through to the nav or a card
-let tapGuardUntil=0;
-document.addEventListener('click',e=>{if(performance.now()<tapGuardUntil&&!e.target.closest('#modal .modal')){e.stopPropagation();e.preventDefault();}},true);
+let tapGuardUntil=0,lastDown=0,modalAt=0;
+document.addEventListener('pointerdown',()=>{lastDown=performance.now();},true);
+document.addEventListener('click',e=>{
+  if(e.detail===0)return; // keyboard
+  const inSheet=!!e.target.closest('#modal .modal'),now=performance.now();
+  const stale=lastDown<tapGuardUntil-350&&now<tapGuardUntil+400;   // finger went down before the sheet changed
+  const tooSoon=inSheet&&now-modalAt<250;                          // nobody reads a card in a quarter second
+  if((stale&&!inSheet)||(stale&&inSheet&&lastDown<modalAt)||tooSoon){e.stopPropagation();e.preventDefault();}
+},true);
 document.addEventListener('click',e=>{
   if(!S)return;
   const t=e.target;
@@ -1560,15 +1568,15 @@ $('#b-help').addEventListener('click',()=>openHelp());
 $('#b-menu').addEventListener('click',()=>openMenu());
 // iOS only lets audio start inside touchend/click/keydown; keep trying until it runs
 ['touchend','click','keydown'].forEach(t=>document.addEventListener(t,()=>Sound.unlock(),{passive:true}));
-document.addEventListener('visibilitychange',()=>{if(!document.hidden)Sound.unlock();});
-let rsT;addEventListener('resize',()=>{clearTimeout(rsT);rsT=setTimeout(()=>{if(!S)return;const was=portrait;const r=$('#mapwrap').getBoundingClientRect();if(r.width>10&&((r.height>r.width)!==was||Math.abs(r.height/r.width-mapRatio)>.04))mapBuilt=false;buildMap();renderHUD();},150);});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)Sound.pause();else Sound.unlock();});
+let rsT;addEventListener('resize',()=>{clearTimeout(rsT);rsT=setTimeout(()=>{if(!S)return;const was=portrait;const r=$('#map').getBoundingClientRect();if(r.width>10&&((r.height>r.width)!==was||Math.abs(r.height/r.width-mapRatio)>.04))mapBuilt=false;buildMap();renderHUD();},150);});
 
 // =========================================================
 //   MODALS
 // =========================================================
 let modalKeys=null,modalDismiss=null,lastFocus=null;
 function showModal(html,{cls='',onKey=null,dismiss=null,wide=false,keepFx=false}={}){
-  const ov=$('#modal');if(ov.hidden){parkToasts();tapGuardUntil=performance.now()+350;}else $('#toasts').innerHTML='';if(!keepFx)FX.clear();if(ov.hidden)lastFocus=document.activeElement;
+  const ov=$('#modal');modalAt=performance.now();if(ov.hidden){parkToasts();tapGuardUntil=performance.now()+350;}else $('#toasts').innerHTML='';if(!keepFx)FX.clear();if(ov.hidden)lastFocus=document.activeElement;
   ov.className='ov '+cls;ov.innerHTML=`<div class="modal ${wide?'wide':''}" role="dialog" aria-modal="true">${html}</div>`;
   ov.hidden=false;modalKeys=onKey;modalDismiss=dismiss;
   ov.onclick=e=>{if(e.target===ov&&modalDismiss)modalDismiss();};
@@ -2007,7 +2015,7 @@ const ENC={
   toll:{min:200,purse:.25,cargo:.12},
   collect:{min:500,share:.35,credit:.75},   // Marrow's men keep a quarter of what they take
   runSeize:.12,                              // share of each cargo grabbed when a run fails
-  loot:{gulls:[400,900],other:[600,1400]},
+  loot:{gulls:[250,600],patrol:[300,800]},gullCargo:3500,collectFee:.1,
   calmNights:3,calmFactor:.5                 // after a victory, word spreads and fewer crews try you
 };
 const ENC_TXT={
@@ -2074,11 +2082,13 @@ async function fightLoop(kind){
       else msg='Your shot goes wide. ';
       if(boats<=0){
         S.stats.won++;sfx.win();S.calmUntil=S.day+ENC.calmNights;
-        const lr=kind==='gulls'?ENC.loot.gulls:ENC.loot.other;let loot=Math.round(rint(lr[0],lr[1])*start*(1+S.day/12)),goods='';
-        if(kind==='gulls'){const free=capacity()-holdUsed();const g=pick(GOODS.slice(0,6));const n=Math.min(free,rint(3,10)*start);if(n>0){const c2=S.cargo[g.id];c2.cost=(c2.cost*c2.q)/(c2.q+n);c2.q+=n;goods=`, plus ${n} ${g.name} from their hold`;}}
+        let loot=0,goods='';
+        if(kind==='collectors'){const fee=Math.round(S.debt*ENC.collectFee);S.debt+=fee;goods=`. Marrow will add ${fmt(fee)} to your debt for the trouble`;}
+        else{const lr=ENC.loot[kind];loot=Math.round(rint(lr[0],lr[1])*start*(1+S.day/20));}
+        if(kind==='gulls'){const free=capacity()-holdUsed();const g=pick(GOODS.slice(0,5));const n=Math.min(free,Math.max(1,Math.floor(ENC.gullCargo*(1+S.day/15)/g.base)));if(n>0){const c2=S.cargo[g.id];c2.cost=(c2.cost*c2.q)/(c2.q+n);c2.q+=n;goods=`, plus ${n} ${g.name} from their hold`;}}
         S.cash+=loot;
         log(`Fought off ${cfg.beaten} and took ${fmt(loot)}${goods}.`,'gold');
-        await info({keepFx:true,art:'victory',tone:'luck',kicker:'Victory',title:'The canal is yours',body:`${msg}The last of them turns tail. You fish their strongbox out of the water: <b>${fmt(loot)}</b>${goods}.`,extra:`<div class="result info">Word spreads. Fewer crews will try you for the next ${ENC.calmNights} nights.</div>`});
+        await info({keepFx:true,art:'victory',tone:'luck',kicker:'Victory',title:'The canal is yours',body:`${msg}The last of them turns tail. ${loot?`You fish their strongbox out of the water: <b>${fmt(loot)}</b>${goods}.`:`They limp off empty-handed${goods}.`}`,extra:`<div class="result info">Word spreads. Fewer crews will try you for the next ${ENC.calmNights} nights.</div>`});
         renderAll();return;
       }
       if(rnd()<ENC.returnFire){const dmg=damage(rint(4,8)+boats*rint(2,4));if(S.hull<=0)return sunk('Their return fire tore your skiff apart.');msg+=`They return fire. <b>−${dmg}% hull.</b>`;}
@@ -2094,7 +2104,7 @@ async function fightLoop(kind){
       log(`Searched by Tidewardens. Seized: ${lost||'nothing'}${par?' and your sealed parcels':''}.`,'bad');
       await info({art:'news',tone:'danger',kicker:'Inspection',title:'Confiscated',body:lost?`They haul off ${lost}${par?', and the sealed parcels':''}. At least the skiff's still yours.`:'They find nothing worth taking and leave, disappointed.'});return;
     }else if(c==='pay'){
-      const due=kind==='gulls'?toll:collect,amt=Math.min(due,S.cash);S.cash-=amt;S.stats.lost+=amt;
+      const due=kind==='gulls'?toll:collect,amt=Math.min(due,S.cash);S.cash-=amt;S.stats.lost+=kind==='collectors'?Math.round(amt*(1-ENC.collect.credit)):amt;
       // a light purse is no way out: the shortfall comes out of the hold, or the hull
       let extraTxt='',inKind=0;
       if(amt<due){const sh=payInKind(due-amt);extraTxt=sh.txt;inKind=sh.value;if(S.hull<=0)return sunk('They smashed your skiff to kindling.');}
@@ -2107,14 +2117,19 @@ async function fightLoop(kind){
 // take a share of every cargo (rounded up); returns a description, or '' if the hold was empty
 function seizeShare(frac,yielded){
   const lost=[];
-  GOODS.forEach(g=>{const cg=S.cargo[g.id];const n=Math.ceil(cg.q*frac);if(n>0){S.stats.lost+=Math.round(n*cg.cost);cg.q-=n;if(!cg.q)cg.cost=0;lost.push(n+' '+g.name);}});
+  // 'half of every cargo' rounds up; a run's share rounds fairly, so one Moon Ink is not 'twelve percent'
+  GOODS.forEach(g=>{const cg=S.cargo[g.id];const n=Math.min(cg.q,yielded?Math.ceil(cg.q*frac):Math.floor(cg.q*frac+rnd()));if(n>0){S.stats.lost+=Math.round(n*cg.cost);cg.q-=n;if(!cg.q)cg.cost=0;lost.push(n+' '+g.name);}});
   return lost.join(', ');
 }
 // what an encounter takes when the purse can't cover it: cargo worth the shortfall (at usual prices), or hull
 function shortSub(short){return cargoCount()?`Your purse is light, so they take about ${fmt(short)} of cargo too.`:'Nothing aboard worth taking. They will smash up the skiff (−12% hull).';}
 function payInKind(short){
-  const base=cargoBaseValue();
-  if(base>0){const frac=Math.min(1,short/base),txt=seizeShare(frac);return{txt,value:Math.round(Math.min(short,base))};}
+  if(cargoCount()>0){
+    // whole units, cheapest first, until the shortfall (at usual prices) is covered
+    const took={};let value=0;
+    for(const g of GOODS){const cg=S.cargo[g.id];while(cg.q>0&&value<short){cg.q--;value+=g.base;S.stats.lost+=Math.round(cg.cost);took[g.id]=(took[g.id]||0)+1;}if(!cg.q)cg.cost=0;if(value>=short)break;}
+    return{txt:Object.keys(took).map(k=>took[k]+' '+GI[k].name).join(', '),value};
+  }
   const d=damage(12);return{txt:`${d}% of your hull`,value:0};
 }
 async function evSquall(){

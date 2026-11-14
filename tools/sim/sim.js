@@ -43,17 +43,19 @@ function parseArgs(argv) {
 }
 
 // ------------------------------------------------------------------ in-page RNG (installed before the game script)
+// The game keeps its own seeded streams in the save (S.rngM market, S.rngE events), seeded from
+// Math.random in newState(). Seeding Math.random per run makes newState(), and so the whole run,
+// reproducible from the seed. A separate 'policy' stream serves api.rand() and never reaches the game.
+// (Earlier builds drew game dice from Math.random, so this used to juggle market/world/visual streams.)
 const RNG_INIT = `(() => {
   function xmur3(str){let h=1779033703^str.length;for(let i=0;i<str.length;i++){h=Math.imul(h^str.charCodeAt(i),3432918353);h=h<<13|h>>>19;}return function(){h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return(h^=h>>>16)>>>0;};}
   function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
-  const names=['world','market','visual','policy'];
-  const streams={};let cur='world';
-  let base='0';
-  function seed(s){base=String(s);for(const n of names)streams[n]=mulberry32(xmur3(base+':'+n)());cur='world';}
+  const streams={};let base='0';
+  function seed(s){base=String(s);streams.world=mulberry32(xmur3(base+':world')());streams.policy=mulberry32(xmur3(base+':policy')());}
   function reseed(n,key){streams[n]=mulberry32(xmur3(base+':'+n+':'+key)());}
   seed(0);
-  Math.random=function(){return streams[cur]();};
-  window.__rng={seed,reseed,using(n,fn){const p=cur;cur=n;try{return fn();}finally{cur=p;}},stream:n=>streams[n]};
+  Math.random=function(){return streams.world();};
+  window.__rng={seed,reseed,stream:n=>streams[n]};
 })();`;
 
 // ------------------------------------------------------------------ helpers

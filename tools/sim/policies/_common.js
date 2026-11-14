@@ -5,20 +5,17 @@
 //    wireless set; the map shows the last price seen and its age.
 //  - its own price pressure (api.pressure): only the captain's own trades move prices, the trade
 //    sheet shows how many more units go at the posted price, and pressure eases 60% a night.
-//  - depth per good (api.depth): learnt from the trade sheet ("dealers sell about N more at this
-//    price", "the last goes at ¤X").
-//  - bulletins it heard (api.knownEffects): told type, what landed (the text says weak or turned),
-//    and the expected size for that kind, never the exact multiplier.
-//  - rumours told by Ysolde or Pell (api.leakedPending): type, district, good, confidence.
-//  - the stepMarket model (SIM.model: AR coefficients, stock odds, shock sizes) and
-//    encounterChance(): a seasoned player's sense of how prices move and which canals are rough.
-//    These are the main places the bot knows more than a new player, not more than the screen.
+//  - depth per good (api.depth): learnt from the trade sheet. A charter's effect is stated on the
+//    Harbor card ("twice as deep"), so api.hypoCharter may price a plan as if one were bought.
+//  - bulletins it heard (api.knownEffects) and rumours told (api.leakedPending): type, district,
+//    good, confidence; never the fate or the exact size.
+//  - the canals (api.adjacent, nightsTo, nextHop): drawn on the map.
+//  - the stepMarket model (SIM.model), encounterChance() and the encounter odds and costs
+//    (api.encExpect): a seasoned player's sense of how prices move and what a canal costs.
 (function () {
   'use strict';
   const L = (SIM.lib = {});
 
-  // Record tonight's observations: log deviation of the pressure-free price from its structural
-  // level, after the known shocks there.
   L.observe = function (api, mem) {
     const obs = (mem.obs = mem.obs || {});
     const day = api.day();
@@ -30,18 +27,17 @@
         (obs[did] = obs[did] || {})[gid] = { x: Math.log(raw / (g.base * api.districtMult(did, gid) * api.knownEffectMult(did, gid))), day };
       }
     }
-    // city-wide trend estimate per good
     mem.trend = {};
     for (const gid of api.goods()) {
       const xs = [];
       for (const did of api.districts()) { const o = obs[did] && obs[did][gid]; if (o && o.day === day) xs.push(o.x); }
       const mean = xs.reduce((a, b) => a + b, 0) / (xs.length || 1);
-      // one port: most of the deviation is trend; many ports: the mean is mostly trend
       mem.trend[gid] = xs.length ? (xs.length >= 4 ? mean : mean * SIM.model.trendShare) : 0;
     }
+    // nights spent at each port (for charters)
+    if (mem.visitDay !== day) { mem.visitDay = day; (mem.visits = mem.visits || {})[api.loc()] = (mem.visits[api.loc()] || 0) + 1; }
   };
 
-  // rumours this policy should not use right now (mem.ignore) or should take at face value (mem.trust)
   const ignored = (mem, e) => !!(mem && mem.ignore && mem.ignore(e));
   const trusted = (mem, e) => !!(mem && mem.trust && mem.trust(e));
 
@@ -67,7 +63,6 @@
     return m;
   };
 
-  // Expected pressure-free unit price of gid at did on night day+ahead.
   L.estPrice = function (api, mem, did, gid, ahead) {
     ahead = ahead == null ? 1 : ahead;
     const g = api.good(gid), M = SIM.model;
@@ -81,16 +76,15 @@
     return Math.min(M.clampHi(g), Math.max(M.clampLo(g), p));
   };
 
-  // Discount for the chance the good is not traded at did (sell it elsewhere at ~85%).
   L.stockFactor = function (api, mem, did, gid, ahead) {
     const shocked = L.expectEffect(api, mem, did, gid, ahead) !== 1;
     const sp = shocked ? 1 : SIM.model.stockP(did, gid);
     return sp + (1 - sp) * 0.85;
   };
 
-  // Expected proceeds of selling q units of gid at did on night day+ahead, after `off` units of
-  // the same good already sold there in this plan. Depth-aware: integrates the price curve from
-  // the pressure the captain will have left there by then.
+  // Expected proceeds of selling q units of gid at did on night day+ahead, starting from the
+  // pressure left there by then, less `off` (units already sold there in this plan, or tonight's
+  // own sales at this port, eased).
   L.saleValue = function (api, mem, did, gid, q, ahead, off) {
     if (q <= 0) return 0;
     ahead = ahead == null ? 1 : ahead;
@@ -98,25 +92,29 @@
     const x = api.pressAfter(did, gid, ahead) - (off || 0);
     return api.sellCurve(did, gid, q, p, x);
   };
-  // per-unit sale estimate for one unit (greedy and some reports)
   L.estSell = (api, mem, did, gid, ahead) => L.saleValue(api, mem, did, gid, 1, ahead, 0);
 
-  // Order sizing. Fills `room` and `budget` with goods bought here for sale at `dest`, chunk by
-  // chunk, taking the chunk with the best profit per share of the binding resource, and only
-  // while the chunk's expected resale clears its exact cost (the game's quote) by minEdge.
-  // carry: {gid: units already being carried to dest} (they sell first and use up its depth).
-  L.basket = function (api, mem, dest, budget, room, carry, minEdge, ahead) {
+  // Order sizing: fills room and budget with goods bought here for sale at dest on night
+  // day+ahead, chunk by chunk, best profit per share of the binding resource first, while each
+  // chunk's expected resale clears its exact cost by minEdge. carry: units of each good already
+  // going to dest (they sell first). When dest is here (staying the night), tonight's buys push
+  // tomorrow's price up too (eased by pressDecay), and `soldTonight` pushes it down.
+  L.basket = function (api, mem, dest, budget, room, carry, minEdge, ahead, soldTonight) {
     minEdge = minEdge == null ? 1.05 : minEdge;
     ahead = ahead == null ? 1 : ahead;
+    const self = dest === api.loc();
+    const dk = self ? Math.pow(SIM.model.pressDecay, ahead) : 0;
     const C = [];
     for (const gid of api.goods()) {
       if (!api.stocked(gid)) continue;
       const p = L.estPrice(api, mem, dest, gid, ahead) * L.stockFactor(api, mem, dest, gid, ahead);
-      if (p < api.price(gid) * minEdge) continue; // even the first unit does not pay
+      if (p < api.price(gid) * minEdge) continue;
       const kh = api.depth(api.loc(), gid), kd = api.depth(dest, gid);
       const step = api.hasDepth() ? Math.max(1, Math.round(Math.min(kh.d, kd.d) / 3)) : Math.max(1, Math.ceil(room / 8));
-      C.push({ g: gid, p, x: api.pressAfter(dest, gid, ahead) - ((carry && carry[gid]) || 0), k: 0, cost: 0, resale: 0, step, done: false });
+      const x0 = api.pressAfter(dest, gid, ahead) - ((carry && carry[gid]) || 0) - (self ? dk * ((soldTonight && soldTonight[gid]) || 0) : 0);
+      C.push({ g: gid, p, x0, k: 0, cost: 0, resale: 0, step, done: false });
     }
+    const total = (c, k) => api.sellCurve(dest, c.g, k, c.p, c.x0 + dk * k);
     let spent = 0, left = room, gain = 0;
     const B0 = Math.max(1, budget), R0 = Math.max(1, room);
     for (let it = 0; it < 600 && left > 0; it++) {
@@ -128,7 +126,7 @@
         let cost = api.quoteBuy(c.g, c.k + q) - base;
         while (q > 0 && spent + cost > budget) { q = Math.floor(q / 2); cost = q ? api.quoteBuy(c.g, c.k + q) - base : 0; }
         if (q <= 0) { c.done = true; continue; }
-        const resale = api.sellCurve(dest, c.g, q, c.p, c.x - c.k);
+        const resale = total(c, c.k + q) - total(c, c.k);
         if (resale < cost * minEdge) { c.done = true; continue; }
         const util = (resale - cost) / (cost / B0 + q / R0);
         if (!best || util > best.util) best = { c, q, cost, resale, util };
@@ -139,16 +137,18 @@
       spent += best.cost; left -= best.q; gain += best.resale - best.cost;
     }
     const items = C.filter(c => c.k > 0).map(c => ({ g: c.g, q: c.k, cost: c.cost, resale: c.resale }));
-    return { items, cost: spent, gain, units: room - left, d: dest };
+    return { items, cost: spent, gain, units: room - left, d: dest, resale: items.reduce((a, it) => a + it.resale, 0) };
   };
 
-  // Rough expected loss from an encounter on the way to did.
-  L.voyageRisk = function (api, did, cargoValue) {
-    return api.encounterChance(did) * (0.12 * cargoValue + 400);
+  // Expected loss to encounters on the way to did with this cash and cargo (the solver's price of
+  // a typical patrol or gang, times the chance of meeting one).
+  L.voyageRisk = function (api, did, o) {
+    const p = api.encounterChance(did, o.cargoBase);
+    return p * api.encExpect(did, o);
   };
 
   // A crash rumour at did is a chance to buy there tomorrow and sell the night after. Worth half
-  // the depth-limited profit of that, as a routing bonus (two nights out, so heavily discounted).
+  // the depth-limited profit of that, as a routing bonus.
   L.crashBonus = function (api, mem, did, cash, cap) {
     if (api.day() > api.nights() - 2) return 0;
     let best = 0;
@@ -157,7 +157,7 @@
       const em = SIM.model.rumourExpect('crash', e.conf, trusted(mem, e));
       if (em > 0.85) continue;
       const pD = L.estPrice(api, mem, did, e.g, 1);
-      const pOut = (pD / em) * 0.95; // a normal price elsewhere
+      const pOut = (pD / em) * 0.95;
       const kd = api.depth(did, e.g), xd = api.pressAfter(did, e.g, 1);
       let q = 0, spent = 0, prof = 0;
       const step = Math.max(1, Math.round(kd.d / 3));
@@ -175,54 +175,85 @@
     return best;
   };
 
-  // Best split of a held good between selling here tonight and carrying to dest.
-  // Maximises quoteSell(s) + 0.97 * saleValue(dest, h - s); both sides are concave, so ternary search.
-  function splitHeld(api, mem, did, gid, h) {
-    const there = q => 0.97 * L.saleValue(api, mem, did, gid, q, 1, 0);
-    if (!api.stocked(gid)) return { s: 0, here: 0, there: there(h) };
-    const f = s => api.quoteSell(gid, s) + there(h - s);
+  // Best split of a held good between selling here tonight and carrying it to did (arriving in
+  // `ahead` nights). Staying: tonight's sales still weigh on tomorrow's price here.
+  function splitHeld(api, mem, did, gid, h, ahead) {
+    const self = did === api.loc();
+    const dk = self ? Math.pow(SIM.model.pressDecay, ahead) : 0;
+    const there = (q, s) => 0.97 * L.saleValue(api, mem, did, gid, q, ahead, dk * s);
+    if (!api.stocked(gid)) return { s: 0, here: 0, there: there(h, 0) };
+    const f = s => api.quoteSell(gid, s) + there(h - s, s);
     let lo = 0, hi = h;
     while (hi - lo > 2) { const m1 = lo + Math.floor((hi - lo) / 3), m2 = hi - Math.floor((hi - lo) / 3); if (f(m1) < f(m2)) lo = m1 + 1; else hi = m2 - 1; }
     let s = lo, fb = f(lo);
     for (let x = lo + 1; x <= hi; x++) { const v = f(x); if (v > fb) { fb = v; s = x; } }
-    if (f(h) >= fb) s = h; // ties: sell
-    return { s, here: api.quoteSell(gid, s), there: there(h - s) };
+    if (f(h) >= fb) s = h;
+    return { s, here: api.quoteSell(gid, s), there: there(h - s, s) };
   }
 
-  // Score every destination. Returns sorted plans:
-  // {d, score, sell:{gid:units to sell here}, carry:{gid:units kept}, basket}
+  // Value of a night, for pricing the extra night a two-night trip costs: a running average of
+  // the best one-night plan's score.
+  function noteNightValue(api, mem, best1) {
+    if (mem.nvDay === api.day() || best1 == null) return;
+    mem.nvDay = api.day();
+    mem.nv = mem.nv == null ? Math.max(0, best1) : 0.7 * mem.nv + 0.3 * Math.max(0, best1);
+  }
+
+  // Score every destination: districts one canal away (one night), the rest (two nights, via
+  // the game's waypoint), and staying here (o.allowStay). Returns sorted plans:
+  // {d, n, hop, stay, score, sell, carry, basket, value, cargoBase, cashAvail}
   L.plans = function (api, mem, o) {
     o = o || {};
     const here = api.loc(), out = [];
-    const nightsLeft = api.nights() - api.day();
-    const lastHop = nightsLeft <= 1;
-    for (const did of api.districts()) {
-      if (did === here) continue;
-      let score = 0, cash = api.cash(), room = api.free(), keptValue = 0;
+    const day = api.day(), N = api.nights(), nightsLeft = N - day;
+    const opts = mem.opts || {};
+    const allowStay = o.allowStay != null ? o.allowStay : !opts.noStay;
+    const adjOnly = o.adjOnly != null ? o.adjOnly : !!opts.adjOnly;
+    const twoCost = opts.twoNightCost != null ? opts.twoNightCost : 0.6;
+    const cands = api.districts().filter(d => d !== here);
+    if (allowStay && api.canStay()) cands.push(here);
+    let best1 = null;
+    for (const did of cands) {
+      const stay = did === here;
+      const n = stay ? 1 : api.nightsTo(here, did);
+      if (n > nightsLeft || (adjOnly && n > 1)) continue;
+      const hop = stay ? here : api.nextHop(here, did);
+      let score = 0, cash = api.cash(), room = api.free(), keptValue = 0, keptBase = 0;
       const sell = {}, carry = {};
       for (const gid of api.goods()) {
         const h = api.held(gid);
         if (!h.q) continue;
         const all = api.stocked(gid) ? api.quoteSell(gid, h.q) : 0;
-        const sp = splitHeld(api, mem, did, gid, h.q);
+        const sp = splitHeld(api, mem, did, gid, h.q, n);
         sell[gid] = sp.s; carry[gid] = h.q - sp.s;
         score += sp.here + sp.there - all;
-        cash += sp.here; room += sp.s; keptValue += sp.there;
+        cash += sp.here; room += sp.s; keptValue += sp.there; keptBase += carry[gid] * api.good(gid).base;
       }
       const reserve = o.reserve || 0;
-      const basket = L.basket(api, mem, did, Math.max(0, cash - reserve), room, carry, o.minEdge);
+      const basket = L.basket(api, mem, did, Math.max(0, cash - reserve), room, carry, o.minEdge, n, stay ? sell : null);
       score += basket.gain;
-      for (const c of api.contracts()) if (c.to === did && c.due >= api.day() + 1) score += c.reward;
-      if (!lastHop) score += L.crashBonus(api, mem, did, cash, api.cap());
-      score -= L.voyageRisk(api, did, keptValue + basket.cost);
+      for (const c of api.contracts()) {
+        if (c.to === did && c.due >= day + n) score += c.reward;
+        else if (n === 2 && c.to === hop && c.due >= day + 1) score += c.reward;
+      }
+      if (n === 1) score += L.crashBonus(api, mem, did, cash, api.cap());
+      let base = keptBase; for (const it of basket.items) base += it.q * api.good(it.g).base;
+      const value = keptValue + basket.resale;
+      if (!stay) {
+        const ro = { cash: cash - basket.cost, cargoV: value, cargoBase: base, load: (api.cap() - room + basket.units) / api.cap(), free: room - basket.units };
+        score -= L.voyageRisk(api, hop, ro);
+        if (n === 2) score -= L.voyageRisk(api, did, ro);
+      }
       if (o.bonus) score += o.bonus(did) || 0;
-      out.push({ d: did, score, sell, carry, basket, nightsLeft });
+      if (n === 1 && (best1 == null || score > best1)) best1 = score;
+      if (n === 2) score -= twoCost * (mem.nv || 0);
+      out.push({ d: did, n, hop, stay, score, sell, carry, basket, value, cargoBase: base, cashAvail: cash, nightsLeft });
     }
+    noteNightValue(api, mem, best1);
     out.sort((a, b) => b.score - a.score);
     return out;
   };
 
-  // Carry out a plan: sell what it sells here, then buy its basket. Returns the buys.
   L.execute = function (api, mem, plan, onSell, noBuy) {
     for (const gid of api.goods()) {
       const s = plan.sell[gid];
@@ -236,46 +267,99 @@
         const q = Math.min(it.q, api.maxBuy(it.g));
         if (q > 0) { const r = api.buy(it.g, q); if (r.q) buys.push(Object.assign({ g: it.g }, r)); }
       }
+      // what the cargo should fetch where it is going (the encounter solver prices seizures with it)
+      mem.cargoV = plan.value; mem.cargoVDay = api.day();
     }
     mem.fills = (mem.fills || []).concat([api.used() / api.cap()]).slice(-4);
     return buys;
   };
 
-  // Housekeeping a competent captain does: upgrades, repairs, debt.
+  // Debt: clear it once comfortable, and before Marrow's deadline (night 10, or 12,000) when the
+  // purse covers it.
+  L.shouldRepay = function (api, o) {
+    if ((o && o.noRepay) || !api.svcHere('lender') || api.debt() <= 0) return false;
+    const day = api.day(), N = api.nights(), c = api.cash(), d = api.debt();
+    return c > d * 1.5 || day >= N - 6 || (day >= 8 && c >= d) || (d > api.huntRule.limit * 0.9 && c >= d);
+  };
+
   L.housekeeping = async function (api, mem, o) {
     o = o || {};
     const day = api.day(), N = api.nights();
     if (api.svcHere('yard') && api.hull() < 80) await api.upgrade('repair');
     if (api.svcHere('gutter') && api.hull() < 50) await api.upgrade('patch');
-    // hold, while there is time to use it and the hold has been filling up
     const fills = mem.fills || [];
     const full = fills.length ? fills.reduce((a, b) => a + b, 0) / fills.length : 1;
     let c;
     while ((c = api.upgradeCost('hold')) != null && day <= N - 5 && c <= api.cash() * 0.4 && (api.holdTier() < 2 || full >= ((mem.opts && mem.opts.holdFill) != null ? mem.opts.holdFill : 0.8))) { if (!(await api.upgrade('hold'))) break; }
     if ((c = api.upgradeCost('motor')) != null && day <= N - 8 && c <= api.cash() * 0.2) await api.upgrade('motor');
     if (!o.noWireless && (c = api.upgradeCost('wireless')) != null && day <= N - 8 && c <= api.cash() * 0.25) await api.upgrade('wireless');
-    if (!o.noRepay && api.svcHere('lender') && api.debt() > 0 && (api.cash() > api.debt() * 1.5 || day >= N - 6)) await api.repay(api.debt());
+    if (L.shouldRepay(api, o)) await api.repay(api.debt());
   };
 
-  // Bonus for heading to Lanternquay to clear debt: the interest it stops.
+  // Bonus for heading to Lanternquay to clear debt: the interest it stops, and Marrow's collectors
+  // once the deadline passes.
   L.repayBonus = function (api) {
     return did => {
-      if (did !== 'lq' || api.debt() <= 0 || api.cash() < api.debt() * 1.3) return 0;
-      const n = Math.min(6, api.nights() - api.day());
-      return api.debt() * (Math.pow(1.06, n) - 1) * 0.5;
+      if (did !== 'lq' || api.debt() <= 0) return 0;
+      const day = api.day(), d = api.debt(), c = api.cash();
+      let v = 0;
+      if (c >= d * 1.3) v += d * (Math.pow(1.06, Math.min(6, api.nights() - day)) - 1) * 0.5;
+      if (c >= d && day >= 7 && day <= 10) v += 0.25 * d;
+      return v;
     };
   };
 
-  // Sell what is better sold here (judged against the best plan), then do housekeeping with
-  // the proceeds. Buying happens after, against a fresh plan.
+  // Trading charter: bought at the port it stands in when the counterfactual plan says it pays.
+  // Value = tonight's uplift (best plan with the charter minus without, averaged over the nights
+  // it has measured here) x (1 + expected visits left, from how often it has been here). Paid
+  // only from idle capital: the purse left after tonight's basket must cover it.
+  L.charterCheck = async function (api, mem, o) {
+    o = o || {};
+    const opts = mem.opts || {};
+    if (!api.hasCharters() || opts.noCharter || o.noCharter) return null;
+    const here = api.loc(), day = api.day(), N = api.nights();
+    if (api.hasCharter(here) || day > N - 3) return null;
+    const cost = api.charterCost();
+    if (api.cash() < cost * (opts.charterProbe != null ? opts.charterProbe : 0.8)) return null;
+    const bonus = o.bonus || L.repayBonus(api);
+    const base = L.plans(api, mem, { bonus })[0];
+    const withC = api.hypoCharter(here, () => L.plans(api, mem, { bonus })[0]);
+    if (!base || !withC) return null;
+    const u = Math.max(0, withC.score - base.score);
+    const cu = (mem.cu = mem.cu || {});
+    cu[here] = (cu[here] || []).concat([u]).slice(-4);
+    const uMean = cu[here].reduce((a, b) => a + b, 0) / cu[here].length;
+    const visits = (mem.visits && mem.visits[here]) || 1;
+    const rate = (visits + 1) / (day + 7);
+    const value = uMean * (1 + rate * (N - day));
+    const idle = withC.cashAvail - withC.basket.cost;
+    const margin = opts.charterMargin != null ? opts.charterMargin : 1.25;
+    const rec = { day, d: here, cost, u: Math.round(u), uMean: Math.round(uMean), value: Math.round(value), idle: Math.round(idle) };
+    if (api.cash() >= cost && idle >= cost && value >= margin * cost) {
+      if (await api.buyCharter()) { (mem.out.charterBuys = mem.out.charterBuys || []).push(rec); return rec; }
+    }
+    return null;
+  };
+
   L.prepare = async function (api, mem, o) {
     o = o || {};
+    await L.charterCheck(api, mem, o);
     const first = L.plans(api, mem, { bonus: o.bonus || L.repayBonus(api) })[0];
     if (first) L.execute(api, mem, first, o.onSell, true);
     await L.housekeeping(api, mem, o);
   };
 
-  // Standard informed night. Returns destination.
+  // Route bookkeeping: one-night hops, first legs of two-night trips (and whether the next night
+  // carried on), and nights spent in port.
+  L.noteRoute = function (api, mem, plan) {
+    const R = (mem.out.route = mem.out.route || { one: 0, twoFirst: 0, twoOn: 0, twoOff: 0, stay: 0 });
+    if (mem.twoTarget) { if (plan.d === mem.twoTarget) R.twoOn++; else R.twoOff++; mem.twoTarget = null; }
+    if (plan.stay) R.stay++;
+    else if (plan.n === 2) { R.twoFirst++; mem.twoTarget = plan.d; }
+    else R.one++;
+  };
+
+  // Standard informed night. Returns the destination (its own district to stay the night).
   L.informedNight = async function (api, mem, o) {
     o = o || {};
     L.observe(api, mem);
@@ -288,9 +372,10 @@
     if (o.forceDest) plan = plans.find(p => p.d === o.forceDest) || plan;
     if (api.hull() < 40 && api.loc() !== 'ch') plan = plans.find(p => p.d === 'ch') || plan;
     mem.lastPlan = plan; mem.lastPlans = plans;
+    L.noteRoute(api, mem, plan);
     const buys = L.execute(api, mem, plan, o.onSell);
     if (o.onBuys) o.onBuys(buys, plan);
-    if (api.svcHere('lender') && api.debt() > 0 && api.cash() > api.debt() * 1.5 && !o.noRepay) await api.repay(api.debt());
+    if (L.shouldRepay(api, o)) await api.repay(api.debt());
     return plan.d;
   };
 })();

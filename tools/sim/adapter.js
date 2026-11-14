@@ -5,8 +5,9 @@
 // It is the ONLY place that knows how the game is built. Policies call SIM.api and nothing else.
 // When the game's API changes, edit this file (see README.md, "Updating the adapter").
 //
-// Targets the market-depth build (depth, press, quoteBuy/quoteSell, CONF whispers). It still runs
-// the bake-off build (no depth, no CONF): the depth helpers fall back to flat prices there.
+// Targets the round-2 build: market depth, canals (EDGES, nextHop, nightsTo), stayNight(),
+// trading charters, confirm cards, cargo-scaled encounters, the debt deadline, and the game's own
+// seeded RNG streams in the save (S.rngM for the market, S.rngE for events).
 (function () {
   'use strict';
   const SIM = (window.SIM = window.SIM || {});
@@ -19,34 +20,41 @@
   // ---------------------------------------------------------------- feature detection
   const DEPTH = has('depthOf') && has('quoteBuy') && has('quoteSell');
   const HAS_CONF = has('CONF');
-  const HAS_WHISPER_DAY = HAS_CONF; // one whisper a night arrived with CONF
-  SIM.features = { depth: DEPTH, conf: HAS_CONF, auto: has('AUTO'), streams: {} };
+  const CANALS = has('EDGES') && has('nextHop') && has('nightsTo');
+  const CHARTERS = has('charterCost') && has('CHARTER_DEPTH');
+  const STAY = fn('stayNight');
+  const ENC_T = has('ENC') ? ENC : null; // eslint-disable-line no-undef
+  SIM.features = { depth: DEPTH, conf: HAS_CONF, canals: CANALS, charters: CHARTERS, stay: STAY, encTable: !!ENC_T, gameRng: has('marketDice') };
+  try { Sound.setMuted(true); } catch (e) {}
 
-  // ---------------------------------------------------------------- RNG streams
-  // Math.random is a seeded stream (installed by sim.js before the game loads). Market evolution
-  // runs on its own stream so that, on one seed, every policy sees the same prices and the same
-  // natural shocks (and their hidden fates) on the same night. Visual-only randomness gets a
-  // third stream so rendering never shifts game draws.
-  function wrapStream(name, stream) {
+  // ---------------------------------------------------------------- RNG
+  // The game draws from two seeded streams kept in the save: S.rngM (market) and S.rngE (events).
+  // newState() seeds both from Math.random, which sim.js seeds per run, so a run is reproducible
+  // from its seed, and the market is the same for every policy on that seed (the game guarantees
+  // this). For paired comparisons the runner also reseeds S.rngE from (seed, night, phase) right
+  // before the voyage roll and the arrival roll, so one policy's extra draw (a fight round, an
+  // eel bet) does not shift every later roll. Reloads restore S.rngE from the save as the game does.
+  function hash32(str) { let h = 1779033703 ^ str.length; for (let i = 0; i < str.length; i++) { h = Math.imul(h ^ str.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); } h = Math.imul(h ^ (h >>> 16), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return (h ^= h >>> 16) >>> 0; }
+  SIM.seedBase = '0';
+  SIM.reseedE = key => { if (S && Number.isInteger(S.rngE) && SIM.crn !== false) S.rngE = hash32(SIM.seedBase + ':E:' + key); };
+  function wrapRoll(name, keyFn) {
     if (!fn(name)) return false;
     const orig = window[name];
-    window[name] = function () { return __rng.using(stream, () => orig.apply(this, arguments)); };
-    return window[name] !== orig;
+    window[name] = function () { if (!SIM.reload) SIM.reseedE(keyFn.apply(this, arguments)); return orig.apply(this, arguments); };
+    return true;
   }
-  SIM.features.streams.stepMarket = wrapStream('stepMarket', 'market');
-  ['sparkSVG', 'fly', 'buildMap', 'titleScene'].forEach(n => { SIM.features.streams[n] = wrapStream(n, 'visual'); });
-  try { ['burst', 'lanterns', 'rain'].forEach(k => { const o = FX[k]; FX[k] = function () { return __rng.using('visual', () => o.apply(this, arguments)); }; }); } catch (e) {}
-  try { Sound.setMuted(true); } catch (e) {}
+  SIM.features.crnVoyage = wrapRoll('rollVoyageEvent', () => S.day + ':voy');
+  SIM.features.crnArrival = wrapRoll('rollArrivalEvent', () => S.day + ':arr');
 
   // ---------------------------------------------------------------- game constants and model
   const gd = id => GI[id];
   const dd = id => DI[id];
+  const clamp_ = (v, a, b) => Math.max(a, Math.min(b, v));
 
   // Shock sizes as written in genPending() and landEvent(). SIM.mutate() keeps these in step with
   // any range it changes. A player learns these sizes by playing; the bots use their means.
   SIM.shock = { spike: [2, 3.5], crash: [0.3, 0.52], weak: { spike: [1.25, 1.55], crash: [0.7, 0.82] }, turn: { spike: [0.62, 0.76], crash: [1.3, 1.55] }, fest: 1.3 };
   const mid = r => (r[0] + r[1]) / 2;
-  // Expected multiplier of a landed shock, by what the bulletin says happened.
   function landedExpect(told, kind) {
     const K = SIM.shock;
     if (told === 'fest') return K.fest;
@@ -54,8 +62,7 @@
     if (kind === 'turn') return mid(K.turn[told]);
     return mid(K[told]);
   }
-  // Expected multiplier of a rumour Ysolde or Pell tells about, given only what they say: its
-  // type and how sure they are. The odds are the ones the card states (CONF[...].sub).
+  // Expected multiplier of a rumour, given only what the card says: type and confidence (CONF odds).
   function rumourExpect(told, conf, trust) {
     if (told === 'fest') return SIM.shock.fest;
     if (trust || !HAS_CONF || !CONF[conf]) return landedExpect(told, 'full'); // eslint-disable-line no-undef
@@ -63,21 +70,18 @@
     return o[0] * landedExpect(told, 'full') + o[1] * landedExpect(told, 'weak') + o[2] * landedExpect(told, 'turn');
   }
 
-  // Price model as written in stepMarket(). Only the informed-style policies use it.
   SIM.model = {
     trendAR: 0.85, localAR: 0.65,
-    trendShare: 0.66,           // share of a log-price deviation that is the city-wide trend
+    trendShare: 0.66,
     pressDecay: 0.4,            // stepMarket: press *= .4 each night (|x| < .5 snaps to 0)
     stockP: (did, gid) => (mult(dd(did), gd(gid)) !== 1 ? 0.95 : 0.8),
     landedExpect, rumourExpect,
     clampLo: g => g.min * 0.4, clampHi: g => g.max * 1.6,
+    hullValue: () => (has('YARD_RATE') ? YARD_RATE : 35), // eslint-disable-line no-undef
   };
 
   // ---------------------------------------------------------------- depth math (mirrors the game)
-  const depthAt = (did, gid) => {
-    if (!DEPTH) return { n: Infinity, d: 1 };
-    return depthOf(did, gid); // eslint-disable-line no-undef
-  };
+  const depthAt = (did, gid) => (DEPTH ? depthOf(did, gid) : { n: Infinity, d: 1 }); // eslint-disable-line no-undef
   function pressF_(x, n, d) { return x > n ? Math.exp((x - n) / d) : x < -n ? Math.exp((x + n) / d) : 1; }
   function pressInt_(a, b, n, d) {
     if (!isFinite(n)) return b - a;
@@ -94,65 +98,203 @@
     return x;
   }
 
+  // ---------------------------------------------------------------- encounters
+  // Mirrors fightLoop(): what each option costs and how likely it is to work. The card states the
+  // run and fight odds, the bribe, toll or collection, the boats and the cargo at stake. Damage
+  // ranges are not on the card; a seasoned captain knows them roughly, and the bots use the means.
+  const EN = ENC_T || { flee: { base: .46, motor: .15, perBoat: .06, load: .16, min: .12, max: .9 }, fightPerBoat: .03, returnFire: .6, bribe: { perBoat: 250, purse: .1, cargo: .07 }, toll: { min: 200, purse: .25, cargo: .12 }, collect: { min: 500, share: .35, credit: .75 }, runSeize: .12, loot: { gulls: [400, 900], other: [600, 1400] }, calmNights: 3, calmFactor: .5 };
+  const fleeP = (b, load, motor) => clamp_(EN.flee.base + EN.flee.motor * motor - EN.flee.perBoat * (b - 1) - EN.flee.load * load, EN.flee.min, EN.flee.max);
+  const fightP = (b, arms) => clamp_(ARMS[arms].p - EN.fightPerBoat * (b - 1), 0.08, 0.85);
+  const dist = (lo, hi, b) => { const out = new Map(); const n = (hi - lo + 1) * 3; for (let a = lo; a <= hi; a++) for (let m = 2; m <= 4; m++) { const d = a + b * m; out.set(d, (out.get(d) || 0) + 1 / n); } return [...out.entries()]; };
+  const RUN_D = [0, 1, 2, 3, 4, 5, 6].map(b => dist(5, 10, b));
+  const RET_D = [0, 1, 2, 3, 4, 5, 6].map(b => dist(4, 8, b));
+  const lootMean = kind => mid(kind === 'gulls' ? EN.loot.gulls : EN.loot.other);
+  const GULL_GOODS_BASE = () => GOODS.slice(0, 6).reduce((a, g) => a + g.base, 0) / 6;
+  SIM.encModel = { fleeP, fightP, EN };
+
+  // Expected cost (crowns) of each option from the current round, solved over boats x hull by
+  // dynamic programming, then the cheapest. ctx: {kind, b, start, hull, cash, cargoV (what the cargo
+  // would fetch), cargoBase, load, motor, arms, day, free, parcels, bribe (card), toll, collect,
+  // sinkCost, calmValue}. Lower is better; a win is negative (loot).
+  SIM.encSolve = function (ctx) {
+    const hv = SIM.model.hullValue();
+    const kind = ctx.kind, H = Math.max(1, Math.round(ctx.hull));
+    const cargoV = Math.max(0, ctx.cargoV || 0), base = Math.max(0, ctx.cargoBase || 0);
+    const seize = kind === 'collectors' ? 0 : EN.runSeize * cargoV;
+    const sink = ctx.sinkCost;
+    const win = lootMean(kind) * ctx.start * (1 + ctx.day / 12) + (kind === 'gulls' ? Math.min(ctx.free || 0, 6.5 * ctx.start) * GULL_GOODS_BASE() * 0.6 : 0) + (ctx.calmValue || 0);
+    const inKind = short => (base > 0 ? cargoV * Math.min(1, short / base) : null);
+    // terminal options (cost, or null if not offered)
+    const term = b => {
+      const t = {};
+      if (kind === 'patrol') {
+        const br = ctx.bribe != null ? ctx.bribe - EN.bribe.perBoat * (ctx.b - b) : null;
+        if (br != null && ctx.cash >= br) t.bribe = br;
+        t.yield = 0.5 * cargoV + (ctx.parcels || 0);
+      } else if (kind === 'gulls') {
+        const toll = ctx.toll;
+        if (ctx.cash >= toll) t.pay = toll;
+        else { const k = inKind(toll - ctx.cash); t.pay = ctx.cash + (k != null ? k : (H <= 12 ? sink : 12 * hv)); }
+      } else if (kind === 'collectors') {
+        const due = ctx.collect, amt = Math.min(due, ctx.cash);
+        let c = amt * (1 - EN.collect.credit);
+        if (amt < due) { const short = due - amt; const k = inKind(short); c += k != null ? k - EN.collect.credit * Math.min(short, base) : (H <= 12 ? sink : 12 * hv); }
+        t.pay = c;
+      }
+      return t;
+    };
+    const V = [];
+    const B = Math.max(1, Math.min(6, ctx.b));
+    for (let b = 0; b <= B; b++) V.push(new Float64Array(H + 1));
+    const choice = {};
+    const step = (b, h, wantDetail) => {
+      const det = {};
+      // run
+      const p = fleeP(b, ctx.load, ctx.motor);
+      let s = 0;
+      for (const [d, pr] of RUN_D[b]) s += pr * (h - d <= 0 ? sink : d * hv + seize + V[b][h - d]);
+      det.run = (1 - p) * s;
+      // fight (stationary, so the miss-and-no-return-fire self loop is solved in closed form)
+      const fp = fightP(b, ctx.arms), rf = EN.returnFire;
+      let hit;
+      if (b - 1 === 0) hit = -win;
+      else { let r = 0; for (const [d, pr] of RET_D[b - 1]) r += pr * (h - d <= 0 ? sink : d * hv + V[b - 1][h - d]); hit = rf * r + (1 - rf) * V[b - 1][h]; }
+      let miss = 0; for (const [d, pr] of RET_D[b]) miss += pr * (h - d <= 0 ? sink : d * hv + V[b][h - d]);
+      det.fight = (fp * hit + (1 - fp) * rf * miss) / (1 - (1 - fp) * (1 - rf));
+      Object.assign(det, term(b));
+      let best = null;
+      for (const [k, v] of Object.entries(det)) if (best == null || v < det[best]) best = k;
+      V[b][h] = det[best];
+      if (wantDetail) { choice.best = best; choice.costs = det; }
+    };
+    for (let h = 1; h <= H; h++) for (let b = 1; b <= B; b++) step(b, h, h === H && b === B);
+    return choice;
+  };
+
+  // Context for the solver from the live card and the policy's view of its cargo.
+  function encCtx(ci, extra) {
+    const mem = SIM.cur && SIM.cur.mem;
+    const T = S.trip && typeof S.trip === 'object' ? S.trip : {};
+    const b = T.boats || ci.boats || 2;
+    const cargoV = Math.max(api.cargoValueHere(), (mem && mem.cargoVDay === S.day && mem.cargoV) || 0);
+    const nightsLeft = Math.max(0, NIGHTS - S.day);
+    const nv = (mem && mem.nv) || 0;
+    const future = nightsLeft * Math.max(1500, nv, 0.06 * Math.max(0, netWorth()));
+    const pAvg = 0.15;
+    return Object.assign({
+      kind: ci.kind, b, start: T.boats0 || b, hull: S.hull, cash: S.cash, cargoV, cargoBase: cargoBaseValue(),
+      load: holdUsed() / capacity(), motor: S.motor, arms: S.arms, day: S.day, free: capacity() - holdUsed(),
+      parcels: S.contracts.reduce((s, c) => s + c.reward, 0),
+      bribe: ci.opts.bribe ? ci.opts.bribe.cost : null, toll: ci.opts.pay ? ci.opts.pay.cost : 0, collect: ci.opts.pay ? ci.opts.pay.cost : 0,
+      sinkCost: S.cash + cargoV + future,
+      calmValue: EN.calmNights * (1 - EN.calmFactor) * pAvg * 1500,
+    }, extra || {});
+  }
+  SIM.encCtx = encCtx;
+
+  // Expected cost of an encounter on a voyage to `did`, for planning: a typical patrol or gang for
+  // the night, priced with the solver for the cash and cargo the captain would carry.
+  const encMemo = new Map();
+  function encExpect(did, o) {
+    const day = S.day, cash = Math.max(0, o.cash), cargoV = Math.max(0, o.cargoV), base = Math.max(0, o.cargoBase);
+    const pPatrol = did === 'fm' ? 0.7 : did === 'sl' ? 0.3 : 0.5;
+    const key = [did === 'fm' ? 'f' : did === 'sl' ? 's' : 'o', day > 18 ? 2 : day > 5 ? 1 : 0, Math.round(S.hull / 5), Math.round(cash / 1000), Math.round(cargoV / 2000), Math.round(base / 2000), S.motor, S.arms, Math.round((o.load || 0) * 4)].join(',');
+    if (encMemo.has(key)) return encMemo.get(key) * pPatrol + encMemo.get(key + 'g') * (1 - pPatrol);
+    const nightsLeft = Math.max(0, NIGHTS - day);
+    const common = { start: 0, hull: S.hull, cash, cargoV, cargoBase: base, load: o.load || 0, motor: S.motor, arms: S.arms, day, free: Math.max(0, o.free || 0), parcels: 0, sinkCost: cash + cargoV + nightsLeft * Math.max(1500, 0.06 * (cash + cargoV)), calmValue: 0 };
+    const pb = day <= 5 ? 2 : 2 + (day > 18 ? 1 : 0), gb = day <= 5 ? 2 : 3;
+    const patrol = SIM.encSolve(Object.assign({}, common, { kind: 'patrol', b: pb, start: pb, bribe: Math.round(EN.bribe.perBoat * pb + EN.bribe.purse * cash + EN.bribe.cargo * base) }));
+    const gulls = SIM.encSolve(Object.assign({}, common, { kind: 'gulls', b: gb, start: gb, toll: Math.max(EN.toll.min, Math.round(EN.toll.purse * cash + EN.toll.cargo * base)) }));
+    const cp = patrol.costs[patrol.best], cg = gulls.costs[gulls.best];
+    if (encMemo.size > 20000) encMemo.clear();
+    encMemo.set(key, cp); encMemo.set(key + 'g', cg);
+    return cp * pPatrol + cg * (1 - pPatrol);
+  }
+  // encounterChance() with a planned cargo (the formula in the game; the bots know which canals are rough)
+  function encChance(did, cargoBase) {
+    if (!has('ENC')) return encounterChance(did); // eslint-disable-line no-undef
+    const calm = typeof S.calmUntil === 'number' && S.day < S.calmUntil ? EN.calmFactor : 1;
+    const b = cargoBase == null ? cargoBaseValue() : cargoBase;
+    return clamp_((0.07 + 0.035 * dd(did).danger + Math.min(0.12, b / 300000) - 0.04 * S.motor + (S.day > 20 ? 0.03 : 0)) * calm, 0.03, 0.4);
+  }
+
   // ---------------------------------------------------------------- choose() override
-  // Every modal the game raises (encounters, squalls, arrival events, results) goes through
-  // choose(); info() calls choose(). The current policy answers; SIM.defaultChoose otherwise.
   SIM.cards = [];
-  SIM.reload = null; // set by api.reload(); the runner restores this saved state after the voyage
-  // While a reload is pending, the abandoned voyage keeps running in this page (a real reload
-  // would kill it). Stop it from touching the save or ending the game.
+  SIM.reload = null;
   ['save', 'endGame'].forEach(n => { if (fn(n)) { const o = window[n]; window[n] = function () { if (SIM.reload) return Promise.resolve(); return o.apply(this, arguments); }; } });
   class ReloadSignal extends Error {}
   SIM.ReloadSignal = ReloadSignal;
 
   const num = s => { const m = String(s || '').replace(/<[^>]+>/g, '').match(/[0-9][0-9,]*/); return m ? +m[0].replace(/,/g, '') : 0; };
   const pctOf = s => { const m = String(s || '').match(/(\d+)%/); return m ? +m[1] / 100 : 0; };
+  // portraits renamed some event art keys; map them back to the event
+  const ART_ALIAS = { fenna: 'racks', wick: 'eel', salon: 'whisper', pell: 'tip' };
 
-  // Normalise a card into something policies can reason about without parsing HTML.
   function cardInfo(c) {
     const art = String(c.art || '');
-    let kind = art.startsWith('enc_') ? art.slice(4) : art; // patrol, gulls, collectors, squall, crate, racks, eel, courier, ...
+    let kind = art.startsWith('enc_') ? art.slice(4) : (ART_ALIAS[art] || art);
+    if (c.confirm) kind = 'confirm';
     const opts = {};
-    (c.choices || []).forEach(x => { opts[x.key] = { enabled: !x.disabled, cost: num(x.label), p: pctOf(x.sub), label: x.label }; });
-    return { kind, title: c.title, opts, keys: Object.keys(opts), card: c };
+    (c.choices || []).forEach(x => { opts[x.key] = { enabled: !x.disabled, cost: num(x.label), p: pctOf(x.sub), label: x.label, sub: x.sub }; });
+    const boats = /Enemy boats<b>(\d+)/.exec(c.extra || '');
+    return { kind, title: c.title, kicker: c.kicker, opts, keys: Object.keys(opts), card: c, round: c.result ? 2 : 1, boats: boats ? +boats[1] : null };
   }
   SIM.cardInfo = cardInfo;
-
   function enabled(ci, k) { return ci.opts[k] && ci.opts[k].enabled; }
+  SIM.enabled = enabled;
 
   // Default answers. Documented in README.md.
   SIM.defaultChoose = function (ci) {
     const hull = S.hull;
     const first = ci.keys.find(k => enabled(ci, k));
     switch (ci.kind) {
-      case 'patrol': {
-        const atRisk = api.cargoValueHere() / 2 + S.contracts.reduce((s, c) => s + c.reward, 0);
-        const bribe = ci.opts.bribe;
-        if (bribe && bribe.enabled && (bribe.cost <= atRisk || hull <= 30)) return 'bribe';
-        if (atRisk < 400 || hull <= 30) return 'yield';
-        return ci.opts.fight.p > ci.opts.run.p + 0.1 ? 'fight' : 'run';
+      case 'patrol': case 'gulls': case 'collectors': {
+        const sol = SIM.encSolve(encCtx(ci));
+        if (SIM.encOpen && !SIM.encOpen.expect) SIM.encOpen.expect = { best: sol.best, costs: sol.costs };
+        return enabled(ci, sol.best) ? sol.best : first;
       }
-      case 'gulls': {
-        // an empty purse no longer pays nothing: the label then reads "empty purse" and they take cargo or hull
-        const short = /empty purse/.test(ci.opts.pay.label || '');
-        const toll = short ? api.cargoValueHere() / 3 : ci.opts.pay.cost;
-        if (toll <= 800 || hull <= 30) return 'pay';
-        return ci.opts.fight.p > ci.opts.run.p + 0.1 ? 'fight' : 'run';
-      }
-      case 'collectors': return 'pay';
-      case 'squall': return hull > 35 || !enabled(ci, 'shelter') ? 'push' : 'shelter';
-      case 'crate': return hull > 20 ? 'take' : 'leave';
+      case 'squall': return hull > 25 || !enabled(ci, 'shelter') ? 'push' : 'shelter';
+      case 'crate': return hull > 20 && enabled(ci, 'take') ? 'take' : 'leave';
       case 'racks': return enabled(ci, 'buy') && S.cash >= 3 * ci.opts.buy.cost && S.day <= 25 ? 'buy' : 'no';
       case 'eel': return 'no';
       case 'courier': return enabled(ci, 'yes') ? 'yes' : 'no';
+      case 'confirm': return SIM.expectConfirm ? 'yes' : 'no';
       default: return first;
     }
   };
 
+  // Encounter bookkeeping: one record per encounter, from its first card to the card that ends it.
+  function cargoSnap() { const o = {}; for (const g of GOODS) o[g.id] = S.cargo[g.id].q; return o; }
+  function encOpen(ci) {
+    const m = SIM.cur && SIM.cur.mem, cv = Math.max(api.cargoValueHere(), (m && m.cargoVDay === S.day && m.cargoV) || 0), cb = cargoBaseValue();
+    SIM.encOpen = { kind: ci.kind, day: S.day, boats: (S.trip && S.trip.boats) || ci.boats || 0, seq: [], cash: S.cash, hull: S.hull, debt: S.debt, cargo: cargoSnap(), ratio: cb > 0 ? cv / cb : 1, cargoV: cv, cargoBase: cb, parcels: S.contracts.reduce((s, c) => s + c.reward, 0), fleeP: ci.opts.run ? ci.opts.run.p : null, fightP: ci.opts.fight ? ci.opts.fight.p : null, offer: (ci.opts.bribe || ci.opts.pay || {}).cost || 0 };
+  }
+  function encClose(endKind, endKicker) {
+    const e = SIM.encOpen; if (!e) return; SIM.encOpen = null;
+    let lostBase = 0, gained = 0;
+    for (const g of GOODS) { const d = e.cargo[g.id] - S.cargo[g.id].q; if (d > 0) lostBase += d * g.base; else if (d < 0) gained += -d * g.base; }
+    const parcelsLost = e.parcels - S.contracts.reduce((s, c) => s + c.reward, 0);
+    const rec = {
+      kind: e.kind, day: e.day, boats: e.boats, first: e.seq[0], last: e.seq[e.seq.length - 1], rounds: e.seq.length, seq: e.seq.join(','),
+      end: endKind === 'sunk' ? 'sunk' : endKind === 'victory' ? 'won' : (endKicker || endKind || 'other'),
+      cash: S.cash - e.cash, hull: S.hull - e.hull, debt: e.debt - S.debt, cargoLost: Math.round(lostBase * e.ratio), lootGoods: Math.round(gained * 0.6), parcelsLost: Math.max(0, parcelsLost),
+      cargoV: Math.round(e.cargoV), cashBefore: e.cash, fleeP: e.fleeP, fightP: e.fightP, offer: e.offer,
+      expectBest: e.expect && e.expect.best, expectCost: e.expect ? Math.round(e.expect.costs[e.expect.best]) : null,
+    };
+    // realised cost: crowns out of the purse, hull at the yard rate, cargo at what it would fetch,
+    // parcels lost, less what came off the debt and loot goods (at 60% of usual price)
+    rec.cost = Math.round(-rec.cash + -rec.hull * SIM.model.hullValue() + rec.cargoLost + rec.parcelsLost - rec.debt - rec.lootGoods);
+    if (SIM.cur) SIM.cur.enc.push(rec);
+  }
+  SIM.encCloseAny = () => encClose('other', 'unfinished');
+
   window.choose = function (c) {
     const ci = cardInfo(c);
     SIM.cards.push(ci.kind);
-    if (SIM.reload) return Promise.resolve(ci.keys.find(k => enabled(ci, k))); // a reload is pending: play out quietly
+    if (SIM.reload) return Promise.resolve(ci.keys.find(k => enabled(ci, k)));
+    const isEnc = ci.kind === 'patrol' || ci.kind === 'gulls' || ci.kind === 'collectors';
+    if (isEnc && !SIM.encOpen) encOpen(ci);
+    else if (!isEnc && SIM.encOpen) encClose(ci.kind, ci.kicker);
     const cur = SIM.cur;
     let k = null;
     if (cur && cur.pol.choose) {
@@ -161,18 +303,22 @@
     }
     if (!k || !enabled(ci, k)) k = SIM.defaultChoose(ci);
     if (!enabled(ci, k)) k = ci.keys.find(x => enabled(ci, x));
-    if (cur) { const ev = cur.mem.__events; ev[ci.kind + ':' + k] = (ev[ci.kind + ':' + k] || 0) + 1; }
+    if (isEnc && SIM.encOpen) SIM.encOpen.seq.push(k);
+    if (cur && ci.kind !== 'confirm') { const ev = cur.mem.__events; ev[ci.kind + ':' + k] = (ev[ci.kind + ':' + k] || 0) + 1; }
     return Promise.resolve(k);
   };
 
-  // Amount prompts (repay, borrow, deposit, withdraw) go through askAmount(); answer them directly.
   async function amountAction(act, v) {
     const orig = window.askAmount;
     window.askAmount = async o => { const x = Math.max(0, Math.min(Math.floor(v), Math.floor(o.max))); return x > 0 ? x : null; };
     try { await serviceAction(act); } finally { window.askAmount = orig; }
   }
+  // Purchases open a confirm card; answer it yes for the purchase the policy asked for, no otherwise.
+  async function confirmed(act, btn) {
+    SIM.expectConfirm = true;
+    try { await serviceAction(act, btn); } finally { SIM.expectConfirm = false; }
+  }
 
-  // What a bulletin says happened: 'full', 'weak' (text from WEAK_TXT) or 'turn' (told != type).
   function landedKind(e) {
     if (!e.told || e.told === 'fest' || e.type === 'fest') return 'full';
     if (e.told !== e.type) return 'turn';
@@ -181,10 +327,9 @@
   }
 
   // ---------------------------------------------------------------- the API policies use
-  // Information rule: everything here is something the player can see on screen or remember
-  // (their own trades, prices they have seen, bulletins they heard, what Ysolde or Pell said).
+  // Information rule: everything here is something the player can see on screen or remember.
   // Hidden state (unleaked rumours, a rumour's fate, a shock's exact size, unseen prices or
-  // stock) is not exposed. api.state() exists for post-hoc accounting only, never for decisions.
+  // stock, the RNG state) is not exposed. api.state() exists for post-hoc accounting only.
   const api = {
     // --- state ---
     day: () => S.day, nights: () => NIGHTS, loc: () => S.loc,
@@ -195,27 +340,38 @@
     held: gid => ({ q: S.cargo[gid].q, cost: S.cargo[gid].cost }),
     contracts: () => S.contracts.slice(),
     netWorth: () => netWorth(),
+    cargoBase: () => cargoBaseValue(),
+    arms: () => S.arms, motor: () => S.motor,
     state: () => S,
 
+    // --- canals (the map draws them) ---
+    canals: () => CANALS,
+    adjacent: (a, b) => (CANALS ? adjacent(a, b) : a !== b), // eslint-disable-line no-undef
+    nightsTo: (a, b) => (CANALS ? nightsTo(a, b) : a === b ? 0 : 1), // eslint-disable-line no-undef
+    nextHop: (a, b) => (CANALS ? nextHop(a, b) : b), // eslint-disable-line no-undef
+    neighbours: did => DISTRICTS.map(d => d.id).filter(x => x !== did && api.adjacent(did, x)),
+    canStay: () => STAY && S.day < NIGHTS,
+
+    // --- debt deadline (the toast on night 8 and Marrow's office say it) ---
+    debtHunted: () => (has('debtHunted') ? debtHunted() : false), // eslint-disable-line no-undef
+    huntRule: { limit: 12000, day: 10 },
+
     // --- market ---
-    // stocked here: the market screen. Elsewhere: only what was seen tonight (wireless), else null.
     stocked(gid, did) {
       did = did || S.loc;
       if (did === S.loc) return !!S.stock[did][gid];
       const s = S.seen[did] && S.seen[did][gid];
       return s && s.day === S.day && typeof s.st === 'boolean' ? s.st : null;
     },
-    price: gid => price(gid),                       // posted (marginal) price here, tonight
+    price: gid => price(gid),
     districtMult: (did, gid) => mult(dd(did), gd(gid)),
     effectMultHere: gid => api.knownEffectMult(S.loc, gid),
-    // Known shocks in force, with the size a player would expect from the bulletin text.
     knownEffects: () => S.effects.filter(e => e.known).map(e => {
       const kind = landedKind(e), told = e.told || e.type;
       return { type: e.type, told, kind, d: e.d, g: e.g, age: e.age, days: e.days, m: landedExpect(told, kind) };
     }),
     knownEffectMult(did, gid) { let m = 1; for (const e of api.knownEffects()) if (e.d === did && (e.g === gid || e.g === '*')) m *= e.age === 0 ? e.m : Math.sqrt(e.m); return m; },
     seen: (did, gid) => (S.seen[did] && S.seen[did][gid]) || null,
-    // Seen tonight, with the captain's own price pressure taken out (they know what they traded).
     rawSeen(did, gid) {
       const s = api.seen(did, gid);
       if (!s || s.day !== S.day) return null;
@@ -223,49 +379,56 @@
       return s.p / pressF_(pressNow(did, gid), k.n, k.d);
     },
     wireless: () => !!S.wireless,
-    // Rumours the captain has been told about for tomorrow (whispers and Pell's tips): what the
-    // card says, nothing more. Never the fate or the size.
     leakedPending: () => S.pending.filter(e => e.leaked).map(e => ({ type: e.type, d: e.d, g: e.g, days: e.days, conf: e.conf || null })),
-    encounterChance: did => encounterChance(did),
+    encounterChance: (did, cargoBase) => encChance(did, cargoBase),
+    encExpect,
 
-    // --- depth (pressure comes only from the captain's own trades, so it is known) ---
+    // --- depth ---
     hasDepth: () => DEPTH,
     depth: (did, gid) => depthAt(did, gid),
     pressure: (did, gid) => pressNow(did, gid),
-    pressAfter,                                      // pressure at did after n nights of easing
+    pressAfter,
     pressF: pressF_, pressInt: pressInt_,
-    // Proceeds of selling q at did, given the pre-pressure unit price p and starting pressure x.
     sellCurve(did, gid, q, p, x) { if (q <= 0) return 0; const k = depthAt(did, gid); return p * pressInt_(x - q, x, k.n, k.d); },
     buyCurve(did, gid, q, p, x) { if (q <= 0) return 0; const k = depthAt(did, gid); return p * pressInt_(x, x + q, k.n, k.d); },
-    // pre-pressure price here (what the posted price would be with no pressure)
     rawPrice: gid => (DEPTH ? S.prices[S.loc][gid] : price(gid)),
-
-    quoteBuy(gid, q) {
-      if (q <= 0) return 0;
-      if (DEPTH) return quoteBuy(gid, q); // eslint-disable-line no-undef
-      return price(gid) * q;
-    },
-    quoteSell(gid, q) {
-      if (q <= 0) return 0;
-      if (DEPTH) return quoteSell(gid, q); // eslint-disable-line no-undef
-      return price(gid) * q;
-    },
+    quoteBuy(gid, q) { if (q <= 0) return 0; return DEPTH ? quoteBuy(gid, q) : price(gid) * q; }, // eslint-disable-line no-undef
+    quoteSell(gid, q) { if (q <= 0) return 0; return DEPTH ? quoteSell(gid, q) : price(gid) * q; }, // eslint-disable-line no-undef
     maxBuy(gid, cash) {
       if (!S.stock[S.loc][gid]) return 0;
       const budget = cash == null ? S.cash : Math.min(cash, S.cash);
       const room = Math.max(0, capacity() - holdUsed());
       if (!DEPTH) return Math.max(0, Math.min(Math.floor(budget / price(gid)), room));
-      let lo = 0, hi = room; // binary search on the quoted total
+      let lo = 0, hi = room;
       while (lo < hi) { const m = (lo + hi + 1) >> 1; if (api.quoteBuy(gid, m) <= budget) lo = m; else hi = m - 1; }
       return lo;
     },
     flatLeft: (gid, mode) => (DEPTH ? flatLeft(gid, mode) : Infinity), // eslint-disable-line no-undef
-    cargoValueHere() { let v = 0; for (const g of GOODS) { const q = S.cargo[g.id].q; if (q) v += S.stock[S.loc][g.id] ? api.quoteSell(g.id, q) : 0; } return v; },
+    cargoValueHere() { let v = 0; for (const g of GOODS) { const q = S.cargo[g.id].q; if (q && S.stock[S.loc][g.id]) v += api.quoteSell(g.id, q); } return v; },
 
-    // --- actions (all go through the game's own functions) ---
+    // --- charters (Harbor tab, any district) ---
+    hasCharters: () => CHARTERS,
+    charterCost: () => (CHARTERS ? charterCost() : null), // eslint-disable-line no-undef
+    hasCharter: did => !!(S.charters && S.charters[did || S.loc]),
+    charters: () => Object.keys(S.charters || {}),
+    async buyCharter() {
+      if (!CHARTERS || api.hasCharter() || S.cash < api.charterCost()) return false;
+      const c0 = S.cash; await confirmed('charter');
+      if (S.cash !== c0 && SIM.cur) SIM.cur.charters.push({ day: S.day, d: S.loc, cost: c0 - S.cash });
+      return S.cash !== c0;
+    },
+    // What the plan would look like with a charter at did (the Harbor card says what it does:
+    // twice as deep). Evaluates fn with the charter in place, then takes it away again.
+    hypoCharter(did, f) {
+      if (!CHARTERS || api.hasCharter(did)) return f();
+      S.charters[did] = true;
+      try { return f(); } finally { delete S.charters[did]; }
+    },
+
+    // --- actions ---
     buy(gid, q) {
       const c0 = S.cash; const r = coreBuy(gid, Math.floor(q));
-      const n = typeof r === 'number' ? r : r ? r.q : 0; // old build returns a number, new {q,total}
+      const n = typeof r === 'number' ? r : r ? r.q : 0;
       return { q: n || 0, total: c0 - S.cash };
     },
     sell(gid, q) {
@@ -279,17 +442,13 @@
 
     svcHere: k => dd(S.loc).svc.includes(k),
     whisperCost: () => rumorCost(),
-    // How sure Ysolde sounds before you pay (shown on the Salon card in builds that have CONF_HINT).
     whisperHint: () => (has('CONF_HINT') && has('whisperable') && whisperable().length) ? whisperable()[0].conf : null, // eslint-disable-line no-undef
-    // The Salon's button: enabled when she has heard something, you have not had tonight's
-    // whisper, it is not the last night and you can pay.
     whisperAvailable() {
       if (!dd(S.loc).svc.includes('rumor') || S.day >= NIGHTS || S.cash < rumorCost()) return false;
-      if (HAS_WHISPER_DAY && S.whisperDay === S.day) return false;
+      if (S.whisperDay === S.day) return false;
       if (has('whisperable') && !whisperable().length) return false; // eslint-disable-line no-undef
       return true;
     },
-    // Buy one whisper through the real service. Returns {fee, type, d, g, conf} or null.
     async whisper() {
       if (!api.whisperAvailable()) return null;
       const before = new Set(S.pending.filter(e => e.leaked));
@@ -305,7 +464,6 @@
     async deposit(v) { if (!api.svcHere('vault') || S.cash <= 0) return 0; const b0 = S.bank; await amountAction('deposit', Math.min(v, S.cash)); return S.bank - b0; },
     async withdraw(v) { if (!api.svcHere('vault') || S.bank <= 0) return 0; const b0 = S.bank; await amountAction('withdraw', Math.min(v, S.bank)); return b0 - S.bank; },
 
-    // Upgrades: 'hold' | 'motor' | 'repair' | 'patch' | 'arms' | 'wireless'
     upgradeCost(kind) {
       const here = dd(S.loc).svc;
       if (kind === 'hold') { const t = HOLD_TIERS[S.holdTier + 1]; return here.includes('yard') && t ? t.cost : null; }
@@ -316,7 +474,6 @@
       if (kind === 'wireless') return here.includes('wireless') && !S.wireless ? WIRELESS_COST : null;
       return null;
     },
-    // cost of the next tier wherever it is sold (for planning ahead)
     nextTierCost(kind) {
       const t = kind === 'hold' ? HOLD_TIERS[S.holdTier + 1] : kind === 'motor' ? MOTORS[S.motor + 1] : kind === 'arms' ? ARMS[S.arms + 1] : null;
       return t ? t.cost : null;
@@ -327,13 +484,10 @@
       if (cost == null || (kind !== 'repair' && kind !== 'patch' && S.cash < cost)) return false;
       const c0 = S.cash;
       const btn = { dataset: { mk: dd(S.loc).svc.includes('fence') && !dd(S.loc).svc.includes('arms') ? '1.2' : '1' } };
-      await serviceAction(kind, btn);
+      await confirmed(kind, btn);
       return S.cash !== c0;
     },
 
-    // Simulate a reload of the saved game (what a player does by refreshing the page).
-    // Call from a policy's choose(); return its result. Returns null when there is no save
-    // (the game deletes it on sinking). Records what the reload would restore.
     reload() {
       const saved = store.get(KEY_SAVE, null);
       const R = SIM.cur && SIM.cur.reloadLog;
@@ -348,13 +502,6 @@
   SIM.api = api;
 
   // ---------------------------------------------------------------- data mutation for sweeps
-  // cfg keys (all optional):
-  //   depthScale: k        multiply every GOODS[i].depth [n,d] by k
-  //   conf: {sure:[f,w,t], likely:[...], guess:[...]}  replace CONF odds (the bots read them too,
-  //                        as a player would read the card)
-  //   spike: [lo,hi], crash: [lo,hi]   full-strength shock ranges (replaces genPending)
-  //   holdScale: k         multiply the capacity of hold tiers 1..5 by k (tier 0 stays 30)
-  //   holdMaxTier: t       remove hold tiers above t
   const ORIG = {};
   SIM.mutate = function (cfg) {
     cfg = cfg || {};
@@ -367,12 +514,17 @@
     if (cfg.holdScale) HOLD_TIERS.forEach((t, i) => { if (i > 0) t.cap = Math.round(t.cap * cfg.holdScale); });
     if (cfg.holdMaxTier != null) HOLD_TIERS.length = cfg.holdMaxTier + 1;
     if (HAS_CONF) for (const k of Object.keys(CONF)) { CONF[k].odds = ORIG.conf[k].odds.slice(); if (cfg.conf && cfg.conf[k]) CONF[k].odds = cfg.conf[k].slice(); } // eslint-disable-line no-undef
+    // ENC is a const object: its fields can be changed (encounter sweeps), e.g. --set enc.bribe.cargo=0.1
+    if (ENC_T) { if (!ORIG.enc) ORIG.enc = JSON.parse(JSON.stringify(ENC_T)); const restore = (dst, src) => { for (const k of Object.keys(src)) { if (src[k] && typeof src[k] === 'object' && !Array.isArray(src[k])) restore(dst[k], src[k]); else dst[k] = Array.isArray(src[k]) ? src[k].slice() : src[k]; } }; restore(ENC_T, ORIG.enc); if (cfg.enc) restore(ENC_T, cfg.enc); }
     SIM.shock.spike = cfg.spike || [2, 3.5];
     SIM.shock.crash = cfg.crash || [0.3, 0.52];
-    if ((cfg.spike || cfg.crash) && fn('genPending')) {
+    const target = fn('genPendingInner') ? 'genPendingInner' : 'genPending';
+    if (!ORIG.gen) ORIG.gen = window[target];
+    window[target] = ORIG.gen;
+    if (cfg.spike || cfg.crash) {
       const sp = SIM.shock.spike, cr = SIM.shock.crash;
-      // same draws in the same order as the game's genPending, only the ranges differ
-      window.genPending = function () {
+      // same draws in the same order as the game's genPendingInner, only the ranges differ
+      window[target] = function () {
         const n = rnd() < .82 ? (rnd() < .4 ? 2 : 1) : 0;
         for (let i = 0; i < n; i++) {
           const d = pick(DISTRICTS), g = pick(GOODS), r = rnd(); let e;
@@ -389,7 +541,7 @@
         }
       };
     }
-    return { depth: DEPTH ? GOODS.map(g => g.depth) : null, hold: HOLD_TIERS.map(t => t.cap), conf: HAS_CONF ? Object.fromEntries(Object.keys(CONF).map(k => [k, CONF[k].odds])) : null, shock: SIM.shock }; // eslint-disable-line no-undef
+    return { depth: DEPTH ? GOODS.map(g => g.depth) : null, hold: HOLD_TIERS.map(t => t.cap), conf: HAS_CONF ? Object.fromEntries(Object.keys(CONF).map(k => [k, CONF[k].odds])) : null, shock: SIM.shock, enc: ENC_T ? JSON.parse(JSON.stringify(ENC_T)) : null }; // eslint-disable-line no-undef
   };
 
   // ---------------------------------------------------------------- runner
@@ -402,50 +554,54 @@
     const pol = SIM.policies[polName];
     if (!pol) throw new Error('unknown policy ' + polName);
     __rng.seed(seed);
+    SIM.seedBase = String(seed);
+    SIM.crn = !(opts && opts.noCrn);
     FAST = true; settings.tutorial = true; settings.muted = true;
-    if (SIM.features.auto) { try { window.eval('AUTO=false'); } catch (e) {} } // eslint-disable-line no-eval
-    busy = false; sel = null; SIM.reload = null; SIM.cards = [];
+    busy = false; sel = null; SIM.reload = null; SIM.cards = []; SIM.encOpen = null; SIM.expectConfirm = false;
     try { closeModal(); } catch (e) {}
     const mem = { __events: {}, out: {}, opts: opts || {} };
-    SIM.cur = { pol, mem, name: polName, maxSale: 0, reloadLog: { found: 0, noSave: 0, cashBack: 0, hullBack: 0 } };
+    SIM.cur = { pol, mem, name: polName, maxSale: 0, enc: [], charters: [], stays: 0, reloadLog: { found: 0, noSave: 0, cashBack: 0, hullBack: 0 } };
     startGame(newState('Sim'), true);
+    const rng0 = { m: S.rngM, e: S.rngE };
     if (pol.init) await pol.init(api, mem);
     const worth = {};
-    let reloads = 0, guard = 0;
+    let reloads = 0, guard = 0, mkt = null;
     const errors = [];
     while (!S.over && guard++ < 120) {
       if (worth[S.day] === undefined) worth[S.day] = netWorth();
-      // common random numbers: each night's draws depend only on (seed, night, phase), so one
-      // policy's extra draw (a whisper, an eel bet) does not shift every later roll
-      __rng.reseed('world', S.day + ':night'); __rng.reseed('policy', S.day);
+      if (S.day === NIGHTS && !mkt) mkt = S.rngM;
+      __rng.reseed('policy', S.day);
       let dest = null;
       try { dest = await pol.night(api, mem); } catch (e) { errors.push('night: ' + (e && e.message)); }
       if (S.over || S.day >= NIGHTS) break;
-      if (!dest || dest === S.loc || !dd(dest)) dest = S.loc === 'lq' ? 'de' : 'lq';
       const d0 = S.day;
-      __rng.reseed('world', S.day + ':sail');
-      await sailTo(dest);
+      if ((dest === 'stay' || dest === S.loc) && STAY) { SIM.cur.stays++; await stayNight(); } // eslint-disable-line no-undef
+      else {
+        if (!dest || !dd(dest) || dest === S.loc) dest = S.loc === 'lq' ? 'de' : 'lq';
+        await sailTo(dest);
+      }
+      SIM.encCloseAny();
       while (SIM.reload && reloads < 200) {
         reloads++;
         const s = SIM.reload; SIM.reload = null;
         S = s; busy = false; sel = null;
-        __rng.reseed('world', S.day + ':reload' + reloads);
         await runTrip(true);
+        SIM.encCloseAny();
       }
-      if (!S.over && S.day === d0) { errors.push('sailTo did not advance on night ' + d0); break; }
+      if (!S.over && S.day === d0) { errors.push('night did not advance on night ' + d0); break; }
     }
     const sunk = S.hull <= 0;
     const t = tally(sunk ? 'sunk' : 'complete');
-    // fill worth checkpoints: carry forward over skipped nights, use the final fortune after a sinking
     const w = {}; let last = worth[1];
     for (let d = 1; d <= NIGHTS; d++) { if (worth[d] !== undefined && !(sunk && d > S.day)) last = worth[d]; if (sunk && d >= S.day) last = t.net; w[d] = last; }
     if (pol.finish) { try { pol.finish(api, mem); } catch (e) { errors.push('finish: ' + e.message); } }
     const st = S.stats;
     return {
-      seed, net: t.net, rank: rankFor(t.net).name, sunk, day: S.day, hull: S.hull, over: !!S.over, tallyCargo: t.cargo,
+      seed, net: t.net, rank: rankFor(t.net).name, sunk, day: S.day, hull: S.hull, over: !!S.over, tallyCargo: t.cargo, debtEnd: S.debt,
       worth: CHECK.map(d => w[d]), worthAll: Array.from({ length: NIGHTS }, (_, i) => w[i + 1]),
-      stats: { trips: st.trips, fights: st.fights, won: st.won, fled: st.fled, bribes: st.bribes, interest: st.interest, vaultEarned: st.vaultEarned, bestFlip: st.bestFlip, maxSale: SIM.cur.maxSale, whispersBought: st.whispers || 0, holdTier: S.holdTier, wireless: S.wireless, arms: S.arms, motor: S.motor },
+      stats: { trips: st.trips, fights: st.fights, won: st.won, fled: st.fled, bribes: st.bribes, interest: st.interest, vaultEarned: st.vaultEarned, bestFlip: st.bestFlip, maxSale: SIM.cur.maxSale, whispersBought: st.whispers || 0, holdTier: S.holdTier, wireless: S.wireless, arms: S.arms, motor: S.motor, lost: st.lost || 0 },
       events: mem.__events, out: mem.out, reloads, reloadLog: SIM.cur.reloadLog, errors,
+      enc: SIM.cur.enc, charters: SIM.cur.charters, stays: SIM.cur.stays, rng0, mkt,
     };
   };
 
