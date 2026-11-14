@@ -1,7 +1,10 @@
-# trader-bakeoff
+# Gloamwater
 
-A model bake-off. Four models each build the same original trading game from
-[BRIEF.md](BRIEF.md), each in its own git worktree and branch. A panel of three
-judges then scores every entry.
+A single-file trading game: thirty nights running cargo through a drowned, lantern-lit city.
+Open [game/index.html](game/index.html) to play. Design notes are in [NOTES.md](NOTES.md).
 
-Each entry lives at `game/index.html` on its own branch and runs by opening the file.
+Gloamwater won a four-model bake-off built from [BRIEF.md](BRIEF.md) and scored against
+[RUBRIC.md](RUBRIC.md). The bake-off score files are in `judging/bakeoff/`.
+
+Current work, targets and the judging process: [GOALS.md](GOALS.md).
+Browser tooling for testing: [tools/README.md](tools/README.md).
