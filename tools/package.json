@@ -1,0 +1,9 @@
+{
+  "name": "gloamwater-tools",
+  "private": true,
+  "description": "Dev tooling for Gloamwater: Playwright phone testing and economy simulation. The game itself has no dependencies.",
+  "type": "commonjs",
+  "devDependencies": {
+    "playwright": "^1.65.1"
+  }
+}

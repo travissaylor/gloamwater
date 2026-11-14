@@ -194,8 +194,9 @@ h3{margin:0;font:600 17px/1.2 var(--display)}
 .spark{grid-area:spark;width:76px;height:30px}
 .gprice{grid-area:price;text-align:right}
 .gprice b{display:block;font:700 15.5px var(--mono);font-variant-numeric:tabular-nums}
-.chg{font:600 11.5px var(--mono)}
-.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--dim)}
+.chg{font:600 11.5px var(--mono);white-space:nowrap}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--muted)} .cheapv{color:var(--up)} .dearv{color:var(--amber)}
+.tag.sale{color:#ffe2b0;border-color:rgba(255,190,85,.45);background:rgba(255,190,85,.1)}
 .gact{grid-area:act;display:flex;gap:5px}
 .tag.own{color:var(--text);background:rgba(255,255,255,.1);border-color:var(--line2);font-family:var(--mono)}
 .tag.own .up,.tag.own .down{font-weight:700}
@@ -298,6 +299,8 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
 .summary{margin:10px 18px 0;padding:10px 12px;border-radius:12px;background:rgba(0,0,0,.22);display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:13px}
 .summary span{color:var(--muted)}
 .summary b{font-family:var(--mono);text-align:right}
+.summary .depth-ok{color:var(--muted);font-size:12.5px}
+.summary .depth-warn{color:#ffd59a;font-size:12.5px}
 .sh-foot{display:flex;gap:8px;padding:14px 18px 18px}
 .sh-foot .btn.lg{flex:1}
 .amt-presets{display:flex;gap:6px;margin:10px 18px 0;flex-wrap:wrap}
@@ -320,7 +323,8 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
 #fx{position:fixed;inset:0;pointer-events:none;z-index:85}
 
 /* night card */
-.nightcard{position:fixed;inset:0;z-index:60;display:grid;place-items:center;pointer-events:none;background:radial-gradient(circle,rgba(5,8,20,.75),rgba(5,8,20,.92));animation:nc 1.5s forwards}
+.nightcard{position:fixed;inset:0;z-index:60;display:grid;place-items:center;pointer-events:none;background:radial-gradient(circle,rgba(5,8,20,.75),rgba(5,8,20,.92));animation:nc 1.05s forwards}
+.nightcard em{display:block;margin-top:14px;font:600 12px var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-style:normal}
 .nightcard div{text-align:center}
 .nightcard small{display:block;font:700 13px var(--ui);letter-spacing:.4em;color:var(--amber);text-transform:uppercase}
 .nightcard b{display:block;font:600 54px var(--display);letter-spacing:.04em;margin:6px 0}
@@ -378,7 +382,6 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
 #coach .tip .steps{font:700 11px var(--mono);color:var(--muted)}
 #coach .tip .row2{display:flex;gap:8px;align-items:center}
 #coach .tip .row2 .btn.primary{margin-left:auto}
-#debug{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#300;color:#fcc;font:12px var(--mono);white-space:pre-wrap;max-height:40vh;overflow:auto;padding:8px}
 
 /* ---------- responsive ---------- */
 @media (max-width:1100px){
@@ -415,6 +418,7 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
   .spark{width:54px}
   .row{grid-template-columns:36px minmax(0,1fr) 54px 76px;grid-template-areas:"ico name spark price";gap:8px;padding:8px}
   .chev{display:none}
+  .vsu{display:none}
   .gname b{font-size:14px}
   .gico{width:36px;height:36px}
   .tcard{max-width:none}
@@ -521,7 +525,7 @@ function fmtK(n){const a=Math.abs(n);let s;if(a>=1e6)s=(a/1e6).toFixed(a>=1e7?1:
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pct=p=>Math.round(p*100)+'%';
 const plural=(n,w)=>n+' '+w+(n===1?'':'s');
-let FAST=false, AUTO=false;
+let FAST=false;
 const REDUCED=(()=>{try{return matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){return false;}})();
 const wait=ms=>new Promise(r=>setTimeout(r,FAST?0:ms));
 const isNarrow=()=>window.innerWidth<=860;
@@ -533,8 +537,8 @@ const store={
   set(k,v){memStore[k]=v;try{window.localStorage.setItem(k,JSON.stringify(v));}catch(e){}},
   del(k){delete memStore[k];try{window.localStorage.removeItem(k);}catch(e){}}
 };
-const KEY_SAVE='gloamwater.save.v1',KEY_SCORES='gloamwater.scores.v1',KEY_SET='gloamwater.settings.v1';
-let settings=Object.assign({muted:false,tutorial:false,name:''},store.get(KEY_SET,{})||{});
+const KEY_SAVE='gloamwater.save.v1',KEY_SCORES='gloamwater.scores.v1',KEY_SET='gloamwater.settings.v1',SAVE_V=2;
+let settings=(()=>{const x=store.get(KEY_SET,{}),o=x&&typeof x==='object'?x:{};return{muted:o.muted===true,tutorial:o.tutorial===true,name:typeof o.name==='string'?o.name.slice(0,18):''};})();
 const saveSettings=()=>store.set(KEY_SET,settings);
 
 // ---------- icons ----------
@@ -582,14 +586,14 @@ const ico=(k,cls='')=>`<svg class="ico ${cls}" viewBox="0 0 24 24" aria-hidden="
 // ---------- game data ----------
 const NIGHTS=30, START_CASH=2500, START_DEBT=6000, DEBT_RATE=.06, VAULT_RATE=.015, MAX_DEBT=30000;
 const GOODS=[
-  {id:'kelp',name:'Glowkelp',base:42,min:10,max:140,vol:.17,c:'#5ef0a0',desc:'Bioluminescent seaweed. Lamp-oil, soup and medicine for the poor.'},
-  {id:'rain',name:'Bottled Rain',base:130,min:32,max:420,vol:.15,c:'#6cc8ff',desc:'Fresh water caught on rooftops. In a drowned city, never enough of it.'},
-  {id:'pearl',name:'Rust Pearls',base:420,min:110,max:1300,vol:.15,c:'#ff9a5c',desc:'Grown inside sunken machinery. Jewellers on the Terraces adore them.'},
-  {id:'saffron',name:'Synth Saffron',base:1100,min:300,max:3400,vol:.16,c:'#ffd14d',desc:'Vat-grown spice, bright as a flare. Every kitchen with money wants it.'},
-  {id:'eels',name:'Clockwork Eels',base:2400,min:700,max:7200,vol:.16,c:'#c9b8ff',desc:'Wind-up eels that clean pipes and hulls. Copperhook makes thousands.'},
-  {id:'chips',name:'Ghost Chips',base:5200,min:1500,max:16000,vol:.18,c:'#7ef0ff',desc:'Memory chips pulled from the deep city. Some still whisper.'},
-  {id:'silk',name:'Dreamsilk',base:9800,min:3000,max:30000,vol:.17,c:'#ff8fd0',desc:'Fabric that holds the last dream of whoever wore it. Wildly fashionable.'},
-  {id:'ink',name:'Moon Ink',base:19000,min:6000,max:60000,vol:.18,c:'#ffe8a0',desc:'Distilled from moonlight on still water. Contracts signed in it cannot be broken.'}
+  {id:'kelp',name:'Glowkelp',base:42,min:10,max:140,vol:.17,depth:[60,60],c:'#5ef0a0',desc:'Bioluminescent seaweed. Lamp-oil, soup and medicine for the poor.'},
+  {id:'rain',name:'Bottled Rain',base:130,min:32,max:420,vol:.15,depth:[40,40],c:'#6cc8ff',desc:'Fresh water caught on rooftops. In a drowned city, never enough of it.'},
+  {id:'pearl',name:'Rust Pearls',base:420,min:110,max:1300,vol:.15,depth:[24,24],c:'#ff9a5c',desc:'Grown inside sunken machinery. Jewellers on the Terraces adore them.'},
+  {id:'saffron',name:'Synth Saffron',base:1100,min:300,max:3400,vol:.16,depth:[14,16],c:'#ffd14d',desc:'Vat-grown spice, bright as a flare. Every kitchen with money wants it.'},
+  {id:'eels',name:'Clockwork Eels',base:2400,min:700,max:7200,vol:.16,depth:[10,12],c:'#c9b8ff',desc:'Wind-up eels that clean pipes and hulls. Copperhook makes thousands.'},
+  {id:'chips',name:'Ghost Chips',base:5200,min:1500,max:16000,vol:.18,depth:[7,9],c:'#7ef0ff',desc:'Memory chips pulled from the deep city. Some still whisper.'},
+  {id:'silk',name:'Dreamsilk',base:9800,min:3000,max:30000,vol:.17,depth:[5,7],c:'#ff8fd0',desc:'Fabric that holds the last dream of whoever wore it. Wildly fashionable.'},
+  {id:'ink',name:'Moon Ink',base:19000,min:6000,max:60000,vol:.18,depth:[3,5],c:'#ffe8a0',desc:'Distilled from moonlight on still water. Contracts signed in it cannot be broken.'}
 ];
 const GI={};GOODS.forEach(g=>GI[g.id]=g);
 const DISTRICTS=[
@@ -650,6 +654,17 @@ const CRASH_TXT=[
   'Dealers at {d} are panic-selling {g} ahead of a rumoured raid.'
 ];
 const FEST_TXT=['Lanternfest at {d}! Every stall is charging festival prices.','The Drowning Day parade fills {d}. Every price is up.'];
+// A queued shock is only a rumour until it lands. Its fate is fixed when the market queues it:
+// it lands in full, lands weak, or "turns" (everyone heard, everyone acted, and the opposite happened).
+// Whispers reveal the rumour and how sure the source is. They never create or change a shock.
+const WEAK_TXT={spike:'{G} is short at {d}, but not as short as the rumours said.',crash:'Cheap {g} at {d}, though the glut is smaller than rumoured.'};
+const TURN_TXT={spike:'Every smuggler heard {d} was short of {g}, and half of them brought some. Prices sag.',crash:'Word of cheap {g} at {d} drew buyers from every canal. The glut is gone and prices are up.'};
+const CONF={
+  sure:{short:'sure',w:.35,odds:[.8,.15,.05],label:'Ysolde is sure',sub:'Rumours like this land in full about 8 times in 10.'},
+  likely:{short:'likely',w:.4,odds:[.55,.27,.18],label:'Ysolde thinks it likely',sub:'Rumours like this land in full about half the time. About 1 in 5 turns the other way.'},
+  guess:{short:'a guess',w:.25,odds:[.3,.3,.4],label:'Ysolde admits it is a guess',sub:'Rumours like this land in full about 1 time in 3, and turn the other way more often than that.'}
+};
+const fillTxt=(t,d,g)=>t.replace('{d}',d.name).replace('{g}',g.name).replace('{G}',g.name);
 
 // ---------- state ----------
 let S=null;
@@ -657,9 +672,34 @@ let busy=false, sel=null, sideTab='market', selectedGood=null;
 
 function capacity(){return HOLD_TIERS[S.holdTier].cap+(S.racks?15:0);}
 function holdUsed(){let n=0;for(const g of GOODS)n+=S.cargo[g.id].q;for(const c of S.contracts)n+=c.size;return n;}
-function priceAt(d,g){return S.prices[d][g];}
-function price(g){return S.prices[S.loc][g];}
-function cargoValueHere(){let v=0;for(const g of GOODS)v+=S.cargo[g.id].q*price(g.id);return v;}
+// ---- market depth ----
+// Dealers trade about `n` units of a good at the posted price each night. Past that, every `d` more
+// units moves the price by a factor of e (down when you sell, up when you buy). Specialty markets
+// (a district's cheap or dear goods) are half again as deep. Pressure eases 60% each night.
+// Trades are priced by integrating the curve, so a buy-then-sell round trip can never make money.
+function depthOf(did,gid){const g=GI[gid],d=DI[did],k=(d.cheap.includes(gid)||d.dear.includes(gid))?1.5:1;return{n:g.depth[0]*k,d:g.depth[1]*k};}
+function pressF(x,n,d){return x>n?Math.exp((x-n)/d):x<-n?Math.exp((x+n)/d):1;}
+function pressInt(a,b,n,d){
+  let s=0;const e=Math.exp;
+  if(Math.min(b,-n)>a)s+=d*(e((Math.min(b,-n)+n)/d)-e((a+n)/d));
+  const l2=Math.max(a,-n),h2=Math.min(b,n);if(h2>l2)s+=h2-l2;
+  if(b>Math.max(a,n))s+=d*(e((b-n)/d)-e((Math.max(a,n)-n)/d));
+  return s;
+}
+function postedAt(did,gid){const k=depthOf(did,gid);return Math.max(1,Math.round(S.prices[did][gid]*pressF(S.press[did][gid],k.n,k.d)));}
+function price(gid){return postedAt(S.loc,gid);}
+function quoteBuy(gid,q){if(q<=0)return 0;const k=depthOf(S.loc,gid),x=S.press[S.loc][gid];return Math.ceil(S.prices[S.loc][gid]*pressInt(x,x+q,k.n,k.d)-1e-6);}
+function quoteSell(gid,q){if(q<=0)return 0;const k=depthOf(S.loc,gid),x=S.press[S.loc][gid];return Math.max(0,Math.floor(S.prices[S.loc][gid]*pressInt(x-q,x,k.n,k.d)+1e-6));}
+// units the dealers here will take before the price starts to move (for the trade sheet)
+function flatLeft(gid,mode){const k=depthOf(S.loc,gid),x=S.press[S.loc][gid];return Math.max(0,Math.floor(mode==='buy'?k.n-x:k.n+x));}
+function maxBuy(gid){
+  if(!S.stock[S.loc][gid])return 0;
+  let lo=0,hi=Math.max(0,capacity()-holdUsed());
+  while(lo<hi){const m=Math.ceil((lo+hi)/2);if(quoteBuy(gid,m)<=S.cash)lo=m;else hi=m-1;}
+  return lo;
+}
+// what the cargo would fetch if sold here now, price impact included
+function cargoValueHere(){let v=0;for(const g of GOODS)v+=quoteSell(g.id,S.cargo[g.id].q);return v;}
 function cargoBaseValue(){let v=0;for(const g of GOODS)v+=S.cargo[g.id].q*GI[g.id].base;return v;}
 function netWorth(){return S.cash+S.bank-S.debt+cargoValueHere();}
 function cargoCount(){let n=0;for(const g of GOODS)n+=S.cargo[g.id].q;return n;}
@@ -668,12 +708,12 @@ function effectMult(did,gid){let m=1;for(const e of S.effects){if(e.d===did&&(e.
 function effectsAt(did,gid){return S.effects.filter(e=>e.d===did&&(e.g===gid||e.g==='*'));}
 
 function newState(name){
-  S={v:1,name:name||'Captain',day:1,loc:'lq',cash:START_CASH,bank:0,debt:START_DEBT,hull:100,holdTier:0,racks:false,motor:0,arms:0,wireless:false,
-     cargo:{},trend:{},local:{},prices:{},stock:{},hist:{},seen:{},effects:[],pending:[],log:[],contracts:[],over:false,visited:{lq:true},hinted:{},
-     stats:{trips:0,bought:0,sold:0,profit:0,bestFlip:0,bestFlipGood:'',fights:0,won:0,fled:0,bribes:0,events:0,interest:0,vaultEarned:0,peak:0,repaid:0}};
+  S={v:SAVE_V,name:name||'Captain',day:1,loc:'lq',cash:START_CASH,bank:0,debt:START_DEBT,hull:100,holdTier:0,racks:false,motor:0,arms:0,wireless:false,
+     cargo:{},trend:{},local:{},prices:{},press:{},stock:{},hist:{},seen:{},effects:[],pending:[],log:[],contracts:[],over:false,visited:{lq:true},hinted:{},whisperDay:0,trip:null,
+     stats:{trips:0,bought:0,sold:0,profit:0,bestFlip:0,bestFlipGood:'',fights:0,won:0,fled:0,bribes:0,events:0,interest:0,vaultEarned:0,peak:0,repaid:0,whispers:0}};
   GOODS.forEach(g=>{S.cargo[g.id]={q:0,cost:0};S.trend[g.id]=gauss()*.12;});
-  DISTRICTS.forEach(d=>{S.local[d.id]={};S.prices[d.id]={};S.stock[d.id]={};S.hist[d.id]={};S.seen[d.id]={};
-    GOODS.forEach(g=>{S.local[d.id][g.id]=gauss()*.1;S.hist[d.id][g.id]=[];});});
+  DISTRICTS.forEach(d=>{S.local[d.id]={};S.prices[d.id]={};S.press[d.id]={};S.stock[d.id]={};S.hist[d.id]={};S.seen[d.id]={};
+    GOODS.forEach(g=>{S.local[d.id][g.id]=gauss()*.1;S.press[d.id][g.id]=0;S.hist[d.id][g.id]=[];});});
   for(let i=0;i<7;i++)stepMarket(true);
   genPending();
   stepMarket(false);
@@ -685,7 +725,8 @@ function newState(name){
 // ---------- market engine ----------
 function stepMarket(warm){
   S.effects=S.effects.map(e=>Object.assign({},e,{age:e.age+1})).filter(e=>e.age<e.days);
-  if(!warm){S.pending.forEach(e=>S.effects.push(Object.assign({},e,{age:0})));S.pending=[];genPending();}
+  if(!warm){S.pending.forEach(e=>{const l=landEvent(e);if(l)S.effects.push(l);});S.pending=[];genPending();}
+  DISTRICTS.forEach(d=>GOODS.forEach(g=>{const x=S.press[d.id][g.id]*.4;S.press[d.id][g.id]=Math.abs(x)<.5?0:x;}));
   GOODS.forEach(g=>{S.trend[g.id]=clamp(S.trend[g.id]*.85+gauss()*g.vol*.6,-.6,.6);});
   DISTRICTS.forEach(d=>{
     let count=0;
@@ -695,7 +736,8 @@ function stepMarket(warm){
       const em=effectMult(d.id,g.id);
       p=clamp(p*em,g.min*.4,g.max*1.6);
       p=Math.max(1,Math.round(p));
-      S.prices[d.id][g.id]=p;S.hist[d.id][g.id].push(p);
+      S.prices[d.id][g.id]=p;S.hist[d.id][g.id].push(postedAt(d.id,g.id));
+      if(S.hist[d.id][g.id].length>40)S.hist[d.id][g.id].shift();
       const st=em!==1||rnd()<(mult(d,g)!==1?.95:.8);
       S.stock[d.id][g.id]=st;if(st)count++;
     });
@@ -711,9 +753,22 @@ function genPending(){
     if(r<.46)e={type:'spike',d:d.id,g:g.id,m:2+rnd()*1.5,days:2,text:pick(SPIKE_TXT)};
     else if(r<.92)e={type:'crash',d:d.id,g:g.id,m:.3+rnd()*.22,days:2,text:pick(CRASH_TXT)};
     else e={type:'fest',d:d.id,g:'*',m:1.3,days:1,text:pick(FEST_TXT)};
-    e.text=e.text.replace('{d}',d.name).replace('{g}',g.name).replace('{G}',g.name);
+    e.text=fillTxt(e.text,d,g);
+    if(e.type!=='fest'){
+      const c=weighted(Object.keys(CONF).map(k=>({k,w:CONF[k].w}))).k,o=CONF[c].odds,f=rnd();
+      e.conf=c;e.fate=f<o[0]?'full':f<o[0]+o[1]?'weak':'turn';
+    }
     S.pending.push(e);
   }
+}
+// turn a queued rumour into the shock that actually lands, according to its fate
+function landEvent(p){
+  const e=Object.assign({},p,{age:0,told:p.type});
+  if(e.type==='fest'||!e.fate||e.fate==='full')return e;
+  const d=DI[e.d],g=GI[e.g];if(!d||!g)return null;
+  if(e.fate==='weak'){e.m=e.type==='spike'?1.25+rnd()*.3:.7+rnd()*.12;e.text=fillTxt(WEAK_TXT[e.type],d,g);}
+  else{e.text=fillTxt(TURN_TXT[e.type],d,g);if(e.type==='spike'){e.type='crash';e.m=.62+rnd()*.14;}else{e.type='spike';e.m=1.3+rnd()*.25;}}
+  return e;
 }
 function revealNews(){
   // decide which of today's fresh effects the captain hears about
@@ -721,7 +776,7 @@ function revealNews(){
 }
 function markSeen(){
   const ds=S.wireless?DISTRICTS:[DI[S.loc]];
-  ds.forEach(d=>GOODS.forEach(g=>{S.seen[d.id][g.id]={p:S.prices[d.id][g.id],day:S.day,st:S.stock[d.id][g.id]};}));
+  ds.forEach(d=>GOODS.forEach(g=>{S.seen[d.id][g.id]={p:postedAt(d.id,g.id),day:S.day,st:S.stock[d.id][g.id]};}));
 }
 function advanceDay(){
   const di=Math.round(S.debt*DEBT_RATE);S.debt+=di;S.stats.interest+=di;
@@ -732,18 +787,22 @@ function advanceDay(){
 }
 
 // ---------- trading ----------
+// both return {q,total} (sell adds profit) or null; quantities are clamped to what is possible
 function coreBuy(gid,q){
-  const p=price(gid);q=Math.min(q,Math.floor(S.cash/p),capacity()-holdUsed());
-  if(q<=0||!S.stock[S.loc][gid])return 0;
-  const c=S.cargo[gid];c.cost=(c.cost*c.q+p*q)/(c.q+q);c.q+=q;S.cash-=p*q;S.stats.bought+=q;return q;
+  q=Math.min(Math.floor(q)||0,maxBuy(gid));
+  if(q<=0)return null;
+  const total=quoteBuy(gid,q),c=S.cargo[gid];
+  c.cost=(c.cost*c.q+total)/(c.q+q);c.q+=q;S.cash-=total;S.press[S.loc][gid]+=q;S.stats.bought+=q;
+  return {q,total};
 }
 function coreSell(gid,q){
-  const p=price(gid),c=S.cargo[gid];q=Math.min(q,c.q);
+  const c=S.cargo[gid];q=Math.min(Math.floor(q)||0,c.q);
   if(q<=0||!S.stock[S.loc][gid])return null;
-  const profit=(p-c.cost)*q;S.cash+=p*q;c.q-=q;if(c.q===0)c.cost=0;
+  const total=quoteSell(gid,q),profit=Math.round(total-c.cost*q);
+  S.cash+=total;c.q-=q;if(c.q===0)c.cost=0;S.press[S.loc][gid]-=q;
   S.stats.sold+=q;S.stats.profit+=profit;
-  if(profit>S.stats.bestFlip){S.stats.bestFlip=Math.round(profit);S.stats.bestFlipGood=GI[gid].name;}
-  return {q,profit,total:p*q};
+  if(profit>S.stats.bestFlip){S.stats.bestFlip=profit;S.stats.bestFlipGood=GI[gid].name;}
+  return {q,profit,total};
 }
 
 // ---------- log ----------
@@ -899,16 +958,19 @@ function moonSVG(day){
   <circle cx="15" cy="15" r="13" fill="rgba(255,200,120,.12)"/><circle cx="15" cy="15" r="11" fill="url(#mg)"/>
   <g clip-path="url(#mc)"><circle cx="${15+off}" cy="${15-off*.15}" r="11" fill="#0d1434" opacity=".92"/></g>`;
 }
-function sparkSVG(arr,w=84,h=30){
+// value of a price against the city-wide usual for that good: <0 cheap (a buy), >0 dear (a sale)
+function vsUsual(gid,p){return p/GI[gid].base-1;}
+const valCol=v=>v<=-.15?'#4ee39b':v>=.15?'#ffbe55':'#9fb0e6';
+function sparkSVG(arr,w=84,h=30,dot){
   const a=arr.slice(-10);if(a.length<2)return'';
   const mn=Math.min(...a),mx=Math.max(...a),rg=mx-mn||1;
   const pts=a.map((v,i)=>[(i/(a.length-1))*(w-6)+3,h-4-((v-mn)/rg)*(h-8)]);
-  const up=a[a.length-1]>=a[a.length-2];const col=up?'#4ee39b':'#ff6274';
+  const col='#8fa6e8';
   const line=pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
   const last=pts[pts.length-1];
   const gid='sg'+Math.random().toString(36).slice(2,7);
   return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="${gid}" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".35"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
-  <polygon points="3,${h} ${line} ${w-3},${h}" fill="url(#${gid})"/><polyline points="${line}" fill="none" stroke="${col}" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/><circle cx="${last[0]}" cy="${last[1]}" r="2.6" fill="${col}"/></svg>`;
+  <polygon points="3,${h} ${line} ${w-3},${h}" fill="url(#${gid})"/><polyline points="${line}" fill="none" stroke="${col}" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/><circle cx="${last[0]}" cy="${last[1]}" r="3.2" fill="${dot||col}"/></svg>`;
 }
 function goodTags(gid){
   const d=DI[S.loc],g=GI[gid],tags=[];
@@ -917,12 +979,22 @@ function goodTags(gid){
     else if(e.type==='crash')tags.push(`<span class="tag glut">${ico('arrowDown')}${e.age?'Glut easing':'Glut'}</span>`);
     else tags.push(`<span class="tag dear">Festival</span>`);
   });
-  const ratio=price(gid)/g.base;
+  const v=vsUsual(gid,price(gid));
   if(!tags.length){
-    if(ratio<.72)tags.push('<span class="tag cheap">Cheap</span>');else if(ratio>1.38)tags.push('<span class="tag dear">Pricey</span>');
-    if(d.cheap.includes(gid))tags.push('<span class="tag">Local make</span>');else if(d.dear.includes(gid))tags.push('<span class="tag">In demand</span>');
+    if(v<=-.3)tags.push('<span class="tag cheap">Bargain</span>');else if(v<=-.15)tags.push('<span class="tag cheap">Cheap</span>');else if(v>=.3)tags.push('<span class="tag dear">Pricey</span>');
   }
+  const bs=bestSale(gid);
+  if(bs)tags.push(bs);
+  else if(!tags.length){if(d.cheap.includes(gid))tags.push('<span class="tag">Local make</span>');else if(d.dear.includes(gid))tags.push('<span class="tag">In demand</span>');}
   return tags.join('');
+}
+// where this good last sold for clearly more than it costs here (only prices you have seen), else its reputation
+function bestSale(gid){
+  const p=price(gid);let best=null;
+  DISTRICTS.forEach(d=>{if(d.id===S.loc)return;const sn=S.seen[d.id][gid];if(sn&&sn.st&&(!best||sn.p>best.p))best={d,p:sn.p};});
+  if(best&&best.p>p*1.12)return `<span class="tag sale">${ico('arrowUp')}+${Math.round((best.p/p-1)*100)}% ${esc(best.d.name)}</span>`;
+  if(!best){const w=DISTRICTS.find(d=>d.id!==S.loc&&d.dear.includes(gid));if(w)return `<span class="tag">Wanted: ${esc(w.name)}</span>`;}
+  return '';
 }
 function renderSide(){
   $('#tab-market').setAttribute('aria-selected',String(sideTab==='market'));
@@ -940,15 +1012,15 @@ function marketHTML(){
   h+='<div class="rows" role="list">';
   GOODS.forEach((g,i)=>{
     const p=price(g.id),stk=S.stock[S.loc][g.id],hist=S.hist[S.loc][g.id],prev=hist[hist.length-2]||p,ch=(p-prev)/prev,c=S.cargo[g.id];
-    const chCls=Math.abs(ch)<.005?'flat':ch>0?'up':'down';
-    const chTxt=Math.abs(ch)<.005?'— 0%':(ch>0?'▲ ':'▼ ')+Math.abs(Math.round(ch*100))+'%';
+    const v=vsUsual(g.id,p),chCls=v<=-.15?'cheapv':v>=.15?'dearv':'flat';
+    const chTxt=Math.abs(v)<.05?'usual':(v<0?'−':'+')+Math.abs(Math.round(v*100))+'%<span class="vsu"> vs usual</span>';
     const gain=c.q?(p-c.cost)/c.cost:0;
     const own=c.q?`<span class="tag own" title="You hold ${c.q}, bought at ${fmt(c.cost)} on average">×${c.q} <span class="${gain>=0?'up':'down'}">${gain>=0?'+':''}${Math.round(gain*100)}%</span></span>`:'';
     const canBuy=stk&&S.cash>=p&&used<cap, canSell=stk&&c.q>0;
     h+=`<div class="row ${stk?'':'out'} ${selectedGood===g.id?'sel':''}" data-g="${g.id}" tabindex="0" role="listitem" aria-label="${g.name}, ${stk?fmt(p):'not traded here today'}${c.q?', you hold '+c.q:''}">
       <div class="gico" style="--c:${g.c}">${ico(g.id)}</div>
       <div class="gname"><b>${g.name}</b><div class="tags">${own}${stk?goodTags(g.id):'<span class="tag">No dealers today</span>'}</div></div>
-      ${sparkSVG(hist)}
+      ${sparkSVG(hist,84,30,stk?valCol(v):null)}
       <div class="gprice"><b>${stk?fmt(p):'—'}</b><span class="chg ${chCls}">${stk?chTxt:''}</span></div>
       <svg class="ico chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
       <div class="gact">
@@ -1021,13 +1093,16 @@ function svcHTML(k){
     <div class="upg">${ico('wireless')}<div class="info"><b>${S.wireless?'Installed':'Wireless set'}</b><span>${S.wireless?'Faye says hello.':'One-time purchase.'}</span></div>
     ${S.wireless?'':`<button class="btn amber sm" data-act="wireless" ${S.cash>=WIRELESS_COST?'':'disabled'}>${fmt(WIRELESS_COST)}</button>`}</div>`;
   }else if(k==='rumor'){
-    const cost=rumorCost();
-    body=`<p>Ysolde will tell you about one market shock coming <b>tomorrow</b>, before anyone else knows.</p>
-    <div class="svc-row"><button class="btn amber" data-act="rumor" ${S.cash>=cost&&S.day<NIGHTS?'':'disabled'}>Buy a whisper · ${fmt(cost)}</button></div>`;
+    const cost=rumorCost(),told=S.whisperDay===S.day,avail=whisperable().length>0,last=S.day>=NIGHTS;
+    body=`<p>Ysolde hears what the canals are planning for <b>tomorrow</b>. Plans go wrong, so she tells you how sure she is. A rumour that everyone hears can turn the other way.</p>
+    <div class="kv"><span>Her fee</span><b>${fmt(cost)}</b><span>Tonight</span><b>${last?'No tomorrow to sell':told?'She has told you all she knows':avail?'She has heard something':'The canals are quiet'}</b></div>
+    <p class="q">One whisper a night. Her fee is ¤300 plus 3% of your purse and vault.</p>
+    <div class="svc-row"><button class="btn amber" data-act="rumor" ${S.cash>=cost&&!last&&!told&&avail?'':'disabled'}>Buy a whisper · ${fmt(cost)}</button></div>`;
   }
   return `<div class="svc">${head}${body}</div>`;
 }
-const rumorCost=()=>250+S.day*25;
+const rumorCost=()=>Math.round((300+.03*Math.max(0,S.cash+S.bank))/10)*10;
+const whisperable=()=>S.pending.filter(x=>!x.leaked&&x.type!=='fest');
 function renderLog(){
   $('#logs').innerHTML=S.log.slice(0,40).map(l=>`<div class="lg ${l.k}"><span class="d">N${l.d}</span><span>${l.t}</span></div>`).join('');
 }
@@ -1152,14 +1227,18 @@ function selectDistrict(id){
 }
 function voyagePath(a,b){const A=pos(a),B=pos(b);const mx=(A.x+B.x)/2,my=(A.y+B.y)/2,dx=B.x-A.x,dy=B.y-A.y,len=Math.hypot(dx,dy)||1,bend=len*.16;
   return `M${A.x} ${A.y} Q${(mx-dy/len*bend).toFixed(1)} ${(my+dx/len*bend).toFixed(1)} ${B.x} ${B.y}`;}
+// A tap or key press during a voyage skips the rest of its animation (fast repeat play).
+let skipVoyage=false;
+const onSkip=()=>{skipVoyage=true;};
+function armSkip(on){skipVoyage=false;['pointerdown','keydown'].forEach(t=>document[(on?'add':'remove')+'EventListener'](t,onSkip,true));}
 function animSeg(route,L,from,to,dur){
   const sk=$('#skiff'),wake=$('#wake');
   const place=u=>{const pt=route.getPointAtLength(u*L),p2=route.getPointAtLength(Math.min(L,u*L+2));let ang=Math.atan2(p2.y-pt.y,p2.x-pt.x)*180/Math.PI;
     const flip=Math.abs(ang)>90;sk.setAttribute('transform',`translate(${pt.x} ${pt.y}) rotate(${ang.toFixed(1)}) ${flip?'scale(1,-1)':''}`);wake.style.strokeDashoffset=String(L*(1-u));};
   return new Promise(res=>{
-    if(FAST||REDUCED){place(to);return res();}
+    if(FAST||REDUCED||skipVoyage||dur<=0){place(to);return res();}
     const t0=performance.now();
-    const f=now=>{const t=Math.min(1,(now-t0)/dur);const e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;place(from+(to-from)*e);if(t<1)requestAnimationFrame(f);else res();};
+    const f=now=>{const t=skipVoyage?1:Math.min(1,(now-t0)/dur);const e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;place(from+(to-from)*e);if(t<1)requestAnimationFrame(f);else res();};
     requestAnimationFrame(f);
   });
 }
@@ -1256,7 +1335,6 @@ function choose(c){
     const finish=k=>{if(done)return;done=true;sfx.click();closeModal();res(k);};
     const el=showModal(cardHTML(c),{cls:'tone-'+(c.tone||'neutral'),onKey:e=>{const n=parseInt(e.key,10);if(n>=1&&n<=c.choices.length){const x=c.choices[n-1];if(!x.disabled){e.preventDefault();finish(x.key);}}},dismiss:c.dismissKey?()=>finish(c.dismissKey):null});
     el.addEventListener('click',e=>{const b=e.target.closest('[data-choice]');if(b&&!b.disabled)finish(b.dataset.choice);});
-    if(AUTO)setTimeout(()=>{const opts=c.choices.filter(x=>!x.disabled);finish(pick(opts).key);},0);
   });
 }
 const info=(c)=>choose(Object.assign({choices:[{key:'ok',label:c.ok||'Continue',cls:'primary'}],dismissKey:'ok'},c));
@@ -1266,10 +1344,10 @@ function openTrade(gid,mode){
   if(busy||S.over)return;
   const g=GI[gid],p=price(gid),c=S.cargo[gid],stocked=S.stock[S.loc][gid];
   selectedGood=gid;
-  const maxBuy=()=>stocked?Math.max(0,Math.min(Math.floor(S.cash/p),capacity()-holdUsed())):0;
+  const mxBuy=()=>stocked?maxBuy(gid):0;
   const maxSell=()=>stocked?c.q:0;
-  if(mode==='sell'&&maxSell()===0&&maxBuy()>0)mode='buy';
-  if(mode==='buy'&&maxBuy()===0&&maxSell()>0)mode='sell';
+  if(mode==='sell'&&maxSell()===0&&mxBuy()>0)mode='buy';
+  if(mode==='buy'&&mxBuy()===0&&maxSell()>0)mode='sell';
   let q=0;
   const hist=S.hist[S.loc][gid];
   const el=showModal(`<div class="sheet">
@@ -1288,18 +1366,25 @@ function openTrade(gid,mode){
   el.querySelectorAll('[data-x]').forEach(b=>b.onclick=closeModal);
   if(!stocked)return;
   const qin=$('#qin'),qr=$('#qr'),sum=$('#qsum'),go=$('#qgo');
-  function setMode(m){mode=m;el.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===m)));const mx=m==='buy'?maxBuy():maxSell();qr.max=mx;q=mx;update();}
+  function setMode(m){mode=m;el.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===m)));const mx=m==='buy'?mxBuy():maxSell();qr.max=mx;q=mx;update();}
+  function depthNote(){
+    const flat=flatLeft(gid,mode),k=depthOf(S.loc,gid),x=S.press[S.loc][gid];
+    if(q<=flat)return `<span class="depth-ok" style="grid-column:1/3">Dealers here ${mode==='buy'?'sell':'buy'} about ${flat} more at this price.</span>`;
+    const after=Math.max(1,Math.round(S.prices[S.loc][gid]*pressF(mode==='buy'?x+q:x-q,k.n,k.d)));
+    return `<span class="depth-warn" style="grid-column:1/3">A big order moves the price: past ${flat}, each one ${mode==='buy'?'costs':'fetches'} ${mode==='buy'?'more':'less'}. The last goes at ${fmt(after)}.</span>`;
+  }
   function update(){
-    const mx=mode==='buy'?maxBuy():maxSell();q=clamp(Math.round(q)||0,0,mx);qin.value=q;qr.value=q;qr.max=mx;
-    const tot=q*p,used=holdUsed(),cap=capacity();
+    const mx=mode==='buy'?mxBuy():maxSell();q=clamp(Math.round(q)||0,0,mx);qin.value=q;qr.value=q;qr.max=mx;
+    const used=holdUsed(),cap=capacity();
     if(mode==='buy'){
-      sum.innerHTML=`<span>Price each</span><b>${fmt(p)}</b><span>Total cost</span><b style="color:#bffbf1">${fmt(tot)}</b><span>Purse after</span><b>${fmt(S.cash-tot)}</b><span>Hold after</span><b>${used+q} / ${cap}</b>`+
-        (mx===0?`<span style="grid-column:1/3;color:var(--amber)">${S.cash<p?"You can't afford even one.":'Your hold is full.'}</span>`:'');
+      const tot=quoteBuy(gid,q);
+      sum.innerHTML=`<span>Price each</span><b>${q>1&&tot!==q*p?fmt(tot/q)+' avg':fmt(p)}</b><span>Total cost</span><b style="color:#bffbf1">${fmt(tot)}</b><span>Purse after</span><b>${fmt(S.cash-tot)}</b><span>Hold after</span><b>${used+q} / ${cap}</b>`+
+        (mx===0?`<span style="grid-column:1/3;color:var(--amber)">${S.cash<p?"You can't afford even one.":'Your hold is full.'}</span>`:depthNote());
       go.textContent=q?`Buy ${q} for ${fmt(tot)}`:'Buy';go.className='btn lg teal';
     }else{
-      const prof=(p-c.cost)*q;
-      sum.innerHTML=`<span>Price each</span><b>${fmt(p)}</b><span>You paid (avg)</span><b>${c.q?fmt(c.cost):'—'}</b><span>You receive</span><b style="color:#ffe2b0">${fmt(tot)}</b><span>Profit</span><b class="${prof>=0?'up':'down'}">${prof>=0?'+':''}${fmt(prof)}</b>`+
-        (mx===0?`<span style="grid-column:1/3;color:var(--amber)">You have no ${g.name} to sell.</span>`:'');
+      const tot=quoteSell(gid,q),prof=Math.round(tot-c.cost*q);
+      sum.innerHTML=`<span>Price each</span><b>${q>1&&tot!==q*p?fmt(tot/q)+' avg':fmt(p)}</b><span>You paid (avg)</span><b>${c.q?fmt(c.cost):'—'}</b><span>You receive</span><b style="color:#ffe2b0">${fmt(tot)}</b><span>Profit</span><b class="${prof>=0?'up':'down'}">${prof>=0?'+':''}${fmt(prof)}</b>`+
+        (mx===0?`<span style="grid-column:1/3;color:var(--amber)">You have no ${g.name} to sell.</span>`:depthNote());
       go.textContent=q?`Sell ${q} for ${fmt(tot)}`:'Sell';go.className='btn lg amber';
     }
     go.disabled=q<=0;
@@ -1318,15 +1403,15 @@ function openTrade(gid,mode){
     if(q<=0)return;
     const row=$(`.row[data-g="${gid}"]`);
     if(mode==='buy'){
-      const n=coreBuy(gid,q);if(!n){sfx.error();return;}
-      closeModal();sfx.buy();log(`Bought ${n} ${g.name} at ${fmt(p)} (${fmt(n*p)}).`);
-      toast(`Loaded ${n} ${g.name} for ${fmt(n*p)}`,'info',gid,2200);
+      const b=coreBuy(gid,q);if(!b){sfx.error();return;}const n=b.q;
+      closeModal();sfx.buy();log(`Bought ${n} ${g.name} for ${fmt(b.total)}${n>1?' ('+fmt(b.total/n)+' each)':''}.`);
+      toast(`Loaded ${n} ${g.name} for ${fmt(b.total)}`,'info',gid,2200);
       renderAll();const r2=$(`.row[data-g="${gid}"]`);if(r2){r2.classList.add('flash');fly(r2,$('#st-hold'),Math.min(10,2+Math.ceil(n/5)),'box',g.c);}
       hint('firstbuy','Now find a district that pays more. Green <b>+%</b> badges on the map show where your cargo last sold above what you paid.');
     }else{
       const r=coreSell(gid,q);if(!r){sfx.error();return;}
       closeModal();sfx.sell();if(r.profit>0)sfx.profit();
-      log(`Sold ${r.q} ${g.name} at ${fmt(p)} for ${fmt(r.total)} (${r.profit>=0?'profit':'loss'} ${fmt(Math.abs(r.profit))}).`,r.profit>=0?'good':'bad');
+      log(`Sold ${r.q} ${g.name} for ${fmt(r.total)} (${r.profit>=0?'profit':'loss'} ${fmt(Math.abs(r.profit))}).`,r.profit>=0?'good':'bad');
       renderAll();const r2=$(`.row[data-g="${gid}"]`);
       if(r2){r2.classList.add('flash');fly(r2,$('#st-cash'),Math.min(14,4+Math.ceil(r.total/3000)));floatText(r2,(r.profit>=0?'+':'−')+fmtK(Math.abs(r.profit)).replace('−',''),r.profit>=0?'#4ee39b':'#ff6274');
         if(r.profit>2000){const cc=center(r2);FX.burst(cc.x,cc.y,'#ffbe55',30);}}
@@ -1340,7 +1425,6 @@ function openTrade(gid,mode){
   qr.oninput=()=>{q=+qr.value;update();sfx.tick();};
   go.onclick=confirm;
   setMode(mode);
-  if(AUTO)return;
   setTimeout(()=>go.focus({preventScroll:true}),40);
 }
 function chartSVG(hist,cost){
@@ -1351,7 +1435,7 @@ function chartSVG(hist,cost){
   const line=a.map((v,i)=>`${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(' ');
   const firstDay=S.day-n+1;
   let grid='';for(let i=0;i<n;i++){const day=firstDay+i;if(i%3===(n-1)%3)grid+=`<text x="${X(i)}" y="${H-3}" text-anchor="middle">${day<1?'':'N'+day}</text>`;}
-  const up=a[n-1]>=a[n-2];const col=up?'#4ee39b':'#ff6274';
+  const col='#8fa6e8';
   return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Price history">
     <defs><linearGradient id="cg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".3"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
     <line x1="${pad}" x2="${W-12}" y1="${Y(mx-rg*.08)}" y2="${Y(mx-rg*.08)}" stroke="rgba(255,255,255,.06)"/><line x1="${pad}" x2="${W-12}" y1="${Y(mn+rg*.08)}" y2="${Y(mn+rg*.08)}" stroke="rgba(255,255,255,.06)"/>
@@ -1395,7 +1479,6 @@ function askAmount({title,kicker,text,max,def,verb,cls='primary',note}){
     el.querySelectorAll('[data-x]').forEach(b=>b.onclick=()=>fin(null));
     go.onclick=()=>{if(v>0)fin(v);};
     up();setTimeout(()=>go.focus(),40);
-    if(AUTO)setTimeout(()=>fin(v),0);
   });
 }
 
@@ -1440,19 +1523,24 @@ async function serviceAction(a,btn){
     if(S.wireless||S.cash<WIRELESS_COST)return;S.cash-=WIRELESS_COST;S.wireless=true;sfx.upgrade();markSeen();S.effects.forEach(e=>{if(e.age===0)e.known=true;});
     log('Wireless set installed. Every canal is talking to you now.','gold');toast('Wireless installed: live prices everywhere','gold','wireless',3600);
   }else if(a==='rumor'){
-    const cost=rumorCost();if(S.cash<cost)return;S.cash-=cost;
-    const e=leakPending();sfx.event();
-    await info({art:'tip',tone:'gold',kicker:SVC.rumor.name,title:'A whisper over tea',body:`Ysolde leans close. <i>"Tomorrow, darling: ${esc(e.text)}"</i>`,extra:`<div class="result info">This will happen tomorrow at <b>${DI[e.d].name}</b>. The bulletin will be waiting for you.</div>`});
-    log(`Ysolde's whisper: tomorrow at ${DI[e.d].name}, ${e.type==='spike'?GI[e.g].name+' will surge':e.type==='crash'?GI[e.g].name+' will crash':'a festival'}.`,'info');
+    const cost=rumorCost();if(S.cash<cost||S.whisperDay===S.day||S.day>=NIGHTS)return;
+    const e=leakPending();if(!e){toast('Ysolde has nothing worth selling tonight.','info','eye');renderAll();return;}
+    S.cash-=cost;S.whisperDay=S.day;S.stats.whispers++;sfx.event();
+    await info({art:'tip',tone:'gold',kicker:SVC.rumor.name,title:'A whisper over tea',body:`Ysolde leans close. <i>"Tomorrow, darling: ${esc(e.text)}"</i>`,extra:rumorOdds(e,'Ysolde')});
+    log(`Ysolde's whisper (${CONF[e.conf].short}): tomorrow at ${DI[e.d].name}, ${GI[e.g].name} ${e.type==='spike'?'will surge':'will crash'}.`,'info');
   }else return;
   renderAll();save();
 }
 function burstAt(el,col='#ffbe55'){const c=center(el);if(c.ok)FX.burst(c.x,c.y,col,24);}
+// Reveal one rumour the market has already queued for tomorrow. Never creates one: returns null if none.
 function leakPending(){
-  let e=S.pending.find(x=>!x.leaked&&x.type!=='fest');
-  if(!e){const d=pick(DISTRICTS.filter(x=>x.id!==S.loc)),g=pick(GOODS),sp=rnd()<.5;
-    e={type:sp?'spike':'crash',d:d.id,g:g.id,m:sp?2.2+rnd()*1.2:.32+rnd()*.18,days:2,text:(sp?pick(SPIKE_TXT):pick(CRASH_TXT)).replace('{d}',d.name).replace('{g}',g.name).replace('{G}',g.name)};S.pending.push(e);}
-  e.leaked=true;return e;
+  const list=whisperable();if(!list.length)return null;
+  const e=pick(list);e.leaked=true;return e;
+}
+function rumorOdds(e,who){
+  const cf=CONF[e.conf]||CONF.likely,act=e.type==='spike'?`sell ${GI[e.g].name} there`:`buy ${GI[e.g].name} there`;
+  return `<div class="result ${e.conf==='sure'?'good':e.conf==='guess'?'bad':'info'}"><b>${cf.label.replace('Ysolde',who)}.</b> ${cf.sub}</div>
+    <div class="result info">If it holds, tomorrow at <b>${DI[e.d].name}</b>: ${act}. Either way, you will hear what really happened.</div>`;
 }
 
 // =========================================================
@@ -1493,13 +1581,20 @@ async function sunk(cause){
 }
 
 async function encounter(kind){
+  try{return await fightIt(kind);}finally{if(S&&S.trip){delete S.trip.boats;delete S.trip.boats0;}}
+}
+async function fightIt(kind){
   S.stats.fights++;
   const cfg={
     patrol:{title:'Tidewarden cutter!',kicker:'Searchlights on the water',intro:n=>`${n===1?'A Tidewarden cutter swings':'A squadron of '+n+' Tidewarden cutters swing'} out of the dark, lamps blazing. "Heave to for inspection!" Contraband is contraband, and you're carrying it.`},
     gulls:{title:'The Gull Gang!',kicker:'Ambush in the narrows',intro:n=>`${n} skiffs with gull-feather pennants slide out from under a bridge. "Toll's due, friend. Pay up, or swim."`},
     collectors:{title:"Marrow's collectors",kicker:'Your debt has come to visit',intro:n=>`Two black launches with heron lamps block the canal. "Marrow Quill wonders why his money is out here and not in his office."`}
   }[kind];
-  let boats=kind==='patrol'?clamp(rint(1,3)+(S.day>18?1:0),1,4):kind==='gulls'?rint(2,4):2;const start=boats;
+  // the enemy count is saved with the voyage, so reloading mid-encounter resumes the same fight
+  const T=S.trip&&typeof S.trip==='object'?S.trip:null;
+  let boats=T&&isNum(T.boats)&&T.boats>0?Math.min(5,Math.round(T.boats)):kind==='patrol'?clamp(rint(1,3)+(S.day>18?1:0),1,4):kind==='gulls'?rint(2,4):2;
+  const start=T&&isNum(T.boats0)&&T.boats0>=boats?Math.min(5,Math.round(T.boats0)):boats;
+  if(T){T.boats=boats;T.boats0=start;save();}
   let result=null;sfx.alarm();
   const art='enc_'+kind;
   while(true){
@@ -1515,8 +1610,8 @@ async function encounter(kind){
     ];
     if(kind==='patrol'){choices.push({key:'bribe',label:`Bribe the sergeant · ${fmt(bribe)}`,sub:'Guaranteed. Costs more with more boats.',disabled:S.cash<bribe});
       choices.push({key:'yield',label:'Heave to and be searched',sub:'They seize half of every cargo and any sealed parcels.'});}
-    else if(kind==='gulls')choices.push({key:'pay',label:`Pay the toll · ${fmt(Math.min(toll,S.cash))}`,sub:'30% of your purse. They keep their word, mostly.'});
-    else choices.push({key:'pay',label:`Hand over ${fmt(Math.min(collect,S.cash))}`,sub:'Counts toward your debt. Marrow is nothing if not fair.'});
+    else if(kind==='gulls')choices.push({key:'pay',label:S.cash>=toll?`Pay the toll · ${fmt(toll)}`:'Pay the toll · empty purse',sub:S.cash>=toll?'30% of your purse. They keep their word, mostly.':shortSub()});
+    else choices.push({key:'pay',label:S.cash>=collect?`Hand over ${fmt(collect)}`:`Hand over ${fmt(S.cash)} and cargo`,sub:S.cash>=collect?'Counts toward your debt. Marrow is nothing if not fair.':'Your purse is short, so they take cargo too. All of it counts toward your debt.'});
     const extra=`<div class="enc-stats"><div>Your hull<b>${Math.round(S.hull)}%</b><div class="bar"><i style="width:${S.hull}%;background:${S.hull>60?'var(--up)':S.hull>30?'var(--amber)':'var(--down)'}"></i></div></div><div>Enemy boats<b>${boats}</b></div><div>Cargo aboard<b>${cargoCount()}</b></div></div>`;
     const c=await choose({art,tone:'danger',kicker:cfg.kicker,title:cfg.title,body:result?'':cfg.intro(boats),result,extra,choices});
     if(c==='run'){
@@ -1527,7 +1622,7 @@ async function encounter(kind){
     }else if(c==='fight'){
       sfx.shot();
       let msg='';
-      if(rnd()<fightP){boats--;msg=`Direct hit! One boat drifts away, smoking. `;FX.burst(innerWidth/2,innerHeight*.3,'#ff8f3c',30);}
+      if(rnd()<fightP){boats--;if(T){T.boats=Math.max(1,boats);save();}msg=`Direct hit! One boat drifts away, smoking. `;FX.burst(innerWidth/2,innerHeight*.3,'#ff8f3c',30);}
       else msg='Your shot goes wide. ';
       if(boats<=0){
         S.stats.won++;sfx.win();
@@ -1552,14 +1647,25 @@ async function encounter(kind){
       log(`Searched by Tidewardens. Seized: ${lost.join(', ')||'nothing'}${par?' and your sealed parcels':''}.`,'bad');
       await info({art:'news',tone:'danger',kicker:'Inspection',title:'Confiscated',body:lost.length?`They haul off ${lost.join(', ')}${par?', and the sealed parcels':''}. At least the skiff's still yours.`:'They find nothing worth taking and leave, disappointed.'});return;
     }else if(c==='pay'){
-      const amt=kind==='gulls'?Math.min(toll,S.cash):Math.min(collect,S.cash);S.cash-=amt;
-      if(kind==='collectors'){S.debt=Math.max(0,S.debt-amt);log(`Marrow's collectors took ${fmt(amt)} off your debt (and your purse).`,'bad');}
-      else log(`Paid the Gull Gang a toll of ${fmt(amt)}.`,'bad');
-      sfx.bank();await info({art:'news',kicker:'Paid',title:kind==='gulls'?'Toll paid':'Payment collected',body:kind==='gulls'?(amt?`They count your ${fmt(amt)} twice and melt back into the dark.`:'You turn out your empty pockets. They laugh, spit in the canal, and let you go.'):`${fmt(amt)} goes into a ledger with your name on it. "Marrow says the rest is due soon."`});return;
+      const due=kind==='gulls'?toll:collect,amt=Math.min(due,S.cash);S.cash-=amt;
+      // a light purse is no way out: the shortfall comes out of the hold, or the hull
+      let extraTxt='';
+      if(amt<due){const sh=payShort(kind==='gulls'?1/3:1/2);extraTxt=sh.txt;if(kind==='collectors')S.debt=Math.max(0,S.debt-sh.value);if(S.hull<=0)return sunk('They smashed your skiff to kindling.');}
+      if(kind==='collectors'){S.debt=Math.max(0,S.debt-amt);log(`Marrow's collectors took ${fmt(amt)}${extraTxt?' and '+extraTxt:''} off your debt.`,'bad');}
+      else log(`Paid the Gull Gang ${amt?fmt(amt):''}${amt&&extraTxt?' and ':''}${extraTxt}.`,'bad');
+      sfx.bank();await info({art:'news',kicker:'Paid',title:kind==='gulls'?'Toll paid':'Payment collected',body:(kind==='gulls'?(amt?`They count your ${fmt(amt)} twice.`:'You turn out your empty pockets.'):`${fmt(amt)} goes into a ledger with your name on it.`)+(extraTxt?` The rest is taken in kind: <b>${extraTxt}</b>.`:'')+(kind==='gulls'?' They melt back into the dark.':' "Marrow says the rest is due soon."')});return;
     }
   }
 }
 
+// what an encounter takes when the purse can't cover it: a share of every cargo, or hull if the hold is empty
+function shortSub(){return cargoCount()?'Your purse is too light. They take a third of your cargo instead.':'Nothing aboard worth taking. They will smash up the skiff (−12% hull).';}
+function payShort(frac){
+  const lost=[];let value=0;
+  GOODS.forEach(g=>{const cg=S.cargo[g.id];const n=Math.ceil(cg.q*frac);if(n>0){value+=Math.round(n*g.base*.5);cg.q-=n;if(!cg.q)cg.cost=0;lost.push(n+' '+g.name);}});
+  if(lost.length)return{txt:lost.join(', '),value};
+  const d=damage(12);return{txt:`${d}% of your hull`,value:0};
+}
 async function evSquall(){
   const canShelter=S.day<NIGHTS-1;
   const c=await choose({art:'squall',tone:'danger',kicker:'Weather',title:'A squall comes off the sea',body:'Black rain hammers the canal and the water starts to heave. Somewhere ahead, bridges are groaning.',
@@ -1608,9 +1714,10 @@ async function evLeak(){
 }
 async function evTip(){
   if(S.day>=NIGHTS)return evStrongbox();
-  const e=leakPending();sfx.event();
-  log(`Pell the lamplighter tipped you off: tomorrow at ${DI[e.d].name}, ${e.type==='spike'?GI[e.g].name+' will surge':GI[e.g].name+' will crash'}.`,'info');
-  await info({art:'tip',tone:'gold',kicker:'A friendly word',title:'Pell the lamplighter',body:`Pell lowers his pole and leans down to your skiff. "Heard something on my rounds. Tomorrow: <i>${esc(e.text)}</i>"`,extra:`<div class="result info">Tomorrow at <b>${DI[e.d].name}</b>: ${e.type==='spike'?'<b>sell</b> '+GI[e.g].name+' there':'<b>buy</b> '+GI[e.g].name+' there'}.</div>`});
+  const e=leakPending();if(!e)return evStrongbox();
+  sfx.event();
+  log(`Pell the lamplighter heard a rumour: tomorrow at ${DI[e.d].name}, ${GI[e.g].name} ${e.type==='spike'?'will surge':'will crash'}.`,'info');
+  await info({art:'tip',tone:'gold',kicker:'A friendly word',title:'Pell the lamplighter',body:`Pell lowers his pole and leans down to your skiff. "Heard something on my rounds. Tomorrow: <i>${esc(e.text)}</i>"`,extra:rumorOdds(e,'Pell')});
 }
 async function evCourier(){
   const dests=DISTRICTS.filter(d=>d.id!==S.loc);const to=pick(dests);const days=rint(2,5);const due=Math.min(NIGHTS,S.day+days);
@@ -1679,13 +1786,14 @@ async function runTrip(resumed){
   let L=1;try{L=wake.getTotalLength();}catch(e){}
   wake.style.strokeDasharray=L+' '+L;wake.style.strokeDashoffset=String(L);wake.style.opacity='1';
   if(T.stage==='out'){
-    sfx.travel();
-    await animSeg(wake,L,0,.5,850);
+    sfx.travel();armSkip(true);
+    await animSeg(wake,L,0,.5,650);
     T.stage='mid';save();
   }else if(T.stage==='mid')await animSeg(wake,L,.5,.5,0);
   if(T.stage==='mid'){
-    if(T.ev){S.stats.events++;try{await runEvent(T.ev);}catch(err){console.error(err);}T.ev=null;if(S.over){busy=false;return;}save();}
-    await animSeg(wake,L,.5,1,850);
+    if(T.ev){armSkip(false);S.stats.events++;try{await runEvent(T.ev);}catch(err){console.error(err);}T.ev=null;if(S.over){busy=false;return;}save();armSkip(true);}
+    else if(!skipVoyage)armSkip(true);
+    await animSeg(wake,L,.5,1,650);
     S.stats.trips++;
     advanceDay();
     S.loc=T.to;
@@ -1700,7 +1808,7 @@ async function runTrip(resumed){
     T.stage='arrived';T.ev=rollArrivalEvent();save();
     wake.style.opacity='0';
     renderAll();
-    await nightCard();
+    await nightCard();armSkip(false);
     sfx.arrive();
     if(fresh.length)toast(esc(fresh[0].text),fresh[0].type==='crash'?'good':'gold',fresh[0].type==='spike'?'arrowUp':fresh[0].type==='crash'?'arrowDown':'star',4200);
   }
@@ -1712,14 +1820,15 @@ async function runTrip(resumed){
   if(S.day===NIGHTS){toast('Final night! Sell your cargo, then settle up.','gold','flag',5000);log('The final night. Sell everything and settle up.','gold');}
   else if(S.day===NIGHTS-3)toast('Three nights left. Plan your last runs, and repay Marrow.','info','bell',4000);
   busy=false;renderAll();save();
-  if(isNarrow()&&!AUTO&&!resumed){await wait(250);setView('market');}
+  if(isNarrow()&&!resumed){await wait(250);setView('market');}
 }
 function nightCard(){
-  if(FAST)return Promise.resolve();
-  return new Promise(res=>{const d=document.createElement('div');d.className='nightcard';d.innerHTML=`<div><small>Night ${S.day} of ${NIGHTS}</small><b>${DI[S.loc].name}</b><span>${NIGHTS-S.day===0?'The final night':plural(NIGHTS-S.day,'night')+' remain'}</span></div>`;
-    document.body.appendChild(d);setTimeout(()=>{d.remove();res();},REDUCED?400:1350);});
+  if(FAST||skipVoyage)return Promise.resolve();
+  return new Promise(res=>{const d=document.createElement('div');d.className='nightcard';d.innerHTML=`<div><small>Night ${S.day} of ${NIGHTS}</small><b>${DI[S.loc].name}</b><span>${NIGHTS-S.day===0?'The final night':plural(NIGHTS-S.day,'night')+' remain'}</span><em>Tap to skip</em></div>`;
+    document.body.appendChild(d);const t0=performance.now(),dur=REDUCED?400:1000;
+    const tick=()=>{if(skipVoyage||performance.now()-t0>=dur){d.remove();res();}else requestAnimationFrame(tick);};requestAnimationFrame(tick);});
 }
-function hint(id,html){if(!S||S.hinted[id]||AUTO)return;S.hinted[id]=true;setTimeout(()=>toast(html,'gold','bell',6000),400);}
+function hint(id,html){if(!S||S.hinted[id])return;S.hinted[id]=true;setTimeout(()=>toast(html,'gold','bell',6000),400);}
 function firstVisitHint(id){
   const m={ch:"Odile's Boatyard is here: bigger hold, faster engine, hull repairs. Open the <b>Harbor</b> tab.",sm:'Brother Tallow sells weapons here. Check the <b>Harbor</b> tab.',de:'The Listening Room sells a wireless set: live prices from every district.',ot:'Madame Ysolde sells whispers about tomorrow\'s market shocks.',sl:'The Gutter Yard patches hulls cheaply, up to 75%.',fm:'Fogmouth is dangerous, but Ghost Chips and Dreamsilk come cheap here.'};
   if(m[id])hint('visit_'+id,m[id]);
@@ -1728,8 +1837,52 @@ function firstVisitHint(id){
 // =========================================================
 //   GAME FLOW
 // =========================================================
-function save(){if(S&&!S.over&&!AUTO)store.set(KEY_SAVE,S);}
-function loadSave(){const s=store.get(KEY_SAVE,null);if(s&&s.v===1&&!s.over&&s.prices&&s.cargo)return s;return null;}
+function save(){if(S&&!S.over)store.set(KEY_SAVE,S);}
+// Saved data is untrusted (older versions, other tabs, hand edits): check every field before use.
+const isNum=v=>typeof v==='number'&&isFinite(v);
+const isObj=v=>!!v&&typeof v==='object'&&!Array.isArray(v);
+const STAT_KEYS=['trips','bought','sold','profit','bestFlip','fights','won','fled','bribes','events','interest','vaultEarned','peak','repaid','whispers'];
+function migrateSave(s){
+  if(isObj(s)&&s.v===1){
+    s.press={};DISTRICTS.forEach(d=>{s.press[d.id]={};GOODS.forEach(g=>s.press[d.id][g.id]=0);});
+    if(Array.isArray(s.pending))s.pending.forEach(e=>{if(isObj(e)&&e.type!=='fest'){e.conf=e.conf||'likely';e.fate=e.fate||'full';}});
+    s.whisperDay=0;s.v=SAVE_V;
+  }
+  return s;
+}
+function validEvent(e,aged){return isObj(e)&&['spike','crash','fest'].includes(e.type)&&!!DI[e.d]&&(e.g==='*'||!!GI[e.g])&&isNum(e.m)&&e.m>0&&isNum(e.days)&&typeof e.text==='string'&&(!aged||isNum(e.age))&&(e.type==='fest'||aged||(!!CONF[e.conf]&&['full','weak','turn'].includes(e.fate)));}
+function validSave(s){
+  try{
+    if(!isObj(s)||s.v!==SAVE_V||s.over)return false;
+    if(!['day','cash','bank','debt','hull','holdTier','motor','arms'].every(k=>isNum(s[k])))return false;
+    if(s.day<1||s.day>NIGHTS||s.cash<0||s.bank<0||s.debt<0||s.hull<=0||s.hull>100)return false;
+    if(!DI[s.loc]||!HOLD_TIERS[s.holdTier]||!MOTORS[s.motor]||!ARMS[s.arms])return false;
+    if(!GOODS.every(g=>isObj(s.cargo&&s.cargo[g.id])&&isNum(s.cargo[g.id].q)&&s.cargo[g.id].q>=0&&isNum(s.cargo[g.id].cost)&&isNum(s.trend&&s.trend[g.id])))return false;
+    for(const k of ['prices','press','local','stock','hist','seen'])if(!isObj(s[k])||!DISTRICTS.every(d=>isObj(s[k][d.id])))return false;
+    for(const d of DISTRICTS)for(const g of GOODS){
+      if(!isNum(s.prices[d.id][g.id])||s.prices[d.id][g.id]<=0||!isNum(s.press[d.id][g.id])||!isNum(s.local[d.id][g.id]))return false;
+      if(typeof s.stock[d.id][g.id]!=='boolean')return false;
+      const h=s.hist[d.id][g.id];if(!Array.isArray(h)||!h.length||!h.every(isNum))return false;
+      const sn=s.seen[d.id][g.id];if(sn!=null&&!(isObj(sn)&&isNum(sn.p)&&isNum(sn.day)))return false;
+    }
+    if(!Array.isArray(s.effects)||!s.effects.every(e=>validEvent(e,true)))return false;
+    if(!Array.isArray(s.pending)||!s.pending.every(e=>validEvent(e,false)))return false;
+    if(!Array.isArray(s.contracts)||!s.contracts.every(c=>isObj(c)&&!!DI[c.to]&&isNum(c.due)&&isNum(c.reward)&&isNum(c.size)))return false;
+    if(!Array.isArray(s.log)||!s.log.every(l=>isObj(l)&&typeof l.t==='string'))return false;
+    if(!isObj(s.visited)||!isObj(s.hinted))return false;
+    if(s.trip!=null&&!(isObj(s.trip)&&!!DI[s.trip.from]&&!!DI[s.trip.to]&&['out','mid','arrived'].includes(s.trip.stage)&&(s.trip.ev==null||typeof s.trip.ev==='string')))return false;
+    s.stats=isObj(s.stats)?s.stats:{};STAT_KEYS.forEach(k=>{if(!isNum(s.stats[k]))s.stats[k]=0;});
+    if(typeof s.stats.bestFlipGood!=='string')s.stats.bestFlipGood='';
+    s.name=typeof s.name==='string'?s.name.slice(0,18):'Captain';s.racks=s.racks===true;s.wireless=s.wireless===true;
+    if(!isNum(s.whisperDay))s.whisperDay=0;
+    return true;
+  }catch(e){return false;}
+}
+function loadSave(){const s=migrateSave(store.get(KEY_SAVE,null));return validSave(s)?s:null;}
+function loadScores(){
+  const x=store.get(KEY_SCORES,[]);if(!Array.isArray(x))return[];
+  return x.filter(e=>isObj(e)&&isNum(e.score)).map(e=>({name:String(e.name==null?'Captain':e.name).slice(0,18),score:Math.round(e.score),rank:typeof e.rank==='string'?e.rank:rankFor(e.score).name,night:isNum(e.night)?e.night:NIGHTS,sunk:e.sunk===true,date:typeof e.date==='string'?e.date.slice(0,10):'',id:String(e.id==null?Math.random():e.id)})).sort((a,b)=>b.score-a.score).slice(0,10);
+}
 function startGame(state,isNew){
   S=state;sel=null;selectedGood=null;busy=false;
   for(const k in shown)delete shown[k];
@@ -1758,7 +1911,7 @@ async function endGame(reason){
   S.over=true;busy=false;store.del(KEY_SAVE);
   const t=tally(reason),rank=rankFor(t.net);
   const entry={name:S.name||'Captain',score:t.net,rank:rank.name,night:S.day,sunk:t.sunk,date:new Date().toISOString().slice(0,10),id:Math.random().toString(36).slice(2)};
-  const scores=(store.get(KEY_SCORES,[])||[]).filter(x=>x&&typeof x.score==='number');scores.push(entry);scores.sort((a,b)=>b.score-a.score);const top=scores.slice(0,10);store.set(KEY_SCORES,top);
+  const scores=loadScores();scores.push(entry);scores.sort((a,b)=>b.score-a.score);const top=scores.slice(0,10);store.set(KEY_SCORES,top);
   const placed=top.findIndex(x=>x.id===entry.id);
   if(t.net>0&&!t.sunk){sfx.win();setTimeout(()=>FX.lanterns(50),300);}else{sfx.lose();FX.rain(100);}
   const html=`<div class="end-hero">
@@ -1785,7 +1938,6 @@ async function endGame(reason){
   const fn=$('#final-n');const t0=performance.now();
   const step=now=>{const k=Math.min(1,(now-t0)/1400),e=1-Math.pow(1-k,3);fn.textContent=fmt(t.net*e);if(k<1)requestAnimationFrame(step);};
   if(FAST)fn.textContent=fmt(t.net);else requestAnimationFrame(step);
-  if(AUTO)window.__autoResult={net:t.net,rank:rank.name,sunk:t.sunk,day:S.day,trips:S.stats.trips,fights:S.stats.fights};
 }
 function emblemSVG(r){
   return `<svg class="emblem" viewBox="0 0 120 120"><defs><radialGradient id="eg"><stop offset="0" stop-color="${r.color}" stop-opacity=".5"/><stop offset="1" stop-color="${r.color}" stop-opacity="0"/></radialGradient></defs>
@@ -1814,10 +1966,11 @@ function showTitle(){
     </div></div>
     <div class="tt-foot">Mouse, touch or keyboard · Sound is synthesized live</div>`;
   for(let i=0;i<16;i++){const l=document.createElement('div');l.className='lantern-p';l.style.left=(rnd()*100)+'%';l.style.animationDuration=(14+rnd()*16)+'s';l.style.animationDelay=(-rnd()*25)+'s';l.style.transform=`scale(${.6+rnd()*.8})`;t.appendChild(l);}
-  const c=$('#t-cont');if(c)c.onclick=()=>{sfx.click();const s=loadSave();if(s)startGame(s,false);};
+  const c=$('#t-cont');if(c)c.onclick=()=>{sfx.click();const s=loadSave();if(!s){showTitle();return;}
+    try{startGame(s,false);}catch(err){console.warn(err);store.del(KEY_SAVE);showTitle();toast('That saved voyage was damaged and could not be loaded. Start a new run.','bad','bell',5000);}};
   $('#t-new').onclick=()=>{sfx.click();openIntro();};
   $('#t-help').onclick=()=>{sfx.click();openHelp();};
-  $('#t-ledger').onclick=()=>{sfx.click();showModal(`<div class="card-body"><div class="kicker">Hall of fortunes</div><h3>Captains' Ledger</h3>${ledgerTable(store.get(KEY_SCORES,[])||[],null)}<div class="choices"><button class="choice primary" data-x><kbd>1</kbd><div>Close</div></button></div></div>`,{dismiss:closeModal,onKey:e=>{if(e.key==='1')closeModal();}}).querySelector('[data-x]').onclick=closeModal;};
+  $('#t-ledger').onclick=()=>{sfx.click();showModal(`<div class="card-body"><div class="kicker">Hall of fortunes</div><h3>Captains' Ledger</h3>${ledgerTable(loadScores(),null)}<div class="choices"><button class="choice primary" data-x><kbd>1</kbd><div>Close</div></button></div></div>`,{dismiss:closeModal,onKey:e=>{if(e.key==='1')closeModal();}}).querySelector('[data-x]').onclick=closeModal;};
   $('#t-mute').onclick=()=>{toggleMute();$('#t-mute').innerHTML=ico(Sound.muted?'mute':'sound');};
   setTimeout(()=>{const b=$('#t-cont')||$('#t-new');if(b)b.focus({preventScroll:true});},50);
 }
@@ -1851,17 +2004,17 @@ function openIntro(){
     <div class="choices"><button class="choice primary" id="go"><kbd>⏎</kbd><div>Cast off<small>${settings.tutorial?'':'A quick guided tour starts first. You can skip it.'}</small></div></button></div></div>`,
     {dismiss:()=>{closeModal();if(!S)showTitle();},onKey:e=>{if(e.key==='Enter'){e.preventDefault();go();}}});
   const go=()=>{const n=($('#cap-name').value||'').trim().slice(0,18)||'Captain';settings.name=n;saveSettings();closeModal();Sound.unlock();sfx.arrive();
-    startGame(newState(n),true);if(!settings.tutorial&&!AUTO)setTimeout(startCoach,500);};
+    startGame(newState(n),true);if(!settings.tutorial)setTimeout(startCoach,500);};
   el.querySelector('#go').onclick=go;
   setTimeout(()=>{const i=$('#cap-name');if(i&&!isNarrow())i.focus();},60);
 }
 function openHelp(){
   const html=`<div class="card-body help"><div class="kicker">Captain's handbook</div><h3>How to play</h3>
   <h4>${ico('flag')}The goal</h4><p>End night 30 with the largest fortune: cash + vault + half-price cargo − debt. Your rank and the Captains' Ledger are waiting.</p>
-  <h4>${ico('coin')}Trading</h4><ul><li>Each district has its own prices, and they shift every night. The sparkline on each good shows the last 10 nights.</li><li><b>Green tags</b> mark cheap goods; <b>Surge</b> and <b>Glut</b> mark market shocks you can exploit.</li><li>Every district is famous for something it makes cheap and something it pays well for. Check the map card.</li></ul>
+  <h4>${ico('coin')}Trading</h4><ul><li>Each district has its own prices, and they shift every night. The sparkline on each good shows the last 10 nights.</li><li>The <b>%</b> beside each price compares it with that good's usual price across the city. <b style="color:#4ee39b">Green</b> is cheap (buy), <b style="color:#ffbe55">amber</b> is dear (sell). <b>Surge</b> and <b>Glut</b> tags mark market shocks.</li><li>An <b>↑ +40% Saint Mire</b> tag means the good last sold there for 40% more than it costs here. Without a price seen, the tag names a district that usually pays well.</li><li><b>Big orders move prices.</b> Dealers trade a few units at the posted price, then each extra unit costs more (or fetches less), and the market takes a night or two to recover. Spread big money across several goods and ports.</li><li>Every district is famous for something it makes cheap and something it pays well for. Check the map card.</li></ul>
   <h4>${ico('map')}Voyages</h4><ul><li>Sailing anywhere costs <b>one night</b>. The danger pips show how often patrols and gangs prowl.</li><li>The trade screen remembers the last price you saw everywhere; green <b>+%</b> badges on the map show where your cargo sells above cost.</li></ul>
   <h4>${ico('quill')}Debt and the vault</h4><ul><li>Marrow Quill's 6% nightly interest snowballs. Repay at Lanternquay.</li><li>The Lockwater Vault (Lanternquay, Drowned Exchange) pays 1.5% a night and keeps cash safe.</li></ul>
-  <h4>${ico('wrench')}Upgrades</h4><ul><li>Copperhook Docks: bigger hold, faster engine, repairs. Saint Mire & Fogmouth: weapons. Drowned Exchange: a wireless set for live prices everywhere. Orchid Terraces: tomorrow's rumours.</li></ul>
+  <h4>${ico('wrench')}Upgrades</h4><ul><li>Copperhook Docks: bigger hold, faster engine, repairs. Saint Mire & Fogmouth: weapons. Drowned Exchange: a wireless set for live prices everywhere. Orchid Terraces: Madame Ysolde sells one rumour a night about tomorrow's shocks. Rumours can land weak or turn the other way; she tells you how sure she is.</li></ul>
   <h4>${ico('skull')}Danger</h4><ul><li>Patrols, the Gull Gang and Marrow's collectors may stop you. Run, fight, bribe or pay. If your hull hits 0%, you sink and lose your cash and cargo.</li></ul>
   <h4>${ico('star')}Controls</h4><div class="keys"><kbd>1</kbd>–<kbd>7</kbd><span>Pick a district · <kbd>Enter</kbd> to sail</span><kbd>↑</kbd><kbd>↓</kbd><span>Pick a good · <kbd>B</kbd> buy · <kbd>S</kbd> sell</span><kbd>←</kbd><kbd>→</kbd><span>Adjust quantity (<kbd>Shift</kbd> ×10) · <kbd>A</kbd> max</span><kbd>1</kbd>–<kbd>4</kbd><span>Choose options in events</span><kbd>M</kbd><span>Mute · <kbd>?</kbd> this help · <kbd>Esc</kbd> close / menu</span></div>
   <div class="choices">${S?'<button class="choice" data-tour><kbd>2</kbd><div>Replay the guided tour</div></button>':''}<button class="choice primary" data-x><kbd>1</kbd><div>Got it</div></button></div></div>`;
@@ -1881,12 +2034,12 @@ function openMenu(){
 let coachOpen=false,coachI=0;
 const COACH=[
   {sel:'#hud-stats',view:'market',title:'Your ledger',text:'Cash in your <b>purse</b>, savings in the <b>vault</b>, and your <b>debt</b> to Marrow Quill, which grows 6% every night. Watch your <b>hold</b> space and <b>hull</b> too.'},
-  {sel:'#side-body .rows',view:'market',title:'The market',text:'Prices here tonight. Sparklines show the last 10 nights. Tap a good (or press <kbd>B</kbd>/<kbd>S</kbd>) to trade. <b>Buy low here, sell high somewhere else.</b>'},
+  {sel:'#side-body .rows',view:'market',title:'The market',text:'Tonight&rsquo;s prices. The coloured % compares each price with its usual level across the city: <b style="color:#4ee39b">green is cheap</b>, a buy; <b style="color:#ffbe55">amber is dear</b>, a sale. Tags say where a good sells for more. Tap a good to trade.'},
   {sel:'#mapwrap',view:'map',title:'The canals',text:'Tap a district to see what it makes cheaply and what it pays well for, then sail there. <b>Every voyage takes one night</b>, and the water isn\'t always safe.'},
   {sel:'#panel-side',view:'harbor',title:'Harbor services',text:'Repay Marrow and use the vault at Lanternquay. Upgrade your hold and engine at Copperhook Docks. The <b>directory</b> lists every service.'},
   {sel:'#h-night',view:'market',title:'Thirty nights',text:'On night 30, sell everything and settle up. Good luck, captain. Press <kbd>?</kbd> any time for help.'}
 ];
-function startCoach(){if(AUTO)return;coachOpen=true;coachI=0;let c=$('#coach');if(!c){c=document.createElement('div');c.id='coach';document.body.appendChild(c);}c.innerHTML='<div class="spot"></div><div class="tip"></div>';c.hidden=false;showCoach();}
+function startCoach(){coachOpen=true;coachI=0;let c=$('#coach');if(!c){c=document.createElement('div');c.id='coach';document.body.appendChild(c);}c.innerHTML='<div class="spot"></div><div class="tip"></div>';c.hidden=false;showCoach();}
 function showCoach(){
   const st=COACH[coachI];setView(st.view);
   requestAnimationFrame(()=>requestAnimationFrame(()=>{
@@ -1906,99 +2059,9 @@ function showCoach(){
 }
 function coachNext(skip){sfx.click();coachI++;if(skip||coachI>=COACH.length){coachOpen=false;const c=$('#coach');if(c)c.remove();settings.tutorial=true;saveSettings();setView('market');toast('Tip: look for <b>Cheap</b> tags, then check the map for where that good sells dear.','gold','bell',6000);return;}showCoach();}
 
-// =========================================================
-//   DEV HOOKS (sim + autoplay for testing)
-// =========================================================
-function botTurn(){
-  const here=DI[S.loc];
-  GOODS.forEach(g=>{const c=S.cargo[g.id];if(c.q&&S.stock[S.loc][g.id]&&(price(g.id)>c.cost*1.02||S.day===NIGHTS))coreSell(g.id,c.q);});
-  if(S.loc==='lq'&&S.debt>0&&(S.cash>S.debt*1.3||S.day>24)){const pay=Math.min(S.debt,S.cash);S.cash-=pay;S.debt-=pay;}
-  if(S.loc==='ch'){const nt=HOLD_TIERS[S.holdTier+1];if(nt&&nt.cost<S.cash*.35){S.cash-=nt.cost;S.holdTier++;}if(S.hull<70){const pts=Math.min(100-S.hull,Math.floor(S.cash/YARD_RATE));S.cash-=pts*YARD_RATE;S.hull+=pts;}}
-  if(S.day>=NIGHTS)return null;
-  const mustRepay=S.debt>0&&S.loc!=='lq'&&(S.cash>S.debt*1.3||S.day>=24);
-  let best=null;
-  GOODS.forEach(g=>{if(!S.stock[S.loc][g.id])return;const p=price(g.id);const est0=p/mult(here,g)/effectMult(S.loc,g.id);
-    DISTRICTS.forEach(dd=>{if(dd.id===S.loc)return;if(mustRepay&&dd.id!=='lq')return;const est=est0*mult(dd,g);const qty=Math.min(Math.floor(S.cash/p),capacity()-holdUsed());const gain=(est*.95-p)*qty;if(!best||gain>best.gain)best={g:g.id,d:dd.id,gain,qty};});});
-  let dest;
-  if(best&&best.gain>0){coreBuy(best.g,best.qty);dest=best.d;}else dest=mustRepay?'lq':pick(DISTRICTS.filter(d=>d.id!==S.loc)).id;
-  if(S.hull<45&&S.loc!=='ch')dest='ch';
-  return dest;
-}
-function runSim(){
-  const N=400,res=[];
-  for(let i=0;i<N;i++){
-    newState('bot');let dest;
-    while(true){dest=botTurn();if(!dest)break;
-      if(S.stats.trips>0&&rnd()<encounterChance(dest)){const r=rnd();if(r<.5){const b=Math.round(500+S.cash*.12);if(S.cash>b)S.cash-=b;else GOODS.forEach(g=>{S.cargo[g.id].q=Math.floor(S.cargo[g.id].q/2);});}else if(r<.8){S.cash=Math.round(S.cash*.7);}else{S.hull-=rint(10,30);if(S.hull<=0)break;}}
-      if(rnd()<.06)S.hull-=rint(6,16);
-      if(S.hull<=0)break;
-      S.stats.trips++;advanceDay();S.loc=dest;markSeen();}
-    const t=tally(S.hull<=0?'sunk':'complete');res.push(t.net);
-  }
-  res.sort((a,b)=>a-b);const q=p=>res[Math.floor(p*(res.length-1))];
-  const dist={};res.forEach(v=>{const r=rankFor(v).name;dist[r]=(dist[r]||0)+1;});
-  document.body.innerHTML=`<pre id="out" style="color:#fff;padding:20px;font-size:16px">SIM N=${N}
-p10 ${fmt(q(.1))}  p25 ${fmt(q(.25))}  median ${fmt(q(.5))}  p75 ${fmt(q(.75))}  p90 ${fmt(q(.9))}  max ${fmt(res[res.length-1])}
-${Object.entries(dist).map(([k,v])=>k+': '+v).join('\n')}</pre>`;
-}
-async function autoplay(slow){
-  AUTO=true;FAST=!slow;settings.tutorial=true;
-  const errs=[];window.addEventListener('error',e=>errs.push(e.message));
-  startGame(newState('Autobot'),true);
-  let guard=0;
-  while(!S.over&&guard++<80){
-    if(S.day===NIGHTS){botTurn();renderAll();endGame('complete');break;}
-    // exercise UI: open a trade sheet and confirm via the real path
-    const g=GOODS.find(x=>S.stock[S.loc][x.id]&&S.cargo[x.id].q>0);
-    if(g){openTrade(g.id,'sell');const b=$('#qgo');if(b&&!b.disabled)b.click();else closeModal();}
-    const dest=botTurn();renderAll();
-    if(S.loc==='lq'&&S.cash>500&&rnd()<.3){serviceAction('deposit');await wait(5);}
-    if(!dest)continue;
-    await sailTo(dest);
-    await wait(1);
-  }
-  await wait(20);
-  const out=document.createElement('pre');out.id='autoresult';out.style.cssText='position:fixed;top:0;left:0;z-index:9999;background:#000;color:#0f0;padding:6px;font-size:12px;margin:0';
-  out.textContent='AUTO '+JSON.stringify(window.__autoResult||{})+' errors='+JSON.stringify(errs);document.body.appendChild(out);
-}
-async function shot(which){
-  settings.tutorial=true;FAST=true;const st=document.createElement('style');st.textContent='*,*::before,*::after{animation-play-state:paused!important;animation-delay:-5s!important;transition:none!important}';document.head.appendChild(st);
-  if(which==='title'){showTitle();return;}
-  startGame(newState('Shot'),true);
-  // give the shot some life
-  S.day=9;S.cash=18450;S.bank=6000;S.debt=9800;S.hull=72;S.cargo.pearl={q:12,cost:340};S.cargo.saffron={q:6,cost:880};S.holdTier=1;
-  for(let i=0;i<6;i++)stepMarket(false);S.day=9;markSeen();
-  DISTRICTS.forEach(d=>GOODS.forEach(g=>S.seen[d.id][g.id]={p:S.prices[d.id][g.id],day:S.day-rint(0,4),st:true}));
-  S.effects.forEach(e=>e.known=true);
-  if(!S.effects.length){S.effects.push({type:'spike',d:'ot',g:'silk',m:2.6,days:2,age:0,known:true,text:'A Terrace wedding has emptied Orchid Terraces of Dreamsilk. Prices are soaring.'});}
-  log('Arrived at Lanternquay.');log('Sold 8 Rust Pearls at ¤612 for ¤4,896 (profit ¤2,100).','good');log('Bulletin: A Terrace wedding has emptied Orchid Terraces of Dreamsilk.','info');
-  FAST=false;mapBuilt=false;renderAll();buildMap();renderAll();
-  if(which==='map'){setView('map');sel='sm';renderMapState();}
-  if(which==='sheet')openTrade('pearl','sell');
-  if(which==='harbor')setView('harbor');
-  if(which==='log')setView('log');
-  if(which==='event'){FAST=true;AUTO=false;encounter('patrol');}
-  if(which==='event2'){evFortune();}
-  if(which==='end'){S.debt=0;S.day=30;endGame('complete');}
-  if(which==='tour'){settings.tutorial=false;startCoach();}
-  if(which==='final'){S.day=30;renderAll();}
-}
-
 // ---------- boot ----------
-function dbg(m){if(location.hash){const d=$('#debug')||Object.assign(document.body.appendChild(document.createElement('div')),{id:'debug'});d.textContent+=m+'\n';}}
-window.addEventListener('error',e=>dbg(e.message+' @'+e.lineno));
-window.addEventListener('unhandledrejection',e=>dbg('REJ '+(e.reason&&e.reason.stack||e.reason)));
 updateMuteBtn();
-(function boot(){
-  const h=location.hash||'';
-  try{
-    if(h.startsWith('#sim'))return runSim();
-    if(h.startsWith('#autoslow'))return autoplay(true);
-    if(h.startsWith('#auto'))return autoplay(false);
-    if(h.startsWith('#shot='))return shot(h.slice(6));
-  }catch(e){console.error(e);}
-  showTitle();
-})();
+showTitle();
 </script>
 </body>
 </html>
