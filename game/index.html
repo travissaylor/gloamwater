@@ -1357,6 +1357,7 @@ function marketRowNote(gid,stocked){
   const c=S.cargo[gid],p=price(gid),best=bestSeen(gid),bits=[];
   if(c.q)bits.push(`<span>×${c.q} · avg ${fmtK(c.cost)}</span>`);
   if(!stocked){bits.push('No dealers tonight');return bits.join(' · ');}
+  if(fleetMult(S.loc,gid)>1)bits.push('<span class="gold">Fleet demand +40%</span>');
   const shock=effectsAt(S.loc,gid).find(e=>e.type==='spike'||e.type==='crash');
   if(shock)bits.push(`<span class="${shock.type==='crash'?'up':'gold'}">${shock.type==='spike'?'Surge':'Glut'}${shock.age?' easing':''}</span>`);
   if(best&&best.p>p*1.12)bits.push(`<span><span class="route-name">${esc(portName(best.d.id))}</span> +${Math.round((best.p/p-1)*100)}% seen ${best.ago?best.ago+'n ago':'tonight'}</span>`);
@@ -1839,7 +1840,7 @@ function showModal(html,{cls='',onKey=null,dismiss=null,wide=false,keepFx=false}
   requestAnimationFrame(()=>{const f=ov.querySelector('[autofocus]')||ov.querySelector('.choice:not([disabled]),button:not([disabled]),input');if(f)softFocus(f,{preventScroll:true});});
   return ov.firstElementChild;
 }
-function closeModal(){const ov=$('#modal');if(!ov.hidden)tapGuardUntil=performance.now()+350;ov.hidden=true;$('#app').inert=false;$('#title').inert=false;document.body.classList.remove('fx-under');ov.innerHTML='';modalKeys=null;modalDismiss=null;setTimeout(flushToasts,250);if(lastFocus&&document.body.contains(lastFocus)){try{softFocus(lastFocus,{preventScroll:true});}catch(e){}}}
+function closeModal(){const ov=$('#modal');if(!ov.hidden)tapGuardUntil=performance.now()+350;ov.hidden=true;$('#app').inert=!$('#title').hidden;$('#title').inert=false;document.body.classList.remove('fx-under');ov.innerHTML='';modalKeys=null;modalDismiss=null;setTimeout(flushToasts,250);if(lastFocus&&document.body.contains(lastFocus)){try{softFocus(lastFocus,{preventScroll:true});}catch(e){}}}
 function cardHTML(c){
   return `${c.art?`<div class="art">${ART[c.art]?ART[c.art]():''}</div>`:''}<div class="card-body">
     ${c.kicker?`<div class="kicker">${c.kicker}</div>`:''}<h3>${c.title}</h3>
@@ -2679,7 +2680,7 @@ function startGame(state,isNew){
   clearToasts();
   S=state;sel=null;selectedGood=null;busy=false;
   for(const k in shown)delete shown[k];
-  $('#title').hidden=true;$('#app').setAttribute('aria-hidden','false');
+  $('#title').hidden=true;$('#app').inert=false;$('#app').setAttribute('aria-hidden','false');
   setView(isNarrow()?'market':'market');
   mapBuilt=false;
   requestAnimationFrame(()=>{buildMap();renderAll();});
@@ -2715,7 +2716,7 @@ async function endGame(reason,rec){
       <div class="kicker">${t.sunk?'Sunk on night '+S.day:S.day<NIGHTS?'Settled on night '+S.day:'Thirty nights, done'}</div>
       ${emblemSVG(rank)}
       <h3 style="color:${rank.color}">${rank.name}</h3>
-      <p class="rankline">${rank.line}</p></div>
+      <p class="rankline">${t.sunk?'Your skiff and cargo are gone. The ledger records what remains.':rank.line}</p></div>
     <div class="breakdown">
       <span>Cash on board</span><b>${t.sunk?'lost':fmt(t.cash)}</b>
       <span>Lockwater Vault</span><b>${fmt(t.bank)}</b>
@@ -2757,7 +2758,7 @@ function ledgerTable(list,hl){
 function showTitle(){
   clearToasts();
   S=null;closeModal();
-  const t=$('#title');t.hidden=false;$('#app').setAttribute('aria-hidden','true');
+  const t=$('#title');t.hidden=false;$('#app').inert=true;$('#app').setAttribute('aria-hidden','true');
   const has=!!loadSave(),damaged=damagedKeys.delete(KEY_SAVE);
   t.innerHTML=`${titleScene()}<div class="tt-inner">
     <h1>GLOAMWATER</h1>

@@ -54,6 +54,15 @@ async function act(page, selector, touch) {
 async function boot(page, touch) {
   await page.goto(URL);
   assert(await page.locator('#title animate').count() === 0, 'Title SVG animation ignores reduced motion');
+  await page.waitForFunction(() => /^t-(new|cont)$/.test(document.activeElement.id));
+  for (const key of ['Shift+Tab', 'Tab']) for (let i = 0; i < 12; i++) {
+    await page.keyboard.press(key);
+    assert(await page.evaluate(() => !document.querySelector('#app').contains(document.activeElement)), 'Title focus entered the covered game');
+  }
+  await act(page, '#t-help', touch);
+  await page.keyboard.press('Escape');
+  await pause(page);
+  assert(await page.evaluate(() => document.querySelector('#app').inert), 'Closing title help exposed background controls to focus');
   await page.evaluate(() => { FAST = true; });
   await act(page, '#t-new', touch);
   await act(page, '#go', touch);
@@ -197,6 +206,10 @@ async function storageAndSandbox(browser) {
     await page.evaluate(() => { S.day=15;renderAll();void serviceAction('repay'); });
     await page.waitForFunction(() => /10%\s+nightly/.test(document.querySelector('#modal').textContent));
     await page.keyboard.press('Escape');
+    // An active demand multiplier can coexist with a below-usual market price.
+    // Keep the demand cue explicit instead of presenting it as guaranteed profit.
+    await page.evaluate(() => { S.day=21;S.loc='sl';S.stock.sl.chips=true;renderAll(); });
+    assert((await page.locator('.row[data-g="chips"] .row-note').innerText()).includes('Fleet demand +40%'), 'Fleet demand is missing from its market row');
     const wrapper = path.join(OUT, 'sandbox.html');
     fs.writeFileSync(wrapper, '<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body,iframe{margin:0;width:100%;height:100%;border:0}</style><iframe sandbox="allow-scripts" src="' + URL + '"></iframe>');
     await page.goto(pathToFileURL(wrapper).href);
@@ -212,7 +225,7 @@ async function storageAndSandbox(browser) {
     await page.screenshot({ path: path.join(OUT, 'sandbox.png'), scale: 'css' });
     assert(errors.length === 0, errors.join('; '));
     assert(network.length === 0, 'Network requests in sandbox');
-    return { corruptStorageRecovered: true, corruptSaveNotice: true, lateRateCopyFixture: true, sandboxStorageBlocked: blocked, sandboxStarted: true, errors, network };
+    return { corruptStorageRecovered: true, corruptSaveNotice: true, lateRateCopyFixture: true, fleetDemandCopyFixture: true, sandboxStorageBlocked: blocked, sandboxStarted: true, errors, network };
   } finally { await context.close(); }
 }
 async function main() {

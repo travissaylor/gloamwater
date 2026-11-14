@@ -149,6 +149,7 @@ async function test(browser, engine, c, out, game) {
       insist(after.over && after.hull === 0, 'Fatal gull failure did not sink the skiff');
       insist(after.saved === null, 'Sinking retained a resumable save');
       insist(after.scores.length === 1 && after.scores[0].sunk, 'Sinking did not record one losing ledger entry');
+      insist(!/kept your head above water/i.test(await page.locator('.rankline').innerText()), 'Sinking ending contradicts the lost skiff');
       evidence.after = after;
       await page.screenshot({ path: path.join(out, prefix + '-outcome.png'), scale: 'css' });
       await page.reload();

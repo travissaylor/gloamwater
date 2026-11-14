@@ -1,0 +1,212 @@
+{
+  "sha256": "a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03",
+  "bytes": 253094,
+  "rubric_sha256": "7a3f9d2c1d567b4547c115e3a90ef4ad79ae103ead30ece274d04a5d01942d67",
+  "helper_files": [
+    {
+      "file": "event-check.cjs",
+      "sha256": "5864393495198c16ee7deddd273ec40caeb2b29928fd7303082c00f60aefb4ed"
+    },
+    {
+      "file": "keyboard-play.cjs",
+      "sha256": "48aa83b2a0aa4b7bfc92ee000ef2dddf885a9d4edffa2e2306399c7ca71af48f"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "da2024b7cf400ad42e365ebcc1fe13d339f4212f6618ac4689ebf9371a9c0d40"
+    },
+    {
+      "file": "package.json",
+      "sha256": "31ccbbe46d9235cc353560c6d84b9cea2e43e9f3fc148200e64a6484dcc2948c"
+    },
+    {
+      "file": "phone/common.js",
+      "sha256": "dfa1d45415dfa9a7f9d3930d7aacdd68cf890402a58e53c83e5fbb95149035d2"
+    },
+    {
+      "file": "phone/probe.js",
+      "sha256": "a9fa8b260b603b831d07f14c9ead5156ea44c2ed8566a5079710872a5fe8a797"
+    },
+    {
+      "file": "phone/server.js",
+      "sha256": "06a08462fdac245e557689b7059e72a77d753aaae4253a997b8926ff34ca32e4"
+    },
+    {
+      "file": "phone/start.js",
+      "sha256": "413ff0d02b592b8489d8b3aab451e2aec1e98dace7d63cc39cb81e5c2851f884"
+    },
+    {
+      "file": "phone/step.js",
+      "sha256": "e7cb9c30dc6bc0d0327eef62cbf35c40c6f1a645f605c26ef403d6270a52f490"
+    },
+    {
+      "file": "phone/stop.js",
+      "sha256": "77c9588a217eab12198aea4665af2dd00e99bee5ba61e7695b0ade802c20484b"
+    },
+    {
+      "file": "profile.cjs",
+      "sha256": "dbed4c9a768291fce1d8ff3a510492bdd1514bcc64107d112a3e700cbc45733d"
+    },
+    {
+      "file": "README.md",
+      "sha256": "69be53ef4d679da7fe0f7fcf2e0aaa8b68a401b9aafbcfa86f05b8e142079fc0"
+    },
+    {
+      "file": "sim/adapter.js",
+      "sha256": "ff561f27a0552e8a6f90af3e01ba4f8458e39347edacd2413c33b1ace6eb1083"
+    },
+    {
+      "file": "sim/analyze.js",
+      "sha256": "bf9d30b4169df4f07bd9fe4c419d73d0fd8da6f7479ccabfb3439e77d6b1f364"
+    },
+    {
+      "file": "sim/combat-summary.js",
+      "sha256": "456f3f174a27669725636ec827b0db94375ab92b18edf078ff957bda6e81c0da"
+    },
+    {
+      "file": "sim/mix-summary.js",
+      "sha256": "12be8ae9fc95dfe75f01fee6d89769e4fb80f77c9d3ab0a8737cb9476bc4e3e3"
+    },
+    {
+      "file": "sim/policies/_common.js",
+      "sha256": "0dd6d89f4cff21b40c8e2f366d9b0aeaf1376cd963dcc9b826f0c7f8d9b1e311"
+    },
+    {
+      "file": "sim/policies/_whisper.js",
+      "sha256": "ea9510bf810f17128dbaddd72faeb114a542115cbc0810944085a7e6af763335"
+    },
+    {
+      "file": "sim/policies/borrow-max.js",
+      "sha256": "5fcf38ae1d51741306f14d60ad9a6f0cbb9c6df8bcdf57e048d668513c82e742"
+    },
+    {
+      "file": "sim/policies/borrow-smart.js",
+      "sha256": "b44bb93df56fda2257d22ccb76a0be91016a566691bd2995f97480b5102913b4"
+    },
+    {
+      "file": "sim/policies/charter-rush.js",
+      "sha256": "efc5d1db7091c0b6eafc65f698f305fd0116aeb19c195f34192ce059d7a5dcfa"
+    },
+    {
+      "file": "sim/policies/corner.js",
+      "sha256": "45cde56a6f48d2efb9e9dbc991b375ec3a49c067b04e30e070d9a6b2a5dd3c2f"
+    },
+    {
+      "file": "sim/policies/dumpback.js",
+      "sha256": "106b4badf1b262060cc7ae5317f73e9ea6d3f1a3f4e6adf81b262c2b7ad0ff2d"
+    },
+    {
+      "file": "sim/policies/eel.js",
+      "sha256": "b00b5dbbf61d9481e44957a9485fce5031028760ab046813d794be2e30a6de61"
+    },
+    {
+      "file": "sim/policies/fight-farm.js",
+      "sha256": "e9e9f0a641a9b4203481e27f78fff05101c284a9e64672b54168a85e3cc6a420"
+    },
+    {
+      "file": "sim/policies/fight.js",
+      "sha256": "60d5a1b69c39811446b7331af920dcdb89da25c891af61bafaa2b78ba56bb200"
+    },
+    {
+      "file": "sim/policies/greedy.js",
+      "sha256": "ec512d37918f44db6e57575ba194988e9415403a3580c6ec3d4010137bf7034c"
+    },
+    {
+      "file": "sim/policies/informed-adj.js",
+      "sha256": "55dc0329cd12136d6cf04d3256b08a178067401b7ad9c12651f24819deb5b6a8"
+    },
+    {
+      "file": "sim/policies/informed-nocharter.js",
+      "sha256": "7344fa810912ae11e136206120e4af306cab6c3056588ada58f5e6bd2269f32b"
+    },
+    {
+      "file": "sim/policies/informed-nofight.js",
+      "sha256": "ca61782434ad9cd20ad2ad2dc60069a8336f1328e50d7d9747b2ef8ad089d320"
+    },
+    {
+      "file": "sim/policies/informed-nohigh.js",
+      "sha256": "a31b1a63a8f5bb835402f5e999af3530011004f56b5a91a605f511b34f779d0e"
+    },
+    {
+      "file": "sim/policies/informed-nostay.js",
+      "sha256": "697dcca0777b541b65b45c23286abb33eb78d5346b02327595180430c31a0bf8"
+    },
+    {
+      "file": "sim/policies/informed-novault.js",
+      "sha256": "696dc52609e4a60a80b0744102b7d36d42236ee2f755534f06050d23dea8b9be"
+    },
+    {
+      "file": "sim/policies/informed.js",
+      "sha256": "b369c2ed91f8d1ea4c0c20b6c968b4c224bfd5968067556c3df395d5602ad3f3"
+    },
+    {
+      "file": "sim/policies/purse-floor.js",
+      "sha256": "078fee5e7bed3721a80d75a942c4d215903f76c044ebce7841752d0494535603"
+    },
+    {
+      "file": "sim/policies/roundtrip.js",
+      "sha256": "34fc28bcdc804986f3e162ffc2772b5239a6550c6fad8d28d12bc0b1d0268dc1"
+    },
+    {
+      "file": "sim/policies/scum-control.js",
+      "sha256": "e8754ea26747e732f655fca465ef0ee0a3a1dfd4fdde4a792e8b8dc7fa260827"
+    },
+    {
+      "file": "sim/policies/scum.js",
+      "sha256": "cb599eaa442169e538fb2f9045135a558f5a353a6f796d0fa203aceafa64406e"
+    },
+    {
+      "file": "sim/policies/stay-whisper.js",
+      "sha256": "f9ba54295b3869517cd60364a5e96d7bc6059b32c77a199bed533d498201de55"
+    },
+    {
+      "file": "sim/policies/vault.js",
+      "sha256": "1f5a94477f5a53c187323b7564cba10ac0654c7db0306ae33e03e34e8cc5c629"
+    },
+    {
+      "file": "sim/policies/whisper-smart.js",
+      "sha256": "d86c3f02a90d157e76c9315ceccf16b27974b768426fb675120d4fd36d0e5f11"
+    },
+    {
+      "file": "sim/policies/whisper-spam.js",
+      "sha256": "20183382b1fcb9a2bfecbfc60e49650f0394bcfcd19ac668e0a0ef6dd4be2a78"
+    },
+    {
+      "file": "sim/README.md",
+      "sha256": "883a3d6d60e565fdacb595fb13e8be2a93e4d4fb0c966f22e79982acf1373da3"
+    },
+    {
+      "file": "sim/sim.js",
+      "sha256": "41ef1f7a4dd5d5496fd281fcbfbec4c63a02939dd8c1022737cc2706fcff6936"
+    },
+    {
+      "file": "touch-play.cjs",
+      "sha256": "76d66df1d1ea8dfa095f01c5230b29d0fb6caeadd4aeef75cb87d337fcc7300b"
+    },
+    {
+      "file": "verify.cjs",
+      "sha256": "1fae6023be1e6afd24e43a43be398e651fc418c64ebd89cb64353bfa376032f1"
+    }
+  ],
+  "helper_sha256": "24124bd8423c33bc0262de9926aa2e8e09963d8a2e48c5681b6f98762f333039",
+  "models": [
+    {
+      "judge": 1,
+      "lens": "game design",
+      "model": "claude-opus-5-5",
+      "effort": "high"
+    },
+    {
+      "judge": 2,
+      "lens": "visual and interaction",
+      "model": "gpt-6.1-sol",
+      "effort": "xhigh"
+    },
+    {
+      "judge": 3,
+      "lens": "technical quality",
+      "model": "gpt-6-astra",
+      "effort": "high"
+    }
+  ]
+}

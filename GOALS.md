@@ -10,10 +10,12 @@ Work on the current `t3/raise-gloamwater-panel-score` branch; commit each round 
 The original brief and historical results follow for context.
 
 Current progress: round 3 scored **83.9**, round 4 **82.97**, round 5 **87.67**.
-Do not re-roll any round. Round 6 is the final allowed round and is being prepared.
-The candidate folds optional phone trade details, wraps map quotes and reserves
-space for notices. The last review's title focus, sinking copy and fleet-demand
-feedback findings are being corrected before freezing. Helpers freeze with each packet.
+Do not re-roll any round. Round 6 is the final allowed round and is frozen for judging:
+SHA-256 `a1273a762e4284d5bc323895b5a14d99cf2603e337c4f9e8fed689cf80521a03`.
+The candidate folds optional phone trade details, wraps map quotes, reserves space
+for notices and fixes title focus, sinking copy and fleet-demand feedback.
+All eight integrated regression groups and 16 event fixtures passed. Game, rubric
+and 46 helper sources are frozen in its packet. Stop after this panel regardless of score.
 
 Gloamwater won the bake-off with a panel score of 87.0 out of 100. This file is the
 standing brief for taking it further. Re-read it whenever context is compacted.
