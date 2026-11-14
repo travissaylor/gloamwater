@@ -1,0 +1,272 @@
+{
+  "judge": 2,
+  "lens": "visual and interaction design",
+  "model": "claude-fable-5-2",
+  "scores": {"A1": 8, "A2": 7, "A3": 8, "A4": 8, "A5": 8, "B1": 8, "B2": 8, "B3": 8, "B4": 8, "B5": 7, "C1": 9, "C2": 9, "C3": 7, "C4": 8, "C5": 8},
+  "weighted_total": 79.0,
+  "caps_applied": [],
+  "criteria": {
+    "A1": {
+      "score": 8,
+      "evidence": "Full 30-night game on the iPhone 13 WebKit harness with touch taps. Most nights posed a real choice: which good against limited cash (nights 1-8), then against limited hold (night 14, 30/30), then against dealer depth (from night 14: 'past 17, each one costs more'). Route choice mattered: ring-plus-hub layout made some shocks reachable in one night and others not (eel raid at Saint Mire one night away on night 15 turned 36k into 90k; Fogmouth ink strike on night 28 was two nights away and unusable). Vault versus liquidity was a live decision: I banked everything at the Exchange on night 24 and arrived at The Sluices with 0 purse facing Moon Ink at -52%.",
+      "below_10": [
+        "Most of the profit came from four shock windfalls (eels +355%, pearls +395%, chips +324%, silk -65%); ordinary arbitrage legs returned 15-40% and felt secondary.",
+        "Night-to-night drift is large enough that the wireless set's 'today' price elsewhere is a weak guide (Moon Ink at Lanternquay 23.3k on night 18, 15.4k on night 19), which pushes play toward chasing bulletins rather than weighing routes.",
+        "With the wireless set the row tag names the best destination, so the choice of good is often made for the player."
+      ]
+    },
+    "A2": {
+      "score": 7,
+      "evidence": "Debt bit early: net worth -4,754 on night 2, debt 6,000 to 9,565 by night 9, repaid that night from a festival sale. In a second run I ignored the debt: 10,139 on night 10, 17,307 by night 16 at 10%, collectors met on the first voyage, final -16,844 'Drowned Debtor'. Vault paid 1.5% (210,474 to 213,631 checked). Upgrades: racks 2,500 and 7,500 took hold 30 to 70, motor 4,500, pistol 2,500, wireless 6,000, charter 20,000. Depth pricing stopped me dumping capital into one good. Final 366,795 with several sloppy sells.",
+      "below_10": [
+        "Shocks are frequent and very large; one lucky adjacent surge is worth more than ten nights of careful trading, so outcomes lean on luck more than the anchor for 8 implies.",
+        "Upgrades are cheap relative to mid-game wealth (both rack tiers cost 10k when I held 160k), so they are milestones only in the first third.",
+        "Grandmother Wick's bet is exactly zero expected value (40% for 2.5x), so it is never a real decision.",
+        "I did not run deliberate exploit attempts (dump and buy back, split orders); the builder's claims on those are unverified by me."
+      ]
+    },
+    "A3": {
+      "score": 8,
+      "evidence": "Five encounters in the main run and the right answer changed each time: ran from 2 Gull skiffs at 52% (lost 1 Dreamsilk and 14% hull, then escaped), ran at 33% with a heavy hold (escaped first try), fought 3 skiffs with the flare pistol over 5 volleys (hull 86 to 55, won 2,507 plus cargo and three quiet nights), bribed Tidewardens 23,853 against 264k of cargo. Every option shows odds or price, and the toll text changes when the purse is light ('they take about 39,260 of cargo too'). Squall offered hull damage versus a lost night. Rumours state their reliability ('lands in full about 1 time in 3').",
+      "below_10": [
+        "Leaks have no agency and can be brutal: a damaged-hull leak ruined 3 Moon Ink (about 45k) with one Continue button.",
+        "Three Gull Gang ambushes in four nights (19, 20, 22) felt repetitive; the copy varies but the decision card is the same.",
+        "Fenna's rack offer arrived with 725 in purse and 28k in cargo; the option was simply disabled with no 'you cannot afford this' line."
+      ]
+    },
+    "A4": {
+      "score": 8,
+      "evidence": "Clear phases: nights 1-8 scraping with 1-5 units, night 9 debt cleared (toast 'Marrow Quill looks almost disappointed'), night 12 wireless, night 18 racks and motor, night 22 charter, then a depth-limited late game and a final-night sell-off. Rank ladder in the HUD ('Tide Baron at 400k') gave a running target; I finished 33,205 short of it. A night takes about 2.4s of travel (skippable) so a 30-night run is brisk.",
+      "below_10": [
+        "Late game flattens: from night 24 capital exceeded what dealers could absorb, so nights became 'sell, buy two things, bank the rest'.",
+        "The final night is just 'sell everything'; there is no closing decision or set piece.",
+        "Arrival leaves you on the map tab, so each night starts with a tap on Market."
+      ]
+    },
+    "A5": {
+      "score": 8,
+      "evidence": "Five-step spotlight tour, then contextual toasts on first buy, first arrival at each service district and the final night. Trade sheet shows price each, total, purse after, hold after, profit versus average paid, a 14-night chart, a usual-price gauge, last-seen prices elsewhere and depth warnings. Loan office shows 'Tomorrow, unpaid'. End screen breaks down cash, vault, cargo, debt and adds voyages, best profit, peak worth, encounters, interest paid and losses.",
+      "below_10": [
+        "On night 1 the row tag 'Wanted: Copperhook Docks' and the map card 'Pays well: Glowkelp' sent me there with 30 Glowkelp bought at 49; it sold for 32. The tag describes district character, not a price, and a new player cannot tell.",
+        "'In demand' can sit beside '-8%' on the same row (Rust Pearls, Fogmouth, night 6); two scales with no explanation in place.",
+        "Sell opens at the full quantity even when that slides far down the depth curve (16 Moon Ink for a 102k loss on the final night); the warning is there, but buy gets a safer default and sell does not.",
+        "No worth-over-time chart on the end screen, so the story of the run is numbers only."
+      ]
+    },
+    "B1": {
+      "score": 8,
+      "evidence": "One consistent identity across title (lantern skyline reflected in water, 01-title.png), play (indigo panels, amber lantern accents, serif display type with monospace figures), map (lit islands with rooftops, 11-map.png), services (portraits for Odile, Marrow, vault keeper, Faye, Ysolde: 20-harbor.png, 28-loan.png, 43-whisper.png), events (scene strips for Pell, Wick, Fenna, gangs, wardens: 21-pell.png, 31-wick.png, 40-fenna.png, 59-ambush.png) and end screens (81-end-b.png, a05-lose-a.png). Each of the 8 goods has its own inline SVG icon and colour. Copy is in voice throughout ('Interest is just time, wearing a nicer coat').",
+      "below_10": [
+        "Event scene strips are short banners (about 80px tall on phone) with small figures; characters read as tokens rather than illustrations, and heads are cropped at the sheet's top edge (31-wick.png).",
+        "Encounter art does not change with the fight: the strip still shows two boats after one is sunk (69-fight.png).",
+        "The end screen is a medallion and a table; it is the plainest surface in the game and has no scene art.",
+        "Service portraits render at about 44px, too small to carry character.",
+        "Panels are still a dark rounded-card system; a cropped market list would be recognisable mainly by the icons."
+      ]
+    },
+    "B2": {
+      "score": 8,
+      "evidence": "HUD keeps night, net worth with next rank, purse, vault, debt with rate, hold bar and hull bar on screen in every view (08-market.png). Each row has icon, name, sparkline, price, colour-coded percent versus usual, plus tags for owned quantity with profit percent ('x24 +64%'), shocks ('Surge', 'Glut', 'Fading surge') and the best known destination ('+355% Saint Mire'). A 'Best known' banner names the top margin seen. Audit on the market screen: 0 contrast failures, 0 targets under 44px. I found the night-15 eel trade from the bulletin and row tag without opening a sheet (48-surge-market.png).",
+      "below_10": [
+        "At 390x664 only 2 to 3.5 of the 8 goods are visible; rows are 72-100px and up to three bulletins sit above them. On night 21 the Rust Pearls row I held at +462% was below the fold under two bulletins and a banner (65-surge-here.png). The scroller holds 840px of rows in 442px.",
+        "Destination tags truncate ('+156% Copperhook D', '+79% Drowned Excha': 41-map-badges.png, 48-surge-market.png); the audit reports 3-4 truncated tags per screen.",
+        "Arrival toasts dock over the market header and first bulletin for 3.2s (14-bought.png, 22-fogmouth.png).",
+        "HUD rounds to '30.3k' and '159k', so exact purse is only in sheets.",
+        "Comparing prices across districts means opening each good's sheet and scrolling to the 'elsewhere' grid; there is no single comparison view.",
+        "The usual-price gauge is pushed below the fold of the trade sheet once the 'Best known sale' row appears (39-saffron-depth.png).",
+        "Much supporting text is 11-13.5px (HUD labels 11-12px, tags 13px, percent 13.5px)."
+      ]
+    },
+    "B3": {
+      "score": 8,
+      "evidence": "Every action I took had a visible response: buy flashes the row and adds an owned tag; sell floats '+1,941' over the row, flies coins to the purse and tweens the purse figure (24-sold.png, 52-bigsale.png); debt growth floats '+360' on the HUD each night (16-voyage.png); repay flashes purse red and debt green (30-repaid.png); upgrades confirm then toast; travel moves the skiff along the canal with a wake, then a 'Night 2 of 30' card (90-cr-voyage1.png, 90-cr-voyage2.png); victory throws confetti (70-fight-1.png); win and loss end screens differ in tone. Timed in Chromium at phone size: 1,354ms sailing plus 1,033ms night card, both skippable by tap. Audio judged from code and the harness, not by ear: 19 named effects (buy, sell, profit, travel, arrive, alarm, hit, shot, escape, win, lose, upgrade, splash, bank and more) built from oscillators and filtered noise through a compressor, plus an ambient bed with its own toggle. The iOS-policy stand-in showed the context resumed inside touchend with 49 sounds started while running and 0 while suspended; real AudioContext in Chromium was 'running' after the first tap. Mute on the HUD, title, More menu and M key.",
+      "below_10": [
+        "I could not listen to it; the score for sound quality rests on reading the synthesis code.",
+        "Fights are staged as a text result box above the same buttons; no hit flash on the art, no boat leaving the strip.",
+        "Encounters, leaks and thefts all arrive as the same bottom sheet with a Continue button; nothing distinguishes a 45k loss from a 300 loss in staging.",
+        "The night card adds about a second to every one of 29 voyages unless tapped.",
+        "Ysolde's whisper charges on a single tap with no confirm, while 2,500 upgrades get a confirm sheet."
+      ]
+    },
+    "B4": {
+      "score": 8,
+      "evidence": "A real spatial map: seven illustrated islands with lit windows on a hub-and-ring canal network, a skiff at the current district, lit canals for one-night routes and dimmed ones for two-night routes, danger pips under every label, pulsing '!' badges on districts with bulletins and green '+370%' badges where held cargo sells above cost (71-state.png). Tapping a district opens a card with sells cheap, pays well, cargo last seen versus cost, services, travel time and a dashed route line (96-max-card.png). Travel animates along the canal. Tapping a market bulletin jumps to that district on the map. Keys 1-7 and Enter work on desktop (d11-mapsel.png).",
+      "below_10": [
+        "On the iPhone 13 viewport, opening a district card shrinks the map to a thumbnail about 120px wide: node targets drop to 27-54 x 27px with 1-7px gaps and labels render at 5.7px (12-map-dest.png, audit). Comparing two destinations means closing the card each time. On the 430x740 phone the same state keeps 47px targets.",
+        "Cargo badges are 7.6px text and the '!' is 9.9px.",
+        "The permanent hint banner covers the tops of Fogmouth and Copperhook and hid Copperhook's '+23%' badge (71-state.png).",
+        "With an empty hold the map shows no price information at all, even with the wireless set (35-map-wireless.png).",
+        "On desktop the card covers about a third of the map, including the district it describes (d11-mapsel.png).",
+        "A card left open persists when you return to the Map tab, so the map can reopen already shrunk."
+      ]
+    },
+    "B5": {
+      "score": 7,
+      "evidence": "Phone layout is purpose-built: bottom nav of five 69x56 targets, sheets with pinned 52px action buttons at thumb height, 16px inputs, no horizontal scroll at 360, 390 or 430 wide (audits: 0 elements past the edge, 0 targets under 44px on market, harbor, trade sheet, encounter and end screens, 0 text-contrast failures on enabled text). Desktop at 1280 has its own two-column layout with inline Buy and Sell buttons. Keyboard play works end to end in Chrome: arrows pick a good, B opens the sheet, left and right change quantity, Enter confirms, 1-7 and Enter sail, M mutes, ? opens help, Esc opens the menu; focus ring is a 2px amber outline (d05-focus.png) and shortcut hints are printed on buttons. Reduced motion is honoured in CSS and in JS (flyers, shake, particles, tweens and voyage animation skipped). Sandboxed iframe at phone size ran with storage throwing SecurityError and no errors (97-iframe.png). A destructive 'Abandon' asks for confirmation with the safe choice lowest.",
+      "below_10": [
+        "Shrunk-map state on the 390x664 phone has seven targets under 44px with 1-7px gaps (see B4).",
+        "In WebKit touch, typing a quantity then tapping Buy does nothing the first time; the second tap buys. Reproduced three times; Chromium buys on the first tap.",
+        "Tapping a HUD stat ('tap any HUD figure to explain it') produced no click event at all in the WebKit touch harness on any stat; it works in Chromium. Unverified on a real iPhone.",
+        "A lot of text is under 15px: HUD labels 11-12px, nav labels 13px, tags 13px, percent 13.5px, map badges 7.6px.",
+        "Buy/Sell switch and the close button sit at the top of the trade sheet, out of one-thumb reach; several control pairs are 6px apart (Buy/Sell, 25/50/75/All, encounter choices).",
+        "Landscape is not designed: the mute button wraps to its own row and 1.5 goods are visible at 664x390 (b01-landscape.png).",
+        "Keyboard: opening an out-of-stock good and pressing an arrow or Enter throws an uncaught error."
+      ]
+    },
+    "C1": {
+      "score": 9,
+      "evidence": "All 15 requirements exercised by hand. Clock 30 nights, travel costs a night. Map with 7 districts. 8 goods with district identities, daily drift and flagged surges and gluts. Hold 30 to 45 to 70. Debt at 6% then 10% with repay and borrow. Vault deposit and withdraw at 1.5% in two districts. Twelve distinct events seen (leak, strongbox, gull thief, Pell, Wick, Fenna, squall, courier job, Gull Gang, Tidewardens, collectors, festival), four with risky choices. Five upgrade kinds (racks, motor, weapon, wireless, charter). End screen with breakdown, rank and a ledger that survived reload (83-ledger.png). Tour onboarding. Sparklines and charts. Web Audio with mute. Mouse, touch and keyboard. Layouts at 360, 390, 430 and 1280.",
+      "below_10": [
+        "Audio verified by code and context state only, not heard.",
+        "Keyboard path has one throwing branch (out-of-stock sheet).",
+        "HUD explanations did not fire under WebKit touch."
+      ]
+    },
+    "C2": {
+      "score": 9,
+      "evidence": "One 222,442-byte file. Grep found no http(s) URLs beyond an SVG xmlns inside a data: favicon, no fetch, XHR, import or external src. Ran from file:// on WebKit and Chromium. Ran inside iframe sandbox='allow-scripts' with localStorage throwing SecurityError; game started and played with no errors. All storage access goes through one try/catch wrapper with an in-memory fallback (lines 690-692).",
+      "below_10": [
+        "I checked for network use by grep only; I did not capture a runtime request log."
+      ]
+    },
+    "C3": {
+      "score": 7,
+      "evidence": "Full 30-night WebKit phone game: 'no errors' at every check, no stuck UI. Second and third partial runs on WebKit and Chromium (16 nights with debt overdue, collectors fight, abandon to the losing screen) also clean. Mid-game reload offered 'Continue voyage'. Corrupt save and corrupt scores (set from the console, then reloaded) were discarded without error. One reproducible uncaught exception in ordinary desktop keyboard play (see bugs).",
+      "below_10": [
+        "Uncaught ReferenceError 'Cannot access qin before initialization' at index.html:1667, three times in one session, from normal keyboard use.",
+        "First tap on Buy after typing a quantity is swallowed in WebKit.",
+        "Only one complete game played to the end by me."
+      ]
+    },
+    "C4": {
+      "score": 8,
+      "evidence": "Cash never went negative, hold never exceeded capacity (Buy disabled with 'Your hold is full'), end breakdown sums exactly (153,164 + 213,631 = 366,795), vault interest exact (210,474 x 1.015 = 213,631), debt compounding matched the 'Tomorrow, unpaid' figure (9,565 to 10,139). Reload during an encounter not tested by me. Corrupt stored data tolerated.",
+      "below_10": [
+        "No deliberate exploit hunting (round trips, split orders, reload during events) on my side.",
+        "HUD showed stale values behind event sheets at times (hold '18/30' beside a row reading x22 until the leak sheet was dismissed)."
+      ]
+    },
+    "C5": {
+      "score": 8,
+      "evidence": "Single state object S with seeded RNG streams saved in it, data tables for goods, districts and stat help, one Storage wrapper, one Sound module behind a safe proxy, delegated click handling with a documented tap guard. Animation was smooth at 60fps in Chromium.",
+      "below_10": [
+        "Very long dense lines make the file hard to read and review.",
+        "The out-of-stock early return before const declarations is the kind of slip a lint pass would catch.",
+        "The trade sheet re-renders on input blur, which is the likely cause of the swallowed tap in WebKit."
+      ]
+    }
+  },
+  "strengths": [
+    "A committed, consistent art direction from title to end screen, with custom icons, portraits and a map that looks like a place.",
+    "Phone layout built for the thumb: bottom nav, pinned sheet actions, 44px or larger targets and passing contrast on every main screen at 360, 390 and 430 wide.",
+    "Dense, honest decision information: percent versus usual, owned cost, best known destination, depth warnings, odds on every encounter option, reliability on every rumour.",
+    "Feedback on every action, with tweens, floating profit, coin flyers, travel animation and 19 synthesized effects, at a pace that does not slow repeat play.",
+    "The map carries information (danger, bulletins, cargo margins, route length) and connects to the market through tappable bulletins.",
+    "Robust shell: sandboxed iframe, blocked storage, corrupt saves and mid-game reload all handled cleanly."
+  ],
+  "weaknesses": [
+    "On the owner's phone size only 2 to 3.5 of 8 goods fit on screen, so scanning the market always means scrolling past bulletins.",
+    "Opening a district card on the 390x664 phone collapses the map to a thumbnail with 27px targets and unreadable labels.",
+    "Two touch paths misbehave in WebKit: typed quantity needs a second tap on Buy, and HUD stat explanations never open.",
+    "District-character hints ('Wanted', 'In demand', 'Pays well') read like price signals and misled me on night 1.",
+    "Windfall shocks decide the score more than routing skill; the late game is depth-limited and flat.",
+    "Event staging is one sheet template; fights and big losses have no visual drama of their own."
+  ],
+  "bugs": [
+    {
+      "severity": "medium",
+      "what": "In WebKit with touch, after typing a quantity into the trade sheet's number field, the first tap on the Buy button does nothing; a second tap completes the purchase. Chromium completes on the first tap.",
+      "repro": "iPhone 13 WebKit harness. Tap a good, tap the quantity field (it clears), type 22, tap 'Buy 22 for ...'. Cargo is unchanged and the sheet stays open. Tap again and it buys. Seen on nights 11 and 14 and in a third isolated repro."
+    },
+    {
+      "severity": "medium",
+      "what": "Uncaught ReferenceError: Cannot access 'qin' before initialization (index.html:1667) when keys are pressed in the trade sheet of a good with no dealers. onKey closes over qin, go and update, but the function returns before they are declared when the good is out of stock.",
+      "repro": "Desktop Chrome 1280. Start a game, press ArrowDown until a 'No dealers today' good is selected, press B (sheet opens with the 'No dealers' note), press ArrowLeft, ArrowLeft, Enter. Three console errors. No state damage."
+    },
+    {
+      "severity": "medium",
+      "what": "On a 390x664 phone the map shrinks to about 120px wide while a district card is open: node targets 27-54 x 27px with 1-7px gaps, labels 5.7px.",
+      "repro": "iPhone 13 harness, Map tab, tap any district, run audit: 7 targets under 44x44. Screenshot judge-2/12-map-dest.png."
+    },
+    {
+      "severity": "low",
+      "what": "Tapping a HUD stat does not open its explanation under WebKit touch; no click event reaches the document for the stat divs. Works in Chromium touch. May or may not affect real iOS Safari.",
+      "repro": "iPhone 13 WebKit harness, in a game with no sheet open, tap Debt, Hold or Net worth. Nothing opens. A capture-phase click listener recorded zero clicks. Calling explainStat('st-debt') from the console opens the sheet."
+    },
+    {
+      "severity": "low",
+      "what": "Night-1 guidance can cause a loss: 'Wanted: Copperhook Docks' on Glowkelp and 'Pays well: Glowkelp' on the Copperhook card, but Copperhook paid 32 against a purchase at 49.",
+      "repro": "First game, night 1 at Lanternquay: buy Glowkelp as the tag suggests, sail to Copperhook Docks."
+    },
+    {
+      "severity": "low",
+      "what": "Destination tags are cut off in market rows at phone width ('+156% Copperhook D', '+79% Drowned Excha').",
+      "repro": "With the wireless set at 390 wide, any row whose best destination is Copperhook Docks or Drowned Exchange. Screenshots judge-2/41-map-badges.png, 48-surge-market.png."
+    },
+    {
+      "severity": "low",
+      "what": "Map hint banner overlaps the top districts and can hide a cargo badge.",
+      "repro": "Hold cargo that sells above cost at Copperhook Docks and open the Map on a 390x664 phone; the '+23%' badge sits under the hint. Screenshot judge-2/71-state.png."
+    },
+    {
+      "severity": "low",
+      "what": "End screen kicker reads 'Thirty nights, done' after abandoning a run on night 16.",
+      "repro": "More, Abandon this run, Yes, settle now, before night 30."
+    },
+    {
+      "severity": "low",
+      "what": "Encounter art strip does not track the fight (still two boats after one is sunk); three-boat ambushes also draw two.",
+      "repro": "Fight any Gull Gang ambush and sink a boat. Screenshot judge-2/69-fight.png."
+    }
+  ],
+  "evidence": {
+    "days_played": 30,
+    "reached_score_screen": true,
+    "final_result": "366,795, rank Lantern Broker, 33,205 short of Tide Baron, placed #1 in the ledger; ledger survived reload. Second run abandoned on night 16 at -16,844 (Drowned Debtor) to see the losing screen.",
+    "night_log": "N1 Lanternquay buy 30 kelp. N2 Copperhook (leak, -12 kelp) buy 4 pearls. N3 Lanternquay sell, buy 1 saffron and 9 rain for the Fogmouth surge. N4 Fogmouth sell, buy 1 chip. N5 Lanternquay sell chip +1,941, buy 15 pearls. N6 Fogmouth sell, buy 2 chips. N7 Lanternquay sell, buy 5 eels and 1 saffron. N8 Saint Mire sell eels +5,485, buy 3 chips and 2 saffron. N9 Lanternquay festival, sell all, repay 9,565. N10 Fogmouth buy 4 chips. N11 Lanternquay sell, buy 24 pearls. N12 Exchange sell, buy wireless 6,000 and 21 saffron. N13 Orchid sell, whisper 730, buy 7 chips. N14 Exchange (squall, pushed through) sell, buy 22 saffron. N15 Lanternquay (squall, leak) sell, buy 15 eels for the Saint Mire raid. N16 Saint Mire sell eels +54,705, pistol, buy 5 ink and 13 saffron. N17 Lanternquay festival sell ink +67,157, deposit 79k. N18 Copperhook racks x2, motor, repair, take courier job, buy 3 ink and 46 pearls. N19 Lanternquay sell, buy 8 silk at glut; Gull Gang, ran. N20 Sluices deliver 2 parcels, sell silk +61,406, buy 13 eels and 57 pearls; Gull Gang, ran. N21 Exchange pearl raid, sell +86,878, lost 4,160 to Wick, deposit. N22 Lanternquay charter 20,000, buy 11 ink and 18 chips; Gull Gang, fought and won. N23 Orchid (leak, -3 ink) sell saffron. N24 Exchange chip strike, sell chips +149,366, deposit all. N25 Sluices with no cash, sell cargo, patch hull, buy 3 ink. N26 Lanternquay withdraw, buy 21 chips and 5 ink; Tidewardens, bribed 23,853. N27 Exchange sell chips, buy 56 pearls. N28 Orchid sell pearls and 4 ink, buy 28 saffron. N29 Lanternquay buy 12 ink and 26 pearls, deposit. N30 Fogmouth sell everything, settle up.",
+    "phone_notes": "Scored from the iPhone 13 WebKit harness (390x664, touch). Also checked 360x640 and 390x664 in Chromium with touch, and iPhone 14 Pro Max (430x740). Audits run on market, trade sheet, map, map with card, harbor, encounter and end screens. Used eval only to read state (text of sheets, S.cash, S.cargo), to locate tap coordinates, and once to plant corrupt storage before a reload. All game actions were touch taps. My trade helper confirmed sheets at their default quantity, which caused several over-sized sells; those losses are mine, though the sell default contributes.",
+    "desktop_notes": "Chrome 1280x800 via the CDP harness: two-column layout, keyboard-only buy and sail, mute, help and menu keys, district keys. One uncaught error found on the out-of-stock sheet.",
+    "audio_notes": "Not heard. Playwright WebKit has no Web Audio; the iOS-policy stand-in reported the context resumed inside touchend, 49 sounds started while running, 0 while suspended. Chromium reported a real AudioContext created in touchend and running. Sound quality judged from the synthesis code (19 effects, ambient bed, compressor, separate ambience and mute toggles).",
+    "screenshots": [
+      "judge-2/01-title.png",
+      "judge-2/03-tour1.png",
+      "judge-2/08-market.png",
+      "judge-2/09-sheet.png",
+      "judge-2/11-map.png",
+      "judge-2/12-map-dest.png",
+      "judge-2/14-bought.png",
+      "judge-2/20-harbor.png",
+      "judge-2/21-pell.png",
+      "judge-2/23-sell-sheet.png",
+      "judge-2/24-sold.png",
+      "judge-2/28-loan.png",
+      "judge-2/30-repaid.png",
+      "judge-2/35-map-wireless.png",
+      "judge-2/41-map-badges.png",
+      "judge-2/48-surge-market.png",
+      "judge-2/52-bigsale.png",
+      "judge-2/59-ambush.png",
+      "judge-2/65-surge-here.png",
+      "judge-2/69-fight.png",
+      "judge-2/70-fight-1.png",
+      "judge-2/71-state.png",
+      "judge-2/73-tidewarden.png",
+      "judge-2/77-sell-slip.png",
+      "judge-2/81-end-b.png",
+      "judge-2/83-ledger.png",
+      "judge-2/84-more.png",
+      "judge-2/90-cr-voyage1.png",
+      "judge-2/90-cr-voyage2.png",
+      "judge-2/91-360-map.png",
+      "judge-2/93-360-nightcard.png",
+      "judge-2/96-max-card.png",
+      "judge-2/97-iframe.png",
+      "judge-2/a05-lose-a.png",
+      "judge-2/b01-landscape.png",
+      "judge-2/d05-focus.png",
+      "judge-2/d06-sheet.png",
+      "judge-2/d11-mapsel.png"
+    ]
+  },
+  "verdict": "A handsome, well-built phone trading game with strong information design and feedback, held back on the owner's screen size by a market list that shows too few goods, a map that collapses when a district card opens, and a couple of WebKit touch faults."
+}

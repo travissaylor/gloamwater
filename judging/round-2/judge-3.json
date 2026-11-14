@@ -1,0 +1,124 @@
+{
+  "judge": 3,
+  "lens": "technical quality",
+  "model": "claude-fable-5-2",
+  "build": "game/index.html sha256 a9daab6a2febca17979f1046f9ba7cacfe24ce6c8be38b5657f02abeb28f62e6 (matches BUILD.txt), 222,442 bytes",
+  "scores": {"A1": 8, "A2": 8, "A3": 8, "A4": 8, "A5": 8, "B1": 8, "B2": 8, "B3": 8, "B4": 8, "B5": 8, "C1": 9, "C2": 10, "C3": 9, "C4": 9, "C5": 8},
+  "weighted_total": 83.0,
+  "caps_applied": [],
+  "criteria": {
+    "A1": {
+      "score": 8,
+      "evidence": "Phone game, 30 nights by touch. Decisions changed with state: N1-4 scraped with 1 eel + 7 rain, a saffron lot I could not sell at Orchid Terraces (no dealers) and net worth down to -4,388; N5-7 Fogmouth/Copperhook chips and pearls; N7 bought 1 Dreamsilk at 9,067 on a bulletin and sold it at 18,722; N12 Pell's rumour made me stay a night; N16 bought crashed silk at 6,922 and sold at 12,667 next night; N18-23 Saint Mire to Orchid Terraces Moon Ink loop sized by market depth, with two charters (I sold 4 ink, bought the charter for 40,000 with the proceeds, then sold the other 6 at 25,236 instead of ~19,000). Order size mattered every time: the sheet showed 'past 7, each one costs more. The last goes at 3,793'.",
+      "below_10": ["From night 18 to 23 the best move was the same two-port ink loop repeated; depth limits how much it pays but did not make me change route.", "Hold size stopped being a constraint by mid-game (ended on 60 with space spare), so capacity is no longer part of the choice.", "On several nights 2-3 of 8 goods have no dealers, which sometimes removes the choice rather than adding one."]
+    },
+    "A2": {
+      "score": 8,
+      "evidence": "Debt hurt early (6,000 -> 10,139 by night 10, paid that night with 36,221 in the purse). Deliberate exploit attempts in Chromium (qa4.log): 32 buy-then-sell round trips across all 8 goods at 1/7/40/150 units returned 0 or -1 each; 30 single buys cost 54,155 against 54,148 for one order of 30; walked sells fetched less; filling the hold before the tally moved net worth 4,993,965 -> 4,993,964. Scores spread with skill: my touch game 691,291, a simple greedy keyboard bot 279,164.",
+      "below_10": ["Borrowing is close to irrelevant: the credit line is net worth plus debt, so 'Borrow more' was disabled at the start (limit 2,500 against 6,000 owed) and by the time it opens you do not need it.", "Hold tiers 3-5 (18,000 to 85,000) rarely pay back because dealer depth binds before hold does.", "Late capital outgrows the markets: I sat on 150k-350k of idle cash from night 21; the vault's 1.5% is the only home for it besides charters.", "A second browser tab on the same save shows the same dice, so a gamble can be previewed (see bugs)."]
+    },
+    "A3": {
+      "score": 8,
+      "evidence": "12 distinct events seen in code, 10 met in play (patrol x3, Gull Gang, squall x2, crate x3 incl. a trap for -7% hull, strongbox x2, Old Fenna x2, courier x2, Pell x2, leak, Ysolde). Each encounter option prints its odds or price: 'Run 39% each try', 'Fight - Harpoon gun 53% per volley; 60% they hit back', 'Bribe 21,709', 'Heave to: they seize half of every cargo'. Buying the harpoon gun moved fight odds from 22% to 53%. Stakes were real: two fights took my hull 87 -> 23, a leak then ruined 17 saffron, a crate trap took it to 16, and because sinking loses purse and cargo I moved 350,000 into the vault and rerouted. Ysolde's 8,230 whisper ('thinks it likely') turned the other way and my pearls lost money.",
+      "below_10": ["Heave-to only costs cargo, so with a large purse and a cheap hold it is nearly free while the bribe scales with the purse (I gave up 33k of cargo instead of a 39,602 bribe): one option is clearly right in that state.", "'A won fight buys three quieter nights' still produced a 4-boat patrol two nights later.", "Pushing through a squall gives no result card, only a hull change and a log line."]
+    },
+    "A4": {
+      "score": 8,
+      "evidence": "Clear phases in my run: net worth -4,388 on night 4, debt cleared night 10 (lantern burst and fanfare), 44k night 12, 154k night 17, first charter night 18, 522k night 23, a cautious damaged-hull endgame, and a final Moon Ink sale at 40,670 on night 30 for 691,291 (Harbor Magnate, 158,709 short of the top rank). Toasts mark night 8, three nights left and the final night. A voyage takes about 2.7 s and can be skipped by a tap.",
+      "below_10": ["Nights 18-25 were the same loop with larger numbers.", "The final night is a sell-and-settle formality once the hold is empty; no last decision.", "The first four nights can be lost to an unlucky 'no dealers' roll before the player understands it."]
+    },
+    "A5": {
+      "score": 8,
+      "evidence": "The 5-step tour spotlights ledger, market, map, harbor and the clock. Rows show % against the usual city price, Cheap/Pricey/Glut/Surge tags, quantity held with margin against cost, and a 'Best known: Ghost Chips -> Lanternquay +34%' banner. The sell sheet shows 'You paid (avg) 12,965 / Profit +83,432'; the lender card shows 'Tomorrow, unpaid 10,747'. Every HUD stat explains itself on tap. The score screen lists cash, vault, cargo at half price, debt, six run statistics and the gap to the next rank.",
+      "below_10": ["The default buy size is greedy: it proposed 16 Moon Ink with the last unit at 22,130 when selling that many would slip well below it.", "Map badges use stale prices: 'Orchid Terraces +487%' was still shown five nights after an ink spike.", "Nothing warns a new player that a district may have no dealers for the cargo they are carrying; my first purchase was stranded.", "No message when a held good cannot be sold here other than a greyed row."]
+    },
+    "B1": {
+      "score": 8,
+      "evidence": "Navy and lantern-amber palette, serif display type for names, custom inline-SVG icons for all 8 goods and 7 districts, portraits for every service keeper (Marrow, the vault clerks, Odile, Ysolde...) and scene art for encounters. Title, play, event and score screens match (01, 15, 21, 53, 60 and d11 screenshots).",
+      "below_10": ["Event header art is a short band and is cropped at the top on a phone (54-whisper.png, 17-resumed-encounter.png).", "The vector art is simple and flat; portraits are small."]
+    },
+    "B2": {
+      "score": 8,
+      "evidence": "HUD shows night, net worth with next rank, purse, vault, debt with rate, hold bar and hull bar. Each row has an icon, sparkline, price, % against usual, and tags. The trade sheet adds a 14-night chart with my average cost, a price gauge, last-seen prices in every other district, and a depth note.",
+      "below_10": ["At 390x664 only about four of eight goods are visible without scrolling, and on the final night the Settle bar floats over a row (56-final-night.png).", "Tags are truncated: '+39% Drowned Excha' (37-ot-market-wireless.png); the audit lists 6 truncated tags at 390.", "HUD labels are 11-13px."]
+    },
+    "B3": {
+      "score": 8,
+      "evidence": "Seen: coins flying to the purse and a floating profit figure on a sale, crates flying to the hold on a buy, HUD numbers tweening with a +/- chip (e.g. '+360' under debt on arrival), toasts, a wake drawn along the canal while sailing, a night card, shake and bursts in fights, lanterns rising on debt cleared and on the score screen, final fortune counting up. Audio was judged from code and context state, not by ear: 20 synthesized effects plus an ambient bed and bell; on the WebKit stand-in the context resumed inside the first touchend and 15 sounds started while running, 0 while suspended; in Chromium the real AudioContext was 'running' after the first click, pressing M suspended it and no oscillator was created while muted, and the mute setting survived a reload.",
+      "below_10": ["I could not listen to it, so mix and character are unverified.", "No result card or distinct moment for pushing through a squall.", "Particle lifetime counts frames, not time, so bursts last twice as long at 30 fps and half as long at 120 Hz."]
+    },
+    "B4": {
+      "score": 8,
+      "evidence": "An illustrated island map with canals, a boat marker on the current district, danger pips, dimmed two-night districts, '!' badges for bulletins and green '+57%' badges where my cargo sells above cost. The portrait layout re-spreads the districts to fill the panel. Sailing draws a wake along the route.",
+      "below_10": ["Once a district is selected the map shrinks to a thumbnail with nodes of 25-36px (08-card-sm.png, s9723-card.png), so picking a different district means closing the card first.", "Badges can be stale (see A5).", "No route preview for the two-night trips beyond text."]
+    },
+    "B5": {
+      "score": 8,
+      "evidence": "Audit at 390x664, 360x640 and 430x740: 0 targets under 44px on the main screens, 0 contrast failures, 0 inputs under 16px, no horizontal scroll (scrollWidth equals viewport). A full 30-night game was played with the keyboard alone at 1280x800 (qa3.log): Tab reached every harbor action, 'KEYBOARD UNREACHABLE []'. prefers-reduced-motion is read in JS and CSS (voyage took 486 ms with it on). Rotating to 664x390 mid-encounter kept both choices on screen.",
+      "below_10": ["Thumbnail map nodes are 25-36px when a destination card is open.", "In Playwright WebKit, after typing a quantity the first tap on Buy or Sell is swallowed (see bugs).", "Double taps fall through to the bottom nav or dismiss a confirm card.", "Text of 11-13px in the HUD and tags."]
+    },
+    "C1": {
+      "score": 9,
+      "evidence": "All 15 requirements exercised. Gameplay: 30 nights, travel or staying costs one; 7 districts on a drawn map; 8 goods with district price identities, nightly movement and about 1.1 shocks a night (60 scratch runs); hold 30 -> 45 -> 60 bought in play, 6 tiers plus racks; debt at 6% then 10% compounding, repaid in play; vault at 1.5%, deposit and withdraw used; 12 events with 3 encounter types offering run, fight, bribe or pay, yield; upgrades: hold, motor, 3 weapons, wireless, charters, repairs; score screen with breakdown, 7 ranks and a ledger that survived reload; a 5-step tour, hints and tap-to-explain stats. Presentation: animation and feedback on every action, sparklines and charts, Web Audio with mute, mouse, touch and keyboard all used for complete or near-complete runs, layouts at 360, 390, 430 and 1280.",
+      "below_10": ["Audio is verified by code and AudioContext state only.", "The borrowing half of the debt system cannot be used until net worth exceeds the debt.", "One WebKit input path (typed quantity) needs a second tap."]
+    },
+    "C2": {
+      "score": 10,
+      "evidence": "Grep: one file, 222,442 bytes; the only 'http' string is the SVG xmlns inside a data: icon; no fetch, XHR, WebSocket, beacon, import, script src, link stylesheet, eval or new Function; localStorage appears in exactly three lines, each inside try/catch with an in-memory fallback. Runtime: Chromium recorded a single request (the file itself) through a complete 30-night game; loaded from file:// in Chromium and WebKit; inside <iframe sandbox=\"allow-scripts\"> localStorage threw SecurityError and the game still started, traded, sailed and kept an in-memory save, in Chromium and in WebKit at 390 wide, with no console errors; a throwing localStorage getter and a throwing setItem were both survived. No framework or build output. Nothing found that keeps this below 10.",
+      "below_10": []
+    },
+    "C3": {
+      "score": 9,
+      "evidence": "Two complete games with a clean console: 30 nights by touch on the iPhone 13 WebKit harness (reloaded mid-encounter, mid-fight and on the final night; rotated mid-encounter) and 30 nights by keyboard in Chromium at 1280 with invariants checked after every action (0 issues). Abuse: six clicks on Sail plus a reload mid-voyage advanced exactly one night; double Enter on Sail one night; triple tap on Repay paid once; double click on the abandon confirm recorded one score; a resize storm left no overflow; hammering keys and taps during a resumed voyage raised no error; sinking and a negative-fortune ending both reached the score screen; 22 further nights showed no growth in running animations (99 -> 99) and DOM nodes only from the capped log.",
+      "below_10": ["WebKit: the first tap on Buy or Sell after typing a quantity does nothing.", "A fast second tap on a pinned confirm button lands on the bottom nav once the sheet closes (view jumps to Log).", "A fast second tap on an upgrade button dismisses the confirm card it just opened."]
+    },
+    "C4": {
+      "score": 9,
+      "evidence": "Interest checked by hand in game 1 (6,000 -> 6,360 -> 6,742 -> 7,147 -> 7,576 -> 8,031 -> 8,513 -> 9,024 -> 9,565 -> 10,139; 'Interest paid 4,139' equals the sum of the nine charges; vault 5,000 -> 5,075 -> 5,151 and 355,716 -> 361,052) and by script every night of game 2 (no mismatch); 20,000 at 10% after night 10 gave 22,000. Breakdowns add up: 322,018 + 369,273 = 691,291; 265,823 + 13,341 = 279,164; sunk run 1,234 - 6,000 = -4,766. Edge input: quantities 999999, -5, 2.7, 0, 1e3, 'abc' and empty were clamped or refused; deposit, withdraw, repay and borrow clamp to what is possible. No money loop found (see A2). Scores survived reload. 51 corrupt or hand-edited storage cases (garbage, truncated, wrong types, out-of-range fields, bogus voyages, script injection in names and log, 500 score rows) all loaded without an error, NaN on screen or script execution; 33 invalid saves were refused and 18 harmless ones resumed.",
+      "below_10": ["Two tabs opened on the same save roll identical dice, so a second tab can preview a gamble or a volley before committing.", "An invalid save is ignored silently and left in storage; the 'damaged save' message only appears if a save passes validation and then throws.", "Validation accepts some odd hand edits (fractional cash 123.456, a price of 1e30), though none broke anything."]
+    },
+    "C5": {
+      "score": 8,
+      "evidence": "Read the script end to end. Data tables (GOODS, DISTRICTS, EDGES, HOLD_TIERS, ARMS, RANKS, ENC, CONF) sit apart from logic; one state object S is the save; game dice come from two seeded streams stored in S with visual randomness kept separate; pure pricing functions (pressInt, quoteBuy, quoteSell); a storage wrapper; save validation; no setInterval; the one recurring timer (ambient bell) is cleared; listeners are attached once at load. Measured at 390x664, device pixel ratio 3, 4x CPU throttle: voyage median frame 16.7 ms, p95 50 ms, max 100 ms.",
+      "below_10": ["Very dense style: many lines over 500 characters with several statements each, which makes review and diffs hard.", "S is mutated directly from event handlers, service actions and encounter code rather than through a small set of functions.", "Tuning numbers are scattered through event functions (0.8 crate odds, 0.4 eel odds, 6000 gull cap).", "renderAll rebuilds panels with innerHTML on most actions; 99 CSS animations run on the map.", "Particle life is frame-based."]
+    }
+  },
+  "strengths": [
+    "Hard constraints are fully met and proven at runtime, including a sandboxed iframe with storage blocked in both Chromium and WebKit.",
+    "Persistence is unusually robust: every stage of a voyage and every fight round is saved, outcomes are committed before they are shown, and 51 corrupt-storage cases produced no error.",
+    "The economy resisted every exploit attempt on order size, round trips and the final tally, and scores separate a greedy bot (279k) from considered play (691k).",
+    "Order depth, charters and honest rumours give real decisions, and every risky option states its odds or price.",
+    "Complete keyboard play on desktop and a purpose-built touch layout on phones, with no console error in two full games."
+  ],
+  "weaknesses": [
+    "Late game settles into one loop while cash piles up unused; hold upgrades and borrowing stop mattering.",
+    "Tap handling has rough edges on a phone: a swallowed first tap after typing a quantity in WebKit, and double taps that fall through to the nav or cancel a confirm.",
+    "The phone map collapses to a thumbnail with 25-36px nodes while a destination card is open.",
+    "Advice shown to the player can mislead: greedy default buy size and stale price badges on the map.",
+    "Source is dense and state is mutated from many places."
+  ],
+  "bugs": [
+    {"severity": "medium", "what": "WebKit: after typing into the quantity field, the first tap on Buy/Sell does nothing; the second works. The field's blur handler rewrites the button text between mousedown and mouseup, so WebKit fires no click. Not reproduced in Chromium (mouse or touch). It may not occur on a real iPhone if Safari leaves the field focused when a button is tapped; it needs checking on a device.", "repro": "iPhone 13 WebKit harness: tap a good, tap the quantity field, type 14, tap 'Buy 14 for ...'. Events logged: pointerdown, touchstart, touchend, mousedown on #qgo, blur on #qin, mouseup on #qgo, no click. Sheet stays open, nothing bought."},
+    {"severity": "low", "what": "A fast second tap on a pinned sheet button falls through to the bottom nav after the sheet closes, switching the view to Log (or opening More).", "repro": "Open Repay (or any trade sheet), tap the confirm button three times quickly. The action happens once, then the view is 'log'. Seen with touch in WebKit and with a mouse in Chromium."},
+    {"severity": "low", "what": "A fast second tap on an upgrade button lands on the backdrop and dismisses the confirm card that the first tap opened.", "repro": "Copperhook Docks, Harbor, double tap the 2,500 hold button: the confirm opens and closes, nothing bought."},
+    {"severity": "low", "what": "Two tabs on the same save produce identical dice, so one tab can be used to preview a gamble, crate or volley and the other to choose differently. This narrows the 'no reload tricks' claim.", "repro": "With Grandmother Wick's card pending, open the game in two tabs and Continue in both. Choose 'Big offering' in tab 1 (eel turned black, cash 2,500 -> 2,000); tab 2 still shows the undecided card and gives the same result, or lets you walk on."},
+    {"severity": "low", "what": "An invalid save is dropped without any message, and stays in storage until the next save; NOTES says damaged saves are discarded with a message.", "repro": "Set gloamwater.save.v1 to '{bad' and reload: the title shows only 'Cast off', no notice, and the key still holds '{bad'."},
+    {"severity": "low", "what": "Map badges use last-seen prices from shock nights with no age shown.", "repro": "See a Moon Ink spike at Orchid Terraces (74,256 on night 3), leave, buy ink on night 8: the Orchid Terraces node reads '+487%'."},
+    {"severity": "low", "what": "Default buy quantity runs well past the flat depth.", "repro": "Saint Mire night 22 with 376k: the sheet opens at 16 Moon Ink for 234,693 with the last unit at 22,130."},
+    {"severity": "low", "what": "Cosmetic at 390 wide: tags truncated ('+39% Drowned Excha'), event art cropped at the top, a toast covers the map hint, and the final-night bar overlays a market row.", "repro": "Screenshots 37, 54, 07 and 56 in judge-3/."}
+  ],
+  "evidence": {
+    "days_played": 60,
+    "reached_score_screen": true,
+    "final_result": "Game 1 (iPhone 13 WebKit harness, touch only): 691,291, Harbor Magnate, ledger #1. Game 2 (Chromium 1280x800, keyboard only, simple greedy policy): 279,164, Lantern Broker. Also reached: a sunk ending (-4,766) and a debtor ending (-21,990) from set-up states.",
+    "night_log_game_1": "N1 LQ buy 1 eel, 7 rain -> SM. N2 sell both, buy 3 saffron -> OT. N3 no saffron dealers, buy 2 rain -> LQ. N4 hold -> FM. N5 sell saffron 1,445, buy 1 chip -> CH; patrol, ran (39%), escaped; strongbox +590. N6 sell chip 5,431, buy 21 pearls -> FM. N7 declined Fenna (no cash), sell pearls 578, buy 1 silk + 2 eels on a Saint Mire silk bulletin -> SM. N8 sell silk 18,722, buy 1 ink + 11 saffron -> OT; squall, pushed, hull 93. N9 took courier job, sell ink, buy 5 chips + 11 kelp -> LQ. N10 sell all, repay 10,139 -> SL. N11 parcel +2,700, buy 9 crashed chips -> CH. N12 Pell's rumour, sell chips, buy hold 45, stay. N13 buy motor, 10 chips -> LQ. N14 sell chips, buy 13 eels -> DE. N15 sell eels 3,236, buy wireless, deposit 5,000, buy 30 saffron -> OT. N16 crate +5 pearls, sell saffron, buy 11 crashed silk + rain, stay. N17 sell silk 12,667, buy eels -> SM. N18 strongbox, buy flare pistol, harpoon gun, charter, 10 ink -> OT; squall, hull 87. N19 Pell, sell 4 ink, buy second charter, sell 6 ink, buy eels + rain -> SM; patrol of 2, fought and won, hull 65. N20 sell, buy 11 ink + saffron -> OT. N21 bought Fenna's racks, sell, restock -> SM; patrol of 4, heaved to, lost half the hold. N22 sell, buy 12 ink + saffron -> OT; Gull Gang, fought and won, hull 23. N23 leak ruined 17 saffron, sell -> LQ. N24 deposit 350,000 -> SM. N25 crate trap, hull 16, buy eels + silk -> OT. N26 sell silk, bought Ysolde's whisper, buy pearls -> DE. N27 rumour turned, sell eels, buy saffron, deposit -> LQ. N28 withdraw 150,000 -> SM. N29 sell saffron, buy 6 ink + pearls -> LQ. N30 sell ink at 40,670, settle.",
+    "phone_notes": "Scored from the iPhone 13 profile (390x664, WebKit, real touch taps). Also walked intro, tour, market, trade sheet, map, destination card and harbor at 360x640 and on iPhone 14 Pro Max (430x740): no overflow, no targets under 44px outside the thumbnail map, no errors. Headless WebKit animates slowly, so coin particles linger in some screenshots; that is the harness.",
+    "desktop_notes": "Chromium 1280x800: three-pane layout (map, log, market/harbor), keyboard hints on buttons, a full game with keyboard only including Tab to every harbor action. Mouse used for the exploit and abuse scripts.",
+    "audio_notes": "Not heard. Judged from the synthesis code plus: WebKit stand-in audio report (resumed in touchend, 15 sounds while running, 0 while suspended) and a real Chromium AudioContext (running after first input, suspended on mute, no oscillators created while muted, mute persisted).",
+    "console_use": "Console was used to observe state throughout. It was used to set up state only in the exploit and edge tests (large purse for round trips, low hull for the sink test, night 29 with debt for the late-interest test, a pending eel card for the two-tab test, and edited localStorage for corruption tests). Both scored games were played through the UI only.",
+    "helper_mistakes": "Two of my own scripting slips affected game 1 and are not game faults: an unintended purchase of 31 eels on night 25 and selling through depth with Max on nights 27 and 30.",
+    "logs": ["judge-3/qa1.log", "judge-3/qa2.log", "judge-3/qa3.log", "judge-3/qa4.log", "judge-3/qa4b.log", "judge-3/qa5.log", "judge-3/qa6.log", "judge-3/qa7.log", "judge-3/s9723.log", "judge-3/s9724.log"],
+    "screenshots": ["judge-3/02-tour1.png", "judge-3/04-trade-eels.png", "judge-3/07-map.png", "judge-3/08-card-sm.png", "judge-3/10-arrive.png", "judge-3/17-resumed-encounter.png", "judge-3/21-harbor-lq.png", "judge-3/23-repaid.png", "judge-3/26-chips-max.png", "judge-3/36-map-wireless.png", "judge-3/37-ot-market-wireless.png", "judge-3/42-landscape-encounter.png", "judge-3/49-gulls.png", "judge-3/53-ysolde.png", "judge-3/54-whisper.png", "judge-3/56-final-night.png", "judge-3/60-score.png", "judge-3/61-ledger-after-reload.png", "judge-3/62-corrupt-save-title.png", "judge-3/s9723-card.png", "judge-3/s9723-sheet.png", "judge-3/d02-iframe.png", "judge-3/d03-webkit-iframe.png", "judge-3/d10-kb-market.png", "judge-3/d11-kb-score-KeysOnly.png", "judge-3/d20-sunk.png", "judge-3/d21-debtor.png"]
+  },
+  "verdict": "A technically excellent, exploit-resistant build that meets every hard constraint and completes cleanly by touch and by keyboard; what holds it back is a repetitive late game, a few phone tap-handling glitches and a thumbnail map while a destination is selected."
+}
