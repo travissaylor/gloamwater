@@ -71,14 +71,14 @@
     let loc = 0;
     if (o) { const age = api.day() - o.day; loc = (o.x - T) * Math.pow(M.localAR, age + ahead); }
     const x = T * Math.pow(M.trendAR, ahead) + loc;
-    let p = Math.min(g.max, Math.max(g.min, g.base * api.districtMult(did, gid) * Math.exp(x)));
+    let p = Math.min(g.max, Math.max(g.min, g.base * api.districtMult(did, gid, api.day() + ahead) * Math.exp(x)));
     p *= L.expectEffect(api, mem, did, gid, ahead);
     return Math.min(M.clampHi(g), Math.max(M.clampLo(g), p));
   };
 
   L.stockFactor = function (api, mem, did, gid, ahead) {
     const shocked = L.expectEffect(api, mem, did, gid, ahead) !== 1;
-    const sp = shocked ? 1 : SIM.model.stockP(did, gid);
+    const sp = shocked ? 1 : SIM.model.stockP(did, gid, api.day() + ahead);
     return sp + (1 - sp) * 0.85;
   };
 
@@ -90,7 +90,7 @@
     ahead = ahead == null ? 1 : ahead;
     const p = L.estPrice(api, mem, did, gid, ahead) * L.stockFactor(api, mem, did, gid, ahead);
     const x = api.pressAfter(did, gid, ahead) - (off || 0);
-    return api.sellCurve(did, gid, q, p, x);
+    return api.sellCurve(did, gid, q, p, x, ahead);
   };
   L.estSell = (api, mem, did, gid, ahead) => L.saleValue(api, mem, did, gid, 1, ahead, 0);
 
@@ -109,12 +109,12 @@
       if (!api.stocked(gid)) continue;
       const p = L.estPrice(api, mem, dest, gid, ahead) * L.stockFactor(api, mem, dest, gid, ahead);
       if (p < api.price(gid) * minEdge) continue;
-      const kh = api.depth(api.loc(), gid), kd = api.depth(dest, gid);
+      const kh = api.depth(api.loc(), gid), kd = api.depth(dest, gid, ahead);
       const step = api.hasDepth() ? Math.max(1, Math.round(Math.min(kh.d, kd.d) / 3)) : Math.max(1, Math.ceil(room / 8));
       const x0 = api.pressAfter(dest, gid, ahead) - ((carry && carry[gid]) || 0) - (self ? dk * ((soldTonight && soldTonight[gid]) || 0) : 0);
       C.push({ g: gid, p, x0, k: 0, cost: 0, resale: 0, step, done: false });
     }
-    const total = (c, k) => api.sellCurve(dest, c.g, k, c.p, c.x0 + dk * k);
+    const total = (c, k) => api.sellCurve(dest, c.g, k, c.p, c.x0 + dk * k, ahead);
     let spent = 0, left = room, gain = 0;
     const B0 = Math.max(1, budget), R0 = Math.max(1, room);
     for (let it = 0; it < 600 && left > 0; it++) {
@@ -158,14 +158,14 @@
       if (em > 0.85) continue;
       const pD = L.estPrice(api, mem, did, e.g, 1);
       const pOut = (pD / em) * 0.95;
-      const kd = api.depth(did, e.g), xd = api.pressAfter(did, e.g, 1);
+      const kd = api.depth(did, e.g, 1), xd = api.pressAfter(did, e.g, 1);
       let q = 0, spent = 0, prof = 0;
       const step = Math.max(1, Math.round(kd.d / 3));
       while (q < cap) {
         const s = Math.min(step, cap - q);
-        const cost = api.buyCurve(did, e.g, s, pD, xd + q);
+        const cost = api.buyCurve(did, e.g, s, pD, xd + q, 1);
         if (spent + cost > cash) break;
-        const kk = api.depth('lq', e.g);
+        const kk = api.depth('lq', e.g, 2);
         const sale = pOut * api.pressInt(-q - s, -q, kk.n, kk.d);
         if (sale < cost * 1.08) break;
         q += s; spent += cost; prof += sale - cost;

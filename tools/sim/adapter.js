@@ -74,14 +74,14 @@
     trendAR: 0.85, localAR: 0.65,
     trendShare: 0.66,
     pressDecay: 0.4,            // stepMarket: press *= .4 each night (|x| < .5 snaps to 0)
-    stockP: (did, gid) => (mult(dd(did), gd(gid)) !== 1 ? 0.95 : 0.8),
+    stockP: (did, gid, day = S.day) => (has('fleetMult') && fleetMult(did, gid, day) > 1 ? 1 : mult(dd(did), gd(gid), day) !== 1 ? 0.95 : 0.8), // eslint-disable-line no-undef
     landedExpect, rumourExpect,
     clampLo: g => g.min * 0.4, clampHi: g => g.max * 1.6,
     hullValue: () => (has('YARD_RATE') ? YARD_RATE : 35), // eslint-disable-line no-undef
   };
 
   // ---------------------------------------------------------------- depth math (mirrors the game)
-  const depthAt = (did, gid) => (DEPTH ? depthOf(did, gid) : { n: Infinity, d: 1 }); // eslint-disable-line no-undef
+  const depthAt = (did, gid, day = S.day) => (DEPTH ? depthOf(did, gid, day) : { n: Infinity, d: 1 }); // eslint-disable-line no-undef
   function pressF_(x, n, d) { return x > n ? Math.exp((x - n) / d) : x < -n ? Math.exp((x + n) / d) : 1; }
   function pressInt_(a, b, n, d) {
     if (!isFinite(n)) return b - a;
@@ -383,7 +383,8 @@
       return s && s.day === S.day && typeof s.st === 'boolean' ? s.st : null;
     },
     price: gid => price(gid),
-    districtMult: (did, gid) => mult(dd(did), gd(gid)),
+    // Public fleet schedules, when present, can be read for the arrival night too.
+    districtMult: (did, gid, day = S.day) => mult(dd(did), gd(gid), day),
     effectMultHere: gid => api.knownEffectMult(S.loc, gid),
     knownEffects: () => S.effects.filter(e => e.known).map(e => {
       const kind = landedKind(e), told = e.told || e.type;
@@ -404,12 +405,12 @@
 
     // --- depth ---
     hasDepth: () => DEPTH,
-    depth: (did, gid) => depthAt(did, gid),
+    depth: (did, gid, ahead = 0) => depthAt(did, gid, S.day + ahead),
     pressure: (did, gid) => pressNow(did, gid),
     pressAfter,
     pressF: pressF_, pressInt: pressInt_,
-    sellCurve(did, gid, q, p, x) { if (q <= 0) return 0; const k = depthAt(did, gid); return p * pressInt_(x - q, x, k.n, k.d); },
-    buyCurve(did, gid, q, p, x) { if (q <= 0) return 0; const k = depthAt(did, gid); return p * pressInt_(x, x + q, k.n, k.d); },
+    sellCurve(did, gid, q, p, x, ahead = 0) { if (q <= 0) return 0; const k = depthAt(did, gid, S.day + ahead); return p * pressInt_(x - q, x, k.n, k.d); },
+    buyCurve(did, gid, q, p, x, ahead = 0) { if (q <= 0) return 0; const k = depthAt(did, gid, S.day + ahead); return p * pressInt_(x, x + q, k.n, k.d); },
     rawPrice: gid => (DEPTH ? S.prices[S.loc][gid] : price(gid)),
     quoteBuy(gid, q) { if (q <= 0) return 0; return DEPTH ? quoteBuy(gid, q) : price(gid) * q; }, // eslint-disable-line no-undef
     quoteSell(gid, q) { if (q <= 0) return 0; return DEPTH ? quoteSell(gid, q) : price(gid) * q; }, // eslint-disable-line no-undef
@@ -448,6 +449,7 @@
     buy(gid, q) {
       const c0 = S.cash; const r = coreBuy(gid, Math.floor(q));
       const n = typeof r === 'number' ? r : r ? r.q : 0;
+      if (SIM.cur && n > 0) recordTrade(gid, 'buy', n, c0 - S.cash);
       return { q: n || 0, total: c0 - S.cash };
     },
     sell(gid, q) {
@@ -455,6 +457,7 @@
       if (!r) return { q: 0, total: 0 };
       const total = S.cash - c0;
       if (SIM.cur && total > SIM.cur.maxSale) SIM.cur.maxSale = total;
+      if (SIM.cur) recordTrade(gid, 'sell', r.q, total);
       return { q: r.q, total };
     },
     sellAll(filter) { let tot = 0; for (const g of GOODS) { const h = S.cargo[g.id]; if (h.q && S.stock[S.loc][g.id] && (!filter || filter(g.id))) tot += api.sell(g.id, h.q).total; } return tot; },
@@ -520,6 +523,12 @@
   };
   SIM.api = api;
 
+  function recordTrade(gid, kind, q, total) {
+    const key = [S.day, S.loc, gid, kind].join(':');
+    const t = SIM.cur.trades[key] || (SIM.cur.trades[key] = { day: S.day, d: S.loc, g: gid, kind, q: 0, total: 0 });
+    t.q += q; t.total += total;
+  }
+
   // ---------------------------------------------------------------- data mutation for sweeps
   const ORIG = {};
   SIM.mutate = function (cfg) {
@@ -580,7 +589,7 @@
     busy = false; sel = null; SIM.reload = null; SIM.cards = []; SIM.encOpen = null; SIM.expectConfirm = false;
     try { closeModal(); } catch (e) {}
     const mem = { __events: {}, out: {}, opts: opts || {} };
-    SIM.cur = { pol, mem, name: polName, maxSale: 0, enc: [], charters: [], stays: 0, reloadLog: { found: 0, noSave: 0, cashBack: 0, hullBack: 0 } };
+    SIM.cur = { pol, mem, name: polName, maxSale: 0, enc: [], charters: [], stays: 0, trades: {}, routeLog: [], reloadLog: { found: 0, noSave: 0, cashBack: 0, hullBack: 0 } };
     startGame(newState('Sim'), true);
     const rng0 = { m: S.rngM, e: S.rngE };
     if (pol.init) await pol.init(api, mem);
@@ -594,13 +603,14 @@
       let dest = null;
       try { dest = await pol.night(api, mem); } catch (e) { errors.push('night: ' + (e && e.message)); }
       if (S.over || S.day >= NIGHTS) break;
-      const d0 = S.day;
+      const d0 = S.day, loc0 = S.loc;
       if ((dest === 'stay' || dest === S.loc) && STAY) { SIM.cur.stays++; await stayNight(); } // eslint-disable-line no-undef
       else {
         if (!dest || !dd(dest) || dest === S.loc) dest = S.loc === 'lq' ? 'de' : 'lq';
         await sailTo(dest);
       }
       SIM.encCloseAny();
+      SIM.cur.routeLog.push({ day: d0, from: loc0, to: S.loc });
       while (SIM.reload && reloads < 200) {
         reloads++;
         const s = SIM.reload; SIM.reload = null;
@@ -621,7 +631,7 @@
       worth: CHECK.map(d => w[d]), worthAll: Array.from({ length: NIGHTS }, (_, i) => w[i + 1]),
       stats: { trips: st.trips, fights: st.fights, won: st.won, fled: st.fled, bribes: st.bribes, interest: st.interest, vaultEarned: st.vaultEarned, bestFlip: st.bestFlip, maxSale: SIM.cur.maxSale, whispersBought: st.whispers || 0, holdTier: S.holdTier, wireless: S.wireless, arms: S.arms, motor: S.motor, lost: st.lost || 0 },
       events: mem.__events, out: mem.out, reloads, reloadLog: SIM.cur.reloadLog, errors,
-      enc: SIM.cur.enc, charters: SIM.cur.charters, stays: SIM.cur.stays, rng0, mkt,
+      enc: SIM.cur.enc, charters: SIM.cur.charters, stays: SIM.cur.stays, trades: Object.values(SIM.cur.trades), routeLog: SIM.cur.routeLog, rng0, mkt,
     };
   };
 

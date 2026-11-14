@@ -15,6 +15,8 @@ have thirty nights to get rich. Open `game/index.html` in a browser: no dependen
   no direct canal is two nights via a waypoint. Tap your own district to stay a night in port. Tap during a voyage to skip it.
 - **Shocks.** Surges and gluts last two nights, weaker on the second. You hear of them where you are, by rumour, always with the
   wireless set, or a night early from Madame Ysolde or Pell the lamplighter.
+- **Fleet calls.** Open the market's Fleet summary for the public calendar. Every four nights a new port buys a named good:
+  40% extra demand and twice the depth. Arrival prices still drift; missing the closing night loses the boost.
 - **Money.** Repay Marrow at Lanternquay: 6% a night, 10% after night 10, and his collectors hunt you while you still owe after
   night 10 (or owe over ¤12,000). He lends only up to what you are worth. The Lockwater Vault pays 1.5% a night and can't be robbed.
 - **Upgrades.** Copperhook Docks: hold, engines, repairs. Saint Mire (or Fogmouth, dearer): weapons. Drowned Exchange: a wireless
@@ -27,28 +29,28 @@ have thirty nights to get rich. Open `game/index.html` in a browser: no dependen
   **Keyboard.** 1–7 pick a district, Enter sails, arrows pick a good, B/S trade, ←/→ quantity, M mutes, ? help, Esc menu.
 
 ## Design decisions
-- **Phone first.** Actions sit low at 44px or more; sheets pin their main button; the map fills portrait screens and shrinks
-  above the destination card; toasts dock under the HUD and take no taps; body text 16px, contrast 4.5:1; audio unlocks on tap.
+- **Phone first.** Sheets pin their main button; the map keeps its scale and scrolls to destination details. HUD figures are
+  buttons, news collapses, order defaults respect flat depth, and a typed quantity can be confirmed without a blur re-render.
 - **Rumours are not certainties.** Tomorrow's shocks are queued a night ahead with a fixed fate: they land in full, land weak,
   or **turn** (everyone heard, and the opposite happened). A whisper only reveals what is queued; it never creates or changes one.
   Ysolde sells one a night for ¤300 + 1.5% of purse, vault and cargo, and says how sure she is before you pay.
 - **Bounded late game.** Prices respond to order size (integrated, so no split or round trip pays); the tally uses that sale value.
-  Charters give late capital somewhere to go. Encounter costs scale with cargo, so a near-empty purse is no shield.
+  Fleet calls rotate opportunities. Charters show tonight's exact held-load proceeds change and approximate payback loads.
 - **No reload tricks.** Outcomes are committed before they are shown; a reload resumes the same fight. Dice come from two seeded
   streams in the save (one for the market, one for events). Saved data is validated; damaged saves are discarded with a message.
 - **Characters.** Every service keeper and event host has an inline-SVG portrait; synthesized effects plus an optional ambient bed.
-- **Tuned by simulation.** `tools/sim` (dev tooling, not shipped) drives the real game file headlessly, 400 seeded runs per bot;
-  bots see only what a player sees. On the current build:
-  - **Competent bot:** median ¤420k (p10 ¤174k, p90 ¤693k), mostly Tide Baron, 4% Sovereign. A naive greedy bot: median ¤49k.
-  - **Whisper test:** a bot that buys every whisper and acts on each ends ahead of the same bot without whispers on 22% of seeds
-    (median −¤194k), and 65% of the whispers it acts on lose money. A careful buyer breaks even (mean +¤10k) with big wins at times.
-  - **Borrowing to the limit** gains a modest +¤23k at the median. Save-scumming, split or walked orders, dump-and-buy-back and
-    cornering a good before the tally gain nothing.
+- **Economy checks.** `tools/sim` drives the real file; bots use public information. A diagnostic 80-seed sample found:
+  - **Competent bot:** median ¤615k; naive greedy bot ¤51k. Late sale revenue: silk 38%, ink 27%, chips 14%, eels 12%.
+  - **Whisper test:** spam beats the same bot without whispers on 2/80 seeds; 67% of acted whispers lose money including fees.
+  - **Charters:** bought in 87.5% of competent runs; mean fortune +¤58.5k versus the same planner without charters.
+  - **Exploit probes:** 24,305 buy/sell round trips, none profitable. No game errors, non-finite final scores or market RNG mismatches.
+  This small sample is a regression check, not exhaustive balance proof. Earlier larger runs also tested reloads and final tally inflation.
 
 ## Testing done
-- Playwright WebKit (iPhone 13 at 390×664 with touch, 360×640, iPhone 14 Pro Max) and Chromium at 390 and 1280: full runs with
-  touch taps only, a sandboxed `allow-scripts` iframe, `file://`, and corrupt or hand-edited storage. No console errors.
+- Earlier build: WebKit touch phone runs, Chromium desktop, file://, sandbox and corrupt storage. Current checks are recorded
+  by `node tools/verify.cjs`; this separates touch input regressions from automated full games using real game functions.
 
 ## Known issues
 - No real iPhone was available. Double-tap zoom, rubber-banding, safe-area insets and the silent switch are handled in CSS
   and code but were only verified in emulation.
+- Large hold tiers can still outgrow dealer depth. The public calendar is fixed each run; market prices and encounters vary.

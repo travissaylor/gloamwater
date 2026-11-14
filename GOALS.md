@@ -1,5 +1,14 @@
 # Gloamwater: road to 95
 
+## Current continuation (2026-11-14)
+
+The owner's latest instruction supersedes the original target, model selection, branch,
+and plateau stop below: reach **90.0**, or stop after **four new council rounds**
+(rounds 3–6). Use fresh Opus 5.5 high, GPT-6.1 Sol xhigh, and GPT-6 Astra high
+judges each round. Keep the frozen rubric, independent evidence, and blind judging rules.
+Work on the current `t3/raise-gloamwater-panel-score` branch; commit each round and do not push.
+The original brief and historical results follow for context.
+
 Gloamwater won the bake-off with a panel score of 87.0 out of 100. This file is the
 standing brief for taking it further. Re-read it whenever context is compacted.
 

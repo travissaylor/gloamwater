@@ -1,0 +1,55 @@
+// Focused economy diagnosis. Input files remain the source of every reported number.
+'use strict';
+const fs = require('fs');
+const path = require('path');
+const file = process.argv[2] || path.join(__dirname, 'results/round3-changed.json');
+const out = process.argv[3] || file.replace(/\.json$/, '-summary.md');
+const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+const pct = x => (100 * x).toFixed(1) + '%';
+const cash = x => '¤' + Math.round(x).toLocaleString('en-US');
+const valid = rows => rows.filter(r => !r.error);
+const mean = xs => xs.reduce((a, b) => a + b, 0) / (xs.length || 1);
+const sum = xs => xs.reduce((a, b) => a + b, 0);
+const lines = [
+  '# Focused economy simulation', '',
+  `Game SHA-256: \`${data.meta.gameSha}\`. ${data.meta.runs} seeds per policy.`,
+  'This diagnostic sample is not proof across all seeds.', '',
+  '| Policy | Median fortune | Mean fortune | Mean hold tier | Sunk |',
+  '|---|---:|---:|---:|---:|',
+];
+for (const s of Object.values(data.summary)) lines.push(`| ${s.policy} | ${cash(s.median)} | ${cash(s.mean)} | ${s.stats.holdTier.toFixed(2)} | ${pct(s.sinkRate)} |`);
+const inf = valid(data.runs.informed || []);
+const bySeed = new Map(inf.map(r => [r.seed, r]));
+const ws = data.summary['whisper-spam'];
+if (ws) {
+  const paired = valid(data.runs['whisper-spam']).filter(r => bySeed.has(r.seed));
+  const higher = paired.filter(r => r.net > bySeed.get(r.seed).net).length;
+  lines.push('', `Whisper spam beats informed on ${higher}/${paired.length} paired seeds (${pct(higher / paired.length)}). ${pct(ws.whispers.lostShare)} of ${ws.whispers.acted} acted whispers lose money, including the fee.`);
+}
+const rt = data.summary.roundtrip && data.summary.roundtrip.roundtrip;
+if (rt) lines.push('', `Round trips: ${rt.tests.toLocaleString('en-US')} probes; ${rt.positive} profitable; best cash change ${cash(rt.maxGain)}.`);
+const sales = inf.flatMap(r => r.trades || []).filter(t => t.kind === 'sell' && t.day >= 18);
+const gross = sum(sales.map(t => t.total));
+if (sales.length) {
+  const mix = {};
+  for (const t of sales) mix[t.g] = (mix[t.g] || 0) + t.total;
+  lines.push('', 'Late-game gross sale proceeds, nights 18–30. These are revenue shares, not profit shares.', '', '| Good | Share |', '|---|---:|');
+  for (const [g, total] of Object.entries(mix).sort((a, b) => b[1] - a[1])) lines.push(`| ${g} | ${pct(total / gross)} |`);
+}
+const hops = inf.flatMap(r => r.routeLog || []).filter(t => t.day >= 18);
+if (hops.length) {
+  const routes = {};
+  for (const t of hops) {
+    const key = t.from === t.to ? t.from + ' stay' : [t.from, t.to].sort().join(' ↔ ');
+    routes[key] = (routes[key] || 0) + 1;
+  }
+  lines.push('', 'Late-game route shares, nights 18–29.', '', '| Route | Share |', '|---|---:|');
+  for (const [route, n] of Object.entries(routes).sort((a, b) => b[1] - a[1])) lines.push(`| ${route} | ${pct(n / hops.length)} |`);
+}
+lines.push('', `Informed charters: ${pct(data.summary.informed.charters.anyShare)} buy at least one, ${data.summary.informed.charters.perRun.toFixed(2)} per run.`,
+  `Informed hold tiers 3–5: ${inf.filter(r => r.stats.holdTier >= 3).length}/${inf.length} runs.`,
+  `Reported page errors: ${data.meta.pageErrors.length}. Runs with reported errors: ${Object.values(data.runs).flat().filter(r => r.error || (r.errors && r.errors.length)).length}.`,
+  `Non-finite final net scores: ${Object.values(data.runs).flat().filter(r => !r.error && !Number.isFinite(r.net)).length}.`,
+  `RNG seed mismatches: ${data.meta.repro.rng0Mismatch}; night-30 market mismatches: ${data.meta.repro.mktMismatch}.`, '');
+fs.writeFileSync(out, lines.join('\n'));
+console.log(lines.join('\n'));

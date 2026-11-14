@@ -2,3 +2,6 @@
 Thumbs.db
 *.log
 node_modules/
+tools/sim/results/*.json
+tools/verification/*-failure.png
+tools/verification/sandbox.html

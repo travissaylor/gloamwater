@@ -67,9 +67,9 @@ kbd{font:600 11px var(--mono);padding:1px 5px;border-radius:5px;border:1px solid
 .nbar{width:70px;height:5px;border-radius:9px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:4px}
 .nbar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--amber),var(--rose));border-radius:9px;transition:width .6s}
 .stats{display:flex;gap:8px;flex:1;min-width:0}
-.stat{position:relative;padding:6px 12px;border-radius:12px;background:var(--panel3);border:1px solid var(--line);min-width:0;flex:1;transition:background .3s,border-color .3s}
+.stat{position:relative;padding:6px 12px;border-radius:12px;background:var(--panel3);border:1px solid var(--line);min-width:0;flex:1;color:var(--text);text-align:left;font-family:inherit;touch-action:manipulation;cursor:pointer;transition:background .3s,border-color .3s}
 .stat b{display:block;font:700 17px var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.stat .meter{height:4px;border-radius:9px;background:rgba(255,255,255,.08);margin-top:4px;overflow:hidden}
+.stat .meter{display:block;height:4px;border-radius:9px;background:rgba(255,255,255,.08);margin-top:4px;overflow:hidden}
 .stat .meter i{display:block;height:100%;border-radius:9px;background:var(--teal);transition:width .5s,background .3s}
 .stat.debt b{color:#ffb3bc}
 .stat.flash-up{background:rgba(78,227,155,.16);border-color:rgba(78,227,155,.5)}
@@ -465,15 +465,19 @@ button,.btn,.row,.choice,.bull,.tab,.node,.stat,.mnav button,.seg button{-webkit
   .tag{font-size:13px;padding:2px 8px}
   .gname .tag{font-size:13px;padding:2px 7px;flex:0 1 auto;min-width:0}
   .gname .tag:nth-child(n+4){display:none}
-  .spark{display:block;grid-area:spark;width:46px;height:26px}
-  .row{grid-template-areas:"ico name spark price"!important;grid-template-columns:40px minmax(0,1fr) 46px auto!important}
-  .row{grid-template-columns:40px minmax(0,1fr) auto;grid-template-areas:"ico name price";gap:10px;padding:10px;min-height:64px}
-  .rows{gap:8px;padding-bottom:16px}
+  .spark{display:block;grid-area:spark;width:38px;height:24px}
+  .row{grid-template-areas:"ico name spark price"!important;grid-template-columns:32px minmax(0,1fr) 38px auto!important;gap:7px;padding:7px 8px;min-height:64px}
+  .rows{gap:5px;padding:4px 8px 12px}
+  .gname .tags{margin:3px 0 0;gap:4px;flex-wrap:nowrap;overflow:hidden}
+  .gname .tag{padding:1px 5px;border:0;font-size:13px;flex:none}
+  .gname .tag:nth-child(n+2){display:none}
+  .gname .tag.hot,.gname .tag.glut{display:inline-flex}
+  .gname .tag .ico{display:none}
   .gname b{font-size:16px}
   .gprice b{font-size:17px}
   .chg{font-size:13.5px}
   .chev,.vsu{display:none}
-  .gico{width:40px;height:40px}
+  .gico{width:32px;height:36px;border-radius:9px}
   .bull{font-size:14.5px;min-height:48px;padding:8px 11px}
   .bull small{display:none}
   .bull>div{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -494,14 +498,27 @@ button,.btn,.row,.choice,.bull,.tab,.node,.stat,.mnav button,.seg button{-webkit
   .directory{font-size:14px}
   .logs{font-size:15px}
   .lg .d{font-size:12.5px}
-  /* map: the destination card is a bottom sheet that leaves the map visible, with Sail pinned */
-  .tcard{left:8px;right:8px;bottom:8px;max-width:none;max-height:62%;padding:12px 14px 12px}
+  /* Map and destination share a vertical scroller. Opening a card never rescales the map. */
+  #mapwrap{display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin}
+  #map{position:relative;display:block;height:480px;min-height:480px;flex:none;order:1}
+  #tcard-slot{padding:0 8px 8px;order:2;flex:none}
+  .tcard{position:relative;left:auto;right:auto;bottom:auto;max-width:none;max-height:none;padding:12px 14px}
   .tcard p{display:none}
-  .tcard{max-height:64%}
+  .tcard.right{left:auto;right:auto}
+  .tcard .tc-body{overflow:visible}
+  .tcard .tc-act{position:sticky;bottom:0;background:var(--panel2);padding-top:10px}
+  .tcard .tc-act .btn{width:100%}
   .gname .tag.own{flex:none}
   .tl{font-size:12px}
   .tc-known{font-size:14px}
-  .map-hint{font-size:13px;left:10px;top:10px;right:10px;text-align:center}
+  .map-hint{position:relative;order:0;font-size:13px;left:auto;top:auto;right:auto;text-align:center;padding:7px 8px;margin:6px 8px 0;flex:none}
+  .market-news{margin:0 10px 4px;font-size:14px;color:var(--muted)}
+  .market-news summary{min-height:44px;display:flex;align-items:center;cursor:pointer;touch-action:manipulation}
+  .market-news summary::before{content:'▸';margin-right:8px;color:var(--amber)}
+  .market-news[open] summary::before{content:'▾'}
+  .market-news .bulletins{margin:0 0 6px}
+  .best-run{display:none}
+  .sheet .seg,.qty,.amt-presets{gap:8px}
   /* toasts dock above the bottom nav and never take taps */
   #toasts{width:calc(100% - 20px)}
   .toast{font-size:14px;padding:8px 12px;line-height:1.3}
@@ -587,11 +604,11 @@ body.fx-under #fx{z-index:49}
     <div class="hud-worth" id="h-worth"><small>Net worth</small><b class="num" id="worth2">¤0</b><em id="nextrank"></em></div>
     <button class="btn icon hud-mute" id="b-mute2" aria-label="Toggle sound"></button>
     <div class="stats" id="hud-stats">
-      <div class="stat" id="st-cash" title="Cash on board. Can be stolen or lost if you sink."><small>Purse</small><b class="num">¤0</b></div>
-      <div class="stat" id="st-bank" title="Lockwater Vault balance. Safe, and earns interest."><small>Vault</small><b class="num">¤0</b></div>
-      <div class="stat debt" id="st-debt" title="What you owe Marrow Quill. Grows 6% a night, 10% after night 10."><small>Debt</small><b class="num">¤0</b></div>
-      <div class="stat" id="st-hold" title="Cargo space used"><small>Hold</small><b class="num">0/30</b><div class="meter"><i></i></div></div>
-      <div class="stat" id="st-hull" title="Hull integrity. At 0% your skiff sinks."><small>Hull</small><b class="num">100%</b><div class="meter"><i></i></div></div>
+      <button type="button" class="stat" id="st-cash" aria-label="Explain purse" title="Cash on board. Can be stolen or lost if you sink."><small>Purse</small><b class="num">¤0</b></button>
+      <button type="button" class="stat" id="st-bank" aria-label="Explain vault" title="Lockwater Vault balance. Safe, and earns interest."><small>Vault</small><b class="num">¤0</b></button>
+      <button type="button" class="stat debt" id="st-debt" aria-label="Explain debt" title="What you owe Marrow Quill. Grows 6% a night, 10% after night 10."><small>Debt</small><b class="num">¤0</b></button>
+      <button type="button" class="stat" id="st-hold" aria-label="Explain hold" title="Cargo space used"><small>Hold</small><b class="num">0/30</b><span class="meter"><i></i></span></button>
+      <button type="button" class="stat" id="st-hull" aria-label="Explain hull" title="Hull integrity. At 0% your skiff sinks."><small>Hull</small><b class="num">100%</b><span class="meter"><i></i></span></button>
     </div>
     <div class="hud-btns">
       <button class="btn icon" id="b-help" aria-label="How to play (?)" title="How to play (?)"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/></svg></button>
@@ -771,6 +788,14 @@ const DISTRICTS=[
    blurb:"The broken seawall, where ocean ships unload in fog and the Tidewardens patrol hardest."}
 ];
 const DI={};DISTRICTS.forEach(d=>DI[d.id]=d);
+// Public four-night fleet calls. The calendar is known; arrival prices and voyage outcomes are not.
+const FLEET_CALLS=[{d:'ch',g:'kelp'},{d:'sm',g:'rain'},{d:'ot',g:'pearl'},{d:'fm',g:'saffron'},
+  {d:'de',g:'eels'},{d:'sl',g:'chips'},{d:'ot',g:'silk'},{d:'lq',g:'silk'}];
+function fleetCall(day=S.day){
+  if(day<1||day>NIGHTS)return null;
+  const i=Math.floor((day-1)/4);return {...FLEET_CALLS[i],from:i*4+1,to:Math.min(NIGHTS,i*4+4),m:1.4,depth:2};
+}
+function fleetMult(did,gid,day=S.day){const f=fleetCall(day);return f&&f.d===did&&f.g===gid?f.m:1;}
 const EDGES=[['fm','sm'],['sm','ot'],['fm','lq'],['sm','lq'],['ot','lq'],['ot','de'],['lq','de'],['lq','ch'],['fm','ch'],['ch','sl'],['sl','lq'],['sl','de']];
 const HOLD_TIERS=[{cap:30},{cap:45,cost:2500},{cap:70,cost:7500},{cap:100,cost:18000},{cap:140,cost:40000},{cap:200,cost:85000}];
 const MOTORS=[{name:'Putter engine'},{name:'Twin-screw motor',cost:4500},{name:'Whisper turbine',cost:16000}];
@@ -837,7 +862,7 @@ function holdUsed(){let n=0;for(const g of GOODS)n+=S.cargo[g.id].q;for(const c 
 // units moves the price by a factor of e (down when you sell, up when you buy). Specialty markets
 // (a district's cheap or dear goods) are half again as deep. Pressure eases 60% each night.
 // Trades are priced by integrating the curve, so a buy-then-sell round trip can never make money.
-function depthOf(did,gid){const g=GI[gid],d=DI[did],k=((d.cheap.includes(gid)||d.dear.includes(gid))?1.5:1)*(S.charters&&S.charters[did]?CHARTER_DEPTH:1);return{n:g.depth[0]*k,d:g.depth[1]*k};}
+function depthOf(did,gid,day=S.day){const g=GI[gid],d=DI[did],f=fleetCall(day),k=((d.cheap.includes(gid)||d.dear.includes(gid))?1.5:1)*(S.charters&&S.charters[did]?CHARTER_DEPTH:1)*(f&&f.d===did&&f.g===gid?f.depth:1);return{n:g.depth[0]*k,d:g.depth[1]*k};}
 // A trading charter makes a district's dealers trade twice as deep with you: the late-game home for capital.
 const CHARTER_DEPTH=2,charterCost=()=>20000+20000*Object.keys(S.charters||{}).length;
 function pressF(x,n,d){return x>n?Math.exp((x-n)/d):x<-n?Math.exp((x+n)/d):1;}
@@ -867,7 +892,7 @@ function cargoValueHere(){let v=0;for(const g of GOODS)v+=quoteSell(g.id,S.cargo
 function cargoBaseValue(){let v=0;for(const g of GOODS)v+=S.cargo[g.id].q*GI[g.id].base;return v;}
 function netWorth(){return S.cash+S.bank-S.debt+cargoValueHere();}
 function cargoCount(){let n=0;for(const g of GOODS)n+=S.cargo[g.id].q;return n;}
-function mult(d,g){if(d.cheap.includes(g.id))return .8;if(d.dear.includes(g.id))return 1.22;return 1;}
+function mult(d,g,day=S.day){return (d.cheap.includes(g.id)?.8:d.dear.includes(g.id)?1.22:1)*fleetMult(d.id,g.id,day);}
 function effectMult(did,gid){let m=1;for(const e of S.effects){if(e.d===did&&(e.g===gid||e.g==='*'))m*=e.age===0?e.m:Math.sqrt(e.m);}return m;}
 function effectsAt(did,gid){return S.effects.filter(e=>e.d===did&&(e.g===gid||e.g==='*'));}
 
@@ -906,7 +931,7 @@ function stepMarketInner(warm){
       p=Math.max(1,Math.round(p));
       S.prices[d.id][g.id]=p;S.hist[d.id][g.id].push(postedAt(d.id,g.id));
       if(S.hist[d.id][g.id].length>40)S.hist[d.id][g.id].shift();
-      const st=em!==1||rnd()<(mult(d,g)!==1?.95:.8);
+      const st=fleetMult(d.id,g.id)>1||em!==1||rnd()<(mult(d,g)!==1?.95:.8);
       S.stock[d.id][g.id]=st;if(st)count++;
     });
     let guard=0;
@@ -1186,6 +1211,7 @@ function sparkSVG(arr,w=84,h=30,dot){
 }
 function goodTags(gid){
   const d=DI[S.loc],g=GI[gid],tags=[];
+  if(fleetMult(S.loc,gid)>1)tags.push('<span class="tag dear">Fleet call</span>');
   {const k=depthOf(S.loc,gid),x=S.press[S.loc][gid];if(Math.abs(x)>k.n)tags.push(`<span class="tag">${x>0?'You bid it up':'You sold it down'}</span>`);}
   effectsAt(S.loc,gid).forEach(e=>{
     if(e.type==='spike')tags.push(`<span class="tag hot">${ico('arrowUp')}${e.age?'Fading surge':'Surge'}</span>`);
@@ -1198,7 +1224,7 @@ function goodTags(gid){
   }
   const bs=S.day<NIGHTS?bestSale(gid):'';
   if(bs)tags.push(bs);
-  else if(!tags.length&&S.day<NIGHTS){if(d.cheap.includes(gid))tags.push('<span class="tag">Local make</span>');else if(d.dear.includes(gid))tags.push('<span class="tag">In demand</span>');}
+  else if(!tags.length&&S.day<NIGHTS){if(d.cheap.includes(gid))tags.push('<span class="tag">Usually supplied here</span>');else if(d.dear.includes(gid))tags.push('<span class="tag">Usually imported here</span>');}
   return tags.join('');
 }
 // where this good last sold for clearly more than it costs here (only prices you have seen), else its reputation
@@ -1209,21 +1235,18 @@ function bestRunHTML(){
   if(!best)return '';
   return `<div class="best-run">${ico('arrowUp')}<div><b>Best known:</b> ${best.g.name} → ${esc(best.d.name)} <b>+${Math.round(best.r*100)}%</b><small>Seen ${best.ago?best.ago+'n ago':'tonight'}. Prices drift; big orders move them.</small></div></div>`;
 }
-const FRESH_NIGHTS=6; // older sightings are too stale to suggest
+const FRESH_NIGHTS=2; // a recent sighting is context, never a promised arrival price
 // Default buy size: everything at the posted price, then more only while the next unit still costs
 // clearly less than the best price you have seen elsewhere. Max stays one tap away.
 function suggestBuy(gid){
   const mx=maxBuy(gid);if(!mx)return 0;
-  const k=depthOf(S.loc,gid),x=S.press[S.loc][gid],b=S.prices[S.loc][gid],bs=bestSeen(gid);
-  let q=Math.min(mx,Math.max(1,flatLeft(gid,'buy')));
-  if(bs)while(q<mx&&b*pressF(x+q+1,k.n,k.d)<bs.p*.9)q++;
-  return q;
+  return Math.min(mx,Math.max(1,flatLeft(gid,'buy')));
 }
-function bestSeen(gid){let best=null;DISTRICTS.forEach(d=>{if(d.id===S.loc)return;const sn=S.seen[d.id][gid];if(sn&&sn.st&&S.day-sn.day<=FRESH_NIGHTS&&!(sn.sh&&S.day-sn.day>=2)&&(!best||sn.p>best.p))best={d,p:sn.p};});return best;}
+function bestSeen(gid){let best=null;DISTRICTS.forEach(d=>{if(d.id===S.loc)return;const sn=S.seen[d.id][gid];if(sn&&sn.st&&S.day-sn.day<=FRESH_NIGHTS&&!(sn.sh&&S.day-sn.day>=2)&&(!best||sn.p>best.p))best={d,p:sn.p,ago:S.day-sn.day};});return best;}
+const portName=id=>({lq:'Lanternquay',sm:'Saint Mire',ot:'Orchid',de:'Exchange',ch:'Copperhook',sl:'Sluices',fm:'Fogmouth'}[id]||DI[id].name);
 function bestSale(gid){
   const p=price(gid),best=bestSeen(gid);
-  if(best&&best.p>p*1.12)return `<span class="tag sale">${ico('arrowUp')}+${Math.round((best.p/p-1)*100)}% ${esc(best.d.name)}</span>`;
-  if(!best){const w=DISTRICTS.find(d=>d.id!==S.loc&&d.dear.includes(gid));if(w)return `<span class="tag">Wanted: ${esc(w.name)}</span>`;}
+  if(best&&best.p>p*1.12)return `<span class="tag sale" title="${esc(best.d.name)}: ${fmt(best.p)}, seen ${best.ago?best.ago+' nights ago':'tonight'}. Prices can change before arrival.">${best.ago?'Seen':'Now'} +${Math.round((best.p/p-1)*100)}%<span class="wide-only"> ${esc(portName(best.d.id))}</span>${best.ago?' · '+best.ago+'n':''}</span>`;
   return '';
 }
 let sideLoc=null,sideTabWas=null;
@@ -1238,7 +1261,8 @@ function marketHTML(){
   const d=DI[S.loc],used=holdUsed(),cap=capacity();
   let h=`<div class="mk-head"><div><div class="kicker">Night ${S.day} market</div><h2>${d.name}</h2></div>
     <div class="holdbox"><div class="kicker">Free hold</div><b>${cap-used}</b> <span style="color:var(--muted);font-size:12px">of ${cap}</span></div></div>`;
-  h+=bulletinsHTML();
+  const news=bulletinsHTML(),newsCount=S.effects.filter(e=>e.known&&e.age===0).length,f=fleetCall();
+  h+=`<details class="market-news"><summary>Fleet: ${GI[f.g].name} → ${portName(f.d)}${newsCount?' · '+newsCount+' bulletins':''}</summary>${fleetCalendarHTML()}${news}</details>`;
   h+=bestRunHTML();
   const fin=S.day!==NIGHTS?'':`<div class="final-banner">${ico('flag')}<div><b>Final night.</b> Sell, repay Marrow, then settle up.<span class="wide-only"> Unsold cargo goes for half price.</span></div><button class="btn primary" data-act="settle">Settle up</button></div>`;
   h+='<div class="rows" role="list">';
@@ -1289,10 +1313,20 @@ function harborHTML(){
     Object.keys(SVC).map(k=>{const where=DISTRICTS.filter(x=>x.svc.includes(k)).map(x=>x.name).join(' & ');return `<div>${ico(SVC[k].icon)}<span><b>${SVC[k].name}</b> · ${where}</span></div>`;}).join('')+'</div></div>';
   return h+'</div>';
 }
+function fleetCalendarHTML(){
+  const f=fleetCall();
+  return `<div class="svc"><p><b>Public fleet calendar.</b> The fleet buys one good at a time: 40% added to the district's usual price and twice its dealer depth. Prices still drift; large orders move them and voyages carry risk.</p>`+
+    FLEET_CALLS.map((call,i)=>{const from=i*4+1,to=Math.min(NIGHTS,from+3);if(to<S.day)return '';return `<button class="bull" data-dist="${call.d}" style="width:100%;text-align:left;margin:6px 0"><div><b>${from===f.from?'Now · ':''}N${from}–${to}: ${GI[call.g].name}</b><br>${DI[call.d].name}${nightsTo(S.loc,call.d)?' · '+nightsTo(S.loc,call.d)+' nights away':' · here'}</div></button>`;}).join('')+`<p>Arrival after the closing night misses the call. Check the trade sheet's quotes before buying.</p></div>`;
+}
 function charterHTML(){
   const own=!!S.charters[S.loc],cost=charterCost(),list=Object.keys(S.charters).map(k=>DI[k].name);
+  let uplift=0;
+  if(!own)GOODS.forEach(g=>{const q=S.cargo[g.id].q;if(!q||!S.stock[S.loc][g.id])return;const k=depthOf(S.loc,g.id),x=S.press[S.loc][g.id];
+    const after=Math.max(0,Math.floor(S.prices[S.loc][g.id]*pressInt(x-q,x,k.n*CHARTER_DEPTH,k.d*CHARTER_DEPTH)+1e-6));uplift+=after-quoteSell(g.id,q);});
+  const payback=own?'':`<p><b>This hold, tonight:</b> ${uplift>=0?'+':''}${fmt(uplift)} in sale proceeds after buying the charter. ${uplift>0?`About ${Math.ceil(cost/uplift)} similar loads cover its ${fmt(cost)} price.`:'No extra sale proceeds for this load.'} Future prices and cargo vary; ${NIGHTS-S.day} nights remain.</p>`;
   return `<div class="svc"><div class="svc-h"><div class="avatar" style="--ac:#ffe066">${ico('star')}</div><div><h3>Trading charter</h3><div class="q">"Sign in Moon Ink, captain. The dealers will remember."</div></div></div>
     <p>A charter makes the dealers of ${DI[S.loc].name} trade <b>twice as deep</b> with you for the rest of the run: twice as many units at the posted price before it moves. Each charter costs more than the last.</p>
+    ${payback}
     <div class="kv"><span>Your charters</span><b>${list.length?list.join(', '):'none'}</b></div>
     <div class="svc-row">${own?'<span class="tag cheap">Chartered here</span>':`<button class="btn amber" data-act="charter" ${S.cash>=cost?'':'disabled'}>Buy charter · ${fmt(cost)}</button>`}</div></div>`;
 }
@@ -1371,9 +1405,9 @@ function islandSVG(d,i){
 }
 let mapFs=19;
 function buildMap(){
-  const r=$('#mapwrap').getBoundingClientRect();
+  const r=$(isNarrow()?'#map':'#mapwrap').getBoundingClientRect();
   if(r.width<10){return;}
-  const ratio=r.height/r.width,nowPortrait=ratio>1;
+  const ratio=r.height/r.width,nowPortrait=isNarrow()||ratio>1;
   if(mapBuilt&&nowPortrait===portrait&&(!portrait||Math.abs(ratio-mapRatio)<.04))return;
   portrait=nowPortrait;mapBuilt=true;mapRatio=ratio;
   mapH=portrait?Math.round(clamp(640*ratio,760,1400)):640;
@@ -1391,13 +1425,13 @@ function buildMap(){
     isl+=islandSVG(d,i);
     const c=pos(d.id);
     const pips=Array.from({length:5},(_,k)=>`<rect class="pip ${k<d.danger?'on':''}" x="${c.x-22+k*9.5}" y="${c.y+34+mapFs+14}" width="7" height="4" rx="2"/>`).join('');
-    const fs=mapFs,tw=d.name.length*fs*.54+22,lh=fs+10;
+    const label=portrait?portName(d.id):d.name,fs=mapFs,tw=label.length*fs*.54+22,lh=fs+10;
     nodes+=`<g class="node" data-d="${d.id}" tabindex="0" role="button" aria-label="${d.name}, danger ${d.danger} of 5. Press ${d.key}.">
       <circle cx="${c.x}" cy="${c.y}" r="62" fill="transparent"/>
       <circle class="halo" cx="${c.x}" cy="${c.y}" r="44"/>
       <circle class="disc" cx="${c.x}" cy="${c.y}" r="28"/>
       <svg class="glyph" x="${c.x-15}" y="${c.y-15}" width="30" height="30" viewBox="0 0 24 24"><path d="${P[d.glyph]}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <g class="lbl"><rect x="${c.x-tw/2}" y="${c.y+34}" width="${tw}" height="${lh}" rx="${lh/2}"/><text x="${c.x}" y="${c.y+34+lh/2+fs*.36}" text-anchor="middle" style="font-size:${fs}px">${d.name}</text></g>
+      <g class="lbl"><rect x="${c.x-tw/2}" y="${c.y+34}" width="${tw}" height="${lh}" rx="${lh/2}"/><text x="${c.x}" y="${c.y+34+lh/2+fs*.36}" text-anchor="middle" style="font-size:${fs}px">${label}</text></g>
       ${pips}
       <g class="badge-g" id="badge-${d.id}"></g>
     </g>`;
@@ -1429,11 +1463,13 @@ function renderMapState(){
   // badges: known news + best known sell opportunities for cargo aboard
   DISTRICTS.forEach(d=>{
     const g=$('#badge-'+d.id);if(!g)return;const c=pos(d.id);let h='';
-    const news=S.effects.find(e=>e.known&&e.age===0&&e.d===d.id);
+    const news=S.effects.find(e=>e.known&&e.age===0&&e.d===d.id),fleet=fleetCall();
     let best=0;
-    if(d.id!==S.loc)GOODS.forEach(gd=>{const cg=S.cargo[gd.id];const sn=S.seen[d.id][gd.id];if(cg.q&&cg.cost>0&&sn&&sn.st){const r=(sn.p-cg.cost)/cg.cost;if(r>best)best=r;}});
-    if(news){const col=news.type==='crash'?'#4ee39b':'#ffbe55';h+=`<g class="badge-pulse"><circle cx="${c.x+26}" cy="${c.y-24}" r="12" fill="${col}"/><text x="${c.x+26}" y="${c.y-19}" text-anchor="middle" fill="#0b0f24">!</text></g>`;}
-    if(best>.12){const tx='+'+Math.round(best*100)+'%';const w=tx.length*9+12;h+=`<g><rect x="${c.x-30-w}" y="${c.y-36}" width="${w}" height="22" rx="11" fill="rgba(78,227,155,.9)"/><text x="${c.x-30-w/2}" y="${c.y-20}" text-anchor="middle" fill="#06291a" style="font-size:13px">${tx}</text></g>`;}
+    if(d.id!==S.loc)GOODS.forEach(gd=>{const cg=S.cargo[gd.id];const sn=S.seen[d.id][gd.id];if(cg.q&&cg.cost>0&&sn&&sn.st&&sn.day===S.day){const r=(sn.p-cg.cost)/cg.cost;if(r>best)best=r;}});
+    const bf=portrait?mapFs:15;
+    if(news){const col=news.type==='crash'?'#4ee39b':'#ffbe55';h+=`<g class="badge-pulse"><circle cx="${c.x+30}" cy="${c.y-30}" r="${bf*.7}" fill="${col}"/><text x="${c.x+30}" y="${c.y-30+bf*.36}" text-anchor="middle" fill="#0b0f24" style="font-size:${bf}px">!</text></g>`;}
+    else if(fleet.d===d.id)h+=`<g><circle cx="${c.x+30}" cy="${c.y-30}" r="${bf*.8}" fill="#ffbe55"/><text x="${c.x+30}" y="${c.y-30+bf*.36}" text-anchor="middle" fill="#0b0f24" style="font-size:${bf}px">F</text><title>Fleet call: ${GI[fleet.g].name}, through night ${fleet.to}</title></g>`;
+    if(best>.12){const tx='+'+Math.round(best*100)+'%',w=tx.length*bf*.6+14,bh=bf+10;h+=`<g><rect x="${c.x-28-w}" y="${c.y-30-bh/2}" width="${w}" height="${bh}" rx="${bh/2}" fill="rgba(78,227,155,.9)"/><text x="${c.x-28-w/2}" y="${c.y-30+bf*.36}" text-anchor="middle" fill="#06291a" style="font-size:${bf}px">${tx}</text></g>`;}
     g.innerHTML=h;
   });
   if(!busy)placeSkiffAt(S.loc);
@@ -1447,7 +1483,7 @@ function renderTravelCard(){
   const d=DI[sel],here=sel===S.loc,nights=nightsTo(S.loc,sel),hop=here?null:nextHop(S.loc,sel);
   const route=$('#route');
   if(!here&&!busy){route.setAttribute('d',nights===1?voyagePath(S.loc,sel):voyagePath(S.loc,hop)+' '+voyagePath(hop,sel));route.style.strokeDasharray='';route.style.strokeDashoffset='';route.classList.add('show');}else if(!busy)route.classList.remove('show');
-  const tags=(d.cheap.length?'<div class="tags"><span class="tl">Sells cheap</span>'+d.cheap.map(g=>`<span class="tag cheap">${ico(g)}${GI[g].name}</span>`).join('')+'</div>':'')+'<div class="tags"><span class="tl">Pays well</span>'+d.dear.map(g=>`<span class="tag dear">${ico(g)}${GI[g].name}</span>`).join('')+'</div>';
+  const tags=(d.cheap.length?'<div class="tags"><span class="tl">Usually supplies</span>'+d.cheap.map(g=>`<span class="tag">${ico(g)}${GI[g].name}</span>`).join('')+'</div>':'')+'<div class="tags"><span class="tl">Usually imports</span>'+d.dear.map(g=>`<span class="tag">${ico(g)}${GI[g].name}</span>`).join('')+'</div><div class="tc-dist">District habits, not tonight’s prices.</div>';
   const svcs=d.svc.map(k=>`<span class="tag svcs">${ico(SVC[k].icon)}${SVC[k].name}</span>`).join('')+(S.charters[sel]?`<span class="tag cheap">${ico('star')}Chartered</span>`:'');
   // known prices for goods you carry
   const held=GOODS.filter(g=>S.cargo[g.id].q>0);
@@ -1463,7 +1499,7 @@ function renderTravelCard(){
   slot.innerHTML=`<div class="tcard${side}" role="dialog" aria-label="${d.name}">
     <div class="tc-head"><div class="tc-glyph">${ico(d.glyph)}</div><div><h3>${d.name}</h3><div class="tc-dist">${dist}</div><div class="danger">Danger ${Array.from({length:5},(_,k)=>`<i class="${k<d.danger?'on':''}"></i>`).join('')}</div></div>
     <button class="btn icon ghost x" data-act="closecard" aria-label="Close">${ico('close')}</button></div>
-    <div class="tc-body">${news}${tags}${known}
+    <div class="tc-body">${fleetCall().d===sel?`<div class="result gold"><b>Fleet call: ${GI[fleetCall().g].name}</b> through night ${fleetCall().to}. 40% demand boost, twice the depth. Arrival prices can change.</div>`:''}${news}${tags}${known}
     ${svcs?`<div class="tags"><span class="tl">Services</span>${svcs}</div>`:''}
     <p>${d.blurb}</p></div>
     <div class="tc-act">${here?(last?`<button class="btn primary lg" data-act="settle" style="flex:1">Final night · settle up</button>`:`<button class="btn" data-act="gomarket" style="flex:1">Open market</button><button class="btn amber lg" data-act="stay" style="flex:1">Stay the night</button>`):
@@ -1472,13 +1508,12 @@ function renderTravelCard(){
       S.day>=NIGHTS-1?`<button class="btn primary lg" data-act="sail" data-d="${hop}">Too far for the last night: sail to ${DI[hop].name}</button>`:
       `<button class="btn primary lg" data-act="sail" data-d="${sel}">Sail via ${DI[hop].name} · 2 nights <kbd>⏎</kbd></button>`}</div>
   </div>`;
-  // on a phone the map shrinks into the space above the card, so every district and the route stay in view
-  if(isNarrow()&&map)requestAnimationFrame(()=>{const c=$('#tcard-slot .tcard');map.style.height=c?`calc(100% - ${c.offsetHeight+14}px)`:'';});
+  if(map)map.style.height='';
 }
 function selectDistrict(id){
   if(busy)return;
   sel=(sel===id)?null:id;if(sel)$('#toasts').innerHTML='';sfx.click();renderMapState();
-  if(sel){const b=$('#tcard-slot .btn.primary,#tcard-slot .btn');if(b&&!isNarrow())setTimeout(()=>softFocus(b,{preventScroll:true}),30);}
+  if(sel){const b=$('#tcard-slot .btn.primary,#tcard-slot .btn');if(isNarrow())requestAnimationFrame(()=>$('#tcard-slot').scrollIntoView({block:'nearest',behavior:REDUCED?'auto':'smooth'}));else if(b)setTimeout(()=>softFocus(b,{preventScroll:true}),30);}
 }
 function voyagePath(a,b){const A=pos(a),B=pos(b);const mx=(A.x+B.x)/2,my=(A.y+B.y)/2,dx=B.x-A.x,dy=B.y-A.y,len=Math.hypot(dx,dy)||1,bend=len*.16;
   return `M${A.x} ${A.y} Q${(mx-dy/len*bend).toFixed(1)} ${(my+dx/len*bend).toFixed(1)} ${B.x} ${B.y}`;}
@@ -1508,7 +1543,7 @@ function setView(v){
   $$('#mnav button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.v===v)));
   if(v==='map')requestAnimationFrame(()=>{buildMap();});
 }
-// swallow taps in the 350ms after a sheet opens or closes, so a double tap cannot fall through to the nav or a card
+// Guard every modal transition, including replacing a sheet, against a second tap reaching new controls.
 let tapGuardUntil=0,lastDown=0,modalAt=0;
 document.addEventListener('pointerdown',()=>{lastDown=performance.now();},true);
 document.addEventListener('click',e=>{
@@ -1516,7 +1551,7 @@ document.addEventListener('click',e=>{
   const inSheet=!!e.target.closest('#modal .modal'),now=performance.now();
   const stale=lastDown<tapGuardUntil-350&&now<tapGuardUntil+400;   // finger went down before the sheet changed
   const tooSoon=inSheet&&now-modalAt<250;                          // nobody reads a card in a quarter second
-  if((stale&&!inSheet)||(stale&&inSheet&&lastDown<modalAt)||tooSoon){e.stopPropagation();e.preventDefault();}
+  if(now<tapGuardUntil||(stale&&!inSheet)||(stale&&inSheet&&lastDown<modalAt)||tooSoon){e.stopImmediatePropagation();e.preventDefault();}
 },true);
 document.addEventListener('click',e=>{
   if(!S)return;
@@ -1583,7 +1618,7 @@ let rsT;addEventListener('resize',()=>{clearTimeout(rsT);rsT=setTimeout(()=>{if(
 // =========================================================
 let modalKeys=null,modalDismiss=null,lastFocus=null;
 function showModal(html,{cls='',onKey=null,dismiss=null,wide=false,keepFx=false}={}){
-  const ov=$('#modal');modalAt=performance.now();if(ov.hidden){parkToasts();tapGuardUntil=performance.now()+350;}else $('#toasts').innerHTML='';if(!keepFx)FX.clear();if(ov.hidden)lastFocus=document.activeElement;
+  const ov=$('#modal');modalAt=performance.now();tapGuardUntil=modalAt+350;if(ov.hidden){parkToasts();}else $('#toasts').innerHTML='';if(!keepFx)FX.clear();if(ov.hidden)lastFocus=document.activeElement;
   ov.className='ov '+cls;ov.innerHTML=`<div class="modal ${wide?'wide':''}" role="dialog" aria-modal="true">${html}</div>`;
   ov.hidden=false;modalKeys=onKey;modalDismiss=dismiss;
   ov.onclick=e=>{if(e.target===ov&&modalDismiss)modalDismiss();};
@@ -1638,7 +1673,7 @@ function openTrade(gid,mode){
   el.querySelectorAll('[data-x]').forEach(b=>b.onclick=closeModal);
   if(!stocked)return;
   const qin=$('#qin'),qr=$('#qr'),sum=$('#qsum'),go=$('#qgo');
-  function setMode(m){mode=m;el.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===m)));const mx=m==='buy'?mxBuy():maxSell();qr.max=mx;q=m==='buy'?suggestBuy(gid):mx;update();}
+  function setMode(m){mode=m;el.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===m)));const mx=m==='buy'?mxBuy():maxSell();qr.max=mx;q=m==='buy'?suggestBuy(gid):Math.min(mx,Math.max(1,flatLeft(gid,'sell')));update();}
   function depthNote(){
     const flat=flatLeft(gid,mode),k=depthOf(S.loc,gid),x=S.press[S.loc][gid];
     if(mode==='buy'&&q>0){const bs=bestSeen(gid),avg=quoteBuy(gid,q)/q;if(bs&&avg>bs.p)return `<span class="depth-warn" style="grid-column:1/3"><b>This loses money:</b> you would pay ${fmt(avg)} each on average, more than the best price you have seen elsewhere (${fmt(bs.p)}). Buy fewer.</span>`;}
@@ -1664,6 +1699,7 @@ function openTrade(gid,mode){
     go.disabled=q<=0;
   }
   function onKey(e){
+    if(!stocked)return;
     if(e.target===qin&&/^[0-9]$/.test(e.key))return;
     const k=e.key;
     if(k==='ArrowRight'||k==='ArrowUp'){e.preventDefault();q+=e.shiftKey?10:1;update();sfx.tick();}
@@ -1696,7 +1732,8 @@ function openTrade(gid,mode){
   el.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{q+=+b.dataset.d;update();sfx.tick();});
   el.querySelector('[data-max]').onclick=()=>{q=1e9;update();sfx.tick();};
   qin.oninput=()=>{q=+qin.value||0;update(true);};
-  qin.onblur=()=>update();
+  // Updating summary/button markup during blur cancels the following tap in WebKit.
+  qin.onblur=()=>{qin.value=q;};
   qin.onfocus=()=>{qin.value='';};
   qr.oninput=()=>{q=+qr.value;update();sfx.tick();};
   go.onclick=confirm;
@@ -2436,7 +2473,7 @@ async function endGame(reason,rec){
   const {t,rank,entry,top,placed}=rec||recordRun(reason);clearToasts();document.body.classList.add('fx-under');
   if(t.net>0&&!t.sunk){sfx.win();setTimeout(()=>FX.lanterns(50),300);}else{sfx.lose();FX.rain(100);}
   const html=`<div class="end-hero">
-      <div class="kicker">${t.sunk?'Sunk on night '+S.day:'Thirty nights, done'}</div>
+      <div class="kicker">${t.sunk?'Sunk on night '+S.day:S.day<NIGHTS?'Settled on night '+S.day:'Thirty nights, done'}</div>
       ${emblemSVG(rank)}
       <h3 style="color:${rank.color}">${rank.name}</h3>
       <p class="rankline">${rank.line}</p></div>
