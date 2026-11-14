@@ -17,6 +17,26 @@ on Windows. It is installed in `tools/node_modules` (dev tooling only; the game 
 stays one file with no dependencies). If it is missing, run `npm install` in `tools/`, then
 `npx playwright install webkit chromium`. See [the phone harness](#the-phone-harness-playwright-real-touch) below.
 
+## Recorded completion and regression runs
+
+Run from the repository root. Each runner accepts `--game` so a judge can use the frozen
+packet without changing the candidate. Give each run its own evidence directory.
+
+```powershell
+node tools/verify.cjs --game game/index.html --out tools/verification
+node tools/touch-play.cjs --game game/index.html --seed 43 --runs 1 --size 390x844 --out tools/touch-evidence
+node tools/keyboard-play.cjs --game game/index.html --seed 31 --out tools/keyboard-evidence
+node tools/event-check.cjs --game game/index.html --out tools/event-evidence
+```
+
+The touch runner completes a game with real taps and typed quantities. The keyboard runner
+uses native Tab/Shift+Tab and activation keys on desktop, with no scripted focus or pointer
+actions; it records focus navigation and input counters. Both choose from public observations
+and retain loaded-source hashes. Their accelerated timing and reduced motion are disclosed;
+use `touch-play.cjs --normal-speed` for ordinary animation timing. These runs do not establish
+audible quality or physical iPhone behavior. Event fixtures deliberately set explicit states
+to test offers and replay commitment; they are separate from ordinary play.
+
 ## The PowerShell harness (works now, no install)
 
 Three scripts keep one headless Chrome alive per port, so the game keeps its state between

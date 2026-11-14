@@ -1,0 +1,919 @@
+{
+  "createdAt": "2026-11-14T18:33:19.130Z",
+  "config": {
+    "game": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\game\\index.html",
+    "out": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\keyboard-evidence",
+    "seed": 31,
+    "fast": true
+  },
+  "driverSha256": "4ff6520dd65f428b1ec3c3b875152d6325c2b26b03c1f397c5e8b4ad0eef65d5",
+  "method": "Chromium 1280x800, native Tab/Shift+Tab to actual activeElement, Space on native buttons, Enter on focusable rows/SVG nodes, native typing. No scripted focus, pointer, dispatchEvent, direct gameplay functions or resource fixtures. Existing current-information traveller policy reused.",
+  "timing": "FAST=true and prefers-reduced-motion:reduce; animation-only acceleration. Native key presses still traverse the real UI.",
+  "limitations": [
+    "One seeded conservative strategy; combat, every upgrade and every event branch are not exhaustive.",
+    "Desktop Chromium keyboard coverage; this does not establish phone external-keyboard or screen-reader behavior.",
+    "Audio context/policy can be logged, but audible sound quality is not evaluated."
+  ],
+  "navigationResponses": [
+    {
+      "url": "file:///C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/game/index.html",
+      "sha256": "48fd8d91e592335eb0bd54eb9408f136b1db9d6dc2f97707979bbc03fbfeb1f5"
+    }
+  ],
+  "pass": false,
+  "error": "Error: Tab navigation could not reach #tcard-slot [data-act=\"sail\"]; last focus: [{\"key\":\"Shift+Tab\",\"active\":{\"tag\":\"DIV\",\"id\":\"\",\"cls\":\"tc-body\",\"text\":\"Fleet call: Glowkelp through night 4. 40% dem\"}},{\"key\":\"Tab\",\"active\":{\"tag\":\"BUTTON\",\"id\":\"\",\"cls\":\"btn icon ghost x\",\"text\":\"\"}},{\"key\":\"Shift+Tab\",\"active\":{\"tag\":\"DIV\",\"id\":\"\",\"cls\":\"tc-body\",\"text\":\"Fleet call: Glowkelp through night 4. 40% dem\"}},{\"key\":\"Tab\",\"active\":{\"tag\":\"BUTTON\",\"id\":\"\",\"cls\":\"btn icon ghost x\",\"text\":\"\"}},{\"key\":\"Shift+Tab\",\"active\":{\"tag\":\"DIV\",\"id\":\"\",\"cls\":\"tc-body\",\"text\":\"Fleet call: Glowkelp through night 4. 40% dem\"}},{\"key\":\"Tab\",\"active\":{\"tag\":\"BUTTON\",\"id\":\"\",\"cls\":\"btn icon ghost x\",\"text\":\"\"}},{\"key\":\"Shift+Tab\",\"active\":{\"tag\":\"DIV\",\"id\":\"\",\"cls\":\"tc-body\",\"text\":\"Fleet call: Glowkelp through night 4. 40% dem\"}},{\"key\":\"Tab\",\"active\":{\"tag\":\"BUTTON\",\"id\":\"\",\"cls\":\"btn icon ghost x\",\"text\":\"\"}},{\"key\":\"Shift+Tab\",\"active\":{\"tag\":\"DIV\",\"id\":\"\",\"cls\":\"tc-body\",\"text\":\"Fleet call: Glowkelp through night 4. 40% dem\"}},{\"key\":\"Tab\",\"active\":{\"tag\":\"BUTTON\",\"id\":\"\",\"cls\":\"btn icon ghost x\",\"text\":\"\"}},{\"key\":\"Shift+Tab\",\"active\":{\"tag\":\"DIV\",\"id\":\"\",\"cls\":\"tc-body\",\"text\":\"Fleet call: Glowkelp through night 4. 40% dem\"}},{\"key\":\"Tab\",\"active\":{\"tag\":\"BUTTON\",\"id\":\"\",\"cls\":\"btn icon ghost x\",\"text\":\"\"}}]\n    at KeyboardRun.focusByTab (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\keyboard-play.cjs:80:11)\n    at async KeyboardRun.tap (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\keyboard-play.cjs:94:5)\n    at async KeyboardRun.sail (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\touch-play.cjs:318:5)\n    at async KeyboardRun.play (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\touch-play.cjs:348:7)\n    at async main (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\keyboard-play.cjs:182:21)",
+  "surface": {
+    "busy": false,
+    "ended": false,
+    "night": false,
+    "modal": false,
+    "title": "",
+    "text": "",
+    "choices": [],
+    "coachSkip": false
+  },
+  "observation": {
+    "day": 1,
+    "loc": "lq",
+    "cash": 700,
+    "bank": 0,
+    "debt": 6000,
+    "hull": 100,
+    "over": false,
+    "capacity": 30,
+    "used": 30,
+    "motor": 0,
+    "holdTier": 0,
+    "arms": 0,
+    "wireless": false,
+    "goods": [
+      {
+        "id": "kelp",
+        "name": "Glowkelp",
+        "base": 42,
+        "depth": [
+          60,
+          60
+        ],
+        "stock": true,
+        "price": 60,
+        "owned": 30,
+        "cost": 60,
+        "maxBuy": 0,
+        "flatBuy": 60,
+        "sellTotal": 1800,
+        "buyTotals": [
+          0
+        ]
+      },
+      {
+        "id": "rain",
+        "name": "Bottled Rain",
+        "base": 130,
+        "depth": [
+          40,
+          40
+        ],
+        "stock": true,
+        "price": 131,
+        "owned": 0,
+        "cost": 0,
+        "maxBuy": 0,
+        "flatBuy": 40,
+        "sellTotal": 0,
+        "buyTotals": [
+          0
+        ]
+      },
+      {
+        "id": "pearl",
+        "name": "Rust Pearls",
+        "base": 420,
+        "depth": [
+          24,
+          24
+        ],
+        "stock": true,
+        "price": 509,
+        "owned": 0,
+        "cost": 0,
+        "maxBuy": 0,
+        "flatBuy": 24,
+        "sellTotal": 0,
+        "buyTotals": [
+          0
+        ]
+      },
+      {
+        "id": "saffron",
+        "name": "Synth Saffron",
+        "base": 1100,
+        "depth": [
+          14,
+          16
+        ],
+        "stock": true,
+        "price": 1425,
+        "owned": 0,
+        "cost": 0,
+        "maxBuy": 0,
+        "flatBuy": 14,
+        "sellTotal": 0,
+        "buyTotals": [
+          0
+        ]
+      },
+      {
+        "id": "eels",
+        "name": "Clockwork Eels",
+        "base": 2400,
+        "depth": [
+          10,
+          12
+        ],
+        "stock": true,
+        "price": 2593,
+        "owned": 0,
+        "cost": 0,
+        "maxBuy": 0,
+        "flatBuy": 10,
+        "sellTotal": 0,
+        "buyTotals": [
+          0
+        ]
+      },
+      {
+        "id": "chips",
+        "name": "Ghost Chips",
+        "base": 5200,
+        "depth": [
+          7,
+          9
+        ],
+        "stock": true,
+        "price": 5043,
+        "owned": 0,
+        "cost": 0,
+        "maxBuy": 0,
+        "flatBuy": 7,
+        "sellTotal": 0,
+        "buyTotals": [
+          0
+        ]
+      },
+      {
+        "id": "silk",
+        "name": "Dreamsilk",
+        "base": 9800,
+        "depth": [
+          5,
+          7
+        ],
+        "stock": true,
+        "price": 7118,
+        "owned": 0,
+        "cost": 0,
+        "maxBuy": 0,
+        "flatBuy": 5,
+        "sellTotal": 0,
+        "buyTotals": [
+          0
+        ]
+      },
+      {
+        "id": "ink",
+        "name": "Moon Ink",
+        "base": 19000,
+        "depth": [
+          3,
+          5
+        ],
+        "stock": true,
+        "price": 26833,
+        "owned": 0,
+        "cost": 0,
+        "maxBuy": 0,
+        "flatBuy": 4,
+        "sellTotal": 0,
+        "buyTotals": [
+          0
+        ]
+      }
+    ],
+    "districts": [
+      {
+        "id": "lq",
+        "name": "Lanternquay",
+        "danger": 1,
+        "cheap": [],
+        "dear": [
+          "ink",
+          "kelp"
+        ],
+        "services": [
+          "lender",
+          "vault"
+        ]
+      },
+      {
+        "id": "sm",
+        "name": "Saint Mire",
+        "danger": 2,
+        "cheap": [
+          "ink",
+          "saffron"
+        ],
+        "dear": [
+          "rain",
+          "eels"
+        ],
+        "services": [
+          "arms"
+        ]
+      },
+      {
+        "id": "ot",
+        "name": "Orchid Terraces",
+        "danger": 1,
+        "cheap": [
+          "rain"
+        ],
+        "dear": [
+          "silk",
+          "saffron",
+          "ink"
+        ],
+        "services": [
+          "rumor"
+        ]
+      },
+      {
+        "id": "de",
+        "name": "Drowned Exchange",
+        "danger": 2,
+        "cheap": [
+          "saffron"
+        ],
+        "dear": [
+          "chips",
+          "pearl",
+          "eels"
+        ],
+        "services": [
+          "vault",
+          "wireless"
+        ]
+      },
+      {
+        "id": "sl",
+        "name": "The Sluices",
+        "danger": 3,
+        "cheap": [
+          "kelp",
+          "pearl"
+        ],
+        "dear": [
+          "rain",
+          "silk"
+        ],
+        "services": [
+          "gutter"
+        ]
+      },
+      {
+        "id": "ch",
+        "name": "Copperhook Docks",
+        "danger": 2,
+        "cheap": [
+          "eels",
+          "pearl"
+        ],
+        "dear": [
+          "kelp",
+          "chips"
+        ],
+        "services": [
+          "yard"
+        ]
+      },
+      {
+        "id": "fm",
+        "name": "Fogmouth",
+        "danger": 4,
+        "cheap": [
+          "chips",
+          "silk"
+        ],
+        "dear": [
+          "saffron",
+          "pearl"
+        ],
+        "services": [
+          "fence"
+        ]
+      }
+    ],
+    "seen": {
+      "lq": {
+        "kelp": {
+          "p": 60,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "rain": {
+          "p": 131,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "pearl": {
+          "p": 509,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "saffron": {
+          "p": 1425,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "eels": {
+          "p": 2593,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "chips": {
+          "p": 5043,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "silk": {
+          "p": 7118,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "ink": {
+          "p": 26833,
+          "day": 1,
+          "st": true,
+          "sh": false
+        }
+      },
+      "sm": {
+        "kelp": {
+          "p": 52,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "rain": {
+          "p": 165,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "pearl": {
+          "p": 325,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "saffron": {
+          "p": 1226,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "eels": {
+          "p": 3400,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "chips": {
+          "p": 5467,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "silk": {
+          "p": 12246,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "ink": {
+          "p": 16211,
+          "day": 1,
+          "st": true,
+          "sh": false
+        }
+      },
+      "ot": {
+        "kelp": {
+          "p": 57,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "rain": {
+          "p": 98,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "pearl": {
+          "p": 359,
+          "day": 1,
+          "st": false,
+          "sh": false
+        },
+        "saffron": {
+          "p": 1904,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "eels": {
+          "p": 2881,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "chips": {
+          "p": 6007,
+          "day": 1,
+          "st": false,
+          "sh": false
+        },
+        "silk": {
+          "p": 13744,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "ink": {
+          "p": 19923,
+          "day": 1,
+          "st": true,
+          "sh": false
+        }
+      },
+      "de": {
+        "kelp": {
+          "p": 48,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "rain": {
+          "p": 137,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "pearl": {
+          "p": 468,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "saffron": {
+          "p": 706,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "eels": {
+          "p": 3748,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "chips": {
+          "p": 7026,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "silk": {
+          "p": 9614,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "ink": {
+          "p": 21096,
+          "day": 1,
+          "st": true,
+          "sh": false
+        }
+      },
+      "sl": {
+        "kelp": {
+          "p": 38,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "rain": {
+          "p": 145,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "pearl": {
+          "p": 169,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "saffron": {
+          "p": 1376,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "eels": {
+          "p": 2822,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "chips": {
+          "p": 5214,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "silk": {
+          "p": 11417,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "ink": {
+          "p": 25305,
+          "day": 1,
+          "st": false,
+          "sh": false
+        }
+      },
+      "ch": {
+        "kelp": {
+          "p": 91,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "rain": {
+          "p": 141,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "pearl": {
+          "p": 219,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "saffron": {
+          "p": 1206,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "eels": {
+          "p": 1798,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "chips": {
+          "p": 7243,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "silk": {
+          "p": 10028,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "ink": {
+          "p": 20902,
+          "day": 1,
+          "st": true,
+          "sh": false
+        }
+      },
+      "fm": {
+        "kelp": {
+          "p": 52,
+          "day": 1,
+          "st": false,
+          "sh": false
+        },
+        "rain": {
+          "p": 92,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "pearl": {
+          "p": 410,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "saffron": {
+          "p": 1609,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "eels": {
+          "p": 2504,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "chips": {
+          "p": 4408,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "silk": {
+          "p": 8941,
+          "day": 1,
+          "st": true,
+          "sh": false
+        },
+        "ink": {
+          "p": 18572,
+          "day": 1,
+          "st": true,
+          "sh": false
+        }
+      }
+    },
+    "canals": [
+      [
+        "fm",
+        "sm"
+      ],
+      [
+        "sm",
+        "ot"
+      ],
+      [
+        "fm",
+        "lq"
+      ],
+      [
+        "sm",
+        "lq"
+      ],
+      [
+        "ot",
+        "lq"
+      ],
+      [
+        "ot",
+        "de"
+      ],
+      [
+        "lq",
+        "de"
+      ],
+      [
+        "lq",
+        "ch"
+      ],
+      [
+        "fm",
+        "ch"
+      ],
+      [
+        "ch",
+        "sl"
+      ],
+      [
+        "sl",
+        "lq"
+      ],
+      [
+        "sl",
+        "de"
+      ]
+    ],
+    "fleet": [
+      {
+        "d": "ch",
+        "g": "kelp"
+      },
+      {
+        "d": "sm",
+        "g": "rain"
+      },
+      {
+        "d": "ot",
+        "g": "pearl"
+      },
+      {
+        "d": "fm",
+        "g": "saffron"
+      },
+      {
+        "d": "de",
+        "g": "eels"
+      },
+      {
+        "d": "sl",
+        "g": "chips"
+      },
+      {
+        "d": "ot",
+        "g": "silk"
+      },
+      {
+        "d": "lq",
+        "g": "silk"
+      }
+    ],
+    "upgrade": {
+      "hold": {
+        "cap": 45,
+        "cost": 2500
+      },
+      "motor": {
+        "name": "Twin-screw motor",
+        "cost": 4500
+      }
+    },
+    "finalText": null
+  },
+  "inputDocuments": [
+    {
+      "keys": {
+        "0": 1,
+        "1": 1,
+        "3": 1,
+        " ": 8,
+        "Control": 2,
+        "A": 2,
+        "K": 1,
+        "e": 1,
+        "y": 1,
+        "b": 1,
+        "o": 1,
+        "a": 1,
+        "r": 1,
+        "d": 1,
+        "Tab": 140,
+        "Shift": 56,
+        "Enter": 2
+      },
+      "pointerEvents": {},
+      "nativeKeyboardClicks": 7,
+      "pointerClicks": 0,
+      "inputEvents": 12,
+      "focusOutsideOpenModal": []
+    }
+  ],
+  "tabPresses": 140,
+  "focusTrails": [
+    {
+      "selector": "#t-new",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "t-new",
+        "cls": "btn primary lg",
+        "text": "Cast off"
+      }
+    },
+    {
+      "selector": "#cap-name",
+      "presses": 0,
+      "reached": {
+        "tag": "INPUT",
+        "id": "cap-name",
+        "cls": "namein",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#go",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "go",
+        "cls": "choice primary",
+        "text": "⏎Cast offA quick guided tour starts first. Yo"
+      }
+    },
+    {
+      "selector": "#coach [data-skip]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn ghost sm",
+        "text": "Skip tour"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 16,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"kelp\"]",
+      "presses": 4,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "GlowkelpPriceyCopperhook +52% seen · tonight\n"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 30 for ¤1,800"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"ch\"]",
+      "presses": 5,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Copperhook Docks\n      \n      FFleet call: Gl"
+      }
+    }
+  ],
+  "turns": [
+    {
+      "day": 1,
+      "loc": "lq",
+      "cash": 2500,
+      "bank": 0,
+      "debt": 6000,
+      "hull": 100,
+      "used": 0,
+      "capacity": 30
+    }
+  ],
+  "errors": [],
+  "network": []
+}

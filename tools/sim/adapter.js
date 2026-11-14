@@ -182,7 +182,7 @@
       det.fight = (fp * hit + (1 - fp) * rf * miss) / (1 - (1 - fp) * (1 - rf));
       Object.assign(det, term(b, h));
       let best = null;
-      for (const [k, v] of Object.entries(det)) if (best == null || v < det[best]) best = k;
+      for (const [k, v] of Object.entries(det)) if (!(ctx.noFight && k === 'fight') && (best == null || v < det[best])) best = k;
       V[b][h] = det[best];
       if (wantDetail) { choice.best = best; choice.costs = det; }
     };
@@ -533,9 +533,10 @@
     async upgrade(kind) {
       const cost = api.upgradeCost(kind);
       if (cost == null || (kind !== 'repair' && kind !== 'patch' && S.cash < cost)) return false;
-      const c0 = S.cash;
+      const c0 = S.cash, h0 = S.hull;
       const btn = { dataset: { mk: dd(S.loc).svc.includes('fence') && !dd(S.loc).svc.includes('arms') ? '1.2' : '1' } };
       await confirmed(kind, btn);
+      if (SIM.cur && S.cash < c0) SIM.cur.purchases.push({ day: S.day, d: S.loc, kind, cost: c0 - S.cash, hullRestored: S.hull - h0 });
       return S.cash !== c0;
     },
 
@@ -637,7 +638,7 @@
     busy = false; sel = null; SIM.reload = null; SIM.cards = []; SIM.encOpen = null; SIM.expectConfirm = false;
     try { closeModal(); } catch (e) {}
     const mem = { __events: {}, out: {}, opts: opts || {} };
-    SIM.cur = { pol, mem, name: polName, maxSale: 0, enc: [], charters: [], stays: 0, trades: {}, routeLog: [], numericChecks: 0, reloadLog: { found: 0, noSave: 0, cashBack: 0, hullBack: 0 } };
+    SIM.cur = { pol, mem, name: polName, maxSale: 0, enc: [], charters: [], stays: 0, purchases: [], trades: {}, routeLog: [], numericChecks: 0, reloadLog: { found: 0, noSave: 0, cashBack: 0, hullBack: 0 } };
     startGame(newState('Sim'), true);
     const rng0 = { m: S.rngM, e: S.rngE };
     if (pol.init) await pol.init(api, mem);
@@ -681,7 +682,7 @@
       worth: CHECK.map(d => w[d]), worthAll: Array.from({ length: NIGHTS }, (_, i) => w[i + 1]),
       stats: { trips: st.trips, fights: st.fights, won: st.won, fled: st.fled, bribes: st.bribes, interest: st.interest, vaultEarned: st.vaultEarned, bestFlip: st.bestFlip, maxSale: SIM.cur.maxSale, whispersBought: st.whispers || 0, holdTier: S.holdTier, wireless: S.wireless, arms: S.arms, motor: S.motor, lost: st.lost || 0, numericChecks: SIM.cur.numericChecks },
       events: mem.__events, out: mem.out, reloads, reloadLog: SIM.cur.reloadLog, errors,
-      enc: SIM.cur.enc, charters: SIM.cur.charters, stays: SIM.cur.stays, trades: Object.values(SIM.cur.trades), routeLog: SIM.cur.routeLog, rng0, mkt,
+      enc: SIM.cur.enc, charters: SIM.cur.charters, stays: SIM.cur.stays, purchases: SIM.cur.purchases, trades: Object.values(SIM.cur.trades), routeLog: SIM.cur.routeLog, rng0, mkt,
     };
   };
 

@@ -1,0 +1,4641 @@
+{
+  "createdAt": "2026-11-14T18:33:59.980Z",
+  "config": {
+    "game": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\game\\index.html",
+    "out": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\tools\\keyboard-evidence\\attempt-2",
+    "seed": 31,
+    "fast": true
+  },
+  "driverSha256": "48aa83b2a0aa4b7bfc92ee000ef2dddf885a9d4edffa2e2306399c7ca71af48f",
+  "method": "Chromium 1280x800, native Tab/Shift+Tab to actual activeElement, Space on native buttons, Enter on focusable rows/SVG nodes, native typing. No scripted focus, pointer, dispatchEvent, direct gameplay functions or resource fixtures. Existing current-information traveller policy reused.",
+  "timing": "FAST=true and prefers-reduced-motion:reduce; animation-only acceleration. Native key presses still traverse the real UI.",
+  "limitations": [
+    "One seeded conservative strategy; combat, every upgrade and every event branch are not exhaustive.",
+    "Desktop Chromium keyboard coverage; this does not establish phone external-keyboard or screen-reader behavior.",
+    "Audio context/policy can be logged, but audible sound quality is not evaluated."
+  ],
+  "navigationResponses": [
+    {
+      "url": "file:///C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/game/index.html",
+      "sha256": "48fd8d91e592335eb0bd54eb9408f136b1db9d6dc2f97707979bbc03fbfeb1f5"
+    },
+    {
+      "url": "file:///C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/game/index.html",
+      "sha256": "3edffb18fb781b2ae959006a2356f51b2be4a462141ee0e444920ced84005c1d"
+    }
+  ],
+  "result": {
+    "loadedSha256": "48fd8d91e592335eb0bd54eb9408f136b1db9d6dc2f97707979bbc03fbfeb1f5",
+    "day": 30,
+    "sunk": false,
+    "reachedSettlementScreen": true,
+    "distinctPorts": [
+      "lq",
+      "ch",
+      "ot",
+      "de",
+      "sm",
+      "fm",
+      "sl"
+    ],
+    "ending": "THIRTY NIGHTS, DONE\nCanal Runner\n\nThe lamplighters know your skiff by its wake.\n\nCash on board\n¤74,433\nLockwater Vault\n¤81,033\nCargo dumped at half price\n¤0\nOwed to Marrow Quill\npaid off\nFinal fortune\n¤155,466\nVoyages\n28\nBest single profit\n¤34.1k\nPeak worth\n¤155k\nEncounters\n7\nwon 0 · fled 0\nInterest accrued\n¤2,031\nLost to thieves, tolls, leaks\n¤45.2k\n\n¤94,534 short of Lantern Broker.\n\nCAPTAINS' LEDGER · YOU PLACED #1\n#\tCAPTAIN\tRANK\tFORTUNE\n1\tKeyboard 1\n2026-11-14\n\tCanal Runner\t¤155,466\n1\nSail again\n2\nTitle screen",
+    "finalState": {
+      "cash": 74433,
+      "bank": 81033,
+      "debt": 0,
+      "hull": 100,
+      "used": 0,
+      "capacity": 45
+    },
+    "turns": [
+      {
+        "day": 1,
+        "loc": "lq",
+        "cash": 2500,
+        "bank": 0,
+        "debt": 6000,
+        "hull": 100,
+        "used": 0,
+        "capacity": 30
+      },
+      {
+        "day": 2,
+        "loc": "ch",
+        "cash": 1030,
+        "bank": 0,
+        "debt": 6360,
+        "hull": 100,
+        "used": 30,
+        "capacity": 30
+      },
+      {
+        "day": 3,
+        "loc": "lq",
+        "cash": 502,
+        "bank": 0,
+        "debt": 6742,
+        "hull": 100,
+        "used": 12,
+        "capacity": 30
+      },
+      {
+        "day": 4,
+        "loc": "ot",
+        "cash": 1829,
+        "bank": 0,
+        "debt": 7147,
+        "hull": 100,
+        "used": 1,
+        "capacity": 30
+      },
+      {
+        "day": 5,
+        "loc": "de",
+        "cash": 1881,
+        "bank": 0,
+        "debt": 7576,
+        "hull": 100,
+        "used": 6,
+        "capacity": 30
+      },
+      {
+        "day": 6,
+        "loc": "lq",
+        "cash": 1566,
+        "bank": 0,
+        "debt": 8031,
+        "hull": 100,
+        "used": 16,
+        "capacity": 30
+      },
+      {
+        "day": 7,
+        "loc": "de",
+        "cash": 500,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 20,
+        "capacity": 30
+      },
+      {
+        "day": 8,
+        "loc": "ot",
+        "cash": 1406,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 15,
+        "capacity": 30
+      },
+      {
+        "day": 9,
+        "loc": "sm",
+        "cash": 5457,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 30,
+        "capacity": 30
+      },
+      {
+        "day": 10,
+        "loc": "ot",
+        "cash": 384,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 17,
+        "capacity": 30
+      },
+      {
+        "day": 11,
+        "loc": "de",
+        "cash": 384,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 17,
+        "capacity": 30
+      },
+      {
+        "day": 12,
+        "loc": "ot",
+        "cash": 971,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 30,
+        "capacity": 30
+      },
+      {
+        "day": 13,
+        "loc": "sm",
+        "cash": 1589,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 23,
+        "capacity": 30
+      },
+      {
+        "day": 14,
+        "loc": "fm",
+        "cash": 2984,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 11,
+        "capacity": 30
+      },
+      {
+        "day": 15,
+        "loc": "lq",
+        "cash": 2799,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 9,
+        "capacity": 30
+      },
+      {
+        "day": 16,
+        "loc": "sl",
+        "cash": 0,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 1,
+        "capacity": 30
+      },
+      {
+        "day": 17,
+        "loc": "ch",
+        "cash": 1983,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 30,
+        "capacity": 30
+      },
+      {
+        "day": 18,
+        "loc": "fm",
+        "cash": 1341,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 7,
+        "capacity": 45
+      },
+      {
+        "day": 19,
+        "loc": "lq",
+        "cash": 2462,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 45,
+        "capacity": 45
+      },
+      {
+        "day": 20,
+        "loc": "de",
+        "cash": 3734,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 7,
+        "capacity": 45
+      },
+      {
+        "day": 22,
+        "loc": "ot",
+        "cash": 5966,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 4,
+        "capacity": 45
+      },
+      {
+        "day": 23,
+        "loc": "de",
+        "cash": 44737,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 24,
+        "capacity": 45
+      },
+      {
+        "day": 24,
+        "loc": "ot",
+        "cash": 7032,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 28,
+        "capacity": 45
+      },
+      {
+        "day": 25,
+        "loc": "de",
+        "cash": 4877,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 17,
+        "capacity": 45
+      },
+      {
+        "day": 26,
+        "loc": "ot",
+        "cash": 11523,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 6,
+        "capacity": 45
+      },
+      {
+        "day": 27,
+        "loc": "de",
+        "cash": 67104,
+        "bank": 0,
+        "debt": 0,
+        "hull": 100,
+        "used": 45,
+        "capacity": 45
+      },
+      {
+        "day": 28,
+        "loc": "ot",
+        "cash": 53056,
+        "bank": 43083,
+        "debt": 0,
+        "hull": 100,
+        "used": 20,
+        "capacity": 45
+      },
+      {
+        "day": 29,
+        "loc": "de",
+        "cash": 12753,
+        "bank": 43729,
+        "debt": 0,
+        "hull": 100,
+        "used": 14,
+        "capacity": 45
+      },
+      {
+        "day": 30,
+        "loc": "lq",
+        "cash": 45311,
+        "bank": 44385,
+        "debt": 0,
+        "hull": 100,
+        "used": 5,
+        "capacity": 45
+      }
+    ],
+    "events": [
+      {
+        "day": 2,
+        "title": "A drowned strongbox",
+        "choice": "ok",
+        "choiceText": "1\nContinue",
+        "text": "LUCKY FIND\nA drowned strongbox\n\nYour boathook snags a rusted strongbox under the mooring. Inside, wrapped in oilcloth: ¤330.\n\n1\nContinue"
+      },
+      {
+        "day": 3,
+        "title": "A soaked courier flags you down",
+        "choice": "no",
+        "choiceText": "2\nDecline\nSmells like trouble.",
+        "text": "A JOB\nA soaked courier flags you down\n\n\"Sealed parcel for Fogmouth. Don't open it, don't drop it, and don't let the Tidewardens see it. Pays ¤2,880 on delivery by night 6.\"\n\n1\nTake the job · 3 hold\nDeliver to Fogmouth by night 6 (1 night away).\n2\nDecline\nSmells like trouble."
+      },
+      {
+        "day": 5,
+        "title": "Pell the lamplighter",
+        "choice": "ok",
+        "choiceText": "1\nContinue",
+        "text": "A FRIENDLY WORD\nPell the lamplighter\n\nPell lowers his pole and leans down to your skiff. \"Heard something on my rounds. Tomorrow: Tidewardens raided the Glowkelp stalls at Saint Mire. Buyers will pay anything.\"\n\nPell is sure. Rumours like this land in full about 8 times in 10.\nIf it holds, tomorrow at Saint Mire: sell Glowkelp there. It is two nights away, so you would arrive as it fades. Either way, you will hear what really happened.\n1\nContinue"
+      },
+      {
+        "day": 6,
+        "title": "A gull takes your purse",
+        "choice": "pay",
+        "choiceText": "2\nLet the bag go · ¤174\nCertain cash loss. Your hull and cargo stay safe.",
+        "text": "THIEF!\nA gull takes your purse\n\nA trained grey gull snags a bag containing ¤174. Its tether catches your wrist. You can grab the bag, but the skiff is drifting toward the stone quay.\n\n1\nReach for the bag\n70% chance to keep it. On failure, lose ¤174 and 10% hull (you have 100%).\n2\nLet the bag go · ¤174\nCertain cash loss. Your hull and cargo stay safe."
+      },
+      {
+        "day": 9,
+        "title": "A drowned strongbox",
+        "choice": "ok",
+        "choiceText": "1\nContinue",
+        "text": "LUCKY FIND\nA drowned strongbox\n\nYour boathook snags a rusted strongbox under the mooring. Inside, wrapped in oilcloth: ¤1,440.\n\n1\nContinue"
+      },
+      {
+        "day": 9,
+        "title": "Tidewarden cutter!",
+        "choice": "bribe",
+        "choiceText": "3\nBribe the sergeant · ¤1,110\nGuaranteed. The price follows your purse and your cargo.",
+        "text": "SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nSearchlights snap on from under the viaduct: a Tidewarden cutter, rifles out. \"Cargo papers, captain.\"\n\nYour hull\n100%\nEnemy boats\n1\nCargo at stake\n¤10.1k\n1\nRun for it\n37% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n25% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nBribe the sergeant · ¤1,110\nGuaranteed. The price follows your purse and your cargo.\n4\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."
+      },
+      {
+        "day": 9,
+        "title": "Papers in order",
+        "choice": "ok",
+        "choiceText": "1\nContinue",
+        "text": "BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤1,110, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\n1\nContinue"
+      },
+      {
+        "day": 10,
+        "title": "A soaked courier flags you down",
+        "choice": "no",
+        "choiceText": "2\nDecline\nSmells like trouble.",
+        "text": "A JOB\nA soaked courier flags you down\n\n\"Sealed parcel for The Sluices. Don't open it, don't drop it, and don't let the Tidewardens see it. Pays ¤2,520 on delivery by night 16.\"\n\n1\nTake the job · 3 hold\nDeliver to The Sluices by night 16 (2 nights away).\n2\nDecline\nSmells like trouble."
+      },
+      {
+        "day": 11,
+        "title": "Pell the lamplighter",
+        "choice": "ok",
+        "choiceText": "1\nContinue",
+        "text": "A FRIENDLY WORD\nPell the lamplighter\n\nPell lowers his pole and leans down to your skiff. \"Heard something on my rounds. Tomorrow: Collectors from the deep city want Synth Saffron, and they are shopping at Saint Mire.\"\n\nPell admits it is a guess. Rumours like this land in full about 1 time in 3, and turn the other way more often than that.\nIf it holds, tomorrow at Saint Mire: sell Synth Saffron there. It is two nights away, so you would arrive as it fades. Either way, you will hear what really happened.\n1\nContinue"
+      },
+      {
+        "day": 11,
+        "title": "Tidewarden cutter!",
+        "choice": "bribe",
+        "choiceText": "3\nBribe the sergeant · ¤983\nGuaranteed. The price follows your purse and your cargo.",
+        "text": "SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA Tidewarden cutter swings out of the dark, lamps blazing. \"Heave to for inspection!\"\n\nYour hull\n100%\nEnemy boats\n1\nCargo at stake\n¤7,686\n1\nRun for it\n30% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n25% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nBribe the sergeant · ¤983\nGuaranteed. The price follows your purse and your cargo.\n4\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."
+      },
+      {
+        "day": 11,
+        "title": "Papers in order",
+        "choice": "ok",
+        "choiceText": "1\nContinue",
+        "text": "BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤983, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\n1\nContinue"
+      },
+      {
+        "day": 13,
+        "title": "A crate bobs past",
+        "choice": "leave",
+        "choiceText": "2\nLeave it\nNot worth the trouble.",
+        "text": "FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Glowkelp marks drifts alongside. Nobody seems to be looking for it. Yet.\n\n1\nHaul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull).\n2\nLeave it\nNot worth the trouble."
+      },
+      {
+        "day": 15,
+        "title": "Water in the hold",
+        "choice": "yield",
+        "choiceText": "2\nJettison 1 Dreamsilk\nUsual value ¤9,800; the eventual sale price may differ. Keep your cash.",
+        "text": "LEAK\nWater in the hold\n\nA loose plank lets water into a stack of 1 Dreamsilk. Buy an emergency patch or jettison the stack before the rest gets wet.\n\n1\nPatch the leak · ¤5,880\nNot enough cash aboard for the patch.\n2\nJettison 1 Dreamsilk\nUsual value ¤9,800; the eventual sale price may differ. Keep your cash."
+      },
+      {
+        "day": 15,
+        "title": "The Gull Gang!",
+        "choice": "pay",
+        "choiceText": "3\nPay the toll · ¤1,775\nYour purse is light, so they take about ¤45 of cargo too.",
+        "text": "AMBUSH IN THE NARROWS\nThe Gull Gang!\n\nA net drops across the canal ahead. 2 Gull Gang skiffs wait behind it, oars up, grinning.\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤12.2k\n1\nRun for it\n39% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nPay the toll · ¤1,775\nYour purse is light, so they take about ¤45 of cargo too."
+      },
+      {
+        "day": 15,
+        "title": "Toll paid",
+        "choice": "ok",
+        "choiceText": "1\nContinue",
+        "text": "PAID\nToll paid\n\nThey count your ¤1,730 twice. The rest is taken in kind: 1 Clockwork Eels. They melt back into the dark.\n\n1\nContinue"
+      },
+      {
+        "day": 19,
+        "title": "A gull takes your purse",
+        "choice": "pay",
+        "choiceText": "2\nLet the bag go · ¤274\nCertain cash loss. Your hull and cargo stay safe.",
+        "text": "THIEF!\nA gull takes your purse\n\nA trained grey gull snags a bag containing ¤274. Its tether catches your wrist. You can grab the bag, but the skiff is drifting toward the stone quay.\n\n1\nReach for the bag\n70% chance to keep it. On failure, lose ¤274 and 10% hull (you have 100%).\n2\nLet the bag go · ¤274\nCertain cash loss. Your hull and cargo stay safe."
+      },
+      {
+        "day": 20,
+        "title": "A squall comes off the sea",
+        "choice": "shelter",
+        "choiceText": "2\nShelter under the viaduct\nSafe, but you lose a whole night.",
+        "text": "WEATHER\nA squall comes off the sea\n\nBlack rain hammers the canal and the water starts to heave. Somewhere ahead, bridges are groaning.\n\n1\nPush through\nArrive on time, but lose 6 to 16% hull (you have 100%).\n2\nShelter under the viaduct\nSafe, but you lose a whole night."
+      },
+      {
+        "day": 22,
+        "title": "A crate bobs past",
+        "choice": "leave",
+        "choiceText": "2\nLeave it\nNot worth the trouble.",
+        "text": "FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Synth Saffron marks drifts alongside. Nobody seems to be looking for it. Yet.\n\n1\nHaul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull).\n2\nLeave it\nNot worth the trouble."
+      },
+      {
+        "day": 22,
+        "title": "The Gull Gang!",
+        "choice": "pay",
+        "choiceText": "3\nPay the toll · ¤11,295\nAbout a fifth of your purse plus a cut of your cargo.",
+        "text": "AMBUSH IN THE NARROWS\nThe Gull Gang!\n\nA net drops across the canal ahead. 4 Gull Gang skiffs wait behind it, oars up, grinning.\n\nYour hull\n100%\nEnemy boats\n4\nCargo at stake\n¤10.1k\n1\nRun for it\n34% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n16% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nPay the toll · ¤11,295\nAbout a fifth of your purse plus a cut of your cargo."
+      },
+      {
+        "day": 22,
+        "title": "Toll paid",
+        "choice": "ok",
+        "choiceText": "1\nContinue",
+        "text": "PAID\nToll paid\n\nThey count your ¤11,295 twice. They melt back into the dark.\n\n1\nContinue"
+      },
+      {
+        "day": 23,
+        "title": "Tidewarden cutter!",
+        "choice": "bribe",
+        "choiceText": "3\nBribe the sergeant · ¤6,242\nGuaranteed. The price follows your purse and your cargo.",
+        "text": "SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA whistle shrieks across the water. 3 cutters of the Tidewarden watch close in from both banks.\n\nYour hull\n100%\nEnemy boats\n3\nCargo at stake\n¤59.5k\n1\nRun for it\n39% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n19% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nBribe the sergeant · ¤6,242\nGuaranteed. The price follows your purse and your cargo.\n4\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."
+      },
+      {
+        "day": 23,
+        "title": "Papers in order",
+        "choice": "ok",
+        "choiceText": "1\nContinue",
+        "text": "BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤6,242, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\n1\nContinue"
+      },
+      {
+        "day": 25,
+        "title": "Tidewarden cutter!",
+        "choice": "bribe",
+        "choiceText": "3\nBribe the sergeant · ¤6,051\nGuaranteed. The price follows your purse and your cargo.",
+        "text": "SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA squadron of 2 Tidewarden cutters swing out of the dark, lamps blazing. \"Heave to for inspection!\"\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤54.2k\n1\nRun for it\n53% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nBribe the sergeant · ¤6,051\nGuaranteed. The price follows your purse and your cargo.\n4\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."
+      },
+      {
+        "day": 25,
+        "title": "Papers in order",
+        "choice": "ok",
+        "choiceText": "1\nContinue",
+        "text": "BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤6,051, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\n1\nContinue"
+      },
+      {
+        "day": 27,
+        "title": "Tidewarden cutter!",
+        "choice": "bribe",
+        "choiceText": "3\nBribe the sergeant · ¤8,162\nGuaranteed. The price follows your purse and your cargo.",
+        "text": "SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA whistle shrieks across the water. 2 cutters of the Tidewarden watch close in from both banks.\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤22.0k\n1\nRun for it\n48% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nBribe the sergeant · ¤8,162\nGuaranteed. The price follows your purse and your cargo.\n4\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."
+      },
+      {
+        "day": 27,
+        "title": "Papers in order",
+        "choice": "ok",
+        "choiceText": "1\nContinue",
+        "text": "BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤8,162, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\n1\nContinue"
+      },
+      {
+        "day": 29,
+        "title": "A drowned strongbox",
+        "choice": "ok",
+        "choiceText": "1\nContinue",
+        "text": "LUCKY FIND\nA drowned strongbox\n\nYour boathook snags a rusted strongbox under the mooring. Inside, wrapped in oilcloth: ¤1,960.\n\n1\nContinue"
+      }
+    ],
+    "actions": 975,
+    "entriesBefore": [
+      {
+        "name": "Keyboard 1",
+        "score": 155466,
+        "night": 30,
+        "sunk": false
+      }
+    ],
+    "ledgerSurvivedReload": true,
+    "audio": {
+      "shim": null,
+      "contexts": []
+    }
+  },
+  "inputDocuments": [
+    {
+      "keys": {
+        "0": 7,
+        "1": 31,
+        "2": 20,
+        "3": 12,
+        "4": 15,
+        "5": 8,
+        "6": 7,
+        "7": 14,
+        "8": 6,
+        " ": 216,
+        "Control": 82,
+        "A": 82,
+        "K": 1,
+        "e": 1,
+        "y": 1,
+        "b": 1,
+        "o": 1,
+        "a": 1,
+        "r": 1,
+        "d": 1,
+        "Tab": 3879,
+        "Shift": 1197,
+        "Enter": 106
+      },
+      "pointerEvents": {},
+      "nativeKeyboardClicks": 215,
+      "pointerClicks": 0,
+      "inputEvents": 129,
+      "focusOutsideOpenModal": []
+    },
+    {
+      "keys": {
+        "Shift": 15,
+        "Tab": 15,
+        " ": 1
+      },
+      "pointerEvents": {},
+      "nativeKeyboardClicks": 1,
+      "pointerClicks": 0,
+      "inputEvents": 0,
+      "focusOutsideOpenModal": []
+    }
+  ],
+  "pointerEventCount": 0,
+  "tabPresses": 3894,
+  "focusTrails": [
+    {
+      "selector": "#t-new",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "t-new",
+        "cls": "btn primary lg",
+        "text": "Cast off"
+      }
+    },
+    {
+      "selector": "#cap-name",
+      "presses": 0,
+      "reached": {
+        "tag": "INPUT",
+        "id": "cap-name",
+        "cls": "namein",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#go",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "go",
+        "cls": "choice primary",
+        "text": "⏎Cast offA quick guided tour starts first. Yo"
+      }
+    },
+    {
+      "selector": "#coach [data-skip]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn ghost sm",
+        "text": "Skip tour"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 16,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"kelp\"]",
+      "presses": 4,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "GlowkelpPriceyCopperhook +52% seen · tonight\n"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 30 for ¤1,800"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"ch\"]",
+      "presses": 26,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Copperhook Docks\n      \n      FFleet call: Gl"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"ok\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Continue"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 14,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"kelp\"]",
+      "presses": 4,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Glowkelp×30 +3%Fleet callPricey\n      \n  \n   "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 30 for ¤1,860"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 1"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"pearl\"]",
+      "presses": 8,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Rust PearlsBargainLanternquay +156% seen · 1n"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 12 for ¤2,388"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"lq\"]",
+      "presses": 25,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Lanternquay\n      \n      !"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"no\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "2DeclineSmells like trouble."
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 17,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"pearl\"]",
+      "presses": 8,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Rust Pearls×12 +120%\n      \n  \n      ¤437usua"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 12 for ¤5,244"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 35,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"silk\"]",
+      "presses": 15,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "DreamsilkGlut easingOrchid +251% seen · 2n ag"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 1 for ¤3,917"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"ot\"]",
+      "presses": 28,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Orchid Terraces"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"silk\"]",
+      "presses": 13,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Dreamsilk×1 +164%Usually imported here\n      "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 1 for ¤10,339"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 25,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Clockwork Eels\n      \n  \n      ¤2,042−15% vs "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 5 for ¤10,210"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"rain\"]",
+      "presses": 29,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Bottled RainBargainCopperhook +94% seen · 2n "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 1 for ¤77"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"de\"]",
+      "presses": 29,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Drowned Exchange"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"ok\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Continue"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 17,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"rain\"]",
+      "presses": 6,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Bottled Rain×1 +92%\n      \n  \n      ¤148+14% "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 1 for ¤148"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 24,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Clockwork Eels×5 +52%Usually imported here\n  "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 5 for ¤15,545"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 35,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#side-body [data-act=\"wireless\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn amber sm",
+        "text": "¤6,000"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"yes\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Buy · ¤6,000"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 12,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Clockwork EelsLanternquay +83% seen · tonight"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 3 for ¤9,327"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"kelp\"]",
+      "presses": 32,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "GlowkelpLanternquay +31% seen · tonight\n     "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 13 for ¤507"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"lq\"]",
+      "presses": 27,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Lanternquay\n      \n      !+83%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"pay\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "2Let the bag go · ¤174Certain cash loss. Your"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 17,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 12,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Clockwork Eels×3 0%Fading surge\n      \n  \n   "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 3 for ¤9,303"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 37,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#side-body [data-act=\"repay\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary",
+        "text": "Repay debt"
+      }
+    },
+    {
+      "selector": "#ain",
+      "presses": 2,
+      "reached": {
+        "tag": "INPUT",
+        "id": "ain",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#ago",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "ago",
+        "cls": "btn lg primary",
+        "text": "Repay ¤8,031"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"pearl\"]",
+      "presses": 9,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Rust PearlsCheapExchange +45% seen · tonight\n"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 7 for ¤2,338"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"de\"]",
+      "presses": 29,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Drowned Exchange\n      \n      +45%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"pearl\"]",
+      "presses": 8,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Rust Pearls×7 +29%Fogmouth +14% seen · tonigh"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 7 for ¤3,010"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"saffron\"]",
+      "presses": 10,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Synth SaffronOrchid +82% seen · tonight\n     "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 2 for ¤2,104"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"ot\"]",
+      "presses": 28,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Orchid Terraces\n      \n      +82%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"saffron\"]",
+      "presses": 11,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Synth Saffron×2 +86%Pricey\n      \n  \n      ¤1"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 2 for ¤3,920"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"rain\"]",
+      "presses": 31,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Bottled RainBargainSaint Mire +191% seen · to"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 17 for ¤1,309"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"sm\"]",
+      "presses": 24,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Saint Mire\n      \n      FFleet call: Bottled "
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"ok\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Continue"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 15,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"rain\"]",
+      "presses": 6,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Bottled Rain×17 +156%Pricey\n      \n  \n      ¤"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 17 for ¤3,349"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 26,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Clockwork EelsCheapOrchid +68% seen · tonight"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 4 for ¤7,312"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"ot\"]",
+      "presses": 28,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Orchid Terraces\n      \n      FFleet call: Rus"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"bribe\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "3Bribe the sergeant · ¤1,110Guaranteed. The p"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"ok\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Continue"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"no\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "2DeclineSmells like trouble."
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 15,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"de\"]",
+      "presses": 4,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Drowned Exchange\n      \n      !+32%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"ok\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Continue"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 15,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 9,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Clockwork Eels×4 +19%Usually imported here\n  "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 4 for ¤8,676"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"pearl\"]",
+      "presses": 7,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Rust PearlsOrchid +20% seen · tonight\n      \n"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 17 for ¤7,106"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"ot\"]",
+      "presses": 24,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Orchid Terraces\n      \n      FFleet call: Rus"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"bribe\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "3Bribe the sergeant · ¤983Guaranteed. The pri"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"ok\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Continue"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 15,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"pearl\"]",
+      "presses": 7,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Rust Pearls×17 +25%Fleet call\n      \n  \n     "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 17 for ¤8,908"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 24,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Clockwork EelsCheapSaint Mire +44% seen · ton"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 4 for ¤7,372"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"rain\"]",
+      "presses": 31,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Bottled RainSaint Mire +27% seen · tonight\n  "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 6 for ¤918"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"sm\"]",
+      "presses": 29,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Saint Mire\n      \n      !+44%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"leave\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "2Leave itNot worth the trouble."
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 17,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"kelp\"]",
+      "presses": 4,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Glowkelp×13 +41%Festival\n      \n  \n      ¤55+"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 13 for ¤715"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"rain\"]",
+      "presses": 31,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Bottled Rain×6 +42%Festival\n      \n  \n      ¤"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 6 for ¤1,308"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 25,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Clockwork Eels×4 +70%Festival\n      \n  \n     "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 4 for ¤12,528"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"saffron\"]",
+      "presses": 28,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Synth SaffronGlut easingFestivalFogmouth +23%"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 11 for ¤13,156"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"fm\"]",
+      "presses": 32,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Fogmouth\n      \n      FFleet call: Synth Saff"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"saffron\"]",
+      "presses": 10,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Synth Saffron×11 +18%Fleet call\n      \n  \n   "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 11 for ¤15,499"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"silk\"]",
+      "presses": 23,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "DreamsilkCheapSluices +65% seen · tonight\n   "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 2 for ¤15,404"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"kelp\"]",
+      "presses": 32,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "GlowkelpCheapLanternquay +23% seen · tonight\n"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 8 for ¤280"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"lq\"]",
+      "presses": 27,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Lanternquay\n      \n      +57%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"yield\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "2Jettison 1 DreamsilkUsual value ¤9,800; the "
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 17,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"kelp\"]",
+      "presses": 4,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Glowkelp×8 +43%Copperhook +20% seen · tonight"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 8 for ¤400"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 35,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 12,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Clockwork EelsBargainOrchid +50% seen · tonig"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 1 for ¤1,469"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"sl\"]",
+      "presses": 32,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "The Sluices\n      \n      +76%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"pay\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "3Pay the toll · ¤1,775Your purse is light, so"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"ok\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Continue"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 14,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"silk\"]",
+      "presses": 10,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Dreamsilk×1 +51%Usually imported here\n      \n"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 1 for ¤11,659"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 36,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 1"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"chips\"]",
+      "presses": 14,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Ghost ChipsExchange +26% seen · tonight\n     "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 2 for ¤8,920"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"kelp\"]",
+      "presses": 33,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "GlowkelpBargainCopperhook +141% seen · tonigh"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 28 for ¤756"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"ch\"]",
+      "presses": 28,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Copperhook Docks\n      \n      +141%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 31,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"kelp\"]",
+      "presses": 4,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Glowkelp×28 +104%Pricey\n      \n  \n      ¤55+3"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 28 for ¤1,540"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"chips\"]",
+      "presses": 23,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Ghost Chips×2 +13%Exchange +28% seen · tonigh"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 2 for ¤10,046"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 36,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 1"
+      }
+    },
+    {
+      "selector": "#side-body [data-act=\"motor\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn amber sm",
+        "text": "¤4,500"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"yes\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Buy · ¤4,500"
+      }
+    },
+    {
+      "selector": "#side-body [data-act=\"hold\"]",
+      "presses": 20,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn amber sm",
+        "text": "¤2,500"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"yes\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Buy · ¤2,500"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 3,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"saffron\"]",
+      "presses": 10,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Synth SaffronCheapFogmouth +256% seen · tonig"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 6 for ¤4,848"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"pearl\"]",
+      "presses": 29,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Rust PearlsExchange +52% seen · tonight\n     "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 1 for ¤380"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"fm\"]",
+      "presses": 34,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Fogmouth\n      \n      !+256%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"pearl\"]",
+      "presses": 8,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Rust Pearls×1 +46%PriceyLanternquay +16% seen"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 1 for ¤554"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"saffron\"]",
+      "presses": 27,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Synth Saffron×6 +134%Fading surge\n      \n  \n "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 6 for ¤11,358"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"silk\"]",
+      "presses": 22,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "DreamsilkSluices +71% seen · tonight\n      \n "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 1 for ¤8,933"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"kelp\"]",
+      "presses": 34,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "GlowkelpLanternquay +53% seen · tonight\n     "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 44 for ¤1,584"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"lq\"]",
+      "presses": 23,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Lanternquay\n      \n      +53%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"pay\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "2Let the bag go · ¤274Certain cash loss. Your"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 15,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"kelp\"]",
+      "presses": 4,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Glowkelp×44 +64%Pricey\n      \n  \n      ¤59+40"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 44 for ¤2,596"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"silk\"]",
+      "presses": 22,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Dreamsilk×1 +43%PriceyOrchid +16% seen · toni"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 1 for ¤12,795"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 35,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 11,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Clockwork EelsCheapExchange +311% seen · toni"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 7 for ¤14,119"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"de\"]",
+      "presses": 29,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Drowned Exchange\n      \n      !+311%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 11,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Clockwork Eels×7 +141%Fleet callFading surge\n"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 7 for ¤34,076"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 36,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"ink\"]",
+      "presses": 17,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Moon InkCheapSluices +48% seen · tonight\n    "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 2 for ¤30,248"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"saffron\"]",
+      "presses": 28,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Synth SaffronCheapOrchid +61% seen · tonight\n"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 2 for ¤1,596"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"ot\"]",
+      "presses": 30,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Orchid Terraces\n      \n      +61%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"shelter\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "2Shelter under the viaductSafe, but you lose "
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"leave\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "2Leave itNot worth the trouble."
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 17,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"saffron\"]",
+      "presses": 9,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Synth Saffron×2 +74%Usually imported here\n   "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 2 for ¤2,780"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"ink\"]",
+      "presses": 21,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Moon Ink×2 +93%Pricey\n      \n  \n      ¤29,235"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 2 for ¤58,470"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"pearl\"]",
+      "presses": 31,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Rust PearlsExchange +71% seen · tonight\n     "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 24 for ¤11,184"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"de\"]",
+      "presses": 32,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Drowned Exchange\n      \n      +71%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"pay\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "3Pay the toll · ¤11,295About a fifth of your "
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"ok\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Continue"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 17,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"pearl\"]",
+      "presses": 7,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Rust Pearls×24 +16%Usually imported here\n    "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 24 for ¤13,008"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"chips\"]",
+      "presses": 13,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Ghost ChipsCheapSluices +30% seen · tonight\n "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 7 for ¤27,209"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"saffron\"]",
+      "presses": 28,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Synth SaffronCheapOrchid +57% seen · tonight\n"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 21 for ¤17,262"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"ot\"]",
+      "presses": 30,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Orchid Terraces\n      \n      +57%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"bribe\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "3Bribe the sergeant · ¤6,242Guaranteed. The p"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"ok\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Continue"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 17,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"saffron\"]",
+      "presses": 10,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Synth Saffron×21 +44%Usually imported here\n  "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 21 for ¤24,864"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"chips\"]",
+      "presses": 26,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Ghost Chips×7 -5%CheapSluices +59% seen · ton"
+      }
+    },
+    {
+      "selector": "#modal [data-mode=\"buy\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "b",
+        "text": "Buy B"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 3,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 7 for ¤25,816"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"pearl\"]",
+      "presses": 30,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Rust PearlsExchange +54% seen · tonight\n     "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 3 for ¤1,203"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"de\"]",
+      "presses": 32,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Drowned Exchange\n      \n      +54%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"pearl\"]",
+      "presses": 8,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Rust Pearls×3 +41%Pricey\n      \n  \n      ¤566"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 3 for ¤1,698"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"chips\"]",
+      "presses": 24,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Ghost Chips×14 +31%Usually imported here\n    "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 14 for ¤68,237"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 36,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"silk\"]",
+      "presses": 16,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "DreamsilkOrchid +23% seen · tonight\n      \n  "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 5 for ¤52,935"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"chips\"]",
+      "presses": 25,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Ghost ChipsYou sold it downCheapCopperhook +2"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 4,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 1 for ¤4,303"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"ot\"]",
+      "presses": 32,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Orchid Terraces\n      \n      FFleet call: Dre"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"bribe\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "3Bribe the sergeant · ¤6,051Guaranteed. The p"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"ok\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Continue"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 17,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"chips\"]",
+      "presses": 13,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Ghost Chips×1 +3%\n      \n  \n      ¤4,431−15% "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 1 for ¤4,431"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"silk\"]",
+      "presses": 23,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Dreamsilk×5 +32%Fleet callPricey\n      \n  \n  "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 5 for ¤69,800"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 27,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Clockwork EelsGlutExchange +287% seen · tonig"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 10 for ¤14,030"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"rain\"]",
+      "presses": 33,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Bottled RainSaint Mire +50% seen · tonight\n  "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 35 for ¤4,620"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"de\"]",
+      "presses": 26,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Drowned Exchange\n      \n      +287%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 31,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"rain\"]",
+      "presses": 5,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Bottled Rain×35 +18%\n      \n  \n      ¤156+20%"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 35 for ¤5,460"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 28,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Clockwork Eels×10 +243%Pricey\n      \n  \n     "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 10 for ¤48,180"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 36,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#side-body [data-act=\"deposit\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn teal",
+        "text": "Deposit"
+      }
+    },
+    {
+      "selector": "#ain",
+      "presses": 2,
+      "reached": {
+        "tag": "INPUT",
+        "id": "ain",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#ago",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "ago",
+        "cls": "btn lg teal",
+        "text": "Deposit ¤42,446"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"saffron\"]",
+      "presses": 9,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Synth SaffronCheapOrchid +33% seen · tonight\n"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 20 for ¤17,080"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"ot\"]",
+      "presses": 31,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Orchid Terraces\n      \n      FFleet call: Dre"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"bribe\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice ",
+        "text": "3Bribe the sergeant · ¤8,162Guaranteed. The p"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"ok\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Continue"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 17,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"saffron\"]",
+      "presses": 9,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Synth Saffron×20 +8%Cheap\n      \n  \n      ¤92"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 20 for ¤18,420"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"chips\"]",
+      "presses": 25,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Ghost ChipsExchange +37% seen · tonight\n     "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 7 for ¤34,832"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 28,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Clockwork EelsPriceyExchange +30% seen · toni"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 7 for ¤25,851"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"de\"]",
+      "presses": 31,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Drowned Exchange\n      \n      +37%"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"ok\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Continue"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 17,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"eels\"]",
+      "presses": 11,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Clockwork Eels×7 +11%Pricey\n      \n  \n      ¤"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 7 for ¤28,756"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"chips\"]",
+      "presses": 26,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "Ghost Chips×7 +39%Pricey\n      \n  \n      ¤6,9"
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 7 for ¤48,552"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 36,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"silk\"]",
+      "presses": 15,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  ",
+        "text": "DreamsilkLanternquay +59% seen · tonight\n    "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg teal",
+        "text": "Buy 5 for ¤44,750"
+      }
+    },
+    {
+      "selector": "#nodes .node[data-d=\"lq\"]",
+      "presses": 29,
+      "reached": {
+        "tag": "g",
+        "id": "",
+        "cls": "node",
+        "text": "Lanternquay\n      \n      FFleet call: Dreamsi"
+      }
+    },
+    {
+      "selector": "#tcard-slot [data-act=\"sail\"]",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary lg",
+        "text": "Sail here · 1 night ⏎"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 1,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": ".row[data-g=\"silk\"]",
+      "presses": 14,
+      "reached": {
+        "tag": "DIV",
+        "id": "",
+        "cls": "row  sel",
+        "text": "Dreamsilk×5 +47%Fleet callPricey\n      \n  \n  "
+      }
+    },
+    {
+      "selector": "#qin",
+      "presses": 5,
+      "reached": {
+        "tag": "INPUT",
+        "id": "qin",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#qgo",
+      "presses": 5,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "qgo",
+        "cls": "btn lg amber",
+        "text": "Sell 5 for ¤65,770"
+      }
+    },
+    {
+      "selector": "#tab-harbor",
+      "presses": 36,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-harbor",
+        "cls": "tab",
+        "text": "Harbor 2"
+      }
+    },
+    {
+      "selector": "#side-body [data-act=\"deposit\"]",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn teal",
+        "text": "Deposit"
+      }
+    },
+    {
+      "selector": "#ain",
+      "presses": 2,
+      "reached": {
+        "tag": "INPUT",
+        "id": "ain",
+        "cls": "",
+        "text": ""
+      }
+    },
+    {
+      "selector": "#ago",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "ago",
+        "cls": "btn lg teal",
+        "text": "Deposit ¤36,648"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 2,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": "#tab-market",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "tab-market",
+        "cls": "tab",
+        "text": "Market"
+      }
+    },
+    {
+      "selector": "#side-body [data-act=\"settle\"]",
+      "presses": 18,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "btn primary",
+        "text": "Settle up"
+      }
+    },
+    {
+      "selector": "#modal [data-choice=\"yes\"]",
+      "presses": 0,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "",
+        "cls": "choice primary",
+        "text": "1Settle up"
+      }
+    },
+    {
+      "selector": "#t-ledger",
+      "presses": 15,
+      "reached": {
+        "tag": "BUTTON",
+        "id": "t-ledger",
+        "cls": "btn",
+        "text": "Captains' Ledger"
+      }
+    }
+  ],
+  "pass": true,
+  "errors": [],
+  "network": []
+}

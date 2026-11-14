@@ -31,8 +31,8 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
   **Keyboard.** 1–7 pick a district, Enter sails, arrows pick a good, B/S trade, ←/→ quantity, M mutes, ? help, Esc menu.
 
 ## Design decisions
-- **Phone first.** A compact map dock keeps all seven ports available; full details open separately. Market rows show destination
-  names and observation age. Phone reading text is 15px or larger; modal focus, reduced motion and 8px control gaps are supported.
+- **Phone first.** All seven map ports remain available; full details open separately. Optional trade charts and port quotes fold away.
+  Notices reserve space below the HUD; teaching tips persist in Log. Reading text, modal focus, reduced motion and control gaps are supported.
 - **Rumours are not certainties.** Tomorrow's shocks are queued a night ahead with a fixed fate: they land in full, land weak,
   or **turn** (everyone heard, and the opposite happened). A whisper only reveals what is queued; it never creates or changes one.
   Ysolde sells one a night for ¤300 + 1.5% of purse, vault and cargo, and says how sure she is before you pay.
@@ -42,15 +42,15 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
   streams in the save (one for the market, one for events). Saved data is validated; damaged saves are discarded with a message.
 - **Economy checks.** `tools/sim` drives the real file; bots use public information. A diagnostic 80-seed sample found:
   - **Competent bot:** median ¤606k; naive greedy bot ¤55k. Late sale revenue: silk 38%, ink 26%, chips 15%, eels 12%.
-  - **Whisper test:** spam beats the same bot without whispers on 13/80 seeds; 65.5% of acted whispers lose money including fees.
-    Careful use: whole-run mean +¤28k, median −¤4.8k versus no whispers. Information remains a gamble.
+  - **Whispers:** spam wins 13/80; 65.5% of acted whispers lose including fees. Careful use: whole-run mean +¤28k, median −¤4.8k.
+  - **Combat (40 seeds):** weapon-rush always-fight sank 18/40; conditional and never-fight 0/40. Route and spending policies confound comparisons.
   - **Exploit probes:** 23,735 buy/sell round trips, none profitable; 23,576 numerical invariant checks passed.
     No game errors, non-finite final scores or market RNG mismatches. Both new event choices were used in simulations.
   This small sample is a regression check, not exhaustive balance proof. Earlier larger runs also tested reloads and final tally inflation.
 
 ## Testing done
 - `node tools/verify.cjs` records phone input/layout checks, keyboard focus, file://, sandbox, corrupt storage and automated full games.
-  `tools/touch-play.cjs` records real UI runs; reports retain source hashes, settlement, ledger reload and emulation limits.
+  Touch and keyboard completion runners record native inputs, source hashes, settlement, ledger reload and emulation limits.
 - `tools/event-check.cjs` verifies event offers, both outcomes, reload commitment and resource conservation with explicit fixtures.
 
 ## Known issues

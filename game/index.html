@@ -35,7 +35,7 @@ svg{display:block}
 :focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:8px}
 
 /* ---------- buttons ---------- */
-.btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line2);background:rgba(255,255,255,.045);color:var(--text);font:600 14px/1 var(--ui);padding:10px 14px;min-height:40px;border-radius:11px;cursor:pointer;transition:transform .08s,background .15s,border-color .15s,box-shadow .2s;user-select:none;white-space:nowrap}
+.btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line2);background:rgba(255,255,255,.045);color:var(--text);font:600 14px/1 var(--ui);padding:10px 14px;min-height:44px;border-radius:11px;cursor:pointer;transition:transform .08s,background .15s,border-color .15s,box-shadow .2s;user-select:none;white-space:nowrap}
 .btn:hover{background:rgba(255,255,255,.09);border-color:rgba(170,195,255,.5)}
 .btn:active{transform:translateY(1px) scale(.97)}
 .btn[disabled]{opacity:.55;cursor:not-allowed;transform:none}
@@ -45,14 +45,16 @@ svg{display:block}
 .btn.amber{background:linear-gradient(180deg,rgba(255,190,85,.28),rgba(255,190,85,.1));border-color:rgba(255,190,85,.55);color:#ffe7bf}
 .btn.danger{background:linear-gradient(180deg,rgba(255,98,116,.3),rgba(255,98,116,.12));border-color:rgba(255,98,116,.6);color:#ffd5da}
 .btn.ghost{background:transparent;border-color:transparent}
-.btn.sm{min-height:32px;padding:7px 11px;font-size:13px;border-radius:9px}
+.btn.sm{min-height:44px;padding:7px 11px;font-size:13px;border-radius:9px}
 .btn.lg{min-height:52px;padding:14px 22px;font-size:16px;border-radius:14px}
-.btn.icon{width:40px;padding:0}
+.btn.icon{width:44px;min-width:44px;padding:0}
 kbd{font:600 11px var(--mono);padding:1px 5px;border-radius:5px;border:1px solid var(--line2);background:rgba(255,255,255,.06);color:var(--muted)}
 .btn kbd{border-color:rgba(0,0,0,.2);background:rgba(0,0,0,.12);color:inherit;opacity:.9}
 
 /* ---------- app frame ---------- */
-#app{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);height:100vh;height:100dvh}
+#app{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr);height:100vh;height:100dvh}
+#notice-slot{grid-row:2;min-height:0}
+.layout{grid-row:3}
 #app.shake{animation:shake .45s}
 @keyframes shake{10%,90%{transform:translate(-2px,1px)}20%,80%{transform:translate(4px,-2px)}30%,50%,70%{transform:translate(-6px,2px)}40%,60%{transform:translate(6px,-1px)}}
 .hud{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(9,14,36,.96),rgba(9,14,36,.78));backdrop-filter:blur(8px);position:relative;z-index:5}
@@ -76,8 +78,8 @@ kbd{font:600 11px var(--mono);padding:1px 5px;border-radius:5px;border:1px solid
 .stat.flash-down{background:rgba(255,98,116,.16);border-color:rgba(255,98,116,.5)}
 .stat .delta{position:absolute;right:8px;top:4px;font:700 11px var(--mono);pointer-events:none;animation:floatUp 1.2s forwards}
 @keyframes floatUp{from{opacity:1;transform:translateY(4px)}to{opacity:0;transform:translateY(-14px)}}
-.hud-btns{display:flex;gap:6px}
-.hud-btns .btn{width:40px;padding:0}
+.hud-btns{display:flex;gap:8px}
+.hud-btns .btn{width:44px;padding:0}
 
 .layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(400px,1fr);grid-template-rows:minmax(0,1fr) 168px;grid-template-areas:"map side" "log side";gap:12px;padding:12px;min-height:0}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:0;overflow:hidden;position:relative}
@@ -203,7 +205,7 @@ h3{margin:0;font:600 17px/1.2 var(--display)}
 .chg{font:600 11.5px var(--mono);white-space:nowrap}
 .up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--muted)} .cheapv{color:var(--up)} .dearv{color:var(--amber)}
 .tag.sale{color:#ffe2b0;border-color:rgba(255,190,85,.45);background:rgba(255,190,85,.1)}
-.gact{grid-area:act;display:flex;gap:5px}
+.gact{grid-area:act;display:flex;gap:8px}
 .tag.own{color:var(--text);background:rgba(255,255,255,.1);border-color:var(--line2);font-family:var(--mono)}
 .tag.own .up,.tag.own .down{font-weight:700}
 .chev{display:none;color:var(--dim)}
@@ -311,6 +313,11 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
 .summary .depth-warn{color:#ffd59a;font-size:12.5px}
 .sh-foot{display:flex;gap:8px;padding:14px 18px 18px}
 .sh-foot .btn.lg{flex:1}
+.trade-intel{margin:10px 14px 0;border:1px solid var(--line);border-radius:12px}
+.trade-intel>summary{min-height:44px;padding:10px 12px;font-size:15px;color:var(--muted);cursor:pointer;touch-action:manipulation}
+.trade-intel[open]{padding-bottom:12px}
+.trade-intel .intel-note{margin:8px 14px 0;font-size:15px;color:var(--muted)}
+.tab,.seg button{min-height:44px}
 .amt-presets{display:flex;gap:6px;margin:10px 18px 0;flex-wrap:wrap}
 .amt-presets .btn{flex:1}
 
@@ -322,6 +329,12 @@ input[type=range]{width:calc(100% - 36px);margin:12px 18px 0;accent-color:var(--
 .toast.bad{border-color:rgba(255,98,116,.6)} .toast.bad .ico{color:var(--down)}
 .toast.gold{border-color:rgba(255,190,85,.6)} .toast.gold .ico{color:var(--amber)}
 .toast.info .ico{color:var(--sky)}
+#toasts.docked{position:static;transform:none;left:auto;bottom:auto;width:auto;margin:0 8px;align-items:stretch;gap:6px;padding-top:6px;z-index:auto}
+#toasts.docked:empty{display:none}
+#toasts.docked .toast{width:100%;min-height:36px;padding:7px 10px;gap:8px;font-size:15px;line-height:1.25;box-shadow:none;border-radius:9px;align-items:center;animation:none}
+#toasts.docked .toast.out{opacity:0;transition:opacity .2s}
+#toasts.docked .toast>div{flex:1;min-width:0}
+.toast .read-notice{pointer-events:auto;min-height:44px;flex:none;padding:8px 12px;font-size:15px}
 @keyframes tin{from{opacity:0;transform:translateY(-14px) scale(.95)}}
 @keyframes tout{to{opacity:0;transform:translateY(-10px)}}
 .flyer{position:fixed;z-index:80;pointer-events:none;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff3c4,#ffbe55 45%,#c46a10);box-shadow:0 0 10px rgba(255,190,85,.8)}
@@ -511,8 +524,8 @@ button,.btn,.row,.choice,.bull,.tab,.node,.stat,.mnav button,.seg button{-webkit
   /* A fixed dock reserves the same space before and after selecting a port. */
   #mapwrap{display:flex;flex-direction:column;overflow:hidden}
   #map{position:relative;display:block;flex:1 1 0;min-height:0;height:auto;order:0}
-  #tcard-slot{padding:0 8px 8px;order:1;flex:0 0 146px;min-height:146px}
-  .tcard{position:relative;left:auto;right:auto;bottom:auto;max-width:none;max-height:none;height:138px;padding:8px 10px;animation:none}
+  #tcard-slot{padding:0 8px 8px;order:1;flex:0 0 174px;min-height:174px}
+  .tcard{position:relative;left:auto;right:auto;bottom:auto;max-width:none;max-height:none;height:166px;padding:8px 10px;animation:none}
   .tcard p{display:none}
   .tcard.right{left:auto;right:auto}
   .tcard .tc-head{gap:8px;min-height:44px}
@@ -520,7 +533,7 @@ button,.btn,.row,.choice,.bull,.tab,.node,.stat,.mnav button,.seg button{-webkit
   .tcard .tc-head h3{font:600 17px/1.15 var(--display)}
   .tcard .tc-head .x{align-self:center}
   .tcard .tc-dist{font-size:14px;line-height:1.3}
-  .tcard .dock-note{font-size:14px;line-height:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted);margin:2px 0 4px}
+  .tcard .dock-note{font-size:15px;line-height:18px;white-space:normal;overflow-wrap:anywhere;color:var(--muted);margin:2px 0 4px;min-height:36px}
   .tcard .tc-act{display:flex;gap:8px;padding-top:4px;margin-top:auto}
   .tcard .tc-act .btn{flex:1;min-width:0;min-height:44px;padding:8px;font-size:15px;white-space:nowrap}
   .tcard .tc-act .port-details{flex:0 0 104px}
@@ -569,6 +582,9 @@ button,.btn,.row,.choice,.bull,.tab,.node,.stat,.mnav button,.seg button{-webkit
   .sheet .else div{font-size:13.5px;min-height:36px;align-items:center}
   .sheet>.result{order:2}
   .sheet .sh-foot{order:9}
+  .sheet .trade-intel{order:6}
+  .sheet .quote-context{display:none}
+  .mk-head{padding-bottom:8px}
   .sheet .amt-presets{order:2}
   .sheet #anote{order:4}
   .seg button{min-height:46px;font-size:16px}
@@ -665,6 +681,7 @@ body.fx-under #fx{z-index:49}
       <button class="btn icon" id="b-menu" aria-label="Menu" title="Menu (Esc)"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </header>
+  <div id="notice-slot"></div>
   <main class="layout">
     <section class="panel" id="panel-map" aria-label="Map">
       <div class="phead">
@@ -1142,21 +1159,31 @@ function toggleMute(){Sound.setMuted(!Sound.muted);settings.muted=Sound.muted;sa
 // =========================================================
 const toastQ=[];
 function flushToasts(){while(toastQ.length&&$('#modal').hidden&&!coachOpen){const a=toastQ.shift();toast(...a);}}
-function clearToasts(){toastQ.length=0;$('#toasts').innerHTML='';}
-function parkToasts(){const now=performance.now();$$('#toasts .toast:not(.out)').forEach(t=>{if(t._args&&now-t._born<900&&toastQ.length<3)toastQ.push(t._args);});$('#toasts').innerHTML='';}
-// on phones the toast dock sits just above whatever is pinned at the bottom (nav, Sail card, Settle bar)
-// On phones toasts dock just under the HUD, over the panel heading: never over a button or the rows below it.
+let noticeFrame=0;
+function noticeLayout(){cancelAnimationFrame(noticeFrame);noticeFrame=requestAnimationFrame(()=>{if(S&&!busy&&view==='map')buildMap();});}
+function clearToasts(){toastQ.length=0;$('#toasts').innerHTML='';noticeLayout();}
+function parkToasts(){const now=performance.now();$$('#toasts .toast:not(.out)').forEach(t=>{if(t._args&&now-t._born<900&&toastQ.length<3)toastQ.push(t._args);});$('#toasts').innerHTML='';noticeLayout();}
+// Active-game notices reserve a layout row. They never overlay the market, map or pinned actions.
 function placeToasts(){
-  const box=$('#toasts');if(!isNarrow()){box.style.top='';box.style.bottom='';return;}
-  const h=$('#hud').getBoundingClientRect();
-  box.style.top=Math.round(h.bottom+6)+'px';box.style.bottom='auto';
+  const box=$('#toasts'),active=!!S&&$('#title').hidden,target=active?$('#notice-slot'):document.body;
+  if(box.parentElement!==target)target.appendChild(box);
+  box.classList.toggle('docked',active);box.style.top='';box.style.bottom='';
+}
+function readNotice(text,returnFocus){
+  const el=showModal(`<div class="card-body"><div class="kicker">Canal notice</div><h3>The full message</h3><p>${text}</p><div class="choices"><button class="choice primary" data-notice-close><div>Got it</div></button></div></div>`,{dismiss:closeModal});
+  // The notice can expire while it is read, so return to a stable control in the current view.
+  if(returnFocus)lastFocus=returnFocus;
+  el.querySelector('[data-notice-close]').onclick=closeModal;
 }
 function toast(text,kind='info',icon='bell',ms=3200){
   if(!$('#modal').hidden||coachOpen){toastQ.push([text,kind,icon,ms]);if(toastQ.length>3)toastQ.shift();return;}
   placeToasts();
-  const t=document.createElement('div');t.className='toast '+kind;t.innerHTML=ico(icon)+'<div>'+text+'</div>';t._args=[text,kind,icon,ms];t._born=performance.now();
-  const box=$('#toasts');box.appendChild(t);while(box.children.length>(isNarrow()?1:3))box.firstElementChild.remove();
-  setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),320);},FAST?10:ms);
+  const scratch=document.createElement('div');scratch.innerHTML=text;const plain=scratch.textContent||'',long=plain.length>65;
+  const sentence=plain.match(/^(.{1,50}?[.!?])(?:\s|$)/),label=long?(sentence?esc(sentence[1]):icon==='quill'?'A message from Marrow':icon==='map'?'Route update':icon==='arrowUp'?'Market surge bulletin':icon==='arrowDown'?'Market glut bulletin':'News from the canals'):text;
+  const t=document.createElement('div');t.className='toast '+kind;t.innerHTML=ico(icon)+'<div>'+label+'</div>'+(long?'<button class="btn read-notice" aria-label="Read the complete notice">Read</button>':'');t._args=[text,kind,icon,ms];t._born=performance.now();
+  if(long)t.querySelector('.read-notice').onclick=()=>{const back=!$('#title').hidden?$('#t-cont')||$('#t-new'):isNarrow()?$('#mnav button[aria-selected=true]'):$('.tab[aria-selected=true]')||$('#b-menu');t.remove();noticeLayout();readNotice(text,back);};
+  const box=$('#toasts');box.appendChild(t);while(box.children.length>1)box.firstElementChild.remove();noticeLayout();
+  setTimeout(()=>{t.classList.add('out');setTimeout(()=>{t.remove();noticeLayout();},320);},FAST?10:ms);
 }
 function center(el){const r=el.getBoundingClientRect();return{x:r.left+r.width/2,y:r.top+r.height/2,ok:r.width>0};}
 function fly(fromEl,toEl,n=8,cls='',color){
@@ -1647,7 +1674,7 @@ function renderTravelCard(){
   const side=(!isNarrow()&&pos(sel).x<(portrait?320:500))?" right":"";
   if(isNarrow()){
     const fleet=fleetCall(),sale=held.map(g=>({g,sn:S.seen[sel][g.id]})).filter(x=>x.sn&&x.sn.st&&S.day-x.sn.day<=FRESH_NIGHTS).sort((a,b)=>b.sn.p/S.cargo[b.g.id].cost-a.sn.p/S.cargo[a.g.id].cost)[0];
-    const note=sale?`${sale.g.name} ${fmt(sale.sn.p)} seen ${S.day===sale.sn.day?'tonight':(S.day-sale.sn.day)+'n ago'}; arrival may change.`:fleet.d===sel?`Fleet seeks ${GI[fleet.g].name} through night ${fleet.to}.`:d.svc.length?d.svc.map(k=>SVC[k].name).join(' · '):'Trade port · open details for known prices and services.';
+    const note=sale?`${sale.g.name} ${fmt(sale.sn.p)} · ${S.day===sale.sn.day?'seen tonight':(S.day-sale.sn.day)+'n ago'}. Arrival price may change.`:fleet.d===sel?`Fleet seeks ${GI[fleet.g].name} through night ${fleet.to}.`:d.svc.length?d.svc.map(k=>SVC[k].name).join(' · '):'Trade port · open details for known prices and services.';
     const meta=here?'You are here':`${nights>1?'2n via '+portName(hop):'1 night'} · risk ${d.danger}/5`;
     const sail=last?`<button class="btn primary" data-act="settle">Settle up</button>`:here?`<button class="btn amber" data-act="stay">Stay the night</button>`:S.day>=NIGHTS-1&&nights>1?`<button class="btn primary" data-act="sail" data-d="${hop}">Sail to ${esc(portName(hop))}</button>`:`<button class="btn primary" data-act="sail" data-d="${sel}">Sail · ${nights} ${nights===1?'night':'nights'}</button>`;
     slot.innerHTML=`<div class="tcard" role="region" aria-label="${d.name}"><div class="tc-head"><div><h3>${esc(d.name)}</h3><div class="tc-dist">${meta}</div></div><button class="btn icon ghost x" data-act="closecard" aria-label="Clear destination">${ico('close')}</button></div><div class="dock-note">${esc(note)}</div><div class="tc-act"><button class="btn port-details" data-act="portdetails" data-port="${sel}">Port details</button>${sail}</div></div>`;
@@ -1669,7 +1696,7 @@ function renderTravelCard(){
 }
 function selectDistrict(id){
   if(busy)return;
-  sel=id;$('#toasts').innerHTML='';sfx.click();renderMapState();
+  sel=id;$('#toasts').innerHTML='';noticeLayout();sfx.click();renderMapState();
   if(sel&&!isNarrow()){const b=$('#tcard-slot .btn.primary,#tcard-slot .btn');if(b)setTimeout(()=>softFocus(b,{preventScroll:true}),30);}
 }
 function openPortDetails(did){
@@ -1796,7 +1823,7 @@ let rsT;addEventListener('resize',()=>{clearTimeout(rsT);rsT=setTimeout(()=>{if(
 // =========================================================
 let modalKeys=null,modalDismiss=null,lastFocus=null;
 function stepModalFocus(direction){
-  const ov=$('#modal'),items=[...ov.querySelectorAll('button,input,select,textarea,a[href],[tabindex]')]
+  const ov=$('#modal'),items=[...ov.querySelectorAll('button,input,select,textarea,a[href],summary,[tabindex]')]
     .filter(el=>!el.disabled&&el.tabIndex>=0&&el.getClientRects().length);
   const i=items.indexOf(document.activeElement),n=items.length;
   const next=n?items[(i<0?(direction<0?n-1:0):(i+direction+n)%n)]:ov.firstElementChild;
@@ -1847,15 +1874,18 @@ function openTrade(gid,mode){
   const el=showModal(`<div class="sheet">
     <div class="sh-head"><div class="gico" style="--c:${g.c}">${ico(gid)}</div><div><div class="kicker">${DI[S.loc].name} · Night ${S.day}</div><h3 style="font-size:22px">${g.name}</h3><p>${g.desc}</p></div>
       <button class="btn icon ghost x" data-x aria-label="Close">${ico('close')}</button></div>
-    <div class="chart">${chartSVG(hist,c.q?c.cost:null)}</div>
-    ${gaugeHTML(g,p)}
-    <div class="else">${elsewhereHTML(gid)}</div>
+    <details class="trade-intel" ${!isNarrow()||!stocked?'open':''}><summary>Price history &amp; port quotes</summary>
+      <div class="chart">${chartSVG(hist,c.q?c.cost:null)}</div>
+      ${gaugeHTML(g,p)}
+      <p class="intel-note">Observed quotes can change before arrival. Default buys keep 15% aside when possible; Max uses the full cash/hold limit with price impact.</p>
+      <div class="else">${elsewhereHTML(gid)}</div>
+    </details>
     ${stocked?`<div class="seg" role="group"><button class="b" data-mode="buy">Buy <kbd>B</kbd></button><button class="s" data-mode="sell">Sell <kbd>S</kbd></button></div>
     <div class="qty"><button class="btn" data-d="-1" aria-label="One less">−</button><input type="number" inputmode="numeric" min="0" id="qin" aria-label="Quantity"><button class="btn" data-d="1" aria-label="One more">+</button><button class="btn amber" data-max>Max</button></div>
     <input type="range" id="qr" min="0" value="0" aria-label="Quantity slider">
     <div class="summary" id="qsum"></div>
     <div class="sh-foot"><button class="btn lg" data-x>Cancel</button><button class="btn lg primary" id="qgo">Confirm</button></div>`
-    :`<div class="result info" style="margin:14px 18px 18px">No ${g.name} dealers at ${DI[S.loc].name} tonight. Check the prices elsewhere above.</div>`}
+    :`<div class="result info" style="margin:14px 18px 18px">No ${g.name} dealers at ${DI[S.loc].name} tonight. See the observed port quotes below.</div>`}
   </div>`,{dismiss:closeModal,onKey});
   el.querySelectorAll('[data-x]').forEach(b=>b.onclick=closeModal);
   if(!stocked)return;
@@ -1869,8 +1899,9 @@ function openTrade(gid,mode){
     return `<span class="depth-warn" style="grid-column:1/3">A big order moves the price: past ${flat}, each one ${mode==='buy'?'costs':'fetches'} ${mode==='buy'?'more':'less'}. The last goes at ${fmt(after)}.</span>`;
   }
   function reserveNote(){
+    if(q===0)return `<span class="depth-ok reserve-note" style="grid-column:1/3">${flatLeft(gid,'buy')<=0?'Posted-price depth is used up.':'No quantity selected.'} Choose a quantity or Max to see its full quote.</span>`;
     const uses=quoteBuy(gid,q)>Math.floor(S.cash*.85);
-    return `<span class="${uses?'depth-warn':'depth-ok'} reserve-note" style="grid-column:1/3">${uses?'This order uses your 15% reserve.':'Default keeps 15% aside when possible.'} Max uses the full cash/hold limit, including price impact.</span>`;
+    return `<span class="${uses?'depth-warn':'depth-ok'} reserve-note" style="grid-column:1/3">${uses?'Uses your 15% reserve.':'Default leaves 15% aside.'} Max includes reserve and price impact.</span>`;
   }
   function update(typing){
     const mx=mode==='buy'?mxBuy():maxSell();q=clamp(Math.round(q)||0,0,mx);if(!typing)qin.value=q;qr.value=q;qr.max=mx;
@@ -1878,7 +1909,7 @@ function openTrade(gid,mode){
     if(mode==='buy'){
       const tot=quoteBuy(gid,q);
       const bs=bestSeen(gid);
-      sum.innerHTML=`${bs?`<span>Best known sale</span><b class="${bs.p>(q?tot/q:p)?'up':'down'}">${fmt(bs.p)} · ${esc(bs.d.name)}</b>`:''}<span>Price each</span><b>${q>1&&tot!==q*p?fmt(tot/q)+' avg':fmt(p)}</b><span>Total cost</span><b style="color:#bffbf1">${fmt(tot)}</b><span>Purse after</span><b>${fmt(S.cash-tot)}</b><span>Hold after</span><b>${used+q} / ${cap}</b>`+
+      sum.innerHTML=`${bs?`<span class="quote-context">Best known sale</span><b class="quote-context ${bs.p>(q?tot/q:p)?'up':'down'}">${fmt(bs.p)} · ${esc(bs.d.name)}</b>`:''}<span>Price each</span><b>${q>1&&tot!==q*p?fmt(tot/q)+' avg':fmt(p)}</b><span>Total cost</span><b style="color:#bffbf1">${fmt(tot)}</b><span>Purse after</span><b>${fmt(S.cash-tot)}</b><span>Hold after</span><b>${used+q} / ${cap}</b>`+
         (mx===0?`<span style="grid-column:1/3;color:var(--amber)">${holdUsed()>=capacity()?'Your hold is full.':"You can't afford even one."}</span>`:depthNote()+reserveNote());
       go.textContent=q?`Buy ${q} for ${fmt(tot)}`:'Buy';go.className='btn lg teal';
     }else{
@@ -1891,6 +1922,7 @@ function openTrade(gid,mode){
   }
   function onKey(e){
     if(!stocked)return;
+    if(e.target.closest&&e.target.closest('.trade-intel')&&(e.key==='Enter'||e.key===' '))return;
     if(e.target===qin&&/^[0-9]$/.test(e.key))return;
     const k=e.key;
     if(k==='ArrowRight'||k==='ArrowUp'){e.preventDefault();q+=e.shiftKey?10:1;update();sfx.tick();}
@@ -2580,7 +2612,7 @@ function nightCard(note){
     document.body.appendChild(d);const t0=performance.now(),dur=REDUCED?400:1000;
     const tick=()=>{if(skipVoyage||performance.now()-t0>=dur){d.remove();res();}else requestAnimationFrame(tick);};requestAnimationFrame(tick);});
 }
-function hint(id,html){if(!S||S.hinted[id])return;S.hinted[id]=true;setTimeout(()=>toast(html,'gold','bell',4500),400);}
+function hint(id,html){if(!S||S.hinted[id])return;S.hinted[id]=true;const text=document.createElement('div');text.innerHTML=html;log('Tip: '+text.textContent,'info');renderLog();}
 function firstVisitHint(id){
   const m={ch:"Odile's Boatyard is here: bigger hold, faster engine, hull repairs. Open the <b>Harbor</b> tab.",sm:'Brother Tallow sells weapons here. Check the <b>Harbor</b> tab.',de:'The Listening Room sells a wireless set: live prices from every district.',ot:'Madame Ysolde sells whispers about tomorrow\'s market shocks.',sl:'The Gutter Yard patches hulls cheaply, up to 75%.',fm:'Fogmouth is dangerous, but Ghost Chips and Dreamsilk come cheap here.'};
   if(m[id])hint('visit_'+id,m[id]);

@@ -1,0 +1,975 @@
+{"at":"2026-11-14T18:42:39.664Z","action":"keyboard-focus","selector":"#t-new","presses":0,"target":{"tag":"BUTTON","id":"t-new","cls":"btn primary lg","text":"Cast off"}}
+{"at":"2026-11-14T18:42:39.665Z","action":"keyboard-activate","selector":"#t-new","key":"Space"}
+{"at":"2026-11-14T18:42:39.870Z","action":"keyboard-focus","selector":"#cap-name","presses":0,"target":{"tag":"INPUT","id":"cap-name","cls":"namein","text":""}}
+{"at":"2026-11-14T18:42:39.885Z","action":"keyboard-type","selector":"#cap-name","text":"Keyboard 1"}
+{"at":"2026-11-14T18:42:40.002Z","action":"keyboard-focus","selector":"#go","presses":1,"target":{"tag":"BUTTON","id":"go","cls":"choice primary","text":"⏎Cast offA quick guided tour starts first. Yo"}}
+{"at":"2026-11-14T18:42:40.010Z","action":"keyboard-activate","selector":"#go","key":"Space"}
+{"at":"2026-11-14T18:42:41.026Z","action":"keyboard-focus","selector":"#coach [data-skip]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"btn ghost sm","text":"Skip tour"}}
+{"at":"2026-11-14T18:42:41.028Z","action":"keyboard-activate","selector":"#coach [data-skip]","key":"Space"}
+{"at":"2026-11-14T18:42:41.878Z","action":"keyboard-focus","selector":"#tab-market","presses":16,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:42:41.879Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:42:42.048Z","action":"keyboard-focus","selector":"#tab-harbor","presses":1,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:42:42.050Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:42:42.234Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:42:42.236Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:42:42.378Z","action":"plan","day":1,"loc":"lq","id":"ch","buys":[{"id":"kelp","q":30,"cost":1800,"expectedPrice":87}],"score":707.4068800000001,"expectedGain":814}
+{"at":"2026-11-14T18:42:42.467Z","action":"keyboard-focus","selector":".row[data-g=\"kelp\"]","presses":4,"target":{"tag":"DIV","id":"","cls":"row  ","text":"GlowkelpPriceyCopperhook +52% seen · tonight\n"}}
+{"at":"2026-11-14T18:42:42.469Z","action":"keyboard-activate","selector":".row[data-g=\"kelp\"]","key":"Enter"}
+{"at":"2026-11-14T18:42:42.765Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:42:42.775Z","action":"keyboard-type","selector":"#qin","text":"30"}
+{"at":"2026-11-14T18:42:42.967Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 30 for ¤1,800"}}
+{"at":"2026-11-14T18:42:42.969Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:42:43.124Z","action":"trade-result","id":"kelp","mode":"buy","q":30,"cashBefore":2500,"cashAfter":700,"ownedBefore":0,"ownedAfter":30}
+{"at":"2026-11-14T18:42:43.126Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:42:43.902Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"ch\"]","presses":26,"target":{"tag":"g","id":"","cls":"node","text":"Copperhook Docks\n      \n      FFleet call: Gl"}}
+{"at":"2026-11-14T18:42:43.905Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"ch\"]","key":"Enter"}
+{"at":"2026-11-14T18:42:44.241Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:42:44.243Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:42:44.398Z","action":"keyboard-event","day":2,"title":"A drowned strongbox","choice":"ok","choiceText":"1\nContinue","text":"LUCKY FIND\nA drowned strongbox\n\nYour boathook snags a rusted strongbox under the mooring. Inside, wrapped in oilcloth: ¤330.\n\n1\nContinue"}
+{"at":"2026-11-14T18:42:44.550Z","action":"keyboard-focus","selector":"#modal [data-choice=\"ok\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Continue"}}
+{"at":"2026-11-14T18:42:44.552Z","action":"keyboard-activate","selector":"#modal [data-choice=\"ok\"]","key":"Space"}
+{"at":"2026-11-14T18:42:45.746Z","action":"keyboard-focus","selector":"#tab-market","presses":14,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:42:45.748Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:42:46.086Z","action":"keyboard-focus","selector":".row[data-g=\"kelp\"]","presses":4,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Glowkelp×30 +3%Fleet callPricey\n      \n  \n   "}}
+{"at":"2026-11-14T18:42:46.088Z","action":"keyboard-activate","selector":".row[data-g=\"kelp\"]","key":"Enter"}
+{"at":"2026-11-14T18:42:46.461Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:42:46.471Z","action":"keyboard-type","selector":"#qin","text":"30"}
+{"at":"2026-11-14T18:42:46.691Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 30 for ¤1,860"}}
+{"at":"2026-11-14T18:42:46.693Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:42:46.888Z","action":"trade-result","id":"kelp","mode":"sell","q":30,"cashBefore":1030,"cashAfter":2890,"ownedBefore":30,"ownedAfter":0}
+{"at":"2026-11-14T18:42:46.940Z","action":"keyboard-focus","selector":"#tab-harbor","presses":1,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 1"}}
+{"at":"2026-11-14T18:42:46.941Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:42:47.128Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:42:47.130Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:42:47.272Z","action":"plan","day":2,"loc":"ch","id":"lq","buys":[{"id":"pearl","q":12,"cost":2388,"expectedPrice":469}],"score":3097.1210000000005,"expectedGain":3239}
+{"at":"2026-11-14T18:42:47.517Z","action":"keyboard-focus","selector":".row[data-g=\"pearl\"]","presses":8,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Rust PearlsBargainLanternquay +156% seen · 1n"}}
+{"at":"2026-11-14T18:42:47.518Z","action":"keyboard-activate","selector":".row[data-g=\"pearl\"]","key":"Enter"}
+{"at":"2026-11-14T18:42:47.888Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:42:47.900Z","action":"keyboard-type","selector":"#qin","text":"12"}
+{"at":"2026-11-14T18:42:48.090Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 12 for ¤2,388"}}
+{"at":"2026-11-14T18:42:48.092Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:42:48.250Z","action":"trade-result","id":"pearl","mode":"buy","q":12,"cashBefore":2890,"cashAfter":502,"ownedBefore":0,"ownedAfter":12}
+{"at":"2026-11-14T18:42:48.254Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:42:48.786Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"lq\"]","presses":25,"target":{"tag":"g","id":"","cls":"node","text":"Lanternquay\n      \n      !"}}
+{"at":"2026-11-14T18:42:48.787Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"lq\"]","key":"Enter"}
+{"at":"2026-11-14T18:42:48.957Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:42:48.959Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:42:49.102Z","action":"keyboard-event","day":3,"title":"A soaked courier flags you down","choice":"no","choiceText":"2\nDecline\nSmells like trouble.","text":"A JOB\nA soaked courier flags you down\n\n\"Sealed parcel for Fogmouth. Don't open it, don't drop it, and don't let the Tidewardens see it. Pays ¤2,880 on delivery by night 6.\"\n\n1\nTake the job · 3 hold\nDeliver to Fogmouth by night 6 (1 night away).\n2\nDecline\nSmells like trouble."}
+{"at":"2026-11-14T18:42:49.238Z","action":"keyboard-focus","selector":"#modal [data-choice=\"no\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"2DeclineSmells like trouble."}}
+{"at":"2026-11-14T18:42:49.240Z","action":"keyboard-activate","selector":"#modal [data-choice=\"no\"]","key":"Space"}
+{"at":"2026-11-14T18:42:50.304Z","action":"keyboard-focus","selector":"#tab-market","presses":17,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:42:50.305Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:42:50.660Z","action":"keyboard-focus","selector":".row[data-g=\"pearl\"]","presses":8,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Rust Pearls×12 +120%\n      \n  \n      ¤437usua"}}
+{"at":"2026-11-14T18:42:50.662Z","action":"keyboard-activate","selector":".row[data-g=\"pearl\"]","key":"Enter"}
+{"at":"2026-11-14T18:42:50.924Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:42:50.935Z","action":"keyboard-type","selector":"#qin","text":"12"}
+{"at":"2026-11-14T18:42:51.174Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 12 for ¤5,244"}}
+{"at":"2026-11-14T18:42:51.176Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:42:51.314Z","action":"trade-result","id":"pearl","mode":"sell","q":12,"cashBefore":502,"cashAfter":5746,"ownedBefore":12,"ownedAfter":0}
+{"at":"2026-11-14T18:42:52.071Z","action":"keyboard-focus","selector":"#tab-harbor","presses":35,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:42:52.072Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:42:52.272Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:42:52.273Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:42:52.413Z","action":"plan","day":3,"loc":"lq","id":"ot","buys":[{"id":"silk","q":1,"cost":3917,"expectedPrice":12492}],"score":8217.800999999998,"expectedGain":8575}
+{"at":"2026-11-14T18:42:52.738Z","action":"keyboard-focus","selector":".row[data-g=\"silk\"]","presses":15,"target":{"tag":"DIV","id":"","cls":"row  ","text":"DreamsilkGlut easingOrchid +251% seen · 2n ag"}}
+{"at":"2026-11-14T18:42:52.740Z","action":"keyboard-activate","selector":".row[data-g=\"silk\"]","key":"Enter"}
+{"at":"2026-11-14T18:42:53.031Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:42:53.037Z","action":"keyboard-type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T18:42:53.217Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 1 for ¤3,917"}}
+{"at":"2026-11-14T18:42:53.219Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:42:53.361Z","action":"trade-result","id":"silk","mode":"buy","q":1,"cashBefore":5746,"cashAfter":1829,"ownedBefore":0,"ownedAfter":1}
+{"at":"2026-11-14T18:42:53.364Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:42:54.028Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"ot\"]","presses":28,"target":{"tag":"g","id":"","cls":"node","text":"Orchid Terraces"}}
+{"at":"2026-11-14T18:42:54.030Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"ot\"]","key":"Enter"}
+{"at":"2026-11-14T18:42:54.199Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:42:54.201Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:42:54.945Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:42:54.947Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:42:55.363Z","action":"keyboard-focus","selector":".row[data-g=\"silk\"]","presses":13,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Dreamsilk×1 +164%Usually imported here\n      "}}
+{"at":"2026-11-14T18:42:55.365Z","action":"keyboard-activate","selector":".row[data-g=\"silk\"]","key":"Enter"}
+{"at":"2026-11-14T18:42:55.625Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:42:55.633Z","action":"keyboard-type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T18:42:55.826Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 1 for ¤10,339"}}
+{"at":"2026-11-14T18:42:55.828Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:42:55.967Z","action":"trade-result","id":"silk","mode":"sell","q":1,"cashBefore":1829,"cashAfter":12168,"ownedBefore":1,"ownedAfter":0}
+{"at":"2026-11-14T18:42:55.977Z","action":"plan","day":4,"loc":"ot","id":"de","buys":[{"id":"eels","q":5,"cost":10210,"expectedPrice":3174},{"id":"rain","q":1,"cost":77,"expectedPrice":132}],"score":5071.683,"expectedGain":5715}
+{"at":"2026-11-14T18:42:56.673Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":25,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Clockwork Eels\n      \n  \n      ¤2,042−15% vs "}}
+{"at":"2026-11-14T18:42:56.675Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:42:57.000Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:42:57.008Z","action":"keyboard-type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T18:42:57.217Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 5 for ¤10,210"}}
+{"at":"2026-11-14T18:42:57.219Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:42:57.375Z","action":"trade-result","id":"eels","mode":"buy","q":5,"cashBefore":12168,"cashAfter":1958,"ownedBefore":0,"ownedAfter":5}
+{"at":"2026-11-14T18:42:58.442Z","action":"keyboard-focus","selector":".row[data-g=\"rain\"]","presses":29,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Bottled RainBargainCopperhook +94% seen · 2n "}}
+{"at":"2026-11-14T18:42:58.444Z","action":"keyboard-activate","selector":".row[data-g=\"rain\"]","key":"Enter"}
+{"at":"2026-11-14T18:42:58.785Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:42:58.792Z","action":"keyboard-type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T18:42:59.063Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 1 for ¤77"}}
+{"at":"2026-11-14T18:42:59.065Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:42:59.206Z","action":"trade-result","id":"rain","mode":"buy","q":1,"cashBefore":1958,"cashAfter":1881,"ownedBefore":0,"ownedAfter":1}
+{"at":"2026-11-14T18:42:59.209Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:43:00.179Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"de\"]","presses":29,"target":{"tag":"g","id":"","cls":"node","text":"Drowned Exchange"}}
+{"at":"2026-11-14T18:43:00.180Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"de\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:00.381Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:43:00.383Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:43:00.586Z","action":"keyboard-event","day":5,"title":"Pell the lamplighter","choice":"ok","choiceText":"1\nContinue","text":"A FRIENDLY WORD\nPell the lamplighter\n\nPell lowers his pole and leans down to your skiff. \"Heard something on my rounds. Tomorrow: Tidewardens raided the Glowkelp stalls at Saint Mire. Buyers will pay anything.\"\n\nPell is sure. Rumours like this land in full about 8 times in 10.\nIf it holds, tomorrow at Saint Mire: sell Glowkelp there. It is two nights away, so you would arrive as it fades. Either way, you will hear what really happened.\n1\nContinue"}
+{"at":"2026-11-14T18:43:00.738Z","action":"keyboard-focus","selector":"#modal [data-choice=\"ok\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Continue"}}
+{"at":"2026-11-14T18:43:00.740Z","action":"keyboard-activate","selector":"#modal [data-choice=\"ok\"]","key":"Space"}
+{"at":"2026-11-14T18:43:01.839Z","action":"keyboard-focus","selector":"#tab-market","presses":17,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:01.842Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:02.150Z","action":"keyboard-focus","selector":".row[data-g=\"rain\"]","presses":6,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Bottled Rain×1 +92%\n      \n  \n      ¤148+14% "}}
+{"at":"2026-11-14T18:43:02.151Z","action":"keyboard-activate","selector":".row[data-g=\"rain\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:02.458Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:02.465Z","action":"keyboard-type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T18:43:02.659Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 1 for ¤148"}}
+{"at":"2026-11-14T18:43:02.661Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:02.803Z","action":"trade-result","id":"rain","mode":"sell","q":1,"cashBefore":1881,"cashAfter":2029,"ownedBefore":1,"ownedAfter":0}
+{"at":"2026-11-14T18:43:03.517Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":24,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Clockwork Eels×5 +52%Usually imported here\n  "}}
+{"at":"2026-11-14T18:43:03.518Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:03.813Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:03.819Z","action":"keyboard-type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T18:43:04.001Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 5 for ¤15,545"}}
+{"at":"2026-11-14T18:43:04.003Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:04.147Z","action":"trade-result","id":"eels","mode":"sell","q":5,"cashBefore":2029,"cashAfter":17574,"ownedBefore":5,"ownedAfter":0}
+{"at":"2026-11-14T18:43:04.949Z","action":"keyboard-focus","selector":"#tab-harbor","presses":35,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:43:04.950Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:43:05.153Z","action":"keyboard-focus","selector":"#side-body [data-act=\"wireless\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn amber sm","text":"¤6,000"}}
+{"at":"2026-11-14T18:43:05.155Z","action":"keyboard-activate","selector":"#side-body [data-act=\"wireless\"]","key":"Space"}
+{"at":"2026-11-14T18:43:05.296Z","action":"keyboard-focus","selector":"#modal [data-choice=\"yes\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Buy · ¤6,000"}}
+{"at":"2026-11-14T18:43:05.297Z","action":"keyboard-activate","selector":"#modal [data-choice=\"yes\"]","key":"Space"}
+{"at":"2026-11-14T18:43:05.432Z","action":"upgrade","upgrade":"wireless"}
+{"at":"2026-11-14T18:43:05.511Z","action":"keyboard-focus","selector":"#tab-market","presses":2,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:05.513Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:05.787Z","action":"plan","day":5,"loc":"de","id":"lq","buys":[{"id":"eels","q":3,"cost":9327,"expectedPrice":5036},{"id":"kelp","q":13,"cost":507,"expectedPrice":51}],"score":5614.06716,"expectedGain":5938}
+{"at":"2026-11-14T18:43:06.053Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":12,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Clockwork EelsLanternquay +83% seen · tonight"}}
+{"at":"2026-11-14T18:43:06.055Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:06.349Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:06.358Z","action":"keyboard-type","selector":"#qin","text":"3"}
+{"at":"2026-11-14T18:43:06.550Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 3 for ¤9,327"}}
+{"at":"2026-11-14T18:43:06.552Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:06.694Z","action":"trade-result","id":"eels","mode":"buy","q":3,"cashBefore":11574,"cashAfter":2247,"ownedBefore":0,"ownedAfter":3}
+{"at":"2026-11-14T18:43:07.631Z","action":"keyboard-focus","selector":".row[data-g=\"kelp\"]","presses":32,"target":{"tag":"DIV","id":"","cls":"row  ","text":"GlowkelpLanternquay +31% seen · tonight\n     "}}
+{"at":"2026-11-14T18:43:07.633Z","action":"keyboard-activate","selector":".row[data-g=\"kelp\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:07.943Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:07.951Z","action":"keyboard-type","selector":"#qin","text":"13"}
+{"at":"2026-11-14T18:43:08.128Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 13 for ¤507"}}
+{"at":"2026-11-14T18:43:08.130Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:08.273Z","action":"trade-result","id":"kelp","mode":"buy","q":13,"cashBefore":2247,"cashAfter":1740,"ownedBefore":0,"ownedAfter":13}
+{"at":"2026-11-14T18:43:08.276Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:43:08.859Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"lq\"]","presses":27,"target":{"tag":"g","id":"","cls":"node","text":"Lanternquay\n      \n      !+83%"}}
+{"at":"2026-11-14T18:43:08.860Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"lq\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:09.061Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:43:09.062Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:43:09.206Z","action":"keyboard-event","day":6,"title":"A gull takes your purse","choice":"pay","choiceText":"2\nLet the bag go · ¤174\nCertain cash loss. Your hull and cargo stay safe.","text":"THIEF!\nA gull takes your purse\n\nA trained grey gull snags a bag containing ¤174. Its tether catches your wrist. You can grab the bag, but the skiff is drifting toward the stone quay.\n\n1\nReach for the bag\n70% chance to keep it. On failure, lose ¤174 and 10% hull (you have 100%).\n2\nLet the bag go · ¤174\nCertain cash loss. Your hull and cargo stay safe."}
+{"at":"2026-11-14T18:43:09.360Z","action":"keyboard-focus","selector":"#modal [data-choice=\"pay\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"2Let the bag go · ¤174Certain cash loss. Your"}}
+{"at":"2026-11-14T18:43:09.361Z","action":"keyboard-activate","selector":"#modal [data-choice=\"pay\"]","key":"Space"}
+{"at":"2026-11-14T18:43:10.557Z","action":"keyboard-focus","selector":"#tab-market","presses":17,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:10.571Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:11.123Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":12,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Clockwork Eels×3 0%Fading surge\n      \n  \n   "}}
+{"at":"2026-11-14T18:43:11.125Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:11.499Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:11.509Z","action":"keyboard-type","selector":"#qin","text":"3"}
+{"at":"2026-11-14T18:43:11.780Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 3 for ¤9,303"}}
+{"at":"2026-11-14T18:43:11.782Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:11.923Z","action":"trade-result","id":"eels","mode":"sell","q":3,"cashBefore":1566,"cashAfter":10869,"ownedBefore":3,"ownedAfter":0}
+{"at":"2026-11-14T18:43:13.026Z","action":"keyboard-focus","selector":"#tab-harbor","presses":37,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:43:13.027Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:43:13.195Z","action":"keyboard-focus","selector":"#side-body [data-act=\"repay\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"btn primary","text":"Repay debt"}}
+{"at":"2026-11-14T18:43:13.197Z","action":"keyboard-activate","selector":"#side-body [data-act=\"repay\"]","key":"Space"}
+{"at":"2026-11-14T18:43:13.398Z","action":"keyboard-focus","selector":"#ain","presses":2,"target":{"tag":"INPUT","id":"ain","cls":"","text":""}}
+{"at":"2026-11-14T18:43:13.407Z","action":"keyboard-type","selector":"#ain","text":"8031"}
+{"at":"2026-11-14T18:43:13.553Z","action":"keyboard-focus","selector":"#ago","presses":2,"target":{"tag":"BUTTON","id":"ago","cls":"btn lg primary","text":"Repay ¤8,031"}}
+{"at":"2026-11-14T18:43:13.555Z","action":"keyboard-activate","selector":"#ago","key":"Space"}
+{"at":"2026-11-14T18:43:13.693Z","action":"service","service":"repay","amount":8031}
+{"at":"2026-11-14T18:43:13.773Z","action":"keyboard-focus","selector":"#tab-market","presses":2,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:13.774Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:13.918Z","action":"plan","day":6,"loc":"lq","id":"de","buys":[{"id":"pearl","q":7,"cost":2338,"expectedPrice":490}],"score":961.9247999999997,"expectedGain":1095}
+{"at":"2026-11-14T18:43:14.147Z","action":"keyboard-focus","selector":".row[data-g=\"pearl\"]","presses":9,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Rust PearlsCheapExchange +45% seen · tonight\n"}}
+{"at":"2026-11-14T18:43:14.149Z","action":"keyboard-activate","selector":".row[data-g=\"pearl\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:14.475Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:14.482Z","action":"keyboard-type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T18:43:14.680Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 7 for ¤2,338"}}
+{"at":"2026-11-14T18:43:14.682Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:14.824Z","action":"trade-result","id":"pearl","mode":"buy","q":7,"cashBefore":2838,"cashAfter":500,"ownedBefore":0,"ownedAfter":7}
+{"at":"2026-11-14T18:43:14.826Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:43:15.661Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"de\"]","presses":29,"target":{"tag":"g","id":"","cls":"node","text":"Drowned Exchange\n      \n      +45%"}}
+{"at":"2026-11-14T18:43:15.662Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"de\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:15.861Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:43:15.863Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:43:16.605Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:16.606Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:16.978Z","action":"keyboard-focus","selector":".row[data-g=\"pearl\"]","presses":8,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Rust Pearls×7 +29%Fogmouth +14% seen · tonigh"}}
+{"at":"2026-11-14T18:43:16.980Z","action":"keyboard-activate","selector":".row[data-g=\"pearl\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:17.259Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:17.266Z","action":"keyboard-type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T18:43:17.477Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 7 for ¤3,010"}}
+{"at":"2026-11-14T18:43:17.479Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:17.621Z","action":"trade-result","id":"pearl","mode":"sell","q":7,"cashBefore":500,"cashAfter":3510,"ownedBefore":7,"ownedAfter":0}
+{"at":"2026-11-14T18:43:17.650Z","action":"keyboard-focus","selector":"#tab-harbor","presses":1,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:43:17.651Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:43:17.835Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:17.836Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:17.977Z","action":"plan","day":7,"loc":"de","id":"ot","buys":[{"id":"saffron","q":2,"cost":2104,"expectedPrice":1801}],"score":1453.5090000000002,"expectedGain":1543}
+{"at":"2026-11-14T18:43:18.254Z","action":"keyboard-focus","selector":".row[data-g=\"saffron\"]","presses":10,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Synth SaffronOrchid +82% seen · tonight\n     "}}
+{"at":"2026-11-14T18:43:18.256Z","action":"keyboard-activate","selector":".row[data-g=\"saffron\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:18.551Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:18.559Z","action":"keyboard-type","selector":"#qin","text":"2"}
+{"at":"2026-11-14T18:43:18.797Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 2 for ¤2,104"}}
+{"at":"2026-11-14T18:43:18.799Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:18.940Z","action":"trade-result","id":"saffron","mode":"buy","q":2,"cashBefore":3510,"cashAfter":1406,"ownedBefore":0,"ownedAfter":2}
+{"at":"2026-11-14T18:43:18.943Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:43:19.635Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"ot\"]","presses":28,"target":{"tag":"g","id":"","cls":"node","text":"Orchid Terraces\n      \n      +82%"}}
+{"at":"2026-11-14T18:43:19.636Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"ot\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:19.837Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:43:19.838Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:43:20.584Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:20.585Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:20.985Z","action":"keyboard-focus","selector":".row[data-g=\"saffron\"]","presses":11,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Synth Saffron×2 +86%Pricey\n      \n  \n      ¤1"}}
+{"at":"2026-11-14T18:43:20.986Z","action":"keyboard-activate","selector":".row[data-g=\"saffron\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:21.294Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:21.300Z","action":"keyboard-type","selector":"#qin","text":"2"}
+{"at":"2026-11-14T18:43:21.510Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 2 for ¤3,920"}}
+{"at":"2026-11-14T18:43:21.512Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:21.656Z","action":"trade-result","id":"saffron","mode":"sell","q":2,"cashBefore":1406,"cashAfter":5326,"ownedBefore":2,"ownedAfter":0}
+{"at":"2026-11-14T18:43:21.669Z","action":"plan","day":8,"loc":"ot","id":"sm","buys":[{"id":"rain","q":17,"cost":1309,"expectedPrice":211}],"score":2051.8612,"expectedGain":2321}
+{"at":"2026-11-14T18:43:22.837Z","action":"keyboard-focus","selector":".row[data-g=\"rain\"]","presses":31,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Bottled RainBargainSaint Mire +191% seen · to"}}
+{"at":"2026-11-14T18:43:22.839Z","action":"keyboard-activate","selector":".row[data-g=\"rain\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:23.242Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:23.268Z","action":"keyboard-type","selector":"#qin","text":"17"}
+{"at":"2026-11-14T18:43:23.493Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 17 for ¤1,309"}}
+{"at":"2026-11-14T18:43:23.496Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:23.653Z","action":"trade-result","id":"rain","mode":"buy","q":17,"cashBefore":5326,"cashAfter":4017,"ownedBefore":0,"ownedAfter":17}
+{"at":"2026-11-14T18:43:23.656Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:43:24.509Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"sm\"]","presses":24,"target":{"tag":"g","id":"","cls":"node","text":"Saint Mire\n      \n      FFleet call: Bottled "}}
+{"at":"2026-11-14T18:43:24.511Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"sm\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:24.710Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:43:24.711Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:43:24.867Z","action":"keyboard-event","day":9,"title":"A drowned strongbox","choice":"ok","choiceText":"1\nContinue","text":"LUCKY FIND\nA drowned strongbox\n\nYour boathook snags a rusted strongbox under the mooring. Inside, wrapped in oilcloth: ¤1,440.\n\n1\nContinue"}
+{"at":"2026-11-14T18:43:24.874Z","action":"keyboard-focus","selector":"#modal [data-choice=\"ok\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Continue"}}
+{"at":"2026-11-14T18:43:24.876Z","action":"keyboard-activate","selector":"#modal [data-choice=\"ok\"]","key":"Space"}
+{"at":"2026-11-14T18:43:26.228Z","action":"keyboard-focus","selector":"#tab-market","presses":15,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:26.230Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:26.666Z","action":"keyboard-focus","selector":".row[data-g=\"rain\"]","presses":6,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Bottled Rain×17 +156%Pricey\n      \n  \n      ¤"}}
+{"at":"2026-11-14T18:43:26.668Z","action":"keyboard-activate","selector":".row[data-g=\"rain\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:26.977Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:26.988Z","action":"keyboard-type","selector":"#qin","text":"17"}
+{"at":"2026-11-14T18:43:27.322Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 17 for ¤3,349"}}
+{"at":"2026-11-14T18:43:27.325Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:27.483Z","action":"trade-result","id":"rain","mode":"sell","q":17,"cashBefore":5457,"cashAfter":8806,"ownedBefore":17,"ownedAfter":0}
+{"at":"2026-11-14T18:43:27.496Z","action":"plan","day":9,"loc":"sm","id":"ot","buys":[{"id":"eels","q":4,"cost":7312,"expectedPrice":2933}],"score":4181.486,"expectedGain":4424}
+{"at":"2026-11-14T18:43:28.213Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":26,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Clockwork EelsCheapOrchid +68% seen · tonight"}}
+{"at":"2026-11-14T18:43:28.214Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:28.540Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:28.547Z","action":"keyboard-type","selector":"#qin","text":"4"}
+{"at":"2026-11-14T18:43:28.758Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 4 for ¤7,312"}}
+{"at":"2026-11-14T18:43:28.759Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:28.914Z","action":"trade-result","id":"eels","mode":"buy","q":4,"cashBefore":8806,"cashAfter":1494,"ownedBefore":0,"ownedAfter":4}
+{"at":"2026-11-14T18:43:28.916Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:43:29.645Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"ot\"]","presses":28,"target":{"tag":"g","id":"","cls":"node","text":"Orchid Terraces\n      \n      FFleet call: Rus"}}
+{"at":"2026-11-14T18:43:29.646Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"ot\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:29.830Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:43:29.832Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:43:29.974Z","action":"keyboard-event","day":9,"title":"Tidewarden cutter!","choice":"bribe","choiceText":"3\nBribe the sergeant · ¤1,110\nGuaranteed. The price follows your purse and your cargo.","text":"SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nSearchlights snap on from under the viaduct: a Tidewarden cutter, rifles out. \"Cargo papers, captain.\"\n\nYour hull\n100%\nEnemy boats\n1\nCargo at stake\n¤10.1k\n1\nRun for it\n37% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n25% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nBribe the sergeant · ¤1,110\nGuaranteed. The price follows your purse and your cargo.\n4\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."}
+{"at":"2026-11-14T18:43:30.170Z","action":"keyboard-focus","selector":"#modal [data-choice=\"bribe\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"3Bribe the sergeant · ¤1,110Guaranteed. The p"}}
+{"at":"2026-11-14T18:43:30.172Z","action":"keyboard-activate","selector":"#modal [data-choice=\"bribe\"]","key":"Space"}
+{"at":"2026-11-14T18:43:30.314Z","action":"keyboard-event","day":9,"title":"Papers in order","choice":"ok","choiceText":"1\nContinue","text":"BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤1,110, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\n1\nContinue"}
+{"at":"2026-11-14T18:43:30.467Z","action":"keyboard-focus","selector":"#modal [data-choice=\"ok\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Continue"}}
+{"at":"2026-11-14T18:43:30.468Z","action":"keyboard-activate","selector":"#modal [data-choice=\"ok\"]","key":"Space"}
+{"at":"2026-11-14T18:43:30.625Z","action":"keyboard-event","day":10,"title":"A soaked courier flags you down","choice":"no","choiceText":"2\nDecline\nSmells like trouble.","text":"A JOB\nA soaked courier flags you down\n\n\"Sealed parcel for The Sluices. Don't open it, don't drop it, and don't let the Tidewardens see it. Pays ¤2,520 on delivery by night 16.\"\n\n1\nTake the job · 3 hold\nDeliver to The Sluices by night 16 (2 nights away).\n2\nDecline\nSmells like trouble."}
+{"at":"2026-11-14T18:43:30.651Z","action":"keyboard-focus","selector":"#modal [data-choice=\"no\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"2DeclineSmells like trouble."}}
+{"at":"2026-11-14T18:43:30.653Z","action":"keyboard-activate","selector":"#modal [data-choice=\"no\"]","key":"Space"}
+{"at":"2026-11-14T18:43:31.793Z","action":"keyboard-focus","selector":"#tab-market","presses":15,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:31.795Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:32.050Z","action":"plan","day":10,"loc":"ot","id":"de","buys":[],"score":2440.08,"expectedGain":2632}
+{"at":"2026-11-14T18:43:32.053Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:43:32.181Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"de\"]","presses":4,"target":{"tag":"g","id":"","cls":"node","text":"Drowned Exchange\n      \n      !+32%"}}
+{"at":"2026-11-14T18:43:32.183Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"de\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:32.459Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:43:32.461Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:43:32.602Z","action":"keyboard-event","day":11,"title":"Pell the lamplighter","choice":"ok","choiceText":"1\nContinue","text":"A FRIENDLY WORD\nPell the lamplighter\n\nPell lowers his pole and leans down to your skiff. \"Heard something on my rounds. Tomorrow: Collectors from the deep city want Synth Saffron, and they are shopping at Saint Mire.\"\n\nPell admits it is a guess. Rumours like this land in full about 1 time in 3, and turn the other way more often than that.\nIf it holds, tomorrow at Saint Mire: sell Synth Saffron there. It is two nights away, so you would arrive as it fades. Either way, you will hear what really happened.\n1\nContinue"}
+{"at":"2026-11-14T18:43:32.606Z","action":"keyboard-focus","selector":"#modal [data-choice=\"ok\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Continue"}}
+{"at":"2026-11-14T18:43:32.607Z","action":"keyboard-activate","selector":"#modal [data-choice=\"ok\"]","key":"Space"}
+{"at":"2026-11-14T18:43:33.729Z","action":"keyboard-focus","selector":"#tab-market","presses":15,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:33.731Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:34.070Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":9,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Clockwork Eels×4 +19%Usually imported here\n  "}}
+{"at":"2026-11-14T18:43:34.072Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:34.379Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:34.385Z","action":"keyboard-type","selector":"#qin","text":"4"}
+{"at":"2026-11-14T18:43:34.614Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 4 for ¤8,676"}}
+{"at":"2026-11-14T18:43:34.617Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:34.772Z","action":"trade-result","id":"eels","mode":"sell","q":4,"cashBefore":384,"cashAfter":9060,"ownedBefore":4,"ownedAfter":0}
+{"at":"2026-11-14T18:43:34.799Z","action":"keyboard-focus","selector":"#tab-harbor","presses":1,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:43:34.800Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:43:34.985Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:34.986Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:35.127Z","action":"plan","day":11,"loc":"de","id":"ot","buys":[{"id":"pearl","q":17,"cost":7106,"expectedPrice":519}],"score":1674.9640000000015,"expectedGain":1830}
+{"at":"2026-11-14T18:43:35.264Z","action":"keyboard-focus","selector":".row[data-g=\"pearl\"]","presses":7,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Rust PearlsOrchid +20% seen · tonight\n      \n"}}
+{"at":"2026-11-14T18:43:35.266Z","action":"keyboard-activate","selector":".row[data-g=\"pearl\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:35.573Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:35.581Z","action":"keyboard-type","selector":"#qin","text":"17"}
+{"at":"2026-11-14T18:43:35.757Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 17 for ¤7,106"}}
+{"at":"2026-11-14T18:43:35.758Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:35.898Z","action":"trade-result","id":"pearl","mode":"buy","q":17,"cashBefore":9060,"cashAfter":1954,"ownedBefore":0,"ownedAfter":17}
+{"at":"2026-11-14T18:43:35.900Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:43:36.410Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"ot\"]","presses":24,"target":{"tag":"g","id":"","cls":"node","text":"Orchid Terraces\n      \n      FFleet call: Rus"}}
+{"at":"2026-11-14T18:43:36.412Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"ot\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:36.595Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:43:36.596Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:43:36.739Z","action":"keyboard-event","day":11,"title":"Tidewarden cutter!","choice":"bribe","choiceText":"3\nBribe the sergeant · ¤983\nGuaranteed. The price follows your purse and your cargo.","text":"SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA Tidewarden cutter swings out of the dark, lamps blazing. \"Heave to for inspection!\"\n\nYour hull\n100%\nEnemy boats\n1\nCargo at stake\n¤7,686\n1\nRun for it\n30% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n25% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nBribe the sergeant · ¤983\nGuaranteed. The price follows your purse and your cargo.\n4\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."}
+{"at":"2026-11-14T18:43:36.799Z","action":"keyboard-focus","selector":"#modal [data-choice=\"bribe\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"3Bribe the sergeant · ¤983Guaranteed. The pri"}}
+{"at":"2026-11-14T18:43:36.800Z","action":"keyboard-activate","selector":"#modal [data-choice=\"bribe\"]","key":"Space"}
+{"at":"2026-11-14T18:43:36.941Z","action":"keyboard-event","day":11,"title":"Papers in order","choice":"ok","choiceText":"1\nContinue","text":"BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤983, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\n1\nContinue"}
+{"at":"2026-11-14T18:43:36.945Z","action":"keyboard-focus","selector":"#modal [data-choice=\"ok\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Continue"}}
+{"at":"2026-11-14T18:43:36.947Z","action":"keyboard-activate","selector":"#modal [data-choice=\"ok\"]","key":"Space"}
+{"at":"2026-11-14T18:43:37.950Z","action":"keyboard-focus","selector":"#tab-market","presses":15,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:37.951Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:38.214Z","action":"keyboard-focus","selector":".row[data-g=\"pearl\"]","presses":7,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Rust Pearls×17 +25%Fleet call\n      \n  \n     "}}
+{"at":"2026-11-14T18:43:38.215Z","action":"keyboard-activate","selector":".row[data-g=\"pearl\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:38.494Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:38.501Z","action":"keyboard-type","selector":"#qin","text":"17"}
+{"at":"2026-11-14T18:43:38.696Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 17 for ¤8,908"}}
+{"at":"2026-11-14T18:43:38.698Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:38.836Z","action":"trade-result","id":"pearl","mode":"sell","q":17,"cashBefore":971,"cashAfter":9879,"ownedBefore":17,"ownedAfter":0}
+{"at":"2026-11-14T18:43:38.844Z","action":"plan","day":12,"loc":"ot","id":"sm","buys":[{"id":"eels","q":4,"cost":7372,"expectedPrice":2714},{"id":"rain","q":6,"cost":918,"expectedPrice":187}],"score":3271.9896,"expectedGain":3731}
+{"at":"2026-11-14T18:43:39.393Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":24,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Clockwork EelsCheapSaint Mire +44% seen · ton"}}
+{"at":"2026-11-14T18:43:39.395Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:39.705Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:39.712Z","action":"keyboard-type","selector":"#qin","text":"4"}
+{"at":"2026-11-14T18:43:39.907Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 4 for ¤7,372"}}
+{"at":"2026-11-14T18:43:39.909Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:40.064Z","action":"trade-result","id":"eels","mode":"buy","q":4,"cashBefore":9879,"cashAfter":2507,"ownedBefore":0,"ownedAfter":4}
+{"at":"2026-11-14T18:43:40.794Z","action":"keyboard-focus","selector":".row[data-g=\"rain\"]","presses":31,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Bottled RainSaint Mire +27% seen · tonight\n  "}}
+{"at":"2026-11-14T18:43:40.795Z","action":"keyboard-activate","selector":".row[data-g=\"rain\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:41.075Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:41.082Z","action":"keyboard-type","selector":"#qin","text":"6"}
+{"at":"2026-11-14T18:43:41.277Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 6 for ¤918"}}
+{"at":"2026-11-14T18:43:41.278Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:41.420Z","action":"trade-result","id":"rain","mode":"buy","q":6,"cashBefore":2507,"cashAfter":1589,"ownedBefore":0,"ownedAfter":6}
+{"at":"2026-11-14T18:43:41.422Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:43:41.961Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"sm\"]","presses":29,"target":{"tag":"g","id":"","cls":"node","text":"Saint Mire\n      \n      !+44%"}}
+{"at":"2026-11-14T18:43:41.962Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"sm\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:42.164Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:43:42.165Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:43:42.309Z","action":"keyboard-event","day":13,"title":"A crate bobs past","choice":"leave","choiceText":"2\nLeave it\nNot worth the trouble.","text":"FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Glowkelp marks drifts alongside. Nobody seems to be looking for it. Yet.\n\n1\nHaul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull).\n2\nLeave it\nNot worth the trouble."}
+{"at":"2026-11-14T18:43:42.460Z","action":"keyboard-focus","selector":"#modal [data-choice=\"leave\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"2Leave itNot worth the trouble."}}
+{"at":"2026-11-14T18:43:42.462Z","action":"keyboard-activate","selector":"#modal [data-choice=\"leave\"]","key":"Space"}
+{"at":"2026-11-14T18:43:43.592Z","action":"keyboard-focus","selector":"#tab-market","presses":17,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:43.593Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:43.809Z","action":"keyboard-focus","selector":".row[data-g=\"kelp\"]","presses":4,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Glowkelp×13 +41%Festival\n      \n  \n      ¤55+"}}
+{"at":"2026-11-14T18:43:43.811Z","action":"keyboard-activate","selector":".row[data-g=\"kelp\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:44.089Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:44.098Z","action":"keyboard-type","selector":"#qin","text":"13"}
+{"at":"2026-11-14T18:43:44.276Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 13 for ¤715"}}
+{"at":"2026-11-14T18:43:44.278Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:44.431Z","action":"trade-result","id":"kelp","mode":"sell","q":13,"cashBefore":1589,"cashAfter":2304,"ownedBefore":13,"ownedAfter":0}
+{"at":"2026-11-14T18:43:45.175Z","action":"keyboard-focus","selector":".row[data-g=\"rain\"]","presses":31,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Bottled Rain×6 +42%Festival\n      \n  \n      ¤"}}
+{"at":"2026-11-14T18:43:45.176Z","action":"keyboard-activate","selector":".row[data-g=\"rain\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:45.439Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:45.448Z","action":"keyboard-type","selector":"#qin","text":"6"}
+{"at":"2026-11-14T18:43:45.673Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 6 for ¤1,308"}}
+{"at":"2026-11-14T18:43:45.675Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:45.818Z","action":"trade-result","id":"rain","mode":"sell","q":6,"cashBefore":2304,"cashAfter":3612,"ownedBefore":6,"ownedAfter":0}
+{"at":"2026-11-14T18:43:46.561Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":25,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Clockwork Eels×4 +70%Festival\n      \n  \n     "}}
+{"at":"2026-11-14T18:43:46.563Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:46.873Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:46.880Z","action":"keyboard-type","selector":"#qin","text":"4"}
+{"at":"2026-11-14T18:43:47.106Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 4 for ¤12,528"}}
+{"at":"2026-11-14T18:43:47.108Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:47.267Z","action":"trade-result","id":"eels","mode":"sell","q":4,"cashBefore":3612,"cashAfter":16140,"ownedBefore":4,"ownedAfter":0}
+{"at":"2026-11-14T18:43:47.281Z","action":"plan","day":13,"loc":"sm","id":"fm","buys":[{"id":"saffron","q":11,"cost":13156,"expectedPrice":1554}],"score":2742.593600000002,"expectedGain":3940}
+{"at":"2026-11-14T18:43:48.102Z","action":"keyboard-focus","selector":".row[data-g=\"saffron\"]","presses":28,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Synth SaffronGlut easingFestivalFogmouth +23%"}}
+{"at":"2026-11-14T18:43:48.104Z","action":"keyboard-activate","selector":".row[data-g=\"saffron\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:48.365Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:48.374Z","action":"keyboard-type","selector":"#qin","text":"11"}
+{"at":"2026-11-14T18:43:48.585Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 11 for ¤13,156"}}
+{"at":"2026-11-14T18:43:48.587Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:48.743Z","action":"trade-result","id":"saffron","mode":"buy","q":11,"cashBefore":16140,"cashAfter":2984,"ownedBefore":0,"ownedAfter":11}
+{"at":"2026-11-14T18:43:48.746Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:43:49.719Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"fm\"]","presses":32,"target":{"tag":"g","id":"","cls":"node","text":"Fogmouth\n      \n      FFleet call: Synth Saff"}}
+{"at":"2026-11-14T18:43:49.720Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"fm\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:49.953Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:43:49.954Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:43:50.668Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:50.670Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:51.134Z","action":"keyboard-focus","selector":".row[data-g=\"saffron\"]","presses":10,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Synth Saffron×11 +18%Fleet call\n      \n  \n   "}}
+{"at":"2026-11-14T18:43:51.136Z","action":"keyboard-activate","selector":".row[data-g=\"saffron\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:51.463Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:51.479Z","action":"keyboard-type","selector":"#qin","text":"11"}
+{"at":"2026-11-14T18:43:51.821Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 11 for ¤15,499"}}
+{"at":"2026-11-14T18:43:51.822Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:51.963Z","action":"trade-result","id":"saffron","mode":"sell","q":11,"cashBefore":2984,"cashAfter":18483,"ownedBefore":11,"ownedAfter":0}
+{"at":"2026-11-14T18:43:51.975Z","action":"plan","day":14,"loc":"fm","id":"lq","buys":[{"id":"silk","q":2,"cost":15404,"expectedPrice":11653},{"id":"kelp","q":8,"cost":280,"expectedPrice":45}],"score":7514.696560000002,"expectedGain":7979}
+{"at":"2026-11-14T18:43:52.843Z","action":"keyboard-focus","selector":".row[data-g=\"silk\"]","presses":23,"target":{"tag":"DIV","id":"","cls":"row  ","text":"DreamsilkCheapSluices +65% seen · tonight\n   "}}
+{"at":"2026-11-14T18:43:52.845Z","action":"keyboard-activate","selector":".row[data-g=\"silk\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:53.224Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:53.245Z","action":"keyboard-type","selector":"#qin","text":"2"}
+{"at":"2026-11-14T18:43:53.481Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 2 for ¤15,404"}}
+{"at":"2026-11-14T18:43:53.483Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:53.625Z","action":"trade-result","id":"silk","mode":"buy","q":2,"cashBefore":18483,"cashAfter":3079,"ownedBefore":0,"ownedAfter":2}
+{"at":"2026-11-14T18:43:54.582Z","action":"keyboard-focus","selector":".row[data-g=\"kelp\"]","presses":32,"target":{"tag":"DIV","id":"","cls":"row  ","text":"GlowkelpCheapLanternquay +23% seen · tonight\n"}}
+{"at":"2026-11-14T18:43:54.583Z","action":"keyboard-activate","selector":".row[data-g=\"kelp\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:54.906Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:54.913Z","action":"keyboard-type","selector":"#qin","text":"8"}
+{"at":"2026-11-14T18:43:55.089Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 8 for ¤280"}}
+{"at":"2026-11-14T18:43:55.091Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:55.271Z","action":"trade-result","id":"kelp","mode":"buy","q":8,"cashBefore":3079,"cashAfter":2799,"ownedBefore":0,"ownedAfter":8}
+{"at":"2026-11-14T18:43:55.294Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:43:56.146Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"lq\"]","presses":27,"target":{"tag":"g","id":"","cls":"node","text":"Lanternquay\n      \n      +57%"}}
+{"at":"2026-11-14T18:43:56.148Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"lq\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:56.331Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:43:56.333Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:43:56.494Z","action":"keyboard-event","day":15,"title":"Water in the hold","choice":"yield","choiceText":"2\nJettison 1 Dreamsilk\nUsual value ¤9,800; the eventual sale price may differ. Keep your cash.","text":"LEAK\nWater in the hold\n\nA loose plank lets water into a stack of 1 Dreamsilk. Buy an emergency patch or jettison the stack before the rest gets wet.\n\n1\nPatch the leak · ¤5,880\nNot enough cash aboard for the patch.\n2\nJettison 1 Dreamsilk\nUsual value ¤9,800; the eventual sale price may differ. Keep your cash."}
+{"at":"2026-11-14T18:43:56.750Z","action":"keyboard-focus","selector":"#modal [data-choice=\"yield\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"2Jettison 1 DreamsilkUsual value ¤9,800; the "}}
+{"at":"2026-11-14T18:43:56.752Z","action":"keyboard-activate","selector":"#modal [data-choice=\"yield\"]","key":"Space"}
+{"at":"2026-11-14T18:43:58.055Z","action":"keyboard-focus","selector":"#tab-market","presses":17,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:58.056Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:43:58.305Z","action":"keyboard-focus","selector":".row[data-g=\"kelp\"]","presses":4,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Glowkelp×8 +43%Copperhook +20% seen · tonight"}}
+{"at":"2026-11-14T18:43:58.307Z","action":"keyboard-activate","selector":".row[data-g=\"kelp\"]","key":"Enter"}
+{"at":"2026-11-14T18:43:58.615Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:43:58.621Z","action":"keyboard-type","selector":"#qin","text":"8"}
+{"at":"2026-11-14T18:43:58.819Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 8 for ¤400"}}
+{"at":"2026-11-14T18:43:58.820Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:43:58.961Z","action":"trade-result","id":"kelp","mode":"sell","q":8,"cashBefore":2799,"cashAfter":3199,"ownedBefore":8,"ownedAfter":0}
+{"at":"2026-11-14T18:43:59.658Z","action":"keyboard-focus","selector":"#tab-harbor","presses":35,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:43:59.659Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:43:59.840Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:43:59.841Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:00.074Z","action":"plan","day":15,"loc":"lq","id":"sl","buys":[{"id":"eels","q":1,"cost":1469,"expectedPrice":1854}],"score":7355.084000000001,"expectedGain":8325}
+{"at":"2026-11-14T18:44:00.366Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":12,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Clockwork EelsBargainOrchid +50% seen · tonig"}}
+{"at":"2026-11-14T18:44:00.367Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:00.678Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:00.684Z","action":"keyboard-type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T18:44:00.860Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 1 for ¤1,469"}}
+{"at":"2026-11-14T18:44:00.861Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:01.007Z","action":"trade-result","id":"eels","mode":"buy","q":1,"cashBefore":3199,"cashAfter":1730,"ownedBefore":0,"ownedAfter":1}
+{"at":"2026-11-14T18:44:01.009Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:44:01.606Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"sl\"]","presses":32,"target":{"tag":"g","id":"","cls":"node","text":"The Sluices\n      \n      +76%"}}
+{"at":"2026-11-14T18:44:01.608Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"sl\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:01.776Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:44:01.777Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:44:01.919Z","action":"keyboard-event","day":15,"title":"The Gull Gang!","choice":"pay","choiceText":"3\nPay the toll · ¤1,775\nYour purse is light, so they take about ¤45 of cargo too.","text":"AMBUSH IN THE NARROWS\nThe Gull Gang!\n\nA net drops across the canal ahead. 2 Gull Gang skiffs wait behind it, oars up, grinning.\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤12.2k\n1\nRun for it\n39% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nPay the toll · ¤1,775\nYour purse is light, so they take about ¤45 of cargo too."}
+{"at":"2026-11-14T18:44:02.057Z","action":"keyboard-focus","selector":"#modal [data-choice=\"pay\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"3Pay the toll · ¤1,775Your purse is light, so"}}
+{"at":"2026-11-14T18:44:02.059Z","action":"keyboard-activate","selector":"#modal [data-choice=\"pay\"]","key":"Space"}
+{"at":"2026-11-14T18:44:02.199Z","action":"keyboard-event","day":15,"title":"Toll paid","choice":"ok","choiceText":"1\nContinue","text":"PAID\nToll paid\n\nThey count your ¤1,730 twice. The rest is taken in kind: 1 Clockwork Eels. They melt back into the dark.\n\n1\nContinue"}
+{"at":"2026-11-14T18:44:02.317Z","action":"keyboard-focus","selector":"#modal [data-choice=\"ok\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Continue"}}
+{"at":"2026-11-14T18:44:02.318Z","action":"keyboard-activate","selector":"#modal [data-choice=\"ok\"]","key":"Space"}
+{"at":"2026-11-14T18:44:03.272Z","action":"keyboard-focus","selector":"#tab-market","presses":14,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:03.273Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:03.627Z","action":"keyboard-focus","selector":".row[data-g=\"silk\"]","presses":10,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Dreamsilk×1 +51%Usually imported here\n      \n"}}
+{"at":"2026-11-14T18:44:03.628Z","action":"keyboard-activate","selector":".row[data-g=\"silk\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:03.879Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:03.884Z","action":"keyboard-type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T18:44:04.065Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 1 for ¤11,659"}}
+{"at":"2026-11-14T18:44:04.066Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:04.208Z","action":"trade-result","id":"silk","mode":"sell","q":1,"cashBefore":0,"cashAfter":11659,"ownedBefore":1,"ownedAfter":0}
+{"at":"2026-11-14T18:44:04.839Z","action":"keyboard-focus","selector":"#tab-harbor","presses":36,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 1"}}
+{"at":"2026-11-14T18:44:04.841Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:44:05.021Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:05.022Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:05.150Z","action":"plan","day":16,"loc":"sl","id":"ch","buys":[{"id":"chips","q":2,"cost":8920,"expectedPrice":5174},{"id":"kelp","q":28,"cost":756,"expectedPrice":62}],"score":5011.97392,"expectedGain":2414}
+{"at":"2026-11-14T18:44:05.399Z","action":"keyboard-focus","selector":".row[data-g=\"chips\"]","presses":14,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Ghost ChipsExchange +26% seen · tonight\n     "}}
+{"at":"2026-11-14T18:44:05.400Z","action":"keyboard-activate","selector":".row[data-g=\"chips\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:05.695Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:05.701Z","action":"keyboard-type","selector":"#qin","text":"2"}
+{"at":"2026-11-14T18:44:05.900Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 2 for ¤8,920"}}
+{"at":"2026-11-14T18:44:05.902Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:06.044Z","action":"trade-result","id":"chips","mode":"buy","q":2,"cashBefore":11659,"cashAfter":2739,"ownedBefore":0,"ownedAfter":2}
+{"at":"2026-11-14T18:44:06.893Z","action":"keyboard-focus","selector":".row[data-g=\"kelp\"]","presses":33,"target":{"tag":"DIV","id":"","cls":"row  ","text":"GlowkelpBargainCopperhook +141% seen · tonigh"}}
+{"at":"2026-11-14T18:44:06.894Z","action":"keyboard-activate","selector":".row[data-g=\"kelp\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:07.206Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:07.214Z","action":"keyboard-type","selector":"#qin","text":"28"}
+{"at":"2026-11-14T18:44:07.409Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 28 for ¤756"}}
+{"at":"2026-11-14T18:44:07.411Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:07.551Z","action":"trade-result","id":"kelp","mode":"buy","q":28,"cashBefore":2739,"cashAfter":1983,"ownedBefore":0,"ownedAfter":28}
+{"at":"2026-11-14T18:44:07.554Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:44:08.109Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"ch\"]","presses":28,"target":{"tag":"g","id":"","cls":"node","text":"Copperhook Docks\n      \n      +141%"}}
+{"at":"2026-11-14T18:44:08.110Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"ch\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:08.283Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:44:08.284Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:44:09.744Z","action":"keyboard-focus","selector":"#tab-market","presses":31,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:09.745Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:09.963Z","action":"keyboard-focus","selector":".row[data-g=\"kelp\"]","presses":4,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Glowkelp×28 +104%Pricey\n      \n  \n      ¤55+3"}}
+{"at":"2026-11-14T18:44:09.965Z","action":"keyboard-activate","selector":".row[data-g=\"kelp\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:10.258Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:10.265Z","action":"keyboard-type","selector":"#qin","text":"28"}
+{"at":"2026-11-14T18:44:10.446Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 28 for ¤1,540"}}
+{"at":"2026-11-14T18:44:10.448Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:10.605Z","action":"trade-result","id":"kelp","mode":"sell","q":28,"cashBefore":1983,"cashAfter":3523,"ownedBefore":28,"ownedAfter":0}
+{"at":"2026-11-14T18:44:11.192Z","action":"keyboard-focus","selector":".row[data-g=\"chips\"]","presses":23,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Ghost Chips×2 +13%Exchange +28% seen · tonigh"}}
+{"at":"2026-11-14T18:44:11.194Z","action":"keyboard-activate","selector":".row[data-g=\"chips\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:11.504Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:11.509Z","action":"keyboard-type","selector":"#qin","text":"2"}
+{"at":"2026-11-14T18:44:11.721Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 2 for ¤10,046"}}
+{"at":"2026-11-14T18:44:11.722Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:11.864Z","action":"trade-result","id":"chips","mode":"sell","q":2,"cashBefore":3523,"cashAfter":13569,"ownedBefore":2,"ownedAfter":0}
+{"at":"2026-11-14T18:44:12.593Z","action":"keyboard-focus","selector":"#tab-harbor","presses":36,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 1"}}
+{"at":"2026-11-14T18:44:12.594Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:44:12.796Z","action":"keyboard-focus","selector":"#side-body [data-act=\"motor\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn amber sm","text":"¤4,500"}}
+{"at":"2026-11-14T18:44:12.797Z","action":"keyboard-activate","selector":"#side-body [data-act=\"motor\"]","key":"Space"}
+{"at":"2026-11-14T18:44:12.923Z","action":"keyboard-focus","selector":"#modal [data-choice=\"yes\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Buy · ¤4,500"}}
+{"at":"2026-11-14T18:44:12.924Z","action":"keyboard-activate","selector":"#modal [data-choice=\"yes\"]","key":"Space"}
+{"at":"2026-11-14T18:44:13.058Z","action":"upgrade","upgrade":"motor"}
+{"at":"2026-11-14T18:44:13.571Z","action":"keyboard-focus","selector":"#side-body [data-act=\"hold\"]","presses":20,"target":{"tag":"BUTTON","id":"","cls":"btn amber sm","text":"¤2,500"}}
+{"at":"2026-11-14T18:44:13.573Z","action":"keyboard-activate","selector":"#side-body [data-act=\"hold\"]","key":"Space"}
+{"at":"2026-11-14T18:44:13.712Z","action":"keyboard-focus","selector":"#modal [data-choice=\"yes\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Buy · ¤2,500"}}
+{"at":"2026-11-14T18:44:13.713Z","action":"keyboard-activate","selector":"#modal [data-choice=\"yes\"]","key":"Space"}
+{"at":"2026-11-14T18:44:13.848Z","action":"upgrade","upgrade":"hold"}
+{"at":"2026-11-14T18:44:13.911Z","action":"keyboard-focus","selector":"#tab-market","presses":3,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:13.912Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:14.053Z","action":"plan","day":17,"loc":"ch","id":"fm","buys":[{"id":"saffron","q":6,"cost":4848,"expectedPrice":2571},{"id":"pearl","q":1,"cost":380,"expectedPrice":458},{"id":"rain","q":3,"cost":324,"expectedPrice":123}],"score":8938.2768,"expectedGain":10699}
+{"at":"2026-11-14T18:44:14.252Z","action":"keyboard-focus","selector":".row[data-g=\"saffron\"]","presses":10,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Synth SaffronCheapFogmouth +256% seen · tonig"}}
+{"at":"2026-11-14T18:44:14.253Z","action":"keyboard-activate","selector":".row[data-g=\"saffron\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:14.560Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:14.567Z","action":"keyboard-type","selector":"#qin","text":"6"}
+{"at":"2026-11-14T18:44:14.766Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 6 for ¤4,848"}}
+{"at":"2026-11-14T18:44:14.767Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:14.908Z","action":"trade-result","id":"saffron","mode":"buy","q":6,"cashBefore":6569,"cashAfter":1721,"ownedBefore":0,"ownedAfter":6}
+{"at":"2026-11-14T18:44:15.667Z","action":"keyboard-focus","selector":".row[data-g=\"pearl\"]","presses":29,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Rust PearlsExchange +52% seen · tonight\n     "}}
+{"at":"2026-11-14T18:44:15.669Z","action":"keyboard-activate","selector":".row[data-g=\"pearl\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:15.964Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:15.970Z","action":"keyboard-type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T18:44:16.166Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 1 for ¤380"}}
+{"at":"2026-11-14T18:44:16.168Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:16.311Z","action":"trade-result","id":"pearl","mode":"buy","q":1,"cashBefore":1721,"cashAfter":1341,"ownedBefore":0,"ownedAfter":1}
+{"at":"2026-11-14T18:44:16.314Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:44:17.189Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"fm\"]","presses":34,"target":{"tag":"g","id":"","cls":"node","text":"Fogmouth\n      \n      !+256%"}}
+{"at":"2026-11-14T18:44:17.191Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"fm\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:17.375Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:44:17.377Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:44:18.121Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:18.122Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:18.402Z","action":"keyboard-focus","selector":".row[data-g=\"pearl\"]","presses":8,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Rust Pearls×1 +46%PriceyLanternquay +16% seen"}}
+{"at":"2026-11-14T18:44:18.404Z","action":"keyboard-activate","selector":".row[data-g=\"pearl\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:18.697Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:18.702Z","action":"keyboard-type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T18:44:18.900Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 1 for ¤554"}}
+{"at":"2026-11-14T18:44:18.901Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:19.041Z","action":"trade-result","id":"pearl","mode":"sell","q":1,"cashBefore":1341,"cashAfter":1895,"ownedBefore":1,"ownedAfter":0}
+{"at":"2026-11-14T18:44:19.769Z","action":"keyboard-focus","selector":".row[data-g=\"saffron\"]","presses":27,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Synth Saffron×6 +134%Fading surge\n      \n  \n "}}
+{"at":"2026-11-14T18:44:19.770Z","action":"keyboard-activate","selector":".row[data-g=\"saffron\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:20.049Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:20.058Z","action":"keyboard-type","selector":"#qin","text":"6"}
+{"at":"2026-11-14T18:44:20.237Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 6 for ¤11,358"}}
+{"at":"2026-11-14T18:44:20.239Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:20.381Z","action":"trade-result","id":"saffron","mode":"sell","q":6,"cashBefore":1895,"cashAfter":13253,"ownedBefore":6,"ownedAfter":0}
+{"at":"2026-11-14T18:44:20.391Z","action":"plan","day":18,"loc":"fm","id":"lq","buys":[{"id":"silk","q":1,"cost":8933,"expectedPrice":12430},{"id":"kelp","q":44,"cost":1584,"expectedPrice":54}],"score":4016.49908,"expectedGain":4300}
+{"at":"2026-11-14T18:44:20.998Z","action":"keyboard-focus","selector":".row[data-g=\"silk\"]","presses":22,"target":{"tag":"DIV","id":"","cls":"row  ","text":"DreamsilkSluices +71% seen · tonight\n      \n "}}
+{"at":"2026-11-14T18:44:21.000Z","action":"keyboard-activate","selector":".row[data-g=\"silk\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:21.309Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:21.316Z","action":"keyboard-type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T18:44:21.496Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 1 for ¤8,933"}}
+{"at":"2026-11-14T18:44:21.498Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:21.640Z","action":"trade-result","id":"silk","mode":"buy","q":1,"cashBefore":13253,"cashAfter":4320,"ownedBefore":0,"ownedAfter":1}
+{"at":"2026-11-14T18:44:22.526Z","action":"keyboard-focus","selector":".row[data-g=\"kelp\"]","presses":34,"target":{"tag":"DIV","id":"","cls":"row  ","text":"GlowkelpLanternquay +53% seen · tonight\n     "}}
+{"at":"2026-11-14T18:44:22.528Z","action":"keyboard-activate","selector":".row[data-g=\"kelp\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:22.821Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:22.829Z","action":"keyboard-type","selector":"#qin","text":"44"}
+{"at":"2026-11-14T18:44:23.053Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 44 for ¤1,584"}}
+{"at":"2026-11-14T18:44:23.055Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:23.195Z","action":"trade-result","id":"kelp","mode":"buy","q":44,"cashBefore":4320,"cashAfter":2736,"ownedBefore":0,"ownedAfter":44}
+{"at":"2026-11-14T18:44:23.198Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:44:23.631Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"lq\"]","presses":23,"target":{"tag":"g","id":"","cls":"node","text":"Lanternquay\n      \n      +53%"}}
+{"at":"2026-11-14T18:44:23.633Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"lq\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:23.801Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:44:23.804Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:44:23.959Z","action":"keyboard-event","day":19,"title":"A gull takes your purse","choice":"pay","choiceText":"2\nLet the bag go · ¤274\nCertain cash loss. Your hull and cargo stay safe.","text":"THIEF!\nA gull takes your purse\n\nA trained grey gull snags a bag containing ¤274. Its tether catches your wrist. You can grab the bag, but the skiff is drifting toward the stone quay.\n\n1\nReach for the bag\n70% chance to keep it. On failure, lose ¤274 and 10% hull (you have 100%).\n2\nLet the bag go · ¤274\nCertain cash loss. Your hull and cargo stay safe."}
+{"at":"2026-11-14T18:44:23.986Z","action":"keyboard-focus","selector":"#modal [data-choice=\"pay\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"2Let the bag go · ¤274Certain cash loss. Your"}}
+{"at":"2026-11-14T18:44:23.988Z","action":"keyboard-activate","selector":"#modal [data-choice=\"pay\"]","key":"Space"}
+{"at":"2026-11-14T18:44:25.134Z","action":"keyboard-focus","selector":"#tab-market","presses":15,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:25.135Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:25.382Z","action":"keyboard-focus","selector":".row[data-g=\"kelp\"]","presses":4,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Glowkelp×44 +64%Pricey\n      \n  \n      ¤59+40"}}
+{"at":"2026-11-14T18:44:25.383Z","action":"keyboard-activate","selector":".row[data-g=\"kelp\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:25.707Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:25.717Z","action":"keyboard-type","selector":"#qin","text":"44"}
+{"at":"2026-11-14T18:44:25.940Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 44 for ¤2,596"}}
+{"at":"2026-11-14T18:44:25.941Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:26.081Z","action":"trade-result","id":"kelp","mode":"sell","q":44,"cashBefore":2462,"cashAfter":5058,"ownedBefore":44,"ownedAfter":0}
+{"at":"2026-11-14T18:44:26.919Z","action":"keyboard-focus","selector":".row[data-g=\"silk\"]","presses":22,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Dreamsilk×1 +43%PriceyOrchid +16% seen · toni"}}
+{"at":"2026-11-14T18:44:26.921Z","action":"keyboard-activate","selector":".row[data-g=\"silk\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:27.230Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:27.236Z","action":"keyboard-type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T18:44:27.465Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 1 for ¤12,795"}}
+{"at":"2026-11-14T18:44:27.467Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:27.624Z","action":"trade-result","id":"silk","mode":"sell","q":1,"cashBefore":5058,"cashAfter":17853,"ownedBefore":1,"ownedAfter":0}
+{"at":"2026-11-14T18:44:28.630Z","action":"keyboard-focus","selector":"#tab-harbor","presses":35,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:44:28.632Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:44:28.819Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:28.821Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:28.964Z","action":"plan","day":19,"loc":"lq","id":"de","buys":[{"id":"eels","q":7,"cost":14119,"expectedPrice":7452}],"score":35023.748400000004,"expectedGain":38044}
+{"at":"2026-11-14T18:44:29.226Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":11,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Clockwork EelsCheapExchange +311% seen · toni"}}
+{"at":"2026-11-14T18:44:29.227Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:29.572Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:29.579Z","action":"keyboard-type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T18:44:29.758Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 7 for ¤14,119"}}
+{"at":"2026-11-14T18:44:29.760Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:29.966Z","action":"trade-result","id":"eels","mode":"buy","q":7,"cashBefore":17853,"cashAfter":3734,"ownedBefore":0,"ownedAfter":7}
+{"at":"2026-11-14T18:44:29.978Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:44:30.839Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"de\"]","presses":29,"target":{"tag":"g","id":"","cls":"node","text":"Drowned Exchange\n      \n      !+311%"}}
+{"at":"2026-11-14T18:44:30.841Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"de\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:31.041Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:44:31.042Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:44:31.863Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:31.864Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:32.313Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":11,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Clockwork Eels×7 +141%Fleet callFading surge\n"}}
+{"at":"2026-11-14T18:44:32.314Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:32.638Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:32.645Z","action":"keyboard-type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T18:44:32.916Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 7 for ¤34,076"}}
+{"at":"2026-11-14T18:44:32.918Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:33.072Z","action":"trade-result","id":"eels","mode":"sell","q":7,"cashBefore":3734,"cashAfter":37810,"ownedBefore":7,"ownedAfter":0}
+{"at":"2026-11-14T18:44:34.005Z","action":"keyboard-focus","selector":"#tab-harbor","presses":36,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:44:34.006Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:44:34.190Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:34.191Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:34.481Z","action":"plan","day":20,"loc":"de","id":"ot","buys":[{"id":"ink","q":2,"cost":30248,"expectedPrice":21000},{"id":"saffron","q":2,"cost":1596,"expectedPrice":1294}],"score":11919.859999999999,"expectedGain":12744}
+{"at":"2026-11-14T18:44:34.874Z","action":"keyboard-focus","selector":".row[data-g=\"ink\"]","presses":17,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Moon InkCheapSluices +48% seen · tonight\n    "}}
+{"at":"2026-11-14T18:44:34.876Z","action":"keyboard-activate","selector":".row[data-g=\"ink\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:35.263Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:35.270Z","action":"keyboard-type","selector":"#qin","text":"2"}
+{"at":"2026-11-14T18:44:35.511Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 2 for ¤30,248"}}
+{"at":"2026-11-14T18:44:35.512Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:35.650Z","action":"trade-result","id":"ink","mode":"buy","q":2,"cashBefore":37810,"cashAfter":7562,"ownedBefore":0,"ownedAfter":2}
+{"at":"2026-11-14T18:44:36.689Z","action":"keyboard-focus","selector":".row[data-g=\"saffron\"]","presses":28,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Synth SaffronCheapOrchid +61% seen · tonight\n"}}
+{"at":"2026-11-14T18:44:36.691Z","action":"keyboard-activate","selector":".row[data-g=\"saffron\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:37.063Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:37.073Z","action":"keyboard-type","selector":"#qin","text":"2"}
+{"at":"2026-11-14T18:44:37.282Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 2 for ¤1,596"}}
+{"at":"2026-11-14T18:44:37.284Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:37.428Z","action":"trade-result","id":"saffron","mode":"buy","q":2,"cashBefore":7562,"cashAfter":5966,"ownedBefore":0,"ownedAfter":2}
+{"at":"2026-11-14T18:44:37.430Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:44:38.325Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"ot\"]","presses":30,"target":{"tag":"g","id":"","cls":"node","text":"Orchid Terraces\n      \n      +61%"}}
+{"at":"2026-11-14T18:44:38.327Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"ot\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:38.619Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:44:38.621Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:44:38.809Z","action":"keyboard-event","day":20,"title":"A squall comes off the sea","choice":"shelter","choiceText":"2\nShelter under the viaduct\nSafe, but you lose a whole night.","text":"WEATHER\nA squall comes off the sea\n\nBlack rain hammers the canal and the water starts to heave. Somewhere ahead, bridges are groaning.\n\n1\nPush through\nArrive on time, but lose 6 to 16% hull (you have 100%).\n2\nShelter under the viaduct\nSafe, but you lose a whole night."}
+{"at":"2026-11-14T18:44:38.975Z","action":"keyboard-focus","selector":"#modal [data-choice=\"shelter\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"2Shelter under the viaductSafe, but you lose "}}
+{"at":"2026-11-14T18:44:38.976Z","action":"keyboard-activate","selector":"#modal [data-choice=\"shelter\"]","key":"Space"}
+{"at":"2026-11-14T18:44:39.136Z","action":"keyboard-event","day":22,"title":"A crate bobs past","choice":"leave","choiceText":"2\nLeave it\nNot worth the trouble.","text":"FLOTSAM\nA crate bobs past\n\nA sealed crate stencilled with Synth Saffron marks drifts alongside. Nobody seems to be looking for it. Yet.\n\n1\nHaul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull).\n2\nLeave it\nNot worth the trouble."}
+{"at":"2026-11-14T18:44:39.177Z","action":"keyboard-focus","selector":"#modal [data-choice=\"leave\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"2Leave itNot worth the trouble."}}
+{"at":"2026-11-14T18:44:39.179Z","action":"keyboard-activate","selector":"#modal [data-choice=\"leave\"]","key":"Space"}
+{"at":"2026-11-14T18:44:40.326Z","action":"keyboard-focus","selector":"#tab-market","presses":17,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:40.328Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:40.718Z","action":"keyboard-focus","selector":".row[data-g=\"saffron\"]","presses":9,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Synth Saffron×2 +74%Usually imported here\n   "}}
+{"at":"2026-11-14T18:44:40.719Z","action":"keyboard-activate","selector":".row[data-g=\"saffron\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:41.107Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:41.116Z","action":"keyboard-type","selector":"#qin","text":"2"}
+{"at":"2026-11-14T18:44:41.357Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 2 for ¤2,780"}}
+{"at":"2026-11-14T18:44:41.359Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:41.501Z","action":"trade-result","id":"saffron","mode":"sell","q":2,"cashBefore":5966,"cashAfter":8746,"ownedBefore":2,"ownedAfter":0}
+{"at":"2026-11-14T18:44:42.233Z","action":"keyboard-focus","selector":".row[data-g=\"ink\"]","presses":21,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Moon Ink×2 +93%Pricey\n      \n  \n      ¤29,235"}}
+{"at":"2026-11-14T18:44:42.234Z","action":"keyboard-activate","selector":".row[data-g=\"ink\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:42.525Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:42.532Z","action":"keyboard-type","selector":"#qin","text":"2"}
+{"at":"2026-11-14T18:44:42.757Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 2 for ¤58,470"}}
+{"at":"2026-11-14T18:44:42.759Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:42.899Z","action":"trade-result","id":"ink","mode":"sell","q":2,"cashBefore":8746,"cashAfter":67216,"ownedBefore":2,"ownedAfter":0}
+{"at":"2026-11-14T18:44:42.910Z","action":"plan","day":22,"loc":"ot","id":"de","buys":[{"id":"pearl","q":24,"cost":11184,"expectedPrice":739}],"score":4755.289600000001,"expectedGain":6559}
+{"at":"2026-11-14T18:44:43.932Z","action":"keyboard-focus","selector":".row[data-g=\"pearl\"]","presses":31,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Rust PearlsExchange +71% seen · tonight\n     "}}
+{"at":"2026-11-14T18:44:43.934Z","action":"keyboard-activate","selector":".row[data-g=\"pearl\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:44.257Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:44.267Z","action":"keyboard-type","selector":"#qin","text":"24"}
+{"at":"2026-11-14T18:44:44.513Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 24 for ¤11,184"}}
+{"at":"2026-11-14T18:44:44.515Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:44.697Z","action":"trade-result","id":"pearl","mode":"buy","q":24,"cashBefore":67216,"cashAfter":56032,"ownedBefore":0,"ownedAfter":24}
+{"at":"2026-11-14T18:44:44.709Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:44:45.565Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"de\"]","presses":32,"target":{"tag":"g","id":"","cls":"node","text":"Drowned Exchange\n      \n      +71%"}}
+{"at":"2026-11-14T18:44:45.567Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"de\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:45.737Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:44:45.738Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:44:45.882Z","action":"keyboard-event","day":22,"title":"The Gull Gang!","choice":"pay","choiceText":"3\nPay the toll · ¤11,295\nAbout a fifth of your purse plus a cut of your cargo.","text":"AMBUSH IN THE NARROWS\nThe Gull Gang!\n\nA net drops across the canal ahead. 4 Gull Gang skiffs wait behind it, oars up, grinning.\n\nYour hull\n100%\nEnemy boats\n4\nCargo at stake\n¤10.1k\n1\nRun for it\n34% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n16% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nPay the toll · ¤11,295\nAbout a fifth of your purse plus a cut of your cargo."}
+{"at":"2026-11-14T18:44:45.907Z","action":"keyboard-focus","selector":"#modal [data-choice=\"pay\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"3Pay the toll · ¤11,295About a fifth of your "}}
+{"at":"2026-11-14T18:44:45.909Z","action":"keyboard-activate","selector":"#modal [data-choice=\"pay\"]","key":"Space"}
+{"at":"2026-11-14T18:44:46.051Z","action":"keyboard-event","day":22,"title":"Toll paid","choice":"ok","choiceText":"1\nContinue","text":"PAID\nToll paid\n\nThey count your ¤11,295 twice. They melt back into the dark.\n\n1\nContinue"}
+{"at":"2026-11-14T18:44:46.054Z","action":"keyboard-focus","selector":"#modal [data-choice=\"ok\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Continue"}}
+{"at":"2026-11-14T18:44:46.056Z","action":"keyboard-activate","selector":"#modal [data-choice=\"ok\"]","key":"Space"}
+{"at":"2026-11-14T18:44:47.295Z","action":"keyboard-focus","selector":"#tab-market","presses":17,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:47.297Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:47.680Z","action":"keyboard-focus","selector":".row[data-g=\"pearl\"]","presses":7,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Rust Pearls×24 +16%Usually imported here\n    "}}
+{"at":"2026-11-14T18:44:47.681Z","action":"keyboard-activate","selector":".row[data-g=\"pearl\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:47.976Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:47.985Z","action":"keyboard-type","selector":"#qin","text":"24"}
+{"at":"2026-11-14T18:44:48.284Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 24 for ¤13,008"}}
+{"at":"2026-11-14T18:44:48.286Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:48.428Z","action":"trade-result","id":"pearl","mode":"sell","q":24,"cashBefore":44737,"cashAfter":57745,"ownedBefore":24,"ownedAfter":0}
+{"at":"2026-11-14T18:44:48.457Z","action":"keyboard-focus","selector":"#tab-harbor","presses":1,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:44:48.458Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:44:48.659Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:48.660Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:48.821Z","action":"plan","day":23,"loc":"de","id":"ot","buys":[{"id":"chips","q":7,"cost":27209,"expectedPrice":5044},{"id":"saffron","q":21,"cost":17262,"expectedPrice":1298}],"score":16884.225,"expectedGain":18095}
+{"at":"2026-11-14T18:44:49.200Z","action":"keyboard-focus","selector":".row[data-g=\"chips\"]","presses":13,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Ghost ChipsCheapSluices +30% seen · tonight\n "}}
+{"at":"2026-11-14T18:44:49.202Z","action":"keyboard-activate","selector":".row[data-g=\"chips\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:49.560Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:49.567Z","action":"keyboard-type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T18:44:49.793Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 7 for ¤27,209"}}
+{"at":"2026-11-14T18:44:49.795Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:49.978Z","action":"trade-result","id":"chips","mode":"buy","q":7,"cashBefore":57745,"cashAfter":30536,"ownedBefore":0,"ownedAfter":7}
+{"at":"2026-11-14T18:44:50.898Z","action":"keyboard-focus","selector":".row[data-g=\"saffron\"]","presses":28,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Synth SaffronCheapOrchid +57% seen · tonight\n"}}
+{"at":"2026-11-14T18:44:50.899Z","action":"keyboard-activate","selector":".row[data-g=\"saffron\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:51.270Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:51.279Z","action":"keyboard-type","selector":"#qin","text":"21"}
+{"at":"2026-11-14T18:44:51.520Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 21 for ¤17,262"}}
+{"at":"2026-11-14T18:44:51.521Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:51.679Z","action":"trade-result","id":"saffron","mode":"buy","q":21,"cashBefore":30536,"cashAfter":13274,"ownedBefore":0,"ownedAfter":21}
+{"at":"2026-11-14T18:44:51.682Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:44:52.425Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"ot\"]","presses":30,"target":{"tag":"g","id":"","cls":"node","text":"Orchid Terraces\n      \n      +57%"}}
+{"at":"2026-11-14T18:44:52.427Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"ot\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:52.613Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:44:52.615Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:44:52.757Z","action":"keyboard-event","day":23,"title":"Tidewarden cutter!","choice":"bribe","choiceText":"3\nBribe the sergeant · ¤6,242\nGuaranteed. The price follows your purse and your cargo.","text":"SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA whistle shrieks across the water. 3 cutters of the Tidewarden watch close in from both banks.\n\nYour hull\n100%\nEnemy boats\n3\nCargo at stake\n¤59.5k\n1\nRun for it\n39% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n19% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nBribe the sergeant · ¤6,242\nGuaranteed. The price follows your purse and your cargo.\n4\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."}
+{"at":"2026-11-14T18:44:52.799Z","action":"keyboard-focus","selector":"#modal [data-choice=\"bribe\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"3Bribe the sergeant · ¤6,242Guaranteed. The p"}}
+{"at":"2026-11-14T18:44:52.801Z","action":"keyboard-activate","selector":"#modal [data-choice=\"bribe\"]","key":"Space"}
+{"at":"2026-11-14T18:44:52.944Z","action":"keyboard-event","day":23,"title":"Papers in order","choice":"ok","choiceText":"1\nContinue","text":"BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤6,242, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\n1\nContinue"}
+{"at":"2026-11-14T18:44:52.952Z","action":"keyboard-focus","selector":"#modal [data-choice=\"ok\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Continue"}}
+{"at":"2026-11-14T18:44:52.954Z","action":"keyboard-activate","selector":"#modal [data-choice=\"ok\"]","key":"Space"}
+{"at":"2026-11-14T18:44:53.923Z","action":"keyboard-focus","selector":"#tab-market","presses":17,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:44:53.924Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:44:54.356Z","action":"keyboard-focus","selector":".row[data-g=\"saffron\"]","presses":10,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Synth Saffron×21 +44%Usually imported here\n  "}}
+{"at":"2026-11-14T18:44:54.357Z","action":"keyboard-activate","selector":".row[data-g=\"saffron\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:54.716Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:54.728Z","action":"keyboard-type","selector":"#qin","text":"21"}
+{"at":"2026-11-14T18:44:54.949Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 21 for ¤24,864"}}
+{"at":"2026-11-14T18:44:54.951Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:55.145Z","action":"trade-result","id":"saffron","mode":"sell","q":21,"cashBefore":7032,"cashAfter":31896,"ownedBefore":21,"ownedAfter":0}
+{"at":"2026-11-14T18:44:55.177Z","action":"plan","day":24,"loc":"ot","id":"de","buys":[{"id":"chips","q":7,"cost":25816,"expectedPrice":5855},{"id":"pearl","q":3,"cost":1203,"expectedPrice":597},{"id":"kelp","q":3,"cost":87,"expectedPrice":39}],"score":28152.871200000016,"expectedGain":30958}
+{"at":"2026-11-14T18:44:55.991Z","action":"keyboard-focus","selector":".row[data-g=\"chips\"]","presses":26,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Ghost Chips×7 -5%CheapSluices +59% seen · ton"}}
+{"at":"2026-11-14T18:44:55.992Z","action":"keyboard-activate","selector":".row[data-g=\"chips\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:56.288Z","action":"keyboard-focus","selector":"#modal [data-mode=\"buy\"]","presses":3,"target":{"tag":"BUTTON","id":"","cls":"b","text":"Buy B"}}
+{"at":"2026-11-14T18:44:56.290Z","action":"keyboard-activate","selector":"#modal [data-mode=\"buy\"]","key":"Space"}
+{"at":"2026-11-14T18:44:56.521Z","action":"keyboard-focus","selector":"#qin","presses":3,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:56.528Z","action":"keyboard-type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T18:44:56.725Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 7 for ¤25,816"}}
+{"at":"2026-11-14T18:44:56.727Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:56.872Z","action":"trade-result","id":"chips","mode":"buy","q":7,"cashBefore":31896,"cashAfter":6080,"ownedBefore":7,"ownedAfter":14}
+{"at":"2026-11-14T18:44:57.845Z","action":"keyboard-focus","selector":".row[data-g=\"pearl\"]","presses":30,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Rust PearlsExchange +54% seen · tonight\n     "}}
+{"at":"2026-11-14T18:44:57.846Z","action":"keyboard-activate","selector":".row[data-g=\"pearl\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:58.189Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:44:58.195Z","action":"keyboard-type","selector":"#qin","text":"3"}
+{"at":"2026-11-14T18:44:58.408Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 3 for ¤1,203"}}
+{"at":"2026-11-14T18:44:58.410Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:44:58.565Z","action":"trade-result","id":"pearl","mode":"buy","q":3,"cashBefore":6080,"cashAfter":4877,"ownedBefore":0,"ownedAfter":3}
+{"at":"2026-11-14T18:44:58.570Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:44:59.296Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"de\"]","presses":32,"target":{"tag":"g","id":"","cls":"node","text":"Drowned Exchange\n      \n      +54%"}}
+{"at":"2026-11-14T18:44:59.297Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"de\"]","key":"Enter"}
+{"at":"2026-11-14T18:44:59.483Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:44:59.484Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:45:00.279Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:45:00.280Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:45:00.573Z","action":"keyboard-focus","selector":".row[data-g=\"pearl\"]","presses":8,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Rust Pearls×3 +41%Pricey\n      \n  \n      ¤566"}}
+{"at":"2026-11-14T18:45:00.575Z","action":"keyboard-activate","selector":".row[data-g=\"pearl\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:00.947Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:00.955Z","action":"keyboard-type","selector":"#qin","text":"3"}
+{"at":"2026-11-14T18:45:01.136Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 3 for ¤1,698"}}
+{"at":"2026-11-14T18:45:01.138Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:01.277Z","action":"trade-result","id":"pearl","mode":"sell","q":3,"cashBefore":4877,"cashAfter":6575,"ownedBefore":3,"ownedAfter":0}
+{"at":"2026-11-14T18:45:02.069Z","action":"keyboard-focus","selector":".row[data-g=\"chips\"]","presses":24,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Ghost Chips×14 +31%Usually imported here\n    "}}
+{"at":"2026-11-14T18:45:02.071Z","action":"keyboard-activate","selector":".row[data-g=\"chips\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:02.398Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:02.407Z","action":"keyboard-type","selector":"#qin","text":"14"}
+{"at":"2026-11-14T18:45:02.692Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 14 for ¤68,237"}}
+{"at":"2026-11-14T18:45:02.693Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:02.838Z","action":"trade-result","id":"chips","mode":"sell","q":14,"cashBefore":6575,"cashAfter":74812,"ownedBefore":14,"ownedAfter":0}
+{"at":"2026-11-14T18:45:03.750Z","action":"keyboard-focus","selector":"#tab-harbor","presses":36,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:45:03.771Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:45:03.949Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:45:03.950Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:45:04.199Z","action":"plan","day":25,"loc":"de","id":"ot","buys":[{"id":"silk","q":5,"cost":52935,"expectedPrice":13803},{"id":"chips","q":1,"cost":4303,"expectedPrice":4929},{"id":"saffron","q":10,"cost":7200,"expectedPrice":975}],"score":17831.217999999993,"expectedGain":19253}
+{"at":"2026-11-14T18:45:04.692Z","action":"keyboard-focus","selector":".row[data-g=\"silk\"]","presses":16,"target":{"tag":"DIV","id":"","cls":"row  ","text":"DreamsilkOrchid +23% seen · tonight\n      \n  "}}
+{"at":"2026-11-14T18:45:04.697Z","action":"keyboard-activate","selector":".row[data-g=\"silk\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:05.019Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:05.027Z","action":"keyboard-type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T18:45:05.220Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 5 for ¤52,935"}}
+{"at":"2026-11-14T18:45:05.221Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:05.415Z","action":"trade-result","id":"silk","mode":"buy","q":5,"cashBefore":74812,"cashAfter":21877,"ownedBefore":0,"ownedAfter":5}
+{"at":"2026-11-14T18:45:06.168Z","action":"keyboard-focus","selector":".row[data-g=\"chips\"]","presses":25,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Ghost ChipsYou sold it downCheapCopperhook +2"}}
+{"at":"2026-11-14T18:45:06.170Z","action":"keyboard-activate","selector":".row[data-g=\"chips\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:06.464Z","action":"keyboard-focus","selector":"#qin","presses":5,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:06.473Z","action":"keyboard-type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T18:45:06.758Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 1 for ¤4,303"}}
+{"at":"2026-11-14T18:45:06.760Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:06.915Z","action":"trade-result","id":"chips","mode":"buy","q":1,"cashBefore":21877,"cashAfter":17574,"ownedBefore":0,"ownedAfter":1}
+{"at":"2026-11-14T18:45:06.918Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:45:07.754Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"ot\"]","presses":32,"target":{"tag":"g","id":"","cls":"node","text":"Orchid Terraces\n      \n      FFleet call: Dre"}}
+{"at":"2026-11-14T18:45:07.755Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"ot\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:07.959Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:45:07.961Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:45:08.104Z","action":"keyboard-event","day":25,"title":"Tidewarden cutter!","choice":"bribe","choiceText":"3\nBribe the sergeant · ¤6,051\nGuaranteed. The price follows your purse and your cargo.","text":"SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA squadron of 2 Tidewarden cutters swing out of the dark, lamps blazing. \"Heave to for inspection!\"\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤54.2k\n1\nRun for it\n53% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nBribe the sergeant · ¤6,051\nGuaranteed. The price follows your purse and your cargo.\n4\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."}
+{"at":"2026-11-14T18:45:08.160Z","action":"keyboard-focus","selector":"#modal [data-choice=\"bribe\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"3Bribe the sergeant · ¤6,051Guaranteed. The p"}}
+{"at":"2026-11-14T18:45:08.162Z","action":"keyboard-activate","selector":"#modal [data-choice=\"bribe\"]","key":"Space"}
+{"at":"2026-11-14T18:45:08.303Z","action":"keyboard-event","day":25,"title":"Papers in order","choice":"ok","choiceText":"1\nContinue","text":"BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤6,051, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\n1\nContinue"}
+{"at":"2026-11-14T18:45:08.308Z","action":"keyboard-focus","selector":"#modal [data-choice=\"ok\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Continue"}}
+{"at":"2026-11-14T18:45:08.310Z","action":"keyboard-activate","selector":"#modal [data-choice=\"ok\"]","key":"Space"}
+{"at":"2026-11-14T18:45:09.328Z","action":"keyboard-focus","selector":"#tab-market","presses":17,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:45:09.329Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:45:09.855Z","action":"keyboard-focus","selector":".row[data-g=\"chips\"]","presses":13,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Ghost Chips×1 +3%\n      \n  \n      ¤4,431−15% "}}
+{"at":"2026-11-14T18:45:09.857Z","action":"keyboard-activate","selector":".row[data-g=\"chips\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:10.229Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:10.236Z","action":"keyboard-type","selector":"#qin","text":"1"}
+{"at":"2026-11-14T18:45:10.431Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 1 for ¤4,431"}}
+{"at":"2026-11-14T18:45:10.434Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:10.648Z","action":"trade-result","id":"chips","mode":"sell","q":1,"cashBefore":11523,"cashAfter":15954,"ownedBefore":1,"ownedAfter":0}
+{"at":"2026-11-14T18:45:11.409Z","action":"keyboard-focus","selector":".row[data-g=\"silk\"]","presses":23,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Dreamsilk×5 +32%Fleet callPricey\n      \n  \n  "}}
+{"at":"2026-11-14T18:45:11.410Z","action":"keyboard-activate","selector":".row[data-g=\"silk\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:11.704Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:11.713Z","action":"keyboard-type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T18:45:12.016Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 5 for ¤69,800"}}
+{"at":"2026-11-14T18:45:12.018Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:12.175Z","action":"trade-result","id":"silk","mode":"sell","q":5,"cashBefore":15954,"cashAfter":85754,"ownedBefore":5,"ownedAfter":0}
+{"at":"2026-11-14T18:45:12.186Z","action":"plan","day":26,"loc":"ot","id":"de","buys":[{"id":"eels","q":10,"cost":14030,"expectedPrice":4924},{"id":"rain","q":35,"cost":4620,"expectedPrice":158}],"score":31991.6,"expectedGain":36120}
+{"at":"2026-11-14T18:45:13.044Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":27,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Clockwork EelsGlutExchange +287% seen · tonig"}}
+{"at":"2026-11-14T18:45:13.075Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:13.367Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:13.375Z","action":"keyboard-type","selector":"#qin","text":"10"}
+{"at":"2026-11-14T18:45:13.662Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 10 for ¤14,030"}}
+{"at":"2026-11-14T18:45:13.663Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:13.804Z","action":"trade-result","id":"eels","mode":"buy","q":10,"cashBefore":85754,"cashAfter":71724,"ownedBefore":0,"ownedAfter":10}
+{"at":"2026-11-14T18:45:14.826Z","action":"keyboard-focus","selector":".row[data-g=\"rain\"]","presses":33,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Bottled RainSaint Mire +50% seen · tonight\n  "}}
+{"at":"2026-11-14T18:45:14.828Z","action":"keyboard-activate","selector":".row[data-g=\"rain\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:15.105Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:15.113Z","action":"keyboard-type","selector":"#qin","text":"35"}
+{"at":"2026-11-14T18:45:15.432Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 35 for ¤4,620"}}
+{"at":"2026-11-14T18:45:15.434Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:15.577Z","action":"trade-result","id":"rain","mode":"buy","q":35,"cashBefore":71724,"cashAfter":67104,"ownedBefore":0,"ownedAfter":35}
+{"at":"2026-11-14T18:45:15.580Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:45:16.387Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"de\"]","presses":26,"target":{"tag":"g","id":"","cls":"node","text":"Drowned Exchange\n      \n      +287%"}}
+{"at":"2026-11-14T18:45:16.388Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"de\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:16.589Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:45:16.591Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:45:18.424Z","action":"keyboard-focus","selector":"#tab-market","presses":31,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:45:18.426Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:45:18.798Z","action":"keyboard-focus","selector":".row[data-g=\"rain\"]","presses":5,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Bottled Rain×35 +18%\n      \n  \n      ¤156+20%"}}
+{"at":"2026-11-14T18:45:18.799Z","action":"keyboard-activate","selector":".row[data-g=\"rain\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:19.140Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:19.149Z","action":"keyboard-type","selector":"#qin","text":"35"}
+{"at":"2026-11-14T18:45:19.484Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 35 for ¤5,460"}}
+{"at":"2026-11-14T18:45:19.486Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:19.643Z","action":"trade-result","id":"rain","mode":"sell","q":35,"cashBefore":67104,"cashAfter":72564,"ownedBefore":35,"ownedAfter":0}
+{"at":"2026-11-14T18:45:20.675Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":28,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Clockwork Eels×10 +243%Pricey\n      \n  \n     "}}
+{"at":"2026-11-14T18:45:20.687Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:21.025Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:21.035Z","action":"keyboard-type","selector":"#qin","text":"10"}
+{"at":"2026-11-14T18:45:21.259Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 10 for ¤48,180"}}
+{"at":"2026-11-14T18:45:21.260Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:21.443Z","action":"trade-result","id":"eels","mode":"sell","q":10,"cashBefore":72564,"cashAfter":120744,"ownedBefore":10,"ownedAfter":0}
+{"at":"2026-11-14T18:45:22.586Z","action":"keyboard-focus","selector":"#tab-harbor","presses":36,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:45:22.587Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:45:22.788Z","action":"keyboard-focus","selector":"#side-body [data-act=\"deposit\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"btn teal","text":"Deposit"}}
+{"at":"2026-11-14T18:45:22.790Z","action":"keyboard-activate","selector":"#side-body [data-act=\"deposit\"]","key":"Space"}
+{"at":"2026-11-14T18:45:22.991Z","action":"keyboard-focus","selector":"#ain","presses":2,"target":{"tag":"INPUT","id":"ain","cls":"","text":""}}
+{"at":"2026-11-14T18:45:23.005Z","action":"keyboard-type","selector":"#ain","text":"42446"}
+{"at":"2026-11-14T18:45:23.163Z","action":"keyboard-focus","selector":"#ago","presses":2,"target":{"tag":"BUTTON","id":"ago","cls":"btn lg teal","text":"Deposit ¤42,446"}}
+{"at":"2026-11-14T18:45:23.165Z","action":"keyboard-activate","selector":"#ago","key":"Space"}
+{"at":"2026-11-14T18:45:23.303Z","action":"service","service":"deposit","amount":42446}
+{"at":"2026-11-14T18:45:23.445Z","action":"keyboard-focus","selector":"#tab-market","presses":2,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:45:23.447Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:45:23.591Z","action":"plan","day":27,"loc":"de","id":"ot","buys":[{"id":"saffron","q":20,"cost":17080,"expectedPrice":1176}],"score":5423.9,"expectedGain":6432}
+{"at":"2026-11-14T18:45:23.880Z","action":"keyboard-focus","selector":".row[data-g=\"saffron\"]","presses":9,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Synth SaffronCheapOrchid +33% seen · tonight\n"}}
+{"at":"2026-11-14T18:45:23.882Z","action":"keyboard-activate","selector":".row[data-g=\"saffron\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:24.243Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:24.255Z","action":"keyboard-type","selector":"#qin","text":"20"}
+{"at":"2026-11-14T18:45:24.477Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 20 for ¤17,080"}}
+{"at":"2026-11-14T18:45:24.479Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:24.636Z","action":"trade-result","id":"saffron","mode":"buy","q":20,"cashBefore":78298,"cashAfter":61218,"ownedBefore":0,"ownedAfter":20}
+{"at":"2026-11-14T18:45:24.639Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:45:25.641Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"ot\"]","presses":31,"target":{"tag":"g","id":"","cls":"node","text":"Orchid Terraces\n      \n      FFleet call: Dre"}}
+{"at":"2026-11-14T18:45:25.643Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"ot\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:25.831Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:45:25.833Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:45:25.976Z","action":"keyboard-event","day":27,"title":"Tidewarden cutter!","choice":"bribe","choiceText":"3\nBribe the sergeant · ¤8,162\nGuaranteed. The price follows your purse and your cargo.","text":"SEARCHLIGHTS ON THE WATER\nTidewarden cutter!\n\nA whistle shrieks across the water. 2 cutters of the Tidewarden watch close in from both banks.\n\nYour hull\n100%\nEnemy boats\n2\nCargo at stake\n¤22.0k\n1\nRun for it\n48% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo.\n2\nFight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights.\n3\nBribe the sergeant · ¤8,162\nGuaranteed. The price follows your purse and your cargo.\n4\nHeave to and be searched\nThey seize half of every cargo and any sealed parcels."}
+{"at":"2026-11-14T18:45:26.032Z","action":"keyboard-focus","selector":"#modal [data-choice=\"bribe\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"choice ","text":"3Bribe the sergeant · ¤8,162Guaranteed. The p"}}
+{"at":"2026-11-14T18:45:26.034Z","action":"keyboard-activate","selector":"#modal [data-choice=\"bribe\"]","key":"Space"}
+{"at":"2026-11-14T18:45:26.179Z","action":"keyboard-event","day":27,"title":"Papers in order","choice":"ok","choiceText":"1\nContinue","text":"BRIBE ACCEPTED\nPapers in order\n\nThe sergeant pockets ¤8,162, stamps nothing, and waves you on. \"Mind the fog, citizen.\"\n\n1\nContinue"}
+{"at":"2026-11-14T18:45:26.196Z","action":"keyboard-focus","selector":"#modal [data-choice=\"ok\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Continue"}}
+{"at":"2026-11-14T18:45:26.203Z","action":"keyboard-activate","selector":"#modal [data-choice=\"ok\"]","key":"Space"}
+{"at":"2026-11-14T18:45:27.371Z","action":"keyboard-focus","selector":"#tab-market","presses":17,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:45:27.373Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:45:27.761Z","action":"keyboard-focus","selector":".row[data-g=\"saffron\"]","presses":9,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Synth Saffron×20 +8%Cheap\n      \n  \n      ¤92"}}
+{"at":"2026-11-14T18:45:27.763Z","action":"keyboard-activate","selector":".row[data-g=\"saffron\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:28.164Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:28.174Z","action":"keyboard-type","selector":"#qin","text":"20"}
+{"at":"2026-11-14T18:45:28.413Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 20 for ¤18,420"}}
+{"at":"2026-11-14T18:45:28.415Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:28.573Z","action":"trade-result","id":"saffron","mode":"sell","q":20,"cashBefore":53056,"cashAfter":71476,"ownedBefore":20,"ownedAfter":0}
+{"at":"2026-11-14T18:45:28.586Z","action":"plan","day":28,"loc":"ot","id":"de","buys":[{"id":"chips","q":7,"cost":34832,"expectedPrice":6714},{"id":"eels","q":7,"cost":25851,"expectedPrice":4412},{"id":"pearl","q":1,"cost":593,"expectedPrice":785}],"score":14741.394400000003,"expectedGain":17388}
+{"at":"2026-11-14T18:45:29.518Z","action":"keyboard-focus","selector":".row[data-g=\"chips\"]","presses":25,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Ghost ChipsExchange +37% seen · tonight\n     "}}
+{"at":"2026-11-14T18:45:29.520Z","action":"keyboard-activate","selector":".row[data-g=\"chips\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:29.845Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:29.853Z","action":"keyboard-type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T18:45:30.079Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 7 for ¤34,832"}}
+{"at":"2026-11-14T18:45:30.081Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:30.304Z","action":"trade-result","id":"chips","mode":"buy","q":7,"cashBefore":71476,"cashAfter":36644,"ownedBefore":0,"ownedAfter":7}
+{"at":"2026-11-14T18:45:31.232Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":28,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Clockwork EelsPriceyExchange +30% seen · toni"}}
+{"at":"2026-11-14T18:45:31.234Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:31.605Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:31.612Z","action":"keyboard-type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T18:45:31.823Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 7 for ¤25,851"}}
+{"at":"2026-11-14T18:45:31.825Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:31.966Z","action":"trade-result","id":"eels","mode":"buy","q":7,"cashBefore":36644,"cashAfter":10793,"ownedBefore":0,"ownedAfter":7}
+{"at":"2026-11-14T18:45:31.969Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:45:32.929Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"de\"]","presses":31,"target":{"tag":"g","id":"","cls":"node","text":"Drowned Exchange\n      \n      +37%"}}
+{"at":"2026-11-14T18:45:32.931Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"de\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:33.133Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:45:33.134Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:45:33.332Z","action":"keyboard-event","day":29,"title":"A drowned strongbox","choice":"ok","choiceText":"1\nContinue","text":"LUCKY FIND\nA drowned strongbox\n\nYour boathook snags a rusted strongbox under the mooring. Inside, wrapped in oilcloth: ¤1,960.\n\n1\nContinue"}
+{"at":"2026-11-14T18:45:33.339Z","action":"keyboard-focus","selector":"#modal [data-choice=\"ok\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Continue"}}
+{"at":"2026-11-14T18:45:33.348Z","action":"keyboard-activate","selector":"#modal [data-choice=\"ok\"]","key":"Space"}
+{"at":"2026-11-14T18:45:34.537Z","action":"keyboard-focus","selector":"#tab-market","presses":17,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:45:34.538Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:45:34.920Z","action":"keyboard-focus","selector":".row[data-g=\"eels\"]","presses":11,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Clockwork Eels×7 +11%Pricey\n      \n  \n      ¤"}}
+{"at":"2026-11-14T18:45:34.951Z","action":"keyboard-activate","selector":".row[data-g=\"eels\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:35.253Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:35.259Z","action":"keyboard-type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T18:45:35.535Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 7 for ¤28,756"}}
+{"at":"2026-11-14T18:45:35.537Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:35.678Z","action":"trade-result","id":"eels","mode":"sell","q":7,"cashBefore":12753,"cashAfter":41509,"ownedBefore":7,"ownedAfter":0}
+{"at":"2026-11-14T18:45:36.438Z","action":"keyboard-focus","selector":".row[data-g=\"chips\"]","presses":26,"target":{"tag":"DIV","id":"","cls":"row  ","text":"Ghost Chips×7 +39%Pricey\n      \n  \n      ¤6,9"}}
+{"at":"2026-11-14T18:45:36.439Z","action":"keyboard-activate","selector":".row[data-g=\"chips\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:36.748Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:36.757Z","action":"keyboard-type","selector":"#qin","text":"7"}
+{"at":"2026-11-14T18:45:36.952Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 7 for ¤48,552"}}
+{"at":"2026-11-14T18:45:36.953Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:37.171Z","action":"trade-result","id":"chips","mode":"sell","q":7,"cashBefore":41509,"cashAfter":90061,"ownedBefore":7,"ownedAfter":0}
+{"at":"2026-11-14T18:45:38.039Z","action":"keyboard-focus","selector":"#tab-harbor","presses":36,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:45:38.040Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:45:38.303Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:45:38.304Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:45:38.445Z","action":"plan","day":29,"loc":"de","id":"lq","buys":[{"id":"silk","q":5,"cost":44750,"expectedPrice":14144}],"score":24261.05,"expectedGain":25970}
+{"at":"2026-11-14T18:45:38.830Z","action":"keyboard-focus","selector":".row[data-g=\"silk\"]","presses":15,"target":{"tag":"DIV","id":"","cls":"row  ","text":"DreamsilkLanternquay +59% seen · tonight\n    "}}
+{"at":"2026-11-14T18:45:38.831Z","action":"keyboard-activate","selector":".row[data-g=\"silk\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:39.111Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:39.117Z","action":"keyboard-type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T18:45:39.405Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg teal","text":"Buy 5 for ¤44,750"}}
+{"at":"2026-11-14T18:45:39.407Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:39.549Z","action":"trade-result","id":"silk","mode":"buy","q":5,"cashBefore":90061,"cashAfter":45311,"ownedBefore":0,"ownedAfter":5}
+{"at":"2026-11-14T18:45:39.552Z","action":"desktop-map-already-visible"}
+{"at":"2026-11-14T18:45:40.229Z","action":"keyboard-focus","selector":"#nodes .node[data-d=\"lq\"]","presses":29,"target":{"tag":"g","id":"","cls":"node","text":"Lanternquay\n      \n      FFleet call: Dreamsi"}}
+{"at":"2026-11-14T18:45:40.230Z","action":"keyboard-activate","selector":"#nodes .node[data-d=\"lq\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:40.556Z","action":"keyboard-focus","selector":"#tcard-slot [data-act=\"sail\"]","presses":1,"target":{"tag":"BUTTON","id":"","cls":"btn primary lg","text":"Sail here · 1 night ⏎"}}
+{"at":"2026-11-14T18:45:40.558Z","action":"keyboard-activate","selector":"#tcard-slot [data-act=\"sail\"]","key":"Space"}
+{"at":"2026-11-14T18:45:41.304Z","action":"keyboard-focus","selector":"#tab-market","presses":1,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:45:41.305Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:45:41.848Z","action":"keyboard-focus","selector":".row[data-g=\"silk\"]","presses":14,"target":{"tag":"DIV","id":"","cls":"row  sel","text":"Dreamsilk×5 +47%Fleet callPricey\n      \n  \n  "}}
+{"at":"2026-11-14T18:45:41.849Z","action":"keyboard-activate","selector":".row[data-g=\"silk\"]","key":"Enter"}
+{"at":"2026-11-14T18:45:42.175Z","action":"keyboard-focus","selector":"#qin","presses":6,"target":{"tag":"INPUT","id":"qin","cls":"","text":""}}
+{"at":"2026-11-14T18:45:42.182Z","action":"keyboard-type","selector":"#qin","text":"5"}
+{"at":"2026-11-14T18:45:42.410Z","action":"keyboard-focus","selector":"#qgo","presses":5,"target":{"tag":"BUTTON","id":"qgo","cls":"btn lg amber","text":"Sell 5 for ¤65,770"}}
+{"at":"2026-11-14T18:45:42.412Z","action":"keyboard-activate","selector":"#qgo","key":"Space"}
+{"at":"2026-11-14T18:45:42.589Z","action":"trade-result","id":"silk","mode":"sell","q":5,"cashBefore":45311,"cashAfter":111081,"ownedBefore":5,"ownedAfter":0}
+{"at":"2026-11-14T18:45:43.430Z","action":"keyboard-focus","selector":"#tab-harbor","presses":36,"target":{"tag":"BUTTON","id":"tab-harbor","cls":"tab","text":"Harbor 2"}}
+{"at":"2026-11-14T18:45:43.432Z","action":"keyboard-activate","selector":"#tab-harbor","key":"Space"}
+{"at":"2026-11-14T18:45:43.714Z","action":"keyboard-focus","selector":"#side-body [data-act=\"deposit\"]","presses":2,"target":{"tag":"BUTTON","id":"","cls":"btn teal","text":"Deposit"}}
+{"at":"2026-11-14T18:45:43.715Z","action":"keyboard-activate","selector":"#side-body [data-act=\"deposit\"]","key":"Space"}
+{"at":"2026-11-14T18:45:43.901Z","action":"keyboard-focus","selector":"#ain","presses":2,"target":{"tag":"INPUT","id":"ain","cls":"","text":""}}
+{"at":"2026-11-14T18:45:43.912Z","action":"keyboard-type","selector":"#ain","text":"36648"}
+{"at":"2026-11-14T18:45:44.072Z","action":"keyboard-focus","selector":"#ago","presses":2,"target":{"tag":"BUTTON","id":"ago","cls":"btn lg teal","text":"Deposit ¤36,648"}}
+{"at":"2026-11-14T18:45:44.073Z","action":"keyboard-activate","selector":"#ago","key":"Space"}
+{"at":"2026-11-14T18:45:44.212Z","action":"service","service":"deposit","amount":36648}
+{"at":"2026-11-14T18:45:44.260Z","action":"keyboard-focus","selector":"#tab-market","presses":2,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:45:44.262Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:45:44.511Z","action":"keyboard-focus","selector":"#tab-market","presses":0,"target":{"tag":"BUTTON","id":"tab-market","cls":"tab","text":"Market"}}
+{"at":"2026-11-14T18:45:44.512Z","action":"keyboard-activate","selector":"#tab-market","key":"Space"}
+{"at":"2026-11-14T18:45:45.165Z","action":"keyboard-focus","selector":"#side-body [data-act=\"settle\"]","presses":18,"target":{"tag":"BUTTON","id":"","cls":"btn primary","text":"Settle up"}}
+{"at":"2026-11-14T18:45:45.166Z","action":"keyboard-activate","selector":"#side-body [data-act=\"settle\"]","key":"Space"}
+{"at":"2026-11-14T18:45:45.307Z","action":"keyboard-focus","selector":"#modal [data-choice=\"yes\"]","presses":0,"target":{"tag":"BUTTON","id":"","cls":"choice primary","text":"1Settle up"}}
+{"at":"2026-11-14T18:45:45.308Z","action":"keyboard-activate","selector":"#modal [data-choice=\"yes\"]","key":"Space"}
+{"at":"2026-11-14T18:45:46.022Z","action":"keyboard-focus","selector":"#t-ledger","presses":15,"target":{"tag":"BUTTON","id":"t-ledger","cls":"btn","text":"Captains' Ledger"}}
+{"at":"2026-11-14T18:45:46.023Z","action":"keyboard-activate","selector":"#t-ledger","key":"Space"}
