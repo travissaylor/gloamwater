@@ -9,11 +9,10 @@ judges each round. Keep the frozen rubric, independent evidence, and blind judgi
 Work on the current `t3/raise-gloamwater-panel-score` branch; commit each round and do not push.
 The original brief and historical results follow for context.
 
-Current progress: round 3 scored **83.9**. Round 4 has Sol **83.5** and Astra **84.1**;
-its Opus judgment is still pending. Do not re-roll either round. The next candidate has
+Current progress: round 3 scored **83.9**, round 4 **82.97**. Do not re-roll either round. The next candidate has
 opening quotes, event choices, readable phone text and distinct district landmarks.
-Its general regressions and normal-speed diagnostic pass. After recording round 4,
-freeze and judge rounds 5 and, if still needed, 6. Helpers are frozen with each new packet.
+Its general regressions and normal-speed diagnostic pass. Freeze and judge round 5,
+then round 6 if still needed. Helpers are frozen with each new packet.
 
 Gloamwater won the bake-off with a panel score of 87.0 out of 100. This file is the
 standing brief for taking it further. Re-read it whenever context is compacted.

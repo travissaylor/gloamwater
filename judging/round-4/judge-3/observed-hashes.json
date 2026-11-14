@@ -1,0 +1,26 @@
+[
+  {
+    "Path": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-4\\packet\\index.html",
+    "Hash": "B18BCF691BC179F29BBCAA56153B2F47C14E7BE3A177BBC520F50ACFEDFBAAB4"
+  },
+  {
+    "Path": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-4\\packet\\tools\\touch-play.cjs",
+    "Hash": "85D25A423380D3DA95AA31B8B02A01B43CA0C34734CA9FD59DCBF7BC8A3F14CA"
+  },
+  {
+    "Path": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-4\\packet\\tools\\verify.cjs",
+    "Hash": "394DF66611BB0391A7C2BAEC389AFD38868D564FB27A6EF0F35B59D4652D5055"
+  },
+  {
+    "Path": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-4\\packet\\tools\\sim\\sim.js",
+    "Hash": "BA16915A3ACFBA3FB33CE15FEC8959BF3BC6D4FF3338A49DEAC574B44FF9F5E7"
+  },
+  {
+    "Path": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-4\\packet\\tools\\sim\\adapter.js",
+    "Hash": "325EB49ECC4EB7C06864064D20103C9749A8419E9C76DB19136D92080C04D675"
+  },
+  {
+    "Path": "C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-4\\packet\\tools\\phone\\server.js",
+    "Hash": "06A08462FDAC245E557689B7059E72A77D753AAAE4253A997B8926FF34CA32E4"
+  }
+]

@@ -1,0 +1,191 @@
+> key ArrowLeft
+pressed ArrowLeft
+> key ArrowLeft
+pressed ArrowLeft
+> key Enter
+pressed Enter
+> wait 700
+waited 700ms
+> key 6
+pressed 6
+> wait 600
+waited 600ms
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/desktop-map-keyboard.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/desktop-map-keyboard.png
+> key Enter
+pressed Enter
+> wait 1000
+waited 1000ms
+> key Space
+pressed Space
+> wait 1500
+waited 1500ms
+> ui
+viewport 1280x800 · page scrollWidth 1280
+targets (30), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [475,40 136x56] button#st-cash.stat "PURSE ¤1,044"
+  [619,40 136x56] button#st-bank.stat "VAULT ¤0"
+  [763,40 136x56] button#st-debt.stat.debt "DEBT · 6%/NIGHT ¤6,360"
+  [906,40 136x56] button#st-hold.stat "HOLD 28/30"
+  [1050,40 136x56] button#st-hull.stat "HULL 100%"
+  [1152,40 40x40] button#b-help.btn.icon "How to play (?)"   ⚠ SMALL<44 · GAP 6px to button#b-mute.btn.icon "Toggle sound (M)"
+  [1198,40 40x40] button#b-mute.btn.icon "Toggle sound (M)"   ⚠ SMALL<44 · GAP 6px to button#b-help.btn.icon "How to play (?)"
+  [1244,40 40x40] button#b-menu.btn.icon "Menu"   ⚠ SMALL<44 · GAP 6px to button#b-mute.btn.icon "Toggle sound (M)"
+  [364,397 94x93] g.node "Lanternquay"
+  [350,236 87x93] g.node.far "Saint Mire"
+  [598,267 123x93] g.node.far "Orchid Terraces"
+  [598,463 130x93] g.node.far "Drowned Exchange"
+  [367,554 94x93] g.node "The Sluices"
+  [136,481 130x93] g.node.here "Copperhook Docks !"
+  [129,253 87x93] g.node "Fogmouth !"
+  [779,120 86x37] button#tab-market.tab "MARKET"   ⚠ SMALL<44 · GAP 4px to button#tab-harbor.tab "HARBOR 1"
+  [883,120 113x37] button#tab-harbor.tab "HARBOR 1"   ⚠ SMALL<44 · GAP 4px to button#tab-market.tab "MARKET"
+  [1231,174 40x40] button.btn.icon.market-info "Fleet calendar and market bulletins"   ⚠ SMALL<44
+  [998,229 515x53] button.best-run "Fleet: Glowkelp → Copperhook Through ni…"
+  [998,309 519x83] div.row.sel "Glowkelp ×28 +54% Fleet call Pricey ¤80…"   ⚠ GAP 6px to div.row "Bottled Rain ¤121 −…"
+  [1173,309 46x32] button.btn.sm.teal "Buy"   ⚠ SMALL<44 · GAP 5px to button.btn.sm.amber "Sell"
+  [1224,309 45x32] button.btn.sm.amber "Sell"   ⚠ SMALL<44 · GAP 5px to button.btn.sm.teal "Buy"
+  [998,385 519x58] div.row "Bottled Rain ¤121 −7% vs usual Buy Sell"   ⚠ GAP 6px to div.row.sel "Glowkelp ×28 +54% F…"
+  [1173,385 46x32] button.btn.sm.teal "Buy"   ⚠ SMALL<44
+  [998,450 519x60] div.row.out "Rust Pearls No dealers today — Buy Sell"   ⚠ GAP 6px to div.row "Bottled Rain ¤121 −…"
+  [998,515 519x58] div.row "Synth Saffron ¤1,375 +25% vs usual Buy …"   ⚠ GAP 6px to div.row.out "Rust Pearls No deal…"
+  [998,580 519x60] div.row.out "Clockwork Eels No dealers today — Buy S…"   ⚠ GAP 6px to div.row "Synth Saffron ¤1,37…"
+  [998,646 519x60] div.row "Ghost Chips Surge ¤19,287 +271% vs usua…"   ⚠ GAP 6px to div.row.out "Clockwork Eels No d…"
+  [998,712 519x60] div.row "Dreamsilk Lanternquay +39% seen · 1n ag…"   ⚠ GAP 6px to div.row "Ghost Chips Surge ¤…"
+  [998,789 519x83] div.row "Moon Ink Cheap Lanternquay +50% seen · …"   ⚠ GAP 6px to div.row "Dreamsilk Lanternqu…" · PART-OFFSCREEN
+--- visible text ---
+GLOAMWATER
+NIGHT
+2/30
+PURSE
+¤1,044
+VAULT
+¤0
+DEBT · 6%/NIGHT
+¤6,360
+HOLD
+28/30
+HULL
+100%
+NIGHT 2 OF 30 · MOORED AT
+Copperhook Docks
+NET WORTH
+−¤3,076
+Lanternquay
+Saint Mire
+Orchid Terraces
+Drowned Exchange
+The Sluices
+Copperhook Docks
+!
+Fogmouth
+!
+Tap a district · lit canals are one night away · tap your own to stay a night · 1–7
+MARKET
+HARBOR
+1
+NIGHT 2 MARKET
+Copperhook Docks
+Fleet: Glowkelp → Copperhook
+Through night 4 · sale price unconfirmed
+Glowkelp
+×28
++54%
+Fleet call
+Pricey
+¤80
++90% vs usual
+Buy
+Sell
+Bottled Rain
+¤121
+−7% vs usual
+Buy
+Sell
+Rust Pearls
+No dealers today
+—
+Buy
+Sell
+Synth Saffron
+¤1,375
++25% vs usual
+Buy
+Sell
+Clockwork Eels
+No dealers today
+—
+Buy
+Sell
+Ghost Chips
+Surge
+¤19,287
++271% vs usual
+Buy
+Sell
+Dreamsilk
+Lanternquay +39% seen · 1n ago
+¤8,448
+−14% vs usual
+Buy
+Sell
+Moon Ink
+Cheap
+Lanternquay +50% seen · 1n ago
+¤15,025
+−21% vs usual
+Buy
+Sell
+Cargo worth here: ¤2,240
+↑↓ pick · B buy · S sell
+SHIP'S LOG
+N2
+Bulletin: Word of cheap Moon Ink at Fogmouth drew buyers from every canal. The glut is gone and prices are up.
+N2
+Here: Collectors from the deep city want Ghost Chips, and they are shopping at Copperhook Docks.
+N2
+Arrived at Copperhook Docks.
+N1
+Bought 28 Glowkelp for ¤1,456 (¤52 each).
+N1
+You owe Marrow Quill ¤6,000 for the Little Lantern. Thirty nights to make it right.
+Now find a district that pays more. Green +% badges on the map show where your cargo last sold above what you paid.
+Collectors from the deep city want Ghost Chips, and they are shopping at Copperhook Docks.
+Odile's Boatyard is here: bigger hold, faster engine, hull repairs. Open the Harbor tab.
+> audio
+{
+ "shim": "none: real Web Audio",
+ "contexts": [
+  {
+   "t": 19256,
+   "createdIn": "keydown",
+   "activation": "active",
+   "stateAtCreate": "running",
+   "resumes": [],
+   "stateNow": "running",
+   "currentTime": 42
+  }
+ ],
+ "events": [
+  {
+   "t": 19263,
+   "event": "click",
+   "pointerType": "",
+   "activation": "active"
+  },
+  {
+   "t": 19372,
+   "ctx": 0,
+   "state": "running",
+   "during": "statechange"
+  },
+  {
+   "t": 58783,
+   "event": "click",
+   "pointerType": "",
+   "activation": "active"
+  }
+ ]
+}
+> errors
+no errors

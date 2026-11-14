@@ -1,0 +1,211 @@
+> taptext Turn sound off
+tapped button.choice "Turn sound off" at (215,659) 396x52; touch landed on button.choice "Turn sound off"
+> wait 700
+waited 700ms
+> audio
+{
+ "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+ "sounds": {
+  "whileRunning": 72,
+  "whileSuspended": 0
+ },
+ "contexts": [
+  {
+   "t": 19392,
+   "createdIn": "touchend",
+   "activation": "active",
+   "stateAtCreate": "suspended",
+   "resumes": [
+    {
+     "t": 19392,
+     "during": "touchend",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    }
+   ],
+   "stateNow": "suspended",
+   "currentTime": 0
+  }
+ ],
+ "events": [
+  {
+   "t": 236061,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 236061,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 236061,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 236062,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 236063,
+   "event": "click",
+   "pointerType": "mouse",
+   "activation": "active"
+  },
+  {
+   "t": 267559,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 267560,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 267560,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 267560,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 267561,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 267563,
+   "event": "click",
+   "pointerType": "mouse",
+   "activation": "active"
+  },
+  {
+   "t": 267567,
+   "ctx": 0,
+   "state": "suspended",
+   "during": "statechange"
+  }
+ ]
+}
+> taptext More
+tapped button "MORE" at (385,898) 77x56; touch landed on svg.ico
+> wait 700
+waited 700ms
+> taptext Turn sound on
+tapped button.choice "Turn sound on" at (215,659) 396x52; touch landed on button.choice "Turn sound on"
+> wait 700
+waited 700ms
+> audio
+{
+ "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+ "sounds": {
+  "whileRunning": 76,
+  "whileSuspended": 0
+ },
+ "contexts": [
+  {
+   "t": 19392,
+   "createdIn": "touchend",
+   "activation": "active",
+   "stateAtCreate": "suspended",
+   "resumes": [
+    {
+     "t": 19392,
+     "during": "touchend",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    },
+    {
+     "t": 269050,
+     "during": "click",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    }
+   ],
+   "stateNow": "running",
+   "currentTime": 250.37
+  }
+ ],
+ "events": [
+  {
+   "t": 268299,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 268300,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 268300,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 268300,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 268301,
+   "event": "click",
+   "pointerType": "mouse",
+   "activation": "active"
+  },
+  {
+   "t": 269044,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 269044,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 269045,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 269045,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 269046,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 269047,
+   "event": "click",
+   "pointerType": "mouse",
+   "activation": "active"
+  },
+  {
+   "t": 269050,
+   "ctx": 0,
+   "state": "running",
+   "during": "statechange"
+  }
+ ]
+}
+> errors
+no errors

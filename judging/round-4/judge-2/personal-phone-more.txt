@@ -1,0 +1,197 @@
+> tap #nodes [data-d=de]
+tapped g.node.far "Exchange" at (286,653) 98x93; touch landed on circle.disc
+> wait 900
+waited 900ms
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/map-430x932.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/map-430x932.png
+> taptext Harbor
+tapped button "HARBOR" at (215,898) 77x56; touch landed on svg.ico
+> wait 900
+waited 900ms
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/harbor-430x932.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/harbor-430x932.png
+> taptext More
+tapped button "MORE" at (385,898) 77x56; touch landed on svg.ico
+> wait 900
+waited 900ms
+> ui
+viewport 430x932 · page scrollWidth 430
+targets (6), centre [x,y] and size; flags: SMALL<44, GAP<8px:
+  [215,523 396x52] button.choice.primary "Resume"
+  [215,591 396x68] button.choice "How to play Rules, price colours, and a…"
+  [215,659 396x52] button.choice "Turn sound off"
+  [215,727 396x68] button.choice "Turn ambience off The hush of the canal…"
+  [215,803 396x68] button.choice "Save and return to title Your voyage is…"
+  [215,879 396x68] button.choice.risk "Abandon this run Ends the game now and …"
+covered (12): button#b-mute2.btn.icon.hud-mute "Toggle sound" under div#modal.ov.tone-neutral "PAUSED Ship's menu Night 2 …" | button#st-cash.stat "PURSE ¤2,848" under div#modal.ov.tone-neutral "PAUSED Ship's menu Night 2 …" | button#st-bank.stat "VAULT ¤0" under div#modal.ov.tone-neutral "PAUSED Ship's menu Night 2 …" | button#st-debt.stat.debt "DEBT 6% ¤6,360" under div#modal.ov.tone-neutral "PAUSED Ship's menu Night 2 …" | button#st-hold.stat "HOLD 0/30" under div#modal.ov.tone-neutral "PAUSED Ship's menu Night 2 …" | button#st-hull.stat "HULL 100%" under div#modal.ov.tone-neutral "PAUSED Ship's menu Night 2 …" | button.btn.amber.sm "¤2,500" under div#modal.ov.tone-neutral "PAUSED Ship's menu Night 2 …" | button "MARKET" under small "Ends the game now and recor…" | button "MAP" under small "Ends the game now and recor…" | button "HARBOR" under small "Ends the game now and recor…" | button "LOG" under small "Ends the game now and recor…" | button "MORE" under button.choice.risk "Abandon this run Ends the g…"
+--- visible text ---
+NIGHT
+2/30
+NET WORTH
+−¤3,512
+Bilge Rat at ¤0
+PURSE
+¤2,848
+VAULT
+¤0
+DEBT 6%
+¤6,360
+HOLD
+0/30
+HULL
+100%
+HARBOR SERVICES
+Saint Mire
+Brother Tallow's Armory
+"Blessed, oiled, and strictly for self-defence."
+Flare pistol
+Hit chance per volley: 25% → 42%
+¤2,500
+Trading charter
+"Sign in Moon Ink, captain. The dealers will remember."
+
+A charter makes the dealers of Saint Mire trade twice as deep with you for the rest of the run: twice as many units at the posted price before it moves. Each charter costs more than the last.
+
+This hold, tonight: +¤0 in sale proceeds after buying the charter. No extra sale proceeds for this load. Future prices and cargo vary; 28 nights remain.
+
+Your charters
+none
+Buy charter · ¤20,000
+YOUR SKIFF
+The Little Lantern
+Hold
+0 / 30
+Hull
+100%
+Engine
+Putter engine
+Weapon
+Boathook
+Wireless set
+None
+DIRECTORY
+Marrow Quill's Loan Office · Lanternquay
+Lockwater Vault · Lanternquay & Drowned Exchange
+Odile's Boatyard · Copperhook Docks
+The Gutter Yard · The Sluices
+Brother Tallow's Armory · Saint Mire
+The Fog Fence · Fogmouth
+The Listening Room · Drowned Exchange
+Madame Ysolde's Salon · Orchid Terraces
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+PAUSED
+Ship's menu
+
+Night 2 of 30 · Captain
+
+Resume
+How to play
+Rules, price colours, and a replay of the guided tour.
+Turn sound off
+Turn ambience off
+The hush of the canals and a distant bell.
+Save and return to title
+Your voyage is saved automatically.
+Abandon this run
+Ends the game now and records your score.
+> errors
+no errors
+> audio
+{
+ "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+ "sounds": {
+  "whileRunning": 67,
+  "whileSuspended": 0
+ },
+ "contexts": [
+  {
+   "t": 19392,
+   "createdIn": "touchend",
+   "activation": "active",
+   "stateAtCreate": "suspended",
+   "resumes": [
+    {
+     "t": 19392,
+     "during": "touchend",
+     "activation": "active",
+     "before": "suspended",
+     "after": "running"
+    }
+   ],
+   "stateNow": "running",
+   "currentTime": 217.6
+  }
+ ],
+ "events": [
+  {
+   "t": 235021,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 235021,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 235022,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 235022,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 235023,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 235023,
+   "event": "click",
+   "pointerType": "mouse",
+   "activation": "active"
+  },
+  {
+   "t": 236060,
+   "event": "pointerdown",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 236061,
+   "event": "touchstart",
+   "activation": "active"
+  },
+  {
+   "t": 236061,
+   "event": "pointerup",
+   "pointerType": "touch",
+   "activation": "active"
+  },
+  {
+   "t": 236061,
+   "event": "touchend",
+   "activation": "active"
+  },
+  {
+   "t": 236062,
+   "event": "mousedown",
+   "activation": "active"
+  },
+  {
+   "t": 236063,
+   "event": "click",
+   "pointerType": "mouse",
+   "activation": "active"
+  }
+ ]
+}

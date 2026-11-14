@@ -1,0 +1,10 @@
+> tap #ain
+tapped input#ain "Amount" at (215,633) 396x48; touch landed on input#ain "Amount"
+> type 100
+typed "100"
+> tap #ago
+tapped button#ago.btn.lg.teal "Deposit ¤808" at (315,887) 192x52; touch landed on button#ago.btn.lg.teal "Deposit ¤808"
+> wait 800
+waited 800ms
+> taptext Repay debt
+!! ERROR: no visible, enabled clickable contains "Repay debt"

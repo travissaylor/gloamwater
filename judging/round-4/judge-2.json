@@ -1,0 +1,228 @@
+{
+  "judge": 2,
+  "lens": "visual and interaction design",
+  "model": "gpt-6.1-sol",
+  "build": "b18bcf691bc179f29bbcaa56153b2f47c14e7be3a177bbc520f50acfedfbaab4",
+  "scores": {
+    "A1": 8, "A2": 8, "A3": 8, "A4": 7, "A5": 7,
+    "B1": 9, "B2": 9, "B3": 8, "B4": 8, "B5": 8,
+    "C1": 9, "C2": 10, "C3": 9, "C4": 9, "C5": 8
+  },
+  "weighted_total": 83.5,
+  "caps_applied": [],
+  "criteria": {
+    "A1": {
+      "score": 8,
+      "evidence": "I bought 12 Bottled Rain at 123 in Lanternquay through touch input, sailed to Saint Mire and sold at 152: the sheet correctly showed 348 profit. On desktop I used keyboard input to buy 28 Glowkelp at 52 and sell at Copperhook for 80 during its fleet call. Price identities, unknown or dated observations, carrying space, finite dealer depth and one/two-night routes all affect decisions. I inspected the night-20 phone screenshot: Ghost Chips at -51% usual had a remembered Copperhook sale +158%, competing with other cargo and debt needs. The frozen informed-policy sample substantially outperformed greedy play.",
+      "below_10": [
+        "Phone first-visit routing loses the usual-supply/import information that desktop provides, so the earliest choices are less informed.",
+        "Once a few ports have been observed, the prominent best-route strip makes repeating a small set of profitable hops an easy default; broader strategy diversity was not established by these four policies."
+      ]
+    },
+    "A2": {
+      "score": 8,
+      "evidence": "Ran the frozen simulation for 16 matched seeds each of informed, greedy, whisper-spam and roundtrip. Median fortunes were 627451, 50803, 264736 and 627451 respectively; 4895 round-trip/split/alternating trade probes produced zero positive returns. Informed runs used charters in 87.5% of cases and earned meaningful vault interest. In the actual-touch seed-59 run debt rose from 6000 to 35915 and final fortune was -24348. In my separate touch exploration I bought a 2500 flare pistol, deposited 808, withdrew 100 and repaid 50, observing the corresponding purse, vault and debt updates.",
+      "below_10": [
+        "The conservative touch traveller finished all thirty nights with its original 30-slot hold and no vault savings: a debt spiral can suppress the growth arc for an entire run.",
+        "Whisper-spam underperformed informed play on all 16 matched seeds; two-thirds of acted whispers lost money after fees, suggesting a weak information-service proposition for frequent use.",
+        "Sixteen matched seeds and four automated policies are evidence against the tested loops, not exhaustive balance proof."
+      ]
+    },
+    "A3": {
+      "score": 8,
+      "evidence": "Personally inspected screenshots and event transcripts from the real-touch run: Gull Gang, Tidewardens, collectors, squall, racks offer, courier, eel wager, crate, gull theft and Pell. Tidewarden choices exposed 33% escape attempts, 22% Boathook volleys, 60% enemy retaliation, a priced bribe and half-cargo confiscation. The run actually lost four Rain and three Saffron to inspection. Squall explicitly traded 6-16% hull against an extra night. Pell's sure rumour disclosed roughly 8/10 full realization and a one-night reachable destination.",
+      "below_10": [
+        "Combat communicates per-volley odds but does not summarize the likely total hull/cargo exposure of a multi-round fight; comparison with a guaranteed bribe requires mental modelling.",
+        "Some events remain a single Continue acknowledgement or an optional small wager; they do not all change route planning.",
+        "The full touch policy mostly paid or yielded; successful combat was covered by function-driven regression rather than my own touch decisions."
+      ]
+    },
+    "A4": {
+      "score": 7,
+      "evidence": "The 30-night clock, night-10 debt deadline, changing fleet destinations, service visits and final settlement provide a coherent structure. The informed sample's median worth grew from 6775 at night 5 to 29847 at night 10, 127390 at night 15 and 627451 at night 30. Actual touch play traversed all seven ports over 28 voyages and reached the final score screen. I personally inspected the debtor ending, which gives a clear loss, accounting breakdown, next-rank gap and replay action.",
+      "below_10": [
+        "The full touch run stayed at 100% hull while debt and confiscations consumed progress: its late game felt like prolonged financial attrition rather than a new phase of capabilities.",
+        "Repeated encounter choice and result cards add acknowledgements to an already repetitive buy/sell/sail cadence.",
+        "The late wealth curve is largely more valuable transactions; the final-night sell-and-settle decision is comparatively simple."
+      ]
+    },
+    "A5": {
+      "score": 7,
+      "evidence": "I stepped through all five phone tour cards, then traded without external gameplay documentation. The HUD explains its figures on tap; the market gives usual-price percentages, owned quantity and average cost; the sale sheet showed 348 profit before I committed. I inspected explicit uncertainty/observation-age copy and the final 11567 cash minus 35915 debt equals -24348 breakdown. The lender service showed tomorrow's unpaid balance and I verified repayment through real taps and typed input.",
+      "below_10": [
+        "The tour says a selected district reveals what it sells cheap/pays well for, but on phones both the compact card and Port details omit those district identities. First-visit Port details instead presents eight unknown prices.",
+        "The ending calls accrued interest 'Interest paid' even while most debt remains unpaid.",
+        "The two green percentages mean different things: versus usual price and versus owned cost/remembered destination. Explanations exist, but the player must learn the distinction."
+      ]
+    },
+    "B1": {
+      "score": 9,
+      "evidence": "Personally inspected the title, phone and desktop markets, trade sheets, map, service portraits, Tidewarden/collector/squall/Pell cards and debtor ending. Amber lanterns against navy water, reflected skyline silhouettes, serif headings, monospaced money and coloured outline goods form one authored identity. The service portraits distinguish Tallow, Quill and the vault keeper; Pell's pole and receding lamps, searchlight boats and collectors' heron-lit launches make event art specific to the writing. The title's lantern, map's skiff and ending's lantern emblem belong to the same world.",
+      "below_10": [
+        "Districts reuse very similar dark island/building silhouettes, with identity relying heavily on labels and circular glyphs.",
+        "Many secondary surfaces remain stacked rounded navy cards; the long service and charter text is visually more dashboard-like than the title and event illustrations."
+      ]
+    },
+    "B2": {
+      "score": 9,
+      "evidence": "On the first 390x844 market I could immediately pick out Dreamsilk -25% and Rust Pearls +47%, with price, name, icon and miniature history on each row. I personally inspected the later -51% Chips glut and +158% remembered destination cue, and desktop's +271% Chips surge. Owned Rain showed quantity, average 123 cost and +24% local return; the sell sheet added a dashed 123 cost line, exact 1824 proceeds and 348 profit. The fixed HUD kept cash, debt rate, night, capacity and hull visible. At 360x640 the trade sheet retained a large pinned confirmation while the chart/context scrolled.",
+      "below_10": [
+        "Observation-age text in the trade comparison strip is about 11.3px and approximately 3.68:1 contrast, although age is important to interpreting a tempting quote.",
+        "Short phone heights show only about five of eight market rows at once, and long row notes add scrolling.",
+        "Miniature sparklines communicate direction but have no common scale, while the big cheap/dear percentage is versus a city usual rather than guaranteed arbitrage."
+      ]
+    },
+    "B3": {
+      "score": 8,
+      "evidence": "My normal-timing exploration showed row flashes, visible cash/debt deltas, transaction toasts, a skiff moving along the selected canal, upgrade confirmation and a 'Flare pistol mounted on the bow' response. I inspected distinct illustrated event staging and the loss-themed score screen. Source inspection found separate layered synthesis for buy, sell, profit, voyage, arrival, impact, bank, upgrade, victory and loss plus filtered ambient water/drone/bells. Chromium used a real running AudioContext; keyboard M suspended it. WebKit's explicitly labelled stand-in recorded 76 sound starts while running, zero while suspended, and successful mute/unmute state transitions.",
+      "below_10": [
+        "I did not hear the audio. Context state and synthesis code verify execution and intent, not sonic quality, loudness balance or real-iPhone output.",
+        "Short toasts queue: after my repayment the screenshot still displayed the preceding withdrawal toast while the new debt delta was visible, so feedback can lag a rapid action sequence.",
+        "The complete touch run used FAST/reduced motion; my normal-speed animation inspection covered only early trades, voyages and an upgrade, not every combat and ending animation."
+      ]
+    },
+    "B4": {
+      "score": 8,
+      "evidence": "I selected destinations using real WebKit touches at 390x844, 390x664, 360x640 and 430x932, and used district-number/Enter keys on desktop. Personally inspected the one-night Saint Mire path and two-night Exchange path via Orchid, including highlighted dashed routes, current mooring, risk figures, fleet F marker and moving skiff. The phone dock leaves every district selectable at all tested heights. Desktop adds usual supply/import tags, known cargo comparison, fleet demand/depth, services and district flavour in its floating destination card.",
+      "below_10": [
+        "The phone layout removes usual supply/import identities entirely, including from Port details, weakening the map as a trading-planning tool before observations accumulate.",
+        "Desktop destination cards cover a substantial portion of the map while selected.",
+        "The map's geography is a clear hub-and-ring diagram with decorative islands; ports look similar and geography does not convey much beyond the canal graph."
+      ]
+    },
+    "B5": {
+      "score": 8,
+      "evidence": "Actual-touch regression passed 390x844, 390x664, 360x640 and 430x932 with no horizontal overflow; I independently resized, tapped and personally inspected map and trade screenshots. My phone audits found zero on-screen targets below 44x44 on the market, small map and trade sheet. Typed quantities and the first confirm tap worked. Desktop keyboard-only start, quantity arrows, Enter confirmation, numbered destination selection, voyage and M mute worked with a clear amber focus ring. Regression verified modal focus confinement and inert backgrounds; source/runtime checks cover reduced motion. Main market text passed the approximate contrast audit.",
+      "below_10": [
+        "The comparison-strip observation age fails normal text contrast at about 3.68:1 and is only about 11.3px; several HUD labels are 11-12px.",
+        "HUD gaps are 5px and market row gaps 5px, below the audit's 8px spacing heuristic despite adequate target sizes.",
+        "No physical iPhone, software keyboard, collapsing browser chrome, nonzero safe-area inset, VoiceOver or screen-reader playthrough was available. Emulated WebKit cannot establish those behaviours."
+      ]
+    },
+    "C1": {
+      "score": 9,
+      "evidence": "Verified the 30-night loop, seven interactive mapped ports, eight changing goods with histories/shocks, capacity tiers, compounding/repayable debt, interest-bearing vault, more than eight event types, weapons/hold/engine/wireless/charter progression, ranked score breakdown and persistent ledger. The complete real-touch game visited all seven ports and settled; separate actual taps bought a weapon, deposited, withdrew and repaid. Function-driven full regressions reached night 30 with a 70-slot hold and nonzero bank, and retained scores after reload. Modern inline art, action feedback, synthesized-audio execution/mute, mouse/touch/keyboard and both required widths are present.",
+      "below_10": [
+        "Audible sound output was not personally verified; Windows WebKit uses a policy stand-in and Chromium instrumentation is not a listening test.",
+        "Not every upgrade type and encounter branch was exercised with touch; the full seed-59 touch run remained poor, so some progression coverage comes from source and function-driven runs."
+      ]
+    },
+    "C2": {
+      "score": 10,
+      "evidence": "Independently hashed the frozen index.html: b18bcf691bc179f29bbcaa56153b2f47c14e7be3a177bbc520f50acfedfbaab4, exactly 238881 bytes. Inspected the standalone HTML/CSS/JS/inline SVG and the centralized guarded store.get/set/del localStorage accesses at lines 724-726. Source scans and frozen syntax/resource checks found no framework dependency, external resource or network API; SVG namespace strings are not requests. My browsers opened file:// directly. Runtime network collections were empty across the touch run, four phone UI cases, desktop and two full regressions. The separate allow-scripts sandbox fixture confirmed storage was blocked while a new game still started; corrupt storage recovered with a notice.",
+      "below_10": []
+    },
+    "C3": {
+      "score": 9,
+      "evidence": "The full WebKit touch run used 580 recorded taps/typed actions, reached night 30 and an inspected score screen with zero page/console errors and no network calls. Two additional Chromium function-driven full games completed at night 30 with 27/26 trips and 6/5 encounters, finite correct tallies and no errors. All eight frozen verification checks passed, including out-of-stock keyboard handling, modal confinement, corrupt storage and restricted sandbox. My separate normal-timing phone/desktop explorations also reported no game errors.",
+      "below_10": [
+        "Pending-voyage reloads, long repeated-run sessions and real-device background/resume were not independently stress-tested.",
+        "One frozen-harness target-marker lookup timed out when I selected a node immediately after resizing/switching views; a delayed retry of the same target worked and the game remained responsive with no errors. This is an execution limitation, not evidence of a game soft-lock."
+      ]
+    },
+    "C4": {
+      "score": 9,
+      "evidence": "The personally inspected final score correctly reconciled 11567 cash + 0 bank + 0 cargo - 35915 debt = -24348. Regression reconciled 172098+5389=177487 and 573777+55556=629333, with finite balances, empty cargo and capacity respected. I verified an actual 808 deposit, 100 withdrawal and 50 repayment left cash 50, bank 708 and debt 6692 without changing net worth. The frozen roundtrip policy made 4895 direct/split/alternating/walk probes, none profitable. Ledger persistence and corrupt-score/save recovery passed, and source validation checks numeric limits, cargo counts and total capacity.",
+      "below_10": [
+        "The score-screen statistic 'Interest paid' actually sums interest accrued onto debt, so that accounting label is inaccurate even though the final fortune is correct.",
+        "The exploit probe is finite and did not cover every malformed numeric input, reload timing or economic strategy."
+      ]
+    },
+    "C5": {
+      "score": 8,
+      "evidence": "Read the frozen source's data tables, core buy/sell and integrated market-pressure formulas, centralized S state, separate market/event RNG streams, sound module, render functions, trip lifecycle and save validators. Code is divided into named subsystems with comments explaining tricky same-night sale accounting and WebKit input-blur handling. Chromium's normal-speed travel and keyboard interaction were responsive in my exploration; no application errors surfaced in the checked runs. Frozen helpers remain external test tooling, not shipped game dependencies.",
+      "below_10": [
+        "Large one-line HTML templates, compressed conditionals and global rendering/state functions make changes difficult to review despite the section structure.",
+        "Many independent setTimeout/requestAnimationFrame paths coordinate modals, focus, toasts and voyages; I did not audit all cancellation paths or profile long-session memory.",
+        "Headless Windows WebKit timing is not representative of iPhone frame pacing, so smooth real-device performance is unverified."
+      ]
+    }
+  },
+  "strengths": [
+    "Distinct, cohesive lantern-lit flooded-city identity across title, map, goods, characters, events and ending.",
+    "Exceptionally informative trade sheets: exact proceeds/profit, cost line, market depth, remaining resources and dated comparison quotes.",
+    "Purpose-built phone controls and a spatial map remain usable down to 360x640; desktop keyboard play is practical.",
+    "Complete offline game with meaningful debt, finite depth, events, progression, persistence and a clear final ledger.",
+    "Matched-seed probes distinguish planning from greedy play and found no profitable tested round-trip exploit."
+  ],
+  "weaknesses": [
+    "Phone destination UI omits the supply/import identities promised by onboarding and shown on desktop.",
+    "Small, low-contrast quote-age labels undermine an otherwise excellent price hierarchy.",
+    "A poor conservative run can spend all thirty nights in debt without reaching upgrades; repeated interruption/result cards amplify the grind.",
+    "Accrued interest is mislabeled as paid in the ending; rapid toast feedback can trail the action it explains.",
+    "Audible quality and real-iPhone behaviour remain unverified."
+  ],
+  "bugs": [
+    {
+      "severity": "medium",
+      "what": "Phone destination cards and Port details omit usual supply/import identities, even though the tour and handbook tell players to find that information on the map card.",
+      "repro": "Start a fresh game at 390x844, select Saint Mire and open Port details. The card gives risk/services, and details gives eight unknown observations, but neither gives the district's usual cheap/dear goods. At 1280x800, selecting a district displays Usually supplies and Usually imports. Source: renderTravelCard's narrow branch drops tags and openPortDetails does not include them. See port-details.png and desktop-map-keyboard.png."
+    },
+    {
+      "severity": "low",
+      "what": "Observation-age text in the trade comparison strip is too small and below 4.5:1 normal-text contrast.",
+      "repro": "Visit a second port, open Rust Pearls at 360x640 and inspect the Lanternquay '1n ago' comparison. The phone audit reports about 11.3px and 3.68:1 contrast; see personal-sheet-audit.txt and trade-360x640.png (scroll context continues below the pinned footer)."
+    },
+    {
+      "severity": "low",
+      "what": "The ending's Interest paid statistic measures accrued interest, including unpaid balances.",
+      "repro": "Run the frozen touch helper with seed 59 through settlement. Ending shows Interest paid 39.9k while debt of 35915 remains. advanceDay adds the nightly amount to both S.debt and S.stats.interest; endGame labels that statistic Interest paid. See touch/run-1-settled.png."
+    }
+  ],
+  "evidence": {
+    "days_played": 30,
+    "reached_score_screen": true,
+    "phone_notes": "Primary full run: actual Playwright touchscreen taps and native typed input in WebKit at 390x844, seed 59; 580 actions, 28 voyages, all seven ports, night 30, Drowned Debtor, -24348, no game errors. This was automated UI play, not a human manually playing a phone and not function-driven simulation. I independently made early-game decisions through the step harness, completed the five-card tour, bought/sold Rain for 348 profit, sailed, bought a flare pistol, and used deposit/withdraw/repay. Personally inspected screens at 390x844, 390x664, 360x640 and 430x932. Full touch helper used FAST=true/reduced motion; my separate exploration used default timing. WebKit swipes, where used by helper scrolling, have the documented emulated-default-action limitation.",
+    "desktop_notes": "Chromium at 1280x800. Personally used keyboard to start/name a game, trade Glowkelp with arrows/B/S/Enter, select Copperhook with 6, sail with Enter, toggle M and open help through menu; inspected normal travel, focus rings and data-rich destination card. Frozen verification also used actual mouse clicks. Two full regression games were explicitly function-driven informed-policy play, seeds 100002/100003, finishing with fortunes 177487 and 629333. They supplement rather than replace the actual touch game.",
+    "audio_notes": "No audible listening test was performed. Windows WebKit has no native Web Audio and the frozen harness installed its declared iOS gesture-policy stand-in. I observed running/suspended transitions and 76 starts while running, zero while suspended. Chromium had a real running AudioContext that M suspended. Read layered synthesis and ambience code, but these checks establish execution/policy only, not perceived sound quality, real-iPhone playback or silent-switch behaviour.",
+    "screenshots": [
+      "judging/round-4/judge-2/title.png",
+      "judging/round-4/judge-2/tour-ledger.png",
+      "judging/round-4/judge-2/market-390x844.png",
+      "judging/round-4/judge-2/trade-390x844.png",
+      "judging/round-4/judge-2/sell-profit.png",
+      "judging/round-4/judge-2/map-selected-390x844.png",
+      "judging/round-4/judge-2/port-details.png",
+      "judging/round-4/judge-2/voyage-normal.png",
+      "judging/round-4/judge-2/map-390x664.png",
+      "judging/round-4/judge-2/map-360x640.png",
+      "judging/round-4/judge-2/trade-360x640.png",
+      "judging/round-4/judge-2/map-430x932.png",
+      "judging/round-4/judge-2/harbor-430x932.png",
+      "judging/round-4/judge-2/upgrade-feedback.png",
+      "judging/round-4/judge-2/bank-and-debt.png",
+      "judging/round-4/judge-2/desktop-keyboard-trade.png",
+      "judging/round-4/judge-2/desktop-map-keyboard.png",
+      "judging/round-4/judge-2/desktop-voyage-animation.png",
+      "judging/round-4/judge-2/desktop-help-actual.png",
+      "judging/round-4/judge-2/touch/run-1-market-night-20.png",
+      "judging/round-4/judge-2/touch/run-1-event-tidewarden-cutter-.png",
+      "judging/round-4/judge-2/touch/run-1-event-marrow-s-collectors.png",
+      "judging/round-4/judge-2/touch/run-1-event-a-squall-comes-off-the-sea.png",
+      "judging/round-4/judge-2/touch/run-1-event-pell-the-lamplighter.png",
+      "judging/round-4/judge-2/touch/run-1-settled.png",
+      "judging/round-4/judge-2/regression/chromium-desktop-selected-map.png",
+      "judging/round-4/judge-2/regression/webkit-390x664-market.png",
+      "judging/round-4/judge-2/regression/webkit-360x640-market.png"
+    ],
+    "screenshot_inspection": "Every screenshot listed above was personally opened with view_image; interpretation is my judgment. Also inspected the regression full-run-ending and sandbox screenshots: they captured transition/background states, so I did not use them as visual proof of a final score or fully settled sandbox UI. The touch settlement screenshot is clear ending evidence.",
+    "reports": [
+      "judging/round-4/judge-2/touch/report.json",
+      "judging/round-4/judge-2/touch/run-1.json",
+      "judging/round-4/judge-2/touch/run-1-actions.jsonl",
+      "judging/round-4/judge-2/regression/report.json",
+      "judging/round-4/judge-2/strategy"
+    ],
+    "abuse_fixtures": "Kept separate from scored touch play. Frozen verify.cjs corrupts saved data, checks a late-rate day-15 fixture and runs an allow-scripts/storage-blocked sandbox. Frozen roundtrip policy performs labelled economic exploit probes. No game resources, active RNG state, pending outcomes or hidden future prices were read/mutated to guide scored UI play. The touch helper's seeded startup and animation-only FAST flag are declared test conditions.",
+    "execution_model_issues": [
+      "Executed as gpt-6.1-sol; no provider/model substitution, delegation or subagents.",
+      "Used only packet tools; did not read root tools, prior judging, GOALS.md, other judges or git history. Explicitly required fleet documents were the only non-packet reference reads.",
+      "Applied the documented mise binary+shims PATH for Node; no dependency installation needed.",
+      "A phone target-marker lookup timed out after immediate resize/view switching; delayed retry worked, no page error or game soft-lock.",
+      "My first deposit typing step appended 100 to the prefilled amount instead of selecting it, so the UI correctly clamped and deposited all 808. I then used Control+A to withdraw exactly 100 and repay exactly 50. This was my automation input mistake, not a resource-integrity failure.",
+      "No real iPhone, audible quality assessment, screen-reader run, software keyboard or long-session memory profile.",
+      "Both step harnesses were stopped (9462 and 9472); touch, verification and strategy browsers exited through their cleanup paths. No game/helper or git writes."
+    ]
+  },
+  "verdict": "83.5/100. An unusually coherent and readable single-file trading game with strong touch execution and informative trade sheets. The largest design defect is the phone map's missing district trade identities; low-contrast quote ages and an inaccurate interest label are smaller polish gaps. Required full touch and regression games completed, with no demonstrated soft-lock or tested money exploit. Audio quality and physical-iPhone behaviour remain unverified."
+}

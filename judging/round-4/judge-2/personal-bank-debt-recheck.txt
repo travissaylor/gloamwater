@@ -1,0 +1,116 @@
+> taptext Withdraw
+tapped button.btn "Withdraw" at (175,672) 96x44; touch landed on button.btn "Withdraw"
+> wait 700
+waited 700ms
+> tap #ain
+tapped input#ain "Amount" at (215,658) 396x48; touch landed on input#ain "Amount"
+> key Control+a
+pressed Control+a
+> type 100
+typed "100"
+> wait 500
+waited 500ms
+> tap #ago
+tapped button#ago.btn.lg.primary "Withdraw ¤100" at (315,887) 192x52; touch landed on button#ago.btn.lg.primary "Withdraw ¤100"
+> wait 800
+waited 800ms
+> taptext Repay debt
+tapped button.btn.primary "Repay debt" at (89,407) 107x44; touch landed on button.btn.primary "Repay debt"
+> wait 700
+waited 700ms
+> tap #ain
+tapped input#ain "Amount" at (215,633) 396x48; touch landed on input#ain "Amount"
+> key Control+a
+pressed Control+a
+> type 50
+typed "50"
+> wait 500
+waited 500ms
+> tap #ago
+tapped button#ago.btn.lg.primary "Repay ¤50" at (315,887) 192x52; touch landed on button#ago.btn.lg.primary "Repay ¤50"
+> wait 800
+waited 800ms
+> shot C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/bank-and-debt.png
+saved C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-4/judge-2/bank-and-debt.png
+> text
+NIGHT
+3/30
+NET WORTH
+−¤5,934
+Bilge Rat at ¤0
+PURSE
+¤50
+−¤50
+VAULT
+¤708
+DEBT 6%
+¤6,692
+−¤50
+HOLD
+0/30
+HULL
+100%
+HARBOR SERVICES
+Lanternquay
+Marrow Quill's Loan Office
+"Interest is just time, wearing a nicer coat."
+You owe
+¤6,692
+Tomorrow, unpaid
+¤7,094
+Rate
+6% a night until night 10
+Credit available
+¤0
+Repay debt
+Borrow more
+Lockwater Vault
+"Deposits are dry, safe and quietly growing."
+Balance
+¤708
+Interest
+1.5% / night
+
+Money in the vault can't be stolen or sunk. Branches at Lanternquay and the Drowned Exchange.
+
+Deposit
+Withdraw
+Trading charter
+"Sign in Moon Ink, captain. The dealers will remember."
+
+A charter makes the dealers of Lanternquay trade twice as deep with you for the rest of the run: twice as many units at the posted price before it moves. Each charter costs more than the last.
+
+This hold, tonight: +¤0 in sale proceeds after buying the charter. No extra sale proceeds for this load. Future prices and cargo vary; 27 nights remain.
+
+Your charters
+none
+Buy charter · ¤20,000
+YOUR SKIFF
+The Little Lantern
+Hold
+0 / 30
+Hull
+100%
+Engine
+Putter engine
+Weapon
+Flare pistol
+Wireless set
+None
+DIRECTORY
+Marrow Quill's Loan Office · Lanternquay
+Lockwater Vault · Lanternquay & Drowned Exchange
+Odile's Boatyard · Copperhook Docks
+The Gutter Yard · The Sluices
+Brother Tallow's Armory · Saint Mire
+The Fog Fence · Fogmouth
+The Listening Room · Drowned Exchange
+Madame Ysolde's Salon · Orchid Terraces
+MARKET
+MAP
+HARBOR
+LOG
+MORE
+Withdrew ¤100
+> errors
+no errors
