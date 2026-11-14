@@ -108,9 +108,22 @@
   const dist = (lo, hi, b) => { const out = new Map(); const n = (hi - lo + 1) * 3; for (let a = lo; a <= hi; a++) for (let m = 2; m <= 4; m++) { const d = a + b * m; out.set(d, (out.get(d) || 0) + 1 / n); } return [...out.entries()]; };
   const RUN_D = [0, 1, 2, 3, 4, 5, 6].map(b => dist(5, 10, b));
   const RET_D = [0, 1, 2, 3, 4, 5, 6].map(b => dist(4, 8, b));
-  const lootMean = kind => mid(kind === 'gulls' ? EN.loot.gulls : EN.loot.other);
-  const GULL_GOODS_BASE = () => GOODS.slice(0, 6).reduce((a, g) => a + g.base, 0) / 6;
-  SIM.encModel = { fleeP, fightP, EN };
+  // What winning is worth, as fightLoop pays it: a strongbox scaled by the starting boats and the
+  // night; the gang's cargo (one of the five cheapest goods, about ENC.gullCargo at usual prices,
+  // valued at 60% since it must still be sold); Marrow's collectors pay nothing and add a fee to the debt.
+  // (Older builds: loot.other, and a bigger gull cargo.)
+  function winValue(kind, start, day, free, debt) {
+    if (kind === 'collectors') return EN.collectFee != null ? -EN.collectFee * debt : mid((EN.loot && EN.loot.other) || [600, 1400]) * start * (1 + day / 12);
+    const lr = (EN.loot && (EN.loot[kind] || EN.loot.other)) || [0, 0];
+    const newer = EN.gullCargo != null;
+    let v = mid(lr) * start * (1 + day / (newer ? 20 : 12));
+    if (kind === 'gulls') {
+      if (newer) { const goods = GOODS.slice(0, 5); v += goods.reduce((a, g) => a + Math.min(Math.max(0, free), Math.max(1, Math.floor(EN.gullCargo * (1 + day / 15) / g.base))) * g.base, 0) / goods.length * 0.6; }
+      else v += Math.min(Math.max(0, free), 6.5 * start) * (GOODS.slice(0, 6).reduce((a, g) => a + g.base, 0) / 6) * 0.6;
+    }
+    return v;
+  }
+  SIM.encModel = { fleeP, fightP, EN, winValue };
 
   // Expected cost (crowns) of each option from the current round, solved over boats x hull by
   // dynamic programming, then the cheapest. ctx: {kind, b, start, hull, cash, cargoV (what the cargo
@@ -122,23 +135,29 @@
     const cargoV = Math.max(0, ctx.cargoV || 0), base = Math.max(0, ctx.cargoBase || 0);
     const seize = kind === 'collectors' ? 0 : EN.runSeize * cargoV;
     const sink = ctx.sinkCost;
-    const win = lootMean(kind) * ctx.start * (1 + ctx.day / 12) + (kind === 'gulls' ? Math.min(ctx.free || 0, 6.5 * ctx.start) * GULL_GOODS_BASE() * 0.6 : 0) + (ctx.calmValue || 0);
+    // A battered hull is not only a repair bill: until it is mended, the next encounter or squall
+    // can sink the skiff with everything aboard. Ending the encounter at hull h costs roughly
+    // sink x 0.5 x exp(-h/12) more (2% of the stake at 40% hull, 9% at 20%).
+    const R = h => (h <= 0 ? sink : sink * 0.5 * Math.exp(-h / 12));
+    const win = winValue(kind, ctx.start, ctx.day, ctx.free || 0, ctx.debt || 0) + (ctx.calmValue || 0);
     const inKind = short => (base > 0 ? cargoV * Math.min(1, short / base) : null);
-    // terminal options (cost, or null if not offered)
-    const term = b => {
+    const smash = h => (h <= 12 ? sink : 12 * hv + R(h - 12)); // an empty hold pays in hull
+    // options that end the encounter here (cost, or absent if not offered)
+    const term = (b, h) => {
       const t = {};
       if (kind === 'patrol') {
         const br = ctx.bribe != null ? ctx.bribe - EN.bribe.perBoat * (ctx.b - b) : null;
-        if (br != null && ctx.cash >= br) t.bribe = br;
-        t.yield = 0.5 * cargoV + (ctx.parcels || 0);
+        if (br != null && ctx.cash >= br) t.bribe = br + R(h);
+        t.yield = 0.5 * cargoV + (ctx.parcels || 0) + R(h);
       } else if (kind === 'gulls') {
         const toll = ctx.toll;
-        if (ctx.cash >= toll) t.pay = toll;
-        else { const k = inKind(toll - ctx.cash); t.pay = ctx.cash + (k != null ? k : (H <= 12 ? sink : 12 * hv)); }
+        if (ctx.cash >= toll) t.pay = toll + R(h);
+        else { const k = inKind(toll - ctx.cash); t.pay = ctx.cash + (k != null ? k + R(h) : smash(h)); }
       } else if (kind === 'collectors') {
         const due = ctx.collect, amt = Math.min(due, ctx.cash);
         let c = amt * (1 - EN.collect.credit);
-        if (amt < due) { const short = due - amt; const k = inKind(short); c += k != null ? k - EN.collect.credit * Math.min(short, base) : (H <= 12 ? sink : 12 * hv); }
+        if (amt < due) { const short = due - amt; const k = inKind(short); c += k != null ? k - EN.collect.credit * Math.min(short, base) + R(h) : smash(h); }
+        else c += R(h);
         t.pay = c;
       }
       return t;
@@ -153,15 +172,15 @@
       const p = fleeP(b, ctx.load, ctx.motor);
       let s = 0;
       for (const [d, pr] of RUN_D[b]) s += pr * (h - d <= 0 ? sink : d * hv + seize + V[b][h - d]);
-      det.run = (1 - p) * s;
+      det.run = p * R(h) + (1 - p) * s;
       // fight (stationary, so the miss-and-no-return-fire self loop is solved in closed form)
       const fp = fightP(b, ctx.arms), rf = EN.returnFire;
       let hit;
-      if (b - 1 === 0) hit = -win;
+      if (b - 1 === 0) hit = -win + R(h);
       else { let r = 0; for (const [d, pr] of RET_D[b - 1]) r += pr * (h - d <= 0 ? sink : d * hv + V[b - 1][h - d]); hit = rf * r + (1 - rf) * V[b - 1][h]; }
       let miss = 0; for (const [d, pr] of RET_D[b]) miss += pr * (h - d <= 0 ? sink : d * hv + V[b][h - d]);
       det.fight = (fp * hit + (1 - fp) * rf * miss) / (1 - (1 - fp) * (1 - rf));
-      Object.assign(det, term(b));
+      Object.assign(det, term(b, h));
       let best = null;
       for (const [k, v] of Object.entries(det)) if (best == null || v < det[best]) best = k;
       V[b][h] = det[best];
@@ -183,7 +202,7 @@
     const pAvg = 0.15;
     return Object.assign({
       kind: ci.kind, b, start: T.boats0 || b, hull: S.hull, cash: S.cash, cargoV, cargoBase: cargoBaseValue(),
-      load: holdUsed() / capacity(), motor: S.motor, arms: S.arms, day: S.day, free: capacity() - holdUsed(),
+      load: holdUsed() / capacity(), motor: S.motor, arms: S.arms, day: S.day, free: capacity() - holdUsed(), debt: S.debt,
       parcels: S.contracts.reduce((s, c) => s + c.reward, 0),
       bribe: ci.opts.bribe ? ci.opts.bribe.cost : null, toll: ci.opts.pay ? ci.opts.pay.cost : 0, collect: ci.opts.pay ? ci.opts.pay.cost : 0,
       sinkCost: S.cash + cargoV + future,
@@ -201,7 +220,7 @@
     const key = [did === 'fm' ? 'f' : did === 'sl' ? 's' : 'o', day > 18 ? 2 : day > 5 ? 1 : 0, Math.round(S.hull / 5), Math.round(cash / 1000), Math.round(cargoV / 2000), Math.round(base / 2000), S.motor, S.arms, Math.round((o.load || 0) * 4)].join(',');
     if (encMemo.has(key)) return encMemo.get(key) * pPatrol + encMemo.get(key + 'g') * (1 - pPatrol);
     const nightsLeft = Math.max(0, NIGHTS - day);
-    const common = { start: 0, hull: S.hull, cash, cargoV, cargoBase: base, load: o.load || 0, motor: S.motor, arms: S.arms, day, free: Math.max(0, o.free || 0), parcels: 0, sinkCost: cash + cargoV + nightsLeft * Math.max(1500, 0.06 * (cash + cargoV)), calmValue: 0 };
+    const common = { start: 0, debt: S.debt, hull: S.hull, cash, cargoV, cargoBase: base, load: o.load || 0, motor: S.motor, arms: S.arms, day, free: Math.max(0, o.free || 0), parcels: 0, sinkCost: cash + cargoV + nightsLeft * Math.max(1500, 0.06 * (cash + cargoV)), calmValue: 0 };
     const pb = day <= 5 ? 2 : 2 + (day > 18 ? 1 : 0), gb = day <= 5 ? 2 : 3;
     const patrol = SIM.encSolve(Object.assign({}, common, { kind: 'patrol', b: pb, start: pb, bribe: Math.round(EN.bribe.perBoat * pb + EN.bribe.purse * cash + EN.bribe.cargo * base) }));
     const gulls = SIM.encSolve(Object.assign({}, common, { kind: 'gulls', b: gb, start: gb, toll: Math.max(EN.toll.min, Math.round(EN.toll.purse * cash + EN.toll.cargo * base)) }));
@@ -333,7 +352,7 @@
   const api = {
     // --- state ---
     day: () => S.day, nights: () => NIGHTS, loc: () => S.loc,
-    cash: () => S.cash, bank: () => S.bank, debt: () => S.debt, maxDebt: () => MAX_DEBT, hull: () => S.hull,
+    cash: () => S.cash, bank: () => S.bank, debt: () => S.debt, maxDebt: () => (typeof creditLimit === 'function' ? creditLimit() : MAX_DEBT), /* eslint-disable-line no-undef */ hull: () => S.hull,
     cap: () => capacity(), used: () => holdUsed(), free: () => capacity() - holdUsed(),
     goods: () => GOODS.map(g => g.id), districts: () => DISTRICTS.map(d => d.id),
     good: gid => gd(gid), district: did => dd(did),
@@ -556,6 +575,7 @@
     __rng.seed(seed);
     SIM.seedBase = String(seed);
     SIM.crn = !(opts && opts.noCrn);
+    encMemo.clear(); // the memo rounds its keys, so a value cached by another run would leak into this one
     FAST = true; settings.tutorial = true; settings.muted = true;
     busy = false; sel = null; SIM.reload = null; SIM.cards = []; SIM.encOpen = null; SIM.expectConfirm = false;
     try { closeModal(); } catch (e) {}

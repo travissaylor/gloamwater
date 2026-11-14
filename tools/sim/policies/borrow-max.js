@@ -5,7 +5,8 @@
 SIM.register('borrow-max', {
   async night(api, mem) {
     const early = api.day() <= 10;
-    if (early && api.svcHere('lender') && api.debt() < api.maxDebt()) await api.borrow(api.maxDebt() - api.debt());
+    const cap = Math.min(api.maxDebt(), (mem.opts && mem.opts.cap) || Infinity); // --opt cap=N: borrow only to N (a lower credit limit)
+    if (early && api.svcHere('lender') && api.debt() < cap) await api.borrow(cap - api.debt());
     const late = api.day() >= api.nights() - 6;
     const hold = !late && api.cash() < api.debt() * 3;
     return SIM.lib.informedNight(api, mem, { noRepay: hold, bonus: hold ? () => 0 : undefined });

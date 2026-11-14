@@ -298,14 +298,18 @@
 
   // Bonus for heading to Lanternquay to clear debt: the interest it stops, and Marrow's collectors
   // once the deadline passes.
-  L.repayBonus = function (api) {
+  // With mem, also a bonus for a vault port while the purse holds idle money: the tolls and bribes
+  // it would otherwise carry through the next voyages (about 4% of the idle purse).
+  L.repayBonus = function (api, mem) {
     return did => {
-      if (did !== 'lq' || api.debt() <= 0) return 0;
+      let vb = 0;
+      if (mem && !(mem.opts && mem.opts.noVault) && (did === 'lq' || did === 'de') && api.day() < api.nights() - 1) vb = 0.04 * Math.max(0, api.cash() - L.vaultKeep(api, mem));
+      if (did !== 'lq' || api.debt() <= 0) return vb;
       const day = api.day(), d = api.debt(), c = api.cash();
       let v = 0;
       if (c >= d * 1.3) v += d * (Math.pow(1.06, Math.min(6, api.nights() - day)) - 1) * 0.5;
       if (c >= d && day >= 7 && day <= 10) v += 0.25 * d;
-      return v;
+      return v + vb;
     };
   };
 
@@ -321,7 +325,7 @@
     if (api.hasCharter(here) || day > N - 3) return null;
     const cost = api.charterCost();
     if (api.cash() < cost * (opts.charterProbe != null ? opts.charterProbe : 0.8)) return null;
-    const bonus = o.bonus || L.repayBonus(api);
+    const bonus = o.bonus || L.repayBonus(api, mem);
     const base = L.plans(api, mem, { bonus })[0];
     const withC = api.hypoCharter(here, () => L.plans(api, mem, { bonus })[0]);
     if (!base || !withC) return null;
@@ -344,7 +348,7 @@
   L.prepare = async function (api, mem, o) {
     o = o || {};
     await L.charterCheck(api, mem, o);
-    const first = L.plans(api, mem, { bonus: o.bonus || L.repayBonus(api) })[0];
+    const first = L.plans(api, mem, { bonus: o.bonus || L.repayBonus(api, mem) })[0];
     if (first) L.execute(api, mem, first, o.onSell, true);
     await L.housekeeping(api, mem, o);
   };
@@ -352,6 +356,7 @@
   // Route bookkeeping: one-night hops, first legs of two-night trips (and whether the next night
   // carried on), and nights spent in port.
   L.noteRoute = function (api, mem, plan) {
+    mem.lastPlan = plan;
     const R = (mem.out.route = mem.out.route || { one: 0, twoFirst: 0, twoOn: 0, twoOff: 0, stay: 0 });
     if (mem.twoTarget) { if (plan.d === mem.twoTarget) R.twoOn++; else R.twoOff++; mem.twoTarget = null; }
     if (plan.stay) R.stay++;
@@ -359,14 +364,35 @@
     else R.one++;
   };
 
+  // Vault: tolls take a quarter of the purse and bribes a tenth, so idle money belongs in the vault
+  // (Lanternquay, Drowned Exchange; 1.5% a night). At a vault the captain takes everything out
+  // before trading and, after buying, banks all but a working purse: 1.1x the typical basket of the
+  // last four nights (median), plus enough for a bribe on the way (¤1,000 + 7% of the cargo).
+  L.vaultIn = async function (api, mem) {
+    if ((mem.opts && mem.opts.noVault) || !api.svcHere('vault') || api.bank() <= 0) return;
+    await api.withdraw(api.bank());
+  };
+  L.vaultKeep = function (api, mem) {
+    const b = (mem.baskets || [0]).slice().sort((x, y) => x - y);
+    return 1.1 * b[Math.floor((b.length - 1) / 2)] + 1000 + 0.07 * api.cargoBase();
+  };
+  L.vaultOut = async function (api, mem, plan) {
+    if ((mem.opts && mem.opts.noVault) || api.day() >= api.nights()) return;
+    mem.baskets = (mem.baskets || []).concat([plan && plan.basket ? plan.basket.cost : 0]).slice(-4);
+    if (!api.svcHere('vault')) return;
+    const keep = L.vaultKeep(api, mem);
+    if (api.cash() > keep + 500) await api.deposit(api.cash() - keep);
+  };
+
   // Standard informed night. Returns the destination (its own district to stay the night).
   L.informedNight = async function (api, mem, o) {
     o = o || {};
     L.observe(api, mem);
     const N = api.nights();
+    await L.vaultIn(api, mem);
     if (api.day() >= N) { const tot = api.sellAll(); if (o.onSellAll) o.onSellAll(tot); if (api.svcHere('lender')) await api.repay(api.debt()); return null; }
     await L.prepare(api, mem, o);
-    const bonus = o.bonus || L.repayBonus(api);
+    const bonus = o.bonus || L.repayBonus(api, mem);
     const plans = L.plans(api, mem, { bonus, reserve: o.reserve, minEdge: o.minEdge });
     let plan = plans[0];
     if (o.forceDest) plan = plans.find(p => p.d === o.forceDest) || plan;
@@ -376,6 +402,7 @@
     const buys = L.execute(api, mem, plan, o.onSell);
     if (o.onBuys) o.onBuys(buys, plan);
     if (L.shouldRepay(api, o)) await api.repay(api.debt());
+    if (!o.noVaultOut) await L.vaultOut(api, mem, plan);
     return plan.d;
   };
 })();

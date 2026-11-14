@@ -24,7 +24,7 @@ SIM.register('dumpback', {
         if (r.q) { D.dumps++; D.dumpUnits += r.q; (mem.dumped[here] = mem.dumped[here] || {})[gid] = day; }
       }
     }
-    const rb = SIM.lib.repayBonus(api);
+    const rb = SIM.lib.repayBonus(api, mem);
     const bonus = d => {
       let v = rb(d);
       for (const gid in (mem.dumped[d] || {})) { const x = api.pressAfter(d, gid, 1); if (x < 0 && day - mem.dumped[d][gid] >= 1) v += -x * api.good(gid).base * 0.05; }

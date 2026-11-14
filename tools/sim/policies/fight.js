@@ -5,7 +5,7 @@ SIM.register('fight', {
   async night(api, mem) {
     const c = api.upgradeCost('arms');
     if (c != null && api.cash() >= c + 500) await api.upgrade('arms');
-    const rb = SIM.lib.repayBonus(api);
+    const rb = SIM.lib.repayBonus(api, mem);
     return SIM.lib.informedNight(api, mem, {
       bonus: d => rb(d) + api.encounterChance(d) * 2500 + (d === 'sm' && api.nextTierCost('arms') != null ? 400 : 0),
     });

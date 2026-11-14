@@ -74,7 +74,9 @@ function niceRound(x) {
 const inf = nets('informed');
 let sugg;
 if (opt('--ranks')) sugg = [-Infinity, ...opt('--ranks').split(',').map(Number)];
-else sugg = [-Infinity, 0, niceRound(q(inf, 0.03)), niceRound(q(inf, 0.25)), niceRound(q(inf, 0.70)), niceRound(q(inf, 0.88)), niceRound(q(inf, 0.95))];
+// default suggestion: Canal Runner ~p3, Lantern Broker ~p20, Tide Baron ~p40 (so the informed
+// median lands in Tide Baron), Harbor Magnate ~p80, Sovereign ~p95 (top rank about 5%)
+else sugg = [-Infinity, 0, niceRound(q(inf, 0.03)), niceRound(q(inf, 0.20)), niceRound(q(inf, 0.40)), niceRound(q(inf, 0.80)), niceRound(q(inf, 0.95))];
 out.ranks = { names, current: curMins, suggested: sugg, dist: {} };
 const rk = (title, mins) => {
   const rows = [`| policy | ${names.map((n, i) => `${n} (${i === 0 ? '<' + fmtN(mins[1]) : fmtN(mins[i]) + '+'})`).join(' | ')} |`, '|---|' + names.map(() => '---:').join('|') + '|'];
@@ -103,6 +105,9 @@ for (const p of P) {
   for (const c of ['sure', 'likely', 'guess']) row(c, W.byConf[c]);
   for (const t of ['spike', 'crash']) row(t, W.byType[t]);
   for (const k of ['full', 'weak', 'turn']) row('landed ' + k, W.byLanded[k]);
+  const HOW = { one: 'acted by a one-night hop', two: 'acted by a two-night trip', stay: 'acted by staying the night' };
+  W.byHow = {};
+  for (const h of Object.keys(HOW)) { const a = acted.filter(w => w.how === h); W.byHow[h] = st(a); if (a.length) row(HOW[h], W.byHow[h]); }
   W.table = rows.join('\n');
   out.whispers[p] = W;
 }
@@ -112,9 +117,67 @@ out.pairs = {};
 if (runs['scum'] && runs['scum-control']) out.pairs['scum vs scum-control'] = paired('scum', 'scum-control');
 if (runs['whisper-spam'] && runs['informed']) out.pairs['whisper-spam vs informed'] = paired('whisper-spam', 'informed');
 if (runs['whisper-smart'] && runs['informed']) out.pairs['whisper-smart vs informed'] = paired('whisper-smart', 'informed');
+for (const p of P) if (p !== 'informed' && runs.informed && !out.pairs[p + ' vs informed']) out.pairs[p + ' vs informed'] = paired(p, 'informed');
+const namedPair = (a, b) => { if (runs[a] && runs[b]) out.pairs[a + ' vs ' + b] = paired(a, b); };
+namedPair('charter-rush', 'informed-nocharter');
+namedPair('borrow-smart', 'borrow-max');
+namedPair('fight-farm', 'fight');
+namedPair('stay-whisper', 'whisper-smart');
+{
+  const rows = ['| pair | seeds | first higher | ties | median diff | mean diff | p25 diff | p75 diff |', '|---|---:|---:|---:|---:|---:|---:|---:|'];
+  for (const [k, v] of Object.entries(out.pairs)) rows.push(`| ${k} | ${v.n} | ${pct(v.higher)} | ${pct(v.ties)} | ${fmtN(v.median)} | ${fmtN(v.mean)} | ${fmtN(v.p25)} | ${fmtN(v.p75)} |`);
+  out.pairTable = rows.join('\n');
+}
+
+// ---- encounters, by option (adapter.js records one line per encounter)
+out.encounters = {};
+const encRow = (label, a, runsN) => {
+  const ex = a.filter(e => e.expectCost != null);
+  return `| ${label} | ${a.length} | ${(a.length / runsN).toFixed(2)} | ${fmtN(mean(a.map(e => e.cost)))} | ${fmtN(median(a.map(e => e.cost)))} | ${fmtN(mean(a.map(e => -e.cash)))} | ${mean(a.map(e => -e.hull)).toFixed(1)} | ${fmtN(mean(a.map(e => e.cargoLost)))} | ${fmtN(mean(a.map(e => e.debt)))} | ${pct(a.filter(e => e.end === 'sunk').length / (a.length || 1))} | ${ex.length ? fmtN(mean(ex.map(e => e.expectCost))) : ''} |`;
+};
+for (const p of P) {
+  const rs = ok(p), E = rs.flatMap(r => r.enc || []);
+  if (!E.length) continue;
+  const rows = [`| ${p}: encounters | n | per run | mean cost | median cost | purse lost | hull lost | cargo lost | off debt | sunk | solver's expected cost |`, '|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|'];
+  for (const kind of ['patrol', 'gulls', 'collectors']) {
+    const K = E.filter(e => e.kind === kind); if (!K.length) continue;
+    rows.push(encRow(`**${kind}**`, K, rs.length));
+    for (const f of [...new Set(K.map(e => e.first))].sort()) rows.push(encRow(`${kind}, first choice ${f}`, K.filter(e => e.first === f), rs.length));
+    for (const f of [...new Set(K.map(e => e.end))].sort()) rows.push(encRow(`${kind}, ended: ${f}`, K.filter(e => e.end === f), rs.length));
+  }
+  rows.push(encRow('**all**', E, rs.length));
+  out.encounters[p] = { table: rows.join('\n'), perRun: E.length / rs.length, meanCost: mean(E.map(e => e.cost)), costPerRun: E.reduce((a, e) => a + e.cost, 0) / rs.length, purseBefore: { p50: q(E.map(e => e.cashBefore), .5), p90: q(E.map(e => e.cashBefore), .9) }, sunkShare: E.filter(e => e.end === 'sunk').length / E.length };
+}
+{
+  const rows = ['| policy | encounters/run | cost per encounter | encounter cost per run | purse at sea p50 / p90 | encounters that sank | runs sunk | won/run | weapon tier at end |', '|---|---:|---:|---:|---:|---:|---:|---:|---:|'];
+  for (const p of P) {
+    const e = out.encounters[p]; if (!e) continue; const rs = ok(p);
+    rows.push(`| ${p} | ${e.perRun.toFixed(2)} | ${fmtN(e.meanCost)} | ${fmtN(e.costPerRun)} | ${fmtN(e.purseBefore.p50)} / ${fmtN(e.purseBefore.p90)} | ${pct(e.sunkShare)} | ${pct(rs.filter(r => r.sunk).length / rs.length)} | ${mean(rs.map(r => r.stats.won)).toFixed(2)} | ${mean(rs.map(r => r.stats.arms)).toFixed(2)} |`);
+  }
+  out.encounterSummary = rows.join('\n');
+}
+
+// ---- routes, stays, charters, vault, debt
+{
+  const rows = ['| policy | one-night hops | two-night trips | carried on | nights on two-night trips | stays | charters/run | runs with a charter | first charter night | charter spend | vault interest | interest paid | debt at end |', '|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|'];
+  out.routes = {};
+  const f1 = x => (isNaN(x) ? '-' : x.toFixed(1)), f2 = x => (isNaN(x) ? '-' : x.toFixed(2));
+  for (const p of P) {
+    const rs = ok(p), rt = rs.map(r => (r.out && r.out.route) || null).filter(Boolean), ch = rs.map(r => r.charters || []);
+    const R = k => (rt.length ? mean(rt.map(x => x[k] || 0)) : NaN);
+    const o = { one: R('one'), twoFirst: R('twoFirst'), twoOn: R('twoOn'), stays: mean(rs.map(r => r.stays || 0)), charters: mean(ch.map(c => c.length)), anyCharter: ch.filter(c => c.length).length / rs.length, firstCharter: mean(ch.filter(c => c.length).map(c => c[0].day)), charterSpend: mean(ch.map(c => c.reduce((a, x) => a + x.cost, 0))), byDistrict: {} };
+    o.twoNights = o.twoOn * 2 + (o.twoFirst - o.twoOn); // a trip carried on spans two nights; one abandoned at the waypoint, one
+    for (const c of ch.flat()) o.byDistrict[c.d] = (o.byDistrict[c.d] || 0) + 1;
+    out.routes[p] = o;
+    rows.push(`| ${p} | ${f1(o.one)} | ${f2(o.twoFirst)} | ${f2(o.twoOn)} | ${f2(o.twoNights)} | ${o.stays.toFixed(2)} | ${o.charters.toFixed(2)} | ${pct(o.anyCharter)} | ${f1(o.firstCharter)} | ${fmtN(o.charterSpend)} | ${fmtN(mean(rs.map(r => r.stats.vaultEarned)))} | ${fmtN(mean(rs.map(r => r.stats.interest)))} | ${fmtN(mean(rs.map(r => r.debtEnd || 0)))} |`);
+  }
+  out.routeTable = rows.join('\n');
+}
 
 const o = opt('--out');
 if (o) fs.writeFileSync(o, JSON.stringify(out, null, 1));
 console.log(JSON.stringify({ policies: out.policies, shape: out.shape, ranks: { suggested: sugg }, pairs: out.pairs, informedQuantiles: out.informedQuantiles }, null, 1));
 console.log('\n' + out.fortuneTable + '\n\n' + out.shapeTable + '\n\n' + out.rankTableCurrent + '\n\n' + out.rankTableSuggested);
+console.log('\n' + out.pairTable + '\n\n' + out.encounterSummary + '\n\n' + out.routeTable);
+for (const p of (opt('--enc') || 'informed').split(',')) if (out.encounters[p]) console.log('\n' + out.encounters[p].table);
 for (const [p, W] of Object.entries(out.whispers)) console.log(`\n${p}: bought ${W.bought} (${W.perRun.toFixed(2)}/run), actionable ${W.actionable}, fees ${fmtN(W.feesPerRun)}/run\n${W.table}`);

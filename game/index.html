@@ -589,7 +589,7 @@ body.fx-under #fx{z-index:49}
     <div class="stats" id="hud-stats">
       <div class="stat" id="st-cash" title="Cash on board. Can be stolen or lost if you sink."><small>Purse</small><b class="num">¤0</b></div>
       <div class="stat" id="st-bank" title="Lockwater Vault balance. Safe, and earns interest."><small>Vault</small><b class="num">¤0</b></div>
-      <div class="stat debt" id="st-debt" title="What you owe Marrow Quill. Grows 6% every night."><small>Debt</small><b class="num">¤0</b></div>
+      <div class="stat debt" id="st-debt" title="What you owe Marrow Quill. Grows 6% a night, 10% after night 10."><small>Debt</small><b class="num">¤0</b></div>
       <div class="stat" id="st-hold" title="Cargo space used"><small>Hold</small><b class="num">0/30</b><div class="meter"><i></i></div></div>
       <div class="stat" id="st-hull" title="Hull integrity. At 0% your skiff sinks."><small>Hull</small><b class="num">100%</b><div class="meter"><i></i></div></div>
     </div>
@@ -738,7 +738,11 @@ const P={
 const ico=(k,cls='')=>`<svg class="ico ${cls}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P[k]}"/></svg>`;
 
 // ---------- game data ----------
-const NIGHTS=30, START_CASH=2500, START_DEBT=6000, DEBT_RATE=.06, VAULT_RATE=.015, MAX_DEBT=30000;
+const NIGHTS=30, START_CASH=2500, START_DEBT=6000, DEBT_RATE=.06, LATE_RATE=.1, DEBT_DEADLINE=10, VAULT_RATE=.015, MAX_DEBT=30000;
+// Interest is 6% a night until Marrow's deadline, 10% after it. He lends only up to what you are worth (net worth),
+// so total debt can at most double your stake, and never past MAX_DEBT.
+const debtRate=()=>S&&S.day>DEBT_DEADLINE?LATE_RATE:DEBT_RATE;
+const creditLimit=()=>Math.round(clamp(netWorth()+S.debt,0,MAX_DEBT));
 const GOODS=[
   {id:'kelp',name:'Glowkelp',base:42,min:10,max:140,vol:.17,depth:[60,60],c:'#5ef0a0',desc:'Bioluminescent seaweed. Lamp-oil, soup and medicine for the poor.'},
   {id:'rain',name:'Bottled Rain',base:130,min:32,max:420,vol:.15,depth:[40,40],c:'#6cc8ff',desc:'Fresh water caught on rooftops. In a drowned city, never enough of it.'},
@@ -788,10 +792,10 @@ const RANKS=[
   {min:-Infinity,name:'Drowned Debtor',color:'#ff6274',line:'Marrow Quill sends his regards. And his collectors.'},
   {min:0,name:'Bilge Rat',color:'#97a3d4',line:'You kept your head above water. Barely.'},
   {min:40000,name:'Canal Runner',color:'#3ce6cf',line:'The lamplighters know your skiff by its wake.'},
-  {min:200000,name:'Lantern Broker',color:'#6cc8ff',line:'Your word moves cargo on three canals.'},
-  {min:500000,name:'Tide Baron',color:'#a58bff',line:'They named a pier after you. A small one.'},
-  {min:750000,name:'Harbor Magnate',color:'#ffbe55',line:"Half of Lanternquay's lanterns burn your oil."},
-  {min:1000000,name:'Sovereign of Gloamwater',color:'#ffe066',line:'The canals answer to you now.'}
+  {min:250000,name:'Lantern Broker',color:'#6cc8ff',line:'Your word moves cargo on three canals.'},
+  {min:400000,name:'Tide Baron',color:'#a58bff',line:'They named a pier after you. A small one.'},
+  {min:650000,name:'Harbor Magnate',color:'#ffbe55',line:"Half of Lanternquay's lanterns burn your oil."},
+  {min:850000,name:'Sovereign of Gloamwater',color:'#ffe066',line:'The canals answer to you now.'}
 ];
 const rankFor=v=>{let r=RANKS[0];for(const x of RANKS)if(v>=x.min)r=x;return r;};
 
@@ -944,7 +948,7 @@ function markSeen(){
   ds.forEach(d=>GOODS.forEach(g=>{S.seen[d.id][g.id]={p:postedAt(d.id,g.id),day:S.day,st:S.stock[d.id][g.id],sh:effectMult(d.id,g.id)>1.05};}));
 }
 function advanceDay(){
-  const di=Math.round(S.debt*DEBT_RATE);S.debt+=di;S.stats.interest+=di;
+  const di=Math.round(S.debt*debtRate());S.debt+=di;S.stats.interest+=di;
   const vi=Math.round(S.bank*VAULT_RATE);S.bank+=vi;S.stats.vaultEarned+=vi;
   S.day++;
   stepMarket(false);
@@ -1147,7 +1151,7 @@ function renderHUD(){
   tweenNum($('#st-cash b'),'cash',S.cash,F);
   tweenNum($('#st-bank b'),'bank',S.bank,F);
   tweenNum($('#st-debt b'),'debt',S.debt,F);
-  $('#st-debt small').textContent=narrow?'Debt 6%':'Debt · 6%/night';
+  {const r=Math.round(debtRate()*100);$('#st-debt small').textContent=S.debt<=0?'Debt':narrow?`Debt ${r}%`:`Debt · ${r}%/night`;}
   const used=holdUsed(),cap=capacity();
   $('#st-hold b').textContent=used+'/'+cap;
   const hm=$('#st-hold .meter i');hm.style.width=(100*used/cap)+'%';hm.style.background=used>=cap?'var(--amber)':'var(--teal)';
@@ -1296,8 +1300,8 @@ function svcHTML(k){
   const s=SVC[k];let body='';
   const head=`<div class="svc-h"><div class="avatar" style="--ac:${s.ac}">${PORTRAIT[SVC_FACE[k]]||ico(s.icon)}</div><div><h3>${s.name}</h3><div class="q">${s.line}</div></div></div>`;
   if(k==='lender'){
-    const room=Math.max(0,MAX_DEBT-S.debt);
-    body=`<div class="kv"><span>You owe</span><b style="color:#ffb3bc">${fmt(S.debt)}</b><span>Tomorrow, unpaid</span><b>${fmt(Math.round(S.debt*(1+DEBT_RATE)))}</b><span>Credit available</span><b>${fmt(room)}</b></div>
+    const room=Math.max(0,creditLimit()-S.debt);
+    body=`<div class="kv"><span>You owe</span><b style="color:#ffb3bc">${fmt(S.debt)}</b><span>Tomorrow, unpaid</span><b>${fmt(Math.round(S.debt*(1+debtRate())))}</b><span>Rate</span><b>${Math.round(debtRate()*100)}% a night${S.day>DEBT_DEADLINE?' (late)':` until night ${DEBT_DEADLINE}`}</b><span>Credit available</span><b>${fmt(room)}</b></div>
       <div class="svc-row"><button class="btn primary" data-act="repay" ${S.debt>0&&S.cash>0?'':'disabled'}>Repay debt</button><button class="btn" data-act="borrow" ${room>0?'':'disabled'}>Borrow more</button></div>`;
   }else if(k==='vault'){
     body=`<div class="kv"><span>Balance</span><b>${fmt(S.bank)}</b><span>Interest</span><b>1.5% / night</b></div>
@@ -1770,8 +1774,8 @@ async function serviceAction(a,btn){
     if(S.debt===0){toast('Debt cleared. Marrow Quill looks almost disappointed.','gold','star',3600);sfx.win();FX.lanterns(18);}
     else toast(`Repaid ${fmt(v)}`,'good','quill');
   }else if(a==='borrow'){
-    const max=Math.max(0,MAX_DEBT-S.debt);
-    const v=await askAmount({title:'Borrow from Marrow',kicker:SVC.lender.name,text:`"Of course, friend. Six percent a night, as always." Credit limit ${fmt(MAX_DEBT)}.`,max,def:Math.min(max,2000),verb:'Borrow',cls:'danger',note:x=>`<span>Debt after</span><b>${fmt(S.debt+x)}</b><span>Interest tomorrow</span><b>${fmt((S.debt+x)*DEBT_RATE)}</b>`});
+    const max=Math.max(0,creditLimit()-S.debt);if(!max){toast('Marrow lends only against what you are worth. Earn more first.','bad','quill',3600);return;}
+    const v=await askAmount({title:'Borrow from Marrow',kicker:SVC.lender.name,text:`"I lend against what a captain is worth, friend." You can owe up to ${fmt(creditLimit())}. ${Math.round(debtRate()*100)}% a night${S.day>DEBT_DEADLINE?'':`, and 10% after night ${DEBT_DEADLINE}`}.`,max,def:Math.min(max,2000),verb:'Borrow',cls:'danger',note:x=>`<span>Debt after</span><b>${fmt(S.debt+x)}</b><span>Interest tomorrow</span><b>${fmt((S.debt+x)*debtRate())}</b>`});
     if(!v)return;S.cash+=v;S.debt+=v;sfx.bank();log(`Borrowed ${fmt(v)} from Marrow Quill.`,'bad');toast(`Borrowed ${fmt(v)}`,'bad','quill');
   }else if(a==='deposit'){
     const v=await askAmount({title:'Deposit in the Vault',kicker:SVC.vault.name,text:'Safe from thieves, pirates and the sea. Earns 1.5% a night.',max:S.cash,verb:'Deposit',cls:'teal',note:x=>`<span>Vault after</span><b>${fmt(S.bank+x)}</b><span>Earns tomorrow</span><b>${fmt((S.bank+x)*VAULT_RATE)}</b>`});
@@ -2017,7 +2021,7 @@ const ENC={
   flee:{base:.46,motor:.15,perBoat:.06,load:.16,min:.12,max:.9},
   fightPerBoat:.03,returnFire:.6,
   bribe:{perBoat:250,purse:.1,cargo:.07},
-  toll:{min:200,purse:.25,cargo:.12},
+  toll:{min:200,purse:.18,cargo:.12},
   collect:{min:500,share:.35,credit:.75},   // Marrow's men keep a quarter of what they take
   runSeize:.12,                              // share of each cargo grabbed when a run fails
   loot:{gulls:[250,600],patrol:[300,800]},gullCargo:3500,collectFee:.1,
@@ -2069,7 +2073,7 @@ async function fightLoop(kind){
     ];
     if(kind==='patrol'){choices.push({key:'bribe',label:`Bribe the sergeant · ${fmt(bribe)}`,sub:S.cash>=bribe?'Guaranteed. The price follows your purse and your cargo.':'Your purse is too light for this sergeant.',disabled:S.cash<bribe});
       choices.push({key:'yield',label:'Heave to and be searched',sub:'They seize half of every cargo and any sealed parcels.'});}
-    else if(kind==='gulls')choices.push({key:'pay',label:`Pay the toll · ${fmt(toll)}`,sub:S.cash>=toll?'A quarter of your purse plus a cut of your cargo.':shortSub(toll-S.cash)});
+    else if(kind==='gulls')choices.push({key:'pay',label:`Pay the toll · ${fmt(toll)}`,sub:S.cash>=toll?'About a fifth of your purse plus a cut of your cargo.':shortSub(toll-S.cash)});
     else choices.push({key:'pay',label:`Hand over ${fmt(collect)}`,sub:`${pct(ENC.collect.credit)} of it comes off your debt; his men keep the rest.${S.cash<collect?' Your purse is short, so they take cargo too.':''}`});
     const extra=`<div class="enc-stats"><div>Your hull<b>${Math.round(S.hull)}%</b><div class="bar"><i style="width:${S.hull}%;background:${S.hull>60?'var(--up)':S.hull>30?'var(--amber)':'var(--down)'}"></i></div></div><div>Enemy boats<b>${boats}</b></div><div>Cargo at stake<b>${fmtK(cargoBaseValue())}</b></div></div>`;
     if(T){T.boats=boats;T.boats0=start;}save(); // each round is committed before the next choice
@@ -2223,7 +2227,7 @@ function encounterChance(dest){
 function rollVoyageEvent(dest){
   if(S.stats.trips===0)return null;
   const pe=encounterChance(dest),r=rnd();
-  if(r<pe){const pPatrol=dest==='fm'?.7:dest==='sl'?.3:.5;return rnd()<pPatrol?'patrol':'gulls';}
+  if(r<pe){if(S.debt>0&&S.day>DEBT_DEADLINE&&rnd()<.35)return 'collectors';const pPatrol=dest==='fm'?.7:dest==='sl'?.3:.5;return rnd()<pPatrol?'patrol':'gulls';}
   if(r<pe+.06)return 'squall';
   return null;
 }
@@ -2234,7 +2238,7 @@ function rollArrivalEvent(stayed){
   return weighted(list).e.id;
 }
 function runEvent(id){
-  if(id==='patrol'||id==='gulls')return encounter(id);
+  if(id==='patrol'||id==='gulls'||id==='collectors')return encounter(id);
   if(id==='squall')return evSquall();
   const e=ARRIVAL_EVENTS.find(x=>x.id===id);return e?e.run():Promise.resolve();
 }
@@ -2520,7 +2524,7 @@ function openIntro(){
   const nm=settings.name||'';
   const el=showModal(`<div class="art">${ART.tip()}</div><div class="card-body">
     <div class="kicker">A new voyage</div><h3>Thirty nights in Gloamwater</h3>
-    <p>The sea took the lower city forty years ago. Now its canals run on lantern-light and quiet deals. You own a battered skiff, the <i>Little Lantern</i>, and you owe <b>Marrow Quill ${fmt(START_DEBT)}</b> for it. His interest compounds at <b>6% every night</b>.</p>
+    <p>The sea took the lower city forty years ago. Now its canals run on lantern-light and quiet deals. You own a battered skiff, the <i>Little Lantern</i>, and you owe <b>Marrow Quill ${fmt(START_DEBT)}</b> for it. His interest compounds at <b>6% every night</b>, and he wants it back by <b>night 10</b>.</p>
     <p>You have <b>${fmt(START_CASH)}</b> and thirty nights. Buy cheap in one district, sell dear in another, and be the richest captain on the water when the last lantern goes out.</p>
     <label class="kicker" for="cap-name">Your name, captain</label>
     <input class="namein" id="cap-name" maxlength="18" placeholder="Captain" value="${esc(nm)}" autocomplete="off">
@@ -2548,7 +2552,7 @@ function openHelp(){
 const STAT_HELP={
   'st-cash':['Purse','Cash on board. Thieves, tolls and gulls take from it, and it sinks with the skiff. Keep big money in the vault.'],
   'st-bank':['Lockwater Vault','Safe from thieves and the sea, and earns 1.5% a night. Branches at Lanternquay and the Drowned Exchange.'],
-  'st-debt':['Debt to Marrow Quill','Grows 6% every night. Repay at Lanternquay. Owe more than ¤12,000 and his collectors start hunting you on the canals.'],
+  'st-debt':['Debt to Marrow Quill','Grows 6% a night, and 10% after his night-10 deadline. Repay at Lanternquay. Still owing after night 10, or owing more than ¤12,000, sends his collectors after you on the canals. He lends only up to what you are worth.'],
   'st-hold':['Hold','Cargo space used and total. Odile at Copperhook Docks sells bigger racks.'],
   'st-hull':['Hull','At 0% the skiff sinks and you lose your purse and cargo. Below 60% it leaks. Repairs at Copperhook Docks; cheap patches at the Sluices.']
 };
@@ -2565,7 +2569,7 @@ function openMenu(){
 // ---------- guided tour ----------
 let coachOpen=false,coachI=0;
 const COACH=[
-  {sel:'#hud-stats',view:'market',title:'Your ledger',text:'Cash in your <b>purse</b>, savings in the <b>vault</b>, and your <b>debt</b> to Marrow Quill, which grows 6% every night. Watch your <b>hold</b> space and <b>hull</b> too.'},
+  {sel:'#hud-stats',view:'market',title:'Your ledger',text:'Cash in your <b>purse</b>, savings in the <b>vault</b>, and your <b>debt</b> to Marrow Quill, which grows 6% every night and must be repaid by night 10. Watch your <b>hold</b> space and <b>hull</b> too.'},
   {sel:'#side-body .rows',view:'market',title:'The market',text:'Tonight&rsquo;s prices. The coloured % compares each price with its usual level across the city: <b style="color:#4ee39b">green is cheap</b>, a buy; <b style="color:#ffbe55">amber is dear</b>, a sale. Tags say where a good sells for more. Tap a good to trade.'},
   {sel:'#mapwrap',view:'map',title:'The canals',text:'Tap a district to see what it sells cheap and what it pays well for, then tap Sail. <b>Every voyage takes one night</b>, and the water isn\'t always safe.'},
   {sel:'#panel-side',view:'harbor',title:'Harbor services',text:'Repay Marrow and use the vault at Lanternquay. Upgrade your hold and engine at Copperhook Docks. The <b>directory</b> lists every service.'},

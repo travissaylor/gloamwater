@@ -143,6 +143,27 @@ function summarise(name, runs, ranks, checkpoints, baseline) {
   if (cor.length) s.corner = { probes: cor.reduce((a, r) => a + r.out.corner.probes, 0), tallyDeltaMean: mean(cor.filter(r => r.out.corner.probes).map(r => r.out.corner.tallyDelta)), tallyDeltaMax: Math.max(...cor.map(r => r.out.corner.probes ? r.out.corner.tallyDelta : -Infinity)), sellDeltaMean: mean(cor.filter(r => r.out.corner.probes).map(r => r.out.corner.sellDelta)), sellDeltaMax: Math.max(...cor.map(r => r.out.corner.probes ? r.out.corner.sellDelta : -Infinity)) };
   const rl = ok.filter(r => r.reloadLog && (r.reloadLog.found || r.reloadLog.noSave));
   s.reloadLog = { runsWithReloads: rl.length, found: ok.reduce((a, r) => a + ((r.reloadLog && r.reloadLog.found) || 0), 0), noSave: ok.reduce((a, r) => a + ((r.reloadLog && r.reloadLog.noSave) || 0), 0), cashBack: ok.reduce((a, r) => a + ((r.reloadLog && r.reloadLog.cashBack) || 0), 0), hullBack: ok.reduce((a, r) => a + ((r.reloadLog && r.reloadLog.hullBack) || 0), 0) };
+  // encounters: one record per encounter (adapter.js encClose)
+  const encs = ok.flatMap(r => r.enc || []);
+  s.enc = { perRun: encs.length / (ok.length || 1), by: {} };
+  if (encs.length) {
+    const by = {};
+    for (const e of encs) {
+      for (const key of [e.kind + '|all', e.kind + '|first:' + e.first, e.kind + '|end:' + e.end, 'all|all']) {
+        const o = (by[key] = by[key] || { n: 0, cost: 0, cash: 0, hull: 0, cargo: 0, debt: 0, loot: 0, rounds: 0, sunk: 0, expect: 0, expN: 0 });
+        o.n++; o.cost += e.cost; o.cash += e.cash; o.hull += e.hull; o.cargo += e.cargoLost; o.debt += e.debt; o.loot += e.lootGoods; o.rounds += e.rounds; if (e.end === 'sunk') o.sunk++; if (e.expectCost != null) { o.expect += e.expectCost; o.expN++; }
+      }
+    }
+    s.enc.by = Object.fromEntries(Object.entries(by).map(([k, o]) => [k, { n: o.n, perRun: o.n / ok.length, cost: o.cost / o.n, cash: o.cash / o.n, hull: o.hull / o.n, cargo: o.cargo / o.n, debt: o.debt / o.n, loot: o.loot / o.n, rounds: o.rounds / o.n, sunk: o.sunk / o.n, expect: o.expN ? o.expect / o.expN : null }]));
+  }
+  // charters, routes, stays, debt
+  const chs = ok.map(r => r.charters || []);
+  s.charters = { perRun: mean(chs.map(c => c.length)), anyShare: chs.filter(c => c.length).length / (ok.length || 1), firstDay: mean(chs.filter(c => c.length).map(c => c[0].day)), spent: mean(chs.map(c => c.reduce((a, x) => a + x.cost, 0))), byDistrict: {} };
+  for (const c of chs.flat()) s.charters.byDistrict[c.d] = (s.charters.byDistrict[c.d] || 0) + 1 / ok.length;
+  const rts = ok.map(r => r.out && r.out.route).filter(Boolean);
+  s.route = rts.length ? Object.fromEntries(['one', 'twoFirst', 'twoOn', 'twoOff', 'stay'].map(k => [k, mean(rts.map(x => x[k] || 0))])) : null;
+  s.staysPerRun = mean(ok.map(r => r.stays || 0));
+  s.debtEndMean = mean(ok.map(r => r.debtEnd || 0));
   if (baseline && baseline !== runs) {
     const by = new Map(baseline.filter(r => !r.error).map(r => [r.seed, r.net]));
     const diffs = ok.filter(r => by.has(r.seed)).map(r => r.net - by.get(r.seed));
@@ -157,6 +178,7 @@ function report(sum, meta) {
   out.push(`Game: ${meta.game} (sha256 ${meta.gameSha.slice(0, 12)})`);
   out.push(`Runs per policy: ${meta.runs}, seeds ${meta.seeds[0]}..${meta.seeds[meta.seeds.length - 1]}, workers ${meta.workers}, ${meta.runsPerSec.toFixed(1)} runs/s, mode ${meta.mode}`);
   out.push(`Adapter features: ${JSON.stringify(meta.features)}`);
+  if (meta.repro) out.push(`Reproducibility: ${meta.repro.seeds} seeds; game RNG seeds differ across policies on ${meta.repro.rng0Mismatch}; night-30 market stream differs on ${meta.repro.mktMismatch} (of ${meta.repro.mktSeeds} seeds where 2+ runs reached night 30)`);
   if (meta.label) out.push(`Label: ${meta.label}`);
   if (Object.keys(meta.set || {}).length) out.push(`Data set: ${JSON.stringify(meta.set)}`);
   if (Object.keys(meta.opts || {}).length) out.push(`Policy opts: ${JSON.stringify(meta.opts)}`);
@@ -204,11 +226,17 @@ function report(sum, meta) {
     if (s.corner) out.push('', `Corner (${s.policy}): ${s.corner.probes} final-night probes; tally change from buying up the main good: mean ${fmtN(s.corner.tallyDeltaMean)}, best ${fmtN(s.corner.tallyDeltaMax)}; cash from cornering then selling vs plain selling: mean ${fmtN(s.corner.sellDeltaMean)}, best ${fmtN(s.corner.sellDeltaMax)}`);
     if (s.reloadLog && (s.reloadLog.found || s.reloadLog.noSave)) out.push('', `Reloads (${s.policy}): ${s.reloadLog.found} found a save, ${s.reloadLog.noSave} found none (runs with reloads: ${s.reloadLog.runsWithReloads}); cash a reload gave back: ${fmtN(s.reloadLog.cashBack)}, hull: ${s.reloadLog.hullBack}`);
   }
+  out.push('');
+  out.push('Routes, charters, encounters (per run)');
+  const eb = (s, k, f) => (s.enc.by[k] ? f(s.enc.by[k]) : '-');
+  out.push(table(['policy', '1-night hops', '2-night trips', 'carried on', 'stays', 'charters', 'any charter', '1st charter night', 'encounters', 'cost/enc', 'patrol cost', 'gulls cost', 'collectors', 'collector cost', 'enc sinkings', 'debt at end'],
+    P.map(s => [s.policy, s.route ? s.route.one.toFixed(1) : '-', s.route ? s.route.twoFirst.toFixed(2) : '-', s.route ? s.route.twoOn.toFixed(2) : '-', s.staysPerRun.toFixed(2), s.charters.perRun.toFixed(2), pct(s.charters.anyShare), isNaN(s.charters.firstDay) ? '-' : s.charters.firstDay.toFixed(1), s.enc.perRun.toFixed(2),
+      eb(s, 'all|all', o => fmtN(o.cost)), eb(s, 'patrol|all', o => fmtN(o.cost)), eb(s, 'gulls|all', o => fmtN(o.cost)), eb(s, 'collectors|all', o => o.perRun.toFixed(2)), eb(s, 'collectors|all', o => fmtN(o.cost)), eb(s, 'all|all', o => pct(o.sunk)), fmtN(s.debtEndMean)])));
   const ev = P.filter(s => Object.keys(s.events).length);
   if (ev.length) {
     out.push('');
     out.push('Choices per run (selected)');
-    const keys = ['patrol:bribe', 'patrol:run', 'patrol:fight', 'patrol:yield', 'gulls:pay', 'gulls:run', 'gulls:fight', 'squall:push', 'squall:shelter', 'eel:big', 'eelwin:ok', 'eellose:ok', 'sunk:ok', 'victory:ok'];
+    const keys = ['patrol:bribe', 'patrol:run', 'patrol:fight', 'patrol:yield', 'gulls:pay', 'gulls:run', 'gulls:fight', 'collectors:pay', 'collectors:run', 'collectors:fight', 'squall:push', 'squall:shelter', 'eel:big', 'eellose:ok', 'racks:buy', 'sunk:ok'];
     out.push(table(['policy', ...keys], ev.map(s => [s.policy, ...keys.map(k => (s.events[k] || 0).toFixed(2))])));
   }
   const errs = P.filter(s => s.failed || s.errors.length);
@@ -278,6 +306,10 @@ async function main() {
   const summary = {};
   for (const p of pols) summary[p] = summarise(p, results[p], meta0.ranks, meta0.checkpoints, results.informed);
   const meta = { game: A.game, gameSha, runs: A.runs, seeds, workers: A.workers, elapsedSec: elapsed, runsPerSec: total / elapsed, mode: 'full (real sailTo voyages, rendering on)', opts: A.opts, pageErrors: pageErrors.slice(0, 20), date: new Date().toISOString(), ...meta0 };
+  // the game promises the same market for the same seed whatever the captain does: check it
+  const mk = new Map();
+  for (const p of pols) for (const r of results[p]) if (!r.error && r.rng0) { const o = mk.get(r.seed) || { rng0: new Set(), mkt: new Set(), n: 0 }; o.rng0.add(r.rng0.m + ':' + r.rng0.e); if (r.mkt != null) { o.mkt.add(r.mkt); o.n++; } mk.set(r.seed, o); }
+  meta.repro = { seeds: mk.size, rng0Mismatch: [...mk.values()].filter(o => o.rng0.size > 1).length, mktSeeds: [...mk.values()].filter(o => o.n > 1).length, mktMismatch: [...mk.values()].filter(o => o.mkt.size > 1).length };
   const text = report(summary, meta);
   console.log(text);
   if (pageErrors.length) console.log(`\nPage errors (${pageErrors.length}): ${pageErrors.slice(0, 5).join(' | ')}`);
