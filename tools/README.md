@@ -29,7 +29,7 @@ $T = 'C:\Users\travi\projects\trader-bakeoff\tools'
 # phone size: add  -Width 390 -Height 844   (use a different port)
 
 # run steps against it (inline, separated by ' ;; ', or one per line in a file via -StepsFile)
-& "$T\cdp.ps1" -Port 9311 -Step 'ui ;; shot C:path	oshot.png ;; errors'
+& "$T\cdp.ps1" -Port 9311 -Step 'ui ;; shot C:\Users\travi\projects\trader-bakeoff\judging\round-1\start.png ;; errors'
 
 # stop it when done
 & "$T\cdp-stop.ps1" -Port 9311
