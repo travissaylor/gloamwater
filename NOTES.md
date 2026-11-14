@@ -8,14 +8,14 @@ have thirty nights to get rich. Open `game/index.html` in a browser: no dependen
 ## How to play
 - **Trade.** Tap a good to open the trade sheet (buy or sell, quantity, totals, a 14-night chart). Each row compares tonight's
   price with that good's usual price across the city: **green** is cheap (a buy), **amber** is dear (a sale). Tags name where
-  it recently sold for more; "Best known" names the biggest margin you have seen.
+  it recently sold for more. The comparison strip opens a buy quote or a route for cargo you already hold; prices can change.
 - **Market depth.** Dealers trade a few units at the posted price; past that each unit costs more (or fetches less) and the
   price takes a night or two to recover. The sheet says how many are left at the posted price and warns before a losing order.
 - **Canals.** Sail along a canal for one night. Lanternquay joins every district; the others sit on a ring, so a district with
   no direct canal is two nights via a waypoint. Tap your own district to stay a night in port. Tap during a voyage to skip it.
 - **Shocks.** Surges and gluts last two nights, weaker on the second. You hear of them where you are, by rumour, always with the
   wireless set, or a night early from Madame Ysolde or Pell the lamplighter.
-- **Fleet calls.** Open the market's Fleet summary for the public calendar. Every four nights a new port buys a named good:
+- **Fleet calls.** The market's wireless button opens the public calendar and bulletins. Every four nights a new port buys a named good:
   40% extra demand and twice the depth. Arrival prices still drift; missing the closing night loses the boost.
 - **Money.** Repay Marrow at Lanternquay: 6% a night, 10% after night 10, and his collectors hunt you while you still owe after
   night 10 (or owe over ¤12,000). He lends only up to what you are worth. The Lockwater Vault pays 1.5% a night and can't be robbed.
@@ -29,8 +29,8 @@ have thirty nights to get rich. Open `game/index.html` in a browser: no dependen
   **Keyboard.** 1–7 pick a district, Enter sails, arrows pick a good, B/S trade, ←/→ quantity, M mutes, ? help, Esc menu.
 
 ## Design decisions
-- **Phone first.** Sheets pin their main button; the map keeps its scale and scrolls to destination details. HUD figures are
-  buttons, news collapses, order defaults respect flat depth, and a typed quantity can be confirmed without a blur re-render.
+- **Phone first.** A compact map dock keeps all seven ports available; full details open separately. Market rows show destination
+  names and observation age. Modal focus stays inside the sheet; reduced motion covers the SVG title and score count.
 - **Rumours are not certainties.** Tomorrow's shocks are queued a night ahead with a fixed fate: they land in full, land weak,
   or **turn** (everyone heard, and the opposite happened). A whisper only reveals what is queued; it never creates or changes one.
   Ysolde sells one a night for ¤300 + 1.5% of purse, vault and cargo, and says how sure she is before you pay.
@@ -47,8 +47,9 @@ have thirty nights to get rich. Open `game/index.html` in a browser: no dependen
   This small sample is a regression check, not exhaustive balance proof. Earlier larger runs also tested reloads and final tally inflation.
 
 ## Testing done
-- Earlier build: WebKit touch phone runs, Chromium desktop, file://, sandbox and corrupt storage. Current checks are recorded
-  by `node tools/verify.cjs`; this separates touch input regressions from automated full games using real game functions.
+- `node tools/verify.cjs` records phone input/layout checks, keyboard focus, file://, sandbox, corrupt storage and automated full games.
+  `node tools/touch-play.cjs` drives actual UI taps and typed amounts. Its 30-night reference run repaid debt, bought upgrades,
+  visited all seven ports and settled at ¤428,983; source hashes and emulation limits are recorded in its evidence report.
 
 ## Known issues
 - No real iPhone was available. Double-tap zoom, rubber-banding, safe-area insets and the silent switch are handled in CSS

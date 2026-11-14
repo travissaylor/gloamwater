@@ -501,6 +501,13 @@
       return t ? t.cost : null;
     },
     holdTier: () => S.holdTier,
+    holdTierCap: tier => HOLD_TIERS[tier] ? HOLD_TIERS[tier].cap : null,
+    holdTierCost: tier => HOLD_TIERS[tier] ? HOLD_TIERS[tier].cost || 0 : null,
+    hypoHold(tier, f) {
+      const before = S.holdTier;
+      S.holdTier = tier;
+      try { return f(); } finally { S.holdTier = before; }
+    },
     async upgrade(kind) {
       const cost = api.upgradeCost(kind);
       if (cost == null || (kind !== 'repair' && kind !== 'patch' && S.cash < cost)) return false;
@@ -538,6 +545,15 @@
     if (!ORIG.hold) ORIG.hold = HOLD_TIERS.map(t => Object.assign({}, t));
     if (!ORIG.conf && HAS_CONF) ORIG.conf = JSON.parse(JSON.stringify(CONF)); // eslint-disable-line no-undef
     if (DEPTH) GOODS.forEach((g, i) => { const k = cfg.depthScale || 1; g.depth = [ORIG.depth[i][0] * k, ORIG.depth[i][1] * k]; });
+    // Experimental public freight license; never changes the shipped game file.
+    if (DEPTH) {
+      if (!ORIG.depthFn) ORIG.depthFn = window.depthOf;
+      window.depthOf = cfg.freightLicense ? function (did, gid, day = S.day) {
+        const k = ORIG.depthFn(did, gid, day);
+        const factor = Math.max(1, Math.min(200 / 70, HOLD_TIERS[S.holdTier].cap / 70));
+        return { n: k.n * factor, d: k.d * factor };
+      } : ORIG.depthFn;
+    }
     HOLD_TIERS.length = 0; ORIG.hold.forEach(t => HOLD_TIERS.push(Object.assign({}, t)));
     if (cfg.holdScale) HOLD_TIERS.forEach((t, i) => { if (i > 0) t.cap = Math.round(t.cap * cfg.holdScale); });
     if (cfg.holdMaxTier != null) HOLD_TIERS.length = cfg.holdMaxTier + 1;
@@ -569,7 +585,7 @@
         }
       };
     }
-    return { depth: DEPTH ? GOODS.map(g => g.depth) : null, hold: HOLD_TIERS.map(t => t.cap), conf: HAS_CONF ? Object.fromEntries(Object.keys(CONF).map(k => [k, CONF[k].odds])) : null, shock: SIM.shock, enc: ENC_T ? JSON.parse(JSON.stringify(ENC_T)) : null }; // eslint-disable-line no-undef
+    return { depth: DEPTH ? GOODS.map(g => g.depth) : null, freightLicense: !!cfg.freightLicense, hold: HOLD_TIERS.map(t => t.cap), conf: HAS_CONF ? Object.fromEntries(Object.keys(CONF).map(k => [k, CONF[k].odds])) : null, shock: SIM.shock, enc: ENC_T ? JSON.parse(JSON.stringify(ENC_T)) : null }; // eslint-disable-line no-undef
   };
 
   // ---------------------------------------------------------------- runner

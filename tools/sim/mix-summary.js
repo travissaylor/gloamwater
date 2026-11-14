@@ -20,6 +20,21 @@ const lines = [
 for (const s of Object.values(data.summary)) lines.push(`| ${s.policy} | ${cash(s.median)} | ${cash(s.mean)} | ${s.stats.holdTier.toFixed(2)} | ${pct(s.sinkRate)} |`);
 const inf = valid(data.runs.informed || []);
 const bySeed = new Map(inf.map(r => [r.seed, r]));
+if (data.meta.set && data.meta.set.freightLicense) {
+  lines.push('', 'Experimental freight license only: shipped game source was not changed.', '',
+    '| Policy | Tier 3 | Tier 4 | Tier 5 | Mean charters | Median run N30/N18 |', '|---|---:|---:|---:|---:|---:|');
+  for (const [name, rows] of Object.entries(data.runs)) {
+    const rs = valid(rows), s = data.summary[name];
+    const shares = [3, 4, 5].map(t => pct(rs.filter(r => r.stats.holdTier === t).length / rs.length));
+    lines.push(`| ${name} | ${shares.join(' | ')} | ${s.charters.perRun.toFixed(2)} | ${s.shape.medianRunRatio30over18.toFixed(2)}× |`);
+  }
+  for (const [name, rows] of Object.entries(data.runs)) {
+    const rs = valid(rows), ts = rs.flatMap(r => r.trades || []).filter(t => t.kind === 'sell' && t.day >= 18);
+    const total = sum(ts.map(t => t.total)), mix = {};
+    for (const t of ts) mix[t.g] = (mix[t.g] || 0) + t.total;
+    lines.push('', `${name} late revenue shares: ${Object.entries(mix).sort((a, b) => b[1] - a[1]).map(([g, n]) => g + ' ' + pct(n / total)).join(', ')}.`);
+  }
+}
 const ws = data.summary['whisper-spam'];
 if (ws) {
   const paired = valid(data.runs['whisper-spam']).filter(r => bySeed.has(r.seed));

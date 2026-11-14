@@ -290,7 +290,16 @@
     const fills = mem.fills || [];
     const full = fills.length ? fills.reduce((a, b) => a + b, 0) / fills.length : 1;
     let c;
-    while ((c = api.upgradeCost('hold')) != null && day <= N - 5 && c <= api.cash() * 0.4 && (api.holdTier() < 2 || full >= ((mem.opts && mem.opts.holdFill) != null ? mem.opts.holdFill : 0.8))) { if (!(await api.upgrade('hold'))) break; }
+    const maxHoldTier = mem.opts && mem.opts.maxHoldTier != null ? mem.opts.maxHoldTier : 5;
+    while (api.holdTier() < maxHoldTier && (c = api.upgradeCost('hold')) != null && day <= N - 5 && c <= api.cash() * 0.4 && (api.holdTier() < 2 || full >= ((mem.opts && mem.opts.holdFill) != null ? mem.opts.holdFill : 0.8))) { if (!(await api.upgrade('hold'))) break; }
+    if (SIM.cfg?.freightLicense && mem.opts.freightAware && api.svcHere('yard')) {
+      const f = L.freightPlan(api, mem);
+      if (f) {
+        const before = api.holdTier();
+        while (api.holdTier() < f.tier && await api.upgrade('hold')) {}
+        if (api.holdTier() !== before) (mem.out.freightBuys = mem.out.freightBuys || []).push({ day, from: before, to: api.holdTier(), cost: f.cost, uplift: f.u, estimatedValue: f.value });
+      }
+    }
     if ((c = api.upgradeCost('motor')) != null && day <= N - 8 && c <= api.cash() * 0.2) await api.upgrade('motor');
     if (!o.noWireless && (c = api.upgradeCost('wireless')) != null && day <= N - 8 && c <= api.cash() * 0.25) await api.upgrade('wireless');
     if (L.shouldRepay(api, o)) await api.repay(api.debt());
@@ -301,9 +310,11 @@
   // With mem, also a bonus for a vault port while the purse holds idle money: the tolls and bribes
   // it would otherwise carry through the next voyages (about 4% of the idle purse).
   L.repayBonus = function (api, mem) {
+    const freight = SIM.cfg?.freightLicense && mem && mem.opts.freightAware ? L.freightPlan(api, mem) : null;
     return did => {
       let vb = 0;
       if (mem && !(mem.opts && mem.opts.noVault) && (did === 'lq' || did === 'de') && api.day() < api.nights() - 1) vb = 0.04 * Math.max(0, api.cash() - L.vaultKeep(api, mem));
+      if (freight && did === 'ch' && api.loc() !== 'ch') vb += Math.max(0, freight.value - 1.25 * freight.cost) * 0.3;
       if (did !== 'lq' || api.debt() <= 0) return vb;
       const day = api.day(), d = api.debt(), c = api.cash();
       let v = 0;
@@ -311,6 +322,31 @@
       if (c >= d && day >= 7 && day <= 10) v += 0.25 * d;
       return v + vb;
     };
+  };
+
+  // Opt-in experimental policy. The license, quotes and tier costs are public information.
+  // Price at most four future voyages from tonight's observed uplift, keep trading capital,
+  // and require a 25% cushion. No future prices or hidden event outcomes are consulted.
+  L.freightPlan = function (api, mem) {
+    const opts = mem.opts || {}, maxTier = opts.maxHoldTier != null ? opts.maxHoldTier : 5;
+    if (maxTier < 3 || api.holdTier() >= maxTier || api.day() > api.nights() - 5) return null;
+    const base = L.plans(api, mem, {})[0];
+    if (!base) return null;
+    let cost = 0, best = null;
+    const nv = mem.nv, nvDay = mem.nvDay;
+    for (let tier = api.holdTier() + 1; tier <= maxTier; tier++) {
+      const c = api.holdTierCost(tier); if (c == null) break; cost += c;
+      if (tier < 3 || cost > api.cash() * 0.4) continue;
+      const plan = api.hypoHold(tier, () => L.plans(api, mem, { reserve: cost })[0]);
+      mem.nv = nv; mem.nvDay = nvDay;
+      if (!plan || plan.cashAvail - plan.basket.cost < cost) continue;
+      const u = Math.max(0, plan.score - base.score);
+      const value = u * Math.min(4, (api.nights() - api.day()) / 3);
+      if (value < 1.25 * cost) continue;
+      const f = { tier, cost, u: Math.round(u), value: Math.round(value) };
+      if (!best || value - cost > best.value - best.cost) best = f;
+    }
+    return best;
   };
 
   // Trading charter: bought at the port it stands in when the counterfactual plan says it pays.

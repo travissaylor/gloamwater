@@ -1,0 +1,5 @@
+{"at":"2026-11-14T17:04:48.267Z","action":"tap","selector":"#t-new","text":"Cast off"}
+{"at":"2026-11-14T17:04:49.791Z","action":"tap","selector":"#cap-name","text":""}
+{"at":"2026-11-14T17:04:50.946Z","action":"type","selector":"#cap-name","text":"Touch 2"}
+{"at":"2026-11-14T17:04:51.579Z","action":"tap","selector":"#go","text":"Cast off\nA quick guided tour starts first. You can skip it."}
+{"at":"2026-11-14T17:04:53.020Z","action":"tap","selector":"#coach [data-skip]","text":"Skip tour"}

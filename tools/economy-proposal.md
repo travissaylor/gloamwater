@@ -56,3 +56,29 @@ For empty holds, show the before/after flat quantities for the district's specia
 ## Keep the change bounded
 
 Do not simply remove depth, increase vault interest, or make all expensive goods liquid. Those changes restore runaway wealth or make banking even more dominant. Keep current rank thresholds until the changed game has a larger seed sample. Run informed, greedy, whisper-spam and roundtrip first; expand only if they reveal a problem.
+
+## Freight-license experiment
+
+The fleet calendar improved trade diversity, but the informed bot bought none of the three hold tiers above 70 in 80 runs. A browser-only prototype therefore tested an additional dealer-depth multiplier: `max(1, min(200/70, holdCapacity/70))`. The existing tier costs remained ¤18k, ¤40k and ¤85k. Charters and fleet calls still multiplied depth independently.
+
+The prototype runs only with `--set freightLicense=1`. The game file was not changed. An opt-in policy, `--opt freightAware=1`, compares current public quotes with hypothetical advertised capacity and depth. It prices at most four future voyages from tonight's estimated uplift, reserves the purchase cost and requires a 25% cushion. A small Copperhook routing bonus values that same public opportunity. It reads no future prices, hidden shocks or outcomes. The no-high comparator uses the same informed planner with hold tiers capped at 70.
+
+One comparison used 40 paired seeds and three policies. Results are in `tools/sim/results/freight-prototype.json` and `freight-prototype-summary.md`.
+
+| Observation | Freight aware | No high tiers | No charters |
+|---|---:|---:|---:|
+| Final fortune, median | ¤827.6k | ¤627.5k | ¤673.0k |
+| Final fortune, mean | ¤842.9k | ¤686.4k | ¤715.8k |
+| Mean final hold tier | 2.25 | 1.27 | 1.95 |
+| Finish with tier 3 / 4 / 5 | 37.5% / 15% / 2.5% | 0% / 0% / 0% | 35% / 10% / 0% |
+| Median per-run N30/N18 growth | 3.72× | 3.17× | 3.17× |
+| Largest sale in the sample | ¤1.11M | ¤584.5k | ¤654.7k |
+| Mean charters purchased | 1.57 | 1.43 | 0 |
+
+Twenty-two of forty informed runs bought licensed capacity, on mean night 17.2. Against the no-high comparator, 21 seeds improved, 16 tied and 3 worsened. The paired median gain was about ¤10k, while the mean gain was ¤156.5k. Large gains in a few runs account for much of the higher median final fortune; a larger number alone does not establish better play.
+
+Late revenue shares barely moved: silk 36.0%, ink 27.9%, chips 15.2%, eels 11.9%. Without high tiers they were 36.0%, 27.3%, 15.0% and 12.3%. The leading late route remained Exchange–Orchid, at 35.4% of hops. This experiment adds capital deployment and an investment milestone. It adds little strategic variety.
+
+**Recommendation:** do not ship all three licensed tiers as a variety fix. A 100/140-capacity license with a 2× cap could make a useful optional milestone, but that simpler variant is untested. The 200-capacity tier still drew only one buyer and is a reasonable pruning candidate. If the judges see no need for another investment milestone, pruning unused tiers is simpler than adding a global multiplier.
+
+The integrated quote curve remains unchanged at a fixed license tier, so the same buy/sell round trip cannot gain money. Only three paid tier transitions exist; they cannot create an unbounded loop. The prototype did not rerun deliberate round-trip probes. Existing pressure can revalue when a license is purchased, as with charters, so check that one-time transition explicitly before shipping. Larger cargo also increases encounter stakes: mean encounter cost rose from ¤15.1k without high tiers to ¤16.8k with them. All three policies finished with no reported runtime errors, non-finite final scores or RNG mismatches.

@@ -1,0 +1,2 @@
+# Frozen judging inputs must retain the exact bytes recorded in BUILD.json.
+judging/**/packet/** -text

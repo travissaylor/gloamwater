@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// Run from the repo root: node tools/verify.cjs [--out path]
+// Run from the repo root: node tools/verify.cjs [--game path] [--out path] [--only "check name"]
 // UI regressions use actual mouse/touch events. Full runs use the external simulator,
 // calling the game's real trade/voyage/event functions; they are not manual playtests.
 const fs = require('fs');
@@ -9,16 +9,19 @@ const crypto = require('crypto');
 const { pathToFileURL } = require('url');
 const { chromium, webkit, devices } = require('playwright');
 const ROOT = path.resolve(__dirname, '..');
-const GAME = path.join(ROOT, 'game/index.html');
+const gameArg=process.argv.indexOf('--game');
+const GAME = gameArg<0?path.join(ROOT, 'game/index.html'):path.resolve(process.argv[gameArg+1]);
 const URL = pathToFileURL(GAME).href;
 const outArg = process.argv.indexOf('--out');
+const onlyArg = process.argv.indexOf('--only');
+const ONLY = onlyArg < 0 ? null : process.argv[onlyArg+1];
 const OUT = outArg < 0 ? path.join(__dirname, 'verification') : path.resolve(process.argv[outArg + 1]);
 fs.mkdirSync(OUT, { recursive: true });
 const source = fs.readFileSync(GAME, 'utf8');
 const report = {
   generatedAt: new Date().toISOString(),
   gameSha256: crypto.createHash('sha256').update(source).digest('hex'),
-  bytes: Buffer.byteLength(source), checks: [],
+  bytes: Buffer.byteLength(source), selection:ONLY || 'all', checks: [],
   limitations: [
     'Emulated WebKit on Windows is not a physical iPhone; no real keyboard, browser toolbar, safe-area or silent-switch test.',
     'WebKit AudioContext stand-in tests gesture policy, not audible sound quality.',
@@ -28,6 +31,7 @@ const report = {
 };
 function assert(ok, message) { if (!ok) throw new Error(message); }
 async function check(name, fn) {
+  if(ONLY && name!==ONLY)return;
   const started = Date.now();
   try { const evidence = await fn(); report.checks.push({ name, pass: true, ms: Date.now() - started, evidence }); }
   catch (e) { report.checks.push({ name, pass: false, ms: Date.now() - started, error: e.stack || String(e) }); }
@@ -49,6 +53,7 @@ async function act(page, selector, touch) {
 }
 async function boot(page, touch) {
   await page.goto(URL);
+  assert(await page.locator('#title animate').count() === 0, 'Title SVG animation ignores reduced motion');
   await page.evaluate(() => { FAST = true; });
   await act(page, '#t-new', touch);
   await act(page, '#go', touch);
@@ -90,8 +95,14 @@ async function uiCase(browser, name, opts, touch) {
     await act(page, '#st-debt', touch);
     assert(await page.locator('#modal').isVisible(), 'HUD debt explanation did not open');
     const hudTitle = await page.locator('#modal h3').first().innerText();
+    for (let i=0;i<12;i++) {
+      await page.keyboard.press(i%2?'Shift+Tab':'Tab');
+      assert(await page.evaluate(() => !!document.activeElement.closest('#modal')), 'Keyboard focus escaped the modal');
+    }
+    assert(await page.evaluate(() => document.querySelector('#app').inert), 'Covered game is not inert');
     await page.keyboard.press('Escape');
     await pause(page);
+    assert(await page.evaluate(() => !document.querySelector('#app').inert), 'Background stayed inert after closing modal');
     const fixture = await page.evaluate(() => {
       let g = GOODS.find(g => !S.stock[S.loc][g.id]);
       let planted = false;
@@ -106,12 +117,14 @@ async function uiCase(browser, name, opts, touch) {
     await pause(page);
     await page.screenshot({ path: path.join(OUT, name + '-market.png'), scale: 'css' });
     if (touch) await act(page, '#mnav [data-v="map"]', true);
+    const mapBefore=await page.locator('#map').boundingBox();
     await act(page, '#nodes .node[data-d="ch"]', touch);
     const map = await page.evaluate(() => {
       const b = el => { const r = el.getBoundingClientRect(); return { x: r.x, y: r.y, width: r.width, height: r.height }; };
       return {
         nodes: [...document.querySelectorAll('#nodes .node')].map(el => ({ id: el.dataset.d, ...b(el) })),
         card: b(document.querySelector('.tcard')),
+        svg: b(document.querySelector('#map')),
         overflow: document.documentElement.scrollWidth > innerWidth + 1,
         viewport: { width: innerWidth, height: innerHeight }
       };
@@ -119,7 +132,17 @@ async function uiCase(browser, name, opts, touch) {
     assert(!map.overflow, 'Document has horizontal overflow');
     const small = map.nodes.filter(n => n.width < 43.5 || n.height < 43.5);
     assert(small.length === 0, 'Map nodes below 44px after selecting destination: ' + JSON.stringify(small));
+    if(touch){
+      assert(Math.abs(map.svg.height-mapBefore.height)<1,'Selecting destination resized the map');
+      const sail=await page.locator('.tcard [data-act="sail"]').boundingBox();
+      const nav=await page.locator('#mnav').boundingBox();
+      assert(sail && sail.height>=44 && sail.y>=0 && sail.y+sail.height<=nav.y+1,'Sail is clipped behind navigation');
+    }
     await page.screenshot({ path: path.join(OUT, name + '-selected-map.png'), scale: 'css' });
+    // Separate final-night fixture: the settlement banner must not cover the last good.
+    await page.evaluate(() => { S.day=30;setView('market'); });
+    const last=page.locator('.row').last();await last.scrollIntoViewIfNeeded();
+    assert(await last.evaluate(el=>{const r=el.getBoundingClientRect();return document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)?.closest('.row')===el;}),'Final-night banner covers the last market row');
     assert(errors.length === 0, 'Console/page errors: ' + errors.join('; '));
     assert(network.length === 0, 'Game made network requests: ' + network.join('; '));
     return { input: 'First confirm bought 2; no-dealers arrow/Enter clean', hudTitle, outOfStockFixture: fixture.planted, map, networkRequests: network, audio: await page.evaluate(() => ({ shim: window.__pwAudio.shim || null, contexts: window.__pwAudio.ctxs.map(x => ({ state: x.c.state, createdIn: x.rec.createdIn })) })) };
@@ -165,7 +188,13 @@ async function storageAndSandbox(browser) {
       localStorage.setItem('gloamwater.scores.v1', JSON.stringify([null, {}, { name: '<script>', score: 'NaN' }]));
       localStorage.setItem('gloamwater.settings.v1', 'null');
     });
+    await page.reload();
+    assert((await page.locator('#title').innerText()).includes('saved voyage could not be loaded'), 'Damaged saved voyage was silently discarded');
     await boot(page, true);
+    // Separate late-night fixture checks copy against the actual late rate.
+    await page.evaluate(() => { S.day=15;renderAll();void serviceAction('repay'); });
+    await page.waitForFunction(() => /10%\s+nightly/.test(document.querySelector('#modal').textContent));
+    await page.keyboard.press('Escape');
     const wrapper = path.join(OUT, 'sandbox.html');
     fs.writeFileSync(wrapper, '<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body,iframe{margin:0;width:100%;height:100%;border:0}</style><iframe sandbox="allow-scripts" src="' + URL + '"></iframe>');
     await page.goto(pathToFileURL(wrapper).href);
@@ -181,7 +210,7 @@ async function storageAndSandbox(browser) {
     await page.screenshot({ path: path.join(OUT, 'sandbox.png'), scale: 'css' });
     assert(errors.length === 0, errors.join('; '));
     assert(network.length === 0, 'Network requests in sandbox');
-    return { corruptStorageRecovered: true, sandboxStorageBlocked: blocked, sandboxStarted: true, errors, network };
+    return { corruptStorageRecovered: true, corruptSaveNotice: true, lateRateCopyFixture: true, sandboxStorageBlocked: blocked, sandboxStarted: true, errors, network };
   } finally { await context.close(); }
 }
 async function main() {
@@ -205,7 +234,7 @@ async function main() {
   } finally {
     if (cr) await cr.close();
     if (wk) await wk.close();
-    report.pass = report.checks.every(x => x.pass);
+    report.pass = report.checks.length>0 && report.checks.every(x => x.pass);
     fs.writeFileSync(path.join(OUT, 'report.json'), JSON.stringify(report, null, 2) + '\n');
     console.log(`Report: ${path.join(OUT, 'report.json')}`);
   }

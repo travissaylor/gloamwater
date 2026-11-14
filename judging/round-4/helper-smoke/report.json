@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-11-14T17:19:35.479Z",
+  "gameSha256": "b18bcf691bc179f29bbcaa56153b2f47c14e7be3a177bbc520f50acfedfbaab4",
+  "bytes": 238881,
+  "selection": "source constraints",
+  "checks": [
+    {
+      "name": "source constraints",
+      "pass": true,
+      "ms": 4,
+      "evidence": {
+        "bytes": 238881,
+        "syntaxValid": true,
+        "externalResources": false
+      }
+    }
+  ],
+  "limitations": [
+    "Emulated WebKit on Windows is not a physical iPhone; no real keyboard, browser toolbar, safe-area or silent-switch test.",
+    "WebKit AudioContext stand-in tests gesture policy, not audible sound quality.",
+    "Full-game regressions run the informed policy through external simulator functions, not human touch play.",
+    "UI tests set FAST=true and reduced motion to avoid Windows headless WebKit animation throttling."
+  ],
+  "pass": true
+}

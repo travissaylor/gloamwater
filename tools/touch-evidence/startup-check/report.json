@@ -1,0 +1,99 @@
+{
+  "same": true,
+  "results": [
+    {
+      "sha256": "64c22f8fd9e2ed7c30dddc32e8c3a3ddcad1ea4c6b300984c7d468abd5a98bb6",
+      "day": 1,
+      "loc": "lq",
+      "prices": [
+        {
+          "id": "kelp",
+          "stock": true,
+          "price": 60
+        },
+        {
+          "id": "rain",
+          "stock": true,
+          "price": 131
+        },
+        {
+          "id": "pearl",
+          "stock": true,
+          "price": 509
+        },
+        {
+          "id": "saffron",
+          "stock": true,
+          "price": 1425
+        },
+        {
+          "id": "eels",
+          "stock": true,
+          "price": 2593
+        },
+        {
+          "id": "chips",
+          "stock": true,
+          "price": 5043
+        },
+        {
+          "id": "silk",
+          "stock": true,
+          "price": 7118
+        },
+        {
+          "id": "ink",
+          "stock": true,
+          "price": 26833
+        }
+      ]
+    },
+    {
+      "sha256": "64c22f8fd9e2ed7c30dddc32e8c3a3ddcad1ea4c6b300984c7d468abd5a98bb6",
+      "day": 1,
+      "loc": "lq",
+      "prices": [
+        {
+          "id": "kelp",
+          "stock": true,
+          "price": 60
+        },
+        {
+          "id": "rain",
+          "stock": true,
+          "price": 131
+        },
+        {
+          "id": "pearl",
+          "stock": true,
+          "price": 509
+        },
+        {
+          "id": "saffron",
+          "stock": true,
+          "price": 1425
+        },
+        {
+          "id": "eels",
+          "stock": true,
+          "price": 2593
+        },
+        {
+          "id": "chips",
+          "stock": true,
+          "price": 5043
+        },
+        {
+          "id": "silk",
+          "stock": true,
+          "price": 7118
+        },
+        {
+          "id": "ink",
+          "stock": true,
+          "price": 26833
+        }
+      ]
+    }
+  ]
+}
