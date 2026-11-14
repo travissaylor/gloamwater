@@ -1,0 +1,66 @@
+[
+ {
+  "name": "chromium",
+  "requests": [],
+  "allRequestCount": 1,
+  "errs": [],
+  "afterBuy": [
+   1600,
+   30
+  ],
+  "voyageMs": 2358,
+  "st": {
+   "day": 2,
+   "loc": "ch",
+   "modal": true
+  },
+  "focusInfo": [
+   "BUTTON",
+   "stat",
+   "solid",
+   "2px",
+   "none"
+  ]
+ },
+ {
+  "name": "chromium-sandbox",
+  "sb": [
+   1,
+   2500,
+   true
+  ],
+  "e2": []
+ },
+ {
+  "name": "webkit",
+  "requests": [],
+  "allRequestCount": 1,
+  "errs": [],
+  "afterBuy": [
+   39,
+   23
+  ],
+  "voyageMs": 2501,
+  "st": {
+   "day": 2,
+   "loc": "ch",
+   "modal": false
+  },
+  "focusInfo": [
+   "BUTTON",
+   "choice ",
+   "solid",
+   "2px",
+   "none"
+  ]
+ },
+ {
+  "name": "webkit-sandbox",
+  "sb": [
+   1,
+   2500,
+   true
+  ],
+  "e2": []
+ }
+]

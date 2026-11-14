@@ -1,0 +1,207 @@
+{
+  "judge": 3,
+  "lens": "technical quality",
+  "model": "gpt-6-astra",
+  "build": "5838fe80881e78d86480324693f4da448c3fb55214ae6b89afa59f66d7731654",
+  "scores": {
+    "A1": 8,
+    "A2": 8,
+    "A3": 8,
+    "A4": 7,
+    "A5": 8,
+    "B1": 9,
+    "B2": 9,
+    "B3": 8,
+    "B4": 9,
+    "B5": 7,
+    "C1": 8,
+    "C2": 10,
+    "C3": 9,
+    "C4": 9,
+    "C5": 8
+  },
+  "weighted_total": 83,
+  "caps_applied": [],
+  "criteria": {
+    "A1": {
+      "score": 8,
+      "evidence": "In the travelling touch runs I bought and sold several goods, chose adjacent import districts using current cargo, encountered absent dealers, and changed cargo as local prices changed. Depth limits and the public fleet calendar add choices beyond posted unit prices.",
+      "below_10": [
+        "My route policy was simple; I did not establish several equally viable optimized strategies."
+      ]
+    },
+    "A2": {
+      "score": 8,
+      "evidence": "The travelling run grew from 2500 cash to 98822 cash on night 30 while unpaid debt compounded to 65725. Fixture tests found 0 profitable buy/sell reversals in 336 probes across all seven districts and eight goods. Bank and upgrade costs changed balances correctly.",
+      "below_10": [
+        "Limited independent strategy sample; charter, rumour and bank-heavy strategies were not compared across seeds."
+      ]
+    },
+    "A3": {
+      "score": 8,
+      "evidence": "Touch play exposed escape odds falling with a loaded hold, repeated failed escapes damaging hull, cargo confiscation risk, collectors, squalls, courier offers, crates and gambling. One run sank after choosing to push through a squall with 13% hull.",
+      "below_10": [
+        "I tested escape consequences extensively but did not play all fight/bribe branches or all eight arrival-event outcomes."
+      ]
+    },
+    "A4": {
+      "score": 7,
+      "evidence": "The travelling runs moved from small early purchases to five-figure flips; escalating debt and late-night warnings established a deadline. Night 30 still allowed cargo liquidation before settlement.",
+      "below_10": [
+        "Several middle turns followed repeated import routes; these runs did not establish a satisfying upgrade-and-debt-payoff arc through ordinary play."
+      ]
+    },
+    "A5": {
+      "score": 8,
+      "evidence": "Intro gives starting cash/debt and deadline; tour, price-versus-usual labels, per-order totals, profit and capacity explain the loop. Final scoring itemizes cash, vault, half-value cargo and debt.",
+      "below_10": [
+        "The repayment sheet incorrectly describes 6% interest after night 10. Market depth, stale known prices and unavailable dealers require more learning than the first few turns provide."
+      ]
+    },
+    "B1": {
+      "score": 9,
+      "evidence": "I inspected title, market, map, event and ending screenshots: reflected canal skyline, amber lanterns, blue waterways, serif headings, bespoke goods glyphs and illustrated sinking scene form a consistent drowned-city identity.",
+      "below_10": [
+        "Some market/service surfaces retain a conventional dark-dashboard card appearance; not every character illustration was inspected at full size."
+      ]
+    },
+    "B2": {
+      "score": 9,
+      "evidence": "I personally inspected all requested viewport screenshots. Cheap/Pricey/Glut tags and sparklines made opportunities immediately distinguishable; HUD cash, debt, hold and hull stayed visible. Typed trade sheets showed quantity, total cost, remaining purse and hold.",
+      "below_10": [
+        "At 390x664 and 360x640 the complete goods list needs vertical scrolling; sheet details below the chart also require scrolling."
+      ]
+    },
+    "B3": {
+      "score": 8,
+      "evidence": "Touch-policy stand-in unlocked in touchend, produced running-state sounds, and suspended on mute. Chromium real AudioContext ran and suspended on mute. Source has distinct trade/travel/event/win/loss synthesis; screenshots show trade deltas and staged event scenes.",
+      "below_10": [
+        "No audible quality assessment was possible. Most long touch regressions used reduced motion, so normal-speed visual timing was not exhaustively judged. Real iPhone audio/silent-switch behavior is unverified."
+      ]
+    },
+    "B4": {
+      "score": 9,
+      "evidence": "I repeatedly tapped actual SVG district nodes and Sail in WebKit. Inspected map screenshots show waterways, current skiff, destination card, travel nights, danger, supply/import identities, held-cargo information and fleet-call demand window.",
+      "below_10": [
+        "On the phone, scrolling to the destination card hides part of the map; comparison between distant destinations takes repeated selections."
+      ]
+    },
+    "B5": {
+      "score": 7,
+      "evidence": "All five specified sizes rendered without horizontal document overflow; trade confirmations were visible and 52px high. Real WebKit touch bought/sold and travelled; Chromium keyboard arrows/B opened trade, Escape dismissed, M muted. Reduced-motion CSS and visible focus are present.",
+      "below_10": [
+        "Tab escapes an open modal to underlying content. Desktop secondary controls are smaller than 44px. Full contrast audit, screen-reader flow and complete keyboard-only game were not verified; real iPhone ergonomics remain unverified."
+      ]
+    },
+    "C1": {
+      "score": 8,
+      "evidence": "Verified file play, 30-night clock, seven mapped locations, eight goods with history, limited cargo, hold and motor upgrade effects, debt repayment/interest, vault transfers/interest, risky events, settlement and persistent scores. Custom graphics, touch, mouse, keyboard and synthesized audio paths are present.",
+      "below_10": [
+        "Not every event, upgrade tier, winning rank or combat outcome was executed. Audible quality and real-device behavior remain unverified."
+      ]
+    },
+    "C2": {
+      "score": 10,
+      "evidence": "SHA256 matched the packet. File is 230005 bytes. Source searches found inline vanilla JS/CSS/SVG, no fetch/XHR/import/external assets, and all localStorage operations inside guarded store methods. Offline WebKit request logs contain only the local HTML navigation. Chromium sandbox=allow-scripts iframe started with no errors despite opaque-origin storage.",
+      "below_10": []
+    },
+    "C3": {
+      "score": 9,
+      "evidence": "Completed two corrected 30-night WebKit touch completion regressions with clean game error logs; also exercised a travelling run to night 30 and a sinking run to night 17. Corrupt saves, extreme quantities and blocked-storage sandbox startup did not crash the game.",
+      "below_10": [
+        "The two fully settled regression runs stayed at Lanternquay, so they are narrow stability coverage. Travelling runs ended in test-driver errors/early reckoning exit, disclosed separately. Not every event reload stage or repeated new-game timer lifecycle was tested."
+      ]
+    },
+    "C4": {
+      "score": 9,
+      "evidence": "Personally checked negative, zero, fractional, huge, overflowing and blank quantity inputs; zero/invalid disabled purchase and large values clamped. Retested real WebKit typed-quantity touch confirmation: two units bought, cash 2172. Verified 336 nonprofitable immediate reversals, bank 1000→1015, debt 6000→6360, service transfers, score arithmetic, reload persistence and corrupt stored JSON handling.",
+      "below_10": [
+        "Split-order permutations, all huge-value saved-state combinations and mid-fight replay integrity were not exhaustively tested."
+      ]
+    },
+    "C5": {
+      "score": 8,
+      "evidence": "Reviewed separated data tables, single S run state, core buy/sell and integrated depth pricing, two persisted RNG streams, guarded storage, queued event outcomes and animation/audio cleanup functions. Actual play produced no game console errors.",
+      "below_10": [
+        "Large monolithic file mixes rendering and mutation through globals. No long-duration memory/timer profiling or representative real-iPhone frame-rate measurement was performed."
+      ]
+    }
+  },
+  "strengths": [
+    "Self-contained offline runtime and guarded persistence passed independent tests.",
+    "Readable phone trading sheets retain reachable confirmation controls at short heights.",
+    "Integrated depth pricing resisted 336 immediate round-trip exploit probes.",
+    "Distinct setting, informative map and explicit encounter odds."
+  ],
+  "weaknesses": [
+    "Modal keyboard focus can escape to covered content.",
+    "Late repayment copy reports the wrong rate.",
+    "Short phone viewports require scrolling to compare all goods and detailed trade information.",
+    "No independent proof of broad strategic balance, audible quality or real iPhone behavior."
+  ],
+  "bugs": [
+    {
+      "severity": "low",
+      "what": "Repayment explanatory text remains 6% after the rate has risen to 10%.",
+      "repro": "At night 15 open Harbor at Lanternquay, then Repay on desktop. Sheet says every crown stops 6% compounding; debtRate() and HUD use 10%. Reproduced with isolated day-15 fixture in audio-bank.cjs; late-desktop.png."
+    },
+    {
+      "severity": "medium",
+      "what": "Modal does not contain keyboard focus.",
+      "repro": "Open a stocked-good trade sheet; press Tab repeatedly. Within 15 presses document.activeElement is outside #modal. Reproduced in edge-followup.cjs; no focus trap or background inert state in source."
+    }
+  ],
+  "evidence": {
+    "days_played": {
+      "travelling_touch_runs": [
+        17,
+        30
+      ],
+      "additional_trading_in_port_run": 30,
+      "completed_touch_regressions": [
+        30,
+        30
+      ]
+    },
+    "reached_score_screen": true,
+    "phone_notes": "WebKit 390x844 touch runs used actual touchscreen.tap coordinates/real locator taps. Decisions used current local market, owned cargo and public district traits; no future market/event data or state mutation during scored play. Reduced-motion preference enabled for repeated runs. Additional WebKit fixture/layout checks at 390x664, 360x640, 430x932. Two corrected complete regressions stayed in port, declined risky offers and tested all 30 days plus settlement; they are not representative winning strategies. Function-driven abuse probes and fixture upgrades are explicitly separate from touch play.",
+    "desktop_notes": "1280x800 WebKit layout plus Chromium mouse/keyboard checks; sandbox iframe verified in Chromium. No horizontal overflow in sampled layouts. Full keyboard-only completion and quantitative contrast audit unverified.",
+    "audio_notes": "Windows WebKit has no Web Audio: documented harness iOS-policy stand-in used and labeled in logs. Touchend unlocked it, mute suspended it, and running sounds were counted. Real Chromium AudioContext verified running/suspended states. No audible quality or real iPhone/silent switch verification.",
+    "screenshots": [
+      "judging/round-3/judge-3/completed-1.png",
+      "judging/round-3/judge-3/completed-2.png",
+      "judging/round-3/judge-3/completion-market.png",
+      "judging/round-3/judge-3/completion-title.png",
+      "judging/round-3/judge-3/desktop-chromium.png",
+      "judging/round-3/judge-3/ending-run1.png",
+      "judging/round-3/judge-3/late-desktop.png",
+      "judging/round-3/judge-3/late-repayment.png",
+      "judging/round-3/judge-3/map-run1.png",
+      "judging/round-3/judge-3/map-run2.png",
+      "judging/round-3/judge-3/market-1280x800.png",
+      "judging/round-3/judge-3/market-360x640.png",
+      "judging/round-3/judge-3/market-390x664.png",
+      "judging/round-3/judge-3/market-430x932.png",
+      "judging/round-3/judge-3/market-run1.png",
+      "judging/round-3/judge-3/market-run2.png",
+      "judging/round-3/judge-3/safe-market.png",
+      "judging/round-3/judge-3/safe-title.png",
+      "judging/round-3/judge-3/sandbox-chromium.png",
+      "judging/round-3/judge-3/title.png",
+      "judging/round-3/judge-3/trade-1280x800.png",
+      "judging/round-3/judge-3/trade-360x640.png",
+      "judging/round-3/judge-3/trade-390x664.png",
+      "judging/round-3/judge-3/trade-430x932.png"
+    ],
+    "execution_notes": [
+      "No subagents or model substitution; gpt-6-astra.",
+      "Preview rejected file: protocol; used requested Playwright. Initial phone harness tour sequence stalled and was stopped.",
+      "Initial checks used an unavailable good; fixed by labeled stocked-good fixture. WebKit sandbox interaction timed out; Chromium sandbox passed.",
+      "First quantity check tapped inside transition guard; delayed WebKit retest bought two correctly.",
+      "Travelling run 1 reached sinking reckoning and recorded score but driver exited before tapping See the reckoning. Travelling run 2 reached night 30, then driver mistakenly searched Harbor for Settle up instead of Market. Corrected completion.cjs independently completed two 30-night games.",
+      "safe-play.cjs also used wrong Harbor settlement selector; its run is supplementary, not counted among two completed games.",
+      "All opened browser processes/contexts closed via finally; phone harness 9453 stopped."
+    ]
+  },
+  "verdict": "Technically strong and broadly complete, with clear phone trading and credible state safeguards. Accessibility focus containment and stale interest copy remain; broader balance and real-device/audio claims are unverified."
+}

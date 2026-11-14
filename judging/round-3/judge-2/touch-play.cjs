@@ -1,0 +1,28 @@
+// UI-only continuation of Judge 2's first run. All actions go through the
+// phone harness touchscreen. Decisions use rendered DOM text only: no S,
+// prices in other ports, RNG, event queues, or game function calls.
+const fs=require('fs'),path=require('path');
+const dir=__dirname, logfile=path.join(dir,'touch-auto.log');
+async function step(...steps){const r=await fetch('http://127.0.0.1:9452/steps',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({steps})});const j=await r.json();fs.appendFileSync(logfile,JSON.stringify({time:new Date().toISOString(),results:j.results})+'\n');for(const s of j.results)if(s.error)throw Error(s.error);return j.results.at(-1)?.out;}
+async function dom(expr){return JSON.parse(await step('eval '+expr));}
+const pause=()=>step('wait 550');
+const shot=n=>step('shot '+path.join(dir,n+'.png').replaceAll('\\','/'));
+async function tap(sel){await step('tap '+sel);await pause();}
+async function state(){return dom(`({day:document.querySelector('#h-night').innerText,modal:!document.querySelector('#modal').hidden,card:document.querySelector('#modal .modal')?.innerText||'',nightcard:!!document.querySelector('.nightcard'),market:document.querySelector('.mk-head h2')?.innerText||'',cash:document.querySelector('#st-cash b').innerText,hull:document.querySelector('#st-hull b').innerText,ending:!!document.querySelector('.end-hero'),buttons:Array.from(document.querySelectorAll('#modal [data-choice]')).map(b=>({k:b.dataset.choice,t:b.innerText,disabled:b.disabled}))})`);}
+async function resolve(){for(let i=0;i<35;i++){let s=await state();if(s.ending)return 'end';if(s.modal){console.log('CARD',s.card.slice(0,150).replaceAll('\n',' '));if(!s.buttons.length)throw Error('Unexpected modal '+s.card);if(!fs.existsSync(path.join(dir,'event-'+s.buttons[0].k+'.png')))await shot('event-'+s.buttons[0].k);let available=s.buttons.filter(b=>!b.disabled),b;const preference=['ok','take','push','yield','pay','bribe','no','leave','run'];for(const k of preference){b=available.find(x=>x.k===k);if(b)break;}b=b||available.at(-1);await tap('[data-choice="'+b.k+'"]');continue;}if(s.nightcard){await step('tapxy 190 300','wait 500');continue;}const busy=await dom(`document.querySelector('#mapwrap')?.getAttribute('aria-busy')`);await step('wait 600');let t=await state();if(t.modal||t.nightcard)continue; // give each normal voyage time without changing game clocks
+return 'ready';}throw Error('Too many event steps');}
+const num=s=>Number((s||'').replace(/[^0-9.-]/g,''));
+async function rows(){return dom(`Array.from(document.querySelectorAll('.rows .row')).map(e=>({id:e.dataset.g,text:e.innerText,price:e.querySelector('.gprice b').innerText,own:e.querySelector('.tag.own')?.innerText||'',discount:e.querySelector('.chg').innerText,out:e.classList.contains('out')}))`);}
+async function trade(){await tap('#mnav [data-v="market"]');let list=await rows();for(const r of list.filter(r=>r.own&&!r.out)){await tap('.row[data-g="'+r.id+'"]');await step('wait 500');await tap('[data-max]');let go=await dom(`({disabled:document.querySelector('#qgo').disabled,text:document.querySelector('#qsum').innerText})`);if(!go.disabled)await tap('#qgo');else await tap('#modal [data-x]');}
+list=await rows();const cash=num((await state()).cash);let candidates=list.filter(r=>!r.out&&num(r.price)<=cash&&cash>200).map(r=>({...r,v:r.discount.includes('−')?-num(r.discount):num(r.discount)})).sort((a,b)=>a.v-b.v);
+// One commodity per night; default order respects the flat market depth.
+if(candidates.length&&candidates[0].v<5){const r=candidates[0];console.log('BUY CANDIDATE',r.text.replaceAll('\n',' '));await tap('.row[data-g="'+r.id+'"]');const enabled=await dom(`!document.querySelector('#qgo').disabled`);if(enabled)await tap('#qgo');else await tap('#modal [data-x]');}}
+async function services(){await tap('#mnav [data-v="harbor"]');const btns=await dom(`Array.from(document.querySelectorAll('#side-body [data-act]')).filter(b=>!b.disabled).map(b=>({a:b.dataset.act,t:b.innerText}))`);let cash=num((await state()).cash);for(const a of ['repair','patch','hold','motor','arms','wireless']){if(!btns.some(b=>b.a===a))continue; if(['hold','motor','arms','wireless'].includes(a)&&cash<11000)continue;await tap('#side-body [data-act="'+a+'"]');let s=await state();if(s.modal&&s.buttons.some(b=>b.k==='yes'))await tap('[data-choice="yes"]');cash=num((await state()).cash);}
+if(btns.some(b=>b.a==='repay')&&cash>10000){await tap('[data-act="repay"]');await tap('#ago');}
+if(btns.some(b=>b.a==='deposit')&&cash>25000){await tap('[data-act="deposit"]');await tap('[data-f=".25"]');await tap('#ago');}}
+const route=['sm','lq','ch','sl','de','ot','sm','fm','ch','lq'];
+(async()=>{const limit=+(process.argv[2]||30);let s;await resolve();for(let i=0;i<limit;i++){s=await state();if(s.ending)break;let day=Number(s.day.match(/[0-9]+/)[0]);console.log('NIGHT',s.day,'CASH',s.cash,'HULL',s.hull);await trade();await services();if([7,14,21,30].includes(day))await shot('touch-night-'+day);
+if(day>=30){await tap('#mnav [data-v="market"]');await tap('[data-act="settle"]');await tap('[data-choice="yes"]');await step('wait 1300');await shot('touch-score');console.log((await state()).card);break;}
+await tap('#mnav [data-v="map"]');await tap('.node[data-d="'+route[(day-2+route.length)%route.length]+'"]');await step('wait 500');const stay=await dom(`!!document.querySelector('[data-act="stay"]')`);await tap(stay?'[data-act="stay"]':'[data-act="sail"]');await step('wait 4500');await resolve();await step('wait 1000');}
+console.log('STOP',JSON.stringify(await state()));await step('errors');})().catch(e=>{console.error(e.stack);process.exitCode=1;});
+

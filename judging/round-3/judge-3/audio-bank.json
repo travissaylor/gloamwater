@@ -1,0 +1,30 @@
+{
+  "audioOn": [
+    {
+      "state": "running",
+      "rec": {
+        "t": 794,
+        "createdIn": "click",
+        "activation": "active",
+        "stateAtCreate": "running",
+        "resumes": []
+      }
+    }
+  ],
+  "audioOff": [
+    "suspended"
+  ],
+  "deposited": {
+    "cash": 2000,
+    "bank": 500
+  },
+  "withdrawn": {
+    "cash": 2500,
+    "bank": 0
+  },
+  "repaid": {
+    "cash": 2400,
+    "debt": 5900
+  },
+  "lateText": "MARROW QUILL'S LOAN OFFICE\nRepay Marrow Quill\n\nEvery crown you repay tonight stops 6% compounding against you.\n\n25%\n50%\n75%\nAll ¤2,400\nDebt after\n¤3,500\nPurse after\n¤0\nCancel\nRepay ¤2,400"
+}

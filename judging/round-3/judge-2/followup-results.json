@@ -1,0 +1,134 @@
+{
+  "reducedTitleBefore": {
+    "motion": true,
+    "duration": "9s",
+    "animatedFrequency": 0.004016822203993797
+  },
+  "reducedTitleAfter": {
+    "animatedFrequency": 0.0043760668486356735,
+    "lanternCSS": "1e-05s"
+  },
+  "focus": [
+    {
+      "insideModal": false,
+      "tag": "BODY",
+      "id": "",
+      "label": null,
+      "text": "\n<p style=\"padding:20px\">Gloamwater needs JavaScript to run."
+    },
+    {
+      "insideModal": false,
+      "tag": "BUTTON",
+      "id": "st-cash",
+      "label": "Explain purse",
+      "text": "Purse¤2,500"
+    },
+    {
+      "insideModal": false,
+      "tag": "BUTTON",
+      "id": "st-bank",
+      "label": "Explain vault",
+      "text": "Vault¤0"
+    },
+    {
+      "insideModal": false,
+      "tag": "BUTTON",
+      "id": "st-debt",
+      "label": "Explain debt",
+      "text": "Debt · 6%/night¤6,000"
+    },
+    {
+      "insideModal": false,
+      "tag": "BUTTON",
+      "id": "st-hold",
+      "label": "Explain hold",
+      "text": "Hold0/30"
+    },
+    {
+      "insideModal": false,
+      "tag": "BUTTON",
+      "id": "st-hull",
+      "label": "Explain hull",
+      "text": "Hull100%"
+    },
+    {
+      "insideModal": false,
+      "tag": "BUTTON",
+      "id": "b-help",
+      "label": "How to play (?)",
+      "text": ""
+    },
+    {
+      "insideModal": false,
+      "tag": "BUTTON",
+      "id": "b-mute",
+      "label": "Toggle sound (M)",
+      "text": ""
+    },
+    {
+      "insideModal": false,
+      "tag": "BUTTON",
+      "id": "b-menu",
+      "label": "Menu",
+      "text": ""
+    },
+    {
+      "insideModal": false,
+      "tag": "g",
+      "id": "",
+      "label": "Lanternquay, danger 1 of 5. Press 1.",
+      "text": "\n      \n      \n      \n      \n      Lanternquay\n      \n      "
+    },
+    {
+      "insideModal": false,
+      "tag": "g",
+      "id": "",
+      "label": "Saint Mire, danger 2 of 5. Press 2.",
+      "text": "\n      \n      \n      \n      \n      Saint Mire\n      \n      \n"
+    },
+    {
+      "insideModal": false,
+      "tag": "g",
+      "id": "",
+      "label": "Orchid Terraces, danger 1 of 5. Press 3.",
+      "text": "\n      \n      \n      \n      \n      Orchid Terraces\n      \n  "
+    },
+    {
+      "insideModal": false,
+      "tag": "g",
+      "id": "",
+      "label": "Drowned Exchange, danger 2 of 5. Press 4.",
+      "text": "\n      \n      \n      \n      \n      Drowned Exchange\n      \n "
+    },
+    {
+      "insideModal": false,
+      "tag": "g",
+      "id": "",
+      "label": "The Sluices, danger 3 of 5. Press 5.",
+      "text": "\n      \n      \n      \n      \n      The Sluices\n      \n      "
+    },
+    {
+      "insideModal": false,
+      "tag": "g",
+      "id": "",
+      "label": "Copperhook Docks, danger 2 of 5. Press 6.",
+      "text": "\n      \n      \n      \n      \n      Copperhook Docks\n      \n "
+    }
+  ],
+  "reducedCanals": {
+    "flag": true,
+    "animation": "1e-05s"
+  },
+  "travelTiming": "Not measured: initial timing probe encountered an arrival choice and was stopped.",
+  "static": {
+    "bytes": 230005,
+    "hash": "5838fe80881e78d86480324693f4da448c3fb55214ae6b89afa59f66d7731654",
+    "scriptSrc": false,
+    "imports": false,
+    "storageLines": [
+      "  get(k,d){try{const v=window.localStorage.getItem(k);if(v!=null)return JSON.parse(v);}catch(e){}return(k in memStore)?memStore[k]:d;},\r",
+      "  set(k,v){memStore[k]=v;try{window.localStorage.setItem(k,JSON.stringify(v));}catch(e){}},\r",
+      "  del(k){delete memStore[k];try{window.localStorage.removeItem(k);}catch(e){}}\r"
+    ]
+  }
+}

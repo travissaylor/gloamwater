@@ -1,0 +1,2494 @@
+[
+  {
+    "run": 1,
+    "state": {
+      "day": 1,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 6000,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "audioMuted": {
+      "muted": true,
+      "audio": {
+        "ctxs": [
+          {
+            "c": {
+              "state": "suspended",
+              "sampleRate": 44100,
+              "_t0": 1163,
+              "destination": {
+                "gain": {
+                  "value": 1
+                },
+                "frequency": {
+                  "value": 440
+                },
+                "Q": {
+                  "value": 1
+                },
+                "detune": {
+                  "value": 0
+                },
+                "threshold": {
+                  "value": -24
+                },
+                "ratio": {
+                  "value": 12
+                },
+                "type": "sine",
+                "buffer": null
+              }
+            },
+            "rec": {
+              "t": 1163,
+              "createdIn": "touchend",
+              "activation": "active",
+              "stateAtCreate": "suspended",
+              "resumes": [
+                {
+                  "t": 1164,
+                  "during": "touchend",
+                  "activation": "active",
+                  "before": "suspended",
+                  "after": "running"
+                }
+              ]
+            }
+          }
+        ],
+        "log": [
+          {
+            "t": 1162,
+            "event": "pointerdown",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 1162,
+            "event": "touchstart",
+            "activation": "active"
+          },
+          {
+            "t": 1163,
+            "event": "pointerup",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 1163,
+            "event": "touchend",
+            "activation": "active"
+          },
+          {
+            "t": 1164,
+            "ctx": 0,
+            "state": "running",
+            "during": "statechange"
+          },
+          {
+            "t": 1172,
+            "event": "mousedown",
+            "activation": "active"
+          },
+          {
+            "t": 1173,
+            "event": "click",
+            "pointerType": "mouse",
+            "activation": "active"
+          },
+          {
+            "t": 1758,
+            "event": "pointerdown",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 1758,
+            "event": "touchstart",
+            "activation": "active"
+          },
+          {
+            "t": 1758,
+            "event": "pointerup",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 1758,
+            "event": "touchend",
+            "activation": "active"
+          },
+          {
+            "t": 1759,
+            "event": "mousedown",
+            "activation": "active"
+          },
+          {
+            "t": 1760,
+            "event": "click",
+            "pointerType": "mouse",
+            "activation": "active"
+          },
+          {
+            "t": 3287,
+            "event": "pointerdown",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 3287,
+            "event": "touchstart",
+            "activation": "active"
+          },
+          {
+            "t": 3287,
+            "event": "pointerup",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 3287,
+            "event": "touchend",
+            "activation": "active"
+          },
+          {
+            "t": 3288,
+            "event": "mousedown",
+            "activation": "active"
+          },
+          {
+            "t": 3290,
+            "event": "click",
+            "pointerType": "mouse",
+            "activation": "active"
+          },
+          {
+            "t": 4415,
+            "event": "pointerdown",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 4415,
+            "event": "touchstart",
+            "activation": "active"
+          },
+          {
+            "t": 4415,
+            "event": "pointerup",
+            "pointerType": "touch",
+            "activation": "active"
+          },
+          {
+            "t": 4415,
+            "event": "touchend",
+            "activation": "active"
+          },
+          {
+            "t": 4417,
+            "event": "mousedown",
+            "activation": "active"
+          },
+          {
+            "t": 4418,
+            "event": "click",
+            "pointerType": "mouse",
+            "activation": "active"
+          },
+          {
+            "t": 4418,
+            "ctx": 0,
+            "state": "suspended",
+            "during": "statechange"
+          }
+        ],
+        "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+        "sounds": {
+          "whileRunning": 8,
+          "whileSuspended": 0
+        }
+      }
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "yes",
+        "text": "Take the job · 3 hold\nDeliver to Fogmouth by night 7 (2 nights away)."
+      },
+      {
+        "key": "no",
+        "text": "Decline\nSmells like trouble."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 2,
+      "loc": "de",
+      "cash": 225,
+      "debt": 6360,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n44% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n25% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "yield",
+        "text": "Heave to and be searched\nThey seize half of every cargo and any sealed parcels."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "take",
+        "text": "Haul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull)."
+      },
+      {
+        "key": "leave",
+        "text": "Leave it\nNot worth the trouble."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 3,
+      "loc": "ot",
+      "cash": 527,
+      "debt": 6742,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 4,
+      "loc": "de",
+      "cash": 98,
+      "debt": 7147,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 5,
+      "loc": "lq",
+      "cash": 98,
+      "debt": 7576,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 6,
+      "loc": "de",
+      "cash": 98,
+      "debt": 8031,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 7,
+      "loc": "ot",
+      "cash": 104,
+      "debt": 8513,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n33% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n19% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "pay",
+        "text": "Pay the toll · ¤1,455\nYour purse is light, so they take about ¤307 of cargo too."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n33% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n19% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "pay",
+        "text": "Pay the toll · ¤1,455\nYour purse is light, so they take about ¤307 of cargo too."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 8,
+      "loc": "de",
+      "cash": 1148,
+      "debt": 9024,
+      "hull": 84,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n18% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n16% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "pay",
+        "text": "Pay the toll · ¤2,586\nYour purse is light, so they take about ¤2,152 of cargo too."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n19% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n16% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "pay",
+        "text": "Pay the toll · ¤2,190\nYour purse is light, so they take about ¤1,756 of cargo too."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 9,
+      "loc": "ot",
+      "cash": 434,
+      "debt": 9565,
+      "hull": 58,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n35% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "yield",
+        "text": "Heave to and be searched\nThey seize half of every cargo and any sealed parcels."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n35% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "yield",
+        "text": "Heave to and be searched\nThey seize half of every cargo and any sealed parcels."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 10,
+      "loc": "sm",
+      "cash": 828,
+      "debt": 10139,
+      "hull": 44,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 11,
+      "loc": "lq",
+      "cash": 4024,
+      "debt": 10747,
+      "hull": 44,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 12,
+      "loc": "sm",
+      "cash": 12149,
+      "debt": 11822,
+      "hull": 44,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 13,
+      "loc": "lq",
+      "cash": 4617,
+      "debt": 13004,
+      "hull": 44,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n15% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n16% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "pay",
+        "text": "Pay the toll · ¤10,560\nAbout a fifth of your purse plus a cut of your cargo."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n17% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n16% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "pay",
+        "text": "Pay the toll · ¤10,409\nAbout a fifth of your purse plus a cut of your cargo."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n18% each try to slip away. Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n16% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "pay",
+        "text": "Pay the toll · ¤10,257\nAbout a fifth of your purse plus a cut of your cargo."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 14,
+      "loc": "de",
+      "cash": 46368,
+      "debt": 14304,
+      "hull": 13,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "small",
+        "text": "Small offering · ¤1,750\n40% chance to win 2.5×"
+      },
+      {
+        "key": "big",
+        "text": "Big offering · ¤6,990\nSame odds, more at stake."
+      },
+      {
+        "key": "no",
+        "text": "Walk on\nSuperstition is for landlubbers."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 15,
+      "loc": "ot",
+      "cash": 33215,
+      "debt": 15734,
+      "hull": 13,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 16,
+      "loc": "lq",
+      "cash": 56870,
+      "debt": 17307,
+      "hull": 13,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "state": {
+      "day": 17,
+      "loc": "de",
+      "cash": 54502,
+      "debt": 19038,
+      "hull": 13,
+      "over": false
+    }
+  },
+  {
+    "run": 1,
+    "event": [
+      {
+        "key": "push",
+        "text": "Push through\nArrive on time, but lose 6 to 16% hull (you have 13%)."
+      },
+      {
+        "key": "shelter",
+        "text": "Shelter under the viaduct\nSafe, but you lose a whole night."
+      }
+    ]
+  },
+  {
+    "run": 1,
+    "ending": "NIGHT 17\nThe Little Lantern goes down\n\nThe squall smashed you against a bridge pier. The canal closes over your skiff, your cargo and every crown in your purse. You drag yourself onto a pontoon at dawn, alive and very poor.\n\nSee the reckoning"
+  },
+  {
+    "run": 1,
+    "final": {
+      "day": 17,
+      "over": true,
+      "stats": {
+        "trips": 16,
+        "bought": 212,
+        "sold": 183,
+        "profit": 76294,
+        "bestFlip": 24252,
+        "bestFlipGood": "Moon Ink",
+        "fights": 5,
+        "won": 0,
+        "fled": 5,
+        "bribes": 0,
+        "events": 10,
+        "interest": 13038,
+        "vaultEarned": 0,
+        "peak": 46717,
+        "repaid": 0,
+        "whispers": 0,
+        "lost": 13864
+      },
+      "tally": {
+        "cash": 0,
+        "bank": 0,
+        "cargo": 0,
+        "debt": 19038,
+        "net": -19038,
+        "sunk": true
+      }
+    },
+    "errors": [],
+    "requests": [
+      "file:///C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-3/packet/index.html",
+      "file:///C:/Users/travi/.t3/worktrees/gloamwater/t3-201b6bf7-54dc20bc5d519c6e/judging/round-3/packet/index.html"
+    ],
+    "audio": {
+      "ctxs": [
+        {
+          "c": {
+            "state": "running",
+            "sampleRate": 44100,
+            "_t0": 1163,
+            "destination": {
+              "gain": {
+                "value": 1
+              },
+              "frequency": {
+                "value": 440
+              },
+              "Q": {
+                "value": 1
+              },
+              "detune": {
+                "value": 0
+              },
+              "threshold": {
+                "value": -24
+              },
+              "ratio": {
+                "value": 12
+              },
+              "type": "sine",
+              "buffer": null
+            }
+          },
+          "rec": {
+            "t": 1163,
+            "createdIn": "touchend",
+            "activation": "active",
+            "stateAtCreate": "suspended",
+            "resumes": [
+              {
+                "t": 1164,
+                "during": "touchend",
+                "activation": "active",
+                "before": "suspended",
+                "after": "running"
+              },
+              {
+                "t": 4978,
+                "during": "click",
+                "activation": "active",
+                "before": "suspended",
+                "after": "running"
+              }
+            ]
+          }
+        }
+      ],
+      "log": [
+        {
+          "t": 1162,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 1162,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 1163,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 1163,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 1164,
+          "ctx": 0,
+          "state": "running",
+          "during": "statechange"
+        },
+        {
+          "t": 1172,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 1173,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 1758,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 1758,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 1758,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 1758,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 1759,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 1760,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 3287,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 3287,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 3287,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 3287,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 3288,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 3290,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 4415,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 4415,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 4415,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 4415,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 4417,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 4418,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 4418,
+          "ctx": 0,
+          "state": "suspended",
+          "during": "statechange"
+        },
+        {
+          "t": 4975,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 4975,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 4976,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 4976,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 4977,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 4978,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 4978,
+          "ctx": 0,
+          "state": "running",
+          "during": "statechange"
+        },
+        {
+          "t": 5521,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 5521,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 5522,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 5522,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 5523,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 5524,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 6048,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 6048,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 6049,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 6049,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 6049,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 6050,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 6576,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 6576,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 6576,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 6577,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 6577,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 6578,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 7085,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 7085,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 7086,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 7086,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 7087,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 7088,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 7687,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 7687,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 7688,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 7688,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 7689,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 7690,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 8576,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 8576,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 8576,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 8576,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 8577,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 8578,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 10235,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 10236,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 10236,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 10236,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 10236,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 10237,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 10746,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 10746,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 10747,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 10747,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 10747,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 10748,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 11262,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 11263,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 11263,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 11263,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 11264,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 11265,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 11772,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 11773,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 11773,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 11773,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 11774,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 11774,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 12302,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 12303,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 12303,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 12303,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 12304,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 12305,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 12828,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 12828,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 12829,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 12829,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 12830,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 12831,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 13421,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 13421,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 13421,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 13421,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 13422,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 13422,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 13905,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 13906,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 13906,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 13906,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 13907,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 13908,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 14425,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 14425,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 14426,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 14426,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 14426,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 14427,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 15310,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 15310,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 15311,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 15311,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 15312,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 15313,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 16190,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 16190,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 16190,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 16190,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 16191,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 16192,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 17056,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 17056,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 17057,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 17057,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 17058,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 17058,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 18736,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 18736,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 18736,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 18736,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 18737,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 18737,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 19325,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 19325,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 19325,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 19325,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 19326,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 19326,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 19839,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 19839,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 19840,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 19840,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 19840,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 19841,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 20356,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 20356,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 20357,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 20357,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 20357,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 20358,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 20879,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 20879,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 20879,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 20880,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 20880,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 20881,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 21389,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 21389,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 21390,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 21390,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 21390,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 21391,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 21980,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 21981,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 21981,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 21981,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 21981,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 21982,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 22476,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 22476,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 22477,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 22477,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 22478,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 22478,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 22989,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 22989,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 22989,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 22990,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 22990,
+          "event": "mousedown",
+          "activation": "active"
+        },
+        {
+          "t": 22991,
+          "event": "click",
+          "pointerType": "mouse",
+          "activation": "active"
+        },
+        {
+          "t": 24645,
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 24645,
+          "event": "touchstart",
+          "activation": "active"
+        },
+        {
+          "t": 24646,
+          "event": "pointerup",
+          "pointerType": "touch",
+          "activation": "active"
+        },
+        {
+          "t": 24646,
+          "event": "touchend",
+          "activation": "active"
+        },
+        {
+          "t": 24647,
+          "event": "mousedown",
+          "activation": "active"
+        }
+      ],
+      "shim": "iOS-policy stand-in (this browser has no Web Audio): resume() works only inside touchend / pointerup(touch) / click / keydown",
+      "sounds": {
+        "whileRunning": 459,
+        "whileSuspended": 0
+      }
+    }
+  },
+  {
+    "run": 1,
+    "scoresAfterReload": [
+      {
+        "name": "Captain",
+        "score": -19038,
+        "rank": "Drowned Debtor",
+        "night": 17,
+        "sunk": true,
+        "date": "2026-11-14",
+        "id": "ehre82hbgao"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 1,
+      "loc": "lq",
+      "cash": 2500,
+      "debt": 6000,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 2,
+      "loc": "ch",
+      "cash": 2130,
+      "debt": 6360,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 3,
+      "loc": "lq",
+      "cash": 1217,
+      "debt": 6742,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 4,
+      "loc": "ch",
+      "cash": 3559,
+      "debt": 7147,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 5,
+      "loc": "lq",
+      "cash": 409,
+      "debt": 7576,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 6,
+      "loc": "ch",
+      "cash": 5389,
+      "debt": 8031,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 7,
+      "loc": "lq",
+      "cash": 5389,
+      "debt": 8513,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 8,
+      "loc": "ch",
+      "cash": 5389,
+      "debt": 9024,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 9,
+      "loc": "lq",
+      "cash": 617,
+      "debt": 9565,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 10,
+      "loc": "sm",
+      "cash": 617,
+      "debt": 10139,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 11,
+      "loc": "lq",
+      "cash": 8371,
+      "debt": 10747,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 12,
+      "loc": "de",
+      "cash": 2479,
+      "debt": 11822,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "take",
+        "text": "Haul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull)."
+      },
+      {
+        "key": "leave",
+        "text": "Leave it\nNot worth the trouble."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 13,
+      "loc": "lq",
+      "cash": 790,
+      "debt": 13004,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 14,
+      "loc": "sm",
+      "cash": 790,
+      "debt": 14304,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 15,
+      "loc": "lq",
+      "cash": 10155,
+      "debt": 15734,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 16,
+      "loc": "de",
+      "cash": 1713,
+      "debt": 17307,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 17,
+      "loc": "ot",
+      "cash": 607,
+      "debt": 19038,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 18,
+      "loc": "sm",
+      "cash": 4711,
+      "debt": 20942,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 19,
+      "loc": "lq",
+      "cash": 40881,
+      "debt": 23036,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "buy",
+        "text": "Buy the racks · ¤4,600\n+15 hold, permanently (30 → 45)."
+      },
+      {
+        "key": "no",
+        "text": "No thanks\nMaybe another time."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 20,
+      "loc": "ot",
+      "cash": 437,
+      "debt": 25340,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 21,
+      "loc": "de",
+      "cash": 45357,
+      "debt": 27874,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "take",
+        "text": "Haul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull)."
+      },
+      {
+        "key": "leave",
+        "text": "Leave it\nNot worth the trouble."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 22,
+      "loc": "ot",
+      "cash": 7470,
+      "debt": 30661,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "small",
+        "text": "Small offering · ¤2,970\n40% chance to win 2.5×"
+      },
+      {
+        "key": "big",
+        "text": "Big offering · ¤11,900\nSame odds, more at stake."
+      },
+      {
+        "key": "no",
+        "text": "Walk on\nSuperstition is for landlubbers."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 23,
+      "loc": "lq",
+      "cash": 56510,
+      "debt": 33727,
+      "hull": 100,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n26% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "bribe",
+        "text": "Bribe the sergeant · ¤6,290\nGuaranteed. The price follows your purse and your cargo."
+      },
+      {
+        "key": "yield",
+        "text": "Heave to and be searched\nThey seize half of every cargo and any sealed parcels."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n28% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "bribe",
+        "text": "Bribe the sergeant · ¤6,245\nGuaranteed. The price follows your purse and your cargo."
+      },
+      {
+        "key": "yield",
+        "text": "Heave to and be searched\nThey seize half of every cargo and any sealed parcels."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n29% each try to slip away (a heavy hold slows you). Each failed try rakes your hull and grab 12% of each cargo."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "bribe",
+        "text": "Bribe the sergeant · ¤6,199\nGuaranteed. The price follows your purse and your cargo."
+      },
+      {
+        "key": "yield",
+        "text": "Heave to and be searched\nThey seize half of every cargo and any sealed parcels."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 24,
+      "loc": "sm",
+      "cash": 54260,
+      "debt": 37100,
+      "hull": 74,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 25,
+      "loc": "lq",
+      "cash": 58190,
+      "debt": 40810,
+      "hull": 74,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "push",
+        "text": "Push through\nArrive on time, but lose 6 to 16% hull (you have 74%)."
+      },
+      {
+        "key": "shelter",
+        "text": "Shelter under the viaduct\nSafe, but you lose a whole night."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "take",
+        "text": "Haul it aboard\n4 in 5 crates are what they say. The rest are Gull Gang traps (−5 to −10% hull)."
+      },
+      {
+        "key": "leave",
+        "text": "Leave it\nNot worth the trouble."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 26,
+      "loc": "ot",
+      "cash": 34845,
+      "debt": 44891,
+      "hull": 63,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 27,
+      "loc": "lq",
+      "cash": 101210,
+      "debt": 49380,
+      "hull": 63,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 28,
+      "loc": "de",
+      "cash": 73085,
+      "debt": 54318,
+      "hull": 63,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n38% each try to slip away. Each failed try rakes your hull."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "pay",
+        "text": "Hand over ¤20,913\n75% of it comes off your debt; his men keep the rest."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n38% each try to slip away. Each failed try rakes your hull."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "pay",
+        "text": "Hand over ¤20,913\n75% of it comes off your debt; his men keep the rest."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "run",
+        "text": "Run for it\n38% each try to slip away. Each failed try rakes your hull."
+      },
+      {
+        "key": "fight",
+        "text": "Fight · Boathook\n22% per volley to sink a boat; 60% they hit back. Win and fewer crews try you for 3 nights."
+      },
+      {
+        "key": "pay",
+        "text": "Hand over ¤20,913\n75% of it comes off your debt; his men keep the rest."
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "event": [
+      {
+        "key": "ok",
+        "text": "Continue"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 29,
+      "loc": "ot",
+      "cash": 70733,
+      "debt": 59750,
+      "hull": 40,
+      "over": false
+    }
+  },
+  {
+    "run": 2,
+    "state": {
+      "day": 30,
+      "loc": "de",
+      "cash": 98822,
+      "debt": 65725,
+      "hull": 40,
+      "over": false
+    }
+  },
+  {
+    "fatal": "locator.scrollIntoViewIfNeeded: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-act=\"settle\"]').first()\u001b[22m\n\n    at tap (C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-3\\judge-3\\play.cjs:8:99)\n    at C:\\Users\\travi\\.t3\\worktrees\\gloamwater\\t3-201b6bf7-54dc20bc5d519c6e\\judging\\round-3\\judge-3\\play.cjs:17:62"
+  }
+]
