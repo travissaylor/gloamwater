@@ -24,6 +24,7 @@ The 253,939-byte game at SHA-256 `514fe0fba64b5fab2cb80c2909198befb7cb1685010bba
 |---|---:|---:|---:|---:|
 | Baseline | [90.53](baseline/fable.json) | [83.53](baseline/opus.json) | [89.86](baseline/astra.json) | **87.97** |
 | Round 1 | [89.56](round-1/fable.json) | [86.10](round-1/opus.json) | [88.93](round-1/astra.json) | **88.20** |
+| Round 2 | [90.06](round-2/fable.json) | [88.67](round-2/opus.json) | [90.83](round-2/astra.json) | **89.85** |
 
 All three settled a cold touch run on night 30, with varying use of scripts to drive visible controls. All replayed the opening through night 10. No judge applied a cap. The largest disagreement was on economy and progression, which ranged from 76 to 92. Closing fortunes ranged from a ¤2,752 deficit to ¤436,943. The difference reflects individual routes, seeds, choices and judgments.
 
@@ -48,3 +49,15 @@ Port details compare mixed holds at lower prices and show the proceeds if the la
 The frozen candidate is 265,439 bytes, SHA-256 `171b8e099897e93624ded39d6110babef3a3b8c4038e1b00897236b318778bb4`. All eight broad regression groups, 16 event fixtures, 30 focus/fleet/ledger checks and eight trading fixtures passed. The freight fixture verifies the hold requirement, bond deduction and single payout across reload. The trading fixtures also verify the revised credit limit, route comparisons and native keyboard focus after a trade and voyage.
 
 The [40-seed simulation](../../tools/sim/results/trading-round2.txt) put the informed median at ¤563k and the greedy median at ¤75k. The informed lower tail fell from ¤295k to ¤216k at the 10th percentile. The maximum-borrowing policy won 23 of 40 matched seeds, with a paired median advantage of ¤37.8k. The bots omit consignments, so the simulation measures changes to salvage, credit and encounter sequencing within the normal trade loop. The human-style panel assesses the new jobs.
+
+The initial Opus and Fable reviews hit a provider limit on nights 23 and 26. After the reset, fresh sessions of the same models and settings took over their original browser voyages and play transcripts. Neither interrupted attempt had submitted a score.
+
+## Round 2 panel and Round 3 design
+
+All three Round 2 judges settled their first voyages and checked another opening through night 10. Each scored independently, with no caps. The panel mean gained 1.66 points. Fable took freight jobs and still saw late capital sit idle. Astra and Opus found that choices improved when the relevant payout, interest or risk was shown before committing.
+
+Round 3 puts Settle up and the exact projected score above the market rows. Repayment shows interest saved, and the map shows the current load's possible Gull toll. The trade sheet remembers its mode for the same good at the same mooring. Route cards distinguish proceeds from margin and show when the public fleet calendar schedules a buyer. High-capacity captains can stake more cash on one two-night heavy freight delivery late in a voyage.
+
+## Round 3 verification
+
+The frozen candidate is 267,386 bytes, SHA-256 `4b9fd917e9ab94a8ae9c9cdd015d9e4d34f91180f9d4b274c9fe982ab912539d`. All eight broad regression groups, 16 event fixtures, 30 focus/fleet/ledger checks and 10 trading fixtures passed. The latter verify the visible settlement preview and the larger freight bond, capacity, risk and save state. A separate quote fixture reproduced the route-card proceeds, toll disclosure and trade mode cases. The modal focus check initially found a covered disclosure at 360 px. Centering the control when needed resolved it in the final run.

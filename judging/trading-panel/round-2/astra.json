@@ -1,0 +1,117 @@
+{
+  "judge": "Astra",
+  "round": 2,
+  "gameSha": "171b8e099897e93624ded39d6110babef3a3b8c4038e1b00897236b318778bb4",
+  "rubricSha": "fe1176ac89f5cb902cb26c5714256c6920de3f25e8b66ec2a412fd5a6ac14b43",
+  "scores": [
+    93,
+    92,
+    87,
+    94,
+    91,
+    92,
+    89,
+    86,
+    88,
+    96
+  ],
+  "caps": {
+    "criteria": [],
+    "total": null,
+    "reason": "No mandatory feature absence, blocked core action, economic bypass or hard delivery failure established."
+  },
+  "method": {
+    "personal": "Cold file boot on offline Windows Playwright WebKit, iPhone 13 profile, 390×844. I chose the six trades below before departure from visible quotes or public local observations. I also chose the second opening and its night-8 pivot. No judgments from other panels.",
+    "helper": "A scratch driver reused TouchRun to enter quantities and tap the controls. All event responses and unlisted routine turns used the supplied policy, including sales, repayments, route selection and purchases. The policy has access to numeric public-market summaries. FAST and reduced motion were enabled throughout. Seed 217 reached settlement, fresh context seed 391 finished night 10 and reached night 11. Separate fixtures never changed either voyage.",
+    "coldImpression": "The title gave me a thirty-night horizon, one primary button and a recognizable lantern-lit skyline. The first tour card explained the 6% debt and night-10 deadline. I skipped the rest. The first circular named a specific good, quantity, destination, quote age and downside. The warning about an unconfirmed buyer mattered much more to me after the final voyage."
+  },
+  "checkpoints": [
+    {
+      "night": 1,
+      "where": "Lanternquay",
+      "chosen": "Buy 1 saffron at 1332 and 2 pearls at 289. Take Fogmouth's risk 4/5, keeping 590.",
+      "runnerUp": "Eight pearls at 289 to Orchid, risk 1/5 and a smaller quoted spread.",
+      "outcome": "N2 Fogmouth offered 1677 rather than the circular's 2090. Pearls fetched 456. Selling both lots returned 2589 on 1910 spent."
+    },
+    {
+      "night": 2,
+      "where": "Fogmouth",
+      "chosen": "Sell both lots. Buy 12 kelp at 43 and 8 rain at 121 for Copperhook. The one-night-old quotes suggested +35% and +30%.",
+      "runnerUp": "Carry more rain to Saint Mire, its importer, and leave kelp behind.",
+      "outcome": "N3 Copperhook posted 46 and 134. The two remembered signals got the direction right but overstated the move. Cargo value 1624 against 1484 cost, before debt interest."
+    },
+    {
+      "night": 11,
+      "where": "Orchid Terraces",
+      "chosen": "Sell all 29 kelp at 27 and one saffron at 1625 to free my full hold. Buy four pearls at 288 for Lanternquay and preserve repayment cash.",
+      "runnerUp": "Fill the freed slots with 118 rain for Saint Mire's last fleet night. Another night of 10% interest made this expensive.",
+      "outcome": "N12 pearls quoted 290. I reached the lender with 7512 cash and 11822 debt. The financing opportunity was worth more than the pearl spread."
+    },
+    {
+      "night": 12,
+      "where": "Lanternquay",
+      "chosen": "Repay 4500, keep the pearls and buy one eel at 2474 for Exchange. Its bid of 4202 was two nights old.",
+      "runnerUp": "Repay only 2000 and buy two eels for the same trip. This increases both exposure and interest.",
+      "outcome": "The helper sheltered in a squall. Arrival was N14, with 538 cash and 8859 debt. Eels posted 3231, still profitable. Pearls fell to 204 in a glut."
+    },
+    {
+      "night": 24,
+      "where": "Drowned Exchange",
+      "chosen": "Sell the fleet-demand eel at 4067 and two pearls. Take the 10-slot post to Lanternquay for 2800 and carry four saffron at 654.",
+      "runnerUp": "Buy eight saffron for Orchid's one-night-old 1085 quote. This forgoes the post and immediate lender access.",
+      "outcome": "N25 arrived on time. The Gull Gang took 1106 and the leak patch took 660. I kept all four saffron, locally worth 4336, and landed with 4245 cash."
+    },
+    {
+      "night": 29,
+      "where": "Copperhook",
+      "chosen": "Sell 30 kelp at 55, take the post due N30 and buy just one eel at 1523. Keep 1718 cash because there is no time to look for another buyer.",
+      "runnerUp": "Take the same post and a second eel. It fits and costs another 1523, leaving only 195 liquid.",
+      "outcome": "N30 Lanternquay paid the 2800 post. There was no eel dealer. Its local book value was 2855 and settlement paid 1428. Cash 4518 plus salvage 1428 equaled 5946. The second eel would have exposed more cash to the same discount."
+    }
+  ],
+  "replay": "Seed 391 had no opening pearl dealer and a smaller Fogmouth saffron cushion. I took one 1970 eel to safer Saint Mire. N2 quote 2341. By N8 the helper had assembled 16 saffron averaging 715. I sold all at 1837 and sailed empty to the lender. N9 cash 31729 before repaying 9565. N11 at Saint Mire with zero debt, 2544 cash and 30 rain bought at 74, quoted at 171. A third approach worth trying is using part of that post-repayment cash for wireless before concentrating on another expensive lot.",
+  "observations": [
+    "Trade — Each phase gave me two plausible cargo plans. The night-11 full hold made selling a thin-margin staple worthwhile. Night 29 rewarded leaving a slot and cash unused. Counterweight: the circular often provides an attractive ready-made first purchase.",
+    "Routes — Seven illustrated ports, canal connections, danger dots plus text risk, one-night legs, remembered bids and market histories. Fogmouth's saffron fell from 2090 to 1677, Copperhook kelp from a remembered 58 to 46, and Exchange eels from 4202 to 3231. All three checks preceded any wireless purchase. The selected route card gives explicit uncertainty. Comparing two routes still requires switching the selection.",
+    "Economy — Keeping capital invested on the second opening enabled full repayment by N9. On the first voyage partial repayment left enough for one profitable eel. A separate keyboard run bought hold, motor and wireless and ended with 45 slots and 174161 in the vault. Matched night-12 financing fixture started each branch with cash 7512 and debt 11822. After two ordinary interest ticks, putting 4500 in the vault produced cash plus vault minus debt of −6655, versus −5847 for repayment and −6792 for holding cash. Passive banking preserves capital but cannot outrun arrears. This isolates financing only. The two personal openings had different seeds and I did not compare upgrade payback from an identical market.",
+    "Risk — N12 shelter consumed the promised extra night. N24 the toll card quoted 1106 and the receipt confirmed exactly 1106. N25 the patch preserved the four saffron and left the advertised 4245, at a cost of 660 against surrendering one unit. The post and a saleable mixed cargo provided a recovery from late collectors. Repeated collector payments in the middle felt similar even as their collateral changed. Separate forced combat and leak fixtures checked adverse outcomes and reload commitment.",
+    "Pacing — Opening trades competed with interest, midgame arrears changed my route, and the last delivery made a known payout attractive. Across 28 voyages the action log shows recurring decisions about quantity, port, delivery or encounter response. The ending reconciled the half-price dump, named Bilge Rat and showed the remaining 34054 to Canal Runner. The preceding HUD still valued the unsellable eel at full local price.",
+    "Replay — The unavailable pearl dealer changed my first purchase and destination. The N8 fortune changed my later route and made immediate full repayment affordable. Both voyages still rewarded selling an import in Fogmouth, and two seeds give limited evidence about long-term variety.",
+    "Onboarding — The first card, market rows, one-night map card and owned-unit average were enough to buy, travel and sell. The downside estimate prepared me for saffron's lower arrival bid. Hold full and No dealers tonight explain different obstacles. The cost of retaining unmarketable goods on the last night was clearest on the settlement screen.",
+    "Input — Touch reached settlement at 390 px. Chromium 1280 keyboard run reached night 30 with 2139 Tab presses and zero pointer events. A separate mouse fixture exercised purchase, sailing, encounter payment and settlement. Tab produced solid 2–3 px outlines in all four desktop samples. Phone probes found no sub-44 targets among sampled trade, map, event and ending controls, and no horizontal overflow on the sampled market sheet or map. Percentages, stock labels and text risk complement color. Reduced-motion title checks passed. Contrast probe flagged the active ending shortcut numeral at 3.97:1 and desktop trade shortcut at 3.88:1. The disabled phone Buy also measured 4.16:1. Contrast sampling approximates painted backgrounds.",
+    "World — Fogmouth's beacon, Copperhook's crane and the flooded skyline gave me landmarks. A purchase changed purse and hold, sailing drew a route and advanced the night, and the toll receipt named exactly what left the purse. All were legible without the log. Synth cue routines are distinct in source. The policy stand-in counted 279 sounds before muting, 279 while muted and 284 after unmuting. Ordinary animation tempo and audible character remain unjudged.",
+    "Reliability — Offline direct-file WebKit completed with zero observed external requests or page errors. N1 balances, quantities, N30 post payment, salvage rounding and score arithmetic matched. The exact Captain/5946/night-30 entry survived reload. Fresh verify checks passed for corrupt saves, invalid scores and storage-denied allow-scripts sandbox boot. A separate keyboard settlement and simulated ledger runs corroborated persistence. The game directory held one 265439-byte inline vanilla HTML file. Root design notes exist and have 59 lines; their contents stayed outside the play packet."
+  ],
+  "priorities": [
+    "Show estimated settlement proceeds beside full local cargo value on night 30, particularly when a dealer is absent. The two values differed by 1427 on my last eel.",
+    "Show the nightly interest avoided beside the repayment amount. On N12 a partial payment and an additional eel competed for the same cash, and I had to calculate the financing side myself.",
+    "Raise contrast for the small keyboard shortcut labels on selected trade and ending buttons, then remeasure against their rendered backgrounds."
+  ],
+  "limits": [
+    "Emulated touch and typed quantities on Windows WebKit. No physical iPhone, software keyboard, Safari chrome, safe-area, silent-switch or listening test. Routine travel was accelerated; screenshots and source establish presentation more strongly than ordinary-speed pacing.",
+    "Keyboard completion, mouse paths, accessibility probes, technical simulations and event fixtures are supporting checks. The scored trade checkpoints were personal choices, while encounter responses and ordinary intervening trades were helper choices. The initial harness selector typo had no gameplay effect. At N29 a tap following immediate modal dismissal needed a retry and signing freight required returning to Market.",
+    "Targeted fixture comparisons do not exhaust credit, freight, charter or upgrade strategies. A restricted-storage context was started but not carried to settlement. Contrast and focus were sampled rather than audited exhaustively."
+  ],
+  "evidence": {
+    "scratch": "C:/Users/travi/AppData/Local/Temp/astra-r2-5f139e6d",
+    "files": [
+      "commands.txt",
+      "run-1-actions.jsonl",
+      "run-2-actions.jsonl",
+      "run-1-map-night-1.png",
+      "run-1-final-market.png",
+      "run-1-settled.png",
+      "run-2-after-night-10.png",
+      "finance.log",
+      "matched.log",
+      "verify/report.json",
+      "keyboard-play/report.json",
+      "event-check/report.json",
+      "desktop.json",
+      "phone-map.json",
+      "phone-trade.json",
+      "phonefixture.json",
+      "mute.json"
+    ]
+  }
+}

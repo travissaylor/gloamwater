@@ -1,0 +1,183 @@
+{
+  "scores": [90, 91, 88, 90, 90, 90, 89, 90, 90, 95],
+  "gameSha": "171b8e099897e93624ded39d6110babef3a3b8c4038e1b00897236b318778bb4",
+  "rubricSha": "fe1176ac89f5cb902cb26c5714256c6920de3f25e8b66ec2a412fd5a6ac14b43",
+  "caps": {
+    "applied": [],
+    "checked": [
+      "Required feature absent or inert (cap 50 on owner): none found. Seen in play: 8 goods, 7 districts on a spatial map, nightly prices with shocks, sparklines, upgradable hold, engine, weapon, wireless and charter purchases, compounding debt repaid, vault interest, 12 distinct event types, ending with breakdown, rank and persistent ledger, tour and handbook, Web Audio cues and mute.",
+      "Core action blocked at 390 px (input cap 40): none. Buy, sell, sail, stay, bank, repay, upgrade, event choice and settlement were all completed by touch at 390x844.",
+      "Low-cost tactic that bypasses core trading (economy cap 40, total cap 89): not found. Three checks are recorded under playEvidence.balanceChecks.",
+      "Offline boot or completion failure (reliability cap 25): none. file:// boot and a full run to settlement completed.",
+      "External request, dependency, framework or oversize file (reliability cap 40): none. One 265,439-byte file, no network entries."
+    ]
+  },
+  "observations": [
+    {
+      "criterion": "1. Trade and cargo decisions",
+      "score": 90,
+      "anchorEvidence": "Seven logged run-1 turns (N1, N8, N14, N15 inherited; N27, N28, N29 mine) each had a runner-up I could defend, including the closing turn at N29 (20 Clockwork Eels to a surging Saint Mire versus sitting on vault interest). Constraints changed the best choice three ways. Cash: at N8 the Max buy left 636 and a 2,566 bribe was unaffordable, so the default quantity with its reserve would have been better. Capacity: in run 2 the N1 buy was cash-bound (2 Saffron in a 30 hold) while N3 and N4 were hold-bound (30 Glowkelp, then selling 24 to fit 7 Rust Pearls after a rumour). Deadline: at N30 I sold 5 Eels past dealer depth at a falling price because unsold cargo settles at half price.",
+      "counterEvidence": "From about N24 the quantity question shrinks to 'buy to dealer depth plus one or two units' because wealth far exceeds what dealers absorb; 87 to 92 percent of my fortune sat in the vault for the last five nights. Cheap goods (Glowkelp, Bottled Rain, Rust Pearls) stop mattering after about N12 except as hold filler. The compare card's suggestion was the right pick on most early turns.",
+      "gaps": "Adverse check was a labelled fixture, not ordinary play: from one saved N1 state, default quantity plus a route trade returned +15,652 while buying past depth and waiting lost money. I did not log a turn where the runner-up was tested live from the same state."
+    },
+    {
+      "criterion": "2. Routes and market intelligence",
+      "score": 91,
+      "anchorEvidence": "Route panels state nights, danger out of 5, quote age and an age-scaled haircut (20 percent tonight, 25 at one night, 30 at two), so two routes can be compared before sailing: run 2 N5 Fogmouth (1 night, risk 4/5, quote 4 nights old, district imports Saffron) against Orchid (2 nights via Lanternquay, risk 1/5, 'try 30% below', which put the sale under cost). At N28 the map said 'Fleet ends night 28, before your arrival' for Orchid. Quotes versus arrivals: before any wireless, Rain at Saint Mire 309 seen tonight then 311 (inherited N1 to N2); Saffron at Fogmouth 1,602 one night old then 1,674 (inherited N10 to N11); Ghost Chips at Copperhook 7,117 two nights old then 5,674, inside the 30 percent band (run 2 N7 to N8). With wireless: Bottled Rain 170 then 158; Dreamsilk 10,813 then 17,087, explained by a parade bulletin; Eels 4,092 tagged 'surge may fade' then 2,176. Reliability reads as: same-night quotes drift a few percent, age widens the haircut, shock-tagged quotes revert, and district import habits give a floor.",
+      "counterEvidence": "Moon Ink was quoted 36,964 'seen tonight' and sold at 26,363 next night, a 29 percent drop against a suggested 20 percent haircut, with no shock tag on the quote I could find in the transcript (inherited N25 to N26). Saffron buyers were absent on both of my run-2 first arrivals (N2 Orchid, N6 Fogmouth) and once in run 1 with 42 units aboard (inherited N25); the only signal is the generic 'Buyer may be absent'. The trade sheet said 'Above the best recent sale quote ... Buy fewer' for Bottled Rain on N9 of run 2 while the map showed a live fleet call for it one night away.",
+      "gaps": "I did not test a two-night direct voyage, so I cannot say whether the waypoint offers a market stop."
+    },
+    {
+      "criterion": "3. Economy and progression",
+      "score": 88,
+      "anchorEvidence": "Two investment orders both opened useful options. Run 1 (inherited): debt cleared at N10 from a 36.2k purse, then racks, twin-screw motor and a 1,400 repair at N12, a 4,360 rack offer at N18, wireless (6,000) and an Exchange charter (20,000) at N20; the charter's doubled depth took 12 Ghost Chips and 12 Eels at posted price on N24. Run 2 (mine): racks at N8 before the debt, which let me carry 42 Bottled Rain instead of 27 to a fleet call the next night, then debt cleared at N9. Shortcut checks: a same-night buy and sell-back of 21 Saffron returned 23,897 on 23,898 (inherited N10); a matched-state fixture showed bidding a good up and waiting a night loses money; staying at a fleet port overnight made +13,373 but the route alternative would have made about +27,000.",
+      "counterEvidence": "The economy flattens in the last third. Upgrade prices (2,500 to 7,500, wireless 6,000) are trivial once net worth passes about 60k at N12, so they stop competing for funds. After the debt is cleared the loan office is irrelevant. By N28 the vault's 1.5 percent (about 8,000 a night) matched or beat my trade profit (+13,373 and +1,237 on the last two nights) because dealer depth caps deployable capital. Charters are the only late sink; Ysolde's whisper scaled to 8,910 for 'only a guess'.",
+      "gaps": "I never borrowed beyond the opening debt, bought a weapon, or bought a second charter, so the leverage and combat investment paths are unverified. Both clauses of the 90 anchor were demonstrated; I score below it for the late-game flattening."
+    },
+    {
+      "criterion": "4. Risk, consequences and recovery",
+      "score": 90,
+      "anchorEvidence": "Offers state odds and stakes and outcomes matched them. Patrol, run option: '12% of each cargo' and a hull rake on a failed try gave -15 percent hull and 3 of 26 Saffron (inherited N8). Gull Gang toll '323 cash and 9 Bottled Rain' took exactly that (inherited N5). Guaranteed bribes of 20,794 and 21,027 debited exactly (inherited N20, N22). Squall 'lose 6 to 16% hull' cost 14 (inherited N9); 'lose a whole night' moved N3 to N5 (mine, desktop). Flotsam at 80 percent paid 5 Rust Pearls (mine, run 2 N5). Gull thief at 70 percent kept the 810 (mine, run 2 N12). Recovery had real costs: hull at 53 percent was repaired for 1,400 at Copperhook with a cheaper 75 percent patch offered at the Sluices (inherited N10 to N12); a toll that emptied the purse at N19 was recovered by selling cargo; absent Saffron dealers cost me a night of 6 percent interest twice in run 2 against a break-even reroute.",
+      "counterEvidence": "Fight was never chosen in either run. Its stated odds (16 to 22 percent per volley against 60 percent return fire from 2 to 4 boats) looked dominated without a weapon, so one of the four encounter options may be a weak choice. Bribes that 'follow your purse and cargo' quietly punish the cash reserve the default buy encourages.",
+      "gaps": "No fight, sinking or collector encounter was seen in personal play. Sinking and leak outcomes rest on the provided scripted event fixtures (16 of 16 pass)."
+    },
+    {
+      "criterion": "5. Run pacing and ending",
+      "score": 90,
+      "anchorEvidence": "Phases played differently: N1 to N10 was cash-bound small loads under a compounding debt with a N10 deadline; N11 to N20 added upgrades, bonded freight from N15, wireless and a charter; N21 to N30 was fleet timing, vault management and the half-price cargo rule. No night in the full run lacked a trade, route or finance decision. The final route was shaped by the clock: at N29 one sailing remained and Harbor Magnate (650k) was 38k away, which made a tagged surge worth chasing; at N30 the game said 'Final night. Sell, repay Marrow, then settle up'. The ending named the rank (Tide Baron), listed cash 48,955, vault 563,436, cargo 0, debt paid, total 612,391, and said '37,609 short of Harbor Magnate'. Every figure matched my own running ledger.",
+      "counterEvidence": "Closing stakes were small next to the fortune: the last two trades moved 0.2 and 2 percent of net worth. The ending shows only the next rank, not the ladder, and 'Losses and forfeits 81.7k' is one unexplained aggregate. On a 390x844 screen the Settle up button sits below the market list and needs a scroll.",
+      "gaps": "Only one full run was played to night 30, so middle-phase pacing rests on one voyage, 25 nights of it inherited."
+    },
+    {
+      "criterion": "6. Replay and adaptation",
+      "score": 90,
+      "anchorEvidence": "Run 2 differed from night 1: fleet calendar started with Rust Pearls at Orchid rather than Bottled Rain at Saint Mire, and the best opening was two Saffron (cash-bound) instead of 16 Rain. Early plan adapted three times: waited a night at Orchid when Saffron dealers were absent (N2), switched to Glowkelp for the N5 Copperhook fleet (N3), then sold 24 Glowkelp for 7 Rust Pearls on a lamplighter's rumour that landed (N4 to N5, +4,889 with salvage). Later plan adapted too: kept a bribe reserve on the Fogmouth run after run 1's patrol loss, bought racks before clearing debt, and bought Moon Ink at 41 percent under usual into its importing port (+4,589). Two further openings seen on desktop and in the sandbox pointed at different goods and ports. Approaches worth trying next: wireless first to stop sailing on stale quotes, or the twin-screw motor before working Fogmouth.",
+      "counterEvidence": "The skeleton repeats: follow the public fleet calendar, clear debt around N9 to N10, buy racks at Copperhook. Run 2 reached 9,964 by N10 against 26.0k in run 1, and most of that gap came from two absent-dealer nights rather than from my choices.",
+      "gaps": "Run 2 stopped at N10 as the protocol asks (plus two unjudged legs to trigger an event for an audit), so I did not see whether mid and late phases diverge between runs."
+    },
+    {
+      "criterion": "7. Onboarding and decision clarity",
+      "score": 89,
+      "anchorEvidence": "A five-step tour covers ledger, first trade, canals, harbor services and the thirty-night goal (inherited, cold). The compare card explains the first buy with a conservative case ('At 20% lower: +1,361 vs here'); the map panel explains the voyage (nights, risk, quote age); the sell sheet shows price paid, proceeds and profit. An unexpected price was explained in-game: Dreamsilk at 17,087 against a 10,813 quote, with the bulletin 'The Drowning Day parade fills Orchid Terraces. Every price is up' (mine, N27). Constraints are stated where they bite: 'Hold full', 'Above your purse', 'Order limited to 5', 'Not enough free hold' on a job, 'Your purse is too light for this sergeant'. After reading the transcript I made every N26 to N30 and run-2 choice from on-screen cues and opened the handbook once, for the end-of-run cargo rule.",
+      "counterEvidence": "Several cues are ambiguous. 'Cannot buy here' on the fleet card appears whenever the hold is full or the purse is short, and reads as a rule. 'The last goes at 7,648' is the price after the order, not what the last unit cost (7,127). The parade is not tagged on market rows, only in bulletins and the log, and Bottled Rain sat at 'usual' while the bulletin said every price was up. A no-dealer sheet still says 'Price today is 80% above usual'. The trade sheet keeps the last Buy or Sell tab (inherited N2).",
+      "gaps": "The cold first buy, voyage and sale are inherited from the interrupted attempt; I was not cold when I resumed at N26 because I had read its transcript."
+    },
+    {
+      "criterion": "8. Input and accessibility",
+      "score": 90,
+      "anchorEvidence": "Touch reached settlement at 390x844 in WebKit (N1 to N25 inherited, N26 to N30 mine). Keyboard alone at 1280x800 in Chrome reached title, tour, trade sheet (Tab, Enter), port selection (keys 1 to 7, Enter), two event choices (number keys) and the ending (Esc menu), with a 2 px amber focus outline on every focused control; mouse covered the same path. Phone audits of market, trade sheet, map, harbor, event dialog, menu and ending found no target under 44 px, no text under 15 px and no contrast under 4.5:1 except two disabled buttons. Reduced motion removed the title SMIL animation and cut a voyage from 2,411 ms to 490 ms. Essential state has non-colour cues: signed percentages, text tags (Cheap, Surge, Glut), 'risk 4/5', F and ! badges, 'danger 4 of 5' labels. The provided runner also passed at 390x664, 360x640 and 430x932.",
+      "counterEvidence": "At 1280 px market-row notes truncate ('Copperhook +28% seen · to...'), hiding the quote age. The night-30 Settle up button is below the fold at 390 px. Two map nodes sit 6 px apart when a badge is showing. The mute button's label does not state whether sound is on. Phone and desktop maps are mirror images of each other.",
+      "gaps": "Touch is emulated: no physical iPhone, no finger scrolling (a helper scrolled rows into view before coordinate taps), no on-screen keyboard (quantities were typed), no safe-area or toolbar behaviour. Contrast figures are approximate. No screen reader was used. Shift+Tab was not exercised by me."
+    },
+    {
+      "criterion": "9. World, feedback and sound",
+      "score": 90,
+      "anchorEvidence": "Districts are recognisable by art and writing: a lighthouse for Fogmouth, cranes for Copperhook, a sunken cathedral for Saint Mire, lantern strings for Lanternquay, each with supply and import habits and a named shopkeeper with a line of voice. Three different actions were readable without the log: a sale shows a coin burst, a floating '+2,576' and a highlighted purse; a patrol shows boats, hull bar, 'They cut you off and rake your hull. -15% hull. They grab 3 Synth Saffron' and a greyed bribe with the reason; the gull thief resolved to a banner 'Bag saved · kept 810'. Sound is 18 named synthesized cues (buy, sell, profit, travel, arrive, alarm, hit, shot, splash, escape, win, lose and others); with mute on, the sound counter stayed at 514 across three taps and resumed after unmuting. A trade is three taps and a voyage about 2.4 s in Chromium at normal speed.",
+      "counterEvidence": "On the phone map district names are shortened ('Exchange', 'Orchid') and the selected-port panel covers part of the desktop map. Some shock copy overstates ('Every price is up').",
+      "gaps": "No sound was heard. Cue operation was judged from the harness's AudioContext stand-in and the source; listening quality is unjudged. Headless WebKit renders at about 4 frames a second, so animation feel was judged from screenshots and Chromium timing."
+    },
+    {
+      "criterion": "10. Reliability and delivery",
+      "score": 95,
+      "anchorEvidence": "A normal touch run completed with no runtime errors and its result survived a reload (Captains' Ledger showed Tide Baron 612,391). Arithmetic held to the unit across N26 to N30: purse 39,853 through eleven trades and three deposits to 48,955; vault 372,738 at 1.5 percent a night with deposits to 563,436; three ending breakdowns summed exactly, including half-price cargo (2,955 and 1,036). Delivery: one 265,439-byte vanilla file, no external references beyond the SVG namespace and a data: icon, zero resource or network entries, file:// boot, play inside sandbox='allow-scripts' with storage throwing SecurityError, corrupt storage recovered with 'Your saved voyage could not be loaded', storage access wrapped with a memory fallback. Adverse checks: restoring one save twice gave the same next night and the same event, so reloading does not reroll; provided scripted runners passed (8 of 8 verify checks, a full keyboard run with zero pointer events, 16 of 16 event fixtures).",
+      "counterEvidence": "Cosmetic only: ledger dates are UTC (showed 2026-11-19 on a local 2026-11-18); the 'last goes at' figure differs from the charged marginal unit although totals are exact; some market copy contradicts the numbers.",
+      "gaps": "'Vault earned 45,269' and 'Losses and forfeits 81.7k' were not recomputed over the whole run. NOTES.md was only line-counted (59), not reviewed."
+    }
+  ],
+  "priorities": [
+    "1. Give late-game capital somewhere to go. From about N24 dealer depth caps deployable cash and most of the fortune idles in the vault, so closing trades move one or two percent of net worth. Scale depth or consignment size with progress, or add late investments, so the final five nights carry stakes comparable to the middle.",
+    "2. Make sale-side signals agree with each other. Add a specific cue for thin or absent dealers instead of the generic warning; stop the trade sheet saying 'Buy fewer' against a known fleet call; widen or flag the haircut when a quote is far above usual (Moon Ink fell 29 percent against a suggested 20); tag market rows with the active local shock; reword 'Cannot buy here' and 'The last goes at'.",
+    "3. Fix the small reach and legibility issues: keep Settle up visible without scrolling on night 30 at 390 px, stop truncating market-row notes at 1280 px, show the full rank ladder on the ending, open the trade sheet on the tab that matches the cargo, expose mute state in the label, and stamp ledger dates in local time."
+  ],
+  "limits": [
+    "Inherited evidence: nights 1 to 25 of the first voyage, including the cold opening, tour and first trade, were played by an interrupted attempt in this same judge slot on the same build. I read its control transcript and screenshots and attribute every item taken from it as 'inherited'. I played nights 26 to 30 and all of run 2 myself in the same live browser session.",
+    "I was not cold on resuming. The transcript showed me prices, events and outcomes for nights 1 to 25 before I made a decision.",
+    "Touch was emulated in Playwright WebKit on Windows at 390x844, not a physical iPhone. Shell helpers issued the visible inputs (real touch taps and typed quantities) between my decisions. Two helper shortcuts were not player input: rows were scrolled into view by script before coordinate taps, and the quantity field was selected by script before typing.",
+    "No FAST acceleration was used in personal play. The provided scripted runners do use FAST and reduced motion.",
+    "Audio was never audible. Mute and cue operation were judged from a counter in the harness's AudioContext stand-in and from the source.",
+    "The desktop keyboard and mouse checks covered five nights and two early settlements, not a full run. The full keyboard run is the provided scripted runner.",
+    "Balance checks used one labelled state fixture (cash set to 100,000 in a saved N1 state, then scripted clicks) and one live comparison. No large-sample simulation was run by me.",
+    "Not seen in personal play: fighting, sinking, Marrow's collectors, weapons, a second charter, borrowing more, a two-night direct voyage.",
+    "Other judges' outputs, earlier scores, other judging files and change history were not opened. An astra.json exists in the output folder and was not read.",
+    "The harness PowerShell tool was unavailable in this session; desktop checks ran the same cdp scripts through Windows PowerShell 5.1 from Git Bash."
+  ],
+  "playEvidence": {
+    "judge": "Fable 5.2 (high), Round 2, independent review; continuation of an interrupted attempt in the same slot",
+    "build": "game/index.html, 265,439 bytes, SHA-256 verified before play",
+    "firstImpressionsOnResuming": "Recorded at night 26 before any source or technical check. The market screen reads at a glance: every row has a sparkline, a signed percentage against the usual price and a note naming a better port with the age of that sighting. The compare card states a conservative profit case rather than a best case. The map is real geography with danger pips and profit badges. It felt like a game that wants me to doubt its own quotes.",
+    "run1": {
+      "method": "WebKit 390x844 touch, port 9581, one continuous session from a cold start. Nights 1 to 25 inherited; nights 26 to 30 mine.",
+      "netWorthByNight": {"N1": -3500, "N4": 1574, "N10": 26000, "N12": 61200, "N15": 125000, "N20": 250000, "N24": 438000, "N27": 574000, "N30": 612391},
+      "decisionLog": [
+        {"night": 1, "phase": "opening", "source": "inherited", "chosen": "Max 16 Bottled Rain at 150 for the Saint Mire fleet call (quote 309 seen tonight, 1 night, risk 2/5)", "runnerUp": "Default 14 keeping the 15 percent reserve, or Glowkelp to Copperhook at +52 percent", "information": "Harbor circular, compare card 'At 20% lower: +1,361', port details", "outcome": "Sold 16 at 311 for +2,576"},
+        {"night": 8, "phase": "opening", "source": "inherited", "chosen": "Max 26 Synth Saffron at 651 average (16,919, past the 21-unit depth) for the Fogmouth fleet call opening N9, leaving 636", "runnerUp": "Default 21 for 13,377, keeping 4,178 for a bribe", "information": "Fleet calendar, a 7-night-old Fogmouth quote, danger 4/5", "outcome": "Patrol on the route; 2,566 bribe unaffordable; ran and lost 15 percent hull and 3 Saffron on a failed try; arrived at 67 percent hull; remaining Saffron made +19,025"},
+        {"night": 14, "phase": "growth", "source": "inherited", "chosen": "6 Dreamsilk at 7,113 average (past depth 4) plus 13 Clockwork Eels to depth, for the Sluices", "runnerUp": "8 to 10 Dreamsilk at 7,849 to 8,358 average with the last unit above 11,500", "information": "Dreamsilk 30 percent under usual, quotes one to eleven nights old", "outcome": "Dreamsilk +37,905, Eels +4,542"},
+        {"night": 15, "phase": "growth", "source": "inherited", "chosen": "Bonded freight to Fogmouth (40 of 45 hold, 18,000 stake, 42,000 payout, due N18) plus 4 Moon Ink in the remaining space", "runnerUp": "Harbor post (10 hold, 2,800) with 35 slots left for cargo, or no job", "information": "Consignment ledger, Moon Ink 13 percent under usual with a one-night-old Copperhook quote", "outcome": "Ink +42,163 at Lanternquay; escaped a patrol at a stated 41 percent; freight delivered for +42,000"},
+        {"night": 27, "phase": "closing", "source": "mine", "chosen": "At Orchid sell 7 Dreamsilk at 17,087 and all 42 Saffron for 59,177 (21 at 1,691, the rest sliding to 705); decline Ysolde's whisper at 8,910 ('only a guess'); load 60 Bottled Rain at 124 for Lanternquay", "runnerUp": "Sell 30 Saffron and carry 12 to the Exchange at 1,193, worth about +3,000 if the quote held and nothing at a 20 percent haircut", "information": "Wireless quotes for all ports, parade bulletin, three sailings left", "outcome": "Dreamsilk +71,110, Saffron +3,947; Rain later +1,920"},
+        {"night": 28, "phase": "closing", "source": "mine", "chosen": "At Lanternquay buy 7 Dreamsilk for 49,305 the night before its fleet call opens there, vault the rest, stay the night", "runnerUp": "Carry the Dreamsilk to Orchid (18,023 tonight, fleet ending before arrival, risk 1/5) and return for night 30", "information": "Fleet calendar, map note 'Fleet ends night 28, before your arrival', price-impact ladder on the sheet", "outcome": "Sold at 8,954 for +13,373 with no travel risk. Orchid showed 10.9k that night, so the runner-up would have made about +27,000"},
+        {"night": 29, "phase": "closing", "source": "mine", "chosen": "Last sailing: 20 Clockwork Eels for 40,902 (10 at 1,597, then rising) to Saint Mire at 4,092 'seen tonight · surge may fade', keeping 6,816 for a bribe and vaulting the rest", "runnerUp": "Stay at Lanternquay for about 9,000 of vault interest, which could not reach Harbor Magnate; or 14 Saffron to Orchid for about +5,000", "information": "Port details, district imports Eels, 38k short of the next rank", "outcome": "Surge had faded to 2,176. Sold all 20 for 42,139 (+1,237), the last five past depth because unsold cargo settles at half price"}
+      ],
+      "ending": {"night": 30, "rank": "Tide Baron", "cash": 48955, "vault": 563436, "cargoAtHalfPrice": 0, "debt": 0, "finalFortune": 612391, "shortOfNextRank": 37609, "voyages": 28, "encounters": "7, won 0, fled 2", "ledgerAfterReload": "1. Captain, Tide Baron, 612,391"}
+    },
+    "run2": {
+      "method": "Fresh voyage in the same WebKit touch session, all mine, played to night 10. Two further legs to night 12 only to trigger an event dialog for an audit, then an early settlement to audit the ending.",
+      "decisionLog": [
+        {"night": 1, "chosen": "2 Synth Saffron (2,478 of 2,500) to Orchid at 2,007 seen tonight, risk 1/5", "runnerUp": "Same cargo to Fogmouth at 2,419, risk 4/5 with 22 in the purse; or 25 Bottled Rain to the Sluices", "outcome": "No Saffron dealers at Orchid on N2"},
+        {"night": 2, "chosen": "Stay a night for dealers to return, using run 1's observation that absences lasted one night", "runnerUp": "Reroute to Lanternquay at a break-even 1,239", "outcome": "Sold at 1,708 on N3 for +938; cost one night of 6 percent interest"},
+        {"night": 3, "chosen": "30 Glowkelp at 42 for the Copperhook fleet call opening N5, keeping 2,178", "runnerUp": "One Clockwork Eel to the Exchange on a two-night-old quote", "outcome": "Plan changed the next night"},
+        {"night": 4, "chosen": "On a free rumour ('Pell is sure, 8 in 10') sell 24 Glowkelp and buy 7 Rust Pearls at 505 for Copperhook", "runnerUp": "Keep 26 Glowkelp and buy 4 Pearls with a 386 reserve", "outcome": "Rumour landed: Pearls 702. With 5 salvaged Pearls (80 percent flotsam offer) the sale made +4,889"},
+        {"night": 5, "chosen": "5 Saffron (default quantity, 2,470 kept for a bribe) to Fogmouth, 1 night, risk 4/5, quote 4 nights old", "runnerUp": "Orchid, 2 nights, risk 1/5, under cost at the suggested haircut", "outcome": "No dealers on N6; waited; sold N7 at 1,730 for +2,205 against a 2,419 quote"},
+        {"night": 7, "chosen": "2 Ghost Chips at 4,121 plus 28 Glowkelp filler for Copperhook", "runnerUp": "1 Dreamsilk and 1 Ghost Chip", "outcome": "Chips sold at 5,674 (+3,106), Glowkelp at fleet price 82 (+896)"},
+        {"night": 8, "chosen": "Hold racks 30 to 45 for 2,500 before clearing debt; 1 Moon Ink at 11,119 (41 percent under usual) for Lanternquay", "runnerUp": "Twin-screw motor for 4,500, or all cash in cargo", "outcome": "Ink +4,589"},
+        {"night": 9, "chosen": "Repay 9,565 in full a night early; 42 Bottled Rain for the Saint Mire fleet call", "runnerUp": "Repay part and keep capital at 10 percent interest after N10", "outcome": "Rain sold at 189 under a simultaneous glut for +2,387; a courier job was refused for lack of 3 free hold"}
+      ],
+      "stateAtNight10": {"purse": 8839, "vault": 0, "debt": 0, "hold": "3/45", "hull": 100, "netWorth": 9964}
+    },
+    "quoteVersusArrival": [
+      {"good": "Bottled Rain", "port": "Saint Mire", "quote": 309, "age": "tonight", "arrival": 311, "wireless": false, "source": "inherited N1 to N2"},
+      {"good": "Synth Saffron", "port": "Fogmouth", "quote": 1602, "age": "1 night", "arrival": 1674, "wireless": false, "source": "inherited N10 to N11"},
+      {"good": "Synth Saffron", "port": "Orchid", "quote": 2007, "age": "tonight", "arrival": "no dealers, then 1,708 a night later", "wireless": false, "source": "mine, run 2 N1 to N3"},
+      {"good": "Ghost Chips", "port": "Copperhook", "quote": 7117, "age": "2 nights", "arrival": 5674, "wireless": false, "source": "mine, run 2 N7 to N8"},
+      {"good": "Moon Ink", "port": "Lanternquay", "quote": 36964, "age": "tonight", "arrival": 26363, "wireless": true, "source": "inherited N25 to N26"},
+      {"good": "Dreamsilk", "port": "Orchid", "quote": 10813, "age": "tonight", "arrival": 17087, "wireless": true, "source": "mine N26 to N27, parade bulletin"},
+      {"good": "Bottled Rain", "port": "Lanternquay", "quote": 170, "age": "tonight", "arrival": 158, "wireless": true, "source": "mine N27 to N28"},
+      {"good": "Clockwork Eels", "port": "Saint Mire", "quote": 4092, "age": "tonight, tagged 'surge may fade'", "arrival": 2176, "wireless": true, "source": "mine N29 to N30"}
+    ],
+    "balanceChecks": [
+      {"label": "Same-night round trip", "method": "visible touch play, inherited N10", "result": "Bought 21 Saffron for 23,898 past depth; the sell sheet offered 23,897 for all 21. No profit from bidding up and selling back."},
+      {"label": "Bid up and wait, against the default route trade", "method": "STATE FIXTURE with scripted mouse clicks in desktop Chrome. One N1 save edited to 100,000 cash and restored three times, so all branches share state, night and RNG.", "result": "A: 16 Ghost Chips for 90,375 pushed the posted price from 4,023 to 10,936; next night it was 3,326, a paper loss of about 37,000. B: 10 Chips for 42,485, same 3,326 next night. C: default 7 Chips for 28,161 sailed to the Exchange and were worth 6,259 each, +15,652. Impact does not carry into the next night's sale price, so the tactic costs money and the route trade wins."},
+      {"label": "Wait at a fleet port", "method": "visible touch play, mine N28 to N29", "result": "+13,373 on 49,305 with no travel risk, capped by a 3-unit depth; the route alternative showed about +27,000. Useful, not dominant."}
+    ],
+    "desktop": {
+      "method": "Chrome headless 1280x800 through the cdp harness, fresh profile. Real key and mouse events.",
+      "keyboard": "Enter and Tab from title through name entry and the five tour steps; Tab to a row's Buy button, Enter, Tab through Buy, Sell, minus, quantity, plus, Max, slider, Cancel, confirm; keys 6 and 5 selected ports and Enter sailed; a squall and a flotsam dialog took keys 2 and 1; Esc opened the menu, Tab reached Abandon, Enter twice reached the ending with focus on 'Sail again'. Outline was solid 2 px rgb(255,190,85) on every stop.",
+      "mouse": "Sail again, Cast off, Buy Rust Pearls, confirm, click the Exchange node, Sail here, Continue on a lucky-find dialog.",
+      "earlySettlement": "Night 5: 448 cash + 2,955 half-price cargo - 7,576 debt = -4,173, rank Drowned Debtor. Matches."
+    },
+    "phoneAudits": "Harness 'audit' step on market, trade sheet, map with a port selected, harbor, event dialog, pause menu and ending at 390x844: zero targets under 44 px, zero text under 15 px, zero truncated text, contrast failures only on two disabled buttons (4.06:1 and 3.97:1).",
+    "technical": {
+      "mine": [
+        "sha256sum of game and rubric; byte count 265,439",
+        "Source grep: one http reference (SVG namespace), no fetch, XHR, WebSocket or script src, one inline script, storage wrapper with try/catch and memory fallback, prefers-reduced-motion in CSS and JS, NOTES.md 59 lines",
+        "Sandbox: wrapper page with iframe sandbox='allow-scripts' in WebKit; localStorage threw SecurityError; started a run, bought 6 Rust Pearls, sailed to night 2, no errors",
+        "Corrupt storage: all three gloamwater.* keys overwritten with invalid JSON in Chrome, reload showed a recovery notice and a new run started; performance resource list empty; no console errors",
+        "Reload: after settlement the ledger entry survived a page load in WebKit",
+        "Reduced motion: scripted Chromium comparison at 390x844, voyage 2,411 ms versus 490 ms, title SMIL animation removed",
+        "Mute: sound-start counter 509 to 514 over three taps with sound on, unchanged over three taps muted, rising again after unmuting"
+      ],
+      "providedScriptedRunners": [
+        "tools/verify.cjs: 8 of 8 pass (source constraints, WebKit touch at four sizes, Chromium desktop, two simulated full games with persistent ledger, corrupt storage and restricted sandbox). Uses FAST, reduced motion and an external bot.",
+        "tools/keyboard-play.cjs --seed 31: full run to night 30, zero pointer events",
+        "tools/event-check.cjs: 16 of 16 fixtures pass in WebKit and Chromium (toll, toll cap, run success, run failure, sinking, leak patch, jettison, unaffordable patch)"
+      ]
+    },
+    "eventsSeen": ["Gull Gang ambush", "Tidewarden patrol", "squall", "flotsam crate", "lucky strongbox", "courier parcel job", "hold leak", "Old Fenna's racks offer", "Pell the lamplighter's rumour", "harbor consignments", "gull thief", "market shock bulletins (parade, strike, glut, customs auction, festival)"],
+    "evidenceLocations": {
+      "note": "Temporary. Scratchpad folders can be cleared by a reboot or cleanup.",
+      "mine": "C:/Users/travi/AppData/Local/Temp/claude/c41ff88525b4ac42/acf43caa-f506-4c49-9edc-f236f0c900ea/scratchpad/ev (c-* run 1 nights 26 to 30, d-* run 2, k-* desktop, s-* sandbox) and sibling folders verify, keyboard, events",
+      "inheritedScreenshots": "C:/Users/travi/AppData/Local/Temp/claude/c41ff88525b4ac42/bbffb1dd-592d-4503-9d3e-e2072f682885/scratchpad/ev (r1-*)",
+      "inheritedTranscript": "tools/node_modules/.trading-round2-fable-play-evidence.txt"
+    },
+    "browsersClosed": "Phone harness ports 9581 (recovered session) and 9583 (sandbox), desktop Chrome port 9627, and all Playwright runner browsers were stopped. No harness or Playwright process remained afterwards."
+  }
+}

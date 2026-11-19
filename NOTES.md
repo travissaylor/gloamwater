@@ -24,7 +24,7 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
   set. The Sluices: cheap patches. Any district: a **trading charter** that makes its dealers trade twice as deep with you.
 - **Survive.** Encounter offers quote cash, cargo, hull damage and debt credit. A won fight buys three quieter nights.
   Badly damaged skiffs get a repair route. With almost no funds and an empty hold, work one night for ¤350 once per voyage.
-- **Freight.** From night 15, compare post and bonded freight in Market or Harbor. Take one job per five-night window. Late or seized deliveries forfeit the bond.
+- **Freight.** Compare jobs from night 15. Heavy freight once per run uses 65 hold slots and a ¤50k stake. Late or seized deliveries forfeit the bond.
 - **Gulls and leaks.** Recover a stolen bag at 70% odds or accept the cash loss. Patch a threatened cargo stack or jettison it.
   Costs and failure stakes are explicit; offers do not consume dice or resources until answered and survive reload unchanged.
 - **Finish.** On night 30, settle up. Score = cash + vault + cargo at half its sale value − debt. Seven ranks up to Sovereign of

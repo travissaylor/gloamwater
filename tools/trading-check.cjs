@@ -65,8 +65,10 @@ async function marketGuide(page) {
     Object.assign(state, { day: 14, cash: 2000, hull: 46 });
     state.stock.lq.pearl = true;
     state.stock.lq.ink = true;
+    state.stock.lq.rain = true;
     state.prices.lq.pearl = 400;
     state.prices.lq.ink = 19000;
+    state.prices.lq.rain = 150;
     state.cargo.pearl = { q: 4, cost: 420 };
     state.cargo.rain = { q: 10, cost: 130 };
     for (const d of DISTRICTS) if (d.id !== 'lq') state.seen[d.id] = {};
@@ -193,6 +195,60 @@ async function freight(page) {
   assert.deepEqual(await page.evaluate(() => [S.cash, S.freightSlot]), [64000, 0]);
 }
 
+async function heavyFreight(page) {
+  await fresh(page);
+  await page.evaluate(() => {
+    const state = newState('Heavy freight fixture');
+    Object.assign(state, { loc: 'ch', day: 24, cash: 200000, debt: 0, holdTier: 2 });
+    startGame(state, false);
+  });
+  await page.locator('#side-body [data-act="freight"]').tap();
+  const choice = page.locator('[data-choice="2"]');
+  assert.match(await choice.innerText(), /65 hold.*2 nights.*50,000.*96,000.*more encounters/s);
+  await page.waitForTimeout(450);
+  await choice.tap();
+  const signed = await page.evaluate(() => ({
+    cash: S.cash, used: holdUsed(), cargo: S.contracts[0], risk: encounterChance(S.contracts[0].to)
+  }));
+  assert.deepEqual([signed.cash, signed.used, signed.cargo.bond, signed.cargo.due], [150000, 65, 50000, 27]);
+  await fresh(page);
+  await page.locator('#t-cont').tap();
+  assert.deepEqual(await page.evaluate(() => S.contracts[0]), signed.cargo);
+  const remaining = await page.evaluate(() => {
+    S.contracts = [];
+    S.day = 25;
+    return freightOffers().map(job => job.size);
+  });
+  assert.deepEqual(remaining, [10, 40]);
+  assert(await page.evaluate(dest => encounterChance(dest), signed.cargo.to) < signed.risk);
+}
+
+async function finalPreview(page) {
+  await fresh(page);
+  await page.evaluate(() => {
+    const state = newState('Settlement fixture');
+    Object.assign(state, { day: 30, cash: 4518, debt: 0 });
+    state.cargo.eels = { q: 1, cost: 2400 };
+    state.prices.lq.eels = 2855;
+    state.stock.lq.eels = false;
+    startGame(state, false);
+  });
+  const settle = page.locator('.final-banner [data-act="settle"]');
+  await page.waitForFunction(() => {
+    const button = document.querySelector('.final-banner [data-act="settle"]');
+    if (!button) return false;
+    const rect = button.getBoundingClientRect();
+    return rect.height > 0 && rect.top >= 0 && rect.bottom <= innerHeight
+      && button.contains(document.elementFromPoint(rect.x + rect.width / 2, rect.y + rect.height / 2));
+  });
+  assert.match(await page.locator('.final-banner').innerText(), /5,946.*1,428 at half value/s);
+  await settle.tap();
+  assert.match(await page.locator('#modal').innerText(), /1,428.*5,946/s);
+  await page.waitForTimeout(450);
+  await page.locator('[data-choice="yes"]').tap();
+  assert.match(await page.locator('#final-n').innerText(), /5,946/);
+}
+
 async function calendarAndTour(page) {
   await fresh(page);
   const before = await page.evaluate(() => {
@@ -249,7 +305,9 @@ async function main() {
     ['collector payment matches its offer', page => payment(page, 'collectors')],
     ['Gull Gang payment matches its offer', page => payment(page, 'gulls')],
     ['repair and quote guides offer reachable options and compare a mixed hold', marketGuide],
-    ['bonded freight needs upgraded hold space and pays once across reload', freight]
+    ['bonded freight needs upgraded hold space and pays once across reload', freight],
+    ['heavy freight saves the larger stake and can be accepted once', heavyFreight],
+    ['settlement prediction matches the result and stays above the fold', finalPreview]
   ]);
   await run(chromium, { viewport: { width: 1280, height: 800 } }, [
     ['keyboard follows Sail and keeps context after trading and sailing', keyboardTrade],

@@ -104,3 +104,31 @@ The credit prototype bases the limit on opening credit plus positive net worth, 
 After night 18, Fable often had ¤60k–110k idle and little reason to expand its hold. The charter comparison shows that dealer depth has real value, yet investing in more traded volume alone still depends on finding the same kind of deal. Failbetter's fixed-payout prospects add a different reason to pick a destination. Gloamwater uses its own parcel rules to offer ordinary post or larger bonded freight. The post pays ¤2,800 with no deposit and uses 10 slots. Freight stakes ¤18,000 and uses 40 slots for a ¤42,000 payout if delivered. Both can be seized, and a late delivery forfeits the bond. The five-night window limits repeat income while leaving room for trade and repairs. [Failbetter's trade redesign](https://www.failbettergames.com/news/trade-in-the-skies-roche-limit)
 
 Fable also saw consecutive patrols and repeated arrival events. The new event selection remembers the previous voyage and arrival separately. It avoids an immediate repeat and leaves the encounter risks, deadline, and market RNG in place. [Pierce on limiting random streaks](https://media.gdcvault.com/gdc2017/Presentations/Shay_Pierce_DarkSecretsRNG.pdf)
+
+Two scripted variants tested consignments on the Round 2 candidate across 40 matched seeds. Both used the informed trade policy, accepted a job only if it fit the free hold and its bond cost at most 40% of the purse, and routed toward the accepted destination. One limited itself to post. The other chose bonded freight when available under those limits.
+
+| Policy | Accepted jobs | Bonded jobs | Median fortune | Higher than informed on the same seed |
+|---|---:|---:|---:|---:|
+| Informed, no consignments | 0 | 0 | About 562,900 | Reference |
+| Post only | 107 | 0 | 585,072 | 24 of 40 |
+| Bonded freight when affordable | 109 | 20 | 591,653 | 23 of 40 |
+
+Neither variant sank or changed the end-of-run market RNG. The bonded option was useful in some circumstances and the flexible trader still won a substantial share of the paired runs. This probe uses scripted selection and does not measure whether players notice the opportunity. Separate phone fixtures confirmed that an inspection and an overdue job each forfeit one bond and that the inspection result persists on save.
+
+## Follow-up on closing and lending numbers
+
+Astra's Round 2 run carried an eel worth ¤2,855 with no local dealer. Settlement paid ¤1,428. The confirmation gave the amount, but the final market footer gave only the larger value. A prototype puts the exact payout and score beside Settle up. It also previews how much rounded interest a chosen repayment saves that night. Both displays use the same calculations that settle the run and accrue the loan. This makes the relevant costs visible at the decision. [Meier on game feedback and decisions](https://www.gdcvault.com/play/1016165/Interesting)
+
+A contrasting solid background made the shortcut labels easier to read. The prototype measured 12.22:1 text contrast. Touch fixtures reproduced the missing-buyer settlement and a partial repayment that saved ¤101 after rounding. [W3C on minimum text contrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
+
+Opus found that a route card could label an entire sale as a gain when the local buyer was absent. The prototype labels that amount as projected proceeds and identifies the missing local buyer. A good with cargo aboard defaults to Sell when opened from its row. The last mode can carry over when reopening the same good in the same market. Explicit Buy and Sell commands still set the mode. This follows guidance on preventing slips when the same control has different effects. [Budiu on interface modes](https://www.nngroup.com/articles/modes/)
+
+Opus also paid a Gull toll equal to its entire purse. The prototype shows the possible cash cost before sailing and lists the precise cargo or hull cost in Port details. The quote uses the current purse and hold. Sailing and encounters can change both. An emulated touch fixture checked the same whole-unit payment the encounter will offer. [Subset Games on telegraphing consequences](https://media.gdcvault.com/gdc2019/presentations/Into%20the%20Breach%20Postmortem%20Final.pdf)
+
+## Follow-up on closing choices
+
+Fable's last two trades moved 2% and 0.2% of net worth, after it banked roughly 90% of its fortune. The earlier probes support keeping ordinary price impact because it gives small and large orders different economics. The first heavy-freight prototype required 90 slots and a ¤72,000 stake. An informed policy that tried to prepare for it accepted none in 40 voyages. The revised job uses 65 slots, stakes ¤50,000 and pays ¤96,000 on delivery, so a second-tier hold can carry it. It appears only for two-night routes on nights 24–27. Each voyage can accept it once. The load raises encounter risk, and the time window leaves one spare night for a setback. [Inkle on route costs and fixed deadlines](https://www.inklestudios.com/2014/07/14/approaching-journeys-end) · [Failbetter on time-limited trade prospects](https://www.failbettergames.com/news/trade-in-the-skies-roche-limit)
+
+Fable also saw conflicting warnings about live fleet calls and a Settle up button below the phone fold. The public fleet schedule determines buyer availability for its named good on the arrival night. The price still moves. The route card distinguishes those two facts. The trade sheet suggests a smaller order only when quantity changes unit cost, and settlement terms sit before the final market rows.
+
+A revised 40-seed policy prepared for heavy freight from night 19 by visiting the yard, preserving room in the hold and withdrawing reserves when possible. It accepted heavy freight in 34 voyages. It finished above unrestricted informed play on 22 seeds, with a paired median gain of ¤25,994 and no sinks in the sample. This was a purpose-built policy. Its upgrade and reserve decisions were part of the comparison, so the result includes their opportunity costs.
