@@ -254,7 +254,7 @@
     let kind = art.startsWith('enc_') ? art.slice(4) : (ART_ALIAS[art] || art);
     if (c.confirm) kind = 'confirm';
     const opts = {};
-    (c.choices || []).forEach(x => { opts[x.key] = { enabled: !x.disabled, cost: num(x.label), p: pctOf(x.sub), label: x.label, sub: x.sub }; });
+    (c.choices || []).forEach(x => { opts[x.key] = { enabled: !x.disabled, cost: x.cost ?? num(x.label), p: pctOf(x.sub), label: x.label, sub: x.sub }; });
     const boats = /Enemy boats<b>(\d+)/.exec(c.extra || '');
     return { kind, title: c.title, kicker: c.kicker, opts, keys: Object.keys(opts), card: c, round: c.result ? 2 : 1, boats: boats ? +boats[1] : null };
   }

@@ -17,3 +17,19 @@ Read the [research](../trading-research.md) for source notes and the baseline si
 ## Baseline verification
 
 The 253,939-byte game at SHA-256 `514fe0fba64b5fab2cb80c2909198befb7cb1685010bba98a514f4d01c1a3745` passed all eight `tools/verify.cjs` checks, all 16 `tools/event-check.cjs` fixtures and all 30 `tools/pr-check.cjs` checks. These cover source constraints, emulated phone and desktop play, settlement and reload, event outcomes, sandbox and corrupt storage, focus and ledger assertions. The separate simulation used 40 seeds and five policies. These checks are supporting diagnostics. Each judge makes and records an independent assessment of the experience.
+
+## Baseline panel and selected changes
+
+| Game | Fable 5.2 high | Opus 5.5 high | GPT-6.2 Astra high | Panel mean |
+|---|---:|---:|---:|---:|
+| Baseline | [90.53](baseline/fable.json) | [83.53](baseline/opus.json) | [89.86](baseline/astra.json) | **87.97** |
+
+All three settled a cold touch run on night 30, with varying use of scripts to drive visible controls. All replayed the opening through night 10. No judge applied a cap. The largest disagreement was on economy and progression, which ranged from 76 to 92. Closing fortunes ranged from a ¤2,752 deficit to ¤436,943. The difference reflects individual routes, seeds, choices and judgments.
+
+Round 1 targets findings shared across the panel. Give a badly depleted captain a paid dock shift and show exact payment terms. Make route recommendations account for quote age, buyer availability and expiring demand. Vary the public fleet calendar by voyage, within early and late cargo groups. Point damaged ships to repairs and fix keyboard focus in the map, tour and trade sheet. Keep larger changes to investment balance and the late-game arc open for the next panel's evidence.
+
+## Round 1 verification
+
+The candidate is 258,584 bytes, SHA-256 `8156027f5c8d0896978686a5ea3c49a9c37175e761c659cc12effd20ba35883d`. Seven broad regression groups passed. The sandbox group initially assumed which fleet call was active on night 21. It passed after the fixture selected the active call from the public calendar. All 16 event fixtures, 30 focus, fleet and ledger checks, and six new targeted checks passed on the same build.
+
+The [40-seed repeat](../../tools/sim/results/trading-round1.txt) put the informed median at ¤594k, against ¤606k in the baseline. Its 10th percentile rose from ¤164k to ¤295k. Greedy median fortune fell from ¤67k to ¤53k, and one of its 40 voyages sank. The simulator does not use the new dock shift. These figures measure the scripted policies under the two schedules. The panel tests how the new decisions feel in play.

@@ -208,8 +208,15 @@ async function storageAndSandbox(browser) {
     await page.keyboard.press('Escape');
     // An active demand multiplier can coexist with a below-usual market price.
     // Keep the demand cue explicit instead of presenting it as guaranteed profit.
-    await page.evaluate(() => { S.day=21;S.loc='sl';S.stock.sl.chips=true;renderAll(); });
-    assert((await page.locator('.row[data-g="chips"] .row-note').innerText()).includes('Fleet demand +40%'), 'Fleet demand is missing from its market row');
+    const fleetGood = await page.evaluate(() => {
+      S.day = 21;
+      const call = fleetCall();
+      S.loc = call.d;
+      S.stock[call.d][call.g] = true;
+      renderAll();
+      return call.g;
+    });
+    assert((await page.locator('.row[data-g="' + fleetGood + '"] .row-note').innerText()).includes('Fleet demand +40%'), 'Fleet demand is missing from its market row');
     const wrapper = path.join(OUT, 'sandbox.html');
     fs.writeFileSync(wrapper, '<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body,iframe{margin:0;width:100%;height:100%;border:0}</style><iframe sandbox="allow-scripts" src="' + URL + '"></iframe>');
     await page.goto(pathToFileURL(wrapper).href);

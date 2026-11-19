@@ -37,3 +37,32 @@ Five scripted policies each played seeds 100000–100039 on game SHA-256 `514fe0
 The informed policy uses forecasts, wireless, financing decisions and different cargo sizing from the greedy policy. The gap shows a large difference between those bundles. It leaves the contribution of each tool open. The travel variant gives no evidence that broad waiting dominates. A policy built specifically to camp ahead of a fleet call would test the narrower concern.
 
 Full command and output are retained in the [baseline simulation log](../tools/sim/results/trading-baseline.txt).
+
+## Follow-up on recovery and payment terms
+
+Astra's baseline play supplied two concrete cases. A captain without cash, goods or credit had to wait for a random payout. A collector demand presented as a cash amount consumed the captain's remaining cash and last eel. Both cases narrowed the player's choices at the point when the game needed to make the stakes clearest.
+
+Patrick Redding's GDC session describes how multiple recovery options let players stay with the consequences of a mistake. Failbetter uses port reports to add a cash reward outside the main trading loop. For Gloamwater, a paid night on the docks can trade time and interest for a small amount of working capital. Restricting the offer to a depleted captain and a single use preserves the pressure to trade. [Redding on recoverable setbacks](https://www.gdcvault.com/play/1021237/contactUs) · [Failbetter's port-report reward change](https://www.failbettergames.com/news/sunless-skies-patch-notes-1-1-0-4-cd2a9a87a-7th-june-2018)
+
+The collector's nominal demand and the actual bundle can diverge whenever cargo is indivisible. Explain the exact cash, whole goods, hull damage and debt credit before the player commits. Generate the offer and outcome from the same calculation. For a destination quote, show when the buyer was observed and make availability uncertainty visible before departure. These disclosures preserve uncertainty about what happens next while resolving uncertainty about the rules in force now. [Meier on information and feedback](https://www.gdcvault.com/play/1016165/Interesting) · [Smith on intentional randomness](https://www.gdcvault.com/play/1028736/Cards-Dice-and-RNGs-Using)
+
+## Follow-up on quote reliability and input
+
+Opus observed successive arrival quotes 47% and 69% below their displayed observations. To check how typical those drops were, a market-only diagnostic ran the unchanged game's market clock on 80 seeds with no trades. It compared every stocked district-good observation with the same district and good one and two nights later. Buyer availability includes every stocked starting observation. Price percentiles are conditional on a buyer still being there.
+
+| Observed quote | Nights later | Buyer available | 10th percentile price versus observation | Median price versus observation |
+|---|---:|---:|---:|---:|
+| Regular | 1 | 88% | 82% | 101% |
+| Regular | 2 | 88% | 77% | 101% |
+| Surge | 1 | 91% | 55% | 74% |
+| Surge | 2 | 88% | 39% | 70% |
+| Fleet | 1 | 98% | 70% | 96% |
+| Fleet | 2 | 95% | 61% | 86% |
+
+Use a clearly labeled downside comparison on the suggested route. The regular-market readings support trying the deal at 20% below a one-night quote, 25% below a two-night quote, and 30% below older observations. These are planning scenarios. They omit voyage losses, arrival price impact and absent buyers. Keep surges and fleet bonuses that expire before arrival in the quote details and omit them from the headline recommendation. The raw observation, its age, the travel time and the downside test each affect whether the trip is worthwhile. [ONS guidance on showing consequential uncertainty](https://service-manual.ons.gov.uk/data-visualisation/guidance/showing-uncertainty-in-charts) · [Inkle's route timing analysis](https://www.inklestudios.com/2014/07/14/approaching-journeys-end)
+
+Opus also found that activating a district moved focus to its Close button, and tapping a cargo row could silently switch the trade side. Move focus to the selected route's main action, distinguish focus from selection, and keep the trade side visible and consistent with the player's last choice. [W3C ARIA keyboard guidance](https://www.w3.org/TR/2019/NOTE-wai-aria-practices-1.1-20190207/)
+
+## Follow-up on replay
+
+Fable and Opus both found the same fleet calendar after restarting. An unchanging sequence can turn a timed choice into a memorized schedule. *Offworld Trading Company* uses changing maps and markets to make players revisit plans. For Gloamwater, shuffle the order of the eight existing fleet calls in two groups. Affordable cargo stays in the opening half, while higher-capital opportunities vary late. The whole schedule remains public within a run, so a captain can plan ahead. Save the order with the voyage and keep the original order in older saves. [Johnson on markets and adaptive play](https://mohawkgames.com/2014/05/19/introducing-offworld-trading-company/)

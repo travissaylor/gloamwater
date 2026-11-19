@@ -16,13 +16,14 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
 - **Shocks.** Surges and gluts last two nights, weaker on the second. You hear of them where you are, by rumour, always with the
   wireless set, or a night early from Madame Ysolde or Pell the lamplighter.
 - **Fleet calls.** The market's wireless button opens the public calendar and bulletins. Every four nights a new port buys a named good:
-  40% extra demand and twice the depth. Arrival prices still drift; missing the closing night loses the boost.
+  40% extra demand and twice the depth. The order varies per voyage. Prices can drift and the boost ends after the closing night.
+  Suggested routes show a lower-price scenario. Buyers can be absent, and surge quotes remain in the port details.
 - **Money.** Repay Marrow at Lanternquay: 6% nightly, 10% after night 10. Collectors pursue overdue debt or debt over ¤12,000.
   Repeated borrowing can reach the ¤30k cap; its collateral copy is inaccurate. The vault pays 1.5% nightly and can't be robbed.
 - **Upgrades.** Copperhook Docks: hold, engines, repairs. Saint Mire (or Fogmouth, dearer): weapons. Drowned Exchange: a wireless
   set. The Sluices: cheap patches. Any district: a **trading charter** that makes its dealers trade twice as deep with you.
-- **Survive.** Tidewardens, the Gull Gang and Marrow's collectors stop you mid-voyage: run, fight, bribe, pay, or be searched.
-  Every option shows its odds or price, and the price follows your purse and cargo. A won fight buys three quieter nights.
+- **Survive.** Encounter offers quote cash, cargo, hull damage and debt credit. A won fight buys three quieter nights.
+  Badly damaged skiffs get a repair route. With almost no funds and an empty hold, work one night for ¤350 once per voyage.
 - **Gulls and leaks.** Recover a stolen bag at 70% odds or accept the cash loss. Patch a threatened cargo stack or jettison it.
   Costs and failure stakes are explicit; offers do not consume dice or resources until answered and survive reload unchanged.
 - **Finish.** On night 30, settle up. Score = cash + vault + cargo at half its sale value − debt. Seven ranks up to Sovereign of
@@ -45,7 +46,6 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
   - **Whispers:** spam wins 13/80; 65.5% of acted whispers lose including fees. Careful use: whole-run mean +¤28k, median −¤4.8k.
   - **Combat (40 seeds):** weapon-rush always-fight sank 18/40; conditional and never-fight 0/40. Route and spending policies confound comparisons.
   - **Exploit probes:** 23,735 buy/sell round trips, none profitable; 23,576 numerical invariant checks passed.
-    No game errors, non-finite final scores or market RNG mismatches. Both new event choices were used in simulations.
   This small sample is a regression check, not exhaustive balance proof. Earlier larger runs also tested reloads and final tally inflation.
 
 ## Testing done
@@ -56,4 +56,4 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
 ## Known issues
 - No real iPhone was available. Double-tap zoom, rubber-banding, safe-area insets and the silent switch are handled in CSS
   and code but were only verified in emulation.
-- Remaining balance, toll/credit/quote disclosure and quantity-display issues: see `judging/continuation-summary.md`.
+- Repeated borrowing can still reach the fixed cap. Hold upgrades and other late-game investments warrant further playtesting.
