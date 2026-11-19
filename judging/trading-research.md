@@ -66,3 +66,41 @@ Opus also found that activating a district moved focus to its Close button, and 
 ## Follow-up on replay
 
 Fable and Opus both found the same fleet calendar after restarting. An unchanging sequence can turn a timed choice into a memorized schedule. *Offworld Trading Company* uses changing maps and markets to make players revisit plans. For Gloamwater, shuffle the order of the eight existing fleet calls in two groups. Affordable cargo stays in the opening half, while higher-capital opportunities vary late. The whole schedule remains public within a run, so a captain can plan ahead. Save the order with the voyage and keep the original order in older saves. [Johnson on markets and adaptive play](https://mohawkgames.com/2014/05/19/introducing-offworld-trading-company/)
+
+## Investment diagnostics on Round 1
+
+The baseline judges questioned how often engines, weapons and holds compete with wireless and charters. A 40-seed diagnostic on the Round 1 candidate disabled one purchase at a time for the informed policy. The full policy bought wireless in 37 runs and expanded the hold at the yard in 28. Its simulated median fortune was ¤594,375.
+
+| Purchase disabled | Median fortune | Median paired change | Seeds with a higher fortune |
+|---|---:|---:|---:|
+| Wireless | 569,455 | −16,643 | 15 of 40 |
+| Hold upgrades at the yard | 567,755 | 0 | 13 of 40 |
+| Trading charters | 525,857 | −35,921 | 3 of 40 |
+
+The wireless variant used the same simulator with the purchase branch disabled in memory. The hold variant used `--opt maxHoldTier=0` and could still accept the racks event. The charter variant used `informed-nocharter`. Each ran seeds 100000–100039. Medians use the simulator's lower middle value. These comparisons suggest that skipping wireless can work for this policy, while charters are harder to replace. They leave the discoverability of alternatives and the utility of other upgrades open for play.
+
+## Follow-up on recovering a voyage
+
+Astra's first Round 1 run reached dock work on night 22. The job put ¤350 back in the purse while the ordinary night's interest raised debt from ¤17,071 to ¤18,778. The second run retired its debt on night 7. The contrast shows why passing one bad night can restore an action without restoring a credible path to solvency. Soren Johnson describes a related distinction between setbacks that invite a response and losses that decide the rest of a game. [Johnson's design column](https://media.gdcvault.com/GD_Mag_Archives/GDM_April_2012.pdf)
+
+The prototype discloses the exact post-work purse and debt in the offer using the existing pay and interest rules. The Round 1 simulation also gives context for the difference between the two runs. Of three informed voyages below zero net worth on night 10, one finished above zero. Three of six greedy voyages in that state recovered. Both groups are too small to set a new interest rate from them.
+
+A multi-good destination comparison can show the subtotal if its largest buyer disappears. Tom Lehmann's designer talk uses resource choice and hand management to explain how players can manage their exposure to random outcomes. In Gloamwater, a diversified load can serve the same purpose when the player can see what each good contributes. [Lehmann's Race for the Galaxy design talk](https://www.youtube.com/watch?v=JcyyeAww2wc)
+
+The opening tour now has a prototype that starts before the first market input. A sale shortcut inside a held good's trade sheet provides just-in-time guidance for players who skip the tour. The goal is to teach the action where it becomes useful. [Jones's tutorial design matrix](https://media.gdcvault.com/gdc2026/Slides/Jones_Michael_Creating_Player_Expertise_Microtalks_MEGA_DECK.pdf)
+
+## Follow-up on early windfalls and repeat routes
+
+Opus's first voyage found a free crate worth roughly ¤16,000 on a ¤2,500 starting purse. Its second voyage's crate was worth ¤1,400. The voyages reached night 10 at ¤255,000 and ¤18,500 net worth. The two voyages took different routes, so this does not isolate the crate's effect. It does show how a random early grant can change the options available for much of the run. Jaffe describes how snowballing gives early decisions more weight. Pierce describes how weighting random draws can retain variety while limiting extremes. [Jaffe on decision impact](https://media.gdcvault.com/gdc2019/presentations/Jaffe_Alex_Cursed_Problems_In.pdf) · [Pierce's RNG talk](https://www.gdcvault.com/play/1024367/Math-for-Game-Programmers-Dark)
+
+The salvage prototype budgets a crate at ¤1,200 in usual cargo value on night 1, growing by ¤425 per night. It retains the existing trap odds and discloses the exact quantity that fits in the hold. In a 40-seed comparison, the informed policy's median falling from ¤594k to ¤544k came alongside a rise from ¤53k to ¤82k for the greedy policy. Their lower tails and sinking counts were similar. The simulator tests the market consequences of changed loot and does not measure whether the encounter feels better.
+
+The Saint Mire–Orchid Moon Ink route is a strong small trade. In a market-only diagnostic across 80 seeds, 1,260 of 1,370 stocked departures could sell three units at a profit on arrival, before voyage losses. The median gain when the buyer was present was 54%. At nine units, price impact reduced it to 14% and 936 departures sold at a profit. A 40-seed policy comparison then sent the informed trader onto the fixed circuit once it reached ¤50k net worth from night 10 on, with normal trading and repairs along the way. It won 15 of 40 seeds against unrestricted informed play and had a paired median disadvantage of ¤28,593. Retain the district identities and measure any future route change against both the small trade and the full-run comparison.
+
+The credit prototype bases the limit on opening credit plus positive net worth, bounded by the existing cap. A fixture drew the line in two installments and showed that borrowed cash could no longer raise its own limit. Keyboard instrumentation also reproduced focus loss when a refreshed market replaced the focused row. The prototype restores the relevant control and returns keyboard players to the arriving market after a voyage. [W3C keyboard focus persistence](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/)
+
+## Follow-up on late-game investment
+
+After night 18, Fable often had ¤60k–110k idle and little reason to expand its hold. The charter comparison shows that dealer depth has real value, yet investing in more traded volume alone still depends on finding the same kind of deal. Failbetter's fixed-payout prospects add a different reason to pick a destination. Gloamwater uses its own parcel rules to offer ordinary post or larger bonded freight. The post pays ¤2,800 with no deposit and uses 10 slots. Freight stakes ¤18,000 and uses 40 slots for a ¤42,000 payout if delivered. Both can be seized, and a late delivery forfeits the bond. The five-night window limits repeat income while leaving room for trade and repairs. [Failbetter's trade redesign](https://www.failbettergames.com/news/trade-in-the-skies-roche-limit)
+
+Fable also saw consecutive patrols and repeated arrival events. The new event selection remembers the previous voyage and arrival separately. It avoids an immediate repeat and leaves the encounter risks, deadline, and market RNG in place. [Pierce on limiting random streaks](https://media.gdcvault.com/gdc2017/Presentations/Shay_Pierce_DarkSecretsRNG.pdf)

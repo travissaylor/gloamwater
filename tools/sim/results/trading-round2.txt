@@ -1,0 +1,55 @@
+Command: node tools/sim/sim.js --runs 40 --workers 3 --policies informed,greedy,borrow-max --out tools/sim/results/trading-round2.json
+
+Game: game/index.html (sha256 171b8e099897)
+Runs per policy: 40, seeds 100000..100039, workers 3, 2.5 runs/s, mode full (real sailTo voyages, rendering on)
+Adapter features: {"depth":true,"conf":true,"canals":true,"charters":true,"stay":true,"encTable":true,"gameRng":true,"crnVoyage":true,"crnArrival":true}
+Reproducibility: 40 seeds; game RNG seeds differ across policies on 0; night-30 market stream differs on 0 (of 40 seeds where 2+ runs reached night 30)
+
+Final fortune (tally net, crowns)
+policy         p10     p25  median     p75     p90     max    mean  sunk  vs informed: higher  median diff
+----------  ------  ------  ------  ------  ------  ------  ------  ----  -------------------  -----------
+informed    216.1k  416.5k  562.9k  765.3k  917.1k   1.23M  592.4k  0.0%
+greedy      -11.2k   11.7k   74.7k  155.8k  224.7k  362.0k   96.5k  2.5%                 2.5%      -478.3k
+borrow-max  380.1k  473.6k  601.8k  766.8k   1.07M   1.25M  654.8k  0.0%                57.5%        37.8k
+
+Rank distribution
+policy      Drowned Debtor  Bilge Rat  Canal Runner  Lantern Broker  Tide Baron  Harbor Magnate  Sovereign of Gloamwater
+----------  --------------  ---------  ------------  --------------  ----------  --------------  -----------------------
+informed              0.0%       2.5%          7.5%           12.5%       37.5%           25.0%                    15.0%
+greedy               10.0%      30.0%         50.0%           10.0%        0.0%            0.0%                     0.0%
+borrow-max            0.0%       0.0%          0.0%           10.0%       45.0%           30.0%                    15.0%
+
+Mean net worth by night (median in brackets)
+policy                 n5            n10              n15              n18              n20              n25              n30
+----------  -------------  -------------  ---------------  ---------------  ---------------  ---------------  ---------------
+informed    7,810 (4,752)  42.5k (31.3k)  125.2k (122.7k)  199.0k (186.2k)  265.9k (244.0k)  411.3k (409.3k)  598.8k (573.0k)
+greedy      3,259 (1,744)  23.4k (15.6k)    47.1k (33.7k)    62.4k (52.2k)    75.9k (64.9k)    94.0k (92.7k)    98.7k (80.3k)
+borrow-max  7,259 (4,813)  57.9k (46.5k)  142.5k (136.7k)  219.2k (222.5k)  288.2k (254.0k)  461.5k (437.5k)  662.6k (606.6k)
+
+Per-run means
+policy      fights   won  interest  vault earned  best sale  max best sale  hold tier  wireless  reloads
+----------  ------  ----  --------  ------------  ---------  -------------  ---------  --------  -------
+informed      5.00  1.50     4,891         29.8k     115.6k         315.1k       1.32     95.0%     0.00
+greedy        5.58  1.75     6,721             0      50.5k         232.8k       1.23      0.0%     0.00
+borrow-max    6.20  1.48     37.3k         36.4k     138.6k         397.2k       1.38    100.0%     0.00
+
+Economy shape
+policy      n30/n18 (medians)  median run n30/n18  largest sale  median run largest sale  tally cargo mean
+----------  -----------------  ------------------  ------------  -----------------------  ----------------
+informed                3.08x               3.06x        502.6k                   230.4k             6,370
+greedy                  1.54x               1.11x        375.1k                   105.2k             1,635
+borrow-max              2.73x               3.03x        651.2k                   264.1k             7,803
+
+Routes, charters, encounters (per run)
+policy      1-night hops  2-night trips  carried on  stays  charters  any charter  1st charter night  encounters  cost/enc  patrol cost  gulls cost  collectors  collector cost  enc sinkings  debt at end
+----------  ------------  -------------  ----------  -----  --------  -----------  -----------------  ----------  --------  -----------  ----------  ----------  --------------  ------------  -----------
+informed            23.6           1.25        0.93   4.10      1.18        75.0%               18.4        5.00     13.1k        10.8k       16.8k        0.13           2,594          0.0%            0
+greedy                 -              -           -   0.00      0.00         0.0%                  -        5.58     7,057        9,703       4,701        0.28             169          0.4%        3,004
+borrow-max          24.3           1.38        1.15   3.30      1.32        85.0%               17.4        6.20     12.7k        11.7k       20.0k        1.55           3,224          0.0%          594
+
+Choices per run (selected)
+policy      patrol:bribe  patrol:run  patrol:fight  patrol:yield  gulls:pay  gulls:run  gulls:fight  collectors:pay  collectors:run  collectors:fight  squall:push  squall:shelter  eel:big  eellose:ok  racks:buy  sunk:ok
+----------  ------------  ----------  ------------  ------------  ---------  ---------  -----------  --------------  --------------  ----------------  -----------  --------------  -------  ----------  ---------  -------
+informed            1.00        0.50          6.63          0.43       1.62       0.25         4.85            0.13            0.07              0.00         1.23            0.03     0.00        0.00       0.17     0.00
+greedy              0.38        0.35          8.90          1.25       1.65       0.25         6.35            0.23            0.10              0.00         1.80            0.03     0.00        0.00       0.15     0.03
+borrow-max          0.95        0.25          6.17          0.18       1.82       0.30         4.48            1.22            0.78              0.00         1.18            0.03     0.00        0.00       0.25     0.00

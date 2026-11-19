@@ -18,12 +18,13 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
 - **Fleet calls.** The market's wireless button opens the public calendar and bulletins. Every four nights a new port buys a named good:
   40% extra demand and twice the depth. The order varies per voyage. Prices can drift and the boost ends after the closing night.
   Suggested routes show a lower-price scenario. Buyers can be absent, and surge quotes remain in the port details.
-- **Money.** Repay Marrow at Lanternquay: 6% nightly, 10% after night 10. Collectors pursue overdue debt or debt over ¤12,000.
-  Repeated borrowing can reach the ¤30k cap; its collateral copy is inaccurate. The vault pays 1.5% nightly and can't be robbed.
+- **Money.** Repay at Lanternquay: 6% nightly, 10% after night 10. Collectors pursue overdue debt or debt over ¤12,000.
+  The borrowing limit is ¤6,000 plus positive net worth, capped at ¤30,000. The vault pays 1.5% nightly.
 - **Upgrades.** Copperhook Docks: hold, engines, repairs. Saint Mire (or Fogmouth, dearer): weapons. Drowned Exchange: a wireless
   set. The Sluices: cheap patches. Any district: a **trading charter** that makes its dealers trade twice as deep with you.
 - **Survive.** Encounter offers quote cash, cargo, hull damage and debt credit. A won fight buys three quieter nights.
   Badly damaged skiffs get a repair route. With almost no funds and an empty hold, work one night for ¤350 once per voyage.
+- **Freight.** From night 15, compare post and bonded freight in Market or Harbor. Take one job per five-night window. Late or seized deliveries forfeit the bond.
 - **Gulls and leaks.** Recover a stolen bag at 70% odds or accept the cash loss. Patch a threatened cargo stack or jettison it.
   Costs and failure stakes are explicit; offers do not consume dice or resources until answered and survive reload unchanged.
 - **Finish.** On night 30, settle up. Score = cash + vault + cargo at half its sale value − debt. Seven ranks up to Sovereign of
@@ -56,4 +57,3 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
 ## Known issues
 - No real iPhone was available. Double-tap zoom, rubber-banding, safe-area insets and the silent switch are handled in CSS
   and code but were only verified in emulation.
-- Repeated borrowing can still reach the fixed cap. Hold upgrades and other late-game investments warrant further playtesting.
