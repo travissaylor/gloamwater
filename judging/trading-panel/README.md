@@ -26,6 +26,7 @@ The 253,939-byte game at SHA-256 `514fe0fba64b5fab2cb80c2909198befb7cb1685010bba
 | Round 1 | [89.56](round-1/fable.json) | [86.10](round-1/opus.json) | [88.93](round-1/astra.json) | **88.20** |
 | Round 2 | [90.06](round-2/fable.json) | [88.67](round-2/opus.json) | [90.83](round-2/astra.json) | **89.85** |
 | Round 3 | [89.68](round-3/fable.json) | [88.69](round-3/opus.json) | [89.42](round-3/astra.json) | **89.26** |
+| Round 4 | [90.29](round-4/fable.json) | [87.06](round-4/opus.json) | [91.39](round-4/astra.json) | **89.58** |
 
 All three settled a cold touch run on night 30, with varying use of scripts to drive visible controls. All replayed the opening through night 10. No judge applied a cap. The largest disagreement was on economy and progression, which ranged from 76 to 92. Closing fortunes ranged from a ¤2,752 deficit to ¤436,943. The difference reflects individual routes, seeds, choices and judgments.
 
@@ -65,7 +66,7 @@ The frozen candidate is 267,386 bytes, SHA-256 `4b9fd917e9ab94a8ae9c9cdd015d9e4d
 
 ## Round 3 panel and Round 4 design
 
-Each judge settled a cold touch voyage and played another opening through night 10. No caps applied. The panel mean fell 0.59 points to 89.26. Economy and progression averaged 86.33. The judges identified missing buyers, quote drift, repeated encounters and a late economy concentrated in a few expensive goods. None exercised heavy freight in direct play.
+Each judge settled a cold touch voyage and played another opening through night 10. No caps applied. The panel mean fell 0.59 points to 89.26. Economy and progression averaged 85.67. The judges identified missing buyers, quote drift, repeated encounters and a late economy concentrated in a few expensive goods. None exercised heavy freight in direct play.
 
 Round 4 shows two routes when available and states how much cash the proposed load leaves for a leak or toll. Raw port quotes flag temporary surges. Route estimates label the boost when a scheduled fleet begins before arrival, and use the corresponding dealer depth. When regular dealers are absent, the player can keep the cargo or sell the whole stack locally at 60% of appraised value. New voyages get a late Saffron fleet call in place of one Dreamsilk call.
 
@@ -74,3 +75,9 @@ Arrival events avoid the last three results when other eligible events exist. En
 ## Round 4 verification
 
 The frozen candidate is 272,410 bytes, SHA-256 `012cb10f88025f762235b1e087402d015a17793c839659006a747b7d24eef206`. All eight broad regression groups, 16 event fixtures, 30 focus/fleet/ledger checks and 14 trading fixtures passed. New fixtures verify route context and reserve math, the factor's exact payout after reload, the arrival cooldown and fleet estimate labeling. An older save keeps its established fleet cargo.
+
+## Round 4 panel and Round 5 design
+
+All three judges reached settlement on night 30 and played a contrasting opening through night 10. No caps applied. The mean rose to 89.58. The strongest disagreements were about the economy, from 80 to 90, and market intelligence, from 84 to 92. One judge reached ¤777,037. Another ended ¤58,634 in debt after one of their opening purchases was lost. The panel used a mix of personal decisions and supporting runs through visible controls.
+
+Round 5 labels the fleet calendar in Market and keeps the next leg visible at a waypoint. A ¤180 report refreshes tonight's quotes at one remote port, once per night. Wider price scenarios and an exact break-even sale price clarify the risk of chasing dated quotes. Temporary gluts and surges are marked. Severely indebted captains can refinance at Lanternquay for a 10% fee added to their balance, 3% nightly interest and no further borrowing. The repair sheet lets players spend only what they choose. Fresh navigation taps and the current purse are available immediately after confirming a trade.

@@ -297,9 +297,11 @@ class TouchRun {
     const enabled = async action => { const b = this.page.locator(`#side-body [data-act="${action}"]`); return await b.count() > 0 && await b.isEnabled(); };
     if (s.hull < 90 && await enabled('repair')) {
       await this.tap('#side-body [data-act="repair"]');
+      if (await this.page.locator('#ago').isVisible()) await this.tap('#ago');
       this.record({ action: 'service', service: 'repair' });
     } else if (s.hull < 70 && await enabled('patch')) {
       await this.tap('#side-body [data-act="patch"]');
+      if (await this.page.locator('#ago').isVisible()) await this.tap('#ago');
       this.record({ action: 'service', service: 'patch' });
     }
     s = await observe(this.page);

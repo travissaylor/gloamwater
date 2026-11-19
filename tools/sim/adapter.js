@@ -535,7 +535,8 @@
       if (cost == null || (kind !== 'repair' && kind !== 'patch' && S.cash < cost)) return false;
       const c0 = S.cash, h0 = S.hull;
       const btn = { dataset: { mk: dd(S.loc).svc.includes('fence') && !dd(S.loc).svc.includes('arms') ? '1.2' : '1' } };
-      await confirmed(kind, btn);
+      if (kind === 'repair' || kind === 'patch') await amountAction(kind, Infinity);
+      else await confirmed(kind, btn);
       if (SIM.cur && S.cash < c0) SIM.cur.purchases.push({ day: S.day, d: S.loc, kind, cost: c0 - S.cash, hullRestored: S.hull - h0 });
       return S.cash !== c0;
     },

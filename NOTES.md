@@ -7,7 +7,7 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
 - **Trade.** Tap a good to open the trade sheet (buy or sell, quantity, totals, a 14-night chart). Each row compares tonight's
   price with that good's usual price across the city: **green** is cheap (a buy), **amber** is dear (a sale). Tags name where
   it recently sold for more. The comparison strip opens a buy quote or a route for cargo you already hold; prices can change.
-- **First trade.** Night 1's harbor circular records all 56 port quotes. Later, visit or fit wireless to refresh remote quotes.
+- **First trade.** Night 1 records all 56 port quotes. Later, visit, pay ¤180 in Port details for one report a night, or fit wireless.
   Default buys keep 15% of cash aside within flat depth; Max deliberately uses the full legal order size and price impact.
 - **Market depth.** Dealers trade a few units at the posted price; past that each unit costs more (or fetches less) and the
   price takes a night or two to recover. The sheet shows order impact, cash left for repairs and tolls, and a factor offer if dealers are absent.
@@ -15,11 +15,11 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
   no direct canal is two nights via a waypoint. Tap your own district to stay a night in port. Tap during a voyage to skip it.
 - **Shocks.** Surges and gluts last two nights, weaker on the second. You hear of them where you are, by rumour, always with the
   wireless set, or a night early from Madame Ysolde or Pell the lamplighter.
-- **Fleet calls.** The market's wireless button opens the public calendar and bulletins. Every four nights a new port buys a named good:
+- **Fleet calls.** The market's Fleet calendar shows upcoming calls. Every four nights a new port buys a named good:
   40% extra demand and twice the depth. The order varies per voyage. Prices can drift and the boost ends after the closing night.
-  Route comparisons show a lower-price scenario and mark fleet estimates. Dated surge quotes stay visible in the price history.
+  Route comparisons stress-test lower prices. The trade sheet shows the break-even sale price. Surge and glut quotes are marked.
 - **Money.** Repay at Lanternquay: 6% nightly, 10% after night 10. Collectors pursue overdue debt or debt over ¤12,000.
-  The borrowing limit is ¤6,000 plus positive net worth, capped at ¤30,000. The vault pays 1.5% nightly.
+  The vault pays 1.5% nightly. If you are deeply in the red, ask Marrow to revise the loan at Lanternquay for a fee and give up further credit.
 - **Upgrades.** Copperhook Docks: hold, engines, repairs. Saint Mire (or Fogmouth, dearer): weapons. Drowned Exchange: a wireless
   set. The Sluices: cheap patches. Any district: a **trading charter** that makes its dealers trade twice as deep with you.
 - **Survive.** Encounter offers quote cash, cargo, hull damage and debt credit. A won fight buys three quieter nights.

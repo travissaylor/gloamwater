@@ -424,7 +424,7 @@ button,.btn,.row,.choice,.bull,.tab,.node,.stat,.mnav button,.seg button{-webkit
 .nextrank{text-align:center;margin:10px 20px 0;color:var(--muted);font-size:14px}
 .statgrid small{display:block;font-size:11px;color:var(--muted)}
 .hud-mute{display:none}
-.hud-worth em{font-style:normal;font-size:11.5px;color:var(--muted);white-space:nowrap}
+.hud-worth em{max-width:100%;overflow:hidden;text-overflow:ellipsis;font-style:normal;font-size:11.5px;color:var(--muted);white-space:nowrap}
 .tag{max-width:100%;overflow:hidden;text-overflow:ellipsis}
 .modal,.scroll,.tc-body{scrollbar-width:thin;scrollbar-color:rgba(150,180,255,.3) transparent}
 .modal::-webkit-scrollbar,.scroll::-webkit-scrollbar{width:8px}.modal::-webkit-scrollbar-thumb,.scroll::-webkit-scrollbar-thumb{background:rgba(150,180,255,.28);border-radius:8px}.modal::-webkit-scrollbar-track,.scroll::-webkit-scrollbar-track{background:transparent}
@@ -825,10 +825,11 @@ const ico=(k,cls='')=>`<svg class="ico ${cls}" viewBox="0 0 24 24" aria-hidden="
 // ---------- game data ----------
 const DOCK_WORK_PAY=350, DOCK_WORK_LIMIT=100;
 const NIGHTS=30, START_CASH=2500, START_DEBT=6000, DEBT_RATE=.06, LATE_RATE=.1, DEBT_DEADLINE=10, COLLECTOR_LIMIT=12000, VAULT_RATE=.015, MAX_DEBT=30000;
+const WORKOUT_RATE=.03,WORKOUT_FEE=.1,CIRCULAR_FEE=180;
 // The original line plus earned equity limits principal. Borrowing raises cash and debt equally.
-const debtRate=()=>S&&S.day>DEBT_DEADLINE?LATE_RATE:DEBT_RATE;
+const debtRate=()=>S?.restructured?WORKOUT_RATE:S&&S.day>DEBT_DEADLINE?LATE_RATE:DEBT_RATE;
 const nightlyInterest=(debt=S.debt)=>Math.round(debt*debtRate());
-const creditLimit=()=>Math.round(Math.min(MAX_DEBT,START_DEBT+Math.max(0,netWorth())));
+const creditLimit=()=>S.restructured?S.debt:Math.round(Math.min(MAX_DEBT,START_DEBT+Math.max(0,netWorth())));
 const GOODS=[
   {id:'kelp',name:'Glowkelp',base:42,min:10,max:140,vol:.17,depth:[60,60],c:'#5ef0a0',desc:'Bioluminescent seaweed. Lamp-oil, soup and medicine for the poor.'},
   {id:'rain',name:'Bottled Rain',base:130,min:32,max:420,vol:.15,depth:[40,40],c:'#6cc8ff',desc:'Fresh water caught on rooftops. In a drowned city, never enough of it.'},
@@ -1057,10 +1058,16 @@ function revealNews(){
   // decide which of today's fresh effects the captain hears about
   S.effects.forEach(e=>{if(e.age===0&&e.known===undefined)e.known=S.wireless||!!e.leaked||e.d===S.loc||rnd()<.4;});
 }
+function recordQuotes(d){
+  for(const g of GOODS){
+    const effect=effectMult(d.id,g.id);
+    S.seen[d.id][g.id]={p:postedAt(d.id,g.id),day:S.day,st:S.stock[d.id][g.id],sh:effect>1.05,glut:effect<.95};
+  }
+}
 function markSeen(){
   // The opening harbor circular is public. Later remote quotes need a visit or wireless.
   const ds=S.wireless||S.day===1?DISTRICTS:[DI[S.loc]];
-  ds.forEach(d=>GOODS.forEach(g=>{S.seen[d.id][g.id]={p:postedAt(d.id,g.id),day:S.day,st:S.stock[d.id][g.id],sh:effectMult(d.id,g.id)>1.05};}));
+  ds.forEach(recordQuotes);
 }
 function advanceDay(){
   const di=nightlyInterest();S.debt+=di;S.stats.interest+=di;
@@ -1260,9 +1267,16 @@ const shown={};
 function tweenNum(el,key,to,f){
   const from=shown[key];shown[key]=to;
   if(from===undefined||from===to||FAST||REDUCED){el.textContent=f(to);return;}
-  const t0=performance.now(),dur=600;
-  const step=now=>{const t=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-t,3);el.textContent=f(from+(to-from)*e);if(t<1&&shown[key]===to)requestAnimationFrame(step);};
-  requestAnimationFrame(step);
+  if(key==='cash')el.textContent=f(to);
+  else{
+    const t0=performance.now(),dur=600;
+    const step=now=>{
+      if(shown[key]!==to)return;
+      const t=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-t,3);
+      el.textContent=f(from+(to-from)*e);if(t<1)requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
   const st=el.closest('.stat');
   if(st){
     let good=to>from;if(key==='debt')good=!good;
@@ -1290,7 +1304,7 @@ function renderHUD(){
   $('#nightN').textContent=S.day;$('#nbar').style.width=(100*S.day/NIGHTS)+'%';
   $('#moon').innerHTML=moonSVG(S.day);
   const nw=netWorth();tweenNum($('#worth'),'worth',nw,fmt);$('#worth').style.color=nw<0?'#ffb3bc':'var(--amber)';
-  tweenNum($('#worth2'),'worth2',nw,fmtK);{const i=RANKS.findIndex(r=>r.min>nw);$('#nextrank').textContent=i<0?'Top rank':`${RANKS[i].name} at ${fmtK(RANKS[i].min)}`;}$('#worth2').style.color=nw<0?'#ffb3bc':'var(--amber)';
+  tweenNum($('#worth2'),'worth2',nw,fmtK);{const i=RANKS.findIndex(r=>r.min>nw),rank=$('#nextrank');rank.textContent=rank.title=i<0?'Top rank':`Next rank · ${fmtK(RANKS[i].min)}`;}$('#worth2').style.color=nw<0?'#ffb3bc':'var(--amber)';
   S.stats.peak=Math.max(S.stats.peak,nw);
   const svcN=DI[S.loc].svc.length;$('#svc-cnt').textContent=svcN||'';
 }
@@ -1390,11 +1404,11 @@ function bestRunHTML(){
   return `<button class="best-run" data-act="marketintel">${ico('wireless')}<div><b>Fleet: ${GI[f.g].name} → ${esc(portName(f.d))}</b><small>${when} · ${sourcing}</small></div></button>`;
 }
 const FRESH_NIGHTS=2;
-const quoteStress=nights=>nights<=1?.2:nights===2?.25:.35;
+const quoteStress=nights=>nights<=1?.25:nights===2?.30:nights===3?.35:.40;
 function recentBuyer(did,gid){
   const seen=S.seen[did][gid];
   const arrival=S.day+nightsTo(S.loc,did);
-  if(!seen||!seen.st||seen.sh||arrival>NIGHTS||S.day-seen.day>FRESH_NIGHTS)return null;
+  if(!seen||!seen.st||seen.sh||seen.glut||arrival>NIGHTS||S.day-seen.day>FRESH_NIGHTS)return null;
   const oldFleet=fleetMult(did,gid,seen.day),arrivalFleet=fleetMult(did,gid,arrival);
   if(oldFleet>arrivalFleet)return null;
   return arrivalFleet===oldFleet?seen:{...seen,p:Math.round(seen.p*arrivalFleet/oldFleet),fleetAdjusted:true};
@@ -1476,10 +1490,18 @@ function repairRouteHTML(){
   return `<button class="best-run" ${here?'data-act="goharbor"':'data-route-tip="sl"'}>${ico('hull')}<div><b>Hull ${Math.round(S.hull)}% · ${here?'Repair here':'Patch at the Sluices'}</b><small>${here?'Harbor services':plural(nights,'night')+' away'} · ${points} hull points affordable</small></div></button>`;
 }
 function marketHTML(){
-  const d=DI[S.loc],used=holdUsed(),cap=capacity();
+  const d=DI[S.loc],used=holdUsed(),cap=capacity(),fleet=fleetCall();
   let h=`<div class="mk-head"><div><div class="kicker">Night ${S.day}${S.day===1?' · harbor circular':' market'}</div><h2>${d.name}</h2></div>
     ${freightOffers().length?'<button class="btn" data-act="freight">Freight</button>':''}
-    <button class="btn icon market-info" data-act="marketintel" aria-label="Fleet calendar and market bulletins" title="Fleet calendar and bulletins">${ico('wireless')}</button></div>`;
+    <button class="btn sm market-info" data-act="marketintel" aria-label="Fleet calendar and market bulletins" title="${GI[fleet.g].name} at ${portName(fleet.d)} through night ${fleet.to}">${ico('wireless')}Fleet calendar</button></div>`;
+  if(S.waypoint&&S.day<NIGHTS){
+    const goal=DI[S.waypoint],arrival=S.day+nightsTo(S.loc,goal.id),call=fleetCall(arrival);
+    h+=`<button class="btn also-route" data-route-tip="${goal.id}"><b>Continue to ${esc(portName(goal.id))}</b><small>One night left · arrive night ${arrival}${call?.d===goal.id?' · fleet buys '+GI[call.g].name:''}</small></button>`;
+  }
+  if(restructureAvailable()){
+    const here=S.loc==='lq';
+    h+=`<button class="btn also-route" ${here?'data-act="goharbor"':'data-route-tip="lq"'}><b>Restructure debt at Lanternquay</b><small>Lower interest · ${here?'Harbor services':'one night away'}</small></button>`;
+  }
   h+=dockWorkAvailable()?`<button class="best-run" data-act="dockwork">${ico('coin')}<div><b>Work the docks · ${fmt(DOCK_WORK_PAY)}</b><small>One night in port · earn a new stake</small></div></button>`:repairRouteHTML()||bestRunHTML();
   const settlement=S.day===NIGHTS?tally('complete'):null;
   const fin=settlement?`<div class="final-banner">${ico('flag')}<div><b>Final night · settle for ${fmt(settlement.net)}</b>${cargoCount()?`<br>Unsold cargo pays ${fmt(settlement.cargo)} at half value, even without a dealer.`:''}</div><button class="btn primary" data-act="settle">Settle up</button></div>`:'';
@@ -1551,14 +1573,20 @@ function charterHTML(){
     <div class="kv"><span>Your charters</span><b>${list.length?list.join(', '):'none'}</b></div>
     <div class="svc-row">${own?'<span class="tag cheap">Chartered here</span>':`<button class="btn amber" data-act="charter" ${S.cash>=cost?'':'disabled'}>Buy charter · ${fmt(cost)}</button>`}</div></div>`;
 }
+function restructureAvailable(){
+  return !S.restructured&&S.day>DEBT_DEADLINE&&S.day<NIGHTS-1&&
+    netWorth()<=-START_DEBT&&S.cash+S.bank<START_CASH;
+}
+function restructureFee(){return Math.round(S.debt*WORKOUT_FEE);}
 function svcHTML(k){
   const s=SVC[k];let body='';
   const head=`<div class="svc-h"><div class="avatar" style="--ac:${s.ac}">${PORTRAIT[SVC_FACE[k]]||ico(s.icon)}</div><div><h3>${s.name}</h3><div class="q">${s.line}</div></div></div>`;
   if(k==='lender'){
     const room=Math.max(0,creditLimit()-S.debt);
     body=`<div class="kv"><span>You owe</span><b style="color:#ffb3bc">${fmt(S.debt)}</b><span>Tomorrow, unpaid</span><b>${fmt(Math.round(S.debt*(1+debtRate())))}</b><span>Rate</span><b>${Math.round(debtRate()*100)}% a night${S.day>DEBT_DEADLINE?' (late)':` until night ${DEBT_DEADLINE}`}</b><span>Credit available</span><b>${fmt(room)}</b></div>
-      <p>Your limit is ${fmt(START_DEBT)} plus positive net worth, up to ${fmt(MAX_DEBT)}. After night ${DEBT_DEADLINE} the rate rises to ${pct(LATE_RATE)}. Collectors hunt overdue debt or balances above ${fmt(COLLECTOR_LIMIT)}.</p>
-      <div class="svc-row"><button class="btn primary" data-act="repay" ${S.debt>0&&S.cash>0?'':'disabled'}>Repay debt</button><button class="btn" data-act="borrow" ${room>0?'':'disabled'}>Borrow more</button></div>`;
+      <p>${S.restructured?`Your revised loan accrues ${pct(WORKOUT_RATE)} per night. Collectors have stood down, and you cannot borrow again this voyage.`:`Your limit is ${fmt(START_DEBT)} plus positive net worth, up to ${fmt(MAX_DEBT)}. After night ${DEBT_DEADLINE} the rate rises to ${pct(LATE_RATE)}. Collectors hunt overdue debt or balances above ${fmt(COLLECTOR_LIMIT)}.`}</p>
+      <div class="svc-row"><button class="btn primary" data-act="repay" ${S.debt>0&&S.cash>0?'':'disabled'}>Repay debt</button><button class="btn" data-act="borrow" ${room>0?'':'disabled'}>Borrow more</button>
+      ${restructureAvailable()?'<button class="btn amber" data-act="restructure">Restructure debt</button>':''}</div>`;
   }else if(k==='vault'){
     body=`<div class="kv"><span>Balance</span><b>${fmt(S.bank)}</b><span>Interest</span><b>1.5% / night</b></div>
       <p>Money in the vault can't be stolen or sunk. Branches at Lanternquay and the Drowned Exchange.</p>
@@ -1571,13 +1599,13 @@ function svcHTML(k){
     <div class="upg">${ico('spark')}<div class="info"><b>${nm?nm.name:MOTORS[S.motor].name+' (best)'}</b><span>Outrun patrols more often and draw fewer encounters.</span>
       <div class="tiers">${MOTORS.slice(1).map((t,i)=>`<i class="${i<S.motor?'on':''}"></i>`).join('')}</div></div>
       ${nm?`<button class="btn amber sm" data-act="motor" ${S.cash>=nm.cost?'':'disabled'}>${fmt(nm.cost)}</button>`:''}</div>
-    <div class="upg">${ico('wrench')}<div class="info"><b>Hull repair</b><span>${miss>0?`${Math.round(miss)}% damage · ${fmt(YARD_RATE)} per point`:'Hull is sound.'}</span></div>
-      ${miss>0?`<button class="btn sm" data-act="repair" ${S.cash>=YARD_RATE?'':'disabled'}>Repair ${fmt(Math.min(rc,Math.floor(S.cash/YARD_RATE)*YARD_RATE))}</button>`:''}</div>`;
+    <div class="upg">${ico('wrench')}<div class="info"><b>Hull repair</b><span>${miss>0?`${Math.round(miss)}% damage · ${fmt(YARD_RATE)} per point · ${fmt(rc)} for full repair`:'Hull is sound.'}</span></div>
+      ${miss>0?`<button class="btn sm" data-act="repair" ${S.cash>=YARD_RATE?'':'disabled'}>Choose repair</button>`:''}</div>`;
   }else if(k==='gutter'){
     const miss=Math.max(0,GUTTER_CAP-S.hull),rc=Math.ceil(miss*GUTTER_RATE);
     body=`<p>Patches your hull for cheap, but only up to ${GUTTER_CAP}%. For a proper job, go to Odile at Copperhook.</p>
-    <div class="upg">${ico('hammer')}<div class="info"><b>Patch hull to ${GUTTER_CAP}%</b><span>${miss>0?`${Math.round(miss)} points · ${fmt(GUTTER_RATE)} each`:'Nothing they can do for you.'}</span></div>
-      ${miss>0?`<button class="btn sm" data-act="patch" ${S.cash>=GUTTER_RATE?'':'disabled'}>Patch ${fmt(Math.min(rc,Math.floor(S.cash/GUTTER_RATE)*GUTTER_RATE))}</button>`:''}</div>`;
+    <div class="upg">${ico('hammer')}<div class="info"><b>Patch hull to ${GUTTER_CAP}%</b><span>${miss>0?`${Math.round(miss)} points · ${fmt(GUTTER_RATE)} per point · ${fmt(rc)} to the limit`:'Nothing they can do for you.'}</span></div>
+      ${miss>0?`<button class="btn sm" data-act="patch" ${S.cash>=GUTTER_RATE?'':'disabled'}>Choose patch</button>`:''}</div>`;
   }else if(k==='arms'||k==='fence'){
     const mk=k==='fence'?1.2:1,na=ARMS[S.arms+1];
     body=`<div class="upg">${ico('arms')}<div class="info"><b>${na?na.name:ARMS[S.arms].name+' (best)'}</b><span>${na?`Hit chance per volley: ${pct(ARMS[S.arms].p)} → ${pct(na.p)}`:'Nothing better on the canals.'}</span>
@@ -1847,12 +1875,22 @@ function openPortDetails(did){
   if(!DI[did]||busy)return;
   const d=DI[did],fleet=fleetCall(),nights=nightsTo(S.loc,did),rows=GOODS.map(g=>{
     const sn=S.seen[did][g.id],c=S.cargo[g.id],age=sn?S.day-sn.day:null;
-    return `<div class="kv"><span>${g.name}${c.q?' · hold '+c.q:''}</span><b>${sn?(sn.st?fmt(sn.p):'no dealers'):'unknown'}${sn?`<small style="display:block;color:var(--muted);font:400 15px var(--ui)">${age?age+'n ago':'seen tonight'}${sn.sh?' · surge may fade':''}</small>`:''}</b></div>`;
+    return `<div class="kv"><span>${g.name}${c.q?' · hold '+c.q:''}</span><b>${sn?(sn.st?fmt(sn.p):'no dealers'):'unknown'}${sn?`<small style="display:block;color:var(--muted);font:400 15px var(--ui)">${age?age+'n ago':'seen tonight'}${sn.sh?' · surge fades':sn.glut?' · glut fades':''}</small>`:''}</b></div>`;
   }).join('');
+  const fresh=Object.values(S.seen[did]).some(q=>q?.day===S.day);
+  const reportAvailable=nights>0&&S.day+nights<=NIGHTS&&!fresh&&!S.wireless;
+  const report=reportAvailable?`<div class="svc-row"><button class="btn" data-port-report ${S.cash<CIRCULAR_FEE||S.circularDay===S.day?'disabled':''}>Buy tonight’s port quotes · ${fmt(CIRCULAR_FEE)}</button></div><p>${S.circularDay===S.day?'You already bought a port report tonight.':S.cash<CIRCULAR_FEE?'Your purse is too light.':'One report per night. It shows prices and buyers now; both can change before arrival.'}</p>`:'';
   const services=d.svc.map(k=>SVC[k].name).join(' · ')||'Market only';
   const identity=`<p><b>Usually supplies:</b> ${d.cheap.length?d.cheap.map(g=>GI[g].name).join(', '):'no listed specialty'}<br><b>Usually imports:</b> ${d.dear.map(g=>GI[g].name).join(', ')}<br><small>District habits, not a promised sale price.</small></p>`;
-  const html=`<div class="card-body port-sheet"><div class="kicker">${did===S.loc?'Your mooring':nights+'-night route'} · danger ${d.danger}/5</div><h3>${esc(d.name)}</h3><p>${esc(d.blurb)}</p><p><b>Services:</b> ${esc(services)}</p>${nights&&S.day+nights<=NIGHTS?`<p>If the Gull Gang stops you, paying the toll with this purse and hold costs <b>${tollPreview()}</b>.</p>`:''}${holdComparisonHTML(did,nights)}${identity}${fleet.d===did?`<div class="result gold">Fleet call: <b>${GI[fleet.g].name}</b> through night ${fleet.to}. Demand +40%, twice the depth.</div>`:''}<p>These are observed prices. Prices and dealers may change before you arrive; large orders move the quote.</p>${rows}<div class="choices"><button class="choice primary" data-port-back><div>Back to map</div></button></div></div>`;
+  const html=`<div class="card-body port-sheet"><div class="kicker">${did===S.loc?'Your mooring':nights+'-night route'} · danger ${d.danger}/5</div><h3>${esc(d.name)}</h3><p>${esc(d.blurb)}</p><p><b>Services:</b> ${esc(services)}</p>${nights&&S.day+nights<=NIGHTS?`<p>If the Gull Gang stops you, paying the toll with this purse and hold costs <b>${tollPreview()}</b>.</p>`:''}${report}${holdComparisonHTML(did,nights)}${identity}${fleet.d===did?`<div class="result gold">Fleet call: <b>${GI[fleet.g].name}</b> through night ${fleet.to}. Demand +40%, twice the depth.</div>`:''}<p>These are observed prices. Prices and dealers may change before you arrive; large orders move the quote.</p>${rows}<div class="choices"><button class="choice primary" data-port-back><div>Back to map</div></button></div></div>`;
   sfx.click();const el=showModal(html,{dismiss:closeModal});el.querySelector('[data-port-back]').onclick=closeModal;
+  const buy=el.querySelector('[data-port-report]');
+  if(buy)buy.onclick=()=>{
+    if(S.circularDay===S.day||S.cash<CIRCULAR_FEE)return;
+    S.cash-=CIRCULAR_FEE;S.circularDay=S.day;recordQuotes(d);sfx.buy();
+    log(`Bought tonight’s prices at ${d.name} for ${fmt(CIRCULAR_FEE)}.`,'info');
+    save();renderAll();openPortDetails(did);
+  };
 }
 function openMarketIntel(){
   const news=bulletinsHTML(),html=`<div class="card-body port-sheet"><div class="kicker">The wireless</div><h3>Fleet and market bulletins</h3>${fleetCalendarHTML()}${news||'<p>No fresh shock bulletins tonight.</p>'}<p>Fleet calls follow the calendar. They change demand and depth; they do not guarantee a profitable sale.</p><div class="choices"><button class="choice primary" data-intel-back><div>Back to market</div></button></div></div>`;
@@ -1888,13 +1926,15 @@ function setView(v){
   if(v==='map')requestAnimationFrame(()=>{buildMap();});
 }
 // Guard every modal transition, including replacing a sheet, against a second tap reaching new controls.
-let tapGuardUntil=0,lastDown=0,modalAt=0;
-document.addEventListener('pointerdown',()=>{lastDown=performance.now();},true);
+let tapGuardUntil=0,lastDown=0,modalAt=0,downNav=null;
+document.addEventListener('pointerdown',e=>{lastDown=performance.now();downNav=e.target.closest('#mnav button');},true);
 document.addEventListener('click',e=>{
   if(e.detail===0)return; // keyboard
   const inSheet=!!e.target.closest('#modal .modal'),now=performance.now();
   const stale=lastDown<tapGuardUntil-350&&now<tapGuardUntil+400;   // finger went down before the sheet changed
   const tooSoon=inSheet&&now-modalAt<250;                          // nobody reads a card in a quarter second
+  const nav=e.target.closest('#mnav button');
+  if(nav&&downNav===nav&&!stale&&$('#modal').hidden)return;
   if(now<tapGuardUntil||(stale&&!inSheet)||(stale&&inSheet&&lastDown<modalAt)||tooSoon){e.stopImmediatePropagation();e.preventDefault();}
 },true);
 document.addEventListener('click',e=>{
@@ -2052,10 +2092,10 @@ function openTrade(gid,mode,quantity,port){
   const el=showModal(`<div class="sheet">
     <div class="sh-head"><div class="gico" style="--c:${g.c}">${ico(gid)}</div><div><div class="kicker">${DI[S.loc].name} · Night ${S.day}</div><h3 style="font-size:22px">${g.name}</h3><p>${g.desc}</p></div>
       <button class="btn icon ghost x" data-x aria-label="Close">${ico('close')}</button></div>
-    <details class="trade-intel" ${!isNarrow()||!stocked?'open':''}><summary>Price history &amp; port quotes</summary>
+    <details class="trade-intel" ${!stocked?'open':''}><summary>Price history &amp; port quotes</summary>
       <div class="chart">${chartSVG(hist,c.q?c.cost:null)}</div>
       ${gaugeHTML(g,p)}
-      <p class="intel-note">Buyers and prices can change before you arrive. Default buys keep 15% aside when possible. Max uses your full cash and hold limit with price impact.</p>
+      <p class="intel-note">Lower-price examples are stress tests. A larger drop or an absent buyer can still happen. Default buys keep 15% aside when possible. Max uses your full cash and hold limit with price impact.</p>
       <div class="else">${elsewhereHTML(gid)}</div>
     </details>
     ${sale?`<button class="best-run" data-sale-port="${sale.d.id}">${ico('map')}<div><b>Compare sale at ${esc(portName(sale.d.id))}</b><small>${fmt(sale.p)} each · ${sale.fleetAdjusted?'fleet-adjusted estimate':`seen ${sale.ago?sale.ago+'n ago':'tonight'}`} · ${sale.fleet?'fleet buyer scheduled':'buyer unconfirmed'}</small></div></button>`:''}
@@ -2114,8 +2154,9 @@ function openTrade(gid,mode,quantity,port){
     if(mode==='buy'){
       const tot=quoteBuy(gid,q);
       const bs=planned||best;
+      const threshold=bs&&q?`<span>Break-even sale avg.</span><b>${fmt(Math.ceil(tot/q))} each</b>`:'';
       sum.innerHTML=`${bs?`<span class="quote-context">${bs.fleetAdjusted?'Fleet estimate':planned?'Planned sale quote':'Best recent sale'}</span><b class="quote-context ${bs.p>(q?tot/q:p)?'up':'down'}">${fmt(bs.p)} · ${esc(bs.d.name)}</b>`:''}<span>Price each</span><b>${q>1&&tot!==q*p?fmt(tot/q)+' avg':fmt(p)}</b><span>Total cost</span><b style="color:#bffbf1">${fmt(tot)}</b><span>Purse after</span><b>${fmt(S.cash-tot)}</b><span>Hold after</span><b>${used+q} / ${cap}</b>`+
-        (mx===0?`<span style="grid-column:1/3;color:var(--amber)">${holdUsed()>=capacity()?'Your hold is full.':"You can't afford even one."}</span>`:depthNote()+reserveNote(tot));
+        threshold+(mx===0?`<span style="grid-column:1/3;color:var(--amber)">${holdUsed()>=capacity()?'Your hold is full.':"You can't afford even one."}</span>`:depthNote()+reserveNote(tot));
       go.textContent=q?`Buy ${q} for ${fmt(tot)}`:'Buy';go.className='btn lg teal';
     }else{
       const tot=quoteSell(gid,q),prof=Math.round(tot-c.cost*q);
@@ -2196,23 +2237,23 @@ function gaugeHTML(g,p){
 }
 function elsewhereHTML(gid){
   const items=DISTRICTS.filter(d=>d.id!==S.loc).map(d=>{const sn=S.seen[d.id][gid];return{d,sn};});
-  const vals=items.filter(x=>x.sn?.st&&!x.sn.sh).map(x=>x.sn.p);const hi=Math.max(...vals),lo=Math.min(...vals);
+  const vals=items.filter(x=>x.sn?.st&&!x.sn.sh&&!x.sn.glut).map(x=>x.sn.p);const hi=Math.max(...vals),lo=Math.min(...vals);
   return items.map(({d,sn})=>{
     if(!sn)return `<div title="Not visited yet"><span>${d.name}</span><b style="color:var(--dim)">?</b></div>`;
     const ago=S.day-sn.day;const agoT=ago===0?'today':ago+'n ago';
-    const arrival=recentBuyer(d.id,gid),surge=sn.sh?' · surge fades':'';
-    return `<div class="${sn.st&&!sn.sh&&sn.p===hi&&vals.length>1?'best':sn.st&&!sn.sh&&sn.p===lo&&vals.length>1?'low':''}" title="Seen ${agoT}"><span>${d.name} <small class="quote-age">${agoT}${surge}${arrival?.fleetAdjusted?' · fleet raises demand on arrival':''}</small></span><b>${sn.st?fmtK(sn.p):'—'}</b></div>`;
+    const arrival=recentBuyer(d.id,gid),shock=sn.sh?' · surge fades':sn.glut?' · glut fades':'';
+    return `<div class="${sn.st&&!shock&&sn.p===hi&&vals.length>1?'best':sn.st&&!shock&&sn.p===lo&&vals.length>1?'low':''}" title="Seen ${agoT}"><span>${d.name} <small class="quote-age">${agoT}${shock}${arrival?.fleetAdjusted?' · fleet raises demand on arrival':''}</small></span><b>${sn.st?fmtK(sn.p):'—'}</b></div>`;
   }).join('');
 }
 // ---- amount dialog ----
-function askAmount({title,kicker,text,max,def,verb,cls='primary',note}){
+function askAmount({title,kicker,text,max,def,verb,cls='primary',note,format=fmt,unit='Amount'}){
   return new Promise(res=>{
     let v=clamp(def==null?max:def,0,max);let done=false;
     const fin=x=>{if(done)return;done=true;closeModal();res(x);};
     const el=showModal(`<div class="sheet"><div class="sh-head"><div><div class="kicker">${kicker||''}</div><h3 style="font-size:22px">${title}</h3><p>${text||''}</p></div><button class="btn icon ghost x" data-x aria-label="Close">${ico('close')}</button></div>
-      <div class="qty"><input type="number" id="ain" min="0" max="${max}" inputmode="numeric" aria-label="Amount"></div>
-      <input type="range" id="ar" min="0" max="${max}" step="1" aria-label="Amount slider">
-      <div class="amt-presets"><button class="btn sm" data-f=".25">25%</button><button class="btn sm" data-f=".5">50%</button><button class="btn sm" data-f=".75">75%</button><button class="btn sm amber" data-f="1">All ${fmtK(max)}</button></div>
+      <div class="qty"><input type="number" id="ain" min="0" max="${max}" inputmode="numeric" aria-label="${unit}"></div>
+      <input type="range" id="ar" min="0" max="${max}" step="1" aria-label="${unit} slider">
+      <div class="amt-presets"><button class="btn sm" data-f=".25">25%</button><button class="btn sm" data-f=".5">50%</button><button class="btn sm" data-f=".75">75%</button><button class="btn sm amber" data-f="1">All</button></div>
       <div class="summary" id="anote"></div>
       <div class="sh-foot"><button class="btn lg" data-x>Cancel</button><button class="btn lg ${cls}" id="ago">${verb}</button></div></div>`,
       {dismiss:()=>fin(null),onKey:e=>{
@@ -2221,7 +2262,7 @@ function askAmount({title,kicker,text,max,def,verb,cls='primary',note}){
         }
       }});
     const ain=$('#ain'),ar=$('#ar'),an=$('#anote'),go=$('#ago');
-    const up=()=>{v=clamp(Math.round(v)||0,0,max);ain.value=v;ar.value=v;an.innerHTML=note?note(v):'';go.textContent=`${verb} ${fmt(v)}`;go.disabled=v<=0;};
+    const up=()=>{v=clamp(Math.round(v)||0,0,max);ain.value=v;ar.value=v;an.innerHTML=note?note(v):'';go.textContent=`${verb} ${format(v)}`;go.disabled=v<=0;};
     ain.oninput=()=>{v=+ain.value||0;up();};ar.oninput=()=>{v=+ar.value;up();};
     el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{v=Math.floor(max*+b.dataset.f);up();sfx.tick();});
     el.querySelectorAll('[data-x]').forEach(b=>b.onclick=()=>fin(null));
@@ -2255,6 +2296,17 @@ async function serviceAction(a,btn){
   }else if(a==='withdraw'){
     const v=await askAmount({title:'Withdraw from the Vault',kicker:SVC.vault.name,text:'Cash on board can be stolen or lost.',max:S.bank,verb:'Withdraw',note:x=>`<span>Purse after</span><b>${fmt(S.cash+x)}</b>`});
     if(!v)return;S.cash+=v;S.bank-=v;sfx.bank();log(`Withdrew ${fmt(v)} from the vault.`);toast(`Withdrew ${fmt(v)}`,'info','safe');
+  }else if(a==='restructure'){
+    if(S.loc!=='lq'||!restructureAvailable())return;
+    const fee=restructureFee(),revised=S.debt+fee;
+    const agreed=await choose({art:'news',kicker:'Marrow Quill',title:'Restructure your debt?',
+      body:`Add a one-time <b>${fmt(fee)}</b> fee to your balance. Your new debt is <b>${fmt(revised)}</b> and interest drops from ${pct(LATE_RATE)} to ${pct(WORKOUT_RATE)} per night. Marrow calls off his collectors and closes your credit line. You can still repay any amount at Lanternquay.`,
+      extra:`<div class="kv"><span>Next night under old terms</span><b>${fmt(S.debt+nightlyInterest())}</b><span>Next night under revised terms</span><b>${fmt(revised+Math.round(revised*WORKOUT_RATE))}</b></div>`,
+      dismissKey:'no',choices:[{key:'yes',label:'Sign the revised loan',cls:'primary'},{key:'no',label:'Keep the old terms'}]});
+    if(agreed!=='yes'||!restructureAvailable())return;
+    S.debt=revised;S.restructured=true;sfx.bank();
+    log(`Restructured debt for ${fmt(fee)}. Interest now ${pct(WORKOUT_RATE)} per night. Credit closed.`,'info');
+    toast('Loan revised · collectors stand down','good','quill',4600);
   }else if(a==='hold'){
     const nt=HOLD_TIERS[S.holdTier+1];if(!nt||S.cash<nt.cost)return;
     if(!await confirmBuy('Bigger hold racks',nt.cost,`Hold ${capacity()} → ${capacity()+nt.cap-HOLD_TIERS[S.holdTier].cap}.`))return;
@@ -2267,9 +2319,15 @@ async function serviceAction(a,btn){
     log(`Installed a ${nm.name}.`,'gold');toast(`${nm.name} installed`,'gold','spark');
   }else if(a==='repair'||a==='patch'){
     const rate=a==='repair'?YARD_RATE:GUTTER_RATE,cap=a==='repair'?100:GUTTER_CAP;
-    const pts=Math.min(cap-S.hull,Math.floor(S.cash/rate));if(pts<=0)return;
-    S.cash-=Math.ceil(pts*rate);S.hull=Math.min(cap,S.hull+pts);sfx.upgrade();
-    log(`Hull repaired to ${Math.round(S.hull)}% for ${fmt(Math.ceil(pts*rate))}.`,'good');toast(`Hull now ${Math.round(S.hull)}%`,'good','wrench');burstAt($('#st-hull'),'#4ee39b');
+    const missing=cap-S.hull,max=Math.min(Math.ceil(missing),Math.floor(S.cash/rate));
+    if(max<=0)return;
+    const costFor=points=>Math.ceil(Math.min(missing,points)*rate);
+    const points=await askAmount({title:a==='repair'?'Repair the hull':'Patch the hull',text:`${fmt(rate)} per hull point, up to ${cap}%.`,max,verb:'Repair',unit:'Hull points',format:n=>plural(n,'point'),
+      note:n=>`<span>Repair cost</span><b>${fmt(costFor(n))}</b><span>Hull after</span><b>${Math.round(Math.min(cap,S.hull+n))}%</b><span>Purse after</span><b>${fmt(S.cash-costFor(n))}</b>`});
+    if(!points)return;
+    const cost=costFor(points);
+    S.cash-=cost;S.hull=Math.min(cap,S.hull+points);sfx.upgrade();
+    log(`Hull repaired to ${Math.round(S.hull)}% for ${fmt(cost)}.`,'good');toast(`Hull now ${Math.round(S.hull)}%`,'good','wrench');burstAt($('#st-hull'),'#4ee39b');
   }else if(a==='arms'){
     const na=ARMS[S.arms+1];if(!na)return;const cost=Math.round(na.cost*(+(btn&&btn.dataset.mk)||1));if(S.cash<cost)return;
     if(!await confirmBuy(na.name,cost,`Hit chance ${pct(ARMS[S.arms].p)} → ${pct(na.p)} per volley.`))return;
@@ -2779,7 +2837,7 @@ async function evStrongbox(){
   await info({art:'strongbox',tone:'luck',kicker:'Lucky find',title:'A drowned strongbox',body:`Your boathook snags a rusted strongbox under the mooring. Inside, wrapped in oilcloth: <b>${fmt(amt)}</b>.`});
 }
 // Marrow wants his money by night 10; after that, or once the debt runs past 12,000, his collectors hunt you
-const debtHunted=()=>S.debt>0&&(S.debt>COLLECTOR_LIMIT||S.day>DEBT_DEADLINE);
+const debtHunted=()=>!S.restructured&&S.debt>0&&(S.debt>COLLECTOR_LIMIT||S.day>DEBT_DEADLINE);
 const ARRIVAL_EVENTS=[
   {id:'crate',w:()=>1,run:evCrate},
   {id:'gull',w:()=>S.cash>800?.9:0,run:evGull},
@@ -2800,7 +2858,7 @@ function rollVoyageEvent(dest){
   if(S.stats.trips===0)return null;
   const pe=encounterChance(dest),r=rnd();
   if(r<pe){
-    if(S.debt>0&&S.day>DEBT_DEADLINE&&rnd()<.35&&S.lastVoyageEvent!=='collectors')return 'collectors';
+    if(S.day>DEBT_DEADLINE&&debtHunted()&&rnd()<.35&&S.lastVoyageEvent!=='collectors')return 'collectors';
     const pPatrol=dest==='fm'?.7:dest==='sl'?.3:.5,isPatrol=rnd()<pPatrol;
     if(S.lastVoyageEvent==='patrol')return 'gulls';
     if(S.lastVoyageEvent==='gulls')return 'patrol';
@@ -2864,6 +2922,7 @@ async function stayNight(dockWork=false){
 function nightFalls(T,stayed){
   advanceDay();
   S.loc=T.to;
+  if(!stayed)S.waypoint=S.day<NIGHTS?T.next:null;
   lastTradeMode=null;lastTradeGood=null;
   T.first=!stayed&&!S.visited[T.to];S.visited[T.to]=true;
   markSeen();revealNews();
@@ -2971,6 +3030,7 @@ function validSave(s){
     if(!['day','holdTier','motor','arms'].every(k=>Number.isInteger(s[k])))return false;
     if(s.day<1||s.day>NIGHTS||s.cash<0||s.bank<0||s.debt<0||s.hull<=0||s.hull>100)return false;
     if(!DI[s.loc]||!HOLD_TIERS[s.holdTier]||!MOTORS[s.motor]||!ARMS[s.arms])return false;
+    if(s.waypoint!=null&&(!DI[s.waypoint]||!adjacent(s.loc,s.waypoint)))s.waypoint=null;
     if(!GOODS.every(g=>isObj(s.cargo&&s.cargo[g.id])&&Number.isInteger(s.cargo[g.id].q)&&s.cargo[g.id].q>=0&&s.cargo[g.id].q<=1000&&isNum(s.cargo[g.id].cost)&&s.cargo[g.id].cost>=0&&isNum(s.trend&&s.trend[g.id])))return false;
     GOODS.forEach(g=>{const l=s.cargo[g.id].lot;if(l!=null&&!(isObj(l)&&DI[l.d]&&Number.isInteger(l.day)&&Number.isInteger(l.q)&&l.q>=0))delete s.cargo[g.id].lot;});
     if(!['cash','bank','debt'].every(k=>s[k]<=1e12))return false;
@@ -2997,6 +3057,8 @@ function validSave(s){
     if(typeof s.stats.bestFlipGood!=='string')s.stats.bestFlipGood='';
     s.name=typeof s.name==='string'?s.name.slice(0,18):'Captain';s.racks=s.racks===true;s.wireless=s.wireless===true;
     s.dockWorkUsed=s.dockWorkUsed===true;
+    s.restructured=s.restructured===true;
+    if(!Number.isInteger(s.circularDay)||s.circularDay<1||s.circularDay>s.day)s.circularDay=0;
     if(s.trip&&s.trip.work!==undefined&&!(s.trip.work===true&&s.trip.from===s.trip.to&&['stay','arrived'].includes(s.trip.stage)&&s.dockWorkUsed===(s.trip.stage==='arrived')))return false;
     if(s.fleetOrder!==undefined&&(!Array.isArray(s.fleetOrder)||s.fleetOrder.length!==FLEET_CALLS.length||new Set(s.fleetOrder).size!==FLEET_CALLS.length||!s.fleetOrder.every(i=>Number.isInteger(i)&&FLEET_CALLS[i])))return false;
     if(!isNum(s.whisperDay))s.whisperDay=0;
@@ -3157,11 +3219,11 @@ function openHelp(){
   <h4>${ico('flag')}The goal</h4><p>End night 30 with the largest fortune: cash + vault + half-price cargo − debt. Your rank and the Captains' Ledger are waiting.</p>
   <h4>${ico('coin')}Trading</h4><ul><li>Each district has its own prices, and they shift every night. The small line on each good shows its recent history here; tap a good for the full chart.</li><li>The <b>%</b> beside each price compares it with that good's usual price across the city. <b style="color:#4ee39b">Green</b> is below usual, <b style="color:#ffbe55">amber</b> is above usual. Compare the actual buy and sale quotes before choosing a route.</li><li>The opening <b>harbor circular</b> records all seven ports on night 1. After that, remote quotes age until you visit or fit the wireless set. <b>Saint Mire +40% seen 1n ago</b> is an observation, not a promised sale: prices and dealers can change before arrival.</li><li>The default buy quantity keeps <b>15% of your purse</b> for repairs and tolls when possible. If one unit alone uses the reserve, the default is one. <b>Max</b> deliberately uses the full cash/hold limit; its quote includes price impact.</li><li><b>Big orders move prices.</b> Dealers trade a few units at the posted price, then each extra unit costs more (or fetches less). The market takes a night or two to recover. Spread big money across several goods and ports.</li><li>District supply and import habits give context. Check the dated prices in Port details before sailing.</li></ul>
   <h4>${ico('map')}Voyages</h4><ul><li>Sailing along a canal costs <b>one night</b>; a district with no direct canal is two nights, via a waypoint. Lanternquay joins every district. You can also <b>stay the night</b> where you are (tap your own district on the map). The danger pips show how often patrols and gangs prowl.</li><li>The trade screen remembers your observed prices. Green <b>+%</b> map badges compare tonight’s observed price with your cargo cost; a future quote can differ.</li></ul>
-  <h4>${ico('quill')}Debt and the vault</h4><ul><li>Marrow charges 6% a night until night 10, then 10%. Repay at Lanternquay before his collectors find you.</li><li>The Lockwater Vault (Lanternquay, Drowned Exchange) pays 1.5% a night and keeps cash safe.</li></ul>
+  <h4>${ico('quill')}Debt and the vault</h4><ul><li>Marrow charges 6% a night until night 10, then 10%. Repay at Lanternquay before his collectors find you. If you're deep in the red, Marrow may offer a lower rate for a fee and close your credit line.</li><li>The Lockwater Vault (Lanternquay, Drowned Exchange) pays 1.5% a night and keeps cash safe.</li></ul>
   <h4>${ico('wrench')}Upgrades</h4><ul><li>Copperhook Docks: bigger hold, faster engine, repairs. Saint Mire & Fogmouth: weapons. Drowned Exchange: a wireless set for live prices everywhere. Orchid Terraces: Madame Ysolde sells one rumour a night about tomorrow's shocks. Rumours can land weak or turn the other way; she tells you how sure she is.</li></ul>
   <h4>${ico('skull')}Danger</h4><ul><li>Patrols, the Gull Gang and Marrow's collectors may stop you. Run, fight, bribe or pay. If your hull hits 0%, you sink and lose your cash and cargo.</li></ul>
   <h4>${ico('sound')}Sound</h4><p>Every sound is synthesized live. Toggle it under More (or press M). No sound on an iPhone? Check the ring/silent switch.</p>
-  <h4 class="kb-only">${ico('star')}Controls</h4><div class="keys"><kbd>1</kbd>–<kbd>7</kbd><span>Pick a district · <kbd>Enter</kbd> to sail</span><kbd>↑</kbd><kbd>↓</kbd><span>Pick a good · <kbd>B</kbd> buy · <kbd>S</kbd> sell</span><kbd>←</kbd><kbd>→</kbd><span>Adjust quantity (<kbd>Shift</kbd> ×10) · <kbd>A</kbd> max</span><kbd>1</kbd>–<kbd>4</kbd><span>Choose options in events</span><kbd>M</kbd><span>Mute · <kbd>?</kbd> this help · <kbd>Esc</kbd> close / menu</span></div>
+  <h4 class="kb-only">${ico('star')}Controls</h4><div class="keys"><span><kbd>1</kbd>–<kbd>7</kbd></span><span>Pick a district · <kbd>Enter</kbd> to sail</span><span><kbd>↑</kbd> <kbd>↓</kbd></span><span>Pick a good · <kbd>B</kbd> buy · <kbd>S</kbd> sell</span><span><kbd>←</kbd> <kbd>→</kbd></span><span>Adjust quantity (<kbd>Shift</kbd> ×10) · <kbd>A</kbd> max</span><span><kbd>1</kbd>–<kbd>4</kbd></span><span>Choose options in events</span><span><kbd>M</kbd></span><span>Mute · <kbd>?</kbd> this help · <kbd>Esc</kbd> close / menu</span></div>
   <div class="choices">${S?'<button class="choice" data-tour><kbd>2</kbd><div>Replay the guided tour</div></button>':''}<button class="choice primary" data-x><kbd>1</kbd><div>Got it</div></button></div></div>`;
   const el=showModal(html,{dismiss:closeModal,onKey:e=>{if(e.key==='1')closeModal();if(e.key==='2'&&S){closeModal();startCoach();}}});
   el.querySelectorAll('[data-x]').forEach(b=>b.onclick=closeModal);const tb=el.querySelector('[data-tour]');if(tb)tb.onclick=()=>{closeModal();startCoach();};
@@ -3169,7 +3231,7 @@ function openHelp(){
 const STAT_HELP={
   'st-cash':['Purse','Cash on board. Thieves, tolls and gulls take from it, and it sinks with the skiff. Keep big money in the vault.'],
   'st-bank':['Lockwater Vault','Safe from thieves and the sea, and earns 1.5% a night. Branches at Lanternquay and the Drowned Exchange.'],
-  'st-debt':['Debt to Marrow Quill','Grows 6% a night, and 10% after his night-10 deadline. Repay at Lanternquay. Still owing after night 10, or owing more than ¤12,000, sends his collectors after you on the canals. He lends only up to what you are worth.'],
+  'st-debt':['Debt to Marrow Quill','Normally grows 6% a night, and 10% after night 10. Repay or discuss hardship terms at Lanternquay. A revised loan grows 3% a night, closes your credit line and stops collectors.'],
   'st-hold':['Hold','Cargo space used and total. Odile at Copperhook Docks sells bigger racks.'],
   'st-hull':['Hull','At 0% the skiff sinks and you lose your purse and cargo. Below 60% it leaks. Repairs at Copperhook Docks; cheap patches at the Sluices.']
 };

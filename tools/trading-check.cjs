@@ -82,14 +82,14 @@ async function marketGuide(page) {
   assert.match(await page.locator('.row[data-g="ink"] .row-note').innerText(), /Above your purse/);
   await page.evaluate(() => { S.hull = 100; renderAll(); });
   assert.match(await guide.innerText(), /Rust Pearls → Exchange/);
-  assert.match(await guide.innerText(), /At 25% lower:.*buyer unconfirmed/i);
+  assert.match(await guide.innerText(), /At 30% lower:.*buyer unconfirmed/i);
   await page.locator('.row[data-g="pearl"]').tap();
   await page.waitForTimeout(450);
   await page.locator('[data-sale-port="de"]').tap();
   await page.waitForTimeout(450);
   await page.locator('[data-act="portdetails"]').tap();
   const hold = await page.getByRole('region', { name: 'Hold sale scenarios' }).innerText();
-  assert.match(hold, /All quoted buyers open.*4,215.*If Rust Pearls buyer is absent.*1,440/s);
+  assert.match(hold, /All quoted buyers open.*3,940.*If Rust Pearls buyer is absent.*1,350/s);
   await page.keyboard.press('Escape');
   await page.evaluate(() => setView('market'));
   await page.evaluate(() => { S.day = 16; renderAll(); });
@@ -237,6 +237,98 @@ async function fleetEstimates(page) {
     const valid = validSave(S);
     return [current, valid, fleetCall(29).g, S.seen.sm.rain.p];
   }), ['saffron', true, 'silk', 300]);
+}
+
+async function workout(page) {
+  await fresh(page);
+  await page.evaluate(() => {
+    const state = newState('Workout fixture');
+    Object.assign(state, { day: 13, cash: 800, debt: 10000 });
+    startGame(state, false);
+  });
+  await page.getByRole('button', { name: /Restructure debt at Lanternquay/ }).tap();
+  const offer = page.locator('[data-act="restructure"]');
+  await offer.tap();
+  assert.match(await page.locator('#modal').innerText(), /1,000.*11,000.*3%.*11,330/s);
+  await page.keyboard.press('Escape');
+  assert.deepEqual(await page.evaluate(() => [S.debt, debtRate(), debtHunted()]), [10000, .1, true]);
+  await page.waitForTimeout(400);
+  await offer.tap();
+  await page.waitForTimeout(400);
+  await page.getByRole('button', { name: /Sign the revised loan/ }).tap();
+  assert.equal(await offer.count(), 0);
+  assert.equal(await page.locator('[data-act="borrow"]').isDisabled(), true);
+  await fresh(page);
+  await page.locator('#t-cont').tap();
+  const updated = await page.evaluate(() => {
+    const before = [S.cash, S.debt, debtRate(), debtHunted(), creditLimit()];
+    advanceDay();
+    return [...before, S.debt, S.stats.interest];
+  });
+  assert.deepEqual(updated, [800, 11000, .03, false, 11000, 11330, 330]);
+}
+
+async function paidQuotes(page) {
+  await fresh(page);
+  await page.evaluate(() => {
+    const state = newState('Paid quote fixture');
+    Object.assign(state, { day: 8, cash: 500 });
+    state.effects = [{ type: 'crash', d: 'de', g: 'rain', m: .4, age: 0, days: 2, text: 'Rain glut.' }];
+    state.stock.de.rain = true;
+    state.prices.de.rain = 52;
+    startGame(state, false);
+  });
+  await page.getByRole('button', { name: 'Fleet calendar and market bulletins' }).tap();
+  assert.match(await page.locator('#modal').innerText(), /Public fleet calendar/);
+  await page.keyboard.press('Escape');
+  await page.locator('#mnav [data-v="map"]').tap();
+  await page.locator('#nodes [data-d="de"]').tap();
+  await page.locator('[data-act="portdetails"]').tap();
+  await page.waitForTimeout(400);
+  await page.locator('[data-port-report]').tap();
+  assert.match(await page.locator('#modal').innerText(), /Bottled Rain.*52.*seen tonight · glut fades/s);
+  assert.equal(await page.locator('[data-port-report]').count(), 0);
+  await fresh(page);
+  await page.locator('#t-cont').tap();
+  assert.deepEqual(await page.evaluate(() => [S.cash, S.circularDay, S.seen.de.rain.p, S.seen.de.rain.glut, S.seen.ch.rain.day]), [320, 8, 52, true, 1]);
+  await page.evaluate(() => openPortDetails('ch'));
+  assert.equal(await page.locator('[data-port-report]').isDisabled(), true);
+}
+
+async function waypointAndRepair(page) {
+  await fresh(page);
+  await page.evaluate(() => {
+    const s = newState('Route and repair fixture');
+    Object.assign(s, { day: 9, loc: 'de', cash: 2000, debt: 0, hull: 54 });
+    startGame(s, false);
+    rollVoyageEvent = () => null;
+    rollArrivalEvent = () => null;
+    void sailTo('ch');
+  });
+  const follow = page.getByRole('button', { name: /Continue to Copperhook/ });
+  assert.match(await follow.innerText(), /One night left.*arrive night 11/s);
+  await fresh(page);
+  await page.locator('#t-cont').tap();
+  assert.match(await follow.innerText(), /arrive night 11/);
+  await page.evaluate(() => {
+    rollVoyageEvent = () => null;
+    rollArrivalEvent = () => null;
+  });
+  await follow.tap();
+  await page.locator('#tcard-slot [data-act="sail"]').tap();
+  await page.waitForFunction(() => S.day === 11 && !busy && !S.trip);
+  assert.equal(await follow.count(), 0);
+  await page.locator('#mnav [data-v="harbor"]').tap();
+  await page.getByRole('button', { name: 'Choose repair' }).tap();
+  assert.deepEqual(await page.evaluate(() => [S.hull, S.cash]), [54, 2000]);
+  await page.getByRole('spinbutton', { name: 'Hull points' }).fill('10');
+  assert.match(await page.locator('#anote').innerText(), /350.*64%.*1,650/s);
+  await page.waitForTimeout(400);
+  await page.getByRole('button', { name: 'Repair 10 points' }).tap();
+  assert.deepEqual(await page.evaluate(() => [S.hull, S.cash]), [64, 1650]);
+  assert.match(await page.locator('#st-cash b').innerText(), /1,650|1.7k/);
+  await page.locator('#mnav [data-v="market"]').tap();
+  assert.equal(await page.locator('#mnav [data-v="market"]').getAttribute('aria-selected'), 'true');
 }
 
 async function creditLine(page) {
@@ -409,6 +501,9 @@ async function main() {
     ['sell to the dock factor without moving the market', dockFactor],
     ['arrival cooldown survives reload and favors other events', arrivalVariety],
     ['fleet forecasts apply the scheduled boost and flag fading surges', fleetEstimates],
+    ['distressed debt can refinance once with the disclosed fee and rate', workout],
+    ['a paid port report reveals the dated market once per night', paidQuotes],
+    ['waypoint guidance persists and repair spends only the selected amount', waypointAndRepair],
     ['bonded freight needs upgraded hold space and pays once across reload', freight],
     ['heavy freight saves the larger stake and can be accepted once', heavyFreight],
     ['settlement prediction matches the result and stays above the fold', finalPreview]
