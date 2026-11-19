@@ -1,0 +1,104 @@
+{
+  "scores": [
+    92,
+    92,
+    92,
+    86,
+    86,
+    91,
+    88,
+    87,
+    89,
+    96
+  ],
+  "gameSha": "514fe0fba64b5fab2cb80c2909198befb7cb1685010bba98a514f4d01c1a3745",
+  "rubricSha": "fe1176ac89f5cb902cb26c5714256c6920de3f25e8b66ec2a412fd5a6ac14b43",
+  "observations": [
+    "Trade. Eight goods gave me different ways to use the same purse. A 30-slot load of kelp could use only ¤810 on night 2. Nine pearls put ¤2,916 to work while leaving room for an event. On night 29 my last destination and the risk of dumping unsold goods mattered more than maximizing the advertised spread. See the six decisions below.",
+    "Routes. Seven illustrated ports, lit canals, travel time, risk out of five, signed percentages and sparklines were readable on the phone. The Sluices took one night at risk 3/5, Orchid one at risk 1/5 in my night 3 comparison with the preceding voyage. Before wireless, rain quoted at ¤217 sold at ¤196, the +64% Exchange pearl lead had no dealer on arrival, and a two-night-old ¤486 Orchid quote became ¤407. Pell's 8-in-10 tip also warned that the two-night journey would miss the auction. The quote card warns about movement more clearly than dealer absence.",
+    "Economy. On night 13 I paid ¤4,316 of ¤13,004 and kept the same amount to trade. An extra payment of ¤6,775 on night 17 cut compounding but left me unable to buy the recommended eel. In replay I cleared ¤9,024 on night 8 and bought both motor and hold by night 10. The vault at 1.5% trades liquidity for safety and interest. In matched simulations, setting aside spare trading cash won one of four pairs. Buying weapons at every opportunity and fighting every encounter sank on nights 16, 21, 6 and 13. Informed traders survived all four. These tests found no cheap bypass.",
+    "Risk. Four saffron became two after I accepted a search to protect the hull. I sold the survivors for ¤1,672 and took five pearls toward fleet demand. Later I chose to press through a squall for an 8-point hull loss inside the stated 6–16 range. Night 29's collector let me switch from repeated escape attempts to surrender. The earlier ¤867 demand took ¤77 plus my entire eel, crediting ¤1,858 against debt. The card warned about cargo but left that exchange rate and the zero-purse outcome to discovery. On night 23, ¤0 cash, no cargo and no available credit left me waiting for a find or offer.",
+    "Pacing. Early trades funded a deadline, late interest changed my middle-game routes, and night 29 rewarded a final one-night saffron run. Nights 22–25 exposed a weak stretch where sailing with an empty purse barely engaged the market until a ¤2,870 strongbox. The ending reconciled ¤11,123 cash minus ¤13,875 debt to −¤2,752, named Drowned Debtor and gave the exact shortfall to Bilge Rat. The final-night prompt told me to repay Marrow even though the Sluices has no lender.",
+    "Replay. In fresh seed 131, I picked two ¤1,171 saffron bound for Orchid over the suggested single eel for Saint Mire. Saffron arrived at ¤1,806. Night 2 I could afford a ¤3,325 Ghost Chip. Night 7 I limited the load to four ¤2,408 chips and went to Lanternquay with enough reserve to repay by night 8. At Copperhook by night 10 I had ¤18.8k, 45 slots and no debt. A third approach worth trying would keep the starter hold and fund wireless to avoid old quotes. Intervening replay trades used the scripted traveller as described below.",
+    "Onboarding. The title sets the objective, the introduction gives the interest rate and deadline, and the first ledger tip explained reserves. I skipped the rest of the tour. The circular led naturally to a buy sheet, a map island and a sale. The 15% reserve, total cost and hold-after preview explained why the default was 17 rain rather than 20. A missing dealer killed my second sale despite the earlier positive quote. An opening trade can succeed without opening help, but that failure mode deserved an earlier cue.",
+    "Input. The personal touch run reached settlement, as did separate 1280×800 mouse and keyboard runs. The keyboard run recorded zero pointer events. In reduced-motion fixtures for trade, map, gull and ending, Tab reached a visibly styled focused element on each screen in both engines. The phone probe found no undersized on-screen controls or low-contrast measured normal text there. The Chromium probe estimated 4.14:1 for small Buy text and 4.01:1 for Sell on the persistent market pane, below 4.5:1. Signed gains, ownership counts and prices worked without color. Rapid taps during sheet transitions occasionally required a retry.",
+    "World. The dock crane, lighthouse, temple and exchange are recognizable on a seven-island map. The buy receipt named quantity and cost, the sale showed realized profit, and cutter searches reported seized goods by name without opening the log. Marrow's collectors and the final rank use the same debt story. The unaccelerated slow-WebKit voyage and sheet transitions made repeated trips less fluid than individual trades. Audio instrumentation registered 669 sound starts while running, zero suspended through the cold ending. The mute icon changed and the count held at 671 over a muted interaction. Audible differentiation was not tested.",
+    "Delivery. The frozen vanilla HTML was 253,939 bytes. Storage reads, writes and deletes are guarded. The design notes are 59 lines. Direct-file offline touch and keyboard completions persisted their scores after reload with zero observed HTTP(S) requests or runtime errors. The personal final tally matched independently. Fresh verification recovered from corrupt storage and booted in an allow-scripts sandbox with storage denied. Adverse gull and leak fixtures passed 16/16 across WebKit and Chromium, including reload after a committed outcome. Sandbox coverage stopped after boot."
+  ],
+  "tradeLog": [
+    {
+      "night": 1,
+      "chosen": "17 rain at ¤123 to Sluices, 15% reserve",
+      "runnerUp": "Kelp at ¤38 to Copperhook on a +66% quote, capped at 30 units.",
+      "outcome": "Sold all 17 at ¤196 for ¤1,241 profit."
+    },
+    {
+      "night": 2,
+      "chosen": "Nine pearls at ¤324 on Exchange's +64% lead.",
+      "runnerUp": "30 kelp at ¤27 with +133% at Copperhook. The hold capped the money invested.",
+      "outcome": "No dealer at Exchange. Diverted to Orchid and sold at ¤407 on night 4."
+    },
+    {
+      "night": 11,
+      "chosen": "Sell the eel for ¤4,090 and take five saffron at ¤693 to Orchid.",
+      "runnerUp": "Kelp had the larger +57% quote but only 30 slots. Saffron had a +38% quote and used more capital.",
+      "outcome": "Paid 8 hull to keep time through a squall. Sold saffron for ¤6,920 on night 12."
+    },
+    {
+      "night": 16,
+      "chosen": "Sell 30 rain, buy one chip at ¤3,968 and return to the lender.",
+      "runnerUp": "One ¤5,751 Dreamsilk to Orchid had a larger stale spread (+51%) but delayed debt service.",
+      "outcome": "Sold chip for ¤5,144 and repaid ¤6,775 on night 17."
+    },
+    {
+      "night": 28,
+      "chosen": "18 pearls at ¤360 toward the Exchange on a +47% lead (scripted default).",
+      "runnerUp": "Smaller pearl load to keep enough cash to pay collectors, a retrospective alternative.",
+      "outcome": "After three failed escapes I yielded ¤1,552 and four pearls. Sold the surviving 14 at ¤613."
+    },
+    {
+      "night": 29,
+      "chosen": "Sold pearls and loaded seven ¤913 saffron for the one-night trip to Sluices, quoted +21%.",
+      "runnerUp": "Deposit the ¤8,582 pearl proceeds at the Exchange and stay for the last night. One night of vault earnings was unlikely to bridge the deficit.",
+      "outcome": "Arrival ¤1,276. Sold for ¤8,932. The last trade earned ¤2,541 but I still finished in debt."
+    }
+  ],
+  "firstImpression": "Recorded before source or technical results. Cast off, the 6% deadline and the 15% reserve gave me a first plan immediately. The observed quote was intelligible as an estimate after my rain sale. The subsequent dealer absence was the bigger surprise.",
+  "matchedSimulation": {
+    "seeds": [
+      7300000,
+      7300001,
+      7300002,
+      7300003
+    ],
+    "informed": [
+      600515,
+      942113,
+      277239,
+      963196
+    ],
+    "vault": [
+      434071,
+      894500,
+      288144,
+      673108
+    ],
+    "fightFarm": [
+      0,
+      0,
+      -8031,
+      -17307
+    ]
+  },
+  "limits": [
+    "Cold run was unseeded, fresh WebKit 390×844, direct file, ordinary animation timing. Personal opening, midgame, closing and selected encounter taps were interleaved with a personal script following visible market suggestions and preset encounter responses. No hidden state or game-state edits in that run.",
+    "Fresh replay seed 131 used accelerated animations, reduced motion and the touch traveller helpers. I chose the opening, night 2, the night 7 debt route and the trip to the yard. Nights 3–6 used the traveller's route picker. Supplementary full touch, mouse and native-keyboard runs used seed 73, accelerated timing and scripted public-information policies. Mouse used native typing for quantities.",
+    "The matched policy simulations and the accessibility, storage and event fixtures are separate technical checks. The contrast probe approximates gradients and does not measure SVG text contrast. Emulation excludes physical iPhone browser chrome, keyboard, safe areas and audible quality. No screen-reader trial."
+  ],
+  "caps": [],
+  "priorities": [
+    "Give a broke, over-limit captain a visible way back into trade, such as a small guaranteed delivery paying less than a successful trade and costing a night. Show its destination and net payment.",
+    "Show the collector's exact cash take, cargo units, debt credit and remaining purse before confirmation. The ¤867 headline understated the loss of the last eel.",
+    "Add dealer availability and affordability to route leads. Distinguish a stale price from a missing buyer, and suppress fleet purchase suggestions when even one unit exceeds cash."
+  ]
+}

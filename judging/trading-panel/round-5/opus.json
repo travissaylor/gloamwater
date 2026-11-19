@@ -1,0 +1,218 @@
+{
+  "judge": "opus",
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "gameSha": "426e0c8b6bb73453c40d544db862a82285b0ce8f79f9093fc81d3e58fc2c53b1",
+  "rubricSha": "fe1176ac89f5cb902cb26c5714256c6920de3f25e8b66ec2a412fd5a6ac14b43",
+  "packet": "game/index.html, judging/trading-rubric.md and BRIEF.md hashes and contents checked before play resumed. Nothing else was read: no research, other scores, git history or other judges' scratch.",
+  "attribution": "Nights 1 to 13 of run 1 belong to the original Opus 5.5 high attempt, the same model. That attempt was interrupted at Lanternquay on night 13. Its cold impressions and choices come from its own notes and the in-game ship's log. This resumed session played run 1 from night 13 to settlement in the same live Chromium page (CDP port 9612). It also played run 2 and ran the desktop and delivery checks.",
+  "scoreOrder": [
+    "1 Trade and cargo decisions",
+    "2 Routes and market intelligence",
+    "3 Economy and progression",
+    "4 Risk, consequences and recovery",
+    "5 Run pacing and ending",
+    "6 Replay and adaptation",
+    "7 Onboarding and decision clarity",
+    "8 Input and accessibility",
+    "9 World, feedback and sound",
+    "10 Reliability and delivery"
+  ],
+  "scores": [88, 90, 80, 90, 90, 90, 88, 85, 85, 92],
+  "result": {
+    "run1": "Settled on night 30 at Orchid Terraces at 390x844 with emulated touch. Rank: Canal Runner. Fortune ¤213,650: cash ¤167,167 plus vault ¤46,483, no cargo, debt paid off. The two parts add up exactly. The ending screen showed 28 voyages, best single profit ¤72.4k, peak worth ¤219k, 8 encounters (won 1, fled 1), debt interest ¤2,414, vault interest ¤7,343 and losses and forfeits ¤36.4k. It also said the run was ¤36,350 short of Lantern Broker. After a reload, the Captains' Ledger still listed #1 Captain, Canal Runner, ¤213,650.",
+    "run2": "Fresh run as captain 'Second' through night 10 at 390x844 with emulated touch. Night 10: net worth ¤28.2k, debt cleared on night 8. For comparison, run 1 had net worth ¤9,988 and no debt on night 10.",
+    "desktop": "1280x800 run 'Desk', played by keyboard and mouse to night 6, then settled through the menu's Abandon option. Rank: Drowned Debtor, −¤2,392. The breakdown adds up: 5,076 + 563 − 8,031 = −2,392."
+  },
+  "choices": [
+    {
+      "phase": 1, "night": 1, "source": "inherited from original attempt",
+      "chosen": "At Lanternquay, 2 Synth Saffron at ¤946 for Orchid (quote ¤1,205, 1 night, risk 1/5), keeping enough reserve for the ¤450 toll.",
+      "runnerUp": "30 Glowkelp at ¤43 for Copperhook (+23%), or 4 Rust Pearls for the Orchid fleet.",
+      "information": "Harbor circular quotes with their age, the fleet calendar, and the trade sheet's break-even and toll-reserve line.",
+      "outcome": "Sold at ¤1,216 on night 2 against the ¤1,205 quote, +¤540. A strongbox added ¤700."
+    },
+    {
+      "phase": 1, "night": 8, "source": "inherited from original attempt",
+      "chosen": "At Saint Mire, 5 Synth Saffron at ¤887 for Lanternquay, so the debt could be repaid on night 9, ahead of the night-10 deadline.",
+      "runnerUp": "6 saffron straight to the Fogmouth fleet (nights 9 to 12) and Lanternquay on night 10. Rejected because it was unclear whether arriving on night 10 counted as 'by night 10', and the sheet warned the purse would be ¤132 short.",
+      "information": "Debt deadline, fleet calendar, and the trade sheet's reserve warning.",
+      "outcome": "Repaid ¤1,914 on night 9, clearing the debt. Sold saffron at Lanternquay for ¤1,351 (+¤2,320) rather than chase the fleet."
+    },
+    {
+      "phase": 2, "night": 10, "source": "inherited from original attempt",
+      "chosen": "Wireless set for ¤6,000 at the Drowned Exchange, which leaves ¤3,988 in the purse.",
+      "runnerUp": "Hold racks for ¤2,500 at Copperhook and keep the remaining capital.",
+      "information": "High-value goods were limited by cash, not hold space. Before wireless, a 2-night-old rain quote of 156 had arrived at 102.",
+      "outcome": "Live quotes and two competing route cards appeared at once. The saffron to Fogmouth fleet trade (quote 2,207, then 1,875, arrived at 1,645) still made +¤1,665."
+    },
+    {
+      "phase": 2, "night": 12, "source": "inherited from original attempt (plan) plus the in-game ship's log (outcome)",
+      "chosen": "At Fogmouth, 30 Bottled Rain at ¤49 for the Sluices (quote 208, 2 nights via Lanternquay, risk 3/5).",
+      "runnerUp": "Saint Mire at 162 (1 night, risk 2/5) or Lanternquay at 142 (1 night, risk 1/5).",
+      "information": "Wireless live quotes, a glut bulletin, and the waypoint stop that allows a re-check on the way.",
+      "outcome": "A Gull toll took ¤1,221. At the night-13 waypoint the attempt sold all 30 at Lanternquay for ¤130 (+¤2,430) instead of continuing to the Sluices. Night 13 also brought a ¤1,340 strongbox."
+    },
+    {
+      "phase": 3, "night": 21, "source": "this session",
+      "chosen": "At the Lanternquay waypoint, withdrew ¤29.9k from the vault and added 9 Clockwork Eels at ¤2,650 to the 12 already bought at Copperhook (¤1,816). Target: the Exchange eel fleet, nights 21 to 24, quoted at ¤5,715. Bought 9 rather than 10 because the sheet said 10 would leave the purse ¤1,188 short of a leak patch.",
+      "runnerUp": "Leave the cash in the vault and buy Ghost Chips at ¤4,381 for the Sluices chips fleet on nights 25 to 28.",
+      "information": "Route card: 12 eels to the Exchange at ¤5,715 each, seen tonight, 1 night, fleet buyer scheduled, 'At 25% lower: +¤20,054'. The fleet calendar was also open.",
+      "outcome": "This was a material hit. On arrival on night 22 a 'Warehouses flooded at Drowned Exchange' shock had dropped eels to ¤2,114, 63% below the quote and well beyond the stress test. Recovery: carried the eels to Lanternquay on night 23 and sold 11 at ¤2,684 (+¤5,616), since selling more would have pushed the price down. Took the other 10 back to the Exchange, where the glut had eased, and sold them at ¤3,774 on night 24 (+¤16,006). A Gull fight on the way cost 20% hull and paid ¤1,189 plus 20 Rust Pearls."
+    },
+    {
+      "phase": 3, "night": 29, "source": "this session (closing turn)",
+      "chosen": "At Orchid, sold 7 Dreamsilk at the fleet (¤17,831 against a ¤15,264 fleet estimate, +¤72,352) and 7 Ghost Chips at ¤4,038. Kept 3 chips to sell on the final night rather than accept the price drop past dealer depth (Max would have averaged ¤3,857). Stayed at Orchid instead of sailing.",
+      "runnerUp": "Carry the 10 chips to the Exchange (quote ¤5,524, 1 night, arriving on the final night). That would have risked a ¤29,694 Gull toll on a ¤130k purse, with no night left to recover. At 25% lower, the route card showed only +¤2,863.",
+      "information": "Night 29 of 30, a fleet-adjusted estimate, a 'Buyer may be absent' warning, and a toll that scales with purse and hold.",
+      "outcome": "Orchid had no chips dealers on night 30. The dock factor paid ¤8,600 for 3, against ¤7,167 at settlement's half value. The Exchange would have paid ¤6,661 that night. The run settled at ¤213,650."
+    }
+  ],
+  "run2Adaptation": {
+    "early": "Night 1: sailed empty to the Exchange to buy saffron at ¤631 (Lanternquay ¤952), choosing that over run 1's saffron-to-Orchid opening. Night 3: Orchid, quoted ¤1,324 a night earlier, had no saffron dealers. Adapted by selling to the dock factor for ¤2,340 and buying 28 Bottled Rain at ¤87 for this run's Saint Mire rain fleet (nights 1 to 4). Sold at ¤237 on night 4 against a 179 quote that was 2 nights old.",
+    "later": "Nights 4 to 8: two passes at the Fogmouth saffron fleet (5 at ¤1,042, sold at ¤1,727; then 13 at ¤692, sold at ¤1,991). Debt repayment was deferred to night 8 so the cash could work in trades. The repay sheet showed 'Interest saved tonight ¤541'. Night 8: a ¤180 paid Orchid quote showed Ghost Chips at ¤4,833 against a 5-night-old ¤7,113, so I switched to Dreamsilk: bought at ¤10,510, paid quote ¤14,496, sold at ¤15,504. Also delivered a ¤2,710 courier parcel.",
+    "anotherApproach": "Buy hold racks early at Copperhook and run bulk Glowkelp or Rain into the scheduled fleets, then build toward the 65-hold heavy freight (¤50k stake, ¤96k payout) for the closing window. Or buy wireless before night 10 in a run whose early fleets are far from Lanternquay.",
+    "defaultCheck": "Supporting only, not play evidence: the frozen touch runner (seed 31, greedy conservative traveller, real WebKit taps, FAST) reached net worth ¤271k on night 27. My deliberate run 1 settled at ¤213.6k. The seeds and states differ, so this is not a matched comparison. It does suggest that a simple quote-following policy does at least as well as deliberate play."
+  },
+  "observations": {
+    "1_trade": {
+      "evidence": [
+        "Night 15, Fogmouth: compared Moon Ink, Ghost Chips and the harbor post. Moon Ink at ¤10,318 (−46%) showed a ¤11,400 leak patch the remaining purse could not cover. I chose 2 Ghost Chips (¤7,894) for Copperhook's ¤7,682 plus the ¤2,800 post. I then skipped 18 filler Glowkelp because they would have left the purse ¤278 short of the leak bill for the chips. Chips sold at ¤6,915, +¤5,936.",
+        "Changes in cash, capacity and the deadline changed the best choice. Night 16: 9 eels left the purse ¤246 short of the toll, so I bought 8. Night 18: Max saffron (35 units) showed price impact ('the last goes at ¤1,534'), so I took the default 21. Night 24: 45 hold minus 3 parcel slots made the 40-hold bonded freight possible. Night 29: with the deadline one night away, I sold instead of carrying.",
+        "Five of six logged turns had a credible second plan, including the night-29 closing turn."
+      ],
+      "counterevidence": [
+        "Late-game choices narrowed to 'follow the fleet calendar and the route card, buy up to dealer depth'. Dealer depth and the default quantity often decided the composition.",
+        "The supporting greedy runner beat my deliberate result. That suggests the decisions add less than they seem to."
+      ]
+    },
+    "2_routes": {
+      "evidence": [
+        "Two competing routes compared on time and risk. Night 14: Fogmouth (1 night, risk 4/5, eels ¤2,558) against the Exchange (2 nights via Lanternquay, risk 2/5, ¤2,614). Night 17: Exchange ¤3,422 against Saint Mire ¤3,108, same time and risk. Night 22: Lanternquay 1 night risk 1/5 against Sluices risk 3/5. The map's percentage badges and the route cards show the quote's age ('seen tonight', '1n ago', 'fleet-adjusted estimate') and a 'Test a price 25–35% lower' stress line.",
+        "Observations against arrivals before an information upgrade: the inherited run-1 rain quote of 156 (2 nights old) arrived at 102. In run 2, Orchid saffron at ¤1,324 (1 night old) had no dealers on arrival, rain at 179 (2 nights old) sold at 237, and pearls at 434 (1 night old) sold at 345.",
+        "With wireless: kelp 79 to 64, eels 2,558 to 2,423, chips 7,682 to 6,915, eels 3,422 to 3,737, Dreamsilk estimate 15,264 to 17,831.",
+        "Paid ¤180 quote (run 2, night 8): Ghost Chips at Orchid ¤4,833 against a stale ¤7,113, then ¤5,079 on arrival. Dreamsilk ¤14,496, then ¤15,504 on arrival.",
+        "The map is spatial with 7 illustrated districts and lit canals. Sparklines appear on every row, and the trade sheet shows price history from nights 1 to 30 with quotes from every port."
+      ],
+      "counterevidence": [
+        "Night 22: the fleet-adjusted eel estimate of ¤5,715 arrived at ¤2,114 (−63%) because of a flood shock that only appeared on arrival. The stress-test guidance ('test 25% lower') understated this tail. The wireless bulletin did not warn about it beforehand.",
+        "Late in the run, the trade-sheet quote list sometimes would not expand on the sell side, so I compared ports on the map."
+      ]
+    },
+    "3_economy": {
+      "evidence": [
+        "Debt at 6% a night, due by night 10, competes with trading. Run 2 deliberately deferred repayment to night 8 so the cash could work through two saffron fleet passes. The repay sheet shows 'Interest saved tonight'.",
+        "Upgrades with different payoffs. Wireless (¤6,000, inherited on night 10) brought live quotes and route cards. Racks (¤2,500, night 16) took the hold to 45 and made the night-24 bonded freight possible (¤18k stake, ¤42k payout, 40 hold, due night 27; paid on night 27). Others: the vault at 1.5% a night (earned ¤7,343), a ¤180 one-night paid quote, Old Fenna's racks offers (¤4,240 on night 17, ¤5,560 on night 28), hull repair at 35 a point or a cheap patch to 75%, ¤20k charters, and heavy freight (65 hold, ¤50k stake).",
+        "Run 2's no-wireless path, using paid quotes and early debt clearance, reached ¤28.2k by night 10. Two investment approaches therefore both gave useful options after the opening."
+      ],
+      "counterevidence": [
+        "No matched-state check of a suspected shortcut was done, so the 90 anchor is not supported.",
+        "From about night 19 the purse held more than ¤50k and nothing useful was left to buy. ¤167k sat idle at settlement, and the ¤20k charter never paid off for my loads ('+¤0 for this load'). The economy snowballs and late investment choices thin out.",
+        "The supporting runner reached ¤271k by night 27 with a simple policy, which suggests the economy is generous."
+      ]
+    },
+    "4_risk": {
+      "evidence": [
+        "Several different risks matched their offers. Gull Gang fight on night 22 (2 boats, 22% per volley, return fire up to 16%): hits of −9% and −11% hull, then a win paying ¤1,189 (offer ¤1,050–2,520) plus 20 Rust Pearls 'if there's room'. Tidewarden bribes on night 16 (¤2,507) and night 26 (¤7,457) were charged exactly. Gull reach on night 15 failed: lost exactly ¤208 and 10% hull, as stated. Squall push-through cost 7% hull (offer 6–16%). Leak patch cost exactly ¤202. Gull tolls of ¤3,508 and ¤18,852 were charged exactly.",
+        "Material hit with a recovery at real cost: see the night-21/22 eels glut choice. Night 26: a Tidewarden fight cost 29% hull (75% to 46%) before I bought out with a ¤7,457 bribe. The 'Heave to' option disclosed the ¤18,000 bond at risk.",
+        "The toll scales with purse and hold and is shown on every route ('¤5,484 cash + cargo or hull' when the purse is short). Vaulting cash lowers it."
+      ],
+      "counterevidence": [
+        "Sinking one of two Gull boats did not lower the toll (¤7,866 before and after).",
+        "'Risk about 12% of each cargo' does not say whether deliveries or bonded freight can be lost on a failed run.",
+        "The thief event came up often: three times in run 1 by night 21."
+      ]
+    },
+    "5_pacing": {
+      "evidence": [
+        "Each phase played differently. Opening: small loads, the debt deadline, quotes of known age. Growth: wireless, racks, freight windows from night 15, and eel and saffron fleets. Closing: bonded freight due night 27, the Dreamsilk fleet on nights 29–30, a ¤18,852 toll, and the final carry-or-sell call. Every night from 13 to 30 had a decision, including the waypoint stops on nights 17, 21, 26 and 28.",
+        "The deadline shaped the final decisions. Night 28: chose Orchid with a night of slack over an Exchange-then-Orchid plan with none. Night 29: chose not to carry chips into the final night.",
+        "The ending explains the rank ('¤36,350 short of Lantern Broker') and the fortune breakdown adds up exactly in both settled runs."
+      ],
+      "counterevidence": [
+        "'Losses and forfeits ¤36.4k' is not itemized. My own tally of tolls, bribes, thefts, patches and one lost saffron came to about ¤35.7k plus the lost cargo.",
+        "Night 30 had no chip dealers at Orchid, so the final night reduced to a factor sale and Settle up."
+      ]
+    },
+    "6_replay": {
+      "evidence": [
+        "Run 2's fleet calendar was completely different: Rain at Saint Mire on nights 1–4, Saffron at Fogmouth on nights 5–8, Glowkelp at Copperhook on nights 9–12, and so on. Run 1 had Saffron at Lanternquay on nights 17–20, Eels at the Exchange on nights 21–24, and so on. Opening prices and quote ages also differed.",
+        "I adapted both an early plan (the night-3 missing buyer led to a factor sale and a rain fleet run) and a later plan (deferred debt and a double saffron fleet pass, and a paid quote that turned a planned chips buy into Dreamsilk). See run2Adaptation for another approach worth trying."
+      ],
+      "counterevidence": [
+        "In both runs the public fleet calendar drove planning. The core loop of 'source cheaply, then hit the fleet window' was the same across runs."
+      ]
+    },
+    "7_onboarding": {
+      "evidence": [
+        "Inherited cold notes from nights 1–13: an intro sheet stating the ¤6,000 debt at 6% due night 10, a five-step skippable tour, and a trade sheet with break-even, dealer depth, toll and leak bills against the remaining purse, plus a stress-test line. The first buy, voyage and sale were understood from these cues alone.",
+        "The unexpected price was explained in the interface: the 156 to 102 rain miss matched the 'Test a price 35% lower' cue. In run 2, Orchid's 'No dealers ... the dock factor pays 60%' message explained the missing buyer.",
+        "Constraints are shown in place: 'Hold full', 'Above your purse', 'Your remaining purse is ¤X short of the larger bill', and 'Free 40 hold slots to take this'. After night 13 I did not need to reopen How to play."
+      ],
+      "counterevidence": [
+        "The Vault Deposit and Repay sheets default to the whole purse with no toll-reserve warning, unlike the trade sheet.",
+        "When holding stock, the trade sheet opens in Sell mode, which sometimes needed an extra Buy toggle.",
+        "The log called the bonded freight payout 'Delivered the sealed parcel. Paid ¤42,000'.",
+        "Taking freight drops displayed net worth by the stake (¤122k to ¤104k on night 24) with no note that the money is held as a bond."
+      ]
+    },
+    "8_input": {
+      "evidence": [
+        "Touch at 390x844 reached the ending (run 1, settled night 30) and played run 2 to night 10. Every core control measured was at least 44 px: the bottom nav buttons are 69x59 and sheet buttons 52 px tall. The scripted audit at 390 found no visible target under 44 px.",
+        "Keyboard at 1280: title Tab order with a visible 2 px gold outline; Enter starts a run; Escape skips the tour. On the market, arrow keys pick a row and B/S open a trade (the hint '↑↓ pick · B buy · S sell' is shown). In the trade sheet, arrows change quantity and the Tab order runs toggle, −, input, +, Max, slider, Cancel, Confirm. Escape returns focus to the row. Number keys 1–7 select a port and Enter sails ('Sail here · 1 night ⏎'). Event choices use number keys and Enter, and focus stays trapped in the dialog. Escape opens the menu; option 6 then Enter settles; the ending buttons are focused and visibly outlined.",
+        "Mouse at 1280: row Buy button, confirm, map node, and Sail here all worked.",
+        "Reduced motion: under prefers-reduced-motion, the CSS sets every transition and animation to 0.01 ms (computed maximum 0.00001 s).",
+        "Information is not carried by colour alone: signed percentages, labels ('Cheap', 'Pricey', 'Bargain', 'Glut', 'Fleet demand +40%') and numbered risk ('risk 3/5')."
+      ],
+      "counterevidence": [
+        "Touch was emulated by Chromium/Playwright (maxTouchPoints 1, pointer coarse), not a physical phone.",
+        "The automated contrast check covered only 14 distinct colour combinations on the 390 market view, all at least 4.5:1. Trade, map, event and ending were not contrast-sampled, so that check is incomplete.",
+        "Hidden duplicate controls (zero-size 'Settle up' and 'Fight' copies) confused text-based locators. This has no visible user impact.",
+        "The HUD mute button reported aria-pressed=false while sound was muted."
+      ]
+    },
+    "9_world": {
+      "evidence": [
+        "Districts are distinct in both art and writing: lighthouse Fogmouth, Copperhook cranes ('Clockwork Eels are wound here by the thousand'), the Drowned Exchange ('Brokers in waders shout bids'), Orchid's hanging gardens and Lanternquay's paper lanterns. Event cards are illustrated, for example searchlight cutters.",
+        "Three different actions could be followed without opening the log. A sale updates the row badge ('×8 · avg ¤1,271 · +194% here') and the HUD, with the HUD showing a −¤ delta on the purse. A voyage shows the map, the arrival and the change in night. An encounter shows a result line each volley ('Direct hit! One boat drifts away, smoking. They return fire. −9% hull.') and an outcome card. The ending has a rank emblem and a breakdown.",
+        "Sound is synthesized with Web Audio. I patched oscillator creation to count calls: different actions created different numbers of nodes (a sell made 3 oscillators and 1 buffer source). Mute suspends the AudioContext (source: setMuted calls ctx.suspend), and the setting persisted as muted:true. Ambience can be toggled separately.",
+        "With FAST, repeated actions moved at a comfortable pace. The original attempt played at normal timing."
+      ],
+      "counterevidence": [
+        "Everything ran headless, so I could not judge how the sounds sound or whether they are distinct by ear. Only that the cues fire and that mute works was checked.",
+        "Shock bulletins appear as toasts that are gone by the time you tap Read. The log keeps them."
+      ]
+    },
+    "10_reliability": {
+      "evidence": [
+        "The full 30-night run completed. The page-error and console-error listener on the live page logged nothing, and there were no external requests.",
+        "The ledger survived reload. A mid-run save offered 'Continue voyage' after reload. The save was cleared after settlement.",
+        "Supporting script (delivery.cjs, scripted, labeled): direct file:// boot worked. A sandboxed iframe with allow-scripts only (localStorage throws SecurityError) started a run and bought. Denied storage (a localStorage getter that throws) booted and started. Corrupt JSON in the save, scores and settings booted and showed 'Your saved voyage could not be loaded. Start a new run.', and the ledger and a new run still worked. Zero non-file requests across all contexts.",
+        "game/index.html is a single 277,415-byte file. The only link is a data: favicon; there are no external script, link or img sources.",
+        "The arithmetic checked out. Debt went 6,000 → 6,360 → 6,742 → 7,147 → 7,576 → 8,031 (6% a night, rounded nightly). Settlements reconciled: 167,167 + 46,483 = 213,650, and 5,076 + 563 − 8,031 = −2,392. Bribes and tolls were charged exactly. Trade totals matched quantity × price, for example 7 × 17,831 = 124,817."
+      ],
+      "counterevidence": [
+        "The supporting touch runner (seed 31) stalled on night 27 after its policy selected the port it was already moored at. This looks like a runner policy issue and was not reproduced by hand.",
+        "The net-worth display rounds (¤214k against ¤213,650).",
+        "The log mislabels the bonded freight payout as a sealed parcel."
+      ]
+    }
+  },
+  "priorities": [
+    "Make fleet estimates honest about shocks. A wireless player should hear a fleet-port shock such as the night-22 Exchange flood the night before arriving. Failing that, the fleet estimate and stress-test line should widen when an import glut can override the fleet. A ¤5,715 estimate that arrives at ¤2,114 is a bigger miss than the 25% guidance suggests.",
+    "Give the late economy somewhere to go. Once the purse passes ~¤50k (around night 19 in my run), add scaling investments or contracts with real trade-offs, such as heavy freight, charters that pay off on the cargo you actually carry, or late debt-funded opportunities. Also add the trade sheet's toll-reserve warning to the Repay and Deposit sheets.",
+    "Polish the clarity details. Itemize 'Losses and forfeits' on the ending. Label bonded freight correctly in the log and show the escrowed stake in net worth. Make the mute aria-pressed state match the muted state. Have the trade sheet open in Buy mode when the route card recommends carrying the cargo elsewhere."
+  ],
+  "caps": [],
+  "limits": [
+    "Interruption: the original same-model attempt stopped at Lanternquay on night 13. I resumed in the same live Chromium page on CDP port 9612 with emulated touch at 390x844 (maxTouchPoints 1, pointer coarse). The resume save file was not needed. I set the in-game FAST flag (animation timing only) to true from night 13; the original attempt played nights 1–13 with FAST false. Phase 1 and phase 2 logged choices are inherited from that attempt's notes, plus its night-13 waypoint sale as recorded in the in-game log.",
+    "Touch was emulated by Chromium/Playwright, not tested on a physical phone. Safe areas, the software keyboard and real gesture latency were untested.",
+    "Audio ran headless. Cue firing and mute were checked by instrumentation and source; how the sounds actually sound was not judged.",
+    "Contrast was sampled automatically only on the 390 market view (14 colour combinations). Trade, map, event and ending screens were checked for focus and target size but not for contrast.",
+    "Desktop keyboard and mouse were checked in a short 1280 run settled through Abandon on night 6, not a full 30-night desktop run. Natural night-30 settlement by keyboard was not exercised.",
+    "Run 2 stopped at night 10, as the protocol requires.",
+    "No matched-seed, equivalent-state comparison of a suspected shortcut (fleet-calendar following, bonded freight, vault compounding) was run. The supporting runner result (¤271k by night 27, seed 31) is not a matched comparison.",
+    "Untested: the twin-screw motor, Saint Mire armory weapons, trading charters, heavy freight, Grandmother Wick's gamble (walked on), the Heave-to outcome, Run for it in this session (Run outcomes come only from the inherited notes), sinking, and the How to play page after the opening.",
+    "Supporting evidence, labeled separately: delivery.cjs (scripted delivery and storage checks) and tools/touch-play.cjs seed 31 (frozen visible-input runner, WebKit, FAST). Both wrote only to scratch outside tracked paths."
+  ]
+}

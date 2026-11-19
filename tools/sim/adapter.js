@@ -254,7 +254,7 @@
     let kind = art.startsWith('enc_') ? art.slice(4) : (ART_ALIAS[art] || art);
     if (c.confirm) kind = 'confirm';
     const opts = {};
-    (c.choices || []).forEach(x => { opts[x.key] = { enabled: !x.disabled, cost: num(x.label), p: pctOf(x.sub), label: x.label, sub: x.sub }; });
+    (c.choices || []).forEach(x => { opts[x.key] = { enabled: !x.disabled, cost: x.cost ?? num(x.label), p: pctOf(x.sub), label: x.label, sub: x.sub }; });
     const boats = /Enemy boats<b>(\d+)/.exec(c.extra || '');
     return { kind, title: c.title, kicker: c.kicker, opts, keys: Object.keys(opts), card: c, round: c.result ? 2 : 1, boats: boats ? +boats[1] : null };
   }
@@ -535,7 +535,8 @@
       if (cost == null || (kind !== 'repair' && kind !== 'patch' && S.cash < cost)) return false;
       const c0 = S.cash, h0 = S.hull;
       const btn = { dataset: { mk: dd(S.loc).svc.includes('fence') && !dd(S.loc).svc.includes('arms') ? '1.2' : '1' } };
-      await confirmed(kind, btn);
+      if (kind === 'repair' || kind === 'patch') await amountAction(kind, Infinity);
+      else await confirmed(kind, btn);
       if (SIM.cur && S.cash < c0) SIM.cur.purchases.push({ day: S.day, d: S.loc, kind, cost: c0 - S.cash, hullRestored: S.hull - h0 });
       return S.cash !== c0;
     },

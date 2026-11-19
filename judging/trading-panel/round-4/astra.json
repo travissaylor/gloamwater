@@ -1,0 +1,86 @@
+{
+  "gameSha": "012cb10f88025f762235b1e087402d015a17793c839659006a747b7d24eef206",
+  "rubricSha": "fe1176ac89f5cb902cb26c5714256c6920de3f25e8b66ec2a412fd5a6ac14b43",
+  "scores": [
+    94,
+    92,
+    90,
+    93,
+    85,
+    92,
+    93,
+    88,
+    90,
+    97
+  ],
+  "observations": [
+    {
+      "criterion": "Trade and cargo decisions",
+      "evidence": [
+        "N1. I took one ¤1,940 eel toward Exchange over two ¤1,001 saffron toward Fogmouth. Lower route danger and a positive downside quote won me over. I kept ¤560, enough for the ¤389 toll. A leak wiped out my purchase.",
+        "N2. With ¤560 left, I bought five kelp at ¤56 for Copperhook's fleet call. Three bottled rain at ¤148 would have left just ¤116. The two-leg trip stopped at Lanternquay, where the routine policy sold my kelp for ¤325, a ¤45 gain.",
+        "N11. With ¤47 cash, I sold both rain to the fleet at ¤149 against ¤131 cost. Holding for its last night of demand was plausible. Reinvesting ¤150 in three kelp left ¤195 cash and produced a ¤216 sale on N12.",
+        "N12. I bought three rain at ¤90 for Orchid over keeping ¤411 liquid to service debt. The market was 31% below usual and Orchid's last quote was 46% higher. I arrived to ¤78 rain and an unrealized ¤36 loss.",
+        "N27. I freed 29 slots by selling the rain for ¤3,277. I then bought one glut-priced chip for ¤2,561 over retaining cash for repayment. On N28 I sold the chip for ¤3,285, paid down ¤3,360 and kept ¤1,000 for the last voyage.",
+        "N29. I bought eight rain at ¤80 and sailed for Lanternquay. Staying liquid would have protected the final score. Last night's surge there had offered ¤343. On N30 there was no dealer. I chose the ¤571 factor offer over automatic ¤476 liquidation, still ¤69 below cost."
+      ],
+      "counterevidence": "After the opening loss, the full hold mattered much less than preserving enough cash for even one unit of a better good. Several markets offered little beyond kelp and rain."
+    },
+    {
+      "criterion": "Routes and market intelligence",
+      "evidence": "The seven-port map showed canal time and danger. On N1 Exchange quoted ¤3,253/eel at risk 2/5 versus Fogmouth's ¤1,395/saffron at 4/5. Exchange actually posted ¤3,391 on arrival. On N12 a two-night-old Orchid rain signal implied about ¤131. N13 delivered ¤78. On the second opening Copperhook's fleet-backed kelp quote was ¤88 and arrived at ¤121. All three comparisons preceded wireless. Eight goods have separate trends, missing buyers and explicit dates. N29–30 demonstrated that even a recent surge gives no assurance of a buyer.",
+      "counterevidence": "A destination tap can take you only to a waypoint. After leaving Exchange for Copperhook, the ordinary Lanternquay market reappeared. I had to reorient to see the remaining trip."
+    },
+    {
+      "criterion": "Economy and progression",
+      "evidence": "Working capital and interest genuinely competed. On the second N7 I liquidated seven kelp and ten saffron, realizing only about 3% on the saffron to retire ¤8,513 debt. This still left enough to trade and the routine buyer had expanded the hold to 45 by N11. The seed-31 desktop policy later used the vault and earned ¤18,175 interest. In my matched one-night fixture, each branch began with N7 equity of ¤3,136. Repayment produced N8 equity of ¤3,136. Depositing the same ¤8,513 produced ¤2,753 (vault ¤8,641, debt ¤9,024). Holding liquid produced ¤2,625 but retained ¤11,649 purchasing power. Borrowing to earn vault interest lost ground. The credit-limit and single-payment freight probes passed.",
+      "counterevidence": "The first run reached N11 with just ¤47 liquid and ¤10.7k debt. Even a late ¤724 chip profit and partial repayment scarcely moved the final deficit. The investment menu has much less relevance on this path."
+    },
+    {
+      "criterion": "Risk, consequences and recovery",
+      "evidence": "The N1 eel sheet stated ¤1,440 for a patch and explicitly showed the ¤880 shortfall. On N2 the leak asked exactly ¤1,440 or one eel. Jettison removed my entire load and preserved ¤560. Buying only five kelp next kept half that purse in reserve, at the cost of slower growth. N8 shelter cost a night. N10's scripted ¤303 bribe cleared the Tidewarden. In a separate Gull fixture the pay button quoted ¤1,800 and the receipt said exactly ¤1,800 taken. Run and fight showed escape odds, hull damage and cargo stakes. Sixteen WebKit/Chromium event probes passed, including failed escape after reload and sinking.",
+      "counterevidence": "The first arrival presented an accurate warning but only one affordable response. The following small trades restored agency over cargo much sooner than they restored a chance of solvency."
+    },
+    {
+      "criterion": "Run pacing and ending",
+      "evidence": "N1–2 tested reserves, N11–12 tested how to rebuild while paying 10% nightly interest, and N27–30 made sale timing decisive. I chose a one-night return on N29 and could still improve the result by ¤95 on N30. Cash ¤931 plus zero vault and cargo less ¤59,565 debt reconciled exactly to −¤58,634. Drowned Debtor came with the exact shortfall to Bilge Rat. The successful desktop run showed a different rank and its next threshold.",
+      "counterevidence": "In the middle of the losing run, rising interest outpaced the money at stake each night. Routine turns used a helper, so I cannot substantiate a meaningful personal choice in every three-night window."
+    },
+    {
+      "criterion": "Replay and adaptation",
+      "evidence": "In the fresh market I passed over Orchid saffron and the suggested 30-kelp order. I carried 18 kelp at ¤54 with ¤1,528 reserved. The Copperhook fleet paid ¤121, versus my first voyage's fully exposed eel loss. Later, at Lanternquay on N7, the changed purse and cargo let me choose early repayment over carrying ten saffron onward. The scripted intervening routes and purchases brought me to N11 in Fogmouth with 8/45 occupied, no debt and ¤9,908 net worth. Another approach worth trying is keeping that N7 capital to buy the unusually cheap local ghost chips.",
+      "counterevidence": "Some improvement came from the favorable arrival price and encounter draw. These fresh runs do not isolate strategy strength."
+    },
+    {
+      "criterion": "Onboarding and decision clarity",
+      "evidence": "Cold, Cast off explained the ¤2,500 purse, ¤6,000 loan, due night and 30-night goal. I skipped the tour after its ledger page. The two opening route cards, plus signs, dates and a 20%-lower scenario gave me a reason to pick the eel. Its sheet showed the revised hold, cash and patch shortfall before confirmation. Selecting Exchange gave me a one-night Sail button. Owned rows showed quantity, average paid and a sale tab. The N30 absent buyer was surprising but intelligible because previous cards warned that buyers were unconfirmed.",
+      "counterevidence": "On the phone I tried Map immediately after buying. The market remained open and I had to tap Map again. The animated purse also briefly showed ¤1,380 while the correct settled balance was ¤560."
+    },
+    {
+      "criterion": "Input and accessibility",
+      "evidence": "Chrome touch emulation reached N30 and settled at 390×844. At 1280×800 the scripted keyboard traveller completed trade, route, event, settlement and ledger reload with 2,553 Tab/Shift+Tab presses and zero pointer events. My mouse adaptation also completed those screens. Phone measurements included 46px trade modes, 48px quantity controls, 44px sail, 69–129px encounter choices and 52px ending buttons. Sampled normal text contrast estimates were at least 4.71:1 on trade, 6.13 on the selected route card, 5.20 on event and 4.61 on ending. Signs, labels and numeric damage odds survive loss of color. Focus outlines appeared on trade, event and ending. Reduced-motion checks and the frozen cross-size focus probes passed.",
+      "counterevidence": "My map focus sample did not return a visible CSS outline on its active element. The route-focus regression verifies navigation but I did not confirm a visible ring on every SVG stop. Contrast samples used computed colors and the first gradient stop, not pixel measurements across each background."
+    },
+    {
+      "criterion": "World, feedback and sound",
+      "evidence": "Copperhook's cranes, Fogmouth's lighthouse and the Exchange's buyers give the ports recognizable identities. The N1 loaded notice and hold increment, the N2 named stack at risk and jettison receipt, and the N30 half-value preview and rank were understandable without the log. The hazard writing named a loose plank in my one eel stack. In Chromium an oscillator probe recorded two starts for buy, three for sell and zero for sell after the HUD mute toggle. The source assigns a falling buy interval, rising sell chord and separate travel noise.",
+      "counterevidence": "The first post-trade tab press during the transition was easy to lose. The route cards also take substantial space away from the illustrated goods on the phone. Audible balance and timbre were untested."
+    },
+    {
+      "criterion": "Reliability and delivery",
+      "evidence": "Both packet hashes matched. The single 272,410-byte vanilla HTML booted by file URL. The offline desktop run finished without page errors or external requests and preserved its ledger. My negative fortune and the successful ¤340,145 desktop fortune both reconciled. Positive ending comprised ¤109,505 cash and ¤230,640 vault. The frozen storage probes recovered a corrupt save and booted a sandbox without same-origin access and with storage denied. Quantity assertions checked before/after cargo on each helper trade. Adverse cases included false ledger entries, a missing entry after reload and selling to an absent dealer through the factor. NOTES.md accompanies the build.",
+      "counterevidence": "Sandbox and denied-storage checks exercised boot and play rather than a full thirty-night settlement in every storage configuration."
+    }
+  ],
+  "priorities": [
+    "Give a deeply indebted captain a costly recovery option that still matters after night 10. In the cold run, profitable small trades could not approach even one night's interest.",
+    "Keep the ultimate destination and remaining travel time visible in the waypoint market, particularly while a fleet call is expiring.",
+    "Make the navigation bar acknowledge a tap immediately after a purchase. Keep the final purse amount readable throughout the transaction animation."
+  ],
+  "caps": [],
+  "limits": [
+    "Personal decisions are the night-specific ones described above. The frozen TouchRun policy handled intervening trades, upgrades, routes and encounter responses with visible touch controls and typed quantities. FAST was enabled after the cold opening. The fresh opening used separate browser storage. Both hashes were checked before play.",
+    "Desktop completion runs were scripted at seed 31. The mouse run used mouse clicks and filled numeric fields. Its first scratch iteration clicked too soon after onboarding. The completed run allowed 450 ms between controls. Verification, event, PR and trading probes were freshly executed frozen helpers. Their seeded states and direct function calls are supporting evidence.",
+    "Phone input was emulated. No physical touch, screen-reader session or listening test. The sound probe measured cue operation. Contrast checks sampled screens, rather than certifying every pixel or state."
+  ]
+}

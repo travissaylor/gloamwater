@@ -93,15 +93,20 @@ async function fleetHints(page) {
       S.day = day; S.loc = d.id; setView('market'); renderSide();
       const text = document.querySelector('.best-run')?.textContent || '';
       const current = fleetCall(), next = fleetCall(current.to + 1);
-      const advertised = [current, next].filter(Boolean).find(f => text.includes(GI[f.g].name) && text.includes(portName(f.d)));
-      result.push({ day, from: d.id, text, arrives: advertised ? Math.max(day + nightsTo(d.id, advertised.d), advertised.from) : null, closes: advertised?.to });
+      const calls = [current, next].filter(Boolean);
+      const arrival = f => Math.max(day + nightsTo(d.id, f.d), f.from);
+      const advertised = calls.find(f => text.includes(GI[f.g].name) && text.includes(portName(f.d)));
+      result.push({ day, from: d.id, text, reachable: calls.some(f => arrival(f) <= f.to), arrives: advertised ? arrival(advertised) : null, closes: advertised?.to });
     }
-    S.day = 4; S.loc = 'lq'; setView('map'); sel = 'ch'; renderMapState();
-    return { result };
+    S.day = 4; S.loc = 'lq'; setView('map'); sel = fleetCall().d; renderMapState();
+    return { result, selectedPort: DI[sel].name };
   });
-  for (const row of rows.result) insist(row.arrives !== null && row.arrives <= row.closes, 'Fleet hint closes before arrival: ' + JSON.stringify(row));
+  for (const row of rows.result) {
+    const valid = row.reachable ? row.arrives !== null && row.arrives <= row.closes : !row.text;
+    insist(valid, 'Fleet hint does not match reachable calls: ' + JSON.stringify(row));
+  }
   // setView builds the responsive map on its next animation frame.
-  await page.locator('.tcard h3').filter({ hasText: 'Copperhook' }).waitFor({ state: 'visible' });
+  await page.locator('.tcard h3').filter({ hasText: rows.selectedPort }).waitFor({ state: 'visible' });
   rows.dockNote = await page.locator('.dock-note').innerText();
   insist(rows.dockNote?.includes('before your arrival'), 'Selected port hides the known fleet closing time');
   return rows;

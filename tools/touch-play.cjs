@@ -62,7 +62,10 @@ async function observe(page) {
       districts: DISTRICTS.map(d => ({ id: d.id, name: d.name, danger: d.danger, cheap: [...d.cheap], dear: [...d.dear], services: [...d.svc] })),
       seen: JSON.parse(JSON.stringify(S.seen)),
       canals: EDGES.map(e => [...e]),
-      fleet: typeof FLEET_CALLS === 'undefined' ? [] : FLEET_CALLS.map(f => ({ d: f.d, g: f.g })),
+      fleet: typeof fleetCall === 'function' ? Array.from({ length: Math.ceil(NIGHTS / 4) }, (_, i) => {
+        const { d, g } = fleetCall(i * 4 + 1);
+        return { d, g };
+      }) : [],
       upgrade: { hold: HOLD_TIERS[S.holdTier + 1] || null, motor: MOTORS[S.motor + 1] || null },
       finalText: document.querySelector('.end-hero') ? document.querySelector('#modal').innerText : null
     };
@@ -294,9 +297,11 @@ class TouchRun {
     const enabled = async action => { const b = this.page.locator(`#side-body [data-act="${action}"]`); return await b.count() > 0 && await b.isEnabled(); };
     if (s.hull < 90 && await enabled('repair')) {
       await this.tap('#side-body [data-act="repair"]');
+      if (await this.page.locator('#ago').isVisible()) await this.tap('#ago');
       this.record({ action: 'service', service: 'repair' });
     } else if (s.hull < 70 && await enabled('patch')) {
       await this.tap('#side-body [data-act="patch"]');
+      if (await this.page.locator('#ago').isVisible()) await this.tap('#ago');
       this.record({ action: 'service', service: 'patch' });
     }
     s = await observe(this.page);

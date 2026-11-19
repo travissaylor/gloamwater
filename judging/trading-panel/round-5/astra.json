@@ -1,0 +1,87 @@
+{
+  "gameSha": "426e0c8b6bb73453c40d544db862a82285b0ce8f79f9093fc81d3e58fc2c53b1",
+  "rubricSha": "fe1176ac89f5cb902cb26c5714256c6920de3f25e8b66ec2a412fd5a6ac14b43",
+  "scores": [
+    95,
+    95,
+    91,
+    93,
+    93,
+    92,
+    92,
+    90,
+    89,
+    96
+  ],
+  "observations": [
+    {
+      "criterion": "Trade and cargo decisions",
+      "evidence": "Eight goods. My opening, middle and closing orders are below. A full hold with an absent buyer, a collector taking my trading capital, and the last possible arrival each changed the best order.",
+      "decisions": [
+        "N1. Bought seven pearls at ¤290 for Fogmouth, leaving ¤470. One eel to Exchange offered a safer 2/5 route against Fogmouth's 4/5. Chose the larger potential spread despite being ¤34 short of a leak patch. Sold at ¤422 on N2 for ¤924 profit.",
+        "N2–4. Bought 30 kelp at ¤45 with ¤2,074 left for emergencies. One ¤2,144 eel for Exchange would have left slots free. Copperhook had no kelp dealer. I carried the full hold one more night to Lanternquay instead of taking the ¤1,152 factor offer. The sale grossed ¤2,160.",
+        "N11. At Orchid, sold nine of ten saffron at ¤1,277 against ¤796 cost, keeping one to sell at Lanternquay. Four ¤305 pearls toward Exchange were tempting, but I needed the loan office. Collectors took ¤3,761 en route. The last saffron sold at ¤1,237.",
+        "N12–14. Cleared ¤8,719 debt and bought four ¤368 pearls out of the remaining ¤1,889. Keeping the loan would have funded the 21-pearl order on the screen. Exchange bid ¤479. I passed on that sale to reach Orchid's fleet before N16 and sold at ¤607.",
+        "N28. Sold eels and chips at Exchange. Took 14 saffron at ¤1,310 toward the Sluices over 28 pearls toward Fogmouth. The second route used both remaining nights. Saffron arrived at ¤1,889 and grossed ¤26,446.",
+        "N29–30. Bought 24 pearls at ¤389 to Lanternquay over seven ¤5,950 chips to Exchange. The pearls committed less money to an unconfirmed final buyer and traveled at risk 1/5. Sold all 24 at ¤561. Taking the half-price settlement immediately would have cost ¤6,732."
+      ],
+      "counterevidence": "The suggested order preselects quantity and destination. Several routine profitable trades needed little more than confirming the offer."
+    },
+    {
+      "criterion": "Routes and market intelligence",
+      "evidence": "Seven selectable islands, canals, individual sparklines and signed spreads. Before wireless, Fogmouth pearls showed ¤483 seen tonight and arrived at ¤422. Copperhook kelp showed ¤66 seen one night ago and arrived with no dealer. Lanternquay kelp showed ¤61 seen two nights ago and arrived at ¤72. On N28 I could compare one night at risk 3/5 with two nights at 4/5. A fleet schedule was a stronger buyer signal than a dated quote, but guaranteed no particular sale price.",
+      "counterevidence": "The below-quote stress figure on N2 was positive even though the absent dealer's actual fallback lost money. Those outcomes are on different screens."
+    },
+    {
+      "criterion": "Economy and progression",
+      "evidence": "My N12 repayment bought protection against the 10% rate but reduced the next order from 21 pearls to four. The continued run acquired a 45-slot hold and current wireless quotes. In the supporting WebKit run the vault earned ¤18,274 and held ¤231,390 at settlement. Matched finance fixture cloned the starting state, applied four allocations and advanced nine identical market nights without encounters. N10 worth was −¤7,639 idle, −¤7,353 banking ¤2,000 of starting cash, −¤6,258 repaying ¤2,000 and −¤8,730 adding ¤2,000 to both loan and vault. Borrowing to bank cost ¤1,091 relative to idle. Frozen fixtures also checked credit limits and bonded freight.",
+      "counterevidence": "Hold space was rarely binding after the opening. On N28 I had just 17 of 45 slots occupied. The matched probe isolates financing and gives no estimate of the best active trading strategy."
+    },
+    {
+      "criterion": "Risk, consequences and recovery",
+      "evidence": "N11 collectors offered ¤3,761 cash for ¤2,821 debt relief versus 39% escape with 9–18% hull loss on failure. The receipt matched both amounts. I recovered by selling the remaining saffron and shrinking the next load to four pearls. N29's gull offered a certain ¤6,000 loss versus a 70% chance to recover it with 10% hull also at stake on failure. The routine policy surrendered the bag, leaving cargo and hull intact. The mouse fixture's ¤720 toll reduced ¤4,000 to ¤3,280; 16 two-engine event fixture cases covered reload, jettison, payment and escape outcomes.",
+      "counterevidence": "The fixed ¤6,000 loss mattered much less late in my run than the smaller N11 levy. Both payments were scripted."
+    },
+    {
+      "criterion": "Run pacing and ending",
+      "evidence": "N1–4 working capital and missing buyers bound the plan. N11–14 the debt deadline competed with a time-limited fleet sale. N28–30 arrival time and the half-value dump decided the final route. Across the full itinerary I found no stretch of three consecutive nights without an order, sale, service or consequential route choice. Selling the final load raised ¤161,198 to ¤167,930. All cash, no vault, cargo or debt. Canal Runner was ¤82,070 below Lantern Broker.",
+      "counterevidence": "The policy traversed Orchid and Exchange repeatedly in the middle. The ending lists rank and loss totals but leaves the player to reconstruct which trades paid for the recovery."
+    },
+    {
+      "criterion": "Replay and adaptation",
+      "evidence": "Fresh N1 fleet demand favored Saint Mire. Chose 15 rain at ¤134 over one eel at ¤2,036. The fleet bought rain at ¤219 on N2. On N8 I kept underwater kelp, sold four eels and bought nine saffron at ¤761 for the fleet opening at Fogmouth on N9. Arrival ¤1,706. By N10 I had repaid ¤10,139 and still held ¤6,433 and 13 kelp. In the first run I paid collectors after N10. Another approach worth trying is reserving cash for early wireless instead of racing the repayment.",
+      "counterevidence": "Both fresh markets still rewarded following a prominently advertised route. Only the opening conditions and the first ten nights were independently replayed."
+    },
+    {
+      "criterion": "Onboarding and decision clarity",
+      "evidence": "Cold at 390×844, Cast off explained the loan and deadline. I skipped the tour after the ledger card. The comparison opened a seven-pearl order with price, total, post-buy purse, cargo, break-even and the exact reserve shortfall. Map selection surfaced risk and Sail. The N2 owned row showed ×7, avg ¤290, +46% here and opened directly on Sell. The warning about unconfirmed buyers explained Copperhook's missing kelp dealer on N3.",
+      "counterevidence": "The opening says Marrow wants repayment by night 10. I had to inspect the loan office to understand the rate and pursuit consequences of continuing overdue."
+    },
+    {
+      "criterion": "Input and accessibility",
+      "evidence": "390×844 Chrome touch reached settlement. The 1280×800 keyboard runner reached N30 with zero pointer events. Desktop mouse bought kelp and sailed to Copperhook, then paid the Gulls and settled in a N29 fixture. Reduced-motion phone probes on buy, sail, toll and sail-again controls measured heights 52, 44, 69 and 52 px. Tabbing showed a 2–3 px outline on all four screens. Computed foreground against the most common rendered interior background of each sampled control measured 9.66, 11.11, 11.85 and 9.85 to 1 respectively. Plus/minus, labels, shapes and dealer text supplement color.",
+      "counterevidence": "The N27 market screenshot showed long route copy wrapping to three lines and earlier recommendations scrolling out of sight. Contrast measurements cover four primary controls, not every secondary label or gradient position."
+    },
+    {
+      "criterion": "World, feedback and sound",
+      "evidence": "Fogmouth's lighthouse, Copperhook's crane and Saint Mire's chapel read as distinct silhouettes on dark water. The heron lamp and the collectors' floating ledgers gave the loan an identifiable owner. Buying displayed Loaded 7 Rust Pearls and −¤2,030, sailing showed a night card with the new district, and selling showed +¤924. Chromium ran a native AudioContext; the source defines separate synthesized trade and profit cues. Mute changed pressed state off and on. WebKit's audio stand-in counted 1,074 sound operations while running, zero while suspended.",
+      "counterevidence": "I did not listen to output. Repeated trade sheets and voyage cards impose a pause at normal speed; the longer run used acceleration."
+    },
+    {
+      "criterion": "Reliability and delivery",
+      "evidence": "Verified both supplied SHA-256 digests. The single vanilla HTML is 277,415 bytes; design notes accompany it. Direct file boot, restricted iframe without same-origin, blocked storage, corrupt-save recovery and zero external requests passed frozen verification. My N30 ledger survived reload with the exact score. The independent WebKit touch runner completed offline with empty error and network arrays. Fixture and UI checks covered split cash/cargo payments, absent-buyer factor proceeds, quantity limits, half-value settlement, and stale or missing ledger entries. In my final order 24 × ¤561 = ¤13,464 and the difference over the half-value preview was precisely ¤6,732.",
+      "counterevidence": "Restricted storage was boot-tested. I did not run a complete thirty-night voyage in that restricted iframe."
+    }
+  ],
+  "priorities": [
+    "On the route comparison, put the no-dealer factor proceeds beside the stressed sale estimate. A full hold of kelp turned a displayed positive margin into a loss or an extra night.",
+    "Let the player pin two routes in a compact phone comparison that stays in view while scanning goods. Preserve nights, quote age, buyer status and the remaining purse.",
+    "Explain the night-10 consequence on the opening ledger card, including the first higher-rate accrual and what collectors can take. Show the cash and cargo a repayment would leave for the next order."
+  ],
+  "caps": [],
+  "limits": [
+    "Independent direct-file Chrome opening at normal speed, 390×844, emulated touch. The first written observations preceded source, notes and tests. No physical phone, screen reader, software keyboard, silent-switch or listening assessment.",
+    "I selected the logged orders and destinations. Scratch helpers used the frozen TouchRun touch and quantity controls. FAST after the cold opening. The supplied visible-information policy handled routine trades, services, routes and event responses between personal decisions on N4–11 and N14–28, and N2–8 in the second run. The main run used generated market conditions, without resource fixtures.",
+    "Desktop mouse event and settlement used a stated fixture. Desktop keyboard and supplemental WebKit touch were frozen scripted completion runs. verify, event-check, pr-check and trading-check were rerun after the opening. The finance comparison is an isolated state simulation, not a played voyage. No panel or historical results used."
+  ]
+}

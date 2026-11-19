@@ -1,0 +1,85 @@
+{
+  "scores": [
+    92,
+    91,
+    85,
+    90,
+    89,
+    91,
+    91,
+    85,
+    86,
+    95
+  ],
+  "observations": [
+    "Four opening pearls left ¤908 for trouble. At the Exchange on N11, the limiting resource was a full hold. By N27, cash for eels competed directly with repayment. The six decisions below each had an executable alternative. N30 itself had an obvious best move.",
+    "The seven-node canal map put the selected route, one-night travel time, risk 1/5 and possible ¤365 toll beside Orchid's N1 quote. The Sluices alternative was also one night but risk 3/5. A scheduled fleet buyer improves confidence in finding a dealer. The quoted price still moved. See the three quote checks below. Comparing detailed terms requires selecting ports in turn.",
+    "Debt had teeth. Paying ¤8,000 on N13 cut the following night's interest by about ¤800 but left less working capital. On N27 a partial repayment still funded four eels. The desktop keyboard policy repaid early, bought upgrades and later deposited ¤33,522. The bank and upgrades give profitable runs more options. The personal cash-poor run rarely had a realistic upgrade choice. The two seeds do not isolate financing strategy.",
+    "On N7 a leak took one eel, then a search cut the remaining cargo. The helper kept sailing with one eel and switched to affordable rain, using 29 slots that could otherwise carry higher-value goods. On N15 the ¤3,120 patch was beyond the purse, so jettisoning a Ghost Chip was forced. In the N15 gull-pay fixture, giving up the advertised ¤1,000 left ¤9,000 and full hull. Matched leak fixtures offered ¤11,400 to preserve Moon Ink or one unit jettisoned. Cash, cargo and hull deltas matched both offers on both engines.",
+    "The opening concerned the next sale, the middle concerned overdue debt and recovery, and the last fleet call expired on arrival. A squall shelter cost the last shopping night. N30 explained both the half-price liquidation and the ¤27,153 gap to Canal Runner. Routine nights used a helper, so I cannot certify the longest stretch without a meaningful choice.",
+    "Seed 44 changed both my opening cargo and my approach to debt. Its N8 eel sale freed enough cash to clear the loan in time. On seed 43 I had reached N11 with a full hold and overdue debt. Another approach worth testing is preserving the seven eels for Saint Mire and accepting another interest charge. Only the second opening was played.",
+    "The first coach card explained purse, debt, due date and hold. After skipping the rest I could buy, navigate and sell using the circular and row labels. N2's fleet badge explained expensive pearls at Orchid. 'No dealers tonight' and N11's 'Hold full' explained unavailable trades. The difference between relative-to-usual and profit-on-owned percentages takes closer reading when both appear together.",
+    "Touch reached settlement. The desktop keyboard harness completed trade, map, encounters and ending with zero pointer events. The 1280 px mouse regression exercised trade and port selection. A separate N30 mouse fixture paid the gull and settled. The first immediate mouse answer was ignored during the modal guard. Waiting 650 ms after visibility worked. Focus outlines, signed percentages, text labels and generous map targets helped. Contrast and target sizes were not audited on every screen.",
+    "The reflected skyline, lamp-lit wharves and ship illustrations made the canal setting recognizable. Quantity and purse changes confirmed purchases, a port card and night change confirmed travel, and illustrated choices spelled out losses. The ending named the next rank and its distance. Oscillator synthesis, a running Chromium audio context and a reversible mute toggle were checked. Cue identity by ear and normal animation pacing remain unverified.",
+    "The offline local file settled with no page errors or HTTP requests. N30 cash and debt reconcile exactly, and the same score survived reload. The 267,386-byte self-contained HTML passed source checks. Storage reads, writes and removal are guarded. Supplemental checks booted a no-same-origin sandbox with blocked storage, recovered corrupt storage, and preserved event outcomes across reload. NOTES.md meets length and content requirements. Restricted storage was tested at startup, not for a full thirty-night run."
+  ],
+  "priorities": [
+    "Show the remaining liquid reserve against the quoted patch or toll when confirming a purchase. The N15 leak made the cost of spending down cash clear only after departure.",
+    "Keep a second route visible alongside the recommended one, with quote age, travel time and toll exposure. This would let players compare competing goods and ports without reopening cards.",
+    "Make event choices visibly ready when their input guard expires. The desktop gull card looked actionable on the first click, yet remained open until a later click."
+  ],
+  "caps": [],
+  "limits": [
+    "Windows WebKit emulated 390×844 touch. No physical iPhone, on-screen keyboard, toolbar or safe-area test. FAST and reduced motion were enabled. WebKit sound used the supplied stand-in.",
+    "The six checkpoints were my choices, executed by TouchRun taps and typed quantities. Routine travel, event responses and remaining trades used its visible-input helpers. Scripted keyboard, regression fixtures and simulator results are supplemental. No shared reviewer evidence.",
+    "The financing comparison below uses matched published terms and observed prices. It does not replay a whole alternate strategy or rule out every economy bypass. No cap trigger observed.",
+    "Contrast, physical reach and normal-speed sound and animation quality received limited coverage."
+  ],
+  "gameSha": "4b9fd917e9ab94a8ae9c9cdd015d9e4d34f91180f9d4b274c9fe982ab912539d",
+  "rubricSha": "fe1176ac89f5cb902cb26c5714256c6920de3f25e8b66ec2a412fd5a6ac14b43",
+  "playEvidence": {
+    "firstImpression": "The amber Cast off button was easy to find against the reflected city skyline. The first market immediately put a dated price and downside calculation next to a concrete offer.",
+    "personalDecisions": [
+      [
+        1,
+        "Lanternquay",
+        "Buy four pearls at ¤398 for Orchid, keeping ¤908. The circular proposed five. Rain for the Sluices offered a smaller percentage edge and more danger.",
+        "Arrived N2 at ¤707 versus ¤756 advertised. Four sold for ¤2,828."
+      ],
+      [
+        2,
+        "Orchid",
+        "Sell the pearls and buy 12 rain at ¤118 for Saint Mire. Six would risk less on the unconfirmed, one-night-old ¤216 quote.",
+        "Arrived N3 with ¤2,320 and 12 rain worth ¤3,696 at ¤308 each."
+      ],
+      [
+        11,
+        "Drowned Exchange",
+        "Sell the eel and 10 of 29 rain, buy ten saffron at ¤540, carry 19 rain to the Sluices. Carrying all 29 rain toward the ¤218 quote would preserve a simpler route.",
+        "N12 rain ¤174, saffron ¤545. The switch lost ¤200 on those ten slots over one leg versus keeping the rain and cash, before later sales."
+      ],
+      [
+        12,
+        "The Sluices",
+        "Sell the remaining 19 rain for ¤3,306. Carry the saffron home to the lender. Selling saffron at ¤545 now would remove price risk. Orchid offered a two-night alternative at a remembered ¤834.",
+        "N13 Lanternquay paid ¤698 for each saffron. I sold ten and repaid ¤8,000."
+      ],
+      [
+        26,
+        "Orchid",
+        "Liquidate one dreamsilk at ¤14,029 and 17 rain at ¤226. Sail empty to Lanternquay to address 10% debt. Reinvesting the proceeds at Orchid offered another cargo leg but exposed the repayment fund.",
+        "N27 purse ¤19,613, debt about ¤17.2k. Full repayment was feasible."
+      ],
+      [
+        27,
+        "Lanternquay",
+        "Repay ¤10,000 and buy four eels at ¤1,831 for the final night of the Exchange fleet call. Paying the entire debt would leave ¤2,453 and fund one eel. Buying the suggested nine would leave the debt accruing.",
+        "N28 four eels quoted and sold for ¤13,304, a ¤5,980 gross gain. The next night of interest on the remaining principal was about ¤716."
+      ]
+    ],
+    "matchedDefaultCheck": "N27, same purse, prices, one-night route and fleet window. Full repayment plus one eel yields ¤1,495 trading margin and zero interest. Partial repayment plus four actually produced ¤5,980 margin less about ¤716 interest. The difference was about ¤3,769 over this leg. More cargo would also expose more cash to an unfavorable arrival. Counterfactual arithmetic uses the observed arrival, without a second RNG draw.",
+    "settlement": "N28 helper sheltered in a squall and reached N30. I sold one dreamsilk and five saffron for ¤19,449 instead of accepting ¤9,725 liquidation. ¤22,377 cash + ¤0 vault + ¤0 cargo − ¤9,530 debt = ¤12,847, Bilge Rat, 27 voyages. Ledger entry persisted.",
+    "secondVoyage": "Fresh seed 44. Bought 30 kelp for ¤1,140 for Copperhook's fleet instead of repeating the pearl route. Quote ¤66, arrival ¤87. On N8 at the Exchange I sold seven eels at ¤2,135 against ¤2,182 average cost instead of speculating on Saint Mire's two-night-old quote or buying three suggested saffron for Orchid. Returned to Lanternquay and paid the full loan on N9. Played N10 and arrived N11 with ¤6,450 cash, a chip and a dreamsilk, zero debt and full hull.",
+    "technical": "Fresh verify.cjs, keyboard-play.cjs and event-check.cjs reports passed. Event fixtures deliberately set resources and outcome seeds. The keyboard run was independent of the two WebKit voyages. Temporary evidence is under %TEMP%/gloam-astra-9593."
+  }
+}

@@ -1,2 +1,5 @@
 # Frozen judging inputs must retain the exact bytes recorded in BUILD.json.
 judging/**/packet/** -text
+
+/game/index.html text eol=crlf
+/judging/trading-rubric.md text eol=lf
