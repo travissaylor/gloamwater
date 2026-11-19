@@ -25,6 +25,7 @@ The 253,939-byte game at SHA-256 `514fe0fba64b5fab2cb80c2909198befb7cb1685010bba
 | Baseline | [90.53](baseline/fable.json) | [83.53](baseline/opus.json) | [89.86](baseline/astra.json) | **87.97** |
 | Round 1 | [89.56](round-1/fable.json) | [86.10](round-1/opus.json) | [88.93](round-1/astra.json) | **88.20** |
 | Round 2 | [90.06](round-2/fable.json) | [88.67](round-2/opus.json) | [90.83](round-2/astra.json) | **89.85** |
+| Round 3 | [89.68](round-3/fable.json) | [88.69](round-3/opus.json) | [89.42](round-3/astra.json) | **89.26** |
 
 All three settled a cold touch run on night 30, with varying use of scripts to drive visible controls. All replayed the opening through night 10. No judge applied a cap. The largest disagreement was on economy and progression, which ranged from 76 to 92. Closing fortunes ranged from a ¤2,752 deficit to ¤436,943. The difference reflects individual routes, seeds, choices and judgments.
 
@@ -61,3 +62,15 @@ Round 3 puts Settle up and the exact projected score above the market rows. Repa
 ## Round 3 verification
 
 The frozen candidate is 267,386 bytes, SHA-256 `4b9fd917e9ab94a8ae9c9cdd015d9e4d34f91180f9d4b274c9fe982ab912539d`. All eight broad regression groups, 16 event fixtures, 30 focus/fleet/ledger checks and 10 trading fixtures passed. The latter verify the visible settlement preview and the larger freight bond, capacity, risk and save state. A separate quote fixture reproduced the route-card proceeds, toll disclosure and trade mode cases. The modal focus check initially found a covered disclosure at 360 px. Centering the control when needed resolved it in the final run.
+
+## Round 3 panel and Round 4 design
+
+Each judge settled a cold touch voyage and played another opening through night 10. No caps applied. The panel mean fell 0.59 points to 89.26. Economy and progression averaged 86.33. The judges identified missing buyers, quote drift, repeated encounters and a late economy concentrated in a few expensive goods. None exercised heavy freight in direct play.
+
+Round 4 shows two routes when available and states how much cash the proposed load leaves for a leak or toll. Raw port quotes flag temporary surges. Route estimates label the boost when a scheduled fleet begins before arrival, and use the corresponding dealer depth. When regular dealers are absent, the player can keep the cargo or sell the whole stack locally at 60% of appraised value. New voyages get a late Saffron fleet call in place of one Dreamsilk call.
+
+Arrival events avoid the last three results when other eligible events exist. Encounter options show escape damage, inspection rounding and the potential payoff for fighting.
+
+## Round 4 verification
+
+The frozen candidate is 272,410 bytes, SHA-256 `012cb10f88025f762235b1e087402d015a17793c839659006a747b7d24eef206`. All eight broad regression groups, 16 event fixtures, 30 focus/fleet/ledger checks and 14 trading fixtures passed. New fixtures verify route context and reserve math, the factor's exact payout after reload, the arrival cooldown and fleet estimate labeling. An older save keeps its established fleet cargo.

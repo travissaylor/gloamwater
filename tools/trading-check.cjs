@@ -139,6 +139,106 @@ async function keyboardTrade(page) {
   assert.equal(await page.evaluate(() => !!document.activeElement.closest('.row')), true);
 }
 
+async function reserveAndRoutes(page) {
+  await fresh(page);
+  await page.evaluate(() => {
+    const state = newState('Reserve fixture');
+    Object.assign(state, { day: 14, cash: 2000, debt: 0 });
+    for (const d of DISTRICTS) if (d.id !== 'lq') state.seen[d.id] = {};
+    state.seen.ot.ink = { p: 27000, day: 14, st: true, sh: false };
+    state.seen.de.rain = { p: 220, day: 13, st: true, sh: false };
+    state.stock.lq.ink = true;
+    state.stock.lq.rain = true;
+    state.prices.lq.ink = 2000;
+    state.prices.lq.rain = 90;
+    startGame(state, false);
+  });
+  assert.match(await page.locator('.best-run').innerText(), /Moon Ink.*Orchid/s);
+  assert.match(await page.locator('.also-route').innerText(), /Bottled Rain.*Exchange.*seen 1n ago.*1 night.*risk.*Gull toll/s);
+  await page.locator('.best-run').tap();
+  assert.match(await page.locator('[data-sale-port="ot"]').innerText(), /Orchid/);
+  assert.match(await page.locator('.reserve-note').innerText(), /patch costs ¤11,400.*remaining purse is ¤11,400 short/s);
+  await page.waitForTimeout(450);
+  await page.locator('#qgo').tap();
+  assert.equal(await page.evaluate(() => S.cargo.ink.q), 1);
+  const waiting = await page.evaluate(() => {
+    void evLeak();
+    return document.querySelector('#modal .modal').classList.contains('pointer-wait');
+  });
+  assert.equal(waiting, true);
+  await page.waitForFunction(() => !document.querySelector('#modal .modal').classList.contains('pointer-wait'));
+  assert.match(await page.locator('[data-choice="pay"]').innerText(), /11,400/);
+}
+
+async function dockFactor(page) {
+  await fresh(page);
+  await page.evaluate(() => {
+    const state = newState('Factor fixture');
+    Object.assign(state, { day: 17, cash: 1100, debt: 0 });
+    state.stock.lq.pearl = false;
+    state.prices.lq.pearl = 420;
+    state.cargo.pearl = { q: 4, cost: 300 };
+    startGame(state, false);
+  });
+  await page.locator('.row[data-g="pearl"]').tap();
+  const sale = page.locator('[data-factor]');
+  assert.match(await sale.innerText(), /Sell 4 for ¤1,008/);
+  await page.waitForTimeout(450);
+  await sale.tap();
+  assert.deepEqual(await page.evaluate(() => [S.cash, S.cargo.pearl.q, S.press.lq.pearl]), [2108, 0, 0]);
+  await fresh(page);
+  await page.locator('#t-cont').tap();
+  assert.deepEqual(await page.evaluate(() => [S.cash, S.cargo.pearl.q]), [2108, 0]);
+}
+
+async function arrivalVariety(page) {
+  await fresh(page);
+  await page.evaluate(() => {
+    const state = newState('Variety fixture');
+    state.arrivalHistory = ['crate', 'leak', 'gull'];
+    startGame(state, false);
+  });
+  await fresh(page);
+  await page.locator('#t-cont').tap();
+  const { recent, events } = await page.evaluate(() => ({
+    recent: S.arrivalHistory,
+    events: Array.from({ length: 50 }, (_, i) => {
+      S.rngE = i;
+      return rollArrivalEvent(false);
+    }).filter(Boolean)
+  }));
+  assert.deepEqual(recent, ['crate', 'leak', 'gull']);
+  assert(events.length > 0);
+  assert(events.every(id => !recent.includes(id)));
+}
+
+async function fleetEstimates(page) {
+  await fresh(page);
+  await page.evaluate(() => {
+    const state = newState('Fleet fixture');
+    state.day = 4;
+    state.fleetOrder = [0, 1, 2, 3, 4, 5, 6, 7];
+    state.stock.lq.rain = true;
+    state.prices.lq.rain = 150;
+    for (const d of DISTRICTS) if (d.id !== 'lq') state.seen[d.id] = {};
+    state.seen.sm.rain = { p: 300, day: 4, st: true, sh: false };
+    state.seen.ot.rain = { p: 990, day: 4, st: true, sh: true };
+    startGame(state, false);
+  });
+  assert.match(await page.locator('.best-run').innerText(), /Bottled Rain.*Saint Mire.*420.*fleet-adjusted estimate.*fleet buyer scheduled/s);
+  await page.locator('.best-run').tap();
+  assert.match(await page.locator('[data-sale-port="sm"]').innerText(), /Mire.*420.*fleet-adjusted estimate/s);
+  await page.waitForTimeout(450);
+  await page.locator('details.trade-intel summary').tap();
+  assert.match(await page.locator('.else').innerText(), /Orchid.*surge fades/s);
+  assert.deepEqual(await page.evaluate(() => {
+    const current = fleetCall(29).g;
+    delete S.bulkFleet;
+    const valid = validSave(S);
+    return [current, valid, fleetCall(29).g, S.seen.sm.rain.p];
+  }), ['saffron', true, 'silk', 300]);
+}
+
 async function creditLine(page) {
   await fresh(page);
   await page.evaluate(() => {
@@ -305,6 +405,10 @@ async function main() {
     ['collector payment matches its offer', page => payment(page, 'collectors')],
     ['Gull Gang payment matches its offer', page => payment(page, 'gulls')],
     ['repair and quote guides offer reachable options and compare a mixed hold', marketGuide],
+    ['compare two routes and show the exact patch cost and event readiness', reserveAndRoutes],
+    ['sell to the dock factor without moving the market', dockFactor],
+    ['arrival cooldown survives reload and favors other events', arrivalVariety],
+    ['fleet forecasts apply the scheduled boost and flag fading surges', fleetEstimates],
     ['bonded freight needs upgraded hold space and pays once across reload', freight],
     ['heavy freight saves the larger stake and can be accepted once', heavyFreight],
     ['settlement prediction matches the result and stays above the fold', finalPreview]

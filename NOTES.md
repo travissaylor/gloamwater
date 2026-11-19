@@ -10,14 +10,14 @@ due by night 10, and have thirty nights to get rich. Open `game/index.html` offl
 - **First trade.** Night 1's harbor circular records all 56 port quotes. Later, visit or fit wireless to refresh remote quotes.
   Default buys keep 15% of cash aside within flat depth; Max deliberately uses the full legal order size and price impact.
 - **Market depth.** Dealers trade a few units at the posted price; past that each unit costs more (or fetches less) and the
-  price takes a night or two to recover. The sheet says how many are left at the posted price and warns before a losing order.
+  price takes a night or two to recover. The sheet shows order impact, cash left for repairs and tolls, and a factor offer if dealers are absent.
 - **Canals.** Sail along a canal for one night. Lanternquay joins every district; the others sit on a ring, so a district with
   no direct canal is two nights via a waypoint. Tap your own district to stay a night in port. Tap during a voyage to skip it.
 - **Shocks.** Surges and gluts last two nights, weaker on the second. You hear of them where you are, by rumour, always with the
   wireless set, or a night early from Madame Ysolde or Pell the lamplighter.
 - **Fleet calls.** The market's wireless button opens the public calendar and bulletins. Every four nights a new port buys a named good:
   40% extra demand and twice the depth. The order varies per voyage. Prices can drift and the boost ends after the closing night.
-  Suggested routes show a lower-price scenario. Buyers can be absent, and surge quotes remain in the port details.
+  Route comparisons show a lower-price scenario and mark fleet estimates. Dated surge quotes stay visible in the price history.
 - **Money.** Repay at Lanternquay: 6% nightly, 10% after night 10. Collectors pursue overdue debt or debt over ¤12,000.
   The borrowing limit is ¤6,000 plus positive net worth, capped at ¤30,000. The vault pays 1.5% nightly.
 - **Upgrades.** Copperhook Docks: hold, engines, repairs. Saint Mire (or Fogmouth, dearer): weapons. Drowned Exchange: a wireless
