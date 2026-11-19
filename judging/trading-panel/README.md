@@ -93,7 +93,9 @@ Fable and Opus hit their provider's usage limit on night 13 before submitting sc
 
 ## Final result
 
-Round 5 met the target. The unrounded mean was 270.04 ÷ 3, about 90.0133, up 2.04 points from the baseline. No judge applied a cap. The delivered file is the exact Round 5 build.
+Round 5's reported mean was 270.04 ÷ 3, about 90.0133, up 2.04 points from the baseline. No judge applied a cap. Fable and Opus each reported a pacing score of 90 and documented continuous decisions from night 13 onward. Their reports describe opening decisions but leave parts of nights 1–12 undocumented for the rubric's pacing requirement. Reducing either pacing score by one point would bring the mean to 89.98. The individual reports and scores are preserved as submitted.
+
+The panel scored the HTML at commit `45afd42` with CRLF line endings. The LF Git blob has SHA-256 `e6faa27012f889e6415a26abe7462f47dd92244de95a875c28f56b09a54250a5`. To reproduce the scored bytes, read `45afd42:game/index.html` from Git and convert each LF to CRLF before hashing. The rubric uses LF, and its committed bytes match the panel digest. Repository attributes now pin these checkout conventions. The PR review fixes are subsequent to the scored build and have their own regression checks.
 
 | Criterion | Mean out of 100 | Judge range |
 |---|---:|---:|

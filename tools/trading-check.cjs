@@ -212,6 +212,61 @@ async function arrivalVariety(page) {
   assert(events.every(id => !recent.includes(id)));
 }
 
+async function factorRoute(page) {
+  await fresh(page);
+  await page.evaluate(() => {
+    const s = newState('Full stack fixture');
+    Object.assign(s, { day: 20, loc: 'fm', cash: 0 });
+    s.cargo.ink = { q: 30, cost: 10000 };
+    s.stock.fm.ink = false;
+    s.prices.fm.ink = 20000;
+    for (const d of DISTRICTS) s.seen[d.id] = {};
+    s.seen.ch.ink = { p: 11000, day: 20, st: true };
+    startGame(s, false);
+  });
+  assert.equal(await page.locator('[data-route-tip="ch"]').count(), 0);
+  await page.evaluate(() => { S.seen.ch.ink.p = 20000; renderAll(); });
+  assert.match(await page.locator('.best-run').innerText(), /Carry 30 Moon Ink.*Copperhook.*selling the stack to the factor/s);
+}
+
+async function quoteKeyboard(page) {
+  await fresh(page);
+  await page.evaluate(() => {
+    const s = newState('Quote keyboard fixture');
+    Object.assign(s, { day: 2, cash: 3000 });
+    s.cargo.pearl = { q: 1, cost: 100 };
+    for (const d of DISTRICTS) s.seen[d.id] = {};
+    s.seen.ch.pearl = { p: 900, day: 1, st: true };
+    startGame(s, false);
+  });
+  await page.locator('.row[data-g="pearl"]').press('Enter');
+  await page.locator('[data-sale-port]').press('Enter');
+  assert.equal(await page.evaluate(() => document.activeElement.dataset.act), 'sail');
+  const details = page.locator('[data-act="portdetails"]');
+  await details.press('Enter');
+  await page.locator('[data-port-report]').press('Enter');
+  await page.keyboard.press('Escape');
+  assert.equal(await page.evaluate(() => document.activeElement.dataset.act), 'portdetails');
+  assert.deepEqual(await page.evaluate(() => [S.day, S.cash]), [2, 2820]);
+  await page.evaluate(() => document.activeElement.blur());
+  await page.keyboard.press('Enter');
+  assert.equal(await page.evaluate(() => S.trip), null);
+}
+
+async function unsettledBond(page) {
+  await fresh(page);
+  await page.evaluate(() => {
+    const s = newState('Freight losses fixture');
+    Object.assign(s, { day: 30, cash: 20000, debt: 0, holdTier: 1 });
+    s.contracts.push({ to: 'ch', due: 30, reward: 42000, size: 40, bond: 18000 });
+    startGame(s, false);
+  });
+  await page.locator('.final-banner [data-act="settle"]').press('Enter');
+  await page.locator('[data-choice="yes"]').press('Enter');
+  assert.match(await page.locator('.statgrid').innerText(), /Losses and forfeits\s+¤18\.0k/);
+  assert.match(await page.locator('#final-n').innerText(), /20,000/);
+}
+
 async function fleetEstimates(page) {
   await fresh(page);
   await page.evaluate(() => {
@@ -499,6 +554,8 @@ async function main() {
     ['repair and quote guides offer reachable options and compare a mixed hold', marketGuide],
     ['compare two routes and show the exact patch cost and event readiness', reserveAndRoutes],
     ['sell to the dock factor without moving the market', dockFactor],
+    ['compare the whole stack when a factor is the local alternative', factorRoute],
+    ['port quotes restore keyboard focus and prevent stray Enter from sailing', quoteKeyboard],
     ['arrival cooldown survives reload and favors other events', arrivalVariety],
     ['fleet forecasts apply the scheduled boost and flag fading surges', fleetEstimates],
     ['distressed debt can refinance once with the disclosed fee and rate', workout],
@@ -509,6 +566,8 @@ async function main() {
     ['settlement prediction matches the result and stays above the fold', finalPreview]
   ]);
   await run(chromium, { viewport: { width: 1280, height: 800 } }, [
+    ['port quotes are reachable by keyboard on desktop', quoteKeyboard],
+    ['settlement reports outstanding freight bonds without charging twice', unsettledBond],
     ['keyboard follows Sail and keeps context after trading and sailing', keyboardTrade],
     ['repeat borrowing cannot enlarge the credit limit', creditLine],
     ['fleet order varies and persists, with focus held inside the tour', calendarAndTour]

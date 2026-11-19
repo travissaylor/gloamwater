@@ -1357,17 +1357,20 @@ function bestKnownRoutes(){
       if(d.id===S.loc)return;
       const sn=recentBuyer(d.id,g.id),nights=nightsTo(S.loc,d.id);
       if(!sn)return;
-       const depth=Math.max(1,Math.floor(depthOf(d.id,g.id,S.day+nights).n));
+      const terms=depthOf(d.id,g.id,S.day+nights);
+      const depth=Math.max(1,Math.floor(terms.n));
       const stress=quoteStress(S.day+nights-sn.day),testPrice=sn.p*(1-stress);
       if(q){
         const amount=Math.min(q,depth),value=(testPrice*amount-quoteBuy(g.id,amount))/nights;
-         if(value>0)choices.push({g,d,value,stress,amount,quote:sn.p,ago:S.day-sn.day,nights,fleetAdjusted:sn.fleetAdjusted,mode:'buy'});
+        if(value>0)choices.push({g,d,value,stress,amount,quote:sn.p,ago:S.day-sn.day,nights,fleetAdjusted:sn.fleetAdjusted,mode:'buy'});
       }
       if(cargo.q){
-        const amount=Math.min(cargo.q,depth);
-        const local=S.stock[S.loc][g.id]?quoteSell(g.id,amount):factorQuote(g.id,cargo.q)*amount/cargo.q;
-        const value=(testPrice*amount-local)/nights;
-         if(value>0)choices.push({g,d,value,stress,amount,quote:sn.p,ago:S.day-sn.day,nights,fleetAdjusted:sn.fleetAdjusted,mode:'carry'});
+        const factor=!S.stock[S.loc][g.id];
+        const amount=factor?cargo.q:Math.min(cargo.q,depth);
+        const local=factor?factorQuote(g.id,amount):quoteSell(g.id,amount);
+        const proceeds=factor?Math.floor(testPrice*pressInt(-amount,0,terms.n,terms.d)+1e-6):testPrice*amount;
+        const value=(proceeds-local)/nights;
+        if(value>0)choices.push({g,d,value,stress,amount,quote:sn.p,ago:S.day-sn.day,nights,fleetAdjusted:sn.fleetAdjusted,mode:'carry'});
       }
     });
   });
@@ -1389,7 +1392,7 @@ function bestRunHTML(){
   if(best){
     const carry=best.mode==='carry';
     const noBuyer=carry&&!S.stock[S.loc][best.g.id],amount=fmt(best.value*best.nights);
-    const scenario=noBuyer?`+${amount} vs dock factor appraisal`:`+${amount} ${carry?'vs selling here':'over purchase cost'}`;
+    const scenario=noBuyer?`+${amount} vs selling the stack to the factor · assumes normal dealer depth`:`+${amount} ${carry?'vs selling here':'over purchase cost'}`;
     const buyer=fleetMult(best.d.id,best.g.id,S.day+best.nights)>1?'fleet buyer scheduled':'buyer unconfirmed';
     const other=routes.find(r=>r.g!==best.g&&r.d!==best.d)||routes.find(r=>r.g!==best.g||r.d!==best.d);
     return `<button class="best-run" ${routeAction(best)}>${ico(carry?'crate':'arrowUp')}<div><b>${carry?'Carry':'Compare'} ${best.amount} ${best.g.name} → ${esc(portName(best.d.id))}</b><small>${fmt(best.quote)} each · ${routeTerms(best)}</small><small>At ${pct(best.stress)} lower: ${scenario} · ${buyer}</small></div></button>`
@@ -1837,7 +1840,7 @@ function renderTravelCard(){
     <div class="tc-body">${!here&&!last?`<p>Gull Gang toll with this purse and hold: <b>${tollPreview()}</b>.</p>`:''}${fleetCall().d===sel?`<div class="result gold"><b>Fleet call: ${GI[fleetCall().g].name}</b> through night ${fleetCall().to}. 40% demand boost, twice the depth. Arrival prices can change.</div>`:''}${news}${tags}${known}
     ${svcs?`<div class="tags"><span class="tl">Services</span>${svcs}</div>`:''}
     <p>${d.blurb}</p></div>
-    <div class="tc-act">${here?(last?`<button class="btn primary lg" data-act="settle" style="flex:1">Final night · settle up</button>`:`<button class="btn" data-act="gomarket" style="flex:1">Open market</button><button class="btn amber lg" data-act="stay" style="flex:1">Stay the night</button>`):
+     <div class="tc-act">${!here?`<button class="btn port-details" data-act="portdetails" data-port="${sel}">Port details</button>`:''}${here?(last?`<button class="btn primary lg" data-act="settle" style="flex:1">Final night · settle up</button>`:`<button class="btn" data-act="gomarket" style="flex:1">Open market</button><button class="btn amber lg" data-act="stay" style="flex:1">Stay the night</button>`):
       last?`<button class="btn primary lg" data-act="settle" style="flex:1">Final night · settle up</button>`:
       nights===1?`<button class="btn primary lg" data-act="sail" data-d="${sel}">Sail here · 1 night <kbd>⏎</kbd></button>`:
       S.day>=NIGHTS-1?`<button class="btn primary lg" data-act="sail" data-d="${hop}">Too far for the last night: sail to ${DI[hop].name}</button>`:
@@ -1847,7 +1850,8 @@ function renderTravelCard(){
 }
 function selectDistrict(id,keyboard=false){
   if(busy)return;
-  sel=id;$('#toasts').innerHTML='';noticeLayout();sfx.click();renderMapState();
+  sel=id;$('#toasts').innerHTML='';noticeLayout();sfx.click();
+  if(!mapBuilt)buildMap();else renderMapState();
   if(sel&&(keyboard||!isNarrow())){
     const action=$('#tcard-slot [data-act=sail], #tcard-slot [data-act=stay], #tcard-slot [data-act=settle]');
     if(action)softFocus(action,{preventScroll:true});
@@ -1889,7 +1893,10 @@ function openPortDetails(did){
     if(S.circularDay===S.day||S.cash<CIRCULAR_FEE)return;
     S.cash-=CIRCULAR_FEE;S.circularDay=S.day;recordQuotes(d);sfx.buy();
     log(`Bought tonight’s prices at ${d.name} for ${fmt(CIRCULAR_FEE)}.`,'info');
-    save();renderAll();openPortDetails(did);
+    const returnToMap=lastFocus?.matches('[data-act="portdetails"]');
+    save();renderAll();
+    if(returnToMap&&!lastFocus.isConnected)lastFocus=$('#tcard-slot [data-act="portdetails"]');
+    openPortDetails(did);
   };
 }
 function openMarketIntel(){
@@ -2002,7 +2009,6 @@ document.addEventListener('keydown',e=>{
     const ae=document.activeElement;
     if(ae&&ae.classList.contains('row')){e.preventDefault();openTrade(ae.dataset.g);return;}
     if(ae&&ae.classList.contains('node')){e.preventDefault();if(sel===ae.dataset.d&&sel!==S.loc)sailTo(sel);else selectDistrict(ae.dataset.d,true);return;}
-    if(sel&&sel!==S.loc&&!(ae&&ae.tagName==='BUTTON')){e.preventDefault();sailTo(sel);return;}
   }
   if(k===' '&&document.activeElement&&document.activeElement.classList.contains('node')){e.preventDefault();selectDistrict(document.activeElement.dataset.d,true);}
 });
@@ -2108,7 +2114,7 @@ function openTrade(gid,mode,quantity,port){
   </div>`,{dismiss:closeModal,onKey});
   el.querySelectorAll('[data-x]').forEach(b=>b.onclick=closeModal);
   const saleLink=el.querySelector('[data-sale-port]');
-  if(saleLink)saleLink.onclick=()=>{closeModal();setView('map');selectDistrict(saleLink.dataset.salePort);};
+  if(saleLink)saleLink.onclick=e=>{closeModal();setView('map');selectDistrict(saleLink.dataset.salePort,e.detail===0);};
   const factorButton=el.querySelector('[data-factor]');
   if(factorButton)factorButton.onclick=()=>{
     const result=coreSell(gid,c.q,true);if(!result)return;
@@ -3099,7 +3105,8 @@ function tally(reason){
   const cargo=sunk?0:Math.round(cargoValueHere()*.5);
   const cash=sunk?0:S.cash;
   const net=cash+S.bank+cargo-S.debt;
-  return{cash,bank:S.bank,cargo,debt:S.debt,net,sunk};
+  const forfeited=S.contracts.reduce((sum,c)=>sum+(c.bond||0),0);
+  return{cash,bank:S.bank,cargo,debt:S.debt,net,sunk,losses:S.stats.lost+forfeited};
 }
 // ends the run and writes the ledger once; safe to call before any card is shown
 function recordRun(reason){
@@ -3127,7 +3134,7 @@ async function endGame(reason,rec){
     </div>
     <div class="statgrid">
       <div>Voyages<b>${S.stats.trips}</b></div><div>Best single profit<b>${S.stats.bestFlip?fmtK(S.stats.bestFlip):'—'}</b></div><div>Peak worth<b>${fmtK(S.stats.peak)}</b></div>
-      <div>Encounters<b>${S.stats.fights}</b><small>won ${S.stats.won} · fled ${S.stats.fled}</small></div><div>Debt interest<b>${fmtK(S.stats.interest)}</b><small>Vault earned ${fmt(S.stats.vaultEarned)}</small></div><div>Losses and forfeits<b>${fmtK(S.stats.lost)}</b></div>
+      <div>Encounters<b>${S.stats.fights}</b><small>won ${S.stats.won} · fled ${S.stats.fled}</small></div><div>Debt interest<b>${fmtK(S.stats.interest)}</b><small>Vault earned ${fmt(S.stats.vaultEarned)}</small></div><div>Losses and forfeits<b>${fmtK(t.losses)}</b></div>
     </div>
     ${nextRankHTML(t.net)}
     <div class="card-body"><div class="kicker" style="margin-bottom:6px">Captains' Ledger${placed>=0?` · you placed #${placed+1}`:''}</div>${ledgerTable(top,entry.id)}
