@@ -27,6 +27,7 @@ The 253,939-byte game at SHA-256 `514fe0fba64b5fab2cb80c2909198befb7cb1685010bba
 | Round 2 | [90.06](round-2/fable.json) | [88.67](round-2/opus.json) | [90.83](round-2/astra.json) | **89.85** |
 | Round 3 | [89.68](round-3/fable.json) | [88.69](round-3/opus.json) | [89.42](round-3/astra.json) | **89.26** |
 | Round 4 | [90.29](round-4/fable.json) | [87.06](round-4/opus.json) | [91.39](round-4/astra.json) | **89.58** |
+| Round 5 | [89.80](round-5/fable.json) | [87.54](round-5/opus.json) | [92.70](round-5/astra.json) | **90.01** |
 
 All three settled a cold touch run on night 30, with varying use of scripts to drive visible controls. All replayed the opening through night 10. No judge applied a cap. The largest disagreement was on economy and progression, which ranged from 76 to 92. Closing fortunes ranged from a ¤2,752 deficit to ¤436,943. The difference reflects individual routes, seeds, choices and judgments.
 
@@ -81,3 +82,32 @@ The frozen candidate is 272,410 bytes, SHA-256 `012cb10f88025f762235b1e087402d01
 All three judges reached settlement on night 30 and played a contrasting opening through night 10. No caps applied. The mean rose to 89.58. The strongest disagreements were about the economy, from 80 to 90, and market intelligence, from 84 to 92. One judge reached ¤777,037. Another ended ¤58,634 in debt after one of their opening purchases was lost. The panel used a mix of personal decisions and supporting runs through visible controls.
 
 Round 5 labels the fleet calendar in Market and keeps the next leg visible at a waypoint. A ¤180 report refreshes tonight's quotes at one remote port, once per night. Wider price scenarios and an exact break-even sale price clarify the risk of chasing dated quotes. Temporary gluts and surges are marked. Severely indebted captains can refinance at Lanternquay for a 10% fee added to their balance, 3% nightly interest and no further borrowing. The repair sheet lets players spend only what they choose. Fresh navigation taps and the current purse are available immediately after confirming a trade.
+
+## Round 5 verification
+
+The frozen candidate is 277,415 bytes, SHA-256 `426e0c8b6bb73453c40d544db862a82285b0ce8f79f9093fc81d3e58fc2c53b1`. It passed eight broad regression groups, 16 event fixtures, 30 focus/fleet/ledger checks and 17 trading fixtures. Added tests cover one-time refinancing and exact interest, fresh reports with the nightly limit intact after reload, and continued voyages and partial repairs. The automated drivers were adapted to confirm a repair under the new purchase flow. A separate 390×844 WebKit touch run reached settlement and checked the saved ledger.
+
+On 40 matched market seeds, the informed policy's median fortune was ¤546k and the greedy policy's median was ¤74.2k. The informed policy reached settlement on all 40 seeds. The greedy policy sank twice. These policies skipped paid port reports and refinancing, so the figures check the existing loop. The trading fixtures exercise the new offers.
+
+Fable and Opus hit their provider's usage limit on night 13 before submitting scores. The organizer preserved both exact voyage states and restarted each review after the reset with the same model and effort. Their continuation reports attribute the inherited play to the original attempts.
+
+## Final result
+
+Round 5 met the target. The unrounded mean was 270.04 ÷ 3, about 90.0133, up 2.04 points from the baseline. No judge applied a cap. The delivered file is the exact Round 5 build.
+
+| Criterion | Mean out of 100 | Judge range |
+|---|---:|---:|
+| Trade and cargo decisions | 91.00 | 88–95 |
+| Routes and market intelligence | 92.00 | 90–95 |
+| Economy and progression | 86.33 | 80–91 |
+| Risk, consequences and recovery | 90.67 | 89–93 |
+| Run pacing and ending | 91.00 | 90–93 |
+| Replay and adaptation | 90.33 | 89–92 |
+| Onboarding and decision clarity | 90.00 | 88–92 |
+| Input and accessibility | 88.33 | 85–90 |
+| World, feedback and sound | 87.67 | 85–89 |
+| Reliability and delivery | 94.00 | 92–96 |
+
+Reliability and routes led the panel. Economy and progression scored lowest and had the widest spread. In particular, late cash could outgrow the available investments, and a profitable route under the displayed stress scenario could still lose money when a buyer disappeared or a market shock hit.
+
+All three reviewers reached night 30 and completed contrasting openings through night 10. Fable and Opus resumed in their original live browser pages. Fable logged a helper mis-tap in its own run and one command that reached Opus's browser and toggled animation acceleration without taking an in-game action. Both reports retain their original scores. The panel used emulated touch and instrumented audio checks, with personal choices, scripted turns, and fixtures identified in the reports.
